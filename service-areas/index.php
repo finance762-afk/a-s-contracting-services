@@ -95,6 +95,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/includes/head.php';
 .city-county { font-size:0.78rem; font-weight:600; color:var(--color-accent); text-transform:uppercase; letter-spacing:0.08em; margin:0 0 var(--space-sm); }
 .city-desc { font-size:0.85rem; line-height:1.65; color:var(--color-text-light); margin:0; }
 .city-primary-badge { display:inline-flex; align-items:center; gap:5px; background:rgba(var(--color-accent-rgb),0.12); border:1px solid rgba(var(--color-accent-rgb),0.3); color:var(--color-accent); font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:3px 10px; border-radius:100px; margin-bottom:var(--space-xs); }
+.city-card-link { display:inline-flex; align-items:center; gap:5px; color:var(--color-accent); font-size:0.82rem; font-weight:600; margin-top:var(--space-sm); border-top:1px solid rgba(0,0,0,0.06); padding-top:var(--space-sm); width:100%; transition:gap 0.2s; }
+.city-card-link:hover { gap:8px; }
 /* Coverage section */
 .coverage-section { padding:var(--space-3xl) 0; background:var(--color-bg); }
 .coverage-grid { display:grid; grid-template-columns:1.4fr 1fr; gap:var(--space-3xl); align-items:center; }
@@ -225,42 +227,49 @@ include $_SERVER['DOCUMENT_ROOT'].'/includes/head.php';
         <p class="city-name">Warrenton, MO</p>
         <p class="city-county">Warren County</p>
         <p class="city-desc">A&S is based in Warrenton. We respond fastest here and have completed projects throughout Old Town Warrenton, Route 47 corridor, and the newer subdivisions east of I-70.</p>
+        <a href="/areas/warrenton-mo/" class="city-card-link">Warrenton contractor page →</a>
       </div>
 
       <div class="city-card reveal-up reveal-delay-2">
         <p class="city-name">Wright City, MO</p>
         <p class="city-county">Warren County</p>
         <p class="city-desc">Just 10 miles east on I-70. We regularly service roofing, siding, and gutter projects in Wright City, including homes in the subdivisions near Exit 203.</p>
+        <a href="/areas/wright-city-mo/" class="city-card-link">Wright City contractor page →</a>
       </div>
 
       <div class="city-card reveal-up reveal-delay-3">
         <p class="city-name">Wentzville, MO</p>
         <p class="city-county">St. Charles County</p>
         <p class="city-desc">One of Missouri's fastest-growing cities. We handle exterior renovations and full interior work for homeowners across Wentzville's newer developments and established neighborhoods.</p>
+        <a href="/areas/wentzville-mo/" class="city-card-link">Wentzville contractor page →</a>
       </div>
 
       <div class="city-card reveal-up reveal-delay-4">
         <p class="city-name">Troy, MO</p>
         <p class="city-county">Lincoln County</p>
         <p class="city-desc">We serve Lincoln County clients from Troy north. Roofing, siding, windows, and general contracting for rural properties and in-town residences throughout the area.</p>
+        <a href="/areas/troy-mo/" class="city-card-link">Troy contractor page →</a>
       </div>
 
       <div class="city-card reveal-up reveal-delay-1">
         <p class="city-name">Washington, MO</p>
         <p class="city-county">Franklin County</p>
         <p class="city-desc">Southwest of Warren County, Washington sits within our service boundary. Full exterior and interior work for Franklin County homeowners along the Missouri River corridor.</p>
+        <a href="/areas/washington-mo/" class="city-card-link">Washington contractor page →</a>
       </div>
 
       <div class="city-card reveal-up reveal-delay-2">
         <p class="city-name">Jonesburg, MO</p>
         <p class="city-county">Montgomery County</p>
         <p class="city-desc">Small-town Montgomery County clients just west of Warrenton. We serve rural and residential properties throughout Jonesburg and surrounding countryside.</p>
+        <a href="/areas/jonesburg-mo/" class="city-card-link">Jonesburg contractor page →</a>
       </div>
 
       <div class="city-card reveal-up reveal-delay-3">
         <p class="city-name">Foristell, MO</p>
         <p class="city-county">Warren / St. Charles</p>
         <p class="city-desc">Right on the Warren-St. Charles county line at Exit 214. Roofing, gutters, and exterior work for homes off I-70 in Foristell and Truesdale.</p>
+        <a href="/areas/foristell-mo/" class="city-card-link">Foristell contractor page →</a>
       </div>
 
       <div class="city-card reveal-up reveal-delay-4">

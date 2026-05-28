@@ -88,6 +88,50 @@
     <priority>0.75</priority>
   </url>
 
+  <!-- Individual Area Pages -->
+  <url>
+    <loc>https://a-s-contracting-services.pageone.cloud/areas/warrenton-mo/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://a-s-contracting-services.pageone.cloud/areas/wright-city-mo/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://a-s-contracting-services.pageone.cloud/areas/wentzville-mo/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://a-s-contracting-services.pageone.cloud/areas/troy-mo/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://a-s-contracting-services.pageone.cloud/areas/washington-mo/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://a-s-contracting-services.pageone.cloud/areas/jonesburg-mo/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://a-s-contracting-services.pageone.cloud/areas/foristell-mo/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
   <!-- About -->
   <url>
     <loc>https://a-s-contracting-services.pageone.cloud/about/</loc>
