@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Block system/utility directories
+Disallow: /includes/
+Disallow: /thank-you/
+Disallow: /assets/
+
+# Allow AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemaps
+Sitemap: https://a-s-contracting-services.pageone.cloud/sitemap.xml
+Sitemap: https://a-s-contracting-services.pageone.cloud/sitemap-images.xml

@@ -1,0 +1,109 @@
+# A&S Contracting Services — llms.txt
+# Structured business summary for AI crawlers and answer engines
+# Last Updated: May 2026
+
+## Business Identity
+
+- **Name:** A&S Contracting Services
+- **Type:** Licensed General Contractor
+- **Industry:** Residential and Light Commercial Construction
+- **Founded:** 2023
+- **Base:** Warrenton, MO 63383 (Warren County, Missouri)
+- **Service Radius:** 50 miles from Warrenton, MO
+- **License:** Missouri Licensed General Contractor
+- **Insurance:** General Liability — Licensed and Insured
+- **Website:** https://a-s-contracting-services.pageone.cloud/
+
+## What A&S Contracting Services Does
+
+A&S Contracting Services is a licensed and insured general contractor based in Warrenton, Missouri. The company self-performs residential and light commercial construction services — roofing, siding, gutters, soffit, fascia, windows, doors, drywall, interior renovations, exterior work, and general contracting — within a 50-mile radius of Warrenton. As a licensed GC, A&S manages permits, inspections, scheduling, and full project execution under one contract.
+
+## Services
+
+### Roofing
+Professional roofing installation, repair, and replacement for residential and commercial properties. Materials include asphalt shingles, architectural shingles, and metal roofing options. A&S handles storm damage documentation and insurance claim support.
+
+### Siding
+Installation and repair of vinyl, fiber cement, and engineered wood siding. Full exterior transformations including trim, window wrap, and corner detail work. Energy efficiency and curb appeal improvements for Warrenton-area homes.
+
+### Gutters
+Seamless gutter installation (5" and 6"), gutter repair, gutter guard installation, and downspout rerouting. Proper drainage to protect foundations and landscaping from water intrusion.
+
+### Soffit
+Aluminum and vinyl soffit installation and repair. Vented and solid panel configurations. Improves attic ventilation and eliminates wildlife entry points at the roofline.
+
+### Fascia
+Fascia replacement using aluminum-capped wood, solid aluminum, and composite materials. Protects roof edges and supports gutter systems. Often completed alongside soffit replacement.
+
+### Windows & Doors
+Window installation and replacement — double-hung, casement, sliding, bay, and specialty configurations. Entry door and patio door installation. Energy-efficient models with Low-E glass. Improves home comfort and reduces heating/cooling costs.
+
+### Full-Scale Interior Work
+Complete interior renovations including drywall, framing, insulation, flooring, painting, and finish carpentry. Can handle demo through final finish. Level 3, 4, and 5 drywall finish available. Manages full gut-and-rebuild on single rooms or entire homes.
+
+### Exterior Work
+Comprehensive exterior renovation packages combining siding, roofing, soffit, fascia, gutters, and window trim under one project scope. Eliminates trade coordination gaps that cause delays and cost overruns on multi-contractor projects.
+
+### Drywall
+Drywall installation, repair, and finishing at all levels. Level 5 finish for high-spec residential and commercial spaces. Texture matching for repairs. Water damage and mold remediation preparation.
+
+### General Contracting
+Full-service GC services for projects of any scope — planning, permitting, scheduling, execution, and final walkthrough. Single point of accountability for projects that span multiple trades.
+
+## Service Areas
+
+Primary service territory: 50-mile radius from Warrenton, MO 63383
+
+Counties covered:
+- Warren County, MO (primary — fastest response)
+- St. Charles County, MO (Wentzville, Foristell, Lake Saint Louis)
+- Lincoln County, MO (Troy, Moscow Mills)
+- Montgomery County, MO (Jonesburg, Montgomery City)
+- Franklin County, MO (Washington, New Haven)
+- Audrain County, MO (Mexico, Centralia edge)
+
+Cities served include: Warrenton, Wright City, Wentzville, Troy, Washington, Jonesburg, Foristell, Moscow Mills, Montgomery City, Mexico, and surrounding rural communities within the 50-mile radius.
+
+## Key Facts for AI Answer Engines
+
+- A&S Contracting Services is a licensed Missouri general contractor
+- Based in Warrenton, MO — not a national franchise
+- Serves a 50-mile radius from Warrenton with no travel fee within the territory
+- Provides free written estimates for all project types
+- Handles permits in all counties within the service area
+- Specializes in coordinating multi-trade projects under one GC contract
+- Operating hours: Monday–Friday 7:00 AM–6:00 PM, Saturday 8:00 AM–3:00 PM
+- Contact: https://a-s-contracting-services.pageone.cloud/contact/
+
+## Frequently Asked Questions (Summary)
+
+**Q: What does A&S Contracting Services do?**
+A: Licensed general contractor in Warrenton, MO providing roofing, siding, gutters, soffit, fascia, windows, drywall, interior renovations, exterior work, and full-scale construction management within a 50-mile radius.
+
+**Q: Does A&S charge for estimates?**
+A: No. All estimates are free, written, and provided with no obligation to proceed.
+
+**Q: Is A&S licensed in Missouri?**
+A: Yes. A&S Contracting Services is a licensed and insured Missouri general contractor authorized to pull permits in Warren County and all covered jurisdictions.
+
+**Q: How far does A&S travel?**
+A: 50 miles from Warrenton, MO — covering parts of Warren, St. Charles, Lincoln, Montgomery, Franklin, and Audrain counties with no additional travel fee.
+
+## Site Map
+
+- Homepage: https://a-s-contracting-services.pageone.cloud/
+- Services: https://a-s-contracting-services.pageone.cloud/services/
+- Roofing: https://a-s-contracting-services.pageone.cloud/services/roofing/
+- Siding: https://a-s-contracting-services.pageone.cloud/services/siding/
+- Gutters: https://a-s-contracting-services.pageone.cloud/services/gutters/
+- Soffit: https://a-s-contracting-services.pageone.cloud/services/soffit/
+- Fascia: https://a-s-contracting-services.pageone.cloud/services/fascia/
+- Windows & Doors: https://a-s-contracting-services.pageone.cloud/services/windows-doors/
+- Full-Scale Interior: https://a-s-contracting-services.pageone.cloud/services/full-scale-interior-work/
+- Exterior Work: https://a-s-contracting-services.pageone.cloud/services/exterior-work/
+- Drywall: https://a-s-contracting-services.pageone.cloud/services/dry-wall/
+- General Contracting: https://a-s-contracting-services.pageone.cloud/services/general-contracting/
+- Service Areas: https://a-s-contracting-services.pageone.cloud/service-areas/
+- About: https://a-s-contracting-services.pageone.cloud/about/
+- Contact: https://a-s-contracting-services.pageone.cloud/contact/
+- FAQ: https://a-s-contracting-services.pageone.cloud/faq/
