@@ -9,13 +9,23 @@ $canonicalUrl    = $siteUrl . '/privacy-policy/';
 $currentPage     = 'legal';
 $cssVersion      = '2.0';
 
-$schemaData = ['@context'=>'https://schema.org','@graph'=>[
-    ['@type'=>'BreadcrumbList','itemListElement'=>[
-        ['@type'=>'ListItem','position'=>1,'name'=>'Home','item'=>$siteUrl.'/'],
-        ['@type'=>'ListItem','position'=>2,'name'=>'Privacy Policy'],
-    ]],
-]];
-$schemaMarkup = json_encode($schemaData,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
+$schemaData = [
+    '@context'   => 'https://schema.org',
+    '@type'      => 'WebPage',
+    '@id'        => $siteUrl . '/privacy-policy/#webpage',
+    'name'       => 'Privacy Policy | ' . $siteName,
+    'description'=> 'Privacy Policy for ' . $siteName . ' — how we collect, use, and protect your information. Includes CCPA/CPRA rights and SMS consent terms.',
+    'url'        => $siteUrl . '/privacy-policy/',
+    'publisher'  => ['@type' => 'Organization', 'name' => $siteName, '@id' => $siteUrl . '/#organization'],
+    'breadcrumb' => [
+        '@type'           => 'BreadcrumbList',
+        'itemListElement' => [
+            ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',           'item' => $siteUrl . '/'],
+            ['@type' => 'ListItem', 'position' => 2, 'name' => 'Privacy Policy', 'item' => $siteUrl . '/privacy-policy/'],
+        ],
+    ],
+];
+$schemaMarkup = json_encode($schemaData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 include $_SERVER['DOCUMENT_ROOT'].'/includes/head.php';
 ?>
 <body>

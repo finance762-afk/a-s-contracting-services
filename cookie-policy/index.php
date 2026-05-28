@@ -9,13 +9,23 @@ $canonicalUrl    = $siteUrl . '/cookie-policy/';
 $currentPage     = 'legal';
 $cssVersion      = '2.0';
 
-$schemaData = ['@context'=>'https://schema.org','@graph'=>[
-    ['@type'=>'BreadcrumbList','itemListElement'=>[
-        ['@type'=>'ListItem','position'=>1,'name'=>'Home','item'=>$siteUrl.'/'],
-        ['@type'=>'ListItem','position'=>2,'name'=>'Cookie Policy'],
-    ]],
-]];
-$schemaMarkup = json_encode($schemaData,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
+$schemaData = [
+    '@context'   => 'https://schema.org',
+    '@type'      => 'WebPage',
+    '@id'        => $siteUrl . '/cookie-policy/#webpage',
+    'name'       => 'Cookie Policy | ' . $siteName,
+    'description'=> 'Cookie Policy for ' . $siteName . ' — what cookies we use and how to control them.',
+    'url'        => $siteUrl . '/cookie-policy/',
+    'publisher'  => ['@type' => 'Organization', 'name' => $siteName, '@id' => $siteUrl . '/#organization'],
+    'breadcrumb' => [
+        '@type'           => 'BreadcrumbList',
+        'itemListElement' => [
+            ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',          'item' => $siteUrl . '/'],
+            ['@type' => 'ListItem', 'position' => 2, 'name' => 'Cookie Policy', 'item' => $siteUrl . '/cookie-policy/'],
+        ],
+    ],
+];
+$schemaMarkup = json_encode($schemaData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 include $_SERVER['DOCUMENT_ROOT'].'/includes/head.php';
 ?>
 <body>

@@ -9,13 +9,23 @@ $canonicalUrl    = $siteUrl . '/terms/';
 $currentPage     = 'legal';
 $cssVersion      = '2.0';
 
-$schemaData = ['@context'=>'https://schema.org','@graph'=>[
-    ['@type'=>'BreadcrumbList','itemListElement'=>[
-        ['@type'=>'ListItem','position'=>1,'name'=>'Home','item'=>$siteUrl.'/'],
-        ['@type'=>'ListItem','position'=>2,'name'=>'Terms of Service'],
-    ]],
-]];
-$schemaMarkup = json_encode($schemaData,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
+$schemaData = [
+    '@context'   => 'https://schema.org',
+    '@type'      => 'WebPage',
+    '@id'        => $siteUrl . '/terms/#webpage',
+    'name'       => 'Terms of Service | ' . $siteName,
+    'description'=> 'Terms of Service for ' . $siteName . ' — governs your use of the website and services provided.',
+    'url'        => $siteUrl . '/terms/',
+    'publisher'  => ['@type' => 'Organization', 'name' => $siteName, '@id' => $siteUrl . '/#organization'],
+    'breadcrumb' => [
+        '@type'           => 'BreadcrumbList',
+        'itemListElement' => [
+            ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',             'item' => $siteUrl . '/'],
+            ['@type' => 'ListItem', 'position' => 2, 'name' => 'Terms of Service', 'item' => $siteUrl . '/terms/'],
+        ],
+    ],
+];
+$schemaMarkup = json_encode($schemaData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 include $_SERVER['DOCUMENT_ROOT'].'/includes/head.php';
 ?>
 <body>

@@ -9,13 +9,23 @@ $canonicalUrl    = $siteUrl . '/accessibility/';
 $currentPage     = 'legal';
 $cssVersion      = '2.0';
 
-$schemaData = ['@context'=>'https://schema.org','@graph'=>[
-    ['@type'=>'BreadcrumbList','itemListElement'=>[
-        ['@type'=>'ListItem','position'=>1,'name'=>'Home','item'=>$siteUrl.'/'],
-        ['@type'=>'ListItem','position'=>2,'name'=>'Accessibility'],
-    ]],
-]];
-$schemaMarkup = json_encode($schemaData,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
+$schemaData = [
+    '@context'   => 'https://schema.org',
+    '@type'      => 'WebPage',
+    '@id'        => $siteUrl . '/accessibility/#webpage',
+    'name'       => 'Accessibility Statement | ' . $siteName,
+    'description'=> 'Accessibility Statement for ' . $siteName . ' — our commitment to WCAG 2.1 AA accessibility and how to request accommodations.',
+    'url'        => $siteUrl . '/accessibility/',
+    'publisher'  => ['@type' => 'Organization', 'name' => $siteName, '@id' => $siteUrl . '/#organization'],
+    'breadcrumb' => [
+        '@type'           => 'BreadcrumbList',
+        'itemListElement' => [
+            ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',                    'item' => $siteUrl . '/'],
+            ['@type' => 'ListItem', 'position' => 2, 'name' => 'Accessibility Statement', 'item' => $siteUrl . '/accessibility/'],
+        ],
+    ],
+];
+$schemaMarkup = json_encode($schemaData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 include $_SERVER['DOCUMENT_ROOT'].'/includes/head.php';
 ?>
 <body>
