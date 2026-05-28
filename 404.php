@@ -38,7 +38,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/includes/head.php';
 .not-found-link:hover { color:var(--color-accent); }
 </style>
 
-<div class="not-found-page" role="main">
+<div class="not-found-page">
   <span class="not-found-404" aria-hidden="true">404</span>
   <div class="not-found-card">
     <span class="not-found-label">Page Not Found</span>

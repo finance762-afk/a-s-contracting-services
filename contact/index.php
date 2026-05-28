@@ -246,7 +246,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/includes/head.php';
               <label class="form-consent-item">
                 <input type="checkbox" name="sms_opt_in" value="yes" class="consent-checkbox">
                 <span class="consent-label">
-                  <strong>SMS/Text messages (optional):</strong> I agree to receive text messages from A&amp;S Contracting Services at the number provided. Message and data rates may apply. Reply STOP to unsubscribe. <strong>Consent is not a condition of purchase.</strong>
+                  <strong>SMS/Text messages (optional):</strong> I agree to receive text messages from A&amp;S Contracting Services at the phone number I provided. Message types may include appointment reminders, estimate follow-ups, and service updates. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe, HELP for help. <strong>Consent is not a condition of purchase.</strong>
                 </span>
               </label>
 
