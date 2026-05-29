@@ -374,7 +374,9 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
 @media (max-width: 860px) {
   .hero {
     background-attachment: scroll;
+    align-items: flex-start;
     padding-top: calc(var(--nav-height, 72px) + var(--space-2xl));
+    padding-bottom: var(--space-3xl);
   }
   .hero-inner {
     grid-template-columns: 1fr;
