@@ -382,12 +382,12 @@ section.hero { padding: 0; }
 .footer-credit a { color: var(--color-accent); }
 
 /* === Ticker Strip === */
-.ticker-strip { background: var(--color-accent); overflow: hidden; padding: var(--space-3) 0; }
-.ticker-track {
-  display: flex; gap: var(--space-8); animation: ticker-scroll 30s linear infinite; white-space: nowrap;
-}
-.ticker-track span { font-family: var(--font-heading); font-size: var(--font-size-sm); font-weight: 600; color: var(--color-white); text-transform: uppercase; letter-spacing: 1px; }
+.ticker-strip { --ticker-speed: 80; background: var(--color-accent); overflow: hidden; padding: var(--space-3) 0; }
+.ticker-track { display: flex; width: max-content; will-change: transform; animation: ticker-scroll var(--ticker-duration, 30s) linear infinite; }
+.ticker-track:hover { animation-play-state: paused; }
+.ticker-group { display: inline-flex; align-items: center; flex-shrink: 0; }
 @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
 
 /* === Back to Top === */
 .back-to-top {
@@ -1066,11 +1066,12 @@ section.hero { padding: 0; }
 .cta-banner p { color: rgba(255,255,255,0.8); margin-bottom: var(--space-lg); max-width: 600px; margin-left: auto; margin-right: auto; }
 
 /* === Ticker Strip === */
-.ticker-strip { background: var(--color-accent); overflow: hidden; padding: var(--space-3) 0; position: relative; z-index: 1; }
-.ticker-track { display: flex; gap: var(--space-8); animation: ticker-scroll 30s linear infinite; white-space: nowrap; }
-.ticker-track span { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: var(--color-black); text-transform: uppercase; letter-spacing: 0.1em; }
-.ticker-track span.sep { opacity: 0.5; }
+.ticker-strip { --ticker-speed: 80; background: var(--color-accent); overflow: hidden; padding: var(--space-3) 0; position: relative; z-index: 1; }
+.ticker-track { display: flex; width: max-content; will-change: transform; animation: ticker-scroll var(--ticker-duration, 30s) linear infinite; }
+.ticker-track:hover { animation-play-state: paused; }
+.ticker-group { display: inline-flex; align-items: center; flex-shrink: 0; }
 @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
 
 /* === Legal / Compliance === */
 .legal-prose {

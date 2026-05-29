@@ -386,6 +386,7 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
 
 /* ─── TICKER STRIP ─────────────────────────────────────────────────────────── */
 .ticker-strip {
+  --ticker-speed: 80;            /* px/s — JS reads this; higher = slower */
   background: var(--color-accent);
   color: var(--color-primary);
   overflow: hidden;
@@ -396,12 +397,21 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
 .ticker-track {
   display: flex;
   width: max-content;
-  animation: ticker-scroll 32s linear infinite;
+  will-change: transform;
+  animation: ticker-scroll var(--ticker-duration, 30s) linear infinite;
 }
 .ticker-track:hover { animation-play-state: paused; }
+.ticker-group {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
 @keyframes ticker-scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
 }
 .ticker-item {
   display: inline-flex;
@@ -1398,76 +1408,80 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
 <!-- ═══════════════════════════════════════════════════════════════════════════
      TICKER STRIP
      ═══════════════════════════════════════════════════════════════════════════ -->
-<div class="ticker-strip" aria-hidden="true" role="presentation">
+<div class="ticker-strip" aria-hidden="true">
   <div class="ticker-track">
-    <!-- Set 1 -->
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Licensed &amp; Insured
-    </span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      <?php echo $yearsInBusiness; ?>+ Years in Warrenton, MO
-    </span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      Roofing · Siding · Gutters
-    </span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      5-Star Google Rated
-    </span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      Free Estimates — No Obligation
-    </span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
-      50-Mile Service Radius
-    </span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-      Windows &amp; Doors · Interior Work
-    </span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18.9 19.5 19.5 0 0 1 4.69 13.35 19.79 19.79 0 0 1 1.61 4.73 2 2 0 0 1 3.58 2.54h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      Warren County's Contractor
-    </span><span class="ticker-sep">◆</span>
-    <!-- Duplicate set for seamless loop -->
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Licensed &amp; Insured
-    </span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      <?php echo $yearsInBusiness; ?>+ Years in Warrenton, MO
-    </span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      Roofing · Siding · Gutters
-    </span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      5-Star Google Rated
-    </span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      Free Estimates — No Obligation
-    </span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
-      50-Mile Service Radius
-    </span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-      Windows &amp; Doors · Interior Work
-    </span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18.9 19.5 19.5 0 0 1 4.69 13.35 19.79 19.79 0 0 1 1.61 4.73 2 2 0 0 1 3.58 2.54h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      Warren County's Contractor
-    </span><span class="ticker-sep">◆</span>
-  </div>
-</div>
+    <!-- Group 1 (original set) -->
+    <div class="ticker-group">
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Licensed &amp; Insured
+      </span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <?php echo $yearsInBusiness; ?>+ Years in Warrenton, MO
+      </span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Roofing · Siding · Gutters
+      </span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        5-Star Google Rated
+      </span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Free Estimates — No Obligation
+      </span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        50-Mile Service Radius
+      </span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        Windows &amp; Doors · Interior Work
+      </span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18.9 19.5 19.5 0 0 1 4.69 13.35 19.79 19.79 0 0 1 1.61 4.73 2 2 0 0 1 3.58 2.54h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Warren County's Contractor
+      </span><span class="ticker-sep">◆</span>
+    </div><!-- /.ticker-group -->
+    <!-- Group 2 (identical duplicate — seamless loop) -->
+    <div class="ticker-group">
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Licensed &amp; Insured
+      </span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <?php echo $yearsInBusiness; ?>+ Years in Warrenton, MO
+      </span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Roofing · Siding · Gutters
+      </span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        5-Star Google Rated
+      </span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Free Estimates — No Obligation
+      </span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        50-Mile Service Radius
+      </span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        Windows &amp; Doors · Interior Work
+      </span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18.9 19.5 19.5 0 0 1 4.69 13.35 19.79 19.79 0 0 1 1.61 4.73 2 2 0 0 1 3.58 2.54h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Warren County's Contractor
+      </span><span class="ticker-sep">◆</span>
+    </div><!-- /.ticker-group -->
+  </div><!-- /.ticker-track -->
+</div><!-- /.ticker-strip -->
 
 
 <!-- SVG Divider: wave into services section -->
