@@ -11,7 +11,7 @@ $pageTitle       = "General Contractor in Warrenton, MO | A&S Contracting Servic
 $pageDescription = "A&S Contracting Services is a licensed general contractor in Warrenton, MO. Roofing, siding, gutters, windows, drywall & interior renovations for Warren County homes. Free estimates.";
 $canonicalUrl    = $siteUrl . '/areas/warrenton-mo/';
 $currentPage     = 'service-areas';
-$cssVersion      = '2.1';
+$cssVersion      = '2.2';
 
 $pb         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/photos/';
 $heroPhoto  = $pb . '1779985049352-yx87w1-20-Mar_12__2025_18-21-31-DDFM.jpg';

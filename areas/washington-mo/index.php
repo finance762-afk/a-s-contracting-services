@@ -11,7 +11,7 @@ $pageTitle       = "Contractor in Washington, MO | A&S Contracting Services | Fr
 $pageDescription = "Licensed general contractor serving Washington, MO and Franklin County. Roofing, siding, gutters, windows & interior renovations for riverfront and historic-district homes. Free estimates.";
 $canonicalUrl    = $siteUrl . '/areas/washington-mo/';
 $currentPage     = 'service-areas';
-$cssVersion      = '2.1';
+$cssVersion      = '2.2';
 
 $pb         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/photos/';
 $heroPhoto  = $pb . '1779985051444-qjmrub-49-Apr_21__2025_15-15-08-wZNr.jpg';

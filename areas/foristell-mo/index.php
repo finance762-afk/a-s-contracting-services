@@ -11,7 +11,7 @@ $pageTitle       = "Contractor in Foristell, MO | A&S Contracting Services | War
 $pageDescription = "Licensed general contractor serving Foristell, MO near Exit 214 on I-70. Roofing, siding, gutters, windows & interior work for Warren and St. Charles county homes. Free estimates.";
 $canonicalUrl    = $siteUrl . '/areas/foristell-mo/';
 $currentPage     = 'service-areas';
-$cssVersion      = '2.1';
+$cssVersion      = '2.2';
 
 $pb         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/photos/';
 $heroPhoto  = $pb . '1779985052606-0c7fr0-64-Jun_03__2025_18-42-44-7JBx.jpg';
