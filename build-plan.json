@@ -122,18 +122,18 @@
   "phone": "",
   "assets": {
     "logo": {
-      "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/logo/1779984743752-cpxspg-Logo.png",
-      "storage_path": "a-s-contracting-services/logo/1779984743752-cpxspg-Logo.png"
+      "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/logo/1779995343360-unnamed.jpg",
+      "storage_path": "a-s-contracting-services/logo/1779995343360-unnamed.jpg"
     },
     "images": [
       {
         "alt": "",
-        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/logo/1779984743752-cpxspg-Logo.png",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/logo/1779995343360-unnamed.jpg",
         "page": "any",
         "role": null,
         "caption": "",
         "context": "logo",
-        "storage_path": "a-s-contracting-services/logo/1779984743752-cpxspg-Logo.png",
+        "storage_path": "a-s-contracting-services/logo/1779995343360-unnamed.jpg",
         "quality_score": null
       },
       {
@@ -850,7 +850,7 @@
     "page_allocations": null,
     "recommended_hero_image": {
       "alt": "",
-      "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/logo/1779984743752-cpxspg-Logo.png",
+      "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/logo/1779995343360-unnamed.jpg",
       "context": "logo",
       "quality_score": null
     }

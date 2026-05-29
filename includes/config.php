@@ -203,4 +203,4 @@ $socialLinks = [
 $formAction = 'https://design.pageone.cloud/api/leads/a-s-contracting-services';
 
 // Logo (from client asset storage)
-$logoUrl = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/logo/1779984743752-cpxspg-Logo.png';
+$logoUrl = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/logo/1779995343360-unnamed.jpg';
