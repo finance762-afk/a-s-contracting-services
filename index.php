@@ -1959,8 +1959,6 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
 </section><!-- /.closing-cta-section -->
 
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
-
 <!-- Intersection Observer for reveal animations -->
 <script>
 (function () {
@@ -2011,5 +2009,4 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
 })();
 </script>
 
-</body>
-</html>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
