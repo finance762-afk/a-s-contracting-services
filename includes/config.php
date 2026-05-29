@@ -36,8 +36,8 @@ $colors = [
     'primary_rgb'   => '0, 0, 0',
     'secondary'     => '#ffffff',
     'secondary_rgb' => '255, 255, 255',
-    'accent'        => '#e6a800',
-    'accent_rgb'    => '230, 168, 0',
+    'accent'        => '#c0c2c4',
+    'accent_rgb'    => '192, 194, 196',
 ];
 
 // Analytics

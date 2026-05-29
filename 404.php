@@ -7,7 +7,7 @@ $pageTitle       = "Page Not Found | A&S Contracting Services";
 $pageDescription = "The page you were looking for doesn't exist. Browse A&S Contracting Services — general contractor in Warrenton, MO.";
 $canonicalUrl    = $siteUrl . '/404';
 $currentPage     = '';
-$cssVersion      = '2.0';
+$cssVersion      = '2.1';
 $noindex         = true;
 
 http_response_code(404);

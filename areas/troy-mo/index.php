@@ -11,7 +11,7 @@ $pageTitle       = "Contractor in Troy, MO | A&S Contracting Services | Lincoln 
 $pageDescription = "Licensed general contractor serving Troy, MO and Lincoln County. Roofing, siding, gutters, windows & interior work for rural and in-town homes. Free estimates — A&S Contracting.";
 $canonicalUrl    = $siteUrl . '/areas/troy-mo/';
 $currentPage     = 'service-areas';
-$cssVersion      = '2.0';
+$cssVersion      = '2.1';
 
 $pb         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/photos/';
 $heroPhoto  = $pb . '1779985082241-xuoxbh-11-Feb_09__2026_15-26-29-L2wD.jpg';

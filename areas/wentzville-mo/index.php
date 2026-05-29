@@ -11,7 +11,7 @@ $pageTitle       = "Contractor in Wentzville, MO | A&S Contracting Services | St
 $pageDescription = "Licensed general contractor serving Wentzville, MO. Roofing, siding, gutters, windows & interior work for St. Charles County homeowners. Free estimates — A&S Contracting.";
 $canonicalUrl    = $siteUrl . '/areas/wentzville-mo/';
 $currentPage     = 'service-areas';
-$cssVersion      = '2.0';
+$cssVersion      = '2.1';
 
 $pb         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/photos/';
 $heroPhoto  = $pb . '1779985209297-ld8mti-1-Dec_23__2025_13-34-30-gKpa.jpg';

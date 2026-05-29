@@ -8,7 +8,7 @@ $pageTitle       = "All Services | A&S Contracting Services | Warrenton, MO";
 $pageDescription = "A&S Contracting Services offers roofing, siding, gutters, soffit, fascia, windows, doors, interior renovations, exterior work, drywall & general contracting in Warrenton, MO. Free estimates.";
 $canonicalUrl    = $siteUrl . '/services/';
 $currentPage     = 'services';
-$cssVersion      = '2.0';
+$cssVersion      = '2.1';
 $ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/photos/1779984864659-a47kou-52-Aug_08__2025_00-31-27-YHMr.jpg';
 
 // Service card photos (all 10 services)

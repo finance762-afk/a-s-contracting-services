@@ -7,7 +7,7 @@ $pageTitle       = "Accessibility Statement | A&S Contracting Services";
 $pageDescription = "Accessibility Statement for A&S Contracting Services. Our commitment to WCAG 2.1 AA accessibility and how to request accommodations.";
 $canonicalUrl    = $siteUrl . '/accessibility/';
 $currentPage     = 'legal';
-$cssVersion      = '2.0';
+$cssVersion      = '2.1';
 
 $schemaData = [
     '@context'   => 'https://schema.org',
@@ -86,7 +86,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/includes/head.php';
         <li><strong>Semantic HTML:</strong> We use proper HTML5 landmark elements — <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;section&gt;</code> — to define page structure for screen reader users.</li>
         <li><strong>ARIA labels:</strong> Navigation, form fields, and interactive elements include ARIA labels and attributes (aria-label, aria-current, aria-expanded) for screen reader compatibility.</li>
         <li><strong>Keyboard navigation:</strong> All interactive elements — navigation links, buttons, form fields, and FAQ accordion items — are reachable and operable via keyboard.</li>
-        <li><strong>Focus indicators:</strong> Visible focus outlines appear on all interactive elements when accessed via keyboard, using high-contrast gold (#e6a800) outlines.</li>
+        <li><strong>Focus indicators:</strong> Visible focus outlines appear on all interactive elements when accessed via keyboard, using high-contrast outlines.</li>
         <li><strong>Color contrast:</strong> Body text and interactive elements are designed to meet WCAG 2.1 AA contrast ratios (minimum 4.5:1 for normal text, 3:1 for large text).</li>
         <li><strong>Image alt text:</strong> All meaningful images include descriptive alt text. Decorative images use empty alt attributes (alt="").</li>
         <li><strong>Form labels:</strong> All form inputs are associated with visible, programmatic labels.</li>
