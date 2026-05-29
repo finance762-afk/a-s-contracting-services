@@ -66,6 +66,23 @@ document.addEventListener('DOMContentLoaded', function() {
     animateElements.forEach(function(el) { observer.observe(el); });
   }
 
+  /* === IntersectionObserver for .reveal-* scroll animations === */
+  var revealElements = document.querySelectorAll('.reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-scale');
+  if (revealElements.length > 0 && 'IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    revealElements.forEach(function(el) { revealObserver.observe(el); });
+  } else {
+    // Fallback: immediately show all reveal elements if IntersectionObserver is unavailable
+    revealElements.forEach(function(el) { el.classList.add('revealed'); });
+  }
+
   /* === Counter Animation for data-counter elements === */
   var counters = document.querySelectorAll('[data-counter]');
   if (counters.length > 0 && 'IntersectionObserver' in window) {

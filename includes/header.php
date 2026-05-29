@@ -27,8 +27,8 @@ function _navActive(string $page, string $current): string {
         <img
           src="<?php echo htmlspecialchars($logoUrl); ?>"
           alt="<?php echo htmlspecialchars($siteName); ?> logo"
-          width="240"
-          height="72"
+          width="720"
+          height="216"
         >
         <div class="logo-text-wrap" aria-hidden="true">
           <span class="logo-mark">A&amp;S</span>
@@ -110,7 +110,7 @@ function _navActive(string $page, string $current): string {
 <div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
 
   <div class="mobile-menu-logo">
-    <img src="<?php echo htmlspecialchars($logoUrl); ?>" alt="<?php echo htmlspecialchars($siteName); ?>" height="56" width="168">
+    <img src="<?php echo htmlspecialchars($logoUrl); ?>" alt="<?php echo htmlspecialchars($siteName); ?>" height="168" width="504">
   </div>
 
   <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close navigation menu">

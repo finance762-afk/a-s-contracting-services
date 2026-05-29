@@ -70,7 +70,7 @@
   --space-2xl: var(--space-16);
 
   /* Layout */
-  --nav-height: 96px;
+  --nav-height: 216px;
   --max-width: 1200px;
   --max-width-wide: 1400px;
   --content-width: 65ch;
@@ -470,11 +470,11 @@ section.hero { padding: 0; }
   flex-shrink: 0;
 }
 .navbar-logo img {
-  height: 72px;
+  height: 216px;
   width: auto;
   transition: height var(--transition-base);
 }
-.site-header.scrolled .navbar-logo img { height: 56px; }
+.site-header.scrolled .navbar-logo img { height: 168px; }
 .logo-text-wrap { display: flex; flex-direction: column; line-height: 1.1; }
 .logo-mark {
   font-family: var(--font-heading);
@@ -640,7 +640,7 @@ section.hero { padding: 0; }
   top: var(--space-5);
   left: clamp(1rem, 4vw, 2rem);
 }
-.mobile-menu-logo img { height: 56px; width: auto; }
+.mobile-menu-logo img { height: 168px; width: auto; }
 .mobile-menu-close {
   position: absolute;
   top: var(--space-4);
