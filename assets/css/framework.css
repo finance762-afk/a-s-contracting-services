@@ -958,15 +958,20 @@ section.hero { padding: 0; }
 }
 
 /* === Scroll Reveal Animations === */
-.reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-scale {
+/* Hidden state only applies when JS has confirmed it loaded (fail-open) */
+html.js-anim .reveal-up,
+html.js-anim .reveal-down,
+html.js-anim .reveal-left,
+html.js-anim .reveal-right,
+html.js-anim .reveal-scale {
   opacity: 0;
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.reveal-up    { transform: translateY(28px); }
-.reveal-down  { transform: translateY(-28px); }
-.reveal-left  { transform: translateX(28px); }
-.reveal-right { transform: translateX(-28px); }
-.reveal-scale { transform: scale(0.92); }
+html.js-anim .reveal-up    { transform: translateY(28px); }
+html.js-anim .reveal-down  { transform: translateY(-28px); }
+html.js-anim .reveal-left  { transform: translateX(28px); }
+html.js-anim .reveal-right { transform: translateX(-28px); }
+html.js-anim .reveal-scale { transform: scale(0.92); }
 .reveal-up.revealed,
 .reveal-down.revealed,
 .reveal-left.revealed,

@@ -242,9 +242,9 @@ if (!isset($siteName)) {
 </script>
 
 <!-- Site Scripts -->
-<script src="/assets/js/main.js" defer></script>
-<script src="/assets/js/animations.js" defer></script>
-<script src="/assets/js/effects.js" defer></script>
+<script src="/assets/js/main.js?v=3" defer></script>
+<script src="/assets/js/animations.js?v=3" defer></script>
+<script src="/assets/js/effects.js?v=3" defer></script>
 
 <!-- Inline: Back-to-top + Cookie Banner + Mobile Menu -->
 <script>

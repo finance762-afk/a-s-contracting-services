@@ -3,6 +3,8 @@
    Auto-generated from build-plan.json
    ============================================ */
 
+document.documentElement.classList.add('js-anim');
+
 document.addEventListener('DOMContentLoaded', function() {
 
   /* === Sticky Header / Scroll Class Toggle === */
