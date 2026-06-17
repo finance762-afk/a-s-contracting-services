@@ -167,4 +167,5 @@ $_schemaJson = json_encode($_schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES 
   </script>
   <?php endif; ?>
 
+<?php require_once __DIR__ . '/edit-mode.php'; ?>
 </head>
