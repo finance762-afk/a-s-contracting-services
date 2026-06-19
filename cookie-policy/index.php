@@ -7,7 +7,7 @@ $pageTitle       = "Cookie Policy | A&S Contracting Services";
 $pageDescription = "Cookie Policy for A&S Contracting Services. Explains the cookies and tracking technologies used on our website and how to manage them.";
 $canonicalUrl    = $siteUrl . '/cookie-policy/';
 $currentPage     = 'legal';
-$cssVersion      = '2.2';
+$cssVersion      = '3';
 
 $schemaData = [
     '@context'   => 'https://schema.org',

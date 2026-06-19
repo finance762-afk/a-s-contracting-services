@@ -11,7 +11,7 @@ $pageTitle       = "Contractor in Wright City, MO | A&S Contracting Services | W
 $pageDescription = "Licensed general contractor serving Wright City, MO. Roofing, siding, gutters, windows & interior renovations for Warren County homeowners. Free estimates — A&S Contracting.";
 $canonicalUrl    = $siteUrl . '/areas/wright-city-mo/';
 $currentPage     = 'service-areas';
-$cssVersion      = '2.2';
+$cssVersion      = '3';
 
 $pb         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/photos/';
 $heroPhoto  = $pb . '1779984864659-a47kou-52-Aug_08__2025_00-31-27-YHMr.jpg';

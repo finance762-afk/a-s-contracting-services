@@ -8,7 +8,7 @@ $pageTitle       = "General Contractor in Warrenton, MO | A&S Contracting Servic
 $pageDescription = "A&S Contracting Services — licensed, insured general contractor in Warrenton, MO. Roofing, siding, gutters, windows, interior renovations & more within 50 miles. Free estimates.";
 $canonicalUrl    = $siteUrl . '/';
 $currentPage     = 'home';
-$cssVersion      = '2.2';
+$cssVersion      = '3';
 
 // Hero image (first client photo — best exterior/roofing shot)
 $heroPhoto       = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/photos/1779984851004-bey4ix-53-Aug_08__2025_00-54-39-zixD.jpg';

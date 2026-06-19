@@ -85,6 +85,13 @@ document.addEventListener('DOMContentLoaded', function() {
     revealElements.forEach(function(el) { el.classList.add('revealed'); });
   }
 
+  // Safety net: after 1.5s reveal anything the observer hasn't touched yet
+  setTimeout(function() {
+    document.querySelectorAll('.reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) {
+      if (!el.classList.contains('revealed')) { el.classList.add('revealed'); }
+    });
+  }, 1500);
+
   /* === Counter Animation for data-counter elements === */
   var counters = document.querySelectorAll('[data-counter]');
   if (counters.length > 0 && 'IntersectionObserver' in window) {

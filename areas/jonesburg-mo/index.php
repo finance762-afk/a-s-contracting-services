@@ -11,7 +11,7 @@ $pageTitle       = "Contractor in Jonesburg, MO | A&S Contracting Services | Mon
 $pageDescription = "Licensed general contractor serving Jonesburg, MO and Montgomery County. Roofing, siding, gutters, windows & interior work for rural homes along the I-70 corridor. Free estimates.";
 $canonicalUrl    = $siteUrl . '/areas/jonesburg-mo/';
 $currentPage     = 'service-areas';
-$cssVersion      = '2.2';
+$cssVersion      = '3';
 
 $pb         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/photos/';
 $heroPhoto  = $pb . '1779985051813-6hdkvp-61-Apr_25__2025_19-50-31-B2oU.jpg';
