@@ -9,7 +9,7 @@ $pageTitle       = "Roofing Contractor in Warrenton, MO | A&S Contracting Servic
 $pageDescription = "Licensed roofing contractor in Warrenton, MO. Roof replacement, repair & installation for Warren County homes. Free estimates — A&S Contracting Services.";
 $canonicalUrl    = $siteUrl . '/services/roofing/';
 $currentPage     = 'roofing';
-$cssVersion      = '3';
+$cssVersion      = '5';
 
 $pb              = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/photos/';
 $heroPhoto       = $pb . '1779984864659-a47kou-52-Aug_08__2025_00-31-27-YHMr.jpg';

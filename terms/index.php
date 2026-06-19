@@ -7,7 +7,7 @@ $pageTitle       = "Terms of Service | A&S Contracting Services";
 $pageDescription = "Terms of Service for A&S Contracting Services. Governs your use of the A&S Contracting Services website and the services provided.";
 $canonicalUrl    = $siteUrl . '/terms/';
 $currentPage     = 'legal';
-$cssVersion      = '3';
+$cssVersion      = '5';
 
 $schemaData = [
     '@context'   => 'https://schema.org',

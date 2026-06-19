@@ -7,7 +7,7 @@ $pageTitle       = "Thank You — We'll Be in Touch | A&S Contracting Services";
 $pageDescription = "Thank you for contacting A&S Contracting Services. We'll respond within one business day and schedule your free estimate.";
 $canonicalUrl    = $siteUrl . '/thank-you/';
 $currentPage     = '';
-$cssVersion      = '3';
+$cssVersion      = '5';
 $noindex         = true;
 
 include $_SERVER['DOCUMENT_ROOT'].'/includes/head.php';

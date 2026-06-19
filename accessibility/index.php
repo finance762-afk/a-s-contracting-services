@@ -7,7 +7,7 @@ $pageTitle       = "Accessibility Statement | A&S Contracting Services";
 $pageDescription = "Accessibility Statement for A&S Contracting Services. Our commitment to WCAG 2.1 AA accessibility and how to request accommodations.";
 $canonicalUrl    = $siteUrl . '/accessibility/';
 $currentPage     = 'legal';
-$cssVersion      = '3';
+$cssVersion      = '5';
 
 $schemaData = [
     '@context'   => 'https://schema.org',

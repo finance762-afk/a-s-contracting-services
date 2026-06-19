@@ -7,7 +7,7 @@ $pageTitle       = "Privacy Policy | A&S Contracting Services";
 $pageDescription = "Privacy Policy for A&S Contracting Services. Explains how we collect, use, and protect your personal information. Includes CCPA/CPRA rights and SMS consent terms.";
 $canonicalUrl    = $siteUrl . '/privacy-policy/';
 $currentPage     = 'legal';
-$cssVersion      = '3';
+$cssVersion      = '5';
 
 $schemaData = [
     '@context'   => 'https://schema.org',
