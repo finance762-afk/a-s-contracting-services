@@ -409,10 +409,6 @@ section.hero { padding: 0; }
 }
 .mobile-cta-bar .btn { width: 100%; justify-content: center; }
 
-/* === Animations === */
-[data-animate] { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
-[data-animate].animated { opacity: 1; transform: translateY(0); }
-
 /* === Responsive: Tablet (768px) === */
 @media (max-width: 768px) {
   h1 { font-size: var(--font-size-4xl); }
@@ -972,6 +968,13 @@ html.js-anim .reveal-down  { transform: translateY(-28px); }
 html.js-anim .reveal-left  { transform: translateX(28px); }
 html.js-anim .reveal-right { transform: translateX(-28px); }
 html.js-anim .reveal-scale { transform: scale(0.92); }
+/* Revealed state: html.js-anim prefix gives specificity (0,3,1) > hidden state (0,2,1) */
+html.js-anim .reveal-up.revealed,
+html.js-anim .reveal-down.revealed,
+html.js-anim .reveal-left.revealed,
+html.js-anim .reveal-right.revealed,
+html.js-anim .reveal-scale.revealed { opacity: 1; transform: none; }
+/* Fallback for pages without html.js-anim (JS disabled / noscript path) */
 .reveal-up.revealed,
 .reveal-down.revealed,
 .reveal-left.revealed,
@@ -982,10 +985,12 @@ html.js-anim .reveal-scale { transform: scale(0.92); }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* prefers-reduced-motion */
+/* prefers-reduced-motion — !important needed to override html.js-anim specificity */
 @media (prefers-reduced-motion: reduce) {
+  html.js-anim .reveal-up, html.js-anim .reveal-down, html.js-anim .reveal-left,
+  html.js-anim .reveal-right, html.js-anim .reveal-scale,
   .reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-scale {
-    opacity: 1; transform: none; transition: none;
+    opacity: 1 !important; transform: none !important; transition: none !important;
   }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }

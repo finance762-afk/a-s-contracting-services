@@ -8,7 +8,7 @@ $pageTitle       = "General Contractor in Warrenton, MO | A&S Contracting Servic
 $pageDescription = "A&S Contracting Services — licensed, insured general contractor in Warrenton, MO. Roofing, siding, gutters, windows, interior renovations & more within 50 miles. Free estimates.";
 $canonicalUrl    = $siteUrl . '/';
 $currentPage     = 'home';
-$cssVersion      = '3';
+$cssVersion      = '5';
 
 // Hero image (first client photo — best exterior/roofing shot)
 $heroPhoto       = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/photos/1779984851004-bey4ix-53-Aug_08__2025_00-54-39-zixD.jpg';
@@ -1251,31 +1251,7 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
   transform: translateY(-2px);
 }
 
-/* ─── REVEAL ANIMATIONS ────────────────────────────────────────────────────── */
-.reveal-up     { opacity: 0; transform: translateY(32px);  transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal-left   { opacity: 0; transform: translateX(-32px); transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal-right  { opacity: 0; transform: translateX(32px);  transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal-scale  { opacity: 0; transform: scale(0.93);       transition: opacity 0.65s ease, transform 0.65s ease; }
-
-.reveal-up.revealed,
-.reveal-left.revealed,
-.reveal-right.revealed,
-.reveal-scale.revealed {
-  opacity: 1;
-  transform: none;
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.32s; }
-.reveal-delay-4 { transition-delay: 0.46s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal-up, .reveal-left, .reveal-right, .reveal-scale {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
+/* Reveal animations handled by framework.css — no overrides needed here */
 
 /* ─── FLOATING ACCENT ──────────────────────────────────────────────────────── */
 .float-accent {
@@ -1289,6 +1265,94 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
 @keyframes float-drift {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50%       { transform: translateY(-18px) rotate(6deg); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FACELIFT v5 — premium polish layer
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Hero H1 — true accent-FONT emphasis (Fraunces italic), not color alone */
+.hero-title .accent {
+  font-family: var(--font-accent, 'Fraunces', serif);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: -0.01em;
+}
+/* Closing CTA headline — matching accent-font emphasis */
+.closing-cta-section h2 .accent {
+  font-family: var(--font-accent, 'Fraunces', serif);
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Emphasis words on LIGHT sections: silver accent text is low-contrast on white,
+   so render the word in primary ink with an on-brand accent underline highlight. */
+.services-header h2 .text-accent,
+.about-left h2 .text-accent,
+.faq-header h2 .text-accent {
+  color: var(--color-primary);
+  font-family: var(--font-accent, 'Fraunces', serif);
+  font-style: italic;
+  background-image: linear-gradient(transparent 60%, rgba(var(--color-accent-rgb), 0.65) 60%);
+  background-repeat: no-repeat;
+  padding: 0 0.06em;
+}
+
+/* Accent-font section subtitle — unifies About + Reviews with the services header */
+.section-subtitle-accent {
+  font-family: var(--font-accent, 'Fraunces', serif);
+  font-style: italic;
+  font-size: 1.12rem;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: var(--space-sm);
+  line-height: 1.3;
+}
+
+/* Construction-appropriate floating decorative accents (roof chevrons / blueprint) */
+.deco-accent {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  color: var(--color-primary);
+}
+.deco-accent svg { display: block; width: 100%; height: 100%; }
+.services-section .deco-accent {
+  width: clamp(160px, 22vw, 320px);
+  aspect-ratio: 1;
+  top: var(--space-2xl);
+  right: -48px;
+  opacity: 0.05;
+  animation: float-drift 11s ease-in-out infinite;
+}
+.about-section .deco-accent {
+  width: clamp(140px, 18vw, 260px);
+  aspect-ratio: 1;
+  bottom: var(--space-xl);
+  left: -36px;
+  opacity: 0.04;
+  animation: float-drift 13s ease-in-out infinite;
+}
+
+/* Service cards — premium accent bar that wipes in on hover (index-scoped) */
+.services-section .service-card-with-image { position: relative; }
+.services-section .service-card-with-image::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition, 0.3s ease);
+  z-index: 4;
+}
+.services-section .service-card-with-image:hover::before { transform: scaleX(1); }
+
+/* Keep decorative accents from animating when reduced motion is requested */
+@media (prefers-reduced-motion: reduce) {
+  .deco-accent { animation: none !important; }
 }
 
 </style>
@@ -1486,9 +1550,9 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
 </div><!-- /.ticker-strip -->
 
 
-<!-- SVG Divider: wave into services section -->
+<!-- SVG Divider: wave from ticker (accent) into services section (bg) — bg matches ticker above, no seam -->
 <div class="svg-divider" aria-hidden="true">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 56" preserveAspectRatio="none" style="background:var(--color-primary);display:block;width:100%;" height="56">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 56" preserveAspectRatio="none" style="background:var(--color-accent);display:block;width:100%;" height="56">
     <path d="M0,0 C360,56 1080,56 1440,0 L1440,56 L0,56 Z" fill="var(--color-bg,#f8f8f8)"/>
   </svg>
 </div>
@@ -1499,7 +1563,16 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
      ═══════════════════════════════════════════════════════════════════════════ -->
 <section class="services-section" aria-label="A&S Contracting Services — general contractor services">
 
-  <div style="max-width:var(--max-width,1280px);margin:0 auto;padding:0 var(--space-lg);">
+  <!-- Floating decorative accent — stacked roof chevrons (construction-appropriate, ~5% opacity) -->
+  <div class="deco-accent" aria-hidden="true">
+    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 46 L50 13 L92 46"/>
+      <path d="M8 64 L50 31 L92 64"/>
+      <path d="M8 82 L50 49 L92 82"/>
+    </svg>
+  </div>
+
+  <div style="position:relative;z-index:1;max-width:var(--max-width,1280px);margin:0 auto;padding:0 var(--space-lg);">
 
     <!-- Section Header -->
     <div class="services-header reveal-up">
@@ -1632,7 +1705,7 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
      MID-PAGE CTA BANNER
      ═══════════════════════════════════════════════════════════════════════════ -->
 <section class="mid-cta-banner" aria-label="Request your free estimate">
-  <div class="mid-cta-inner">
+  <div class="mid-cta-inner reveal-up">
     <p class="mid-cta-eyebrow">No Obligation — Same-Day Response</p>
     <h2>Ready to start your project in Warrenton?</h2>
     <p>
@@ -1676,11 +1749,23 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
 
   <div class="about-num-watermark" aria-hidden="true">02</div>
 
+  <!-- Floating decorative accent — blueprint grid (construction-appropriate, ~4% opacity) -->
+  <div class="deco-accent" aria-hidden="true">
+    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+      <rect x="8" y="8" width="84" height="84" rx="2"/>
+      <line x1="8" y1="36" x2="92" y2="36"/>
+      <line x1="8" y1="64" x2="92" y2="64"/>
+      <line x1="36" y1="8" x2="36" y2="92"/>
+      <line x1="64" y1="8" x2="64" y2="92"/>
+    </svg>
+  </div>
+
   <div class="about-inner">
 
     <!-- Left: Story + Process -->
     <div class="about-left">
       <span class="about-eyebrow">Why A&amp;S Contracting</span>
+      <span class="section-subtitle-accent">Local. Licensed. Accountable.</span>
       <h2>
         A licensed <span class="text-accent">Warrenton contractor</span> who shows up and finishes the job
       </h2>
@@ -1788,6 +1873,7 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
 
   <div class="reviews-header">
     <span class="reviews-eyebrow" aria-hidden="true">What Clients Say</span>
+    <span class="section-subtitle-accent">Word of mouth, earned job by job</span>
     <h2>Real results from Warrenton homeowners</h2>
     <p>
       Rated 5.0 stars by homeowners across Warren County, MO — from quick gutter repairs
@@ -1934,7 +2020,7 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
      ═══════════════════════════════════════════════════════════════════════════ -->
 <section class="closing-cta-section" aria-label="Get your free estimate from A&S Contracting Services">
 
-  <div class="closing-inner">
+  <div class="closing-inner reveal-scale">
     <span class="closing-cta-eyebrow">Warrenton, MO &amp; 50-Mile Radius</span>
     <h2>
       Your next project deserves a <span class="accent">licensed contractor</span> near me
@@ -1959,54 +2045,6 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
 </section><!-- /.closing-cta-section -->
 
 
-<!-- Intersection Observer for reveal animations -->
-<script>
-(function () {
-  'use strict';
-
-  // ─── Scroll Reveals ────────────────────────────────────────────────────
-  var revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale');
-  if ('IntersectionObserver' in window && revealEls.length) {
-    var revealObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(function (el) { revealObserver.observe(el); });
-  } else {
-    // Fallback: reveal all immediately
-    revealEls.forEach(function (el) { el.classList.add('revealed'); });
-  }
-
-  // ─── Stat Counters ─────────────────────────────────────────────────────
-  var statEls = document.querySelectorAll('[data-counter]');
-  if ('IntersectionObserver' in window && statEls.length) {
-    var counterObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var el     = entry.target;
-        var target = parseInt(el.getAttribute('data-counter'), 10);
-        var start  = 0;
-        var duration = 1400;
-        var step = function (timestamp) {
-          if (!start) start = timestamp;
-          var progress = Math.min((timestamp - start) / duration, 1);
-          var ease = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.floor(ease * target);
-          if (progress < 1) window.requestAnimationFrame(step);
-          else el.textContent = target;
-        };
-        window.requestAnimationFrame(step);
-        counterObserver.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-    statEls.forEach(function (el) { counterObserver.observe(el); });
-  }
-
-})();
-</script>
+<!-- Reveal animations + stat counters handled globally by /assets/js/main.js -->
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
