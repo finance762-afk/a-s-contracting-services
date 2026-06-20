@@ -147,6 +147,8 @@ $_schemaJson = json_encode($_schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES 
   <link rel="stylesheet" href="/assets/css/framework.css?v=<?php echo htmlspecialchars($cssVersion); ?>">
   <!-- Reveal fallback: if JS is disabled or blocked, show all animated elements -->
   <noscript><style>.reveal-up,.reveal-down,.reveal-left,.reveal-right,.reveal-scale{opacity:1!important;transform:none!important;}</style></noscript>
+  <!-- Reveal revealed-state guarantee: ensures .revealed beats old cached CSS specificity -->
+  <style>html.js-anim .reveal-up.revealed,html.js-anim .reveal-down.revealed,html.js-anim .reveal-left.revealed,html.js-anim .reveal-right.revealed,html.js-anim .reveal-scale.revealed,.reveal-up.revealed,.reveal-down.revealed,.reveal-left.revealed,.reveal-right.revealed,.reveal-scale.revealed{opacity:1!important;transform:none!important}</style>
 
   <!-- Google Analytics — replace G-XXXXXXXXXX post-launch
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>

@@ -8,9 +8,9 @@
 $slug            = 'a-s-contracting-services';
 $siteName        = 'A&S Contracting Services';
 $tagline         = 'Building, Repairing, and Improving Homes Across Warrenton and Surrounding Areas.';
-$phone           = '';
+$phone           = '(636) 359-7204';
 $phoneSecondary  = '';
-$email           = '';
+$email           = 'blake@ascontractingservices.com';
 $industry        = 'general_contractor';
 $yearEstablished = 2023;
 $yearsInBusiness = 3;

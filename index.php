@@ -1584,6 +1584,8 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
         A&amp;S Contracting Services handles roofing, siding, gutters, soffit &amp; fascia,
         windows &amp; doors, interior renovations, exterior work, drywall, and full general
         contracting projects for Warrenton homeowners and commercial clients across Warren County, MO.
+        Every Warren County project starts with a free on-site estimate, fully licensed and
+        insured crews, and a written scope of work before we begin.
       </p>
       <span class="section-subtitle">Built Right. Built to Last.</span>
       <p class="prose">

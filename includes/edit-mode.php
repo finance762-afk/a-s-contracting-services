@@ -12,6 +12,10 @@
  * after config.php). All references are guarded so missing vars never fatal.
  */
 
+$pageTitle = $pageTitle ?? '';
+$pageDescription = $pageDescription ?? '';
+$canonicalUrl = $canonicalUrl ?? '';
+
 $__p1_host = $_SERVER['HTTP_HOST'] ?? '';
 $__p1_isPreview = (bool) preg_match('/^preview-[a-z0-9-]+\.pageone\.cloud$/i', $__p1_host);
 

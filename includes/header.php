@@ -8,6 +8,10 @@
  * Expects config.php + functions.php already included via head.php.
  */
 
+$pageTitle = $pageTitle ?? '';
+$pageDescription = $pageDescription ?? '';
+$canonicalUrl = $canonicalUrl ?? '';
+
 if (!isset($currentPage)) $currentPage = '';
 
 // Helper: aria-current on active page link
