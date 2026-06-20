@@ -42,12 +42,28 @@ DirectoryIndex index.php index.html
 # Clean URLs
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    # Canonical: strip a trailing ".php" from direct requests (/about.php -> /about)
+    RewriteCond %{REQUEST_URI} !^/assets/
+    RewriteCond %{REQUEST_URI} !^/includes/
+    RewriteCond %{THE_REQUEST} \s/+([^.\s?]+)\.php[\s?] [NC]
+    RewriteRule ^ /%1 [NE,L,R=301]
+
+    # A real directory requested without a trailing slash -> add one, so that
+    # DirectoryIndex serves its index.php (e.g. /services/roofing -> /services/roofing/)
+    RewriteCond %{REQUEST_URI} !^/assets/
+    RewriteCond %{REQUEST_URI} !^/includes/
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^(.+[^/])$ /$1/ [L,R=301]
+
+    # Map an extensionless URL to its .php file ONLY when no real file or
+    # directory matches. The !-d guard is what lets directory/index.php pages
+    # resolve via DirectoryIndex instead of being rewritten to a missing "<dir>.php".
     RewriteCond %{REQUEST_URI} !^/assets/
     RewriteCond %{REQUEST_URI} !^/includes/
     RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^([^\.]+)$ $1.php [NC,L]
-    RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
-    RewriteRule ^ /%1 [NC,L,R=301]
 </IfModule>
 
 ErrorDocument 404 /404.php
