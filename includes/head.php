@@ -115,6 +115,9 @@ $_schemaJson = json_encode($_schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES 
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <?php endif; ?>
   <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>">
+  <?php if (!empty($gscVerification)): ?>
+  <meta name="google-site-verification" content="<?php echo htmlspecialchars($gscVerification); ?>">
+  <?php endif; ?>
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">

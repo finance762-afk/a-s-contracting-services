@@ -205,3 +205,8 @@ $formAction = 'https://design.pageone.cloud/api/leads/a-s-contracting-services';
 // Logo (from client asset storage)
 $logoUrl = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/logo/1779995343360-unnamed.jpg';
 $leadsFormSecret = 'bac7714a8f41505ab12d75311ccbb11a6374e38b1a010d69111c84a652cfa0f3'; // spam-shield HMAC (matches leads fn LEADS_FORM_SECRET)
+
+// Google Search Console — URL-prefix property verification (META method).
+// Used because the client owns the domain's DNS; we prove ownership through
+// the site we host. Empty string = tag not rendered.
+$gscVerification = 'grjaCQ3pWiWWshfhPc7HMOkCV2Cphans60_UOVBAR74';
