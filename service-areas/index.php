@@ -205,6 +205,13 @@ include $_SERVER['DOCUMENT_ROOT'].'/includes/head.php';
           <label class="form-consent-item"><input type="checkbox" name="sms_opt_in" value="yes"><span class="consent-label"><strong>SMS (optional):</strong> Receive texts. Msg &amp; data rates apply. Reply STOP to opt out.</span></label>
           <label class="form-consent-item"><input type="checkbox" name="terms_accepted" value="yes" required><span class="consent-label">I agree to the <a href="/privacy-policy/">Privacy Policy</a> &amp; <a href="/terms/">Terms</a>. <span class="required-star">*</span></span></label>
         </fieldset>
+        <!-- spam shield: signed render timestamp + JS interaction signal -->
+        <?php $__ft_ts = (string) time(); ?>
+        <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+        <input type="hidden" name="_js" value="" class="js-shield-field">
+        <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+        <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+        <?php } ?>
         <button type="submit" class="btn-form-submit">Check My Area →</button>
       </form>
     </aside>
