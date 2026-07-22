@@ -200,7 +200,7 @@ $socialLinks = [
 ];
 
 // Lead Form Endpoint
-$formAction = 'https://design.pageone.cloud/api/leads/a-s-contracting-services';
+$formAction = 'https://db.pageone.cloud/functions/v1/leads/a-s-contracting-services';
 
 // Logo (from client asset storage)
 $logoUrl = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/logo/1779995343360-unnamed.jpg';
