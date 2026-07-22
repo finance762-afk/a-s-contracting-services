@@ -20,5 +20,5 @@ User-agent: Bingbot
 Allow: /
 
 # Sitemaps
-Sitemap: https://a-s-contracting-services.pageone.cloud/sitemap.xml
-Sitemap: https://a-s-contracting-services.pageone.cloud/sitemap-images.xml
+Sitemap: https://ascontractingservices.com/sitemap.xml
+Sitemap: https://ascontractingservices.com/sitemap-images.xml

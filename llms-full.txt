@@ -11,8 +11,8 @@
 - **Headquarters:** Warrenton, MO 63383
 - **County:** Warren County, Missouri
 - **Service Radius:** 50 miles from Warrenton (approximately 80 km)
-- **Website:** https://a-s-contracting-services.pageone.cloud/
-- **Contact Page:** https://a-s-contracting-services.pageone.cloud/contact/
+- **Website:** https://ascontractingservices.com/
+- **Contact Page:** https://ascontractingservices.com/contact/
 - **Hours:** Mon–Fri 7:00 AM–6:00 PM, Sat 8:00 AM–3:00 PM, Sun Closed
 
 ## Business Overview
@@ -27,7 +27,7 @@ A&S operates on a written-estimate, written-contract model. No verbal-only prici
 
 ## Detailed Service Descriptions
 
-### Roofing (https://a-s-contracting-services.pageone.cloud/services/roofing/)
+### Roofing (https://ascontractingservices.com/services/roofing/)
 
 A&S Contracting Services installs, repairs, and replaces residential and light commercial roofing systems throughout Warrenton and Warren County. Roofing materials installed include architectural asphalt shingles (the most common residential choice in Missouri), 3-tab shingles for budget projects, metal roofing panels for longevity-focused homeowners, and rubber EPDM for flat or low-slope applications.
 
@@ -42,7 +42,7 @@ A&S Contracting Services installs, repairs, and replaces residential and light c
 
 ---
 
-### Siding (https://a-s-contracting-services.pageone.cloud/services/siding/)
+### Siding (https://ascontractingservices.com/services/siding/)
 
 A&S installs and repairs siding for residential homes and light commercial structures across Warren County and surrounding areas. Materials available include vinyl siding (most common — lowest cost, good durability), fiber cement siding (James Hardie and similar — premium durability, fire and pest resistance), and engineered wood siding (premium appearance at a moderate price point).
 
@@ -55,7 +55,7 @@ A&S installs and repairs siding for residential homes and light commercial struc
 
 ---
 
-### Gutters (https://a-s-contracting-services.pageone.cloud/services/gutters/)
+### Gutters (https://ascontractingservices.com/services/gutters/)
 
 A&S installs seamless gutters (5" K-style and 6" for high-flow rooflines), traditional sectional gutters, half-round gutters, and gutter guard systems. All seamless gutters are fabricated on-site to eliminate seam-related leaks. Downspout routing and underground drainage connections available.
 
@@ -68,7 +68,7 @@ A&S installs seamless gutters (5" K-style and 6" for high-flow rooflines), tradi
 
 ---
 
-### Soffit (https://a-s-contracting-services.pageone.cloud/services/soffit/)
+### Soffit (https://ascontractingservices.com/services/soffit/)
 
 Soffit is the panel material covering the underside of the roof overhang. A&S installs and repairs aluminum and vinyl soffit panels in both vented (airflow-enabling) and solid configurations. Vented soffit is critical for proper attic air circulation — preventing moisture buildup, ice dams, and heat accumulation. Solid panels are used in non-ventilated roofline sections and decorative applications.
 
@@ -78,7 +78,7 @@ Soffit is the panel material covering the underside of the roof overhang. A&S in
 
 ---
 
-### Fascia (https://a-s-contracting-services.pageone.cloud/services/fascia/)
+### Fascia (https://ascontractingservices.com/services/fascia/)
 
 Fascia is the horizontal board at the base of the roof edge where gutters are attached. A&S replaces fascia using aluminum-capped wood (most common — cost-effective with superior weather resistance), solid aluminum, and composite materials. Fascia rot is one of the primary causes of gutter failure and is often hidden behind paint until a gutter section collapses.
 
@@ -86,7 +86,7 @@ Fascia is the horizontal board at the base of the roof edge where gutters are at
 
 ---
 
-### Windows & Doors (https://a-s-contracting-services.pageone.cloud/services/windows-doors/)
+### Windows & Doors (https://ascontractingservices.com/services/windows-doors/)
 
 A&S installs replacement windows and entry/patio doors for residential properties in Warrenton and surrounding counties. Window types installed include double-hung, single-hung, casement, awning, sliding, bay, bow, and specialty/custom shapes. Energy-efficient configurations with Low-E glass, argon fill, and insulated frames are standard for most installations. Entry door and patio door installation available — pre-hung units, sidelites, transoms.
 
@@ -96,7 +96,7 @@ A&S installs replacement windows and entry/patio doors for residential propertie
 
 ---
 
-### Full-Scale Interior Work (https://a-s-contracting-services.pageone.cloud/services/full-scale-interior-work/)
+### Full-Scale Interior Work (https://ascontractingservices.com/services/full-scale-interior-work/)
 
 A&S handles complete interior renovation projects — from demo through finished interior. This includes structural framing changes, insulation, drywall (all finish levels), flooring installation, interior painting, trim and millwork, and final finish details. Projects range from single-room renovations to full gut-and-rebuild of entire homes.
 
@@ -108,7 +108,7 @@ A&S handles complete interior renovation projects — from demo through finished
 
 ---
 
-### Exterior Work (https://a-s-contracting-services.pageone.cloud/services/exterior-work/)
+### Exterior Work (https://ascontractingservices.com/services/exterior-work/)
 
 Complete exterior renovation packages combining roofing, siding, soffit, fascia, gutters, windows, and trim under one project scope and one GC contract. A&S is uniquely positioned to offer full exterior packages because the company self-performs all of these trades — rather than subcontracting each to a different specialty company.
 
@@ -118,7 +118,7 @@ Complete exterior renovation packages combining roofing, siding, soffit, fascia,
 
 ---
 
-### Drywall (https://a-s-contracting-services.pageone.cloud/services/dry-wall/)
+### Drywall (https://ascontractingservices.com/services/dry-wall/)
 
 A&S installs and finishes drywall for new construction and renovation projects throughout the service area. Services include full drywall installation on new walls and ceilings, repair of damaged or water-stained drywall, texture matching for repairs (orange peel, knockdown, smooth), Level 5 finish for premium spaces, and moisture-resistant drywall in bathroom and kitchen applications.
 
@@ -128,7 +128,7 @@ A&S installs and finishes drywall for new construction and renovation projects t
 
 ---
 
-### General Contracting (https://a-s-contracting-services.pageone.cloud/services/general-contracting/)
+### General Contracting (https://ascontractingservices.com/services/general-contracting/)
 
 A&S serves as the licensed general contractor for residential and commercial construction projects that require coordinated management across multiple trades. As a GC, A&S handles: project planning and scope definition, permit applications and inspection scheduling, subcontractor coordination (for trades outside self-performed scope), material procurement and scheduling, change order management, and final project closeout.
 
@@ -155,30 +155,30 @@ A: A&S self-performs roofing, siding, gutters, soffit, fascia, windows, drywall,
 
 ## Internal Links
 
-- Homepage: https://a-s-contracting-services.pageone.cloud/
-- All Services: https://a-s-contracting-services.pageone.cloud/services/
-- Roofing: https://a-s-contracting-services.pageone.cloud/services/roofing/
-- Siding: https://a-s-contracting-services.pageone.cloud/services/siding/
-- Gutters: https://a-s-contracting-services.pageone.cloud/services/gutters/
-- Soffit: https://a-s-contracting-services.pageone.cloud/services/soffit/
-- Fascia: https://a-s-contracting-services.pageone.cloud/services/fascia/
-- Windows & Doors: https://a-s-contracting-services.pageone.cloud/services/windows-doors/
-- Full-Scale Interior Work: https://a-s-contracting-services.pageone.cloud/services/full-scale-interior-work/
-- Exterior Work: https://a-s-contracting-services.pageone.cloud/services/exterior-work/
-- Drywall: https://a-s-contracting-services.pageone.cloud/services/dry-wall/
-- General Contracting: https://a-s-contracting-services.pageone.cloud/services/general-contracting/
-- Service Areas: https://a-s-contracting-services.pageone.cloud/service-areas/
-- Warrenton, MO: https://a-s-contracting-services.pageone.cloud/areas/warrenton-mo/
-- Wright City, MO: https://a-s-contracting-services.pageone.cloud/areas/wright-city-mo/
-- Wentzville, MO: https://a-s-contracting-services.pageone.cloud/areas/wentzville-mo/
-- Troy, MO: https://a-s-contracting-services.pageone.cloud/areas/troy-mo/
-- Washington, MO: https://a-s-contracting-services.pageone.cloud/areas/washington-mo/
-- Jonesburg, MO: https://a-s-contracting-services.pageone.cloud/areas/jonesburg-mo/
-- Foristell, MO: https://a-s-contracting-services.pageone.cloud/areas/foristell-mo/
-- About: https://a-s-contracting-services.pageone.cloud/about/
-- Contact: https://a-s-contracting-services.pageone.cloud/contact/
-- FAQ: https://a-s-contracting-services.pageone.cloud/faq/
-- Privacy Policy: https://a-s-contracting-services.pageone.cloud/privacy-policy/
-- Terms of Service: https://a-s-contracting-services.pageone.cloud/terms/
-- Cookie Policy: https://a-s-contracting-services.pageone.cloud/cookie-policy/
-- Accessibility: https://a-s-contracting-services.pageone.cloud/accessibility/
+- Homepage: https://ascontractingservices.com/
+- All Services: https://ascontractingservices.com/services/
+- Roofing: https://ascontractingservices.com/services/roofing/
+- Siding: https://ascontractingservices.com/services/siding/
+- Gutters: https://ascontractingservices.com/services/gutters/
+- Soffit: https://ascontractingservices.com/services/soffit/
+- Fascia: https://ascontractingservices.com/services/fascia/
+- Windows & Doors: https://ascontractingservices.com/services/windows-doors/
+- Full-Scale Interior Work: https://ascontractingservices.com/services/full-scale-interior-work/
+- Exterior Work: https://ascontractingservices.com/services/exterior-work/
+- Drywall: https://ascontractingservices.com/services/dry-wall/
+- General Contracting: https://ascontractingservices.com/services/general-contracting/
+- Service Areas: https://ascontractingservices.com/service-areas/
+- Warrenton, MO: https://ascontractingservices.com/areas/warrenton-mo/
+- Wright City, MO: https://ascontractingservices.com/areas/wright-city-mo/
+- Wentzville, MO: https://ascontractingservices.com/areas/wentzville-mo/
+- Troy, MO: https://ascontractingservices.com/areas/troy-mo/
+- Washington, MO: https://ascontractingservices.com/areas/washington-mo/
+- Jonesburg, MO: https://ascontractingservices.com/areas/jonesburg-mo/
+- Foristell, MO: https://ascontractingservices.com/areas/foristell-mo/
+- About: https://ascontractingservices.com/about/
+- Contact: https://ascontractingservices.com/contact/
+- FAQ: https://ascontractingservices.com/faq/
+- Privacy Policy: https://ascontractingservices.com/privacy-policy/
+- Terms of Service: https://ascontractingservices.com/terms/
+- Cookie Policy: https://ascontractingservices.com/cookie-policy/
+- Accessibility: https://ascontractingservices.com/accessibility/

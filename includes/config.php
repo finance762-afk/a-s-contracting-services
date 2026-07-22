@@ -25,7 +25,7 @@ $address = [
 
 // Domain / URL
 // No production_domain in build-plan — using preview URL per build standards
-$domain  = 'a-s-contracting-services.pageone.cloud';
+$domain  = 'ascontractingservices.com';
 $siteUrl = 'https://' . $domain;
 // NOTE: $canonicalUrl is NOT set here — each page sets its own before including head.php
 
