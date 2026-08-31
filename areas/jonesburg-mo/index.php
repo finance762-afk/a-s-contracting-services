@@ -426,7 +426,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <legend>Consent</legend>
           <label class="consent-row"><input type="checkbox" name="email_opt_in" value="yes"><span>Email updates (optional) — promotions &amp; project news.</span></label>
           <label class="consent-row"><input type="checkbox" name="sms_opt_in" value="yes"><span>SMS/Text updates (optional) — msg &amp; data rates apply. Reply STOP to opt out. Consent is not a condition of purchase.</span></label>
-          <label class="consent-row"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/privacy-policy/">Privacy Policy</a> &amp; <a href="/terms/">Terms</a>. <span class="required-star">*</span></span></label>
+          <label class="consent-row"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> &amp; <a href="/terms/" target="_blank" rel="noopener">Terms</a>. <span class="required-star">*</span></span></label>
         </fieldset>
         <!-- spam shield: signed render timestamp + JS interaction signal -->
         <?php $__ft_ts = (string) time(); ?>

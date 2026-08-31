@@ -107,7 +107,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/includes/head.php';
       <p>Your use of the Site is also governed by our <a href="/privacy-policy/">Privacy Policy</a>, which is incorporated into these Terms by reference. Please review our Privacy Policy to understand our practices regarding the collection and use of your personal information.</p>
 
       <h2>11. TCPA Consent and Communications</h2>
-      <p>If you submitted a contact form and provided a phone number or opted into SMS communications, you acknowledge that you consented to be contacted by A&S Contracting Services as described in the form at the time of submission and in our <a href="/privacy-policy/">Privacy Policy</a>. To opt out of SMS communications, reply STOP to any text message. To opt out of email communications, use the unsubscribe link in any marketing email.</p>
+      <p>If you submitted a contact form and provided a phone number or opted into SMS communications, you acknowledge that you consented to be contacted by A&S Contracting Services as described in the form at the time of submission and in our <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>. To opt out of SMS communications, reply STOP to any text message. To opt out of email communications, use the unsubscribe link in any marketing email.</p>
 
       <h2>12. Governing Law</h2>
       <p>These Terms shall be governed by and construed in accordance with the laws of the State of Missouri, without regard to its conflict-of-law provisions. Any legal action arising under these Terms shall be brought exclusively in the state or federal courts located in Warren County, Missouri, and you consent to personal jurisdiction in those courts.</p>

@@ -291,7 +291,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <legend>Communication Consent</legend>
           <label class="consent-row"><input type="checkbox" name="email_opt_in" value="yes"><span><strong>Email (optional):</strong> Receive emails about my inquiry.</span></label>
           <label class="consent-row"><input type="checkbox" name="sms_opt_in" value="yes"><span><strong>SMS (optional):</strong> Texts. Msg &amp; data rates apply. Reply STOP.</span></label>
-          <label class="consent-row"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/privacy-policy/">Privacy Policy</a> &amp; <a href="/terms/">Terms</a>. <span class="required-star">*</span></span></label>
+          <label class="consent-row"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> &amp; <a href="/terms/" target="_blank" rel="noopener">Terms</a>. <span class="required-star">*</span></span></label>
         </fieldset>
         <!-- spam shield: signed render timestamp + JS interaction signal -->
         <?php $__ft_ts = (string) time(); ?>

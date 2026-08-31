@@ -1480,13 +1480,13 @@ $homeServiceSlugs = ['roofing','siding','gutters','soffit','fascia','windows-doo
         <div class="p1-consent">
           <label class="p1-consent-line">
             <input type="checkbox" name="terms_accepted" value="yes" required>
-            <span>I agree to the <a href="/terms/">Terms of Service</a> and <a href="/privacy-policy/">Privacy Policy</a> and consent to be contacted about my request. *</span>
+            <span>I agree to the <a href="/terms/" target="_blank" rel="noopener">Terms of Service</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted about my request. *</span>
           </label>
         </div>
         <button type="submit" class="btn-block">Get My Free Estimate →</button>
 
         <p class="form-footnote">
-          By submitting, you agree to our <a href="/terms/">Terms</a> and <a href="/privacy-policy/">Privacy Policy</a>.
+          By submitting, you agree to our <a href="/terms/" target="_blank" rel="noopener">Terms</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>.
           We never sell your information.
         </p>
       </form>
