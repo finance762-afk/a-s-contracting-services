@@ -27,8 +27,8 @@ $schema = <<<SCHEMA
         "@type": "Organization",
         "@id": "{$siteUrl}/#organization"
       },
-      "datePublished": "2024-09-08",
-      "dateModified": "2024-09-08",
+      "datePublished": "2026-09-08",
+      "dateModified": "2026-09-08",
       "url": "{$canonicalUrl}",
       "keywords": "siding replacement Missouri, vinyl siding damage, when to replace siding, siding repair vs replacement, exterior home maintenance"
     },
@@ -64,261 +64,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
-<style>
-/* Blog post styles - reuse from cost guide */
-.blog-post-hero {
-  background: linear-gradient(135deg, var(--color-primary) 0%, rgba(0,0,0,0.85) 100%);
-  padding: calc(var(--nav-height) + 40px) 0 60px;
-  position: relative;
-  overflow: hidden;
-}
-
-.blog-post-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.4;
-}
-
-.blog-post-hero .container {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-}
-
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.7);
-}
-
-.breadcrumb a {
-  color: var(--color-accent);
-  text-decoration: none;
-}
-
-.breadcrumb-sep {
-  color: rgba(255,255,255,0.4);
-}
-
-.blog-post-meta {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 16px;
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.8);
-}
-
-.blog-post-meta__item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.blog-post-category {
-  background: var(--color-accent);
-  color: var(--color-primary);
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: inline-block;
-  margin-bottom: 16px;
-}
-
-.blog-post-hero h1 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.blog-post-excerpt {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.9);
-}
-
-.blog-post-content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 80px 20px;
-}
-
-.answer-block {
-  background: #f8f9fa;
-  border-left: 4px solid var(--color-accent);
-  padding: 24px;
-  margin-bottom: 40px;
-  border-radius: 0 8px 8px 0;
-}
-
-.answer-block p {
-  margin-bottom: 16px;
-  font-size: 1.0625rem;
-  line-height: 1.7;
-}
-
-.answer-block p:last-child {
-  margin-bottom: 0;
-}
-
-.blog-post-content h2 {
-  font-size: 1.75rem;
-  margin: 48px 0 20px;
-  font-weight: 700;
-  color: var(--color-primary);
-  line-height: 1.3;
-}
-
-.blog-post-content h3 {
-  font-size: 1.375rem;
-  margin: 32px 0 16px;
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-.blog-post-content p {
-  margin-bottom: 20px;
-  line-height: 1.7;
-  font-size: 1.0625rem;
-}
-
-.blog-post-content ul,
-.blog-post-content ol {
-  margin: 20px 0 20px 24px;
-  line-height: 1.7;
-}
-
-.blog-post-content li {
-  margin-bottom: 8px;
-}
-
-.blog-post-content strong {
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-.blog-post-content a {
-  color: var(--color-primary);
-  text-decoration: underline;
-  transition: color 0.2s;
-}
-
-.blog-post-content a:hover {
-  color: var(--color-accent);
-}
-
-.cta-band {
-  background: linear-gradient(135deg, var(--color-accent) 0%, #a5a7a9 100%);
-  padding: 60px 20px;
-  text-align: center;
-  margin: 60px 0;
-  border-radius: 12px;
-}
-
-.cta-band h3 {
-  font-size: 1.75rem;
-  margin-bottom: 12px;
-  color: var(--color-primary);
-}
-
-.cta-band p {
-  font-size: 1.0625rem;
-  margin-bottom: 24px;
-  color: var(--color-primary);
-  opacity: 0.9;
-}
-
-.related-articles {
-  background: #f8f9fa;
-  padding: 60px 20px;
-  margin-top: 60px;
-  border-radius: 12px;
-}
-
-.related-articles h3 {
-  text-align: center;
-  font-size: 1.75rem;
-  margin-bottom: 32px;
-}
-
-.related-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.related-card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  transition: transform 0.2s;
-}
-
-.related-card:hover {
-  transform: translateY(-2px);
-}
-
-.related-card__category {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 8px;
-}
-
-.related-card__title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.related-card__title a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-.related-card__excerpt {
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  color: var(--color-text);
-  margin-bottom: 16px;
-}
-
-.related-card__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 600;
-  font-size: 0.9375rem;
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-@media (max-width: 768px) {
-  .blog-post-content {
-    padding: 60px 20px;
-  }
-
-  .blog-post-content h2 {
-    font-size: 1.5rem;
-  }
-
-  .related-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
 
 <!-- Hero -->
 <section class="blog-post-hero">
@@ -338,7 +83,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="blog-post-meta">
       <span class="blog-post-meta__item">
         <?php echo icon('calendar', 16); ?>
-        September 8, 2024
+        September 8, 2026
       </span>
       <span class="blog-post-meta__item">
         <?php echo icon('clock', 16); ?>
@@ -419,14 +164,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     walls are a likely culprit.</strong>
   </p>
 
-  <div class="cta-band">
+  <section class="cta-band post-cta" id="estimate">
+    <div class="post-cta-grid">
+      <div>
     <h3>Not Sure If Your Siding Needs Replacement?</h3>
     <p>
-      A&S Contracting Services provides free siding inspections across Warren, St. Charles, Lincoln, and Franklin counties.
-      We'll assess condition, identify problem areas, and give you a written estimate for repair or replacement—no pressure.
+    A&S Contracting Services provides free siding inspections across Warren, St. Charles, Lincoln, and Franklin counties.
+    We'll assess condition, identify problem areas, and give you a written estimate for repair or replacement—no pressure.
     </p>
     <a href="/contact/" class="btn-primary">Schedule Free Inspection</a>
-  </div>
+        <a href="tel:<?php echo $phoneTel; ?>" class="btn btn-primary">Call <?php echo $phone; ?></a>
+      </div>
+      <?php $heroFormTitle = 'Get a free estimate'; $heroFormId = 'post'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
+    </div>
+  </section>
 
   <h2>When Is Repair More Cost-Effective Than Replacement?</h2>
   <p>
