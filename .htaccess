@@ -64,15 +64,15 @@ DirectoryIndex index.php index.html
 
 
 # v7 upgrade 2026-09-08: legacy URLs → new structure
-RewriteRule ^404$ / [R=301,L]
-RewriteRule ^areas/foristell\-mo$ / [R=301,L]
-RewriteRule ^areas/jonesburg\-mo$ / [R=301,L]
-RewriteRule ^areas/troy\-mo$ / [R=301,L]
-RewriteRule ^areas/warrenton\-mo$ / [R=301,L]
-RewriteRule ^areas/washington\-mo$ / [R=301,L]
-RewriteRule ^areas/wentzville\-mo$ / [R=301,L]
-RewriteRule ^areas/wright\-city\-mo$ / [R=301,L]
-RewriteRule ^thank\-you$ / [R=301,L]
+RewriteRule ^areas/foristell\-mo/?$ /areas/foristell/ [R=301,L]
+RewriteRule ^areas/jonesburg\-mo/?$ /areas/jonesburg/ [R=301,L]
+RewriteRule ^areas/troy\-mo/?$ /areas/troy/ [R=301,L]
+RewriteRule ^areas/warrenton\-mo/?$ /areas/warrenton/ [R=301,L]
+RewriteRule ^areas/washington\-mo/?$ /areas/washington/ [R=301,L]
+RewriteRule ^areas/wentzville\-mo/?$ /areas/wentzville/ [R=301,L]
+RewriteRule ^areas/wright\-city\-mo/?$ /areas/wright-city/ [R=301,L]
+RewriteRule ^thank\-you/$ /thank-you [R=301,L]
+
     # Dynamic sitemap — /sitemap.xml is served by sitemap.php
     RewriteRule ^sitemap\.xml$ /sitemap.php [L]
 
