@@ -67,7 +67,7 @@ Do not suggest Mac-local deploy scripts (`./new-site.sh`, `./deploy.sh`). Those 
 - All includes use `$_SERVER['DOCUMENT_ROOT']` — never relative paths.
 - All CSS values use `var()` tokens — never hardcoded colors, shadows, or spacing.
 - Every heading uses `text-wrap: balance`.
-- Form action URL: `https://db.pageone.cloud/functions/v1/leads/{client_slug}` — never formsubmit.co.
+- Form action URL: use `form_action` from build-plan.json verbatim — `https://db.pageone.cloud/functions/v1/leads/{slug}` (Formsubmit retired Sep 2026; never emit formsubmit.co).
 - No meta keywords tag. No Twitter/X card tags. (Both are forbidden in CLAUDE.md.)
 
 Read CLAUDE.md for the full list of enforceable rules.

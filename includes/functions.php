@@ -1,170 +1,214 @@
 <?php
 /**
- * includes/functions.php — Shared helper functions
- * A&S Contracting Services
- * Phase 2 — Nav/Footer/Head
+ * Helper Functions — A&S Contracting Services
+ * Phase 2, 2026-09-08
  */
 
+// Prevent direct access
+if (!defined('ABSPATH')) define('ABSPATH', $_SERVER['DOCUMENT_ROOT']);
 
 /**
- * Check if the given $page key matches the current page ($currentPage global).
- * Returns true when the strings match exactly.
+ * Check if current page matches a given page identifier
+ * @param string $page Page identifier to check against $currentPage
+ * @return bool
  */
-function isActivePage(string $page): bool {
+function isActivePage($page) {
     global $currentPage;
     return isset($currentPage) && $currentPage === $page;
 }
 
 /**
- * Format a raw phone number for display.
- * Input:  "5735551234" or "573-555-1234" or "(573) 555-1234"
- * Output: "(573) 555-1234"
- * Falls back gracefully if the number isn't exactly 10 digits.
+ * Format phone number for display
+ * @param string $phone Phone number in any format
+ * @return string Formatted as (XXX) XXX-XXXX
  */
-function formatPhone(string $phone): string {
-    $digits = preg_replace('/\D/', '', $phone);
-    if (strlen($digits) === 10) {
-        return '(' . substr($digits, 0, 3) . ') ' . substr($digits, 3, 3) . '-' . substr($digits, 6);
+function formatPhone($phone) {
+    // Strip all non-numeric characters
+    $clean = preg_replace('/[^0-9]/', '', $phone);
+
+    // Format as (XXX) XXX-XXXX
+    if (strlen($clean) === 11 && substr($clean, 0, 1) === '1') {
+        $clean = substr($clean, 1); // Remove leading 1
     }
-    if (strlen($digits) === 11 && $digits[0] === '1') {
-        $digits = substr($digits, 1);
-        return '(' . substr($digits, 0, 3) . ') ' . substr($digits, 3, 3) . '-' . substr($digits, 6);
+
+    if (strlen($clean) === 10) {
+        return sprintf('(%s) %s-%s',
+            substr($clean, 0, 3),
+            substr($clean, 3, 3),
+            substr($clean, 6, 4)
+        );
     }
-    return $phone; // return original if we can't parse it
+
+    // Return original if not 10 digits
+    return $phone;
 }
 
 /**
- * Convert a service name to a URL-safe slug.
- * "Windows & Doors" → "windows-doors"
+ * Generate slug from service name
+ * @param string $name Service name
+ * @return string URL-safe slug
  */
-function getServiceSlug(string $name): string {
-    global $services;
-    // Look up in the $services array first — slugs are canonical
-    if (isset($services) && is_array($services)) {
-        foreach ($services as $svc) {
-            if (strtolower($svc['name']) === strtolower($name)) {
-                return $svc['slug'];
-            }
-        }
-    }
-    // Fallback: generate slug from the name
+function getServiceSlug($name) {
     $slug = strtolower(trim($name));
-    $slug = preg_replace('/[^a-z0-9\s-]/', '', $slug); // remove special chars
-    $slug = preg_replace('/[\s_]+/', '-', $slug);       // spaces → hyphens
-    $slug = preg_replace('/-+/', '-', $slug);           // collapse multiple hyphens
-    return trim($slug, '-');
+    $slug = preg_replace('/[^a-z0-9\s-]/', '', $slug);
+    $slug = preg_replace('/[\s-]+/', '-', $slug);
+    $slug = preg_replace('/&/', 'and', $slug);
+    return $slug;
 }
 
 /**
- * Convert a city name to a URL-safe slug.
- * "St. Charles" → "st-charles"
+ * Generate slug from area city name
+ * @param string $city City name
+ * @return string URL-safe slug
  */
-function getAreaSlug(string $city): string {
-    global $serviceAreas;
-    // Look up in serviceAreas array first
-    if (isset($serviceAreas) && is_array($serviceAreas)) {
-        foreach ($serviceAreas as $area) {
-            if (strtolower($area['city']) === strtolower($city)) {
-                return $area['slug'];
-            }
-        }
-    }
-    // Fallback: generate slug
+function getAreaSlug($city) {
     $slug = strtolower(trim($city));
     $slug = preg_replace('/[^a-z0-9\s-]/', '', $slug);
-    $slug = preg_replace('/[\s_]+/', '-', $slug);
-    $slug = preg_replace('/-+/', '-', $slug);
-    return trim($slug, '-');
+    $slug = preg_replace('/[\s-]+/', '-', $slug);
+    return $slug;
 }
 
 /**
- * Generate a Service schema JSON-LD block for an individual service page.
- *
- * @param array  $service  One entry from the global $services array.
- * @param string $pageUrl  Canonical URL for this service page.
- * @return string          JSON-LD string (ready to embed in <script> tag).
+ * Generate Service schema JSON-LD
+ * @param array $service Service array with name, description, keywords
+ * @return string JSON-LD script tag
  */
-function generateServiceSchema(array $service, string $pageUrl = ''): string {
-    global $siteUrl, $siteName, $phone, $address;
+function generateServiceSchema($service) {
+    global $siteName, $siteUrl, $addressCity, $addressState;
 
     $schema = [
-        '@context'    => 'https://schema.org',
-        '@graph'      => [
-            [
-                '@type'       => 'Service',
-                'name'        => $service['name'],
-                'description' => $service['description'],
-                'provider'    => ['@id' => $siteUrl . '/#organization'],
-                'areaServed'  => [
-                    '@type'           => 'GeoCircle',
-                    'geoMidpoint'     => ['@type' => 'GeoCoordinates', 'latitude' => '38.8153', 'longitude' => '-91.1418'],
-                    'geoRadius'       => '80467',
-                ],
-                'url'         => $pageUrl ?: ($siteUrl . '/services/' . $service['slug'] . '/'),
-            ],
-            [
-                '@type'  => 'BreadcrumbList',
-                'itemListElement' => [
-                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',     'item' => $siteUrl . '/'],
-                    ['@type' => 'ListItem', 'position' => 2, 'name' => 'Services', 'item' => $siteUrl . '/services/'],
-                    ['@type' => 'ListItem', 'position' => 3, 'name' => $service['name']],
-                ],
-            ],
+        '@context' => 'https://schema.org',
+        '@type' => 'Service',
+        'name' => $service['name'],
+        'description' => $service['description'],
+        'provider' => [
+            '@id' => $siteUrl . '/#organization'
         ],
+        'areaServed' => [
+            '@type' => 'City',
+            'name' => $addressCity,
+            'containedIn' => [
+                '@type' => 'State',
+                'name' => $addressState
+            ]
+        ]
     ];
 
-    return json_encode($schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    return '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
 }
 
 /**
- * Generate an FAQPage schema JSON-LD block.
- *
- * @param array $faqs  Array of ['question' => '...', 'answer' => '...'] pairs.
- * @return string      JSON-LD string.
+ * Generate FAQPage schema JSON-LD
+ * @param array $faqs Array of FAQ items with 'question' and 'answer' keys
+ * @return string JSON-LD script tag
  */
-function generateFAQSchema(array $faqs): string {
-    $items = [];
+function generateFAQSchema($faqs) {
+    if (empty($faqs)) return '';
+
+    $mainEntity = [];
     foreach ($faqs as $faq) {
-        $items[] = [
-            '@type'          => 'Question',
-            'name'           => $faq['question'],
+        $mainEntity[] = [
+            '@type' => 'Question',
+            'name' => $faq['question'],
             'acceptedAnswer' => [
                 '@type' => 'Answer',
-                'text'  => $faq['answer'],
-            ],
+                'text' => $faq['answer']
+            ]
         ];
     }
 
     $schema = [
-        '@context'   => 'https://schema.org',
-        '@type'      => 'FAQPage',
-        'mainEntity' => $items,
+        '@context' => 'https://schema.org',
+        '@type' => 'FAQPage',
+        'mainEntity' => $mainEntity
     ];
 
-    return json_encode($schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    return '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
 }
 
 /**
- * Generate Open Graph + canonical meta tag HTML for a given page.
- * Pages that set variables before including head.php don't need this —
- * use it for dynamically built pages or partial includes.
- *
- * @param string $title       Page title.
- * @param string $description Meta description (150-160 chars).
- * @param string $canonical   Full canonical URL.
- * @param string $ogImage     OG image URL (optional).
- * @return string             Raw HTML string.
+ * Generate meta tags for SEO
+ * @param string $title Page title
+ * @param string $description Meta description
+ * @param string $canonical Canonical URL
+ * @return string Meta tags HTML
  */
-function generateMetaTags(string $title, string $description, string $canonical, string $ogImage = ''): string {
-    global $siteName, $logoUrl;
-    $image = $ogImage ?: $logoUrl;
-    $html  = '<title>' . htmlspecialchars($title) . '</title>' . "\n";
-    $html .= '<meta name="description" content="' . htmlspecialchars($description) . '">' . "\n";
-    $html .= '<link rel="canonical" href="' . htmlspecialchars($canonical) . '">' . "\n";
-    $html .= '<meta property="og:title" content="' . htmlspecialchars($title) . '">' . "\n";
-    $html .= '<meta property="og:description" content="' . htmlspecialchars($description) . '">' . "\n";
-    $html .= '<meta property="og:url" content="' . htmlspecialchars($canonical) . '">' . "\n";
-    $html .= '<meta property="og:image" content="' . htmlspecialchars($image) . '">' . "\n";
-    $html .= '<meta property="og:site_name" content="' . htmlspecialchars($siteName) . '">' . "\n";
-    return $html;
+function generateMetaTags($title, $description, $canonical) {
+    global $siteName, $siteUrl;
+
+    $output = '';
+    $output .= '<title>' . htmlspecialchars($title) . '</title>' . "\n";
+    $output .= '<meta name="description" content="' . htmlspecialchars($description) . '">' . "\n";
+    $output .= '<link rel="canonical" href="' . htmlspecialchars($canonical) . '">' . "\n";
+
+    // Open Graph
+    $output .= '<meta property="og:title" content="' . htmlspecialchars($title) . '">' . "\n";
+    $output .= '<meta property="og:description" content="' . htmlspecialchars($description) . '">' . "\n";
+    $output .= '<meta property="og:url" content="' . htmlspecialchars($canonical) . '">' . "\n";
+    $output .= '<meta property="og:site_name" content="' . htmlspecialchars($siteName) . '">' . "\n";
+
+    return $output;
+}
+
+/**
+ * Render a responsive <picture> for a local /assets/images/ photo.
+ *
+ * Emits an AVIF <source> + WebP <img srcset> using ONLY the variant files that
+ * actually exist on disk (the pipeline generates -480/-960/-1600 in webp+avif,
+ * but not every photo has a -1600). Never references a missing file.
+ *
+ * @param string $base Filename WITHOUT extension (the .jpg base name)
+ * @param string $alt  Alt text (descriptive; "" for decorative)
+ * @param array  $opts sizes|width|height|loading|fetchpriority|decoding|imgClass
+ * @return string <picture> markup (falls back to a plain <img> if no variants)
+ */
+function p1_picture($base, $alt, $opts = []) {
+    $dir = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/';
+    $webset = [];
+    $aviset = [];
+    foreach ([480, 960, 1600] as $w) {
+        if (file_exists($dir . $base . '-' . $w . '.webp')) $webset[] = "/assets/images/{$base}-{$w}.webp {$w}w";
+        if (file_exists($dir . $base . '-' . $w . '.avif')) $aviset[] = "/assets/images/{$base}-{$w}.avif {$w}w";
+    }
+
+    $sizes    = $opts['sizes']    ?? '100vw';
+    $loading  = $opts['loading']  ?? 'lazy';
+    $decoding = $opts['decoding'] ?? ($loading === 'eager' ? 'sync' : 'async');
+
+    $attrs  = ' alt="' . htmlspecialchars($alt) . '"';
+    $attrs .= isset($opts['width'])  ? ' width="' . (int)$opts['width'] . '"'   : '';
+    $attrs .= isset($opts['height']) ? ' height="' . (int)$opts['height'] . '"' : '';
+    $attrs .= ' loading="' . htmlspecialchars($loading) . '" decoding="' . htmlspecialchars($decoding) . '"';
+    $attrs .= !empty($opts['fetchpriority']) ? ' fetchpriority="' . htmlspecialchars($opts['fetchpriority']) . '"' : '';
+    $attrs .= !empty($opts['imgClass'])      ? ' class="' . htmlspecialchars($opts['imgClass']) . '"'            : '';
+
+    $out = '<picture>';
+    if ($aviset) $out .= '<source type="image/avif" srcset="' . implode(', ', $aviset) . '" sizes="' . htmlspecialchars($sizes) . '">';
+    $out .= '<img src="/assets/images/' . htmlspecialchars($base) . '.jpg"';
+    if ($webset) $out .= ' srcset="' . implode(', ', $webset) . '" sizes="' . htmlspecialchars($sizes) . '"';
+    $out .= $attrs . '></picture>';
+
+    return $out;
+}
+
+/**
+ * Render an inline SVG icon from references/lucide-icons/
+ * @param string $name Icon name (without .svg extension)
+ * @param int $size Icon width/height in pixels (default 24)
+ * @param string $class Additional CSS classes
+ * @return string SVG markup
+ */
+function icon($name, $size = 24, $class = '') {
+    $iconPath = $_SERVER['DOCUMENT_ROOT'] . '/references/lucide-icons/' . $name . '.svg';
+
+    if (!file_exists($iconPath)) {
+        return '<!-- Icon not found: ' . htmlspecialchars($name) . ' -->';
+    }
+
+    $svg = file_get_contents($iconPath);
+
+    // Add aria-hidden, width, height, and optional class
+    $svg = str_replace('<svg', '<svg aria-hidden="true" width="' . $size . '" height="' . $size . '"' . ($class ? ' class="' . htmlspecialchars($class) . '"' : ''), $svg);
+
+    return $svg;
 }

@@ -1,165 +1,170 @@
 <?php
 /**
- * includes/header.php — Site navigation + <main> open
- * A&S Contracting Services
- * Phase 2 — Nav/Footer/Head
+ * Header / Navigation — A&S Contracting Services
+ * Phase 2, 2026-09-08
  *
- * Expects $currentPage to be set by each page before including.
- * Expects config.php + functions.php already included via head.php.
+ * Requires $currentPage to be set by the including page.
+ * Uses prefixed loop variables to avoid collision with page variables.
  */
 
-$pageTitle = $pageTitle ?? '';
-$pageDescription = $pageDescription ?? '';
-$canonicalUrl = $canonicalUrl ?? '';
-
-if (!isset($currentPage)) $currentPage = '';
-
-// Helper: aria-current on active page link
-function _navActive(string $page, string $current): string {
-    return $page === $current ? ' aria-current="page"' : '';
+// Require config if not already loaded
+if (!isset($siteName)) {
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 }
 ?>
-<!-- Skip to Content (accessibility) -->
+
+<!-- Skip to main content (accessibility) -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<header class="site-header" data-header>
-  <nav class="navbar" aria-label="Main navigation">
+<!-- Header -->
+<header class="site-header site-header--dark" data-header>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar-inner container">
 
-      <!-- Logo -->
-      <a href="/" class="navbar-logo" aria-label="<?php echo htmlspecialchars($siteName); ?> — Home">
-        <img
-          src="<?php echo htmlspecialchars($logoUrl); ?>"
-          alt="<?php echo htmlspecialchars($siteName); ?> logo"
-          width="720"
-          height="216"
-        >
-        <div class="logo-text-wrap" aria-hidden="true">
-          <span class="logo-mark">A&amp;S</span>
-          <span class="logo-text">Contracting Services</span>
-        </div>
+      <!-- Logo (client logo, cut to transparency from intake JPG — silver on dark, hence .site-header--dark) -->
+      <a href="/" class="site-logo" aria-label="<?php echo $siteName; ?> Home">
+        <picture>
+          <source srcset="/assets/images/logo.webp?v=2" type="image/webp">
+          <img src="/assets/images/logo.png?v=2" alt="<?php echo htmlspecialchars($siteName); ?> logo" width="800" height="407" fetchpriority="high" decoding="async">
+        </picture>
       </a>
 
-      <!-- Desktop Nav -->
-      <ul class="navbar-links" role="list">
-
-        <li>
-          <a href="/"<?php echo _navActive('home', $currentPage); ?>>Home</a>
+      <!-- Desktop Navigation Links -->
+      <ul class="navbar-links" role="menubar">
+        <li role="none">
+          <a href="/" role="menuitem" <?php if ($currentPage === 'home') echo 'aria-current="page"'; ?>>Home</a>
         </li>
 
         <!-- Services Dropdown -->
-        <li class="has-dropdown">
-          <a href="/services/"<?php echo _navActive('services', $currentPage); ?> aria-haspopup="true">
-            Services
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </a>
-          <ul class="dropdown" role="menu" style="display:none">
-            <?php foreach ($services as $_s): ?>
+        <li class="has-dropdown" role="none">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" id="services-menu-btn">
+            Services <?php echo icon('chevron-down', 16); ?>
+          </button>
+          <ul class="dropdown" role="menu" aria-labelledby="services-menu-btn" style="display:none">
+            <?php foreach ($services as $navSvc): ?>
             <li role="none">
-              <a href="/services/<?php echo htmlspecialchars($_s['slug']); ?>/" role="menuitem"
-                 <?php echo _navActive($_s['slug'], $currentPage); ?>>
-                <?php echo htmlspecialchars($_s['name']); ?>
-              </a>
+              <a href="/services/<?php echo $navSvc['slug']; ?>/" role="menuitem"><?php echo htmlspecialchars($navSvc['name']); ?></a>
             </li>
             <?php endforeach; ?>
-            <li role="none" style="border-top:1px solid #e5e7eb; margin-top:4px; padding-top:4px;">
-              <a href="/services/" role="menuitem" style="font-weight:700; color:var(--color-accent);">View All Services →</a>
-            </li>
           </ul>
         </li>
 
-        <li>
-          <a href="/service-areas/"<?php echo _navActive('service-areas', $currentPage); ?>>Service Area</a>
+        <!-- Service Areas Dropdown (Premium tier) -->
+        <?php if ($tier === 'premium'): ?>
+        <li class="has-dropdown" role="none">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" id="areas-menu-btn">
+            Service Areas <?php echo icon('chevron-down', 16); ?>
+          </button>
+          <ul class="dropdown" role="menu" aria-labelledby="areas-menu-btn" style="display:none">
+            <?php foreach ($serviceAreas as $navArea):
+              $areaSlug = getAreaSlug($navArea['city']);
+              $areaPath = '/areas/' . $areaSlug . '/';
+              // Only link if the page exists on disk
+              $areaExists = is_dir($_SERVER['DOCUMENT_ROOT'] . '/areas/' . $areaSlug);
+            ?>
+            <li role="none">
+              <?php if ($areaExists): ?>
+              <a href="<?php echo $areaPath; ?>" role="menuitem"><?php echo htmlspecialchars($navArea['city']); ?></a>
+              <?php else: ?>
+              <a href="/service-areas/#<?php echo $areaSlug; ?>" role="menuitem"><?php echo htmlspecialchars($navArea['city']); ?></a>
+              <?php endif; ?>
+            </li>
+            <?php endforeach; ?>
+            <li role="none" class="dropdown-cta">
+              <a href="/service-areas/" role="menuitem" class="view-all">View All Areas</a>
+            </li>
+          </ul>
+        </li>
+        <?php endif; ?>
+
+        <li role="none">
+          <a href="/about/" role="menuitem" <?php if ($currentPage === 'about') echo 'aria-current="page"'; ?>>About</a>
         </li>
 
-        <li>
-          <a href="/about/"<?php echo _navActive('about', $currentPage); ?>>About</a>
+        <?php if ($tier === 'premium'): ?>
+        <li role="none">
+          <a href="/blog/" role="menuitem" <?php if ($currentPage === 'blog') echo 'aria-current="page"'; ?>>Blog</a>
         </li>
+        <?php endif; ?>
 
-        <li>
-          <a href="/contact/"<?php echo _navActive('contact', $currentPage); ?>>Contact</a>
+        <li role="none">
+          <a href="/contact/" role="menuitem" <?php if ($currentPage === 'contact') echo 'aria-current="page"'; ?>>Contact</a>
         </li>
-
       </ul>
 
       <!-- Desktop CTA -->
       <div class="navbar-cta">
-        <?php if (!empty($phone)): ?>
-        <a href="tel:<?php echo preg_replace('/\D/', '', $phone); ?>" class="nav-phone" aria-label="Call <?php echo htmlspecialchars($phone); ?>">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.35 19.79 19.79 0 0 1 1.61 4.73 2 2 0 0 1 3.58 2.54h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <?php echo htmlspecialchars($phone); ?>
+        <a href="tel:<?php echo $phoneTel; ?>" class="btn btn-outline-white navbar-phone" aria-label="Call <?php echo $phone; ?>">
+          <?php echo icon('phone', 18); ?>
+          <span><?php echo $phone; ?></span>
         </a>
-        <?php endif; ?>
-        <a href="/contact/" class="btn btn-accent btn-sm">Free Estimate</a>
+        <a href="/contact/" class="btn-primary">Free Estimate</a>
       </div>
 
       <!-- Mobile Hamburger -->
-      <button
-        class="hamburger"
-        id="hamburger-btn"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
-        <span class="hamburger-line" aria-hidden="true"></span>
-        <span class="hamburger-line" aria-hidden="true"></span>
-        <span class="hamburger-line" aria-hidden="true"></span>
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
 
-    </div><!-- /.navbar-inner -->
+    </div>
   </nav>
 </header>
 
-<!-- Mobile Full-Screen Menu -->
-<div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+<!-- Mobile Menu (OUTSIDE header — v7 fix for backdrop-filter containing block issue) -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <ul class="mobile-menu-links">
+      <li><a href="/">Home</a></li>
 
-  <div class="mobile-menu-logo">
-    <img src="<?php echo htmlspecialchars($logoUrl); ?>" alt="<?php echo htmlspecialchars($siteName); ?>" height="168" width="504">
+      <!-- Services submenu -->
+      <li class="mobile-has-submenu">
+        <span class="mobile-submenu-label">Services</span>
+        <ul class="mobile-submenu">
+          <?php foreach ($services as $navSvc): ?>
+          <li><a href="/services/<?php echo $navSvc['slug']; ?>/"><?php echo htmlspecialchars($navSvc['name']); ?></a></li>
+          <?php endforeach; ?>
+        </ul>
+      </li>
+
+      <!-- Service Areas submenu (Premium) -->
+      <?php if ($tier === 'premium'): ?>
+      <li class="mobile-has-submenu">
+        <span class="mobile-submenu-label">Service Areas</span>
+        <ul class="mobile-submenu">
+          <?php foreach ($serviceAreas as $navArea):
+            $areaSlug = getAreaSlug($navArea['city']);
+            $areaExists = is_dir($_SERVER['DOCUMENT_ROOT'] . '/areas/' . $areaSlug);
+          ?>
+          <li>
+            <?php if ($areaExists): ?>
+            <a href="/areas/<?php echo $areaSlug; ?>/"><?php echo htmlspecialchars($navArea['city']); ?></a>
+            <?php else: ?>
+            <a href="/service-areas/#<?php echo $areaSlug; ?>"><?php echo htmlspecialchars($navArea['city']); ?></a>
+            <?php endif; ?>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+      </li>
+      <?php endif; ?>
+
+      <li><a href="/about/">About</a></li>
+      <?php if ($tier === 'premium'): ?>
+      <li><a href="/blog/">Blog</a></li>
+      <?php endif; ?>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+
+    <div class="mobile-menu-cta">
+      <a href="tel:<?php echo $phoneTel; ?>" class="btn-secondary">
+        <?php echo icon('phone', 20); ?>
+        Call Now
+      </a>
+      <a href="/contact/" class="btn-primary">Free Estimate</a>
+    </div>
   </div>
+</div>
 
-  <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close navigation menu">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  </button>
-
-  <ul class="mobile-menu-nav" role="list">
-    <li>
-      <a href="/"<?php echo _navActive('home', $currentPage); ?>>Home</a>
-    </li>
-    <li>
-      <a href="/services/"<?php echo _navActive('services', $currentPage); ?>>Services</a>
-      <ul class="mobile-menu-subnav" aria-label="Services submenu">
-        <?php foreach ($services as $_s): ?>
-        <li>
-          <a href="/services/<?php echo htmlspecialchars($_s['slug']); ?>/"<?php echo _navActive($_s['slug'], $currentPage); ?>>
-            <?php echo htmlspecialchars($_s['name']); ?>
-          </a>
-        </li>
-        <?php endforeach; ?>
-      </ul>
-    </li>
-    <li>
-      <a href="/service-areas/"<?php echo _navActive('service-areas', $currentPage); ?>>Service Area</a>
-    </li>
-    <li>
-      <a href="/about/"<?php echo _navActive('about', $currentPage); ?>>About</a>
-    </li>
-    <li>
-      <a href="/contact/"<?php echo _navActive('contact', $currentPage); ?>>Contact</a>
-    </li>
-  </ul>
-
-  <div class="mobile-menu-cta">
-    <?php if (!empty($phone)): ?>
-    <a href="tel:<?php echo preg_replace('/\D/', '', $phone); ?>" class="btn btn-accent">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.35 19.79 19.79 0 0 1 1.61 4.73 2 2 0 0 1 3.58 2.54h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      Call Now
-    </a>
-    <?php else: ?>
-    <a href="/contact/" class="btn btn-accent">Call Now</a>
-    <?php endif; ?>
-    <a href="/contact/" class="btn btn-outline-white">Free Estimate</a>
-  </div>
-
-</div><!-- /#mobile-menu -->
-
+<!-- Main Content Wrapper -->
 <main id="main-content">
