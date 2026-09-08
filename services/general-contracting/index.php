@@ -3,395 +3,513 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 ?>
 <?php
-$thisSlug        = 'general-contracting';
-$pageTitle       = "General Contractor in Warrenton, MO | A&S Contracting Services";
-$pageDescription = "Licensed general contractor serving Warrenton, MO and Warren County. Residential and commercial construction projects — roofing, siding, remodeling, and more. Free estimates.";
+// ─── Page-level setup ───────────────────────────────────────────────────────
+$serviceSlug     = 'general-contracting';
+$pageType        = 'service';
+$currentPage     = 'services';
+$svcName         = 'General Contracting';
+$pageTitle       = 'General Contracting in Warrenton, MO';
+$pageDescription = 'General contractor in Warrenton, MO. A&S Contracting Services manages residential and commercial projects end to end across Warren County. Free estimate.';
 $canonicalUrl    = $siteUrl . '/services/general-contracting/';
-$currentPage     = 'general-contracting';
-$cssVersion      = '5';
-$pb              = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/photos/';
-$heroPhoto       = $pb . '1779985140268-74twlt-8-Jan_17__2025_14-47-01-2JGp.jpg';
-$bodyPhoto1      = $pb . '1779985209297-ld8mti-1-Dec_23__2025_13-34-30-gKpa.jpg';
-$bodyPhoto2      = $pb . '1779985209827-r3nhd0-16-Dec_24__2025_16-17-16-CNcM.jpg';
-$bodyPhoto3      = $pb . '1779985210285-ttua89-27-Dec_24__2025_18-22-19-ZYKB.jpg';
-$heroImagePreload = $heroPhoto;
-$ogImage         = $heroPhoto;
 
-$currentService = null;
-foreach ($services as $svc) { if ($svc['slug'] === $thisSlug) { $currentService = $svc; break; } }
-
-$relSlugs  = ['roofing','siding','full-scale-interior-work'];
-$relPhotos = [
-    'roofing'                  => $pb.'1779984864659-a47kou-52-Aug_08__2025_00-31-27-YHMr.jpg',
-    'siding'                   => $pb.'1779984869042-6cwzvd-59-Aug_09__2025_12-39-54-JQC9.jpg',
-    'full-scale-interior-work' => $pb.'1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4.jpg',
+// ─── Hero + recent-work photos (image manifest) ─────────────────────────────
+$heroImage    = '1779985082241-xuoxbh-11-Feb_09__2026_15-26-29-L2wD';
+$heroImageAlt = 'A&S Contracting Services crew installing a new roof on a residential project near Warrenton, MO';
+$heroPreload  = [
+    'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
+    'sizes'  => '100vw',
 ];
-$relIcons   = ['roofing'=>'home','siding'=>'layers','full-scale-interior-work'=>'layout-panel-left'];
-$relBullets = [
-    'roofing'                  => ['Full replacements &amp; repairs','Licensed residential &amp; commercial','Insurance claim support'],
-    'siding'                   => ['Vinyl, fiber cement &amp; wood','Impact-rated selections available','50-mile service radius'],
-    'full-scale-interior-work' => ['Complete interior renovations','Demo through final finish','One crew, full scope management'],
+$workPhotos = [
+    ['1779985138888-d41ths-3-Nov_20__2024_22-50-31-ZRts', 'Gray-sided home with a covered porch and protective wrap during a Warren County build'],
+    ['1779985209297-ld8mti-1-Dec_23__2025_13-34-30-gKpa', 'Elevated home with metal siding under construction in a wooded Warren County lot'],
+    ['1779985127211-6wrwx6-41-Mar_19__2026_17-08-38-89QF', 'A&S worker on a ladder finishing a wooden overhang on a Warrenton home'],
 ];
 
+// ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
-    ['question'=>'What does a general contractor do in Warrenton, MO?','answer'=>'A general contractor in Warrenton manages construction projects from planning through completion — hiring and coordinating subcontractors where needed, scheduling work sequences, obtaining permits, and serving as the single point of responsibility for the project scope. A&S Contracting Services self-performs roofing, siding, drywall, and interior finish work, and coordinates specialty trades where needed on larger projects.'],
-    ['question'=>'What types of projects does A&S take on as general contractor near Warrenton?','answer'=>'A&S Contracting Services takes on residential and light commercial general contracting projects throughout Warren County — roof-to-foundation exterior renovations, full interior gut-and-rebuild projects, room additions, garage conversions, and post-storm damage rebuilds. We work from simple single-system repairs up to complete home renovation projects managed under one contract.'],
-    ['question'=>'Do I need a general contractor or can I manage subcontractors myself?','answer'=>'Self-managing subcontractors works when you have significant construction experience, can be on-site frequently, and have time to manage scheduling conflicts between trades. For most homeowners in Warrenton, a general contractor reduces scheduling headaches, eliminates gaps between trades, and provides a single accountable party if something needs correction. We give you a free consultation to help determine which approach fits your project.'],
-    ['question'=>'Is A&S Contracting Services licensed to operate as a general contractor in Missouri?','answer'=>'Yes. A&S Contracting Services is a licensed and insured contractor operating in Missouri with service coverage throughout Warren County and within a 50-mile radius of Warrenton. We can provide proof of licensing and insurance at the time of estimate — standard practice for any reputable Missouri contractor. Ask us directly at the free estimate.'],
-    ['question'=>'How do you price general contracting projects in Warren County?','answer'=>'General contracting projects are priced based on a written scope — material costs, labor, subcontractor coordination, and project management. For straightforward scopes, we provide a fixed-price contract. For larger or complex projects where conditions may vary, we provide a detailed estimate with identified allowances for conditions that can\'t be fully known until demo begins. All pricing is written and agreed before work starts.'],
-    ['question'=>'Can A&S handle permit applications for construction projects in Warrenton?','answer'=>'Yes. For projects that require permits in Warren County — structural changes, additions, electrical or plumbing modifications, and some exterior work — we identify permit requirements during the estimate and handle the application process as part of the project. Permit fees are passed through at cost, and we schedule required inspections as part of the project timeline.'],
+    [
+        'question' => 'How much does a general contracting project cost in Warrenton?',
+        'answer'   => 'A&S Contracting Services prices each project from its actual scope—the trades involved, materials, permits, and timeline—laid out in a written, itemized estimate. A room addition, a whole renovation, and a commercial build-out are very different numbers, so we scope the work on site rather than quote a general contractor by the square foot over the phone.',
+    ],
+    [
+        'question' => 'Do you handle permits and inspections?',
+        'answer'   => 'Yes. A&S Contracting Services pulls the required permits and coordinates inspections through each phase of the project. Warren County and its municipalities each have their own requirements, and part of hiring a general contractor is not having to learn them—we keep the project moving from permit to final sign-off so nothing stalls on paperwork.',
+    ],
+    [
+        'question' => 'Do you take on both residential and commercial projects?',
+        'answer'   => 'Yes. A&S Contracting Services manages residential renovations and additions as well as commercial build-outs across Warren County. The core skill is the same: sequencing trades, holding the schedule, and staying accountable for the budget—whether it is a family\'s addition or a storefront that has to open on a set date.',
+    ],
+    [
+        'question' => 'Do you self-perform the work or subcontract it?',
+        'answer'   => 'A&S Contracting Services self-performs the core trades—roofing, siding, drywall, and interior work—which is the whole point of hiring us. When a specialty trade like electrical or plumbing is required, we bring in licensed partners and manage them, so you still have one company accountable for the schedule and the finished result.',
+    ],
+    [
+        'question' => 'How do you keep a project on schedule?',
+        'answer'   => 'A&S Contracting Services builds one schedule and sequences the trades so each phase is ready for the next. Because we self-perform most of the work, we are not waiting on a subcontractor\'s separate calendar. You get a single point of contact who tracks the timeline and tells you where the project stands instead of guessing.',
+    ],
+    [
+        'question' => 'Are you a licensed general contractor in Missouri?',
+        'answer'   => 'Yes. A&S Contracting Services is a licensed Missouri general contractor and carries full insurance on every project. That licensing and coverage protect you on larger jobs where multiple trades, permits, and inspections are in play, and it means the company managing your Warren County project is accountable for it in writing.',
+    ],
 ];
 
-$schemaData = ['@context'=>'https://schema.org','@graph'=>[
-    ['@type'=>'Service','@id'=>$siteUrl.'/services/general-contracting/#service','name'=>'General Contracting','description'=>$currentService['description']??'','provider'=>['@id'=>$siteUrl.'/#organization'],'areaServed'=>['@type'=>'GeoCircle','geoMidpoint'=>['@type'=>'GeoCoordinates','latitude'=>'38.8153','longitude'=>'-91.1418'],'geoRadius'=>'80467'],'url'=>$canonicalUrl],
-    ['@type'=>'BreadcrumbList','itemListElement'=>[['@type'=>'ListItem','position'=>1,'name'=>'Home','item'=>$siteUrl.'/'],['@type'=>'ListItem','position'=>2,'name'=>'Services','item'=>$siteUrl.'/services/'],['@type'=>'ListItem','position'=>3,'name'=>'General Contracting']]],
-    ['@type'=>'FAQPage','mainEntity'=>array_map(fn($f)=>['@type'=>'Question','name'=>$f['question'],'acceptedAnswer'=>['@type'=>'Answer','text'=>$f['answer']]],$faqs)],
-]];
-$schemaMarkup = json_encode($schemaData,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
-include $_SERVER['DOCUMENT_ROOT'].'/includes/head.php';
+// ─── Schema (Service + FAQPage + BreadcrumbList) ─────────────────────────────
+$serviceSchema = [
+    '@context'    => 'https://schema.org',
+    '@type'       => 'Service',
+    '@id'         => $canonicalUrl . '#service-' . $serviceSlug,
+    'name'        => 'General Contracting',
+    'serviceType' => 'General contractor',
+    'description' => 'Full-service general contracting for residential and commercial projects in Warrenton, MO and Warren County—planning, permits, scheduling, and self-performed trades under one accountable team.',
+    'provider'    => ['@id' => $siteUrl . '/#organization'],
+    'areaServed'  => [
+        '@type' => 'GeoCircle',
+        'geoMidpoint' => ['@type' => 'GeoCoordinates', 'latitude' => '38.8098', 'longitude' => '-91.1401'],
+        'geoRadius'   => $serviceRadius . ' miles',
+    ],
+    'url'         => $canonicalUrl,
+];
+$breadcrumbSchema = [
+    '@context'        => 'https://schema.org',
+    '@type'           => 'BreadcrumbList',
+    'itemListElement' => [
+        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',     'item' => $siteUrl . '/'],
+        ['@type' => 'ListItem', 'position' => 2, 'name' => 'Services', 'item' => $siteUrl . '/services/'],
+        ['@type' => 'ListItem', 'position' => 3, 'name' => $svcName,   'item' => $canonicalUrl],
+    ],
+];
+$schema  = '<script type="application/ld+json">' . json_encode($serviceSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
+$schema .= generateFAQSchema($faqs) . "\n";
+$schema .= '<script type="application/ld+json">' . json_encode($breadcrumbSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
+
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 ?>
-<body>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/includes/header.php'; ?>
 
 <style>
-/* ═══════════════════════════════════════════════════════════════
-   /services/general-contracting/ — Premium tier ≥400L
-   Signature: radial gold glow behind hero heading text
-   ═══════════════════════════════════════════════════════════════ */
-.svc-hero { position:relative; min-height:84vh; display:flex; align-items:center; background-image:url('<?php echo $heroPhoto; ?>'); background-size:cover; background-position:center 38%; padding:calc(var(--nav-height,72px) + var(--space-3xl)) 0 var(--space-3xl); overflow:hidden; }
-.svc-hero::before { content:''; position:absolute; inset:0; background:linear-gradient(115deg,rgba(var(--color-primary-rgb),0.95) 0%,rgba(var(--color-primary-rgb),0.70) 50%,rgba(var(--color-primary-rgb),0.20) 100%); z-index:1; }
-.svc-hero::after { content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E"); background-size:220px; opacity:0.04; z-index:2; pointer-events:none; }
-/* Signature: radial glow emanating from top-left behind text column */
-.svc-hero .radial-glow { position:absolute; left:-80px; top:15%; width:600px; height:600px; background:radial-gradient(circle,rgba(var(--color-accent-rgb),0.12) 0%,transparent 65%); z-index:2; pointer-events:none; }
-.svc-hero-inner { position:relative; z-index:3; max-width:var(--max-width,1280px); margin:0 auto; padding:0 var(--space-lg); display:grid; grid-template-columns:1fr 400px; gap:var(--space-2xl); align-items:center; width:100%; }
-.hero-breadcrumb { display:flex; align-items:center; gap:var(--space-xs); font-size:0.8rem; color:rgba(255,255,255,0.48); margin-bottom:var(--space-md); }
-.hero-breadcrumb a { color:rgba(255,255,255,0.48); transition:color 0.2s; }
-.hero-breadcrumb a:hover { color:var(--color-accent); }
-.hero-breadcrumb span { color:rgba(255,255,255,0.28); }
-.hero-eyebrow { display:inline-flex; align-items:center; gap:var(--space-xs); background:rgba(var(--color-accent-rgb),0.15); border:1px solid rgba(var(--color-accent-rgb),0.45); color:var(--color-accent); font-size:0.76rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:5px 12px; border-radius:var(--radius-sm); margin-bottom:var(--space-md); }
-.svc-hero h1 { font-family:var(--font-heading,'Unbounded',sans-serif); font-size:clamp(2.2rem,4.2vw,3.6rem); font-weight:800; line-height:1.07; text-wrap:balance; color:var(--color-secondary); margin:0 0 var(--space-md); }
-.svc-hero h1 .accent { color:var(--color-accent); }
-.hero-answer { font-size:1.05rem; line-height:1.78; color:rgba(255,255,255,0.76); max-width:52ch; margin:0 0 var(--space-xl); }
-.hero-trust-row { display:flex; gap:var(--space-lg); flex-wrap:wrap; margin-bottom:var(--space-xl); }
-.trust-pill { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.88); font-size:0.82rem; font-weight:600; padding:6px 14px; border-radius:100px; }
-.trust-pill svg { width:13px; height:13px; color:var(--color-accent); }
-.hero-cta-group { display:flex; gap:var(--space-md); flex-wrap:wrap; }
-.btn-primary-svc { display:inline-flex; align-items:center; gap:8px; background:var(--color-accent); color:var(--color-primary); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.82rem; font-weight:800; padding:14px 28px; border-radius:var(--radius); border:2px solid var(--color-accent); transition:all 0.2s; text-transform:uppercase; letter-spacing:0.04em; }
-.btn-primary-svc:hover { background:#ffbb00; border-color:#ffbb00; transform:translateY(-2px); box-shadow:0 6px 20px rgba(var(--color-accent-rgb),0.4); }
-.btn-ghost-svc { display:inline-flex; align-items:center; gap:8px; background:transparent; color:var(--color-secondary); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.82rem; font-weight:700; padding:14px 28px; border-radius:var(--radius); border:2px solid rgba(255,255,255,0.3); transition:all 0.2s; text-transform:uppercase; letter-spacing:0.04em; }
-.btn-ghost-svc:hover { border-color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.08); }
-.hero-aside-card { background:rgba(255,255,255,0.97); border-radius:var(--radius-lg); padding:var(--space-xl); box-shadow:0 24px 64px rgba(0,0,0,0.35); }
-.aside-card-title { font-family:var(--font-heading,'Unbounded',sans-serif); font-size:1rem; font-weight:800; color:var(--color-primary); margin:0 0 var(--space-sm); }
-.aside-form { display:flex; flex-direction:column; gap:var(--space-sm); }
-.form-group { display:flex; flex-direction:column; gap:4px; }
-.form-group label { font-size:0.78rem; font-weight:600; color:var(--color-text-light); text-transform:uppercase; letter-spacing:0.06em; }
-.form-group input,.form-group select,.form-group textarea { width:100%; padding:10px 14px; border:1.5px solid var(--color-border,#e2e2e2); border-radius:var(--radius-sm); font-size:0.9rem; color:var(--color-text); background:var(--color-bg,#fff); transition:border-color 0.2s; font-family:var(--font-body,'Inter',sans-serif); }
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus { outline:none; border-color:var(--color-accent); }
-.form-consent-fieldset { border:none; padding:0; margin:0; display:flex; flex-direction:column; gap:var(--space-xs); }
-.form-consent-legend { font-size:0.78rem; font-weight:700; color:var(--color-text-light); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px; }
-.form-consent-item { display:flex; gap:8px; align-items:flex-start; cursor:pointer; }
-.form-consent-item input[type="checkbox"] { width:16px; height:16px; flex-shrink:0; margin-top:2px; accent-color:var(--color-accent); }
-.consent-label { font-size:0.78rem; line-height:1.55; color:var(--color-text-light); }
-.consent-label a { color:var(--color-accent); }
-.required-star { color:#c00; font-weight:700; }
-.btn-form-submit { width:100%; background:var(--color-primary); color:var(--color-secondary); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.82rem; font-weight:800; padding:14px; border:none; border-radius:var(--radius); cursor:pointer; transition:all 0.2s; letter-spacing:0.04em; text-transform:uppercase; }
-.btn-form-submit:hover { background:var(--color-accent); color:var(--color-primary); transform:translateY(-1px); }
-.divider-wave { display:block; width:100%; overflow:hidden; line-height:0; }
-.divider-wave svg { display:block; width:100%; }
-.divider-angle { display:block; width:100%; overflow:hidden; line-height:0; }
-.divider-angle svg { display:block; width:100%; }
-.divider-curve { display:block; width:100%; overflow:hidden; line-height:0; }
-.divider-curve svg { display:block; width:100%; }
-.container-svc { max-width:var(--max-width,1280px); margin:0 auto; padding:0 var(--space-lg); }
-.eyebrow-label { display:inline-block; font-size:0.74rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--color-accent); margin-bottom:var(--space-sm); }
-.section-h2 { font-family:var(--font-heading,'Unbounded',sans-serif); font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:var(--color-primary); text-wrap:balance; margin:0 0 var(--space-sm); line-height:1.15; }
-.section-h2-light { font-family:var(--font-heading,'Unbounded',sans-serif); font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:var(--color-secondary); text-wrap:balance; margin:0 0 var(--space-sm); line-height:1.15; }
-.answer-block { font-size:1rem; line-height:1.78; color:var(--color-text); border-left:3px solid var(--color-accent); background:rgba(var(--color-accent-rgb),0.06); padding:var(--space-sm) var(--space-md); border-radius:0 var(--radius-sm) var(--radius-sm) 0; margin:0 0 var(--space-md); max-width:66ch; }
-.problem-section { padding:var(--space-3xl) 0; background:var(--color-bg-alt,#f8f8f6); }
-.problem-pullquote { font-family:var(--font-accent,'Fraunces',serif); font-size:clamp(1.6rem,3.5vw,2.8rem); font-weight:700; font-style:italic; color:var(--color-primary); text-wrap:balance; max-width:700px; margin:0 auto var(--space-2xl); text-align:center; line-height:1.3; }
-.problem-pullquote em { color:var(--color-accent); font-style:normal; }
-.bento-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-md); }
-.bento-card { background:#fff; border-radius:var(--radius-lg); padding:var(--space-lg); border:1px solid rgba(0,0,0,0.06); box-shadow:var(--shadow-sm); display:flex; flex-direction:column; gap:var(--space-sm); transition:transform 0.25s,box-shadow 0.25s; }
-.bento-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
-.bento-icon { width:48px; height:48px; border-radius:var(--radius); background:rgba(var(--color-accent-rgb),0.1); display:flex; align-items:center; justify-content:center; color:var(--color-accent); }
-.bento-icon svg { width:22px; height:22px; }
-.bento-card h3 { font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.95rem; font-weight:700; color:var(--color-primary); margin:0; line-height:1.3; }
-.bento-card p { font-size:0.875rem; line-height:1.65; color:var(--color-text-light); margin:0; }
-.expert-section { padding:var(--space-3xl) 0; background:var(--color-bg); }
-.expert-grid { display:grid; grid-template-columns:1fr 1.6fr; gap:var(--space-3xl); align-items:center; }
-.big-stat-num { font-family:var(--font-heading,'Unbounded',sans-serif); font-size:clamp(3.5rem,8vw,6rem); font-weight:800; color:var(--color-accent); line-height:1; }
-.big-stat-label { font-size:0.82rem; color:var(--color-text-light); letter-spacing:0.08em; text-transform:uppercase; }
-.differentiator-list { display:flex; flex-direction:column; gap:var(--space-md); list-style:none; padding:0; margin:var(--space-xl) 0 0; }
-.differentiator-list li { display:flex; gap:var(--space-sm); align-items:flex-start; }
-.diff-check { width:22px; height:22px; border-radius:50%; background:var(--color-accent); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
-.diff-check svg { width:12px; height:12px; color:var(--color-primary); }
-.diff-text { font-size:0.95rem; line-height:1.65; color:var(--color-text); }
-.diff-text strong { color:var(--color-primary); font-weight:700; }
-.expert-image-wrap { position:relative; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); }
-.expert-image-wrap img { width:100%; height:420px; object-fit:cover; display:block; }
-.expert-image-badge { position:absolute; bottom:var(--space-md); left:var(--space-md); background:var(--color-primary); color:var(--color-secondary); border-radius:var(--radius); padding:var(--space-sm) var(--space-md); font-size:0.82rem; font-weight:700; display:flex; align-items:center; gap:6px; }
-.expert-image-badge span { color:var(--color-accent); }
-.breakdown-section { padding:var(--space-3xl) 0; background:var(--color-bg-alt); }
-.breakdown-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-3xl); align-items:start; }
-.breakdown-image { border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); position:relative; }
-.breakdown-image img { width:100%; object-fit:cover; display:block; min-height:360px; }
-.breakdown-image-tag { position:absolute; top:var(--space-md); right:var(--space-md); background:var(--color-accent); color:var(--color-primary); font-size:0.76rem; font-weight:800; padding:5px 12px; border-radius:var(--radius-sm); text-transform:uppercase; letter-spacing:0.08em; }
-.process-steps { display:flex; flex-direction:column; gap:0; margin-top:var(--space-xl); position:relative; }
-.process-steps::before { content:''; position:absolute; left:19px; top:24px; bottom:24px; width:2px; background:linear-gradient(to bottom,var(--color-accent),rgba(var(--color-accent-rgb),0.1)); }
-.process-step { display:flex; gap:var(--space-md); align-items:flex-start; padding:0 0 var(--space-lg); position:relative; }
-.step-num { width:40px; height:40px; border-radius:50%; background:var(--color-primary); color:var(--color-accent); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.82rem; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; z-index:1; border:3px solid var(--color-accent); }
-.step-title { font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.9rem; font-weight:700; color:var(--color-primary); margin:0 0 4px; }
-.step-desc { font-size:0.88rem; line-height:1.65; color:var(--color-text-light); margin:0; }
-.comparison-section { padding:var(--space-3xl) 0; background:var(--color-primary); }
-.comparison-intro { text-align:center; margin-bottom:var(--space-2xl); }
-.comparison-table { display:grid; grid-template-columns:2fr 1fr 1fr; border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,255,255,0.1); }
-.comp-header { background:rgba(255,255,255,0.06); padding:var(--space-md) var(--space-lg); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.5); }
-.comp-header.ours { background:rgba(var(--color-accent-rgb),0.15); color:var(--color-accent); }
-.comp-cell { padding:var(--space-md) var(--space-lg); font-size:0.9rem; color:rgba(255,255,255,0.75); border-top:1px solid rgba(255,255,255,0.06); display:flex; align-items:center; }
-.comp-cell.feature { font-weight:600; color:rgba(255,255,255,0.9); }
-.comp-cell.ours { background:rgba(var(--color-accent-rgb),0.06); }
-.comp-cell.check { color:var(--color-accent); font-weight:700; }
-.comp-cell.cross { color:rgba(255,255,255,0.35); }
-.faq-section { padding:var(--space-3xl) 0; background:var(--color-bg); }
-.faq-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-3xl); align-items:start; }
-.faq-sidebar-img { border-radius:var(--radius-lg); overflow:hidden; margin-bottom:var(--space-md); }
-.faq-sidebar-img img { width:100%; height:260px; object-fit:cover; display:block; }
-.faq-sidebar-note { background:rgba(var(--color-accent-rgb),0.08); border:1px solid rgba(var(--color-accent-rgb),0.2); border-radius:var(--radius); padding:var(--space-md); font-size:0.88rem; line-height:1.65; color:var(--color-text); }
-.faq-list { display:flex; flex-direction:column; gap:var(--space-sm); }
-.faq-item { border:1px solid rgba(0,0,0,0.08); border-radius:var(--radius); overflow:hidden; }
-.faq-question { width:100%; text-align:left; background:none; border:none; padding:var(--space-md) var(--space-lg); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.88rem; font-weight:700; color:var(--color-primary); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:var(--space-md); line-height:1.4; transition:color 0.2s; }
-.faq-question:hover { color:var(--color-accent); }
-.faq-icon { width:18px; height:18px; flex-shrink:0; transition:transform 0.3s; }
-.faq-item.open .faq-icon { transform:rotate(45deg); }
-.faq-answer { display:none; padding:0 var(--space-lg) var(--space-md); font-size:0.9rem; line-height:1.78; color:var(--color-text-light); border-top:1px solid rgba(0,0,0,0.06); }
-.faq-item.open .faq-answer { display:block; }
-.final-cta-section { padding:var(--space-3xl) 0; background:var(--color-bg-alt); text-align:center; }
-.final-cta-icon { width:64px; height:64px; border-radius:50%; background:var(--color-primary); display:flex; align-items:center; justify-content:center; margin:0 auto var(--space-lg); color:var(--color-accent); }
-.final-cta-icon svg { width:28px; height:28px; }
-.cta-btn-group { display:flex; gap:var(--space-md); justify-content:center; flex-wrap:wrap; }
-.btn-accent-lg { display:inline-flex; align-items:center; gap:8px; background:var(--color-accent); color:var(--color-primary); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.85rem; font-weight:800; padding:16px 32px; border-radius:var(--radius); border:2px solid var(--color-accent); transition:all 0.2s; text-transform:uppercase; letter-spacing:0.04em; }
-.btn-accent-lg:hover { background:#ffbb00; border-color:#ffbb00; transform:translateY(-2px); box-shadow:0 6px 24px rgba(var(--color-accent-rgb),0.4); }
-.btn-dark-outline { display:inline-flex; align-items:center; gap:8px; background:transparent; color:var(--color-primary); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.85rem; font-weight:700; padding:16px 32px; border-radius:var(--radius); border:2px solid rgba(0,0,0,0.2); transition:all 0.2s; text-transform:uppercase; letter-spacing:0.04em; }
-.btn-dark-outline:hover { border-color:var(--color-primary); background:rgba(0,0,0,0.05); }
-.related-section { padding:var(--space-3xl) 0; background:var(--color-bg); }
-.related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-md); margin-top:var(--space-2xl); }
-.service-card-with-image { border-radius:var(--radius-md); overflow:hidden; display:flex; flex-direction:column; transition:transform 0.25s,box-shadow 0.25s; }
-.service-card-with-image:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); }
-.service-card__image { aspect-ratio:5/3; overflow:hidden; }
-.service-card__image img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.45s; }
-.service-card-with-image:hover .service-card__image img { transform:scale(1.05); }
-.service-card__body { padding:var(--space-lg) var(--space-md) var(--space-md); text-align:center; display:flex; flex-direction:column; align-items:center; gap:var(--space-sm); position:relative; flex:1; }
-.service-card__icon { width:56px; height:56px; border-radius:50%; background:#fff; box-shadow:var(--shadow-md); display:flex; align-items:center; justify-content:center; margin-top:-44px; margin-bottom:var(--space-xs); color:var(--color-accent); }
-.service-card__icon i,.service-card__icon svg { width:26px; height:26px; }
-.service-card-with-image h3 { font-family:var(--font-heading,'Unbounded',sans-serif); color:var(--color-primary); margin:0; font-size:1.1rem; }
-.service-card__desc { color:var(--color-text); margin:0; font-size:0.9rem; line-height:1.55; }
-.service-card-with-image ul { list-style:none; padding:0; margin:var(--space-xs) 0 0; width:100%; text-align:left; display:flex; flex-direction:column; gap:var(--space-xs); border-top:1px solid rgba(0,0,0,0.06); padding-top:var(--space-md); }
-.service-card-with-image ul li { font-size:0.875rem; color:var(--color-text); padding-left:1.25rem; position:relative; }
-.service-card-with-image ul li::before { content:"•"; color:var(--color-accent); font-weight:700; position:absolute; left:0.25rem; }
-.service-card__cta { margin-top:auto; color:var(--color-accent); font-weight:600; font-size:0.9rem; border-top:1px solid rgba(0,0,0,0.06); width:100%; text-align:center; padding:var(--space-sm) 0 0; transition:color 0.2s; }
-.service-card__cta::after { content:" →"; display:inline-block; transition:transform 0.2s; }
-.service-card__cta:hover { color:var(--color-primary); }
-.service-card__cta:hover::after { transform:translateX(3px); }
-.card-tint-1 { background:rgba(var(--color-primary-rgb),0.04); }
-.card-tint-2 { background:rgba(var(--color-accent-rgb),0.06); }
-.card-tint-3 { background:rgba(var(--color-primary-rgb),0.07); }
-@media (max-width:1100px) { .svc-hero-inner { grid-template-columns:1fr; } .hero-aside-card { display:none; } .expert-grid { grid-template-columns:1fr; } .breakdown-grid { grid-template-columns:1fr; } .faq-grid { grid-template-columns:1fr; } .faq-sidebar { display:none; } }
-@media (max-width:900px) { .bento-grid { grid-template-columns:repeat(2,1fr); } .related-grid { grid-template-columns:1fr 1fr; } }
-@media (max-width:520px) { .bento-grid { grid-template-columns:1fr; } .related-grid { grid-template-columns:1fr; } .svc-hero { min-height:70vh; } .comparison-table { grid-template-columns:1fr; } .comp-header:nth-child(2),.comp-cell:nth-child(3n) { display:none; } }
+/* ── Service page composition (token-only) ── */
+.sp-signs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.75rem; }
+.sp-sign { background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.25rem; display: grid; gap: .5rem; box-shadow: var(--shadow-sm); }
+.sp-sign__icon { width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center; color: var(--color-primary); background: color-mix(in srgb, var(--color-primary) 12%, white); }
+.sp-sign h3 { font-size: 1.02rem; }
+.sp-sign p { margin: 0; font-size: .9rem; color: var(--color-ink-2); }
+.sp-problem { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+@media (max-width: 900px) { .sp-problem { grid-template-columns: 1fr; } .sp-signs { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .sp-signs { grid-template-columns: 1fr; } }
+
+/* Expert positioning — big stat + evidence */
+.sp-position { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.sp-position__stat { font-family: var(--font-accent); font-size: clamp(3.4rem, 9vw, 5.5rem); line-height: .9; color: var(--color-primary); letter-spacing: .01em; }
+.sp-position__stat span { display: block; font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; letter-spacing: 0; color: var(--color-ink-2); margin-top: .6rem; max-width: 22ch; }
+.sp-evidence { display: grid; gap: 1rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+.sp-evidence li { display: grid; grid-template-columns: 28px 1fr; gap: .8rem; align-items: start; }
+.sp-evidence li svg { color: var(--color-accent-dark); margin-top: 3px; }
+.sp-evidence b { display: block; }
+@media (max-width: 800px) { .sp-position { grid-template-columns: 1fr; } }
+
+/* What's included + timeline */
+.sp-included { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 3.5rem); align-items: start; }
+.sp-checklist { display: grid; gap: .65rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+.sp-checklist li { display: grid; grid-template-columns: 24px 1fr; gap: .6rem; align-items: start; font-size: .96rem; }
+.sp-checklist li svg { color: var(--color-primary); margin-top: 3px; }
+@media (max-width: 800px) { .sp-included { grid-template-columns: 1fr; } }
+
+/* Comparison */
+.sp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+.sp-compare__col { border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--color-surface); }
+.sp-compare__col--us { border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-line)); box-shadow: var(--shadow); background: color-mix(in srgb, var(--color-accent) 8%, white); }
+.sp-compare h3 { font-size: 1.1rem; margin-bottom: .9rem; display: flex; align-items: center; gap: .5rem; }
+.sp-compare ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
+.sp-compare li { display: grid; grid-template-columns: 22px 1fr; gap: .55rem; font-size: .93rem; color: var(--color-ink-2); }
+.sp-compare--them li svg { color: var(--color-danger); margin-top: 2px; }
+.sp-compare--us li svg { color: var(--color-success); margin-top: 2px; }
+@media (max-width: 700px) { .sp-compare { grid-template-columns: 1fr; } }
+
+/* Other services */
+.sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+@media (max-width: 800px) { .sp-other { grid-template-columns: 1fr; } }
+/* Photo hero: let the <picture> fill the .hero-bg layer */
+.hero--photo .hero-bg picture { display: block; width: 100%; height: 100%; }
+.hero--photo .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.hero--photo .breadcrumb, .hero--photo .breadcrumb a { color: rgba(255,255,255,.82); }
 </style>
 
-<!-- HERO -->
-<section class="svc-hero" aria-label="General contractor in Warrenton, MO">
-  <div class="radial-glow" aria-hidden="true"></div>
-  <div class="svc-hero-inner">
-    <div class="svc-hero-text">
-      <nav class="hero-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/services/">Services</a><span>›</span><span aria-current="page">General Contracting</span></nav>
-      <span class="hero-eyebrow">Warrenton, MO — Warren County</span>
-      <h1><span class="accent">General Contractor</span><br>in Warrenton, MO</h1>
-      <p class="hero-answer">A&amp;S Contracting Services is a licensed general contractor serving Warrenton, MO and Warren County. From full exterior renovations to interior remodels, storm damage rebuilds to new additions — we manage the complete project scope with a single written contract, a single crew, and a single point of contact from start to finish.</p>
-      <div class="hero-trust-row">
-        <span class="trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Licensed &amp; Insured — MO</span>
-        <span class="trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Free Written Estimates</span>
-        <span class="trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>50-Mile Radius</span>
-      </div>
-      <div class="hero-cta-group">
-        <a href="/contact/" class="btn-primary-svc">Get a Free Project Estimate</a>
-        <a href="#gc-process" class="btn-ghost-svc">How We Work</a>
-      </div>
-    </div>
-    <aside class="hero-aside-card" aria-label="Quick estimate">
-      <p class="aside-card-title">Request a Free Project Estimate</p>
-      <form class="aside-form" action="<?php echo htmlspecialchars($formAction); ?>" method="POST">
-        <input type="text"   name="_honey"          style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <input type="hidden" name="_next"            value="/thank-you">
-        <input type="hidden" name="_consent_version" value="v2.1">
-        <input type="hidden" name="_consent_page"   value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
-        <input type="hidden" name="service"          value="General Contracting">
-        <div class="form-group"><label for="gc-name">Your Name</label><input type="text" id="gc-name" name="name" placeholder="Jane Smith" required></div>
-        <div class="form-group"><label for="gc-phone">Phone</label><input type="tel" id="gc-phone" name="phone" placeholder="(573) 555-0100" required></div>
-        <div class="form-group"><label for="gc-email">Email</label><input type="email" id="gc-email" name="email" placeholder="you@email.com" required></div>
-        <div class="form-group"><label for="gc-msg">Project Description</label><textarea id="gc-msg" name="message" rows="2" placeholder="Scope, size, timeline, or questions…"></textarea></div>
-        <fieldset class="form-consent-fieldset">
-          <legend class="form-consent-legend">Communication Consent</legend>
-          <label class="form-consent-item"><input type="checkbox" name="email_opt_in" value="yes"><span class="consent-label"><strong>Email (optional):</strong> Receive emails about my inquiry.</span></label>
-          <label class="form-consent-item"><input type="checkbox" name="sms_opt_in" value="yes"><span class="consent-label"><strong>SMS (optional):</strong> Receive texts. Msg &amp; data rates apply. Reply STOP to opt out.</span></label>
-          <label class="form-consent-item"><input type="checkbox" name="terms_accepted" value="yes" required><span class="consent-label">I agree to the <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> &amp; <a href="/terms/" target="_blank" rel="noopener">Terms</a>. <span class="required-star">*</span></span></label>
-        </fieldset>
-        <!-- spam shield: signed render timestamp + JS interaction signal -->
-        <?php $__ft_ts = (string) time(); ?>
-        <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
-        <input type="hidden" name="_js" value="" class="js-shield-field">
-        <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
-        <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
-        <?php } ?>
-        <button type="submit" class="btn-form-submit">Send Estimate Request →</button>
-      </form>
-    </aside>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
+
+<!-- ═══════════════════ HERO (interior) ═══════════════════ -->
+<section class="hero hero--photo">
+  <div class="hero-bg">
+    <?php echo p1_picture($heroImage, $heroImageAlt, ['sizes' => '100vw', 'width' => 1600, 'height' => 1000, 'loading' => 'eager', 'fetchpriority' => 'high']); ?>
   </div>
-</section>
-
-<div class="divider-wave" aria-hidden="true"><svg viewBox="0 0 1440 54" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L0,27 Q360,54 720,27 Q1080,0 1440,27 L1440,54 L0,54 Z" fill="#f8f8f6"/></svg></div>
-
-<!-- PROBLEM STATEMENT -->
-<section class="problem-section" aria-label="When you need a general contractor">
-  <div class="container-svc">
-    <p class="problem-pullquote">Most construction delays and cost overruns come from <em>trade gaps</em> — not from individual contractor performance — and one GC eliminates them.</p>
-    <div class="bento-grid">
-      <div class="bento-card reveal-up reveal-delay-1"><div class="bento-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><h3>Multi-trade renovation projects</h3><p>Projects that span roofing, siding, drywall, flooring, and trim require a general contractor to sequence trades correctly, eliminate schedule conflicts, and maintain a single line of accountability through every phase.</p></div>
-      <div class="bento-card reveal-up reveal-delay-2"><div class="bento-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Storm damage and insurance rebuilds</h3><p>Post-storm rebuilds in Warren County often span multiple systems — roofing, siding, windows, and interior drying. A general contractor manages the full damage scope and documentation rather than treating each system as a separate project.</p></div>
-      <div class="bento-card reveal-up reveal-delay-3"><div class="bento-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg></div><h3>New additions and finished spaces</h3><p>Room additions, finished basements, and garage conversions require framing, drywall, electrical rough-in coordination, HVAC connections, and finishing — work that needs a GC to hold together the sequence from foundation to certificate of occupancy.</p></div>
-      <div class="bento-card reveal-up reveal-delay-4"><div class="bento-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>Projects requiring permits in Warren County</h3><p>Permitted work — structural changes, additions, and certain mechanical systems — requires a licensed contractor to pull permits and schedule inspections. A&S manages the permit process as part of the project scope.</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider-angle" aria-hidden="true"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 1440,40 1440,0" fill="#ffffff"/></svg></div>
-
-<!-- EXPERT POSITIONING -->
-<section class="expert-section" aria-label="Why A&S as your general contractor">
-  <div class="container-svc">
-    <div class="expert-grid">
-      <div class="reveal-left">
-        <div><span class="big-stat-num">10<span style="font-size:0.4em;color:var(--color-text-light);">+</span></span><br><span class="big-stat-label">Services self-performed — roofing through interior finish</span></div>
-        <ul class="differentiator-list">
-          <li><div class="diff-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div><span class="diff-text"><strong>Self-performing contractor — not a sub-manager.</strong> A&S directly performs roofing, siding, drywall, fascia, soffit, windows, and interior finish work. We don't mark up subcontractor labor for trades we can do ourselves — this reduces cost and eliminates the communication gaps between subs on your project.</span></li>
-          <li><div class="diff-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div><span class="diff-text"><strong>Written contract with defined scope before any work.</strong> Every project begins with a written scope document, itemized estimate, and signed contract. No verbal agreements, no scope creep surprises — changes are documented as written change orders with agreed pricing before execution.</span></li>
-          <li><div class="diff-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div><span class="diff-text"><strong>Permit management included on applicable projects.</strong> We identify what requires a permit in Warren County, handle the application, and schedule the required inspections at the right phase milestones — you don't need to track permit status yourself.</span></li>
+  <div class="hero-overlay"></div>
+  <span class="grain" aria-hidden="true"></span>
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true">/</li>
+        <li><a href="/services/">Services</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true">/</li>
+        <li aria-current="page"><?php echo $svcName; ?></li>
+      </ol>
+    </nav>
+    <div class="hero-grid hero-grid--form">
+      <div class="hero-copy">
+        <span class="eyebrow">General Contracting &middot; Warrenton &amp; Warren County</span>
+        <h1>General Contracting in <span class="text-accent">Warrenton, MO</span> — one team, planning to punch list</h1>
+        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured Warrenton general contractor that manages residential and commercial projects from planning through final walkthrough—permits, scheduling, and self-performed roofing, siding, drywall, and interior trades under one accountable roof, so you have a single point of contact instead of a stack of subcontractors to chase across Warren County.</p>
+        <div class="hero-actions">
+          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free project estimate</a>
+          <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
+        </div>
+        <ul class="hero-chips">
+          <li><?php echo icon('shield-check', 16); ?> Licensed &amp; insured in Missouri</li>
+          <li><?php echo icon('clipboard-list', 16); ?> Permits &amp; scheduling handled</li>
+          <li><?php echo icon('users', 16); ?> Self-performed trades &mdash; one team</li>
         </ul>
       </div>
-      <div class="expert-image-wrap reveal-right">
-        <img src="<?php echo $bodyPhoto1; ?>" alt="General contracting project in Warrenton, MO by A&S Contracting Services" width="720" height="420" loading="lazy">
-        <div class="expert-image-badge"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Licensed — <span>Missouri GC</span></div>
-      </div>
+
+      <aside class="hero-form-card" id="hero-form">
+        <h2>Want a free project estimate?</h2>
+        <p class="hero-form-tagline">No obligation. Same-day reply.</p>
+        <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
+          <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
+          <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <?php echo p1_attribution_fields('hero'); ?>
+          <input type="hidden" name="consent_version" value="v2.1">
+          <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+          <div class="form-row"><label class="sr-only" for="hero-name">Name</label><input id="hero-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
+          <div class="form-row"><label class="sr-only" for="hero-phone">Phone</label><input id="hero-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>
+          <div class="form-row"><label class="sr-only" for="hero-email">Email</label><input id="hero-email" type="email" name="email" placeholder="Email" autocomplete="email" required></div>
+          <div class="form-row"><label class="sr-only" for="hero-service">Service</label>
+            <select id="hero-service" name="service">
+              <?php foreach ($services as $heroSvc): ?>
+              <option value="<?php echo htmlspecialchars($heroSvc['name']); ?>"<?php echo $heroSvc['slug'] === $serviceSlug ? ' selected' : ''; ?>><?php echo htmlspecialchars($heroSvc['name']); ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          <label class="consent"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/terms/" target="_blank" rel="noopener">Terms</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted. *</span></label>
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
+          <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
+        </form>
+      </aside>
     </div>
   </div>
 </section>
 
-<div class="divider-curve" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 Q720,60 1440,0 L1440,60 L0,60 Z" fill="#f8f8f6"/></svg></div>
-
-<!-- SERVICE BREAKDOWN -->
-<section id="gc-process" class="breakdown-section" aria-label="How we manage general contracting projects">
-  <div class="container-svc">
-    <div class="breakdown-grid">
-      <div class="breakdown-image reveal-left"><img src="<?php echo $bodyPhoto2; ?>" alt="General contracting project managed by A&S in Warren County" width="640" height="480" loading="lazy"><span class="breakdown-image-tag">Our Work</span></div>
-      <div class="reveal-right">
-        <span class="eyebrow-label">The Process</span>
-        <h2 class="section-h2">How does A&amp;S manage general contracting projects in Warrenton?</h2>
-        <p class="answer-block">Every general contracting project with A&amp;S Contracting Services follows a structured process: free consultation, written scope and estimate, signed contract, phased execution with documented milestones, permit management where required, and final walkthrough with punch list closure before payment.</p>
-        <div class="process-steps">
-          <div class="process-step"><div class="step-num">1</div><div><p class="step-title">Free Consultation &amp; Site Assessment</p><p class="step-desc">We meet on-site, assess existing conditions across all affected systems, discuss your goals and timeline, identify permit requirements, and document existing conditions photographically before preparing the scope.</p></div></div>
-          <div class="process-step"><div class="step-num">2</div><div><p class="step-title">Written Scope, Estimate &amp; Contract</p><p class="step-desc">You receive an itemized written estimate and contract covering all scope items, materials, labor, permit fees, and timeline milestones. Scope changes are handled as signed change orders — no verbal additions.</p></div></div>
-          <div class="process-step"><div class="step-num">3</div><div><p class="step-title">Permit Applications (Where Required)</p><p class="step-desc">We apply for all required Warren County or municipal permits before work begins. We schedule required inspections at correct phase milestones and maintain permit documentation on-site during construction.</p></div></div>
-          <div class="process-step"><div class="step-num">4</div><div><p class="step-title">Phased Construction Management</p><p class="step-desc">Work is sequenced and executed by phase, with milestone updates communicated to you at each phase completion. You get one contact — not a different number for every subcontractor on the job.</p></div></div>
-          <div class="process-step"><div class="step-num">5</div><div><p class="step-title">Final Walkthrough &amp; Punch List Closure</p><p class="step-desc">We walk every scope item with you at project completion. Any punch list items are resolved before final payment is due and before we close the job.</p></div></div>
+<!-- ═══════════════════ PROBLEM STATEMENT ═══════════════════ -->
+<section class="section section--light">
+  <div class="container">
+    <div class="sp-problem">
+      <div class="reveal-left">
+        <span class="eyebrow-label">Know The Signs</span>
+        <h2>When does your Warren County project need a general contractor?</h2>
+        <p class="answer-block">A&amp;S Contracting Services steps in when a project touches more than one trade—an addition, a whole renovation, a storm rebuild, or a commercial build-out. The moment framing, roofing, drywall, and finishes all have to be scheduled, permitted, and inspected in the right order, you need one manager accountable for the budget and the timeline, not a homeowner playing dispatcher.</p>
+        <p class="pull-quote">The hardest part of a big project isn&rsquo;t any one trade—it&rsquo;s getting all of them to line up in the right order.</p>
+      </div>
+      <div class="sp-signs reveal-right">
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('building-2', 22); ?></div>
+          <h3>Multi-trade project</h3>
+          <p>An addition or renovation that needs framing, roofing, drywall, and finishes all coordinated.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('clipboard-list', 22); ?></div>
+          <h3>Permits &amp; inspections</h3>
+          <p>Work that requires pulled permits and passed inspections you would rather not manage.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('calendar-check', 22); ?></div>
+          <h3>Nobody owns the schedule</h3>
+          <p>Subcontractors on their own calendars leave the timeline with no one in charge.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('hard-hat', 22); ?></div>
+          <h3>Commercial build-out</h3>
+          <p>A storefront or office fit-out that has to open on a firm date.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROOF -->
-<section style="padding:var(--space-3xl) 0;background:var(--color-bg);" aria-label="General contracting project photos">
-  <div class="container-svc">
-    <div style="text-align:center;margin-bottom:var(--space-2xl);" class="reveal-up"><span class="eyebrow-label">Recent Projects</span><h2 class="section-h2" style="max-width:600px;margin:0 auto var(--space-sm);">What does A&amp;S general contracting work look like near Warrenton?</h2><p class="answer-block" style="max-width:56ch;margin:0 auto;">Sample construction and renovation projects completed by A&amp;S Contracting Services in Warrenton, MO and surrounding Warren County communities.</p></div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);" class="reveal-up">
-      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;"><img src="<?php echo $bodyPhoto3; ?>" alt="General contracting project completed in Warrenton, MO" width="480" height="360" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;"><img src="<?php echo $bodyPhoto1; ?>" alt="Construction project managed by A&S in Warren County" width="480" height="360" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;background:rgba(var(--color-accent-rgb),0.08);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-md);padding:var(--space-xl);"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--color-accent);" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><p style="text-align:center;font-size:0.9rem;line-height:1.65;color:var(--color-text);">More project photos — <a href="/contact/" style="color:var(--color-accent);font-weight:600;">ask at consultation</a>.</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider-wave" aria-hidden="true"><svg viewBox="0 0 1440 54" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,54 Q360,0 720,27 Q1080,54 1440,0 L1440,54 Z" fill="#000000"/></svg></div>
-
-<!-- COMPARISON -->
-<section class="comparison-section" aria-label="A&S vs other general contractors">
-  <div class="container-svc">
-    <div class="comparison-intro reveal-up">
-      <span class="eyebrow-label" style="color:var(--color-accent);">Why A&amp;S?</span>
-      <h2 class="section-h2-light">How does A&amp;S compare to other <span style="color:var(--color-accent);">general contractors</span> in Warren County?</h2>
-      <p style="color:rgba(255,255,255,0.6);max-width:54ch;margin:var(--space-sm) auto 0;font-size:0.95rem;line-height:1.75;">We self-perform the work, provide written contracts with no verbal scope additions, manage permits, and close punch lists before final payment on every project in Warrenton, MO.</p>
-    </div>
-    <div class="comparison-table reveal-up" role="table">
-      <div class="comp-header">What we offer</div><div class="comp-header ours">A&amp;S Contracting</div><div class="comp-header">Other GCs</div>
-      <div class="comp-cell feature">Self-performs 10+ trades</div><div class="comp-cell ours check">✓ No markup on own work</div><div class="comp-cell cross">Often subcontracts all work</div>
-      <div class="comp-cell feature">Written contract before work begins</div><div class="comp-cell ours check">✓ Every project</div><div class="comp-cell cross">Often verbal agreements</div>
-      <div class="comp-cell feature">Change orders in writing</div><div class="comp-cell ours check">✓ Signed before execution</div><div class="comp-cell cross">Often verbal add-ons</div>
-      <div class="comp-cell feature">Permit management included</div><div class="comp-cell ours check">✓ On applicable projects</div><div class="comp-cell cross">Often extra or skipped</div>
-      <div class="comp-cell feature">Punch list closure before final payment</div><div class="comp-cell ours check">✓ Standard process</div><div class="comp-cell cross">Often post-payment</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider-angle" aria-hidden="true"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,40 1440,0 1440,40" fill="#ffffff"/></svg></div>
-
-<!-- FAQ -->
-<section class="faq-section" aria-label="General contracting FAQ">
-  <div class="container-svc">
-    <div class="faq-grid">
-      <div class="faq-sidebar reveal-left"><div class="faq-sidebar-img"><img src="<?php echo $heroPhoto; ?>" alt="General contracting work in Warrenton, MO" width="560" height="260" loading="lazy"></div><div class="faq-sidebar-note"><strong>Specific project question?</strong><br>Contact us — we respond to all Warren County inquiries within one business day and offer free on-site consultations.</div></div>
+<!-- ═══════════════════ EXPERT POSITIONING ═══════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="sp-position">
+      <div class="reveal-up">
+        <div class="sp-position__stat">1<span>accountable team managing your whole project—planning, permits, trades, and walkthrough</span></div>
+      </div>
       <div class="reveal-right">
-        <span class="eyebrow-label">Common Questions</span>
-        <h2 class="section-h2">What do Warrenton homeowners ask about general contracting?</h2>
-        <p class="answer-block" style="margin:var(--space-sm) 0 var(--space-xl);">The most common general contracting questions from Warren County property owners before scheduling a free consultation.</p>
-        <div class="faq-list">
-          <?php foreach ($faqs as $faq): ?><div class="faq-item"><button class="faq-question" aria-expanded="false"><?php echo htmlspecialchars($faq['question']); ?><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-answer"><p><?php echo htmlspecialchars($faq['answer']); ?></p></div></div><?php endforeach; ?>
-        </div>
+        <span class="eyebrow-label">Why It Matters</span>
+        <h2>What makes A&amp;S accountable from start to finish?</h2>
+        <p class="answer-block">A&amp;S Contracting Services self-performs most of the trades it manages—roofing, siding, drywall, and interior work—so the general contractor and the crew are the same company. There is no subcontractor to blame for a missed day. One team plans the job, pulls the permits, runs the schedule, and answers for the result at the final walkthrough.</p>
+        <ul class="sp-evidence">
+          <li><?php echo icon('users', 22); ?><span><b>One in-house team.</b> Because we self-perform the core trades, scheduling and quality stay under one roof instead of scattered across subs.</span></li>
+          <li><?php echo icon('clipboard-list', 22); ?><span><b>Permits and inspections handled.</b> We pull the permits, coordinate inspections, and keep the project moving through each sign-off.</span></li>
+          <li><?php echo icon('shield-check', 22); ?><span><b>Licensed &amp; fully insured.</b> You work with a licensed Missouri general contractor carrying full insurance on every project, residential or commercial.</span></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final-cta-section" aria-label="Free project consultation">
-  <div class="container-svc"><div style="max-width:680px;margin:0 auto;" class="reveal-up">
-    <div class="final-cta-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-    <span class="eyebrow-label" style="color:var(--color-accent);">Free consultation — no pressure</span>
-    <h2 class="section-h2">Ready to start your project in Warrenton?</h2>
-    <p class="answer-block" style="max-width:56ch;margin:var(--space-sm) auto var(--space-xl);">Free on-site project consultations for Warrenton, MO and Warren County. Written scope, firm estimates, licensed general contractor, and consultations available this week.</p>
-    <div class="cta-btn-group"><a href="/contact/" class="btn-accent-lg">Start My Free Consultation</a><a href="/services/" class="btn-dark-outline">View All Services</a></div>
-  </div></div>
+<!-- ═══════════════════ SERVICE BREAKDOWN ═══════════════════ -->
+<section class="section section--light">
+  <div class="container">
+    <span class="eyebrow-label">The Work</span>
+    <h2>What&rsquo;s included when A&amp;S manages your project?</h2>
+    <p class="answer-block">A&amp;S Contracting Services runs the whole job: consultation and planning, a written scope and itemized estimate, permits and inspection coordination, scheduling, self-performed roofing, siding, drywall, and interior trades, ongoing communication, and a final walkthrough. From the first meeting to the punch list, one Warrenton company owns the budget, the timeline, and the result.</p>
+    <div class="sp-included">
+      <div class="reveal-up">
+        <h3>Included in the scope</h3>
+        <ul class="sp-checklist">
+          <li><?php echo icon('check', 20); ?> Consultation and project planning</li>
+          <li><?php echo icon('check', 20); ?> Written scope and itemized estimate</li>
+          <li><?php echo icon('check', 20); ?> Permit applications and inspection coordination</li>
+          <li><?php echo icon('check', 20); ?> Full schedule with trades sequenced in order</li>
+          <li><?php echo icon('check', 20); ?> Self-performed roofing, siding, drywall, and interior work</li>
+          <li><?php echo icon('check', 20); ?> Ongoing project management and communication</li>
+          <li><?php echo icon('check', 20); ?> Final walkthrough and punch-list completion</li>
+        </ul>
+      </div>
+      <div class="reveal-right">
+        <h3>How the project runs</h3>
+        <ol class="process-steps">
+          <li><b>Consultation &amp; plan</b><span>We meet on site, learn the goal, and map the scope, budget, and rough timeline.</span></li>
+          <li><b>Written scope &amp; estimate</b><span>You get an itemized proposal covering every phase—no vague allowances or hidden trades.</span></li>
+          <li><b>Permits &amp; scheduling</b><span>We pull the permits and sequence the trades so each phase is ready for the next.</span></li>
+          <li><b>Build &amp; walkthrough</b><span>Our team performs the work, coordinates inspections, and walks the finished project with you.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- RELATED SERVICES -->
-<section class="related-section" aria-label="Other services">
-  <div class="container-svc">
-    <div style="text-align:center;margin-bottom:var(--space-2xl);" class="reveal-up"><span class="eyebrow-label">Also Available</span><h2 class="section-h2">Other services you may need from A&amp;S Contracting</h2></div>
-    <div class="related-grid">
-      <?php $ri=0; foreach ($relSlugs as $rslug): $rsvc=null; foreach ($services as $s) { if ($s['slug']===$rslug){$rsvc=$s;break;} } if(!$rsvc)continue; $tints=['card-tint-1','card-tint-2','card-tint-3']; ?>
-      <article class="service-card-with-image <?php echo $tints[$ri%3]; ?> reveal-up reveal-delay-<?php echo $ri+1; ?>">
-        <div class="service-card__image"><img src="<?php echo htmlspecialchars($relPhotos[$rslug]); ?>" alt="<?php echo htmlspecialchars($rsvc['name']); ?> in Warrenton, MO" width="480" height="288" loading="lazy"></div>
-        <div class="service-card__body">
-          <div class="service-card__icon"><i data-lucide="<?php echo $relIcons[$rslug]; ?>"></i></div>
-          <h3><?php echo htmlspecialchars($rsvc['name']); ?></h3>
-          <p class="service-card__desc"><?php $d=$rsvc['description'];$p=strpos($d,'. ');echo htmlspecialchars($p!==false?substr($d,0,$p+1):$d); ?></p>
-          <ul><?php foreach ($relBullets[$rslug] as $b): ?><li><?php echo htmlspecialchars($b); ?></li><?php endforeach; ?></ul>
-          <a href="/services/<?php echo $rslug; ?>/" class="service-card__cta">Learn more</a>
+<!-- ═══════════════════ PROOF / REVIEWS ═══════════════════ -->
+<section class="section reviews-section edge-wave-top" aria-label="General contracting reviews">
+  <span class="grain-layer" aria-hidden="true"></span>
+  <div class="container-wide">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">In Their Words</span>
+      <h2>What do Warren County clients say about A&amp;S on bigger projects?</h2>
+      <p>Real reviews from A&amp;S Contracting Services renovation, addition, and full-project customers across Warren County.</p>
+    </div>
+    <div class="reviews-track">
+      <?php
+      $gcReviews = array_filter($reviews, function ($r) { return in_array($r['author'], ['Marcus H.', 'Robert T.', 'Jennifer K.']); });
+      foreach ($gcReviews as $rev):
+        $initial = strtoupper(substr($rev['author'], 0, 1));
+      ?>
+      <article class="review-card">
+        <div class="review-stars" aria-label="<?php echo (int)$rev['rating']; ?> out of 5 stars">
+          <?php for ($s = 0; $s < (int)$rev['rating']; $s++) echo icon('star', 18); ?>
+        </div>
+        <p class="review-text">&ldquo;<?php echo htmlspecialchars($rev['text']); ?>&rdquo;</p>
+        <div class="review-author">
+          <span class="review-avatar" aria-hidden="true"><?php echo $initial; ?></span>
+          <span class="review-name"><?php echo htmlspecialchars($rev['author']); ?></span>
         </div>
       </article>
-      <?php $ri++; endforeach; ?>
+      <?php endforeach; ?>
+    </div>
+    <div class="review-badge-strip">
+      <span class="badge-strip"><?php echo icon('star', 16); ?> 5-Star Google Rated</span>
+      <span class="badge-strip"><?php echo icon('shield-check', 16); ?> Licensed &amp; Insured</span>
+      <span class="badge-strip"><?php echo icon('users', 16); ?> Self-Performed Trades</span>
     </div>
   </div>
 </section>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
+<!-- ═══════════════════ COMPARISON ═══════════════════ -->
+<section class="section">
+  <div class="container">
+    <span class="eyebrow-label">The Difference</span>
+    <h2>Why hire A&amp;S instead of managing subcontractors yourself?</h2>
+    <p class="answer-block">A&amp;S Contracting Services is one licensed general contractor accountable for the whole project. Acting as your own GC means chasing separate subcontractors, reconciling their schedules, and eating the delay when one no-shows. With A&amp;S self-performing the core trades, the schedule stays under one roof and one company answers for the finished result.</p>
+    <div class="sp-compare">
+      <div class="sp-compare__col sp-compare--them">
+        <h3><?php echo icon('x', 20); ?> Being your own GC</h3>
+        <ul>
+          <li><?php echo icon('minus', 18); ?> Coordinating separate subs on clashing schedules</li>
+          <li><?php echo icon('minus', 18); ?> Chasing quotes, invoices, and change orders yourself</li>
+          <li><?php echo icon('minus', 18); ?> One no-show stalls the whole project</li>
+          <li><?php echo icon('minus', 18); ?> No single party accountable for the result</li>
+        </ul>
+      </div>
+      <div class="sp-compare__col sp-compare--us">
+        <h3><?php echo icon('check-circle', 20); ?> A&amp;S Contracting Services</h3>
+        <ul>
+          <li><?php echo icon('check', 18); ?> One licensed contractor over the whole job</li>
+          <li><?php echo icon('check', 18); ?> Core trades self-performed in-house</li>
+          <li><?php echo icon('check', 18); ?> Permits, schedule, and inspections handled</li>
+          <li><?php echo icon('check', 18); ?> One team accountable at the final walkthrough</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FAQ ═══════════════════ -->
+<section class="section section--light" aria-label="General contracting FAQ">
+  <div class="container-narrow">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">Good Questions</span>
+      <h2>What do Warren County clients ask about general contracting?</h2>
+    </div>
+    <div class="faq-grid">
+      <?php foreach ($faqs as $fi => $faq): ?>
+      <details class="faq"<?php echo $fi < 2 ? ' open' : ''; ?>>
+        <summary><?php echo htmlspecialchars($faq['question']); ?></summary>
+        <p><?php echo htmlspecialchars($faq['answer']); ?></p>
+      </details>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ RECENT WORK ═══════════════════ -->
+<section class="section sp-gallery" aria-label="Recent general contracting projects">
+  <div class="container-wide">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">Recent Work</span>
+      <h2>What recent projects has A&amp;S completed as a Warrenton general contractor?</h2>
+      <p class="answer-block">These are real projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+    </div>
+    <div class="sp-gallery-grid" data-p1-dynamic>
+      <?php foreach ($workPhotos as $wp): ?>
+      <figure class="sp-gallery-item">
+        <?php echo p1_picture($wp[0], $wp[1], ['sizes' => '(max-width: 700px) 100vw, 40vw', 'width' => 640, 'height' => 480, 'decoding' => 'async']); ?>
+        <figcaption><?php echo htmlspecialchars($wp[1]); ?></figcaption>
+      </figure>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ OTHER SERVICES ═══════════════════ -->
+<section class="section">
+  <div class="container-wide">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">What We Do</span>
+      <h2>What can A&amp;S self-perform on your project?</h2>
+      <p class="hero-answer">As your general contractor, A&amp;S Contracting Services performs most trades in-house. These are the core services our own crews bring to your Warrenton or Warren County project.</p>
+    </div>
+    <div class="sp-other">
+      <?php
+      $otherSlugs = ['full-scale-interior-work', 'exterior-work', 'roofing'];
+      $tintCycle  = [1, 2, 3];
+      $otherIcons = ['full-scale-interior-work' => 'paint-bucket', 'exterior-work' => 'hammer', 'roofing' => 'home'];
+      foreach ($otherSlugs as $oi => $os):
+        $osvc = null; foreach ($services as $s) { if ($s['slug'] === $os) { $osvc = $s; break; } }
+        if (!$osvc) continue;
+      ?>
+      <article class="service-card-with-image card-tint-<?php echo $tintCycle[$oi % 3]; ?> reveal-up reveal-delay-<?php echo ($oi % 3) + 1; ?>">
+        <div class="service-card__body">
+          <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
+          <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
+          <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
+          <a href="/services/<?php echo $os; ?>/" class="service-card__cta">Learn more</a>
+        </div>
+      </article>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FINAL CTA / ESTIMATE ═══════════════════ -->
+<section class="section section--light" id="estimate" aria-label="Request your free project estimate">
+  <div class="container">
+    <div class="estimate">
+      <div class="card reveal-up" style="padding: clamp(1.5rem, 4vw, 2.5rem); border:1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface);">
+        <span class="eyebrow-label">Free Estimate</span>
+        <h2>Ready to hand your project to one team?</h2>
+        <p class="lead" style="margin-bottom: 1.25rem;">Send the details and A&amp;S Contracting Services will reply the same day to schedule your free on-site consultation.</p>
+
+        <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
+          <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
+          <?php echo p1_attribution_fields('cta-band'); ?>
+          <input type="hidden" name="consent_version" value="v2.1">
+          <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="est-name">Your Name</label>
+              <input id="est-name" type="text" name="name" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <label for="est-phone">Phone</label>
+              <input id="est-phone" type="tel" name="phone" autocomplete="tel" required>
+            </div>
+            <div class="form-field">
+              <label for="est-email">Email</label>
+              <input id="est-email" type="email" name="email" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <label for="est-service">Service Needed</label>
+              <select id="est-service" name="service">
+                <?php foreach ($services as $estSvc): ?>
+                <option value="<?php echo htmlspecialchars($estSvc['name']); ?>"<?php echo $estSvc['slug'] === $serviceSlug ? ' selected' : ''; ?>><?php echo htmlspecialchars($estSvc['name']); ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+            <div class="form-field full">
+              <label for="est-message">Project Details</label>
+              <textarea id="est-message" name="message" rows="4"></textarea>
+            </div>
+          </div>
+
+          <fieldset class="form-consent-fieldset">
+            <legend class="form-consent-legend">Communication Consent</legend>
+            <label class="form-consent-item">
+              <input type="checkbox" name="email_opt_in" value="yes" class="consent-checkbox">
+              <span class="consent-label"><strong>Email updates (optional):</strong> I agree to receive emails from <?php echo htmlspecialchars($siteName); ?> about my inquiry, services, and news. I can unsubscribe anytime or by emailing <?php echo htmlspecialchars($email); ?>. Message frequency varies.</span>
+            </label>
+            <label class="form-consent-item">
+              <input type="checkbox" name="sms_opt_in" value="yes" class="consent-checkbox">
+              <span class="consent-label"><strong>SMS/Text messages (optional):</strong> I agree to receive text messages from <?php echo htmlspecialchars($siteName); ?> at the number I provided (reminders, updates, and offers). Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe, HELP for help. <strong>Consent is not a condition of purchase.</strong></span>
+            </label>
+            <label class="form-consent-item form-consent-required">
+              <input type="checkbox" name="terms_accepted" value="yes" class="consent-checkbox" required>
+              <span class="consent-label">I have read and agree to the <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms of Service</a>. <span class="required-star">*</span></span>
+            </label>
+          </fieldset>
+
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Send my request</button>
+        </form>
+      </div>
+
+      <div class="reveal-right">
+        <span class="eyebrow-label">What Happens Next</span>
+        <h2>What happens after you send your <span class="text-accent">project details</span>?</h2>
+        <ol class="next-steps">
+          <li><strong>We reach out the same day.</strong> A&amp;S Contracting Services confirms the details and schedules your free on-site consultation.</li>
+          <li><strong>You get a written scope.</strong> An itemized estimate covering every phase—trades, permits, timeline, and price.</li>
+          <li><strong>One team runs the job.</strong> The same self-performing crew builds, coordinates inspections, and walks the finished project with you.</li>
+        </ol>
+        <div class="nap">
+          <div><?php echo icon('phone', 18); ?> <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a></div>
+          <div><?php echo icon('mail', 18); ?> <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></div>
+          <div><?php echo icon('map-pin', 18); ?> <span><?php echo $addressCity; ?>, <?php echo $addressState; ?> <?php echo $addressZip; ?></span></div>
+          <div><?php echo icon('clock', 18); ?> <span><?php echo htmlspecialchars($businessHours); ?></span></div>
+        </div>
+        <p style="margin-top:1rem; color: var(--color-muted); font-size: .95rem;">General contracting across Warrenton, Wright City, Foristell, Wentzville, Troy, Jonesburg, Washington and everywhere within <?php echo $serviceRadius; ?> miles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

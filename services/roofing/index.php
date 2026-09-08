@@ -3,1280 +3,511 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 ?>
 <?php
-// ─── Page Setup ────────────────────────────────────────────
-$thisSlug        = 'roofing';
-$pageTitle       = "Roofing Contractor in Warrenton, MO | A&S Contracting Services";
-$pageDescription = "Licensed roofing contractor in Warrenton, MO. Roof replacement, repair & installation for Warren County homes. Free estimates — A&S Contracting Services.";
+// ─── Page-level setup ───────────────────────────────────────────────────────
+$serviceSlug     = 'roofing';
+$pageType        = 'service';
+$currentPage     = 'services';
+$svcName         = 'Roofing';
+$pageTitle       = 'Roofing in Warrenton, MO';
+$pageDescription = 'Roofing contractor in Warrenton, MO. A&S Contracting Services self-performs roof repair, tear-off, and full replacement across Warren County—storm and hail claims handled. Free written estimates.';
 $canonicalUrl    = $siteUrl . '/services/roofing/';
-$currentPage     = 'roofing';
-$cssVersion      = '5';
 
-$pb              = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/photos/';
-$heroPhoto       = $pb . '1779984864659-a47kou-52-Aug_08__2025_00-31-27-YHMr.jpg';
-$bodyPhoto1      = $pb . '1779984851004-bey4ix-53-Aug_08__2025_00-54-39-zixD.jpg';
-$bodyPhoto2      = $pb . '1779985049692-2gmyz6-31-Mar_13__2025_16-36-11-MGgp.jpg';
-$bodyPhoto3      = $pb . '1779985050122-4csoe0-32-Mar_13__2025_16-36-41-NptX.jpg';
-$heroImagePreload = $heroPhoto;
-$ogImage         = $heroPhoto;
-
-// Find current service
-$currentService = null;
-foreach ($services as $svc) {
-    if ($svc['slug'] === $thisSlug) { $currentService = $svc; break; }
-}
-
-// Related services (first 3 that aren't roofing)
-$svcPhotos = [
-    'siding'                   => $pb . '1779984869042-6cwzvd-59-Aug_09__2025_12-39-54-JQC9.jpg',
-    'gutters'                  => $pb . '1779984936314-5pnhuy-43-Aug_06__2025_23-34-36-CJqa.jpg',
-    'fascia'                   => $pb . '1779984953000-ootb3h-20-Aug_06__2025_14-16-18-XFFu.jpg',
+// ─── Hero + recent-work photos (image manifest) ─────────────────────────────
+$heroImage    = '1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB';
+$heroImageAlt = 'Completed asphalt shingle roof with vent pipes on a Warrenton, MO home by A&S Contracting Services';
+$heroPreload  = [
+    'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
+    'sizes'  => '100vw',
 ];
-$svcIcons = ['siding' => 'building-2', 'gutters' => 'droplets', 'fascia' => 'ruler'];
-$svcBulletsRel = [
-    'siding'  => ['Vinyl, fiber cement & wood','Storm & moisture damage repair','Boosts curb appeal immediately'],
-    'gutters' => ['Seamless gutter installation','Protects foundation & landscaping','Cleaning & maintenance included'],
-    'fascia'  => ['Premium long-term materials','Protects roof edge from rot','Pairs with gutter installation'],
+$workPhotos = [
+    ['1779985083337-zk34j0-26-Feb_09__2026_17-30-49-9vp8', 'Worker installing a chimney on new roofing underlayment during a Warren County roof build'],
+    ['1779985081293-864e8m-2-Feb_09__2026_13-42-04-ptJL', 'Overhead view of asphalt shingles going on over a wooded residential lot near Warrenton'],
+    ['1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4', 'A&S crew tearing off old shingles and underlayment on a Warren County roofing project'],
 ];
 
-// FAQs
+// ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
-        'question' => 'How much does a roof replacement cost in Warrenton, MO?',
-        'answer'   => 'A full roof replacement in Warrenton typically ranges from $6,000 to $18,000 depending on roof size, pitch, and the material selected — asphalt shingles, architectural shingles, or metal. A&S Contracting Services provides a free on-site written estimate with no obligation.',
+        'question' => 'How much does a new roof cost in Warrenton, MO?',
+        'answer'   => 'Roof cost in Warrenton depends on square footage, pitch, material, and the condition of the decking underneath. A&S Contracting Services prices every roof from a free on-site measurement and written estimate, so the number you get is the number you pay—no per-square guessing over the phone and no upsell once the crew arrives.',
     ],
     [
-        'question' => 'How long does a roof replacement take near Warren County?',
-        'answer'   => 'Most residential roof replacements in the Warren County area take 1 to 3 days. A small single-story home can often be completed in one full day, while larger or steeper roofs may take 2 to 3 days. We provide a project timeline with every estimate.',
+        'question' => 'Do you handle hail and storm damage insurance claims?',
+        'answer'   => 'Yes. A&S Contracting Services documents hail bruising, wind-lifted shingles, and creased ridges with photos, meets your adjuster on site, and provides an itemized estimate your insurer can process. Warren County sees real Missouri hail, and clean documentation is what keeps a roof claim moving from inspection to installation.',
     ],
     [
-        'question' => 'Does A&S handle storm damage roofing repairs in Warrenton?',
-        'answer'   => 'Yes. Storm damage repair is one of our most common roofing calls in Warrenton and across Warren County. We assess hail, wind, and water damage, help document the damage for insurance purposes, and complete repairs quickly to stop further water intrusion.',
+        'question' => 'How long does a roof replacement take?',
+        'answer'   => 'Most single-family roof replacements in the Warrenton area are torn off and re-shingled in one to three days, weather permitting. Because A&S Contracting Services runs its own crew instead of subcontracting, the same people tear off, dry-in, and finish—so the timeline you are quoted is the timeline you get.',
     ],
     [
-        'question' => 'What roofing materials do you install in Missouri?',
-        'answer'   => 'We install 3-tab asphalt shingles, dimensional (architectural) asphalt shingles, and metal roofing panels on residential and commercial properties throughout central Missouri. We recommend materials based on your roof pitch, home style, and budget.',
+        'question' => 'Should I repair or fully replace my roof?',
+        'answer'   => 'A roof under about 12 years old with isolated damage is usually worth repairing; widespread granule loss, multiple leaks, or storm damage across several slopes points to replacement. A&S Contracting Services inspects the whole roof, shows you what it finds, and gives you the honest call instead of defaulting to the bigger job.',
     ],
     [
-        'question' => 'Are you licensed and insured for roofing work in Missouri?',
-        'answer'   => 'Yes. A&S Contracting Services is fully licensed and carries general liability insurance covering all roofing projects in Missouri. We can provide proof of license and insurance before any work begins — just ask at estimate time.',
+        'question' => 'What roofing materials do you install?',
+        'answer'   => 'A&S Contracting Services installs architectural asphalt shingles for most Warrenton homes, plus impact-resistant shingles and metal roofing where the home or budget calls for it. We match the product to your roof pitch, exposure, and how long you plan to stay in the house.',
     ],
     [
-        'question' => 'Do you offer free roofing estimates near me in Warrenton?',
-        'answer'   => 'Absolutely. Every roofing project starts with a free, no-pressure on-site estimate. We assess your roof in person, measure square footage, identify problem areas, and deliver a written quote — no phone estimates, no surprise line items.',
+        'question' => 'Are you licensed and insured for roofing in Missouri?',
+        'answer'   => 'Yes. A&S Contracting Services is a licensed Missouri general contractor and carries full insurance on every roofing job. That protects your home during tear-off and means the crew on your roof is covered from the first shingle to the final cleanup and nail sweep.',
     ],
 ];
 
-// Schema
-$schemaData = [
-    '@context' => 'https://schema.org',
-    '@graph'   => [
-        [
-            '@type'       => 'Service',
-            '@id'         => $siteUrl . '/services/roofing/#service',
-            'name'        => 'Roofing',
-            'description' => $currentService['description'] ?? '',
-            'provider'    => ['@id' => $siteUrl . '/#organization'],
-            'areaServed'  => [
-                '@type'       => 'GeoCircle',
-                'geoMidpoint' => ['@type' => 'GeoCoordinates', 'latitude' => '38.8153', 'longitude' => '-91.1418'],
-                'geoRadius'   => '80467',
-            ],
-            'url'         => $canonicalUrl,
-        ],
-        [
-            '@type'           => 'BreadcrumbList',
-            'itemListElement' => [
-                ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',     'item' => $siteUrl . '/'],
-                ['@type' => 'ListItem', 'position' => 2, 'name' => 'Services', 'item' => $siteUrl . '/services/'],
-                ['@type' => 'ListItem', 'position' => 3, 'name' => 'Roofing'],
-            ],
-        ],
-        [
-            '@type'      => 'FAQPage',
-            'mainEntity' => array_map(fn($f) => [
-                '@type'          => 'Question',
-                'name'           => $f['question'],
-                'acceptedAnswer' => ['@type' => 'Answer', 'text' => $f['answer']],
-            ], $faqs),
-        ],
+// ─── Schema (Service + FAQPage + BreadcrumbList) ─────────────────────────────
+$serviceSchema = [
+    '@context'    => 'https://schema.org',
+    '@type'       => 'Service',
+    '@id'         => $canonicalUrl . '#service-' . $serviceSlug,
+    'name'        => 'Roofing',
+    'serviceType' => 'Roofing contractor',
+    'description' => 'Residential and commercial roof repair, tear-off, and full replacement in Warrenton, MO and Warren County, including storm and hail insurance claim documentation.',
+    'provider'    => ['@id' => $siteUrl . '/#organization'],
+    'areaServed'  => [
+        '@type' => 'GeoCircle',
+        'geoMidpoint' => ['@type' => 'GeoCoordinates', 'latitude' => '38.8098', 'longitude' => '-91.1401'],
+        'geoRadius'   => $serviceRadius . ' miles',
+    ],
+    'url'         => $canonicalUrl,
+];
+$breadcrumbSchema = [
+    '@context'        => 'https://schema.org',
+    '@type'           => 'BreadcrumbList',
+    'itemListElement' => [
+        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',     'item' => $siteUrl . '/'],
+        ['@type' => 'ListItem', 'position' => 2, 'name' => 'Services', 'item' => $siteUrl . '/services/'],
+        ['@type' => 'ListItem', 'position' => 3, 'name' => $svcName,   'item' => $canonicalUrl],
     ],
 ];
-$schemaMarkup = json_encode($schemaData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+$schema  = '<script type="application/ld+json">' . json_encode($serviceSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
+$schema .= generateFAQSchema($faqs) . "\n";
+$schema .= '<script type="application/ld+json">' . json_encode($breadcrumbSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 ?>
-<body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
 
 <style>
-/* ═══════════════════════════════════════════════════════════════
-   /services/roofing/ — Page-specific styles — Premium tier ≥400L
-   All values use CSS custom properties only.
-   ═══════════════════════════════════════════════════════════════ */
+/* ── Service page composition (token-only) ── */
+.sp-signs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.75rem; }
+.sp-sign { background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.25rem; display: grid; gap: .5rem; box-shadow: var(--shadow-sm); }
+.sp-sign__icon { width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center; color: var(--color-primary); background: color-mix(in srgb, var(--color-primary) 12%, white); }
+.sp-sign h3 { font-size: 1.02rem; }
+.sp-sign p { margin: 0; font-size: .9rem; color: var(--color-ink-2); }
+.sp-problem { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+@media (max-width: 900px) { .sp-problem { grid-template-columns: 1fr; } .sp-signs { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .sp-signs { grid-template-columns: 1fr; } }
 
-/* ─── HERO ────────────────────────────────────────────────── */
-.svc-hero {
-  position: relative;
-  min-height: 88vh;
-  display: flex;
-  align-items: center;
-  background-image: url('<?php echo $heroPhoto; ?>');
-  background-size: cover;
-  background-position: center 35%;
-  padding: calc(var(--nav-height, 72px) + var(--space-3xl)) 0 var(--space-3xl);
-  overflow: hidden;
-}
-.svc-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    110deg,
-    rgba(var(--color-primary-rgb), 0.92) 0%,
-    rgba(var(--color-primary-rgb), 0.75) 42%,
-    rgba(var(--color-primary-rgb), 0.28) 100%
-  );
-  z-index: 1;
-}
-.svc-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
-  background-size: 220px;
-  opacity: 0.04;
-  z-index: 2;
-  pointer-events: none;
-}
-.svc-hero-inner {
-  position: relative;
-  z-index: 3;
-  max-width: var(--max-width, 1280px);
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: var(--space-2xl);
-  align-items: center;
-  width: 100%;
-}
-.svc-hero-text {}
-.hero-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.48);
-  margin-bottom: var(--space-md);
-}
-.hero-breadcrumb a { color: rgba(255,255,255,0.48); transition: color 0.2s; }
-.hero-breadcrumb a:hover { color: var(--color-accent); }
-.hero-breadcrumb span { color: rgba(255,255,255,0.28); }
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  background: rgba(var(--color-accent-rgb), 0.15);
-  border: 1px solid rgba(var(--color-accent-rgb), 0.45);
-  color: var(--color-accent);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  border-radius: var(--radius-sm);
-  margin-bottom: var(--space-md);
-}
-.svc-hero h1 {
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
-  font-weight: 800;
-  line-height: 1.07;
-  text-wrap: balance;
-  color: var(--color-secondary);
-  margin: 0 0 var(--space-md);
-}
-.svc-hero h1 .accent { color: var(--color-accent); }
-.hero-answer {
-  font-size: 1.05rem;
-  line-height: 1.78;
-  color: rgba(255,255,255,0.76);
-  max-width: 52ch;
-  margin: 0 0 var(--space-xl);
-}
-.hero-trust-row {
-  display: flex;
-  gap: var(--space-lg);
-  flex-wrap: wrap;
-  margin-bottom: var(--space-xl);
-}
-.trust-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.18);
-  color: rgba(255,255,255,0.88);
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 6px 14px;
-  border-radius: 100px;
-}
-.trust-pill svg { width: 13px; height: 13px; color: var(--color-accent); }
-.hero-cta-group {
-  display: flex;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-}
-.btn-primary-svc {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--color-accent);
-  color: var(--color-primary);
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: 0.82rem;
-  font-weight: 800;
-  padding: 14px 28px;
-  border-radius: var(--radius);
-  border: 2px solid var(--color-accent);
-  transition: all 0.2s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.btn-primary-svc:hover {
-  background: #ffbb00;
-  border-color: #ffbb00;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(var(--color-accent-rgb),0.4);
-}
-.btn-ghost-svc {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  color: var(--color-secondary);
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: 0.82rem;
-  font-weight: 700;
-  padding: 14px 28px;
-  border-radius: var(--radius);
-  border: 2px solid rgba(255,255,255,0.3);
-  transition: all 0.2s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.btn-ghost-svc:hover {
-  border-color: rgba(255,255,255,0.7);
-  background: rgba(255,255,255,0.08);
-}
+/* Expert positioning — big stat + evidence */
+.sp-position { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.sp-position__stat { font-family: var(--font-accent); font-size: clamp(3.4rem, 9vw, 5.5rem); line-height: .9; color: var(--color-primary); letter-spacing: .01em; }
+.sp-position__stat span { display: block; font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; letter-spacing: 0; color: var(--color-ink-2); margin-top: .6rem; max-width: 22ch; }
+.sp-evidence { display: grid; gap: 1rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+.sp-evidence li { display: grid; grid-template-columns: 28px 1fr; gap: .8rem; align-items: start; }
+.sp-evidence li svg { color: var(--color-accent-dark); margin-top: 3px; }
+.sp-evidence b { display: block; }
+@media (max-width: 800px) { .sp-position { grid-template-columns: 1fr; } }
 
-/* ─── HERO ASIDE CARD ─────────────────────────────────────── */
-.hero-aside-card {
-  background: rgba(255,255,255,0.97);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  box-shadow: 0 24px 64px rgba(0,0,0,0.35);
-}
-.aside-card-title {
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--color-primary);
-  margin: 0 0 var(--space-sm);
-}
-.aside-form { display: flex; flex-direction: column; gap: var(--space-sm); }
-.form-group { display: flex; flex-direction: column; gap: 4px; }
-.form-group label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--color-text-light);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 10px 14px;
-  border: 1.5px solid var(--color-border, #e2e2e2);
-  border-radius: var(--radius-sm);
-  font-size: 0.9rem;
-  color: var(--color-text);
-  background: var(--color-bg, #fff);
-  transition: border-color 0.2s;
-  font-family: var(--font-body, 'Inter', sans-serif);
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--color-accent);
-}
-.form-consent-fieldset {
-  border: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-}
-.form-consent-legend {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--color-text-light);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 6px;
-}
-.form-consent-item {
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
-  cursor: pointer;
-}
-.form-consent-item input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-  margin-top: 2px;
-  accent-color: var(--color-accent);
-}
-.consent-label {
-  font-size: 0.78rem;
-  line-height: 1.55;
-  color: var(--color-text-light);
-}
-.consent-label a { color: var(--color-accent); }
-.required-star { color: #c00; font-weight: 700; }
-.btn-form-submit {
-  width: 100%;
-  background: var(--color-primary);
-  color: var(--color-secondary);
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: 0.82rem;
-  font-weight: 800;
-  padding: 14px;
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: all 0.2s;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.btn-form-submit:hover {
-  background: var(--color-accent);
-  color: var(--color-primary);
-  transform: translateY(-1px);
-}
+/* What's included + timeline */
+.sp-included { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 3.5rem); align-items: start; }
+.sp-checklist { display: grid; gap: .65rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+.sp-checklist li { display: grid; grid-template-columns: 24px 1fr; gap: .6rem; align-items: start; font-size: .96rem; }
+.sp-checklist li svg { color: var(--color-primary); margin-top: 3px; }
+@media (max-width: 800px) { .sp-included { grid-template-columns: 1fr; } }
 
-/* ─── SECTION DIVIDERS ────────────────────────────────────── */
-.divider-wave { display: block; width: 100%; overflow: hidden; line-height: 0; }
-.divider-wave svg { display: block; width: 100%; }
-.divider-angle { display: block; width: 100%; overflow: hidden; line-height: 0; }
-.divider-angle svg { display: block; width: 100%; }
-.divider-curve { display: block; width: 100%; overflow: hidden; line-height: 0; }
-.divider-curve svg { display: block; width: 100%; }
+/* Comparison */
+.sp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+.sp-compare__col { border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--color-surface); }
+.sp-compare__col--us { border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-line)); box-shadow: var(--shadow); background: color-mix(in srgb, var(--color-accent) 8%, white); }
+.sp-compare h3 { font-size: 1.1rem; margin-bottom: .9rem; display: flex; align-items: center; gap: .5rem; }
+.sp-compare ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
+.sp-compare li { display: grid; grid-template-columns: 22px 1fr; gap: .55rem; font-size: .93rem; color: var(--color-ink-2); }
+.sp-compare--them li svg { color: var(--color-danger); margin-top: 2px; }
+.sp-compare--us li svg { color: var(--color-success); margin-top: 2px; }
+@media (max-width: 700px) { .sp-compare { grid-template-columns: 1fr; } }
 
-/* ─── SECTION BASE ────────────────────────────────────────── */
-.section { padding: var(--space-3xl) 0; }
-.section-alt { background: var(--color-bg-alt, #f8f8f6); }
-.section-dark { background: var(--color-primary); color: var(--color-secondary); }
-.container-svc {
-  max-width: var(--max-width, 1280px);
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-}
-.eyebrow-label {
-  display: inline-block;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-sm);
-}
-.section-h2 {
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 800;
-  color: var(--color-primary);
-  text-wrap: balance;
-  margin: 0 0 var(--space-sm);
-  line-height: 1.15;
-}
-.section-h2-light {
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 800;
-  color: var(--color-secondary);
-  text-wrap: balance;
-  margin: 0 0 var(--space-sm);
-  line-height: 1.15;
-}
-.answer-block {
-  font-size: 1rem;
-  line-height: 1.78;
-  color: var(--color-text);
-  border-left: 3px solid var(--color-accent);
-  background: rgba(var(--color-accent-rgb), 0.06);
-  padding: var(--space-sm) var(--space-md);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  margin: 0 0 var(--space-md);
-  max-width: 66ch;
-}
-
-/* ─── PROBLEM STATEMENT ───────────────────────────────────── */
-.problem-section { padding: var(--space-3xl) 0; background: var(--color-bg-alt, #f8f8f6); }
-.problem-pullquote {
-  font-family: var(--font-accent, 'Fraunces', serif);
-  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
-  font-weight: 700;
-  font-style: italic;
-  color: var(--color-primary);
-  text-wrap: balance;
-  max-width: 700px;
-  margin: 0 auto var(--space-2xl);
-  text-align: center;
-  line-height: 1.3;
-}
-.problem-pullquote em { color: var(--color-accent); font-style: normal; }
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-md);
-}
-@media (max-width: 900px) { .bento-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px)  { .bento-grid { grid-template-columns: 1fr; } }
-.bento-card {
-  background: #fff;
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.bento-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-.bento-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius);
-  background: rgba(var(--color-accent-rgb), 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-accent);
-}
-.bento-icon svg { width: 22px; height: 22px; }
-.bento-card h3 {
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin: 0;
-  line-height: 1.3;
-}
-.bento-card p {
-  font-size: 0.875rem;
-  line-height: 1.65;
-  color: var(--color-text-light);
-  margin: 0;
-}
-
-/* ─── EXPERT POSITIONING (ASYMMETRIC) ────────────────────── */
-.expert-section { padding: var(--space-3xl) 0; background: var(--color-bg); }
-.expert-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: var(--space-3xl);
-  align-items: center;
-}
-.expert-stat-block {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-}
-.big-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.big-stat-num {
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: clamp(3.5rem, 8vw, 6rem);
-  font-weight: 800;
-  color: var(--color-accent);
-  line-height: 1;
-}
-.big-stat-label {
-  font-size: 0.82rem;
-  color: var(--color-text-light);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.differentiator-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.differentiator-list li {
-  display: flex;
-  gap: var(--space-sm);
-  align-items: flex-start;
-}
-.diff-check {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-.diff-check svg { width: 12px; height: 12px; color: var(--color-primary); }
-.diff-text { font-size: 0.95rem; line-height: 1.65; color: var(--color-text); }
-.diff-text strong { color: var(--color-primary); font-weight: 700; }
-.expert-image-wrap {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-}
-.expert-image-wrap img { width: 100%; height: 420px; object-fit: cover; display: block; }
-.expert-image-badge {
-  position: absolute;
-  bottom: var(--space-md);
-  left: var(--space-md);
-  background: var(--color-primary);
-  color: var(--color-secondary);
-  border-radius: var(--radius);
-  padding: var(--space-sm) var(--space-md);
-  font-size: 0.82rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.expert-image-badge span { color: var(--color-accent); }
-
-/* ─── SERVICE BREAKDOWN ───────────────────────────────────── */
-.breakdown-section { padding: var(--space-3xl) 0; background: var(--color-bg-alt); }
-.breakdown-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-  align-items: start;
-}
-.breakdown-image {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  position: relative;
-}
-.breakdown-image img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 360px; }
-.breakdown-image-tag {
-  position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
-  background: var(--color-accent);
-  color: var(--color-primary);
-  font-size: 0.76rem;
-  font-weight: 800;
-  padding: 5px 12px;
-  border-radius: var(--radius-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-.breakdown-content {}
-.process-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-top: var(--space-xl);
-  position: relative;
-}
-.process-steps::before {
-  content: '';
-  position: absolute;
-  left: 19px;
-  top: 24px;
-  bottom: 24px;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--color-accent), rgba(var(--color-accent-rgb),0.1));
-}
-.process-step {
-  display: flex;
-  gap: var(--space-md);
-  align-items: flex-start;
-  padding: 0 0 var(--space-lg);
-  position: relative;
-}
-.step-num {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: var(--color-accent);
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: 0.82rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  z-index: 1;
-  border: 3px solid var(--color-accent);
-}
-.step-body {}
-.step-title {
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin: 0 0 4px;
-}
-.step-desc {
-  font-size: 0.88rem;
-  line-height: 1.65;
-  color: var(--color-text-light);
-  margin: 0;
-}
-
-/* ─── COMPARISON ──────────────────────────────────────────── */
-.comparison-section { padding: var(--space-3xl) 0; background: var(--color-primary); }
-.comparison-intro { text-align: center; margin-bottom: var(--space-2xl); }
-.comparison-table {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-.comp-header {
-  background: rgba(255,255,255,0.06);
-  padding: var(--space-md) var(--space-lg);
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.5);
-}
-.comp-header.ours { background: rgba(var(--color-accent-rgb),0.15); color: var(--color-accent); }
-.comp-row {
-  display: contents;
-}
-.comp-cell {
-  padding: var(--space-md) var(--space-lg);
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.75);
-  border-top: 1px solid rgba(255,255,255,0.06);
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-}
-.comp-cell.feature { font-weight: 600; color: rgba(255,255,255,0.9); }
-.comp-cell.ours { background: rgba(var(--color-accent-rgb),0.06); }
-.comp-cell.check { color: var(--color-accent); font-weight: 700; }
-.comp-cell.cross { color: rgba(255,255,255,0.35); }
-
-/* ─── FAQ ─────────────────────────────────────────────────── */
-.faq-section { padding: var(--space-3xl) 0; background: var(--color-bg); }
-.faq-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-  align-items: start;
-}
-.faq-sidebar { position: sticky; top: 100px; }
-.faq-sidebar-img { border-radius: var(--radius-lg); overflow: hidden; margin-bottom: var(--space-md); }
-.faq-sidebar-img img { width: 100%; height: 260px; object-fit: cover; display: block; }
-.faq-sidebar-note {
-  background: rgba(var(--color-accent-rgb),0.08);
-  border: 1px solid rgba(var(--color-accent-rgb),0.2);
-  border-radius: var(--radius);
-  padding: var(--space-md);
-  font-size: 0.88rem;
-  line-height: 1.65;
-  color: var(--color-text);
-}
-.faq-sidebar-note strong { color: var(--color-primary); }
-.faq-list { display: flex; flex-direction: column; gap: var(--space-sm); }
-.faq-item {
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--color-bg);
-}
-.faq-question {
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  padding: var(--space-md) var(--space-lg);
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--space-md);
-  line-height: 1.4;
-  transition: color 0.2s;
-}
-.faq-question:hover { color: var(--color-accent); }
-.faq-icon { width: 18px; height: 18px; flex-shrink: 0; transition: transform 0.3s; }
-.faq-item.open .faq-icon { transform: rotate(45deg); }
-.faq-answer {
-  display: none;
-  padding: 0 var(--space-lg) var(--space-md);
-  font-size: 0.9rem;
-  line-height: 1.78;
-  color: var(--color-text-light);
-  border-top: 1px solid rgba(0,0,0,0.06);
-}
-.faq-item.open .faq-answer { display: block; }
-
-/* ─── FINAL CTA ───────────────────────────────────────────── */
-.final-cta-section {
-  padding: var(--space-3xl) 0;
-  background: var(--color-bg-alt);
-  text-align: center;
-}
-.final-cta-inner { max-width: 680px; margin: 0 auto; }
-.final-cta-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--space-lg);
-  color: var(--color-accent);
-}
-.final-cta-icon svg { width: 28px; height: 28px; }
-.final-cta-section h2 { font-family: var(--font-heading, 'Unbounded', sans-serif); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; color: var(--color-primary); text-wrap: balance; margin: 0 0 var(--space-sm); }
-.final-cta-section .answer-block { max-width: 56ch; margin: 0 auto var(--space-xl); text-align: left; }
-.cta-btn-group { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
-.btn-accent-lg {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--color-accent);
-  color: var(--color-primary);
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: 0.85rem;
-  font-weight: 800;
-  padding: 16px 32px;
-  border-radius: var(--radius);
-  border: 2px solid var(--color-accent);
-  transition: all 0.2s;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.btn-accent-lg:hover { background: #ffbb00; border-color: #ffbb00; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(var(--color-accent-rgb),0.4); }
-.btn-dark-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  color: var(--color-primary);
-  font-family: var(--font-heading, 'Unbounded', sans-serif);
-  font-size: 0.85rem;
-  font-weight: 700;
-  padding: 16px 32px;
-  border-radius: var(--radius);
-  border: 2px solid rgba(0,0,0,0.2);
-  transition: all 0.2s;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.btn-dark-outline:hover { border-color: var(--color-primary); background: rgba(0,0,0,0.05); }
-
-/* ─── RELATED SERVICES ────────────────────────────────────── */
-.related-section { padding: var(--space-3xl) 0; background: var(--color-bg); }
-.related-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  margin-top: var(--space-2xl);
-}
-@media (max-width: 900px)  { .related-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 520px)  { .related-grid { grid-template-columns: 1fr; } }
-
-/* ─── RESPONSIVE ──────────────────────────────────────────── */
-@media (max-width: 1100px) {
-  .svc-hero-inner { grid-template-columns: 1fr; }
-  .hero-aside-card { display: none; }
-  .expert-grid { grid-template-columns: 1fr; }
-  .breakdown-grid { grid-template-columns: 1fr; }
-  .faq-grid { grid-template-columns: 1fr; }
-  .faq-sidebar { display: none; }
-  .comparison-table { grid-template-columns: 1.5fr 1fr 1fr; }
-}
-@media (max-width: 700px) {
-  .svc-hero { min-height: 70vh; }
-  .comparison-table { grid-template-columns: 1fr; }
-  .comp-header:nth-child(2), .comp-cell:nth-child(3n) { display: none; }
-}
+/* Other services */
+.sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+@media (max-width: 800px) { .sp-other { grid-template-columns: 1fr; } }
+/* Photo hero: let the <picture> fill the .hero-bg layer */
+.hero--photo .hero-bg picture { display: block; width: 100%; height: 100%; }
+.hero--photo .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.hero--photo .breadcrumb, .hero--photo .breadcrumb a { color: rgba(255,255,255,.82); }
 </style>
 
-<!-- ─── SECTION 1: HERO ──────────────────────────────────── -->
-<section class="svc-hero" aria-label="Roofing contractor in Warrenton, MO">
-  <div class="svc-hero-inner">
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
 
-    <div class="svc-hero-text">
-      <nav class="hero-breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a><span aria-hidden="true">›</span>
-        <a href="/services/">Services</a><span aria-hidden="true">›</span>
-        <span aria-current="page">Roofing</span>
-      </nav>
-      <span class="hero-eyebrow">Warrenton, MO — Warren County</span>
-      <h1>
-        <span class="accent">Roofing</span> Contractor<br>
-        in Warrenton, Missouri
-      </h1>
-      <p class="hero-answer">
-        A&amp;S Contracting Services is a licensed and insured roofing contractor based in Warrenton, MO, providing roof replacement, repair, and installation to homeowners and businesses across Warren County and a 50-mile radius of central Missouri. Free written estimates with no pressure to commit.
-      </p>
-      <div class="hero-trust-row">
-        <span class="trust-pill">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Licensed &amp; Insured
-        </span>
-        <span class="trust-pill">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Free Written Estimates
-        </span>
-        <span class="trust-pill">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          3+ Years in Missouri
-        </span>
-      </div>
-      <div class="hero-cta-group">
-        <a href="/contact/" class="btn-primary-svc">Get a Free Roofing Estimate</a>
-        <a href="#roofing-process" class="btn-ghost-svc">See How It Works</a>
-      </div>
-    </div>
-
-    <aside class="hero-aside-card" aria-label="Quick estimate request">
-      <p class="aside-card-title">Request a Free Roofing Estimate</p>
-      <form class="aside-form" action="<?php echo htmlspecialchars($formAction); ?>" method="POST">
-        <input type="text"   name="_honey"          style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <input type="hidden" name="_next"            value="/thank-you">
-        <input type="hidden" name="_consent_version" value="v2.1">
-        <input type="hidden" name="_consent_page"   value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
-        <input type="hidden" name="service"          value="Roofing">
-
-        <div class="form-group">
-          <label for="hero-name-r">Your Name</label>
-          <input type="text" id="hero-name-r" name="name" placeholder="John Smith" required>
-        </div>
-        <div class="form-group">
-          <label for="hero-phone-r">Phone Number</label>
-          <input type="tel" id="hero-phone-r" name="phone" placeholder="(573) 555-0100" required>
-        </div>
-        <div class="form-group">
-          <label for="hero-email-r">Email Address</label>
-          <input type="email" id="hero-email-r" name="email" placeholder="you@email.com" required>
-        </div>
-        <div class="form-group">
-          <label for="hero-msg-r">Brief Description</label>
-          <textarea id="hero-msg-r" name="message" rows="2" placeholder="Roof repair, full replacement, storm damage…"></textarea>
-        </div>
-
-        <fieldset class="form-consent-fieldset">
-          <legend class="form-consent-legend">Communication Consent</legend>
-          <label class="form-consent-item">
-            <input type="checkbox" name="email_opt_in" value="yes" class="consent-checkbox">
-            <span class="consent-label"><strong>Email (optional):</strong> I agree to receive emails from A&amp;S Contracting Services about my inquiry.</span>
-          </label>
-          <label class="form-consent-item">
-            <input type="checkbox" name="sms_opt_in" value="yes" class="consent-checkbox">
-            <span class="consent-label"><strong>SMS (optional):</strong> I agree to receive texts. Msg &amp; data rates may apply. Reply STOP to opt out. <strong>Not required.</strong></span>
-          </label>
-          <label class="form-consent-item form-consent-required">
-            <input type="checkbox" name="terms_accepted" value="yes" class="consent-checkbox" required>
-            <span class="consent-label">I agree to the <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="/terms/" target="_blank" rel="noopener">Terms of Service</a>. <span class="required-star">*</span></span>
-          </label>
-        </fieldset>
-
-        <!-- spam shield: signed render timestamp + JS interaction signal -->
-        <?php $__ft_ts = (string) time(); ?>
-        <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
-        <input type="hidden" name="_js" value="" class="js-shield-field">
-        <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
-        <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
-        <?php } ?>
-        <button type="submit" class="btn-form-submit">Send Estimate Request →</button>
-      </form>
-    </aside>
-
+<!-- ═══════════════════ HERO (interior) ═══════════════════ -->
+<section class="hero hero--photo">
+  <div class="hero-bg">
+    <?php echo p1_picture($heroImage, $heroImageAlt, ['sizes' => '100vw', 'width' => 1600, 'height' => 1000, 'loading' => 'eager', 'fetchpriority' => 'high']); ?>
   </div>
-</section>
-
-<!-- SVG Divider wave -->
-<div class="divider-wave" aria-hidden="true">
-  <svg viewBox="0 0 1440 54" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,0 L0,27 Q360,54 720,27 Q1080,0 1440,27 L1440,54 L0,54 Z" fill="#f8f8f6"/>
-  </svg>
-</div>
-
-<!-- ─── SECTION 2: PROBLEM STATEMENT ────────────────────── -->
-<section class="problem-section" aria-label="Signs you need roofing work">
-  <div class="container-svc">
-    <p class="problem-pullquote">
-      A compromised roof doesn't wait — <em>every rain event</em> adds to the damage inside your walls.
-    </p>
-    <div class="bento-grid">
-      <div class="bento-card reveal-up reveal-delay-1">
-        <div class="bento-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+  <div class="hero-overlay"></div>
+  <span class="grain" aria-hidden="true"></span>
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true">/</li>
+        <li><a href="/services/">Services</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true">/</li>
+        <li aria-current="page"><?php echo $svcName; ?></li>
+      </ol>
+    </nav>
+    <div class="hero-grid hero-grid--form">
+      <div class="hero-copy">
+        <span class="eyebrow">Roofing &middot; Warrenton &amp; Warren County</span>
+        <h1>Roofing in <span class="text-accent">Warrenton, MO</span> — repair, tear-off &amp; full replacement</h1>
+        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured Warrenton roofing contractor that self-performs roof repair, tear-off, and replacement within 50 miles of Warren County—hail and storm claims documented, one crew from first inspection to final nail sweep.</p>
+        <div class="hero-actions">
+          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free roofing estimate</a>
+          <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
         </div>
-        <h3>Missing or curling shingles</h3>
-        <p>When shingles curl upward or blow off entirely, the underlayment beneath them begins absorbing moisture within hours of the next rain.</p>
-      </div>
-      <div class="bento-card reveal-up reveal-delay-2">
-        <div class="bento-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s-8-4.5-8-10.8C4 6.1 7.8 2 12 2s8 4.1 8 9.2C20 17.5 12 22 12 22z"/></svg>
-        </div>
-        <h3>Dark water stains on ceilings</h3>
-        <p>Brown or yellow ceiling stains in Warrenton homes are almost always traced to a roof leak — not condensation. Early action prevents drywall rot.</p>
-      </div>
-      <div class="bento-card reveal-up reveal-delay-3">
-        <div class="bento-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
-        </div>
-        <h3>Granules in the gutters</h3>
-        <p>If you're seeing dark grit collecting in your gutters after rain, your shingles are shedding — a sign they're past 75% of their service life.</p>
-      </div>
-      <div class="bento-card reveal-up reveal-delay-4">
-        <div class="bento-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-        </div>
-        <h3>Sagging roof deck</h3>
-        <p>A dip or sag visible from the ground means the structural sheathing underneath is waterlogged. This is an emergency — call us same day.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SVG Divider angle -->
-<div class="divider-angle" aria-hidden="true">
-  <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="0,0 1440,40 1440,0" fill="#ffffff"/>
-  </svg>
-</div>
-
-<!-- ─── SECTION 3: EXPERT POSITIONING ───────────────────── -->
-<section class="expert-section" aria-label="Why choose A&S for roofing">
-  <div class="container-svc">
-    <div class="expert-grid">
-      <div class="expert-stat-block reveal-left">
-        <div class="big-stat">
-          <span class="big-stat-num">50<span style="font-size:0.5em;color:var(--color-text-light);">mi</span></span>
-          <span class="big-stat-label">Service radius from Warrenton, MO</span>
-        </div>
-        <ul class="differentiator-list">
-          <li>
-            <div class="diff-check">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <span class="diff-text"><strong>Written estimate before any work starts.</strong> No verbal agreements — you get a line-itemized quote in writing so you know exactly what you're paying for.</span>
-          </li>
-          <li>
-            <div class="diff-check">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <span class="diff-text"><strong>Licensed and insured in Missouri.</strong> Every crew member working on your roof is covered by our general liability policy — protecting your property and ours.</span>
-          </li>
-          <li>
-            <div class="diff-check">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <span class="diff-text"><strong>Storm damage documentation.</strong> If hail or wind caused your roofing issue, we can help identify and photograph the damage to support your insurance claim process.</span>
-          </li>
+        <ul class="hero-chips">
+          <li><?php echo icon('shield-check', 16); ?> Licensed &amp; insured in Missouri</li>
+          <li><?php echo icon('cloud-snow', 16); ?> Hail &amp; storm claim documentation</li>
+          <li><?php echo icon('users', 16); ?> Self-performed &mdash; no subcontractors</li>
         </ul>
       </div>
-      <div class="expert-image-wrap reveal-right">
-        <img
-          src="<?php echo $bodyPhoto1; ?>"
-          alt="A&S Contracting Services completing a roofing project in Warrenton, Missouri"
-          width="720"
-          height="420"
-          loading="lazy"
-        >
-        <div class="expert-image-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Licensed — <span>Warren County, MO</span>
+
+      <aside class="hero-form-card" id="hero-form">
+        <h2>Free roofing estimate</h2>
+        <p class="hero-form-tagline">No obligation. Same-day reply.</p>
+        <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
+          <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
+          <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <?php echo p1_attribution_fields('hero'); ?>
+          <input type="hidden" name="consent_version" value="v2.1">
+          <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+          <div class="form-row"><label class="sr-only" for="hero-name">Name</label><input id="hero-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
+          <div class="form-row"><label class="sr-only" for="hero-phone">Phone</label><input id="hero-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>
+          <div class="form-row"><label class="sr-only" for="hero-email">Email</label><input id="hero-email" type="email" name="email" placeholder="Email" autocomplete="email" required></div>
+          <div class="form-row"><label class="sr-only" for="hero-service">Service</label>
+            <select id="hero-service" name="service">
+              <?php foreach ($services as $heroSvc): ?>
+              <option value="<?php echo htmlspecialchars($heroSvc['name']); ?>"<?php echo $heroSvc['slug'] === $serviceSlug ? ' selected' : ''; ?>><?php echo htmlspecialchars($heroSvc['name']); ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          <label class="consent"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/terms/" target="_blank" rel="noopener">Terms</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted. *</span></label>
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
+          <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
+        </form>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PROBLEM STATEMENT ═══════════════════ -->
+<section class="section section--light">
+  <div class="container">
+    <div class="sp-problem">
+      <div class="reveal-left">
+        <span class="eyebrow-label">Know The Signs</span>
+        <h2>How do you know your Warrenton roof needs attention?</h2>
+        <p class="answer-block">If you see granules collecting in the gutters, daylight in the attic, water stains on a ceiling, or shingles curling and lifting after a Missouri storm, your roof is telling you it is near the end. A&amp;S Contracting Services inspects for these signs and tells you plainly whether a repair or a replacement is the right call.</p>
+        <p class="pull-quote">A roof rarely fails all at once—it warns you first, if someone climbs up to look.</p>
+      </div>
+      <div class="sp-signs reveal-right">
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('droplets', 22); ?></div>
+          <h3>Ceiling &amp; attic stains</h3>
+          <p>Brown rings or damp decking mean water is already getting past the shingles.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('cloud-snow', 22); ?></div>
+          <h3>Hail bruising</h3>
+          <p>Soft, dark spots where hail knocked granules loose shorten a roof&rsquo;s life fast.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('wind', 22); ?></div>
+          <h3>Lifted or missing shingles</h3>
+          <p>Wind-creased and torn shingles break the water seal along the whole slope.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('layers', 22); ?></div>
+          <h3>Bare, worn granules</h3>
+          <p>Gritty gutters and shiny asphalt show the roof surface is wearing through.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SVG Divider wave 2 -->
-<div class="divider-curve" aria-hidden="true">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,0 Q720,60 1440,0 L1440,60 L0,60 Z" fill="#f8f8f6"/>
-  </svg>
-</div>
-
-<!-- ─── SECTION 4: SERVICE BREAKDOWN + PROCESS ──────────── -->
-<section id="roofing-process" class="breakdown-section" aria-label="What's included and how the process works">
-  <div class="container-svc">
-    <div class="breakdown-grid">
-      <div class="breakdown-image reveal-left">
-        <img
-          src="<?php echo $bodyPhoto2; ?>"
-          alt="Roofing installation process in Warrenton, MO — A&S Contracting Services"
-          width="640"
-          height="480"
-          loading="lazy"
-        >
-        <span class="breakdown-image-tag">Our Work</span>
+<!-- ═══════════════════ EXPERT POSITIONING ═══════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="sp-position">
+      <div class="reveal-up">
+        <div class="sp-position__stat">1&ndash;3<span>days to tear off and re-roof most Warrenton homes—handled start to finish by our own crew</span></div>
       </div>
-      <div class="breakdown-content reveal-right">
-        <span class="eyebrow-label">Step by step</span>
-        <h2 class="section-h2">What's included in your roofing project with A&amp;S?</h2>
-        <p class="answer-block">
-          Every roofing project with A&amp;S Contracting Services in Warrenton includes a full initial inspection, written scope of work, material selection guidance, licensed installation, and final walkthrough. We don't charge for estimates and we don't start work until you sign off on the written quote.
-        </p>
-        <div class="process-steps">
-          <div class="process-step">
-            <div class="step-num">1</div>
-            <div class="step-body">
-              <p class="step-title">Free On-Site Inspection</p>
-              <p class="step-desc">We come to your Warrenton-area property, walk the roof, check flashing, gutters, and attic ventilation, and photograph any problem areas.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="step-num">2</div>
-            <div class="step-body">
-              <p class="step-title">Written Quote — No Surprises</p>
-              <p class="step-desc">You receive a line-itemized quote covering materials, labor, teardown, and cleanup. Questions are welcome — we explain every line.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="step-num">3</div>
-            <div class="step-body">
-              <p class="step-title">Material Selection</p>
-              <p class="step-desc">Choose from 3-tab asphalt, architectural shingles, or metal roofing. We'll recommend the right material for your roof pitch and local Missouri weather.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="step-num">4</div>
-            <div class="step-body">
-              <p class="step-title">Professional Installation</p>
-              <p class="step-desc">Our licensed crew handles full tear-off, deck inspection, new underlayment, and shingle installation — typically 1 to 3 days for most Warrenton homes.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="step-num">5</div>
-            <div class="step-body">
-              <p class="step-title">Cleanup &amp; Final Walkthrough</p>
-              <p class="step-desc">We nail-sweep the property, remove all old material, and walk the roof with you before collecting final payment.</p>
-            </div>
-          </div>
-        </div>
+      <div class="reveal-right">
+        <span class="eyebrow-label">Why It Matters</span>
+        <h2>What makes A&amp;S a roofer Warren County homeowners trust?</h2>
+        <p class="answer-block">A&amp;S Contracting Services self-performs every roof it quotes—no roving subcontractor crews, no handoffs. The people who inspect your roof and write the estimate are the same people who tear it off, dry it in, and sweep the yard for nails at the end.</p>
+        <ul class="sp-evidence">
+          <li><?php echo icon('users', 22); ?><span><b>One accountable crew.</b> The same team is on your roof each day, so quality and cleanup stay consistent from tear-off to finish.</span></li>
+          <li><?php echo icon('clipboard-list', 22); ?><span><b>Documented for insurance.</b> Photo-backed damage reports and itemized estimates give your adjuster exactly what a hail or wind claim needs.</span></li>
+          <li><?php echo icon('shield-check', 22); ?><span><b>Licensed &amp; fully insured.</b> Your home is protected during the most exposed stage of the job—the tear-off.</span></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── SECTION 5: PROOF ──────────────────────────────────── -->
-<section class="section" style="background:var(--color-bg);" aria-label="Recent roofing work">
-  <div class="container-svc">
-    <div style="text-align:center; margin-bottom:var(--space-2xl);" class="reveal-up">
-      <span class="eyebrow-label">Recent Projects</span>
-      <h2 class="section-h2" style="max-width:600px;margin:0 auto var(--space-sm);">What does A&amp;S roofing work look like near Warrenton?</h2>
-      <p class="answer-block" style="max-width:56ch;margin:0 auto;">A&amp;S Contracting Services has completed roofing projects across Warrenton and Warren County, MO. Below is a sample of recent residential work — replacement, repair, and storm recovery.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);" class="reveal-up">
-      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;">
-        <img src="<?php echo $bodyPhoto3; ?>" alt="Completed roofing replacement on Warrenton, MO home" width="480" height="360" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+<!-- ═══════════════════ SERVICE BREAKDOWN ═══════════════════ -->
+<section class="section section--light">
+  <div class="container">
+    <span class="eyebrow-label">The Work</span>
+    <h2>What&rsquo;s included in an A&amp;S roof replacement?</h2>
+    <p class="answer-block">A&amp;S Contracting Services delivers a full roof system, not just shingles: complete tear-off, deck inspection and repair, new underlayment and ice-and-water shield, drip edge, flashing, ridge ventilation, architectural shingles, and a full magnetic nail sweep before we leave. Every step is documented so you know exactly what went on your Warrenton home.</p>
+    <div class="sp-included">
+      <div class="reveal-up">
+        <h3>Included in the scope</h3>
+        <ul class="sp-checklist">
+          <li><?php echo icon('check', 20); ?> Full tear-off of existing roofing down to the deck</li>
+          <li><?php echo icon('check', 20); ?> Decking inspection and replacement of rotted or soft sheathing</li>
+          <li><?php echo icon('check', 20); ?> Synthetic underlayment and ice-and-water shield at valleys and eaves</li>
+          <li><?php echo icon('check', 20); ?> New drip edge, step flashing, and pipe boots</li>
+          <li><?php echo icon('check', 20); ?> Architectural or impact-resistant shingles</li>
+          <li><?php echo icon('check', 20); ?> Ridge ventilation to protect the attic and shingle warranty</li>
+          <li><?php echo icon('check', 20); ?> Full cleanup and magnetic nail sweep of the yard</li>
+        </ul>
       </div>
-      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;">
-        <img src="<?php echo $bodyPhoto1; ?>" alt="Roofing repair and shingle installation by A&S Contracting in Warren County" width="480" height="360" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
-      </div>
-      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;background:rgba(var(--color-accent-rgb),0.08);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-md);padding:var(--space-xl);">
-        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--color-accent);" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <p style="text-align:center;font-size:0.9rem;line-height:1.65;color:var(--color-text);">More project photos available — <a href="/contact/" style="color:var(--color-accent);font-weight:600;">ask at estimate time</a>.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SVG Divider into dark comparison -->
-<div class="divider-wave" aria-hidden="true">
-  <svg viewBox="0 0 1440 54" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,54 Q360,0 720,27 Q1080,54 1440,0 L1440,54 Z" fill="#000000"/>
-  </svg>
-</div>
-
-<!-- ─── SECTION 6: COMPARISON ─────────────────────────────── -->
-<section class="comparison-section" aria-label="A&S Contracting vs other roofers">
-  <div class="container-svc">
-    <div class="comparison-intro reveal-up">
-      <span class="eyebrow-label" style="color:var(--color-accent);">Why A&amp;S?</span>
-      <h2 class="section-h2-light">How does A&amp;S compare to <span style="color:var(--color-accent);">other roofing contractors</span> in Warrenton?</h2>
-      <p style="color:rgba(255,255,255,0.6);max-width:54ch;margin:0 auto;font-size:0.95rem;line-height:1.75;" class="answer-block" style="background:rgba(255,255,255,0.06);border-left-color:var(--color-accent);">A&amp;S Contracting Services is a licensed, locally-based contractor that provides written estimates, handles storm documentation, and uses our own licensed crew — not subcontractors — on every roofing project in Warrenton and Warren County.</p>
-    </div>
-    <div class="comparison-table reveal-up" role="table" aria-label="Contractor comparison">
-      <div class="comp-header" role="columnheader">What we offer</div>
-      <div class="comp-header ours" role="columnheader">A&amp;S Contracting</div>
-      <div class="comp-header" role="columnheader">Other Local Roofers</div>
-
-      <div class="comp-row" role="row">
-        <div class="comp-cell feature" role="cell">Written estimate before work begins</div>
-        <div class="comp-cell ours check" role="cell">✓ Always</div>
-        <div class="comp-cell cross" role="cell">Often verbal only</div>
-      </div>
-      <div class="comp-row" role="row">
-        <div class="comp-cell feature" role="cell">Licensed &amp; insured in Missouri</div>
-        <div class="comp-cell ours check" role="cell">✓ Verified</div>
-        <div class="comp-cell cross" role="cell">Varies — ask to confirm</div>
-      </div>
-      <div class="comp-row" role="row">
-        <div class="comp-cell feature" role="cell">Storm damage documentation support</div>
-        <div class="comp-cell ours check" role="cell">✓ Included</div>
-        <div class="comp-cell cross" role="cell">Not always offered</div>
-      </div>
-      <div class="comp-row" role="row">
-        <div class="comp-cell feature" role="cell">Own crew (no subcontractors)</div>
-        <div class="comp-cell ours check" role="cell">✓ Our licensed crew</div>
-        <div class="comp-cell cross" role="cell">Often subcontracted</div>
-      </div>
-      <div class="comp-row" role="row">
-        <div class="comp-cell feature" role="cell">Free on-site estimate</div>
-        <div class="comp-cell ours check" role="cell">✓ No charge</div>
-        <div class="comp-cell cross" role="cell">Some charge a fee</div>
+      <div class="reveal-right">
+        <h3>How the project runs</h3>
+        <ol class="process-steps">
+          <li><b>Free inspection</b><span>We walk the roof, photograph the damage, and go over options on site.</span></li>
+          <li><b>Written estimate</b><span>You get an itemized quote—materials, timeline, and price, insurance-ready if needed.</span></li>
+          <li><b>Tear-off &amp; dry-in</b><span>Our crew strips the old roof, repairs decking, and seals the home the same day.</span></li>
+          <li><b>Install &amp; walkthrough</b><span>New system goes on, the yard is swept clean, and we review the finished roof with you.</span></li>
+        </ol>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SVG Divider dark → light -->
-<div class="divider-angle" aria-hidden="true">
-  <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="0,40 1440,0 1440,40" fill="#ffffff"/>
-  </svg>
-</div>
-
-<!-- ─── SECTION 7: FAQ ─────────────────────────────────────── -->
-<section class="faq-section" aria-label="Roofing FAQ">
-  <div class="container-svc">
-    <div class="faq-grid">
-      <div class="faq-sidebar reveal-left">
-        <div class="faq-sidebar-img">
-          <img
-            src="<?php echo $heroPhoto; ?>"
-            alt="Roofing contractor on Warren County, Missouri residential roof"
-            width="560"
-            height="260"
-            loading="lazy"
-          >
-        </div>
-        <div class="faq-sidebar-note">
-          <strong>Have a question not listed here?</strong><br>
-          Call or submit a contact form — we respond to every roofing inquiry from the Warrenton area within one business day.
-        </div>
-      </div>
-      <div class="faq-content reveal-right">
-        <span class="eyebrow-label">Common Questions</span>
-        <h2 class="section-h2">What do Warrenton homeowners ask about roofing?</h2>
-        <p style="font-size:0.95rem;color:var(--color-text-light);line-height:1.75;margin:0 0 var(--space-xl);" class="answer-block">
-          These are the questions we hear most from homeowners in Warrenton, MO and across Warren County before scheduling a roofing estimate. If yours isn't here, contact us directly.
-        </p>
-        <div class="faq-list" id="roofing-faq">
-          <?php foreach ($faqs as $faq): ?>
-          <div class="faq-item" itemscope itemtype="https://schema.org/Question">
-            <button class="faq-question" aria-expanded="false" itemprop="name">
-              <?php echo htmlspecialchars($faq['question']); ?>
-              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            </button>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer">
-              <p itemprop="text"><?php echo htmlspecialchars($faq['answer']); ?></p>
-            </div>
-          </div>
-          <?php endforeach; ?>
-        </div>
-      </div>
+<!-- ═══════════════════ PROOF / REVIEWS ═══════════════════ -->
+<section class="section reviews-section edge-wave-top" aria-label="Roofing reviews">
+  <span class="grain-layer" aria-hidden="true"></span>
+  <div class="container-wide">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">In Their Words</span>
+      <h2>What do Warrenton homeowners say about our roofing?</h2>
+      <p>Real reviews from A&amp;S Contracting Services roofing and storm-repair customers across Warren County.</p>
     </div>
-  </div>
-</section>
-
-<!-- ─── SECTION 8: FINAL CTA ─────────────────────────────── -->
-<section class="final-cta-section" aria-label="Get your free roofing estimate">
-  <div class="container-svc">
-    <div class="final-cta-inner reveal-up">
-      <div class="final-cta-icon" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      </div>
-      <span class="eyebrow-label" style="color:var(--color-accent);">Free estimate — no pressure</span>
-      <h2>Ready to fix your roof in Warrenton?</h2>
-      <p class="answer-block" style="margin:var(--space-sm) auto var(--space-xl);">
-        Every roofing estimate from A&amp;S Contracting Services is free, written, and delivered after a real on-site inspection. We serve Warrenton and a 50-mile radius — same-week appointments often available. Get your quote today.
-      </p>
-      <div class="cta-btn-group">
-        <a href="/contact/" class="btn-accent-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          Get My Free Roofing Estimate
-        </a>
-        <a href="/services/" class="btn-dark-outline">View All Services</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── RELATED SERVICES ─────────────────────────────────── -->
-<section class="related-section" aria-label="Other services you may need">
-  <div class="container-svc">
-    <div style="text-align:center;margin-bottom:var(--space-2xl);" class="reveal-up">
-      <span class="eyebrow-label">Also Available</span>
-      <h2 class="section-h2">Other services you may need from A&amp;S Contracting</h2>
-    </div>
-    <div class="related-grid">
+    <div class="reviews-track">
       <?php
-      $relTints  = ['card-tint-1','card-tint-2','card-tint-3'];
-      $ri = 0;
-      foreach (['siding','gutters','fascia'] as $rslug):
-        $rsvc = null;
-        foreach ($services as $s) { if ($s['slug'] === $rslug) { $rsvc = $s; break; } }
-        if (!$rsvc) continue;
+      $roofReviews = array_filter($reviews, function ($r) { return in_array($r['author'], ['Marcus H.', 'Jennifer K.', 'Diane L.']); });
+      foreach ($roofReviews as $rev):
+        $initial = strtoupper(substr($rev['author'], 0, 1));
       ?>
-      <article class="service-card-with-image <?php echo $relTints[$ri % 3]; ?> reveal-up reveal-delay-<?php echo $ri+1; ?>">
-        <div class="service-card__image">
-          <img src="<?php echo htmlspecialchars($svcPhotos[$rslug]); ?>" alt="<?php echo htmlspecialchars($rsvc['name']); ?> services in Warrenton, MO" width="480" height="288" loading="lazy">
+      <article class="review-card">
+        <div class="review-stars" aria-label="<?php echo (int)$rev['rating']; ?> out of 5 stars">
+          <?php for ($s = 0; $s < (int)$rev['rating']; $s++) echo icon('star', 18); ?>
         </div>
-        <div class="service-card__body">
-          <div class="service-card__icon"><i data-lucide="<?php echo $svcIcons[$rslug]; ?>"></i></div>
-          <h3><?php echo htmlspecialchars($rsvc['name']); ?></h3>
-          <p class="service-card__desc"><?php
-            $desc = $rsvc['description'];
-            $pos = strpos($desc, '. ');
-            echo htmlspecialchars($pos !== false ? substr($desc, 0, $pos + 1) : $desc);
-          ?></p>
-          <ul>
-            <?php foreach ($svcBulletsRel[$rslug] as $b): ?>
-            <li><?php echo htmlspecialchars($b); ?></li>
-            <?php endforeach; ?>
-          </ul>
-          <a href="/services/<?php echo htmlspecialchars($rslug); ?>/" class="service-card__cta">Learn more</a>
+        <p class="review-text">&ldquo;<?php echo htmlspecialchars($rev['text']); ?>&rdquo;</p>
+        <div class="review-author">
+          <span class="review-avatar" aria-hidden="true"><?php echo $initial; ?></span>
+          <span class="review-name"><?php echo htmlspecialchars($rev['author']); ?></span>
         </div>
       </article>
-      <?php $ri++; endforeach; ?>
+      <?php endforeach; ?>
+    </div>
+    <div class="review-badge-strip">
+      <span class="badge-strip"><?php echo icon('star', 16); ?> 5-Star Google Rated</span>
+      <span class="badge-strip"><?php echo icon('shield-check', 16); ?> Licensed &amp; Insured</span>
+      <span class="badge-strip"><?php echo icon('cloud-snow', 16); ?> Storm Claims Handled</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ COMPARISON ═══════════════════ -->
+<section class="section">
+  <div class="container">
+    <span class="eyebrow-label">The Difference</span>
+    <h2>Why hire A&amp;S instead of a storm-chasing roofer?</h2>
+    <p class="answer-block">After a Missouri hail storm, out-of-town crews flood Warren County, install fast, and disappear before problems surface. A&amp;S Contracting Services is a local, licensed contractor that self-performs the work and stands behind it—so you have someone accountable long after the trucks leave.</p>
+    <div class="sp-compare">
+      <div class="sp-compare__col sp-compare--them">
+        <h3><?php echo icon('x', 20); ?> Storm-chasing crews</h3>
+        <ul>
+          <li><?php echo icon('minus', 18); ?> Out-of-state teams here for one storm season</li>
+          <li><?php echo icon('minus', 18); ?> Work subcontracted to whoever is available</li>
+          <li><?php echo icon('minus', 18); ?> Hard to reach once the check clears</li>
+          <li><?php echo icon('minus', 18); ?> Pressure to sign before the adjuster arrives</li>
+        </ul>
+      </div>
+      <div class="sp-compare__col sp-compare--us">
+        <h3><?php echo icon('check-circle', 20); ?> A&amp;S Contracting Services</h3>
+        <ul>
+          <li><?php echo icon('check', 18); ?> Warrenton-based and here year after year</li>
+          <li><?php echo icon('check', 18); ?> Self-performed by one accountable crew</li>
+          <li><?php echo icon('check', 18); ?> A local number that actually answers</li>
+          <li><?php echo icon('check', 18); ?> Honest inspection before any paperwork</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FAQ ═══════════════════ -->
+<section class="section section--light" aria-label="Roofing FAQ">
+  <div class="container-narrow">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">Good Questions</span>
+      <h2>What do Warrenton homeowners ask before a roofing project?</h2>
+    </div>
+    <div class="faq-grid">
+      <?php foreach ($faqs as $fi => $faq): ?>
+      <details class="faq"<?php echo $fi < 2 ? ' open' : ''; ?>>
+        <summary><?php echo htmlspecialchars($faq['question']); ?></summary>
+        <p><?php echo htmlspecialchars($faq['answer']); ?></p>
+      </details>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ RECENT WORK ═══════════════════ -->
+<section class="section sp-gallery" aria-label="Recent roofing projects">
+  <div class="container-wide">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">Recent Work</span>
+      <h2>What recent roofing projects has A&amp;S completed near Warrenton?</h2>
+      <p class="answer-block">These are real roofing projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, from tear-off and dry-in to the final nail sweep, never a subcontractor.</p>
+    </div>
+    <div class="sp-gallery-grid" data-p1-dynamic>
+      <?php foreach ($workPhotos as $wp): ?>
+      <figure class="sp-gallery-item">
+        <?php echo p1_picture($wp[0], $wp[1], ['sizes' => '(max-width: 700px) 100vw, 40vw', 'width' => 640, 'height' => 480, 'decoding' => 'async']); ?>
+        <figcaption><?php echo htmlspecialchars($wp[1]); ?></figcaption>
+      </figure>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ OTHER SERVICES ═══════════════════ -->
+<section class="section">
+  <div class="container-wide">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">What We Do</span>
+      <h2>What else can A&amp;S handle on your home?</h2>
+      <p class="hero-answer">Roofing is one trade under one licensed roof. A&amp;S Contracting Services also self-performs the exterior and interior work that often goes hand in hand with a new roof across Warrenton and Warren County.</p>
+    </div>
+    <div class="sp-other">
+      <?php
+      $otherSlugs = ['siding', 'gutters', 'general-contracting'];
+      $tintCycle  = [1, 2, 3];
+      $otherIcons = ['siding' => 'layers', 'gutters' => 'droplets', 'general-contracting' => 'hard-hat'];
+      foreach ($otherSlugs as $oi => $os):
+        $osvc = null; foreach ($services as $s) { if ($s['slug'] === $os) { $osvc = $s; break; } }
+        if (!$osvc) continue;
+      ?>
+      <article class="service-card-with-image card-tint-<?php echo $tintCycle[$oi % 3]; ?> reveal-up reveal-delay-<?php echo ($oi % 3) + 1; ?>">
+        <div class="service-card__body">
+          <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
+          <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
+          <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
+          <a href="/services/<?php echo $os; ?>/" class="service-card__cta">Learn more</a>
+        </div>
+      </article>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FINAL CTA / ESTIMATE ═══════════════════ -->
+<section class="section section--light" id="estimate" aria-label="Request your free roofing estimate">
+  <div class="container">
+    <div class="estimate">
+      <div class="card reveal-up" style="padding: clamp(1.5rem, 4vw, 2.5rem); border:1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface);">
+        <span class="eyebrow-label">Free Estimate</span>
+        <h2>Ready for a straight answer on your roof?</h2>
+        <p class="lead" style="margin-bottom: 1.25rem;">Send the details and A&amp;S Contracting Services will reply the same day to schedule your free on-site roof inspection.</p>
+
+        <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
+          <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
+          <?php echo p1_attribution_fields('cta-band'); ?>
+          <input type="hidden" name="consent_version" value="v2.1">
+          <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="est-name">Your Name</label>
+              <input id="est-name" type="text" name="name" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <label for="est-phone">Phone</label>
+              <input id="est-phone" type="tel" name="phone" autocomplete="tel" required>
+            </div>
+            <div class="form-field">
+              <label for="est-email">Email</label>
+              <input id="est-email" type="email" name="email" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <label for="est-service">Service Needed</label>
+              <select id="est-service" name="service">
+                <?php foreach ($services as $estSvc): ?>
+                <option value="<?php echo htmlspecialchars($estSvc['name']); ?>"<?php echo $estSvc['slug'] === $serviceSlug ? ' selected' : ''; ?>><?php echo htmlspecialchars($estSvc['name']); ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+            <div class="form-field full">
+              <label for="est-message">Project Details</label>
+              <textarea id="est-message" name="message" rows="4"></textarea>
+            </div>
+          </div>
+
+          <fieldset class="form-consent-fieldset">
+            <legend class="form-consent-legend">Communication Consent</legend>
+            <label class="form-consent-item">
+              <input type="checkbox" name="email_opt_in" value="yes" class="consent-checkbox">
+              <span class="consent-label"><strong>Email updates (optional):</strong> I agree to receive emails from <?php echo htmlspecialchars($siteName); ?> about my inquiry, services, and news. I can unsubscribe anytime or by emailing <?php echo htmlspecialchars($email); ?>. Message frequency varies.</span>
+            </label>
+            <label class="form-consent-item">
+              <input type="checkbox" name="sms_opt_in" value="yes" class="consent-checkbox">
+              <span class="consent-label"><strong>SMS/Text messages (optional):</strong> I agree to receive text messages from <?php echo htmlspecialchars($siteName); ?> at the number I provided (reminders, updates, and offers). Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe, HELP for help. <strong>Consent is not a condition of purchase.</strong></span>
+            </label>
+            <label class="form-consent-item form-consent-required">
+              <input type="checkbox" name="terms_accepted" value="yes" class="consent-checkbox" required>
+              <span class="consent-label">I have read and agree to the <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms of Service</a>. <span class="required-star">*</span></span>
+            </label>
+          </fieldset>
+
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Send my request</button>
+        </form>
+      </div>
+
+      <div class="reveal-right">
+        <span class="eyebrow-label">What Happens Next</span>
+        <h2>What happens after you <span class="text-accent">request your estimate</span>?</h2>
+        <ol class="next-steps">
+          <li><strong>We reach out the same day.</strong> A&amp;S Contracting Services confirms the details and schedules your free on-site roof inspection.</li>
+          <li><strong>You get a written estimate.</strong> Clear scope, materials, timeline, and price—insurance-ready if you have storm damage.</li>
+          <li><strong>One crew does the work.</strong> The same self-performing team tears off, installs, and walks the finished roof with you.</li>
+        </ol>
+        <div class="nap">
+          <div><?php echo icon('phone', 18); ?> <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a></div>
+          <div><?php echo icon('mail', 18); ?> <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></div>
+          <div><?php echo icon('map-pin', 18); ?> <span><?php echo $addressCity; ?>, <?php echo $addressState; ?> <?php echo $addressZip; ?></span></div>
+          <div><?php echo icon('clock', 18); ?> <span><?php echo htmlspecialchars($businessHours); ?></span></div>
+        </div>
+        <p style="margin-top:1rem; color: var(--color-muted); font-size: .95rem;">Roofing across Warrenton, Wright City, Foristell, Wentzville, Troy, Jonesburg, Washington and everywhere within <?php echo $serviceRadius; ?> miles.</p>
+      </div>
     </div>
   </div>
 </section>

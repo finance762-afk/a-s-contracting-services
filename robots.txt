@@ -1,24 +1,32 @@
+# robots.txt — A&S Contracting Services
+# Phase 5, 2026-09-08
+
 User-agent: *
 Allow: /
 
-# Block system/utility directories
+# Block utility directories
 Disallow: /includes/
+Disallow: /assets/js/
 Disallow: /thank-you/
-Disallow: /assets/
 
-# Allow AI crawlers
+# Allow all AI crawlers (AEO strategy)
 User-agent: GPTBot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: ChatGPT-User
 Allow: /
 
-User-agent: Googlebot
+User-agent: CCBot
 Allow: /
 
-User-agent: Bingbot
+User-agent: anthropic-ai
 Allow: /
 
-# Sitemaps
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap location
 Sitemap: https://ascontractingservices.com/sitemap.xml
-Sitemap: https://ascontractingservices.com/sitemap-images.xml

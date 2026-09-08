@@ -46,7 +46,7 @@ Every project's `:root` declares every token below. Values are brand-adjusted bu
   /* — Color Tokens (replace hex with brand values) — */
   --color-primary:       #0a2540;
   --color-primary-dark:  #061a2d;
-  --color-primary-rgb:   10, 37, 64;
+  --color-primary-rgb:   10, 37, 64;  /* legacy — see color-mix() note below */
   --color-secondary:     #0066ff;
   --color-accent:        #ffb800;
   --color-text:          #1a1a1a;
@@ -65,9 +65,9 @@ Every project's `:root` declares every token below. Values are brand-adjusted bu
   --shadow-xl:  0 16px 40px rgba(0,0,0,0.16);
   --shadow-card: 0 2px 8px rgba(0,0,0,0.06);
 
-  /* — Typography — */
-  --font-heading: 'Montserrat', system-ui, sans-serif;
-  --font-body:    'Inter', system-ui, sans-serif;
+  /* — Typography (self-hosted variable fonts, v6.2 — set by the scaffold from build-plan design.fonts; NO Google Fonts CDN) — */
+  --font-heading: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body:    'Figtree', system-ui, sans-serif;
   --font-size-xs:   0.75rem;
   --font-size-sm:   0.875rem;
   --font-size-base: 1rem;
@@ -81,6 +81,21 @@ Every project's `:root` declares every token below. Values are brand-adjusted bu
   --transition:       0.25s ease;  /* alias */
 }
 ```
+
+### Alpha variants: color-mix(), not -rgb duplication (v6.2)
+
+New builds derive alpha/tint variants with `color-mix()` instead of maintaining a parallel `--color-*-rgb` token for `rgba()`:
+
+```css
+/* old (legacy — existing sites only):
+   background: rgba(var(--color-primary-rgb), 0.12);            */
+
+/* v6.2 standard: */
+background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+border-color: color-mix(in srgb, var(--color-primary) 30%, white);
+```
+
+One source of truth per color; tints can't drift from the base token. `--color-primary-rgb` remains in the token set as **legacy** for existing sites — do not add new `-rgb` tokens.
 
 ### Spacing Scale Guidance
 
@@ -122,7 +137,15 @@ h4 { font-size: 1.05rem; line-height: 1.3; }
 
 **Every heading uses `text-wrap: balance;`** — this is the single highest-leverage typographic property available. It prevents orphan words and produces professionally-set headlines without any extra work.
 
+**Body text uses `text-wrap: pretty;`** (v6.2) — set it on `p, li` (or `.prose`). It kills orphan words in paragraphs the way `balance` does for headings, at negligible cost. `balance` stays headings-only (it's expensive on long text).
+
 Body type is a fixed `16px` minimum (`1rem`), line-height `1.6`, max-width `65ch` via `.prose`.
+
+### Accent Face (v6.3 — 2026-08-29, owner-approved on salt-river-steel-llc)
+
+The third font is a **condensed industrial grotesk** by default (Barlow Condensed 700, self-hosted), not a script. It lives in the *chrome* of the page — `.eyebrow-label`, `.section-subtitle`, proof-strip `.stat-number`, gallery tags, featured badges — always uppercase with 0.14–0.18em tracking. It is **never mixed mid-sentence into a heading**: `<span class="text-accent">` emphasis words keep the heading face and take only the accent color. A cursive accent read as a template tell across every trade site; the condensed face reads as signage.
+
+Script/italic accents (Caveat, Instrument Serif italic) are opt-in via `build-plan.design.fonts.accent` for the Warm/Human and Rustic archetypes when the logo itself is script. When a script face is used, the old budget still applies: **~5 uses on the homepage, 1 per inner page**.
 
 ---
 
@@ -160,6 +183,8 @@ Archetypes are explained fully in Part D.
 
 ### Navbar Background from Logo
 
+**Rule 0 — cut boxed logos first (v6.3).** A logo delivered on an opaque rectangle (black square, white card) must be cut to transparency before anything else: `magick logo.png -fuzz 15% -transparent "<bg>" -trim +repage -background none -gravity center -extent 105%x105% PNG32:logo-mark.png`, then *look at it* over the nav color. A boxed logo inside a bar is the single biggest "placeholder" tell. Matching the bar chrome to the box color is the fallback for the rare logo the cut destroys (gradient background, mark color ≈ background).
+
 Match the nav's scrolled-state background to the logo's implied background so the logo floats naturally. Three patterns:
 
 1. **Dark logo, light background** → nav uses `rgba(255,255,255,0.95)` on scroll with backdrop-filter
@@ -192,11 +217,14 @@ A page with zero inline `<style>` blocks is an automatic fail at any tier. Page-
 
 Every hero uses the **layered depth pattern** — background image, gradient overlay pseudo-element, noise texture pseudo-element, content on top.
 
+**Full-height heroes use `min-height: 100svh` with a `100vh` fallback line above it — never bare `100vh`** (v6.2). On mobile, `100vh` includes the collapsed URL bar, so the hero's bottom edge (and the CTA in it) sits below the fold; `svh` measures the *small* viewport. The fallback pair pattern in C1.1 applies to every full-height hero variant.
+
 #### Pattern 1.1 — Full-Bleed Ken Burns Hero (homepage default)
 
 ```css
 .hero-home {
-  min-height: 100vh;
+  min-height: 100vh;   /* fallback for browsers without svh units */
+  min-height: 100svh;  /* v6.2 — excludes the mobile URL bar */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -426,7 +454,16 @@ The hero's content area needs structure, not just a headline. Use staggered entr
 
 ### C3. Section Dividers
 
-Every section boundary uses a divider. Never leave two sections flush against each other with a plain color change — that reads as unfinished.
+Every section boundary uses a divider. Never leave two sections flush against each other with a plain color change — that reads as unfinished. A page needs **at least two different divider styles**; the cheapest second style is the scaffold's `.slant-top` / `.slant-bottom` clip-path (v6.3) on a dark band — no SVG, no extra markup, and it pairs with a wave elsewhere on the page.
+
+#### Divider 3.0 — Slanted edge (scaffold class, v6.3)
+
+```html
+<section class="stats-band texture-grain slant-top">…</section>
+```
+```css
+.slant-top { clip-path: polygon(0 3vw, 100% 0, 100% 100%, 0 100%); padding-top: calc(clamp(4rem, 10vh, 8rem) + 3vw); }
+```
 
 #### Divider 3.1 — Diagonal
 
@@ -880,6 +917,12 @@ For testimonial cards on dark backgrounds:
 
 Every page includes **one signature section** — a layout pattern that's not repeated elsewhere on that page. The signature section is where visual work concentrates.
 
+#### 7.0 — Recent-Work Gallery (homepage default when ≥ 8 client photos, v6.3)
+
+For a trade, "look at the work" *is* the premium signal. A full-bleed horizontal scroll-snap strip of 10–12 real job photos with a service tag + one-line caption each, every 3rd–4th tile wider, over a light section with two faint floating rings. Scaffold classes: `.gallery-track` (scroll-snap, hidden scrollbar, keyboard-focusable), `.gallery-item` / `.gallery-item--wide`, `figcaption > .gallery-item__tag + .gallery-item__cap`, `.floating-ring`. Driven by a `$galleryItems` array; `data-p1-dynamic` on the track. Service pages get the 3-photo `.sp-gallery-grid` (one tall tile + two stacked) before the closing CTA. Captions describe what is *in* the photo — never a city or client the manifest does not name.
+
+Photos in the gallery (and everywhere else on the site) should share one color grade so phone shots taken months apart read as one set — recipe in C11.
+
 #### 7.1 — Alternating Timeline
 
 For About pages with company history or milestones:
@@ -1025,6 +1068,8 @@ Rows alternate image-left/image-right for visual rhythm:
 
 ### C8. Ticker Strip (Proof/Trust)
 
+> **Proof strip, not stat counters (v6.3).** The animated "4 numbers" band is only allowed when every number is sourced from intake. The default is a *proof strip*: four verifiable facts typeset in the accent face — `Est. 2022 / Founded in Florence`, `In-House / Cut, welded & finished`, `Pinal County / Delivered & installed locally`, plus a real turnaround, license number or GBP review count when intake supplies one. "Projects completed (estimate)", made-up percentages and unsourced ratings are banned — a stat we cannot source is a stat we do not show. Sits on a `.texture-grain.slant-top` dark band.
+
 Pure-CSS infinite horizontal scroll. Placed between hero and first content section. Pauses on hover.
 
 ```css
@@ -1119,7 +1164,7 @@ The `ellipse at 50% 0%` places the glow at the top of the section, creating an a
 
 #### 10.1 — Card Tilt with Brand Glare
 
-Apply VanillaTilt to cards with brand-specific glare:
+Apply the tilt effect to cards with brand-specific glare:
 
 ```javascript
 VanillaTilt.init(document.querySelectorAll(".card"), {
@@ -1130,7 +1175,24 @@ VanillaTilt.init(document.querySelectorAll(".card"), {
 });
 ```
 
+**v6.2: no vanilla-tilt CDN.** If this technique is used, inline a ~30-line equivalent in the page's script block (mousemove → `rotateX/rotateY` transform + a glare overlay div). See `performance-2026.md` Part C.
+
 Visual restraint rule: counts as a major effect. Don't stack with typed.js, magnetic, parallax on the same page.
+
+#### 10.0 — Mobile menu & lightboxes: native `<dialog>` (v6.2 standard)
+
+The mobile nav drawer and any lightbox/modal use the native `<dialog>` element with `showModal()` — it ships focus trapping, `Esc`-to-close, and `::backdrop` for free, replacing the manual `overflow: hidden` body-lock JS pattern:
+
+```html
+<dialog id="mobile-menu" class="nav-drawer"> ... </dialog>
+<script>
+  const menu = document.getElementById('mobile-menu');
+  document.querySelector('.nav-toggle').addEventListener('click', () => menu.showModal());
+  menu.addEventListener('click', (e) => { if (e.target === menu) menu.close(); });
+</script>
+```
+
+Style open-state via `dialog[open]` and the overlay via `dialog::backdrop`. Scroll-locking the page behind it: `body:has(dialog[open]) { overflow: hidden; }` in CSS — still no JS class juggling.
 
 #### 10.2 — Magnetic CTA
 
@@ -1181,7 +1243,7 @@ Adds liveliness to service cards without animation libraries:
 .card:hover .card-icon { transform: scale(1.1) rotate(-5deg); }
 ```
 
-#### 10.5 — Staggered Scroll Reveals
+#### 10.5 — Staggered Scroll Reveals (FAIL-OPEN — v6.1, replaces prior spec)
 
 Data-driven reveals via IntersectionObserver (lives in animations.js, not inline CSS). Variants beyond `fade-up`:
 
@@ -1193,9 +1255,39 @@ Data-driven reveals via IntersectionObserver (lives in animations.js, not inline
 
 **Don't use fade-up on every element.** Mix at least 3 reveal directions per page.
 
+**FAIL-OPEN GATING (MANDATORY):** all reveal/opacity-zero rules must be gated under `html.js-anim`:
+
+```css
+html.js-anim .reveal-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+html.js-anim [data-animate] { opacity: 0; }
+```
+
+animations.js adds `js-anim` to `<html>` as its **first statement**:
+
+```javascript
+document.documentElement.classList.add('js-anim');
+```
+
+If JS fails to load, every section is visible. **Never write a bare `.reveal-* { opacity: 0 }` rule.**
+
+**Safety-net timeout (MANDATORY):** the IntersectionObserver setup must include a fallback — 2 seconds after DOMContentLoaded, force `.revealed` on any element still hidden:
+
+```javascript
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    document.querySelectorAll('[data-animate]:not(.revealed), .reveal-up:not(.revealed), .reveal-down:not(.revealed), .reveal-left:not(.revealed), .reveal-right:not(.revealed), .reveal-scale:not(.revealed)')
+      .forEach(el => el.classList.add('revealed'));
+  }, 2000);
+});
+```
+
+**Keep the existing rule: no reveal/data-animate classes on above-fold content** (hero, trust badges, first split if above fold).
+
 ---
 
 ### C11. Image Composition
+
+**One color grade for the whole set (v6.3).** Client phone photos shot months apart in different light look like a scrapbook next to each other. Before generating variants, pass every photo through the same mild grade — warm lift, a little contrast, light sharpen: `magick in.jpg -auto-orient -strip -modulate 101,88,100 -sigmoidal-contrast 2.4x46% -fill "#d9915a" -colorize 5 -unsharp 0x0.8+0.6+0.02 out.webp`. Subtle on purpose; if a viewer can tell it was graded, it was graded too hard. Re-check the hero after grading — contrast lifts file size (salt-river-steel needed q60 to stay under 150KB).
 
 Raw rectangles are forbidden. Every image gets at least one composition treatment:
 
@@ -1300,6 +1392,33 @@ Page-level requirements (beyond the global CSS-line minimum):
 
 **If a page lacks the minimum required techniques, it fails QA regardless of line count.** The QA audit checks for technique usage by CSS class name and pattern match.
 
+### C13. Cross-Document View Transitions (v6.2)
+
+Multi-page PHP sites get SPA-feel page changes with two CSS rules and zero JS. **Counts toward the Premium technique minimums** (C12 / tier counts).
+
+```css
+/* Opt both documents into cross-document transitions */
+@view-transition {
+  navigation: auto;
+}
+
+/* Brief fade — keep it under 250ms; respect reduced motion */
+::view-transition-old(root) {
+  animation: vt-fade-out 0.18s ease both;
+}
+::view-transition-new(root) {
+  animation: vt-fade-in 0.22s ease both;
+}
+@keyframes vt-fade-out { to { opacity: 0; } }
+@keyframes vt-fade-in  { from { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}
+```
+
+Progressive enhancement: non-supporting browsers get instant navigation, nothing breaks. Optionally give the site logo/navbar a shared `view-transition-name` so it holds still while content fades.
+
 ---
 
 ## Part D — Visual Vocabulary Archetypes
@@ -1379,6 +1498,104 @@ If no archetype is specified in the prompt, analyze the logo and industry, propo
 
 ---
 
+## Part E — Accessibility Baseline (v6.2)
+
+Non-negotiable on every tier. These cost nothing visually and fail real users when missing:
+
+- **Visible `:focus-visible` style** on ALL interactive elements (links, buttons, inputs), built from brand tokens — not the UA default ring:
+  ```css
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+  ```
+- **Skip-to-content link** as the first focusable element (`<a class="skip-link" href="#main">Skip to content</a>`), visually hidden until focused.
+- **Touch targets minimum 44×44px** — nav links, footer links, mobile CTA bar buttons, form controls. Pad small text links to the minimum; don't shrink the hit area to the glyphs.
+- **Form inputs minimum `16px` font-size** (`input, select, textarea { font-size: 1rem; }`) — anything smaller triggers iOS auto-zoom on focus, which users experience as a broken form.
+
+---
+
+## Part F — Conversion & Trust Components (v6.1)
+
+New required and conditional components. Phase placement lives in build-phases.md; specs live here.
+
+### F1 — Hero Lead Form (new DEFAULT hero CTA treatment)
+
+Short embedded form in the hero, right column or card overlay: **Name, Phone, Service Needed (select), TCPA consent checkbox** (single checkbox bundling phone + SMS consent). Formsubmit.co action with all standard hidden fields including `_cc CustomerService@pageoneinsights.com` and an absolute `_next` URL. Mobile: the form sits directly below the hero headline, above the fold where possible. **A button-only hero is now the fallback, not the default.**
+
+### F2 — Credentials Carousel (homepage; reusable strip on inner pages)
+
+Horizontally scrolling strip of credential badges — BBB, manufacturer certifications, association memberships, Google reviews badge. Each badge is an `<a>` linking to the client's actual third-party verification profile (`rel="noopener"`, `target="_blank"`). Grayscale-to-color on hover optional. These outbound links to authoritative profiles double as entity-corroboration signals for AEO. **Only render badges the client actually holds — never fabricate credentials.**
+
+### F3 — Named Numbered Process (homepage + service pages)
+
+Replace generic "How It Works" with a branded, numbered proprietary process: "[The Company-Name N-Point Process]" — e.g. a 12-point checklist grouped into 3-4 categories. Generate the process content from the client's actual workflow details in intake.
+
+### F4 — GBP Map Embed Section (contact page standard; optional on service-areas main)
+
+```html
+<div class="map-embed">
+  <iframe src="[GBP embed src from intake]" title="[Company] on Google Maps"
+    loading="lazy" allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+```
+
+```css
+.map-embed { position: relative; aspect-ratio: 16/10; border-radius: var(--radius-md); overflow: hidden; }
+.map-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+```
+
+Strip the fixed width/height from the pasted iframe. `loading="lazy"` and `title` are required. Add a "Get Directions" button beside it: `https://www.google.com/maps/dir/?api=1&destination=place_id:[PLACE_ID]` (fall back to URL-encoded name+city if no place_id).
+
+**HOW TO FIND THE GBP EMBED LINK (agent instructions — follow verbatim):**
+1. google.com/maps → search the exact GBP business name + city (character-for-character match to the listing).
+2. Confirm the result is the claimed Business Profile (shows reviews, category, hours) — not a bare address pin.
+3. Share → "Embed a map" tab → COPY HTML.
+4. Verify the iframe src contains the business name encoded in the URL (e.g. `!2sSLOAN%20UNDERGROUND`). Address-only = wrong grab; redo from the listing panel.
+5. Extract schema coordinates from the src: `!2d` value = LONGITUDE, `!3d` value = LATITUDE. Feed into LocalBusiness `geo`.
+
+### F5 — Review Request Link (thank-you page)
+
+`https://search.google.com/local/writereview?placeid=[PLACE_ID]` behind a "Happy with our work? Leave us a Google review" button. This feeds the GBP stars that actually appear in SERPs. Requires place_id from intake.
+
+### F6 — Sticky Bar Text Button (footer.php mobile CTA bar)
+
+Mobile sticky CTA bar gains a third option where the client accepts texts: `sms:+1XXXXXXXXXX` "Text Us" alongside Call Now + Free Estimate. Two buttons if the client declines SMS.
+
+### F7 — Elfsight Reviews Section (conditional — only when intake provides embed code)
+
+Dedicated reviews section (homepage after stats, or About). Paste the client's Elfsight embed HTML exactly as provided inside a `.reviews-embed` wrapper. Lazy-load the Elfsight script (add `defer`). **Never wrap in reveal classes** (widget height is dynamic). If no Elfsight code: display real GBP review count + rating as static styled content with a link to the GBP listing. **Never fabricate review numbers.**
+
+### F8 — Financing Section (conditional)
+
+If the client offers financing, add a section: provider logo, 1-2 sentence pitch, "Check Your Rate" / "Prequalify" button to the client's provider link (Wisetack/Hearth/etc.). No hard numbers unless the client supplies them.
+
+### F9 — Scheduling Embed (conditional)
+
+If the client provides a Google Appointment Schedules or Calendly link, add a "Book Online" button in the hero and contact page (link out or embed — link out is default; embed only on request).
+
+### F10 — Two-Tier Header (optional pattern — logo analysis decides)
+
+Utility topbar above main nav: phone (click-to-call), hours or credential line, social icons. Main nav below gets more room for the logo. Recommend this pattern in Phase 0/1 logo-analysis output when the logo is a wide wordmark (>3:1) that fights nav links for horizontal space. Topbar hides on scroll (nav becomes the sticky element).
+
+### F11 — Logo Variants (logo-analysis addition)
+
+Logo analysis must also flag: whether an SVG/vector version should be requested from the client (raster logos blur under shrink-on-scroll), and whether a white/knockout variant is needed for dark navs and the footer.
+
+### F12 — Dark Section Treatment (optional per DESIGN NOTES)
+
+Strategic dark sections (deep charcoal `#1a1d21`-range with the brand accent) for hero, one mid-page section, and footer. Never the whole page. Strong fit for visually bold trades.
+
+**Every dark band gets depth (v6.3 default):** a brushed gradient (`--color-dark → --color-dark-alt → --color-primary` at 120°), the scaffold grain layer (`section.texture-grain > <span class="grain-layer" aria-hidden="true">` — light streak + fine horizontal lines + SVG noise, `mix-blend-mode: overlay`), and ideally one slanted edge. A flat dark fill reads as unfinished. Dark-surface eyebrows/labels use a brighter accent variant (`--color-accent-bright`) so small uppercase text stays AA on charcoal.
+
+### F13 — Lite YouTube Facade (conditional, when client has videos)
+
+Never embed raw YouTube iframes. Render the thumbnail as a static image with a play button; swap in the `youtube-nocookie.com` iframe on click.
+
+---
+
 ## Enforcement Summary
 
 The site-qa-agent skill validates:
@@ -1390,6 +1607,7 @@ The site-qa-agent skill validates:
 5. **No hardcoded colors, shadows, spacing** (grep for disallowed patterns)
 6. **Text-wrap: balance on heading selectors** (enforcement check)
 7. **No two consecutive identical dividers** (structural parse)
+8. **v6.2:** `:focus-visible` styling present (warn), form input font-size ≥ 16px, svh on full-height heroes (warn), performance budget per `performance-2026.md` Part E. Touch-target sizing is spot-checked in the Puppeteer render phase (computed boxes need layout).
 
 Failure modes and remediation prompts are generated per-page and piped into the Phase 6 Enhance runner, which re-applies the missing techniques page-by-page.
 

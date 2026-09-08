@@ -17,6 +17,37 @@ Rules below win when they conflict with anything in references.
 
 ---
 
+## MODEL POLICY
+
+The pipeline selects a Claude model **per task** (Opus for design-critical /
+vision phases, Sonnet for bulk content, QA, fixes, and edits) — it never
+inherits the CLI default. Full per-phase table is in `CLAUDE-websites-v2.md` →
+**MODEL POLICY**; the authoritative config is
+`packages/design-portal/lib/phase-prompts.ts` (`getPhaseModel`, `TASK_MODELS`).
+
+---
+
+## Performance & Asset Standards (v6.2 — MANDATORY, ENFORCED BY `qa_audit.py`)
+
+These are hard QA blockers on every new build. Full spec: `references/performance-2026.md`.
+
+- **Self-hosted fonts — NO Google Fonts CDN.** The scaffold copies the chosen variable woff2 into `/assets/fonts/` and declares `@font-face` (with `font-display: swap`) in `framework.css`. Never add `fonts.googleapis.com` / `fonts.gstatic.com` preconnect or `<link>`. Preload only the above-the-fold heading face: `<link rel="preload" href="/assets/fonts/<file>.woff2" as="font" type="font/woff2" crossorigin>`. Font sources live in `references/fonts/`; filenames are the lowercased-hyphenated family name (`Bricolage Grotesque` → `bricolage-grotesque.woff2`).
+- **Inline SVG icons — NO runtime injection.** Paste the raw `<svg>` from `references/lucide-icons/<name>.svg` at build time (add `aria-hidden="true"` + `width`/`height`). Never `<i data-lucide>`, `lucide.createIcons()`, or a Lucide/unpkg CDN `<script>`.
+- **Responsive images.** Every hero/card `<img>` needs `srcset` + `sizes`. The pipeline pre-generates `/assets/images/<name>-480.webp`, `-960.webp`, `-1600.webp` for on-disk photos — reference those exact files (omit a descriptor whose file is absent). Every photo `src` MUST be a local `/assets/images/` path — NEVER hotlink imgur or any other remote host (the localize step puts every manifest photo on disk before the build). Explicit `width`/`height` always; hero uses `loading="eager" fetchpriority="high"`, others `loading="lazy"`.
+- **No CDN JS toys.** No VanillaTilt CDN; carousels are CSS scroll-snap unless a Swiper feature is genuinely required. Total JS ≤ 100KB, hero image ≤ 150KB.
+- **v6.3 performance additions (2026-09-04, visually invisible, enforced by qa_audit.py "PERFORMANCE v6.3"):**
+  - `defer` on EVERY `<script src>` (first- and third-party). A library needed by one page (a real Swiper carousel) loads on that page only and initialises from an IntersectionObserver in `main.js`, never at load.
+  - Photos are `<picture>`: `<source type="image/avif" srcset="…-480/-960/-1600.avif">` + `<img src=".jpg" srcset="…webp">`. The pipeline writes both formats. Below-the-fold images add `decoding="async"`. The hero/LCP image is a `<picture>` with `fetchpriority="high"` (the ONLY element with it — not the nav logo), never a CSS `background-image`, never `loading="lazy"`, plus an `imagesrcset` preload in head.php.
+  - Budgets: any single image file ≤ 250KB (QA FAIL), homepage image payload ≤ 600KB, total page weight ≤ 1.5MB (QA WARN). Never hotlink `db.pageone.cloud/storage/...` originals — same rule as imgur.
+  - Critical CSS: the scaffold writes `includes/critical.css`; head.php inlines it in a `<style>` and loads framework.css via `<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">` + `<noscript>` fallback. No other render-blocking stylesheet (no separate fonts.css — `@font-face` stays in framework.css).
+  - `.htaccess` (Phase 1 template): brotli + gzip, `Cache-Control: public, max-age=31536000, immutable` on static assets (css/js are `?v=`-busted), `no-cache, must-revalidate` on HTML/PHP.
+  - Targets (mobile, cold): DCL < 600ms · load < 1s · LCP < 2.0s · CLS < 0.05 · Lighthouse mobile Performance ≥ 90 (QA FAIL below), Accessibility/Best Practices/SEO ≥ 95 (QA WARN below). Full spec: `references/performance-2026.md` "v6.3 additions".
+- **Forbidden tags (also QA blockers):** `<meta name="keywords">`, any Twitter/X Card tags (`twitter:*`), and `aggregateRating`/`ratingValue` in JSON-LD.
+
+> Pre-v6.2 sites audit with `qa_audit.py --legacy`. New builds are graded against v6.2 by default.
+
+---
+
 ## Tier Visual Quality Matrix (MANDATORY — ENFORCED BY QA)
 
 Every build is assigned a tier in the build prompt. The tier determines the visual bar.
@@ -26,6 +57,8 @@ Every build is assigned a tier in the build prompt. The tier determines the visu
 | **Premium** | **≥ 400** | **≥ 6** from technique library | **FAIL HARD** — build cannot deploy |
 | **Standard** | **≥ 200** | **≥ 4** from technique library | WARN — logged but build proceeds |
 | **Basic** | **≥ 100** | **≥ 2** from technique library | WARN — logged but build proceeds |
+
+> **v7 scaffold note (2026-09-02):** when `framework.css` is the v7 scaffold, the craft above lives in the scaffold and `qa_audit.py` treats the per-page inline-CSS line bar as informational and waives the "zero inline `<style>`" fail. Technique detection still runs across framework.css plus page styles. Pages still need real, page-specific composition — the scaffold is a floor, not the design.
 
 ### Automatic-fail conditions (ALL tiers)
 
@@ -87,10 +120,10 @@ These must be SEPARATE, UNBUNDLED, NOT pre-checked. This is a Texas TCPA require
 
 Hidden form fields required:
 
-- `_consent_version` — currently `"v2.1"`
-- `_consent_page` — PHP: `<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>`
+- `consent_version` — currently `"v2.1"`
+- `consent_page` — PHP: `<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>`
 
-The edge function at `https://db.pageone.cloud/functions/v1/leads/{client_slug}` automatically captures IP, user agent, and timestamp, and writes to `consent_records` table for legal defense.
+These arrive in the Formsubmit.co notification email (which is CC'd to Customer Service), preserving a consent record per submission. (Legacy sites that post to the Page One lead endpoint use `_consent_version`/`_consent_page` and get server-side capture into `consent_records`.)
 
 ### Required Intake Questions
 
@@ -123,136 +156,30 @@ Complete page templates, consent HTML/CSS, footer legal row, sitemap entries, Ph
 
 ---
 
-## Lead Form Endpoint (REQUIRED — REPLACES FORMSUBMIT.CO)
+## Lead Form Placement & Attribution (v6.3 — 2026-09-04, MANDATORY, QA-enforced)
 
-All client website contact forms post to the Page One CRM endpoint. This is how leads reach the client's Portal, their CRM deal, and their email.
+- **Placement.** Home, every service page and every city page carry the hero lead form (`.hero-grid--form` + `.hero-form-card`, mobile button opens `#estimate-dialog`). Blog posts, About and FAQ get ONE mid-page `<section class="cta-band" id="estimate">` with the same compact form after the first content section — never a hero form there. Contact keeps the full form. The band is sized to its content: copy column ≈1/3, form card ≈2/3 with the fields three-up (name | phone | email / service | button / consent | footnote), ≈300px tall on desktop — never a 420px card floating in a 490px dark block (Sloan blog, Sep 4). Every form instance has a unique id on its page: `hero`, `cta-band`, `dialog`, `contact`.
+- **Attribution.** The scaffold ships `includes/attribution.php` (canonical: `references/attribution.php`); `config.php` requires it before any output. It sets a first-party 30-day cookie on the first pageview (landing page, referrer, UTM, gclid, session id, device) — in PHP, no JavaScript. Every `<form>` echoes `<?php echo p1_attribution_fields('<form id>'); ?>`, which emits `form_id`, `submit_page_url/path`, `page_type`, `service_slug`, `city_slug`, `landing_page_url/path`, `traffic_referrer`, `utm_*`, `gclid`, `session_id`, `device_type` as hidden inputs. Formsubmit forwards them in the email; the Supabase leads endpoint stores them on `portal_leads` and reporting reads `v_lead_attribution_monthly` (per client per month by submit page, landing page, page type, service, city, source).
+- **Page identity.** Every page sets `$pageType` (`home|service|city|blog|about|faq|contact|other`) before `head.php`, plus `$serviceSlug` on service pages and `$citySlug` on city pages. The path-based fallback in attribution.php is PHP, never client-side parsing.
+- **Why first-touch matters.** A visitor lands on a city page, clicks to a service page, converts there. Without the landing-page cookie the city page looks worthless — and city pages are the Premium upsell.
 
-### Form action URL
+## Contact Form Submission (REQUIRED — Formsubmit.co, 2026-07-11 standard)
 
-```
-https://db.pageone.cloud/functions/v1/leads/{client_slug}
-```
+Every build submits contact forms to the Page One leads endpoint (`https://db.pageone.cloud/functions/v1/leads/{slug}`). Use the exact `form_action` URL from `build-plan.json` verbatim. **Formsubmit.co is retired (Sep 2026)** — never emit a formsubmit.co action or its `_captcha/_template/_subject/_cc` directives; keep `_next`, `_honey`, attribution fields and the consent block.
 
-Where `{client_slug}` is the client's slug (matches the build directory name in `~/client-sites/` and the `site_build_intakes.client_slug` column).
+> **Legacy note:** sites still on formsubmit.co or the dead `design.pageone.cloud/api/leads/{slug}` endpoint get repointed to `db.pageone.cloud/functions/v1/leads/{slug}` when touched (then run `patch-leads-spamshield.py`).
 
-### Required form markup
+**READ `references/contact-form-standard.md` BEFORE writing any form — it contains the full REQUIRED markup to copy verbatim.** Hard rules QA enforces:
 
-```html
-<form action="https://db.pageone.cloud/functions/v1/leads/example-client-slug" method="POST">
-
-  <!-- Honeypot — MUST be hidden from users, bots fill it out -->
-  <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-  <!-- Thank-you redirect -->
-  <input type="hidden" name="_next" value="/thank-you">
-
-  <!-- Consent tracking -->
-  <input type="hidden" name="_consent_version" value="v2.1">
-  <input type="hidden" name="_consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
-
-  <!-- Required fields (names MUST match exactly) -->
-  <label>
-    <span>Your Name</span>
-    <input type="text" name="name" required>
-  </label>
-
-  <label>
-    <span>Email</span>
-    <input type="email" name="email" required>
-  </label>
-
-  <label>
-    <span>Phone</span>
-    <input type="tel" name="phone" required>
-  </label>
-
-  <!-- Optional but strongly recommended -->
-  <label>
-    <span>Service Needed</span>
-    <select name="service">
-      <option value="">Select a service</option>
-      <!-- Populate with client-specific service options from intake data -->
-    </select>
-  </label>
-
-  <label>
-    <span>Message</span>
-    <textarea name="message" rows="4"></textarea>
-  </label>
-
-  <!-- ═══ SEPARATE CONSENT CHECKBOXES (TCPA 2025/2026 + Texas TCPA) ═══ -->
-
-  <fieldset class="form-consent-fieldset">
-    <legend class="form-consent-legend">Communication Consent</legend>
-
-    <label class="form-consent-item">
-      <input type="checkbox" name="email_opt_in" value="yes" class="consent-checkbox">
-      <span class="consent-label">
-        <strong>Email updates (optional):</strong> I agree to receive emails from
-        <?php echo htmlspecialchars($siteName); ?> about my inquiry, services, promotions, and news. I understand I can unsubscribe anytime via the link in any email
-        or by emailing <?php echo htmlspecialchars($contactEmail); ?>. Message frequency varies.
-      </span>
-    </label>
-
-    <label class="form-consent-item">
-      <input type="checkbox" name="sms_opt_in" value="yes" class="consent-checkbox">
-      <span class="consent-label">
-        <strong>SMS/Text messages (optional):</strong> I agree to receive text messages from
-        <?php echo htmlspecialchars($siteName); ?> at the phone number I provided. Message types may include appointment reminders, service updates, and promotional
-        offers. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe, HELP for help.
-        <strong>Consent is not a condition of purchase.</strong>
-      </span>
-    </label>
-
-    <label class="form-consent-item form-consent-required">
-      <input type="checkbox" name="terms_accepted" value="yes" class="consent-checkbox" required>
-      <span class="consent-label">
-        I have read and agree to the
-        <a href="/privacy-policy/">Privacy Policy</a>
-        and
-        <a href="/terms/">Terms of Service</a>. <span class="required-star">*</span>
-      </span>
-    </label>
-
-  </fieldset>
-
-  <button type="submit">Send Message</button>
-</form>
-```
-
-### Field name rules
-
-- `name`, `email`, `phone` — REQUIRED on every form. The CRM rejects submissions missing these. Field `name` attributes must match these strings exactly (lowercase).
-- `service` — OPTIONAL but enables AI lead value estimation. Strongly recommended.
-- `message` — OPTIONAL. Free-text field.
-- `_honey` — REQUIRED. Spam protection. Must be visually hidden AND have `tabindex="-1"` and `autocomplete="off"`. Do NOT use `display:none` alone without `!important` — bots that parse CSS will skip it.
-- `_next` — REQUIRED. Relative URL for thank-you redirect after submission. Default: `/thank-you`.
-
-### What happens on submission
-
-The CRM handles everything:
-1. Lead saves to `portal_leads` table (client sees it in Portal realtime)
-2. Linked to client's deal in Primary CRM (activity log entry)
-3. Branded email sent to client with lead details + AI value estimate + Portal link
-4. Customer Service CC'd on notification email (internal visibility)
-5. User redirected to `_next` (the thank-you page)
-
-### What NOT to include
-
-- **NO** `_captcha`, `_subject`, `_template`, `_cc`, or any other formsubmit.co-legacy fields
-- **NO** JavaScript for submission — native HTML form submit works and is more reliable
-- **NO** external spam libraries (reCAPTCHA, hCaptcha) — honeypot + server-side rate limiting is sufficient
-- **NO** mailto: action links — the CRM pipeline handles email delivery
-
-### Thank-you page
-
-Every build includes `/thank-you.php` with:
-- `<meta name="robots" content="noindex,nofollow">` in head.php (via page-specific `$noindex = true`)
-- Branded success message
-- Phone number + CTA to call now
-- Link back to home
+- Field names `name`, `email`, `phone` REQUIRED, exact lowercase strings; `service` dropdown + `message` recommended.
+- THREE separate consent checkboxes (TCPA 2025/2026): email opt-in (optional), SMS opt-in (optional), terms acceptance (REQUIRED) — unbundled, never pre-checked.
+- `_honey` honeypot (hidden + `tabindex="-1"` + `autocomplete="off"`), `_next` ABSOLUTE URL to `/thank-you`, `_captcha=false`, `_template=table`, `_subject`, `_cc=CustomerService@pageoneinsights.com`, plus `consent_version`/`consent_page` hidden fields.
+- NO JavaScript submission, NO reCAPTCHA/hCaptcha, NO `mailto:` actions.
+- Every build ships `/thank-you.php` (noindexed via `$noindex = true`, branded message, phone CTA, link home).
+- First submission to a new client email triggers Formsubmit.co's one-time activation email — submit a test lead at launch and confirm activation.
 
 ---
+
 
 ## Footer Dofollow Link (REQUIRED — EVERY BUILD)
 
@@ -295,12 +222,15 @@ RewriteRule ^sitemap\.xml$ /sitemap.php [L]
 RewriteCond %{REQUEST_URI} !^/assets/
 RewriteCond %{REQUEST_URI} !^/includes/
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
 RewriteRule ^ /%1 [NC,L,R=301]
 ```
 
-The `!-d` condition is intentionally removed. Without this fix, pages inside real subdirectories fail to resolve on Hostinger.
+The `RewriteCond %{DOCUMENT_ROOT}/$1.php -f` target-existence condition is MANDATORY. Without it, a request for a real directory (`/services/`, `/about/`) is rewritten to `dir/.php` and 404s sitewide on Apache/Hostinger (confirmed live on god-s-country-tree-service-llc and xtreme-construction-llc, 2026-07-17); nginx previews mask the bug. With the condition, directories fall through to DirectoryIndex on every host.
+
+**v6.3 headers (2026-09-04):** the Phase 1 `.htaccess` template also carries `mod_brotli` + `mod_deflate` compression, `Cache-Control: public, max-age=31536000, immutable` on css/js/fonts/images (css/js are `?v=`-busted), and `no-cache, must-revalidate` on `.php`/`.html`. Hostinger's CDN already serves brotli + HTTP/2/3; the directives cover hosts without it.
 
 **URL shape rule:** ALL pages — including service pages — are built as `directory/index.php` with trailing-slash URLs (`/services/roof-repair/`). Never the dual flat-`.php` + directory-stub pattern (canonical/internal-link mismatch). See build-phases.md.
 
@@ -351,7 +281,28 @@ Every build includes:
 
 ---
 
+## Hero, Motion and Archetype (v7 — 2026-09-02, MANDATORY)
+
+The scaffold's `framework.css` is the v7 baseline (template: `~/crm/references/framework-v7.css`). It ships the fluid type scale, `text-wrap: balance/pretty`, a global focus ring, three container widths, the divider family, the grain layer, the gallery, the featured service grid, the proof strip, the compact hero form card, the estimate `<dialog>`, the slim cookie bar and the mobile bar. Pages use these classes; they do not re-author them.
+
+- **Heroes size to content. Never `min-height: 100vh` / `100svh`.** A homepage hero is typically 560–720px on desktop. Interior heroes are compact (`.hero--interior`).
+- **H1 stays on the scaffold scale** (`--fs-h1`, ~42px desktop / ~32px mobile) and reads in ≤ 2 lines on desktop. Owner feedback 2026-09-02: "hero text on most builds is way too large and makes the heroes way too tall." Never override `--fs-h1` upward.
+- **Hero anatomy:** plain-text eyebrow → one-sentence H1 → one-sentence `.hero-answer` (≤ 30 words) → primary CTA + call link → three `.hero-chips` from intake. Desktop shows the compact three-field `.hero-form-card`; below 900px the scaffold hides it and the `data-open-estimate` button opens `#estimate-dialog`.
+- **Hero pattern comes from `design.archetype`** in build-plan.json (set in Phase 2): `editorial-light`, `bold-industrial`, `warm-human`, `minimal-tech`, `rustic`, `proof-led`. The archetype also fixes the divider family, the type pairing and the motion permit. Phase 3 picks one of three section scripts (photo-led / proof-led / editorial) — the homepage section order is not fixed and carries no numbered watermarks.
+- **Rhythm:** alternate `.container` / `.container-wide` / `.container-narrow`, alternate light and dark bands, use ≥ 2 different edge classes (`.slant-top`, `.edge-curve-top`, `.edge-wave-top`, `.edge-torn-top`, `.edge-parallelogram-top`).
+- **Motion is fail-open:** `main.js` adds `js-anim` to `<html>` as its first statement; only then do `.reveal` / `.reveal-*` / `[data-animate]` start hidden, an IntersectionObserver reveals them, and a 2.5 s safety net shows anything left. Never a bare `.reveal { opacity: 0 }`. Never scroll-timeline reveals (a renderer that does not scroll, such as Googlebot, would see opacity 0 below the fold). Nothing inside the hero gets a reveal class.
+- **Mobile first-screen contract (measured by visual QA):** at 390px wide the H1 clears the fixed header, the answer sentence, the primary CTA (top ≤ 620px) and the three chips fit in the first 700px, no paragraph above the CTA runs past two lines, the cookie bar waits for the first scroll, the sticky bar appears only after the hero leaves the viewport.
+- **Proof, not stats:** the proof strip shows four verifiable intake facts. No invented numbers, no counters on made-up values, no ratings without a GBP count in intake.
+- **Link integrity:** a link may only point at a page that exists on disk. Gate area/city links with `is_dir()` until the page is built; curl every internal href before calling a phase complete. One 404 = not complete.
+- **Shared-include variables:** loop variables in header.php, footer.php and partials are prefixed (`$navSvc`, `$footArea`). Never `$svc`, `$area`, `$c`, `$card`, which pages own.
+- **Logos:** knock JPEG fields out to transparency before use; split stacked logos into mark + the logo's own text block for the bar; crop baked-in phone numbers off; name derived assets with a version suffix and never overwrite an image in place (edge cache is immutable for a year).
+- **Area pages:** research first, source URLs in a comment header, elevation as a range, 2023 USDA zone by ZIP, drop any unverifiable name (and fix the config blurb), no frequency claims about past work in a town, build every area in config or gate its links.
+
+---
+
 ## Design Anti-Patterns (STRICTLY FORBIDDEN)
+
+- No `100vh` / full-viewport heroes; no H1 above the scaffold `--fs-h1`; no 3-4 line stacked headlines
 
 - No generic centered text blocks repeated section after section
 - No equal-height bland sections stacked with no visual variation
@@ -410,8 +361,10 @@ This rule permits refinement of visual execution, not removal of structural requ
 Preview command is always:
 
 ```bash
-php -S localhost:8000
+php -S 127.0.0.1:8090
 ```
+
+**Port 8000 is Supabase (Kong) on this box — NEVER `php -S localhost:8000`** (it binds `[::1]:8000`, hijacks every `localhost:8000` API call from the CRM/portals and takes the CRM down; Sep 8 2026 incident). Always bind `127.0.0.1` on a port ≥ 8090, and `kill %1` / `pkill -f 'php -S 127.0.0.1:8090'` when you are done — never leave a preview server running.
 
 Before running, verify PHP is installed:
 
@@ -462,6 +415,8 @@ For anything not covered above:
 - **PHP component structure, build phases, file organization, deployment** → `~/crm/references/build-phases.md`
 - **Blog registry, post anatomy, topic clusters** → `~/crm/references/blog-standard.md`
 - **Legal pages, TCPA consent, cookie banner, footer legal row** → `~/crm/references/legal-compliance.md`
+- **Services section full HTML + CSS (copy verbatim)** → `references/required-components.md`
+- **Contact form full markup + field rules (copy verbatim)** → `references/contact-form-standard.md`
 
 If a requirement is not explicitly in this file and not in a reference file, it does not exist. Do not invent requirements.
 
@@ -469,247 +424,18 @@ If a requirement is not explicitly in this file and not in a reference file, it 
 
 ## Required Components
 
-This section defines reusable component patterns that MUST appear on every build, identical in structure across tiers. Brand colors, fonts, and copy are tier/client specific. Structure, class names, and HTML pattern are NOT.
-
-QA validates these by class name. Builds missing these classes auto-fail.
-
----
+Reusable component patterns that MUST appear on every build, identical in structure across tiers. Brand colors, fonts, and copy are tier/client specific. Structure, class names, and HTML pattern are NOT. QA validates by class name — builds missing these classes auto-fail.
 
 ### Services Section (REQUIRED — All Tiers, All Pages)
 
-**Where it appears (mandatory):**
-- Home page (the services overview)
-- `/services/index.php` (the services listing page)
-- Bottom of each individual service page (as "Related Services" — 3 cards)
+Appears on: home page (services overview), `/services/index.php`, and the bottom of each individual service page ("Other Services You May Need" — 3 cards). Never on legal pages, contact, or thank-you.
 
-**Where it does NOT appear:** legal pages, contact, thank-you.
+**READ `references/required-components.md` BEFORE building any services section — it contains the full REQUIRED HTML pattern and CSS to copy verbatim.** Hard rules QA enforces:
 
-**HTML pattern (exact class names — QA validates these):**
-
-```html
-<section class="section" aria-label="{Industry} services">
-  <div class="container">
-    <div class="section-title reveal-up">
-      <span class="eyebrow-label">What We Do</span>
-      <h2>{Question-format heading specific to the business}</h2>
-      <p class="hero-answer">{40-60 word direct answer paragraph that answers the H2}</p>
-      <span class="section-subtitle">{tagline phrase}</span>
-      <p class="prose">{1-2 sentence description of the company's service mix}</p>
-    </div>
-
-    <div class="services-grid">
-      <!-- Repeat this card for each service. Tints rotate 1, 2, 3, 1, 2, 3... -->
-      <article class="service-card-with-image card-tint-1 reveal-up reveal-delay-1">
-        <div class="service-card__image">
-          <img src="/assets/images/{photo}.jpg" alt="{descriptive alt}" width="600" height="360" loading="lazy">
-        </div>
-        <div class="service-card__body">
-          <div class="service-card__icon"><i data-lucide="{lucide-icon-name}"></i></div>
-          <h3>{Service Name}</h3>
-          <p class="service-card__desc">{1-sentence description, no fluff}</p>
-          <ul>
-            <li>{benefit/feature 1 — 3-6 words}</li>
-            <li>{benefit/feature 2 — 3-6 words}</li>
-            <li>{benefit/feature 3 — 3-6 words}</li>
-          </ul>
-          <a href="/services/{slug}/" class="service-card__cta">Learn more</a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-```
-
-**Tint rotation rule:** Cards cycle through `card-tint-1` → `card-tint-2` → `card-tint-3` → `card-tint-1` → ... Never place two cards with the same tint class adjacent in the source. The `reveal-delay-1/2/3` modifier follows the same rotation.
-
-**Bullet rule:** EXACTLY 3 bullets per card. Not 2, not 4. Each bullet 3-6 words, scannable, benefit-driven (not feature-only). Examples: "Same-day install on most homes", "Insurance claim support", "20–30 year service life". Avoid: "We use the best materials" (vague), "High-quality professional service" (filler).
-
-**Icon mapping:** Use Lucide icons appropriate to the service. Industry guidance:
-- Roofing: `home`, `shield`, `cloud-rain`, `wrench`, `hammer`, `hard-hat`, `building-2`
-- Gutters: `ruler`, `droplets`, `filter`, `wrench`, `shield`, `building-2`, `sparkles`
-- Lawn/Landscape: `leaf`, `scissors`, `sprout`, `flower-2`, `tree-pine`, `sun`
-- Tree Service: `tree-pine`, `axe`, `chainsaw`, `shovel`, `wrench`
-- HVAC: `thermometer`, `wind`, `flame`, `snowflake`, `wrench`, `zap`
-- Plumbing: `droplets`, `wrench`, `pipe`, `shower-head`, `bath`
-- Electrical: `zap`, `lightbulb`, `plug`, `bolt`, `wrench`
-- Cleaning: `sparkles`, `spray-can`, `brush`, `wind`
-- Generic: `check-circle`, `star`, `award`, `tool`
-
-Each card's icon must be different from adjacent cards.
-
-**Image rule:** Every card MUST have a real client photo. The build pipeline pre-stages photos in `/assets/images/`. Reference the AVAILABLE CLIENT IMAGES manifest. NO gradient placeholders, NO blank divs. If no client photo exists for a service, fall back to Unsplash Source API as last resort.
-
-**Copy rules:**
-- Card title: just the service name (no qualifiers like "Premium" or "Affordable")
-- Description: 1 sentence, max 14 words, says what it actually is — not what it does for the customer's emotions
-- Section heading: phrase as a CONVERSATIONAL QUESTION using customer-search language. Examples:
-  - "What construction services does {company name} offer?"
-  - "Which roofing services are available in {city}?"
-  - "How does {company name} handle commercial HVAC needs?"
-  - DO NOT use generic "Our Services" / "What We Do" / "Services Overview" — these are banned by aeo-content-schema.md §1.1
-  - Two-tone treatment: highlight 1-3 keywords with <span class="text-accent">...</span> within the question
-- Section eyebrow: "What We Do" (literal, do not vary)
-
-**Required CSS variables (add to `:root` in styles.css):**
-
-```css
-:root {
-  /* Tinted card backgrounds — recipe: brand colors at 6-9% alpha */
-  --color-card-tint-1: rgba({primary-rgb}, 0.08);   /* primary brand color */
-  --color-card-tint-2: rgba({primary-dark-rgb}, 0.06); /* darker primary */
-  --color-card-tint-3: rgba({accent-rgb}, 0.09);    /* accent color */
-  --color-card-tint-neutral: rgba(245, 247, 250, 1);
-}
-```
-
-**Required CSS rules (add to styles.css — these class names are non-negotiable):**
-
-```css
-/* Tint utility classes */
-.card-tint-1 { background: var(--color-card-tint-1); box-shadow: none; }
-.card-tint-2 { background: var(--color-card-tint-2); box-shadow: none; }
-.card-tint-3 { background: var(--color-card-tint-3); box-shadow: none; }
-.card-tint-neutral { background: var(--color-card-tint-neutral); box-shadow: none; }
-
-/* Services grid layout */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-md);
-}
-@media (max-width: 1199px) {
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-  .services-grid { grid-template-columns: 1fr; }
-}
-
-/* Tinted image card */
-.service-card-with-image {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-.service-card-with-image:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-.service-card__image {
-  position: relative;
-  aspect-ratio: 5 / 3;
-  overflow: hidden;
-}
-.service-card__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.service-card__body {
-  padding: var(--space-lg) var(--space-md) var(--space-md);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-sm);
-  position: relative;
-}
-.service-card__icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: var(--shadow-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: -44px;  /* overlaps the image edge */
-  margin-bottom: var(--space-xs);
-  color: var(--color-accent);
-}
-.service-card__icon i,
-.service-card__icon svg {
-  width: 26px;
-  height: 26px;
-}
-.service-card-with-image h3 {
-  font-family: var(--font-heading);
-  color: var(--color-primary);
-  margin: 0;
-  font-size: 1.35rem;
-  line-height: 1.2;
-}
-.service-card__desc {
-  color: var(--color-text);
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.55;
-}
-.service-card-with-image ul {
-  list-style: none;
-  padding: 0;
-  margin: var(--space-xs) 0 0;
-  width: 100%;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  border-top: 1px solid rgba(0,0,0,0.06);
-  padding-top: var(--space-md);
-}
-.service-card-with-image ul li {
-  font-size: 0.9rem;
-  color: var(--color-text);
-  padding-left: 1.25rem;
-  position: relative;
-}
-.service-card-with-image ul li::before {
-  content: "•";
-  color: var(--color-accent);
-  font-weight: 700;
-  position: absolute;
-  left: 0.25rem;
-  top: 0;
-}
-.service-card__cta {
-  margin-top: auto;
-  padding-top: var(--space-sm);
-  color: var(--color-accent);
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.95rem;
-  border-top: 1px solid rgba(0,0,0,0.06);
-  width: 100%;
-  text-align: center;
-  padding: var(--space-sm) 0 0;
-  transition: color var(--transition-base);
-}
-.service-card__cta::after {
-  content: " →";
-  display: inline-block;
-  transition: transform var(--transition-base);
-}
-.service-card__cta:hover { color: var(--color-primary); }
-.service-card__cta:hover::after { transform: translateX(3px); }
-```
-
-**Service count handling:**
-- 3 services: render 3 cards in a 3-column row at desktop (CSS handles this — first row only fills what exists)
-- 4 services: 4-up grid as specified
-- 5-7 services: fills first row + partial second row
-- 8 services: two clean rows of 4
-- 9+ services: render the first 8 in the home grid, then below the grid render `<a href="/services/" class="btn-secondary">View All {N} Services →</a>`. Render ALL services on `/services/index.php`.
-
-**Reuse on individual service pages (Related Services):**
-At the bottom of each `/services/{slug}/index.php` page, render 3 randomly-selected OTHER services in the same `services-grid` + `service-card-with-image` pattern. Section heading: "Other Services You May Need". Use the same tint rotation rule.
-
-**DO NOT (these auto-fail QA):**
-- Use the legacy class names: `service-card`, `service-card-image`, `service-card-content`, `service-card-cta`
-- Render service cards without the image-on-top pattern
-- Use icon-only or gradient-only cards
-- Use more than 3 bullets per card
-- Use the same tint on adjacent cards
-- Use stock photos when client photos exist for that service
-
+- Class names are non-negotiable: `services-grid`, `service-card-with-image`, `card-tint-1/2/3`, `service-card__image/body/icon/desc/cta`. Legacy classes `service-card`, `service-card-image`, `service-card-content`, `service-card-cta` auto-fail.
+- Tint rotation `card-tint-1 → 2 → 3 → 1…` — never the same tint on adjacent cards; `reveal-delay-1/2/3` follows the same rotation.
+- EXACTLY 3 bullets per card, each 3-6 words, benefit-driven.
+- Section H2 is a CONVERSATIONAL QUESTION in customer-search language with 1-3 keywords in `<span class="text-accent">`, followed by a 40-60 word `hero-answer` paragraph. Generic "Our Services" / "What We Do" / "Services Overview" headings are banned (the eyebrow stays the literal "What We Do").
+- Icons are inline SVG from `references/lucide-icons/*.svg` (never `data-lucide`, `createIcons`, or a CDN); adjacent cards use different icons.
+- Every card has a real client photo from the AVAILABLE CLIENT IMAGES manifest (responsive srcset, explicit width/height); no gradient placeholders or blank divs; stock only as last resort when no client photo exists.
+- 9+ services: first 8 on the home grid + `View All {N} Services →` button; ALL services render on `/services/index.php`.

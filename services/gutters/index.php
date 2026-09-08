@@ -3,409 +3,514 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 ?>
 <?php
-$thisSlug        = 'gutters';
-$pageTitle       = "Gutter Installation & Repair in Warrenton, MO | A&S Contracting Services";
-$pageDescription = "Expert gutter installation, repair & cleaning in Warrenton, MO. Seamless gutters for Warren County homes. Licensed, insured — free estimates. A&S Contracting Services.";
+// ─── Page-level setup ───────────────────────────────────────────────────────
+$serviceSlug     = 'gutters';
+$pageType        = 'service';
+$currentPage     = 'services';
+$svcName         = 'Gutters';
+$pageTitle       = 'Gutters in Warrenton, MO';
+$pageDescription = 'Gutter installation in Warrenton, MO. A&S Contracting Services forms seamless aluminum gutters on site across Warren County—downspouts, guards, and repairs handled. Free written estimates.';
 $canonicalUrl    = $siteUrl . '/services/gutters/';
-$currentPage     = 'gutters';
-$cssVersion      = '5';
-$pb              = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/a-s-contracting-services/photos/';
-$heroPhoto       = $pb . '1779984936314-5pnhuy-43-Aug_06__2025_23-34-36-CJqa.jpg';
-$bodyPhoto1      = $pb . '1779985051813-6hdkvp-61-Apr_25__2025_19-50-31-B2oU.jpg';
-$bodyPhoto2      = $pb . '1779985052217-p5psyo-62-Apr_25__2025_19-50-40-dTeE.jpg';
-$bodyPhoto3      = $pb . '1779985052606-0c7fr0-64-Jun_03__2025_18-42-44-7JBx.jpg';
-$heroImagePreload = $heroPhoto;
-$ogImage         = $heroPhoto;
 
-$currentService = null;
-foreach ($services as $svc) { if ($svc['slug'] === $thisSlug) { $currentService = $svc; break; } }
-
-$relSlugs = ['roofing','soffit','fascia'];
-$relPhotos = ['roofing' => $pb.'1779984864659-a47kou-52-Aug_08__2025_00-31-27-YHMr.jpg','soffit' => $pb.'1779984949713-arsxr0-25-Aug_06__2025_14-36-12-a7GW.jpg','fascia' => $pb.'1779984953000-ootb3h-20-Aug_06__2025_14-16-18-XFFu.jpg'];
-$relIcons  = ['roofing' => 'home','soffit' => 'hard-hat','fascia' => 'ruler'];
-$relBullets = ['roofing'=>['Full replacements or repairs','Licensed residential & commercial','Insurance claim support'],'soffit'=>['Improves attic ventilation','Resists moisture and pests','Matched to existing roofline'],'fascia'=>['Premium long-term materials','Protects roof edge from rot','Pairs with gutter installation']];
-
-$faqs = [
-    ['question'=>'How much does gutter installation cost in Warrenton, MO?','answer'=>'Gutter installation in Warrenton typically ranges from $800 to $3,500 depending on linear footage, material (aluminum vs. steel vs. copper), and whether seamless or sectional gutters are selected. A&S Contracting Services provides free on-site written estimates with no obligation to proceed.'],
-    ['question'=>'What is the difference between seamless and sectional gutters?','answer'=>'Seamless gutters are custom-formed on-site to fit your roofline without joints — dramatically reducing the chance of leaks. Sectional gutters come in pre-cut lengths connected by seams that can fail over time. For Missouri homes, we recommend seamless aluminum gutters for long-term performance.'],
-    ['question'=>'How often should gutters be cleaned near Warren County, MO?','answer'=>'In the Warrenton area, most homes benefit from gutter cleaning twice per year — once in late spring after cottonwood and maple seed drop, and again in early December after oak leaves fall. Homes under heavy tree cover may need 3 to 4 cleanings annually.'],
-    ['question'=>'Can A&S repair damaged or sagging gutters in Warrenton?','answer'=>'Yes. We repair sagging gutters, re-slope gutters that pool water instead of draining, replace damaged sections, and reseal joints throughout Warren County. In some cases repair is more cost-effective than full replacement — we give you an honest assessment at the free estimate.'],
-    ['question'=>'Do gutters help protect my foundation in Missouri?','answer'=>'Absolutely. Gutters that are properly pitched and terminated with downspout extensions carry roof runoff away from your foundation. Without effective gutters, water pools along your foundation during Missouri rain events — the leading cause of basement seepage and foundation settling.'],
-    ['question'=>'Are gutter guards worth it for Warrenton homes?','answer'=>'Gutter guards reduce cleaning frequency but rarely eliminate it entirely. For heavily treed lots in Warren County — common near the Cuivre River corridor — guards reduce the buildup of large debris but fine grit still accumulates. We can install guards and give you an honest maintenance forecast.'],
+// ─── Hero + recent-work photos (image manifest) ─────────────────────────────
+$heroImage    = '1779985084434-7wvwuf-46-Feb_10__2026_22-02-29-uWM1';
+$heroImageAlt = 'Roof and gutter work in progress on a wooded Warren County property by A&S Contracting Services';
+$heroPreload  = [
+    'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
+    'sizes'  => '100vw',
+];
+$workPhotos = [
+    ['1779985356802-y1uuhd-29-Aug_06__2025_14-39-50-VPdz', 'A&S worker on a ladder finishing exterior trim and gutter line on a gray-sided Warrenton home'],
+    ['1779985460368-i1nur1-60-Oct_14__2024_23-05-06-h2RS', 'Completed home with white siding, a charcoal roof, and new gutters near Warren County'],
+    ['1779985468766-asxmqk-65-Oct_14__2024_23-06-52-nSsb', 'Home with white siding, a covered porch, and clean gutter lines in central Missouri'],
 ];
 
-$schemaData = [
-    '@context'=>'https://schema.org','@graph'=>[
-        ['@type'=>'Service','@id'=>$siteUrl.'/services/gutters/#service','name'=>'Gutters','description'=>$currentService['description']??'','provider'=>['@id'=>$siteUrl.'/#organization'],'areaServed'=>['@type'=>'GeoCircle','geoMidpoint'=>['@type'=>'GeoCoordinates','latitude'=>'38.8153','longitude'=>'-91.1418'],'geoRadius'=>'80467'],'url'=>$canonicalUrl],
-        ['@type'=>'BreadcrumbList','itemListElement'=>[['@type'=>'ListItem','position'=>1,'name'=>'Home','item'=>$siteUrl.'/'],['@type'=>'ListItem','position'=>2,'name'=>'Services','item'=>$siteUrl.'/services/'],['@type'=>'ListItem','position'=>3,'name'=>'Gutters']]],
-        ['@type'=>'FAQPage','mainEntity'=>array_map(fn($f)=>['@type'=>'Question','name'=>$f['question'],'acceptedAnswer'=>['@type'=>'Answer','text'=>$f['answer']]],$faqs)],
+// ─── FAQ (service-specific) ─────────────────────────────────────────────────
+$faqs = [
+    [
+        'question' => 'How much do seamless gutters cost in Warrenton, MO?',
+        'answer'   => 'Gutter cost in Warrenton depends on the linear footage around your roofline, whether you choose 5-inch or 6-inch K-style, the number of downspouts, and whether you add leaf guards. A&S Contracting Services measures your home and gives a free written estimate, so the run length and price are settled before we roll a single seamless section on site.',
+    ],
+    [
+        'question' => 'Why are seamless gutters better than sectional ones?',
+        'answer'   => 'A&S Contracting Services forms seamless gutters on site from a continuous coil, so a run has no joints along its length—only sealed corners and end caps. Sectional store-bought gutters snap together every few feet, and those seams are exactly where leaks start after a few Missouri freeze-thaw cycles. Fewer joints means fewer failure points over your foundation.',
+    ],
+    [
+        'question' => 'What size gutters do I need for a Warren County home?',
+        'answer'   => 'A&S Contracting Services sizes gutters to your roof, not a one-size default. Steep or large roofs that shed heavy runoff during Missouri downpours often need 6-inch K-style with oversized downspouts, while a smaller ranch does fine with 5-inch. We calculate the drainage the roof produces so the system keeps up in a real storm instead of overflowing.',
+    ],
+    [
+        'question' => 'Do gutter guards actually keep leaves out?',
+        'answer'   => 'Good ones do. A&S Contracting Services installs quality gutter guards that keep leaves, seed pods, and debris from the maples and oaks common around Warren County out of the trough while letting water through. Guards cut down on cleaning and clogs, though no guard is fully maintenance-free—we tell you honestly what they will and will not do for your home.',
+    ],
+    [
+        'question' => 'Can bad gutters really cause foundation problems?',
+        'answer'   => 'Yes, and it is one of the most common issues A&S Contracting Services sees. When gutters overflow or downspouts dump water at the base of the house, that water pools against the foundation, saturates the soil, and finds its way into the basement. Correct pitch and downspouts extended well away from the house are what keep runoff from undermining your foundation.',
+    ],
+    [
+        'question' => 'Are you licensed and insured for gutter work in Missouri?',
+        'answer'   => 'Yes. A&S Contracting Services is a licensed Missouri general contractor and carries full insurance on every gutter job. Because the same crew that handles your roof, soffit, and fascia also installs your gutters, the whole roofline goes on as one coordinated system—covered start to finish.',
     ],
 ];
-$schemaMarkup = json_encode($schemaData,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
-include $_SERVER['DOCUMENT_ROOT'].'/includes/head.php';
+
+// ─── Schema (Service + FAQPage + BreadcrumbList) ─────────────────────────────
+$serviceSchema = [
+    '@context'    => 'https://schema.org',
+    '@type'       => 'Service',
+    '@id'         => $canonicalUrl . '#service-' . $serviceSlug,
+    'name'        => 'Gutters',
+    'serviceType' => 'Gutter installation',
+    'description' => 'Seamless aluminum K-style gutter installation, downspouts, gutter guards, and repair in Warrenton, MO and Warren County—formed on site to protect the foundation and landscaping from Missouri runoff.',
+    'provider'    => ['@id' => $siteUrl . '/#organization'],
+    'areaServed'  => [
+        '@type' => 'GeoCircle',
+        'geoMidpoint' => ['@type' => 'GeoCoordinates', 'latitude' => '38.8098', 'longitude' => '-91.1401'],
+        'geoRadius'   => $serviceRadius . ' miles',
+    ],
+    'url'         => $canonicalUrl,
+];
+$breadcrumbSchema = [
+    '@context'        => 'https://schema.org',
+    '@type'           => 'BreadcrumbList',
+    'itemListElement' => [
+        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',     'item' => $siteUrl . '/'],
+        ['@type' => 'ListItem', 'position' => 2, 'name' => 'Services', 'item' => $siteUrl . '/services/'],
+        ['@type' => 'ListItem', 'position' => 3, 'name' => $svcName,   'item' => $canonicalUrl],
+    ],
+];
+$schema  = '<script type="application/ld+json">' . json_encode($serviceSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
+$schema .= generateFAQSchema($faqs) . "\n";
+$schema .= '<script type="application/ld+json">' . json_encode($breadcrumbSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
+
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 ?>
-<body>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/includes/header.php'; ?>
 
 <style>
-/* ═══════════════════════════════════════════════════════════════
-   /services/gutters/ — Page-specific styles — Premium tier ≥400L
-   ═══════════════════════════════════════════════════════════════ */
-.svc-hero { position:relative; min-height:85vh; display:flex; align-items:center; background-image:url('<?php echo $heroPhoto; ?>'); background-size:cover; background-position:center 50%; padding:calc(var(--nav-height,72px) + var(--space-3xl)) 0 var(--space-3xl); overflow:hidden; }
-.svc-hero::before { content:''; position:absolute; inset:0; background:linear-gradient(112deg,rgba(var(--color-primary-rgb),0.93) 0%,rgba(var(--color-primary-rgb),0.72) 48%,rgba(var(--color-primary-rgb),0.3) 100%); z-index:1; }
-.svc-hero::after { content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E"); background-size:220px; opacity:0.04; z-index:2; pointer-events:none; }
-.svc-hero-inner { position:relative; z-index:3; max-width:var(--max-width,1280px); margin:0 auto; padding:0 var(--space-lg); display:grid; grid-template-columns:1fr 400px; gap:var(--space-2xl); align-items:center; width:100%; }
-.hero-breadcrumb { display:flex; align-items:center; gap:var(--space-xs); font-size:0.8rem; color:rgba(255,255,255,0.48); margin-bottom:var(--space-md); }
-.hero-breadcrumb a { color:rgba(255,255,255,0.48); transition:color 0.2s; }
-.hero-breadcrumb a:hover { color:var(--color-accent); }
-.hero-breadcrumb span { color:rgba(255,255,255,0.28); }
-.hero-eyebrow { display:inline-flex; align-items:center; gap:var(--space-xs); background:rgba(var(--color-accent-rgb),0.15); border:1px solid rgba(var(--color-accent-rgb),0.45); color:var(--color-accent); font-size:0.76rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:5px 12px; border-radius:var(--radius-sm); margin-bottom:var(--space-md); }
-.svc-hero h1 { font-family:var(--font-heading,'Unbounded',sans-serif); font-size:clamp(2.2rem,4.2vw,3.6rem); font-weight:800; line-height:1.07; text-wrap:balance; color:var(--color-secondary); margin:0 0 var(--space-md); }
-.svc-hero h1 .accent { color:var(--color-accent); }
-.hero-answer { font-size:1.05rem; line-height:1.78; color:rgba(255,255,255,0.76); max-width:52ch; margin:0 0 var(--space-xl); }
-.hero-trust-row { display:flex; gap:var(--space-lg); flex-wrap:wrap; margin-bottom:var(--space-xl); }
-.trust-pill { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.88); font-size:0.82rem; font-weight:600; padding:6px 14px; border-radius:100px; }
-.trust-pill svg { width:13px; height:13px; color:var(--color-accent); }
-.hero-cta-group { display:flex; gap:var(--space-md); flex-wrap:wrap; }
-.btn-primary-svc { display:inline-flex; align-items:center; gap:8px; background:var(--color-accent); color:var(--color-primary); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.82rem; font-weight:800; padding:14px 28px; border-radius:var(--radius); border:2px solid var(--color-accent); transition:all 0.2s; text-transform:uppercase; letter-spacing:0.04em; }
-.btn-primary-svc:hover { background:#ffbb00; border-color:#ffbb00; transform:translateY(-2px); box-shadow:0 6px 20px rgba(var(--color-accent-rgb),0.4); }
-.btn-ghost-svc { display:inline-flex; align-items:center; gap:8px; background:transparent; color:var(--color-secondary); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.82rem; font-weight:700; padding:14px 28px; border-radius:var(--radius); border:2px solid rgba(255,255,255,0.3); transition:all 0.2s; text-transform:uppercase; letter-spacing:0.04em; }
-.btn-ghost-svc:hover { border-color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.08); }
-/* Form card */
-.hero-aside-card { background:rgba(255,255,255,0.97); border-radius:var(--radius-lg); padding:var(--space-xl); box-shadow:0 24px 64px rgba(0,0,0,0.35); }
-.aside-card-title { font-family:var(--font-heading,'Unbounded',sans-serif); font-size:1rem; font-weight:800; color:var(--color-primary); margin:0 0 var(--space-sm); }
-.aside-form { display:flex; flex-direction:column; gap:var(--space-sm); }
-.form-group { display:flex; flex-direction:column; gap:4px; }
-.form-group label { font-size:0.78rem; font-weight:600; color:var(--color-text-light); text-transform:uppercase; letter-spacing:0.06em; }
-.form-group input,.form-group select,.form-group textarea { width:100%; padding:10px 14px; border:1.5px solid var(--color-border,#e2e2e2); border-radius:var(--radius-sm); font-size:0.9rem; color:var(--color-text); background:var(--color-bg,#fff); transition:border-color 0.2s; font-family:var(--font-body,'Inter',sans-serif); }
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus { outline:none; border-color:var(--color-accent); }
-.form-consent-fieldset { border:none; padding:0; margin:0; display:flex; flex-direction:column; gap:var(--space-xs); }
-.form-consent-legend { font-size:0.78rem; font-weight:700; color:var(--color-text-light); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px; }
-.form-consent-item { display:flex; gap:8px; align-items:flex-start; cursor:pointer; }
-.form-consent-item input[type="checkbox"] { width:16px; height:16px; flex-shrink:0; margin-top:2px; accent-color:var(--color-accent); }
-.consent-label { font-size:0.78rem; line-height:1.55; color:var(--color-text-light); }
-.consent-label a { color:var(--color-accent); }
-.required-star { color:#c00; font-weight:700; }
-.btn-form-submit { width:100%; background:var(--color-primary); color:var(--color-secondary); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.82rem; font-weight:800; padding:14px; border:none; border-radius:var(--radius); cursor:pointer; transition:all 0.2s; letter-spacing:0.04em; text-transform:uppercase; }
-.btn-form-submit:hover { background:var(--color-accent); color:var(--color-primary); transform:translateY(-1px); }
-/* Dividers */
-.divider-wave { display:block; width:100%; overflow:hidden; line-height:0; }
-.divider-wave svg { display:block; width:100%; }
-.divider-angle { display:block; width:100%; overflow:hidden; line-height:0; }
-.divider-angle svg { display:block; width:100%; }
-.divider-curve { display:block; width:100%; overflow:hidden; line-height:0; }
-.divider-curve svg { display:block; width:100%; }
-/* Layout helpers */
-.container-svc { max-width:var(--max-width,1280px); margin:0 auto; padding:0 var(--space-lg); }
-.eyebrow-label { display:inline-block; font-size:0.74rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--color-accent); margin-bottom:var(--space-sm); }
-.section-h2 { font-family:var(--font-heading,'Unbounded',sans-serif); font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:var(--color-primary); text-wrap:balance; margin:0 0 var(--space-sm); line-height:1.15; }
-.section-h2-light { font-family:var(--font-heading,'Unbounded',sans-serif); font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:var(--color-secondary); text-wrap:balance; margin:0 0 var(--space-sm); line-height:1.15; }
-.answer-block { font-size:1rem; line-height:1.78; color:var(--color-text); border-left:3px solid var(--color-accent); background:rgba(var(--color-accent-rgb),0.06); padding:var(--space-sm) var(--space-md); border-radius:0 var(--radius-sm) var(--radius-sm) 0; margin:0 0 var(--space-md); max-width:66ch; }
-/* Problem */
-.problem-section { padding:var(--space-3xl) 0; background:var(--color-bg-alt,#f8f8f6); }
-.problem-pullquote { font-family:var(--font-accent,'Fraunces',serif); font-size:clamp(1.6rem,3.5vw,2.8rem); font-weight:700; font-style:italic; color:var(--color-primary); text-wrap:balance; max-width:700px; margin:0 auto var(--space-2xl); text-align:center; line-height:1.3; }
-.problem-pullquote em { color:var(--color-accent); font-style:normal; }
-.bento-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-md); }
-.bento-card { background:#fff; border-radius:var(--radius-lg); padding:var(--space-lg); border:1px solid rgba(0,0,0,0.06); box-shadow:var(--shadow-sm); display:flex; flex-direction:column; gap:var(--space-sm); transition:transform 0.25s,box-shadow 0.25s; }
-.bento-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
-.bento-icon { width:48px; height:48px; border-radius:var(--radius); background:rgba(var(--color-accent-rgb),0.1); display:flex; align-items:center; justify-content:center; color:var(--color-accent); }
-.bento-icon svg { width:22px; height:22px; }
-.bento-card h3 { font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.95rem; font-weight:700; color:var(--color-primary); margin:0; line-height:1.3; }
-.bento-card p { font-size:0.875rem; line-height:1.65; color:var(--color-text-light); margin:0; }
-/* Expert */
-.expert-section { padding:var(--space-3xl) 0; background:var(--color-bg); }
-.expert-grid { display:grid; grid-template-columns:1fr 1.6fr; gap:var(--space-3xl); align-items:center; }
-.big-stat-num { font-family:var(--font-heading,'Unbounded',sans-serif); font-size:clamp(3.5rem,8vw,6rem); font-weight:800; color:var(--color-accent); line-height:1; }
-.big-stat-label { font-size:0.82rem; color:var(--color-text-light); letter-spacing:0.08em; text-transform:uppercase; }
-.differentiator-list { display:flex; flex-direction:column; gap:var(--space-md); list-style:none; padding:0; margin:var(--space-xl) 0 0; }
-.differentiator-list li { display:flex; gap:var(--space-sm); align-items:flex-start; }
-.diff-check { width:22px; height:22px; border-radius:50%; background:var(--color-accent); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
-.diff-check svg { width:12px; height:12px; color:var(--color-primary); }
-.diff-text { font-size:0.95rem; line-height:1.65; color:var(--color-text); }
-.diff-text strong { color:var(--color-primary); font-weight:700; }
-.expert-image-wrap { position:relative; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); }
-.expert-image-wrap img { width:100%; height:420px; object-fit:cover; display:block; }
-.expert-image-badge { position:absolute; bottom:var(--space-md); left:var(--space-md); background:var(--color-primary); color:var(--color-secondary); border-radius:var(--radius); padding:var(--space-sm) var(--space-md); font-size:0.82rem; font-weight:700; display:flex; align-items:center; gap:6px; }
-.expert-image-badge span { color:var(--color-accent); }
-/* Breakdown */
-.breakdown-section { padding:var(--space-3xl) 0; background:var(--color-bg-alt); }
-.breakdown-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-3xl); align-items:start; }
-.breakdown-image { border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); position:relative; }
-.breakdown-image img { width:100%; object-fit:cover; display:block; min-height:360px; }
-.breakdown-image-tag { position:absolute; top:var(--space-md); right:var(--space-md); background:var(--color-accent); color:var(--color-primary); font-size:0.76rem; font-weight:800; padding:5px 12px; border-radius:var(--radius-sm); text-transform:uppercase; letter-spacing:0.08em; }
-.process-steps { display:flex; flex-direction:column; gap:0; margin-top:var(--space-xl); position:relative; }
-.process-steps::before { content:''; position:absolute; left:19px; top:24px; bottom:24px; width:2px; background:linear-gradient(to bottom,var(--color-accent),rgba(var(--color-accent-rgb),0.1)); }
-.process-step { display:flex; gap:var(--space-md); align-items:flex-start; padding:0 0 var(--space-lg); position:relative; }
-.step-num { width:40px; height:40px; border-radius:50%; background:var(--color-primary); color:var(--color-accent); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.82rem; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; z-index:1; border:3px solid var(--color-accent); }
-.step-title { font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.9rem; font-weight:700; color:var(--color-primary); margin:0 0 4px; }
-.step-desc { font-size:0.88rem; line-height:1.65; color:var(--color-text-light); margin:0; }
+/* ── Service page composition (token-only) ── */
+.sp-signs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.75rem; }
+.sp-sign { background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.25rem; display: grid; gap: .5rem; box-shadow: var(--shadow-sm); }
+.sp-sign__icon { width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center; color: var(--color-primary); background: color-mix(in srgb, var(--color-primary) 12%, white); }
+.sp-sign h3 { font-size: 1.02rem; }
+.sp-sign p { margin: 0; font-size: .9rem; color: var(--color-ink-2); }
+.sp-problem { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+@media (max-width: 900px) { .sp-problem { grid-template-columns: 1fr; } .sp-signs { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .sp-signs { grid-template-columns: 1fr; } }
+
+/* Expert positioning — big stat + evidence */
+.sp-position { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.sp-position__stat { font-family: var(--font-accent); font-size: clamp(3.4rem, 9vw, 5.5rem); line-height: .9; color: var(--color-primary); letter-spacing: .01em; }
+.sp-position__stat span { display: block; font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; letter-spacing: 0; color: var(--color-ink-2); margin-top: .6rem; max-width: 22ch; }
+.sp-evidence { display: grid; gap: 1rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+.sp-evidence li { display: grid; grid-template-columns: 28px 1fr; gap: .8rem; align-items: start; }
+.sp-evidence li svg { color: var(--color-accent-dark); margin-top: 3px; }
+.sp-evidence b { display: block; }
+@media (max-width: 800px) { .sp-position { grid-template-columns: 1fr; } }
+
+/* What's included + timeline */
+.sp-included { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 3.5rem); align-items: start; }
+.sp-checklist { display: grid; gap: .65rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+.sp-checklist li { display: grid; grid-template-columns: 24px 1fr; gap: .6rem; align-items: start; font-size: .96rem; }
+.sp-checklist li svg { color: var(--color-primary); margin-top: 3px; }
+@media (max-width: 800px) { .sp-included { grid-template-columns: 1fr; } }
+
 /* Comparison */
-.comparison-section { padding:var(--space-3xl) 0; background:var(--color-primary); }
-.comparison-intro { text-align:center; margin-bottom:var(--space-2xl); }
-.comparison-table { display:grid; grid-template-columns:2fr 1fr 1fr; border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,255,255,0.1); }
-.comp-header { background:rgba(255,255,255,0.06); padding:var(--space-md) var(--space-lg); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.5); }
-.comp-header.ours { background:rgba(var(--color-accent-rgb),0.15); color:var(--color-accent); }
-.comp-cell { padding:var(--space-md) var(--space-lg); font-size:0.9rem; color:rgba(255,255,255,0.75); border-top:1px solid rgba(255,255,255,0.06); display:flex; align-items:center; }
-.comp-cell.feature { font-weight:600; color:rgba(255,255,255,0.9); }
-.comp-cell.ours { background:rgba(var(--color-accent-rgb),0.06); }
-.comp-cell.check { color:var(--color-accent); font-weight:700; }
-.comp-cell.cross { color:rgba(255,255,255,0.35); }
-/* FAQ */
-.faq-section { padding:var(--space-3xl) 0; background:var(--color-bg); }
-.faq-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-3xl); align-items:start; }
-.faq-sidebar-img { border-radius:var(--radius-lg); overflow:hidden; margin-bottom:var(--space-md); }
-.faq-sidebar-img img { width:100%; height:260px; object-fit:cover; display:block; }
-.faq-sidebar-note { background:rgba(var(--color-accent-rgb),0.08); border:1px solid rgba(var(--color-accent-rgb),0.2); border-radius:var(--radius); padding:var(--space-md); font-size:0.88rem; line-height:1.65; color:var(--color-text); }
-.faq-list { display:flex; flex-direction:column; gap:var(--space-sm); }
-.faq-item { border:1px solid rgba(0,0,0,0.08); border-radius:var(--radius); overflow:hidden; }
-.faq-question { width:100%; text-align:left; background:none; border:none; padding:var(--space-md) var(--space-lg); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.88rem; font-weight:700; color:var(--color-primary); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:var(--space-md); line-height:1.4; transition:color 0.2s; }
-.faq-question:hover { color:var(--color-accent); }
-.faq-icon { width:18px; height:18px; flex-shrink:0; transition:transform 0.3s; }
-.faq-item.open .faq-icon { transform:rotate(45deg); }
-.faq-answer { display:none; padding:0 var(--space-lg) var(--space-md); font-size:0.9rem; line-height:1.78; color:var(--color-text-light); border-top:1px solid rgba(0,0,0,0.06); }
-.faq-item.open .faq-answer { display:block; }
-/* CTA + Related */
-.final-cta-section { padding:var(--space-3xl) 0; background:var(--color-bg-alt); text-align:center; }
-.final-cta-icon { width:64px; height:64px; border-radius:50%; background:var(--color-primary); display:flex; align-items:center; justify-content:center; margin:0 auto var(--space-lg); color:var(--color-accent); }
-.final-cta-icon svg { width:28px; height:28px; }
-.cta-btn-group { display:flex; gap:var(--space-md); justify-content:center; flex-wrap:wrap; }
-.btn-accent-lg { display:inline-flex; align-items:center; gap:8px; background:var(--color-accent); color:var(--color-primary); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.85rem; font-weight:800; padding:16px 32px; border-radius:var(--radius); border:2px solid var(--color-accent); transition:all 0.2s; text-transform:uppercase; letter-spacing:0.04em; }
-.btn-accent-lg:hover { background:#ffbb00; border-color:#ffbb00; transform:translateY(-2px); box-shadow:0 6px 24px rgba(var(--color-accent-rgb),0.4); }
-.btn-dark-outline { display:inline-flex; align-items:center; gap:8px; background:transparent; color:var(--color-primary); font-family:var(--font-heading,'Unbounded',sans-serif); font-size:0.85rem; font-weight:700; padding:16px 32px; border-radius:var(--radius); border:2px solid rgba(0,0,0,0.2); transition:all 0.2s; text-transform:uppercase; letter-spacing:0.04em; }
-.btn-dark-outline:hover { border-color:var(--color-primary); background:rgba(0,0,0,0.05); }
-.related-section { padding:var(--space-3xl) 0; background:var(--color-bg); }
-.related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-md); margin-top:var(--space-2xl); }
-.service-card-with-image { border-radius:var(--radius-md); overflow:hidden; display:flex; flex-direction:column; transition:transform 0.25s ease,box-shadow 0.25s ease; }
-.service-card-with-image:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); }
-.service-card__image { position:relative; aspect-ratio:5/3; overflow:hidden; }
-.service-card__image img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.45s ease; }
-.service-card-with-image:hover .service-card__image img { transform:scale(1.05); }
-.service-card__body { padding:var(--space-lg) var(--space-md) var(--space-md); text-align:center; display:flex; flex-direction:column; align-items:center; gap:var(--space-sm); position:relative; flex:1; }
-.service-card__icon { width:56px; height:56px; border-radius:50%; background:#fff; box-shadow:var(--shadow-md); display:flex; align-items:center; justify-content:center; margin-top:-44px; margin-bottom:var(--space-xs); color:var(--color-accent); }
-.service-card__icon i,.service-card__icon svg { width:26px; height:26px; }
-.service-card-with-image h3 { font-family:var(--font-heading,'Unbounded',sans-serif); color:var(--color-primary); margin:0; font-size:1.1rem; line-height:1.2; }
-.service-card__desc { color:var(--color-text); margin:0; font-size:0.9rem; line-height:1.55; }
-.service-card-with-image ul { list-style:none; padding:0; margin:var(--space-xs) 0 0; width:100%; text-align:left; display:flex; flex-direction:column; gap:var(--space-xs); border-top:1px solid rgba(0,0,0,0.06); padding-top:var(--space-md); }
-.service-card-with-image ul li { font-size:0.875rem; color:var(--color-text); padding-left:1.25rem; position:relative; }
-.service-card-with-image ul li::before { content:"•"; color:var(--color-accent); font-weight:700; position:absolute; left:0.25rem; top:0; }
-.service-card__cta { margin-top:auto; color:var(--color-accent); font-weight:600; font-size:0.9rem; border-top:1px solid rgba(0,0,0,0.06); width:100%; text-align:center; padding:var(--space-sm) 0 0; transition:color 0.2s; }
-.service-card__cta::after { content:" →"; display:inline-block; transition:transform 0.2s; }
-.service-card__cta:hover { color:var(--color-primary); }
-.service-card__cta:hover::after { transform:translateX(3px); }
-.card-tint-1 { background:rgba(var(--color-primary-rgb),0.04); }
-.card-tint-2 { background:rgba(var(--color-accent-rgb),0.06); }
-.card-tint-3 { background:rgba(var(--color-primary-rgb),0.07); }
-/* Responsive */
-@media (max-width:1100px) { .svc-hero-inner { grid-template-columns:1fr; } .hero-aside-card { display:none; } .expert-grid { grid-template-columns:1fr; } .breakdown-grid { grid-template-columns:1fr; } .faq-grid { grid-template-columns:1fr; } .faq-sidebar { display:none; } }
-@media (max-width:900px) { .bento-grid { grid-template-columns:repeat(2,1fr); } .related-grid { grid-template-columns:1fr 1fr; } }
-@media (max-width:520px) { .bento-grid { grid-template-columns:1fr; } .related-grid { grid-template-columns:1fr; } .svc-hero { min-height:70vh; } .comparison-table { grid-template-columns:1fr; } .comp-header:nth-child(2),.comp-cell:nth-child(3n) { display:none; } }
+.sp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+.sp-compare__col { border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--color-surface); }
+.sp-compare__col--us { border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-line)); box-shadow: var(--shadow); background: color-mix(in srgb, var(--color-accent) 8%, white); }
+.sp-compare h3 { font-size: 1.1rem; margin-bottom: .9rem; display: flex; align-items: center; gap: .5rem; }
+.sp-compare ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
+.sp-compare li { display: grid; grid-template-columns: 22px 1fr; gap: .55rem; font-size: .93rem; color: var(--color-ink-2); }
+.sp-compare--them li svg { color: var(--color-danger); margin-top: 2px; }
+.sp-compare--us li svg { color: var(--color-success); margin-top: 2px; }
+@media (max-width: 700px) { .sp-compare { grid-template-columns: 1fr; } }
+
+/* Other services */
+.sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+@media (max-width: 800px) { .sp-other { grid-template-columns: 1fr; } }
+/* Photo hero: let the <picture> fill the .hero-bg layer */
+.hero--photo .hero-bg picture { display: block; width: 100%; height: 100%; }
+.hero--photo .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.hero--photo .breadcrumb, .hero--photo .breadcrumb a { color: rgba(255,255,255,.82); }
 </style>
 
-<!-- HERO -->
-<section class="svc-hero" aria-label="Gutter installation in Warrenton, MO">
-  <div class="svc-hero-inner">
-    <div class="svc-hero-text">
-      <nav class="hero-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/services/">Services</a><span>›</span><span aria-current="page">Gutters</span></nav>
-      <span class="hero-eyebrow">Warrenton, MO — Warren County</span>
-      <h1><span class="accent">Gutter</span> Installation &amp;<br>Repair in Warrenton, MO</h1>
-      <p class="hero-answer">A&amp;S Contracting Services installs, repairs, and cleans gutters on homes and commercial properties throughout Warrenton, MO and a 50-mile radius of Warren County. Seamless aluminum gutters and complete downspout systems — free written estimates on every project.</p>
-      <div class="hero-trust-row">
-        <span class="trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Licensed &amp; Insured</span>
-        <span class="trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Free Written Estimates</span>
-        <span class="trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>Seamless Gutter Specialist</span>
-      </div>
-      <div class="hero-cta-group">
-        <a href="/contact/" class="btn-primary-svc">Get a Free Gutter Estimate</a>
-        <a href="#gutter-process" class="btn-ghost-svc">How It Works</a>
-      </div>
-    </div>
-    <aside class="hero-aside-card" aria-label="Quick estimate">
-      <p class="aside-card-title">Request a Free Gutter Estimate</p>
-      <form class="aside-form" action="<?php echo htmlspecialchars($formAction); ?>" method="POST">
-        <input type="text"   name="_honey"          style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <input type="hidden" name="_next"            value="/thank-you">
-        <input type="hidden" name="_consent_version" value="v2.1">
-        <input type="hidden" name="_consent_page"   value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
-        <input type="hidden" name="service"          value="Gutters">
-        <div class="form-group"><label for="g-name">Your Name</label><input type="text" id="g-name" name="name" placeholder="Jane Smith" required></div>
-        <div class="form-group"><label for="g-phone">Phone</label><input type="tel" id="g-phone" name="phone" placeholder="(573) 555-0100" required></div>
-        <div class="form-group"><label for="g-email">Email</label><input type="email" id="g-email" name="email" placeholder="you@email.com" required></div>
-        <div class="form-group"><label for="g-msg">Brief Description</label><textarea id="g-msg" name="message" rows="2" placeholder="New gutters, repair, cleaning…"></textarea></div>
-        <fieldset class="form-consent-fieldset">
-          <legend class="form-consent-legend">Communication Consent</legend>
-          <label class="form-consent-item"><input type="checkbox" name="email_opt_in" value="yes"><span class="consent-label"><strong>Email (optional):</strong> Receive emails about my inquiry.</span></label>
-          <label class="form-consent-item"><input type="checkbox" name="sms_opt_in" value="yes"><span class="consent-label"><strong>SMS (optional):</strong> Receive texts. Msg &amp; data rates apply. Reply STOP to opt out.</span></label>
-          <label class="form-consent-item"><input type="checkbox" name="terms_accepted" value="yes" required><span class="consent-label">I agree to the <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> &amp; <a href="/terms/" target="_blank" rel="noopener">Terms</a>. <span class="required-star">*</span></span></label>
-        </fieldset>
-        <!-- spam shield: signed render timestamp + JS interaction signal -->
-        <?php $__ft_ts = (string) time(); ?>
-        <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
-        <input type="hidden" name="_js" value="" class="js-shield-field">
-        <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
-        <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
-        <?php } ?>
-        <button type="submit" class="btn-form-submit">Send Estimate Request →</button>
-      </form>
-    </aside>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
+
+<!-- ═══════════════════ HERO (interior) ═══════════════════ -->
+<section class="hero hero--photo">
+  <div class="hero-bg">
+    <?php echo p1_picture($heroImage, $heroImageAlt, ['sizes' => '100vw', 'width' => 1600, 'height' => 1000, 'loading' => 'eager', 'fetchpriority' => 'high']); ?>
   </div>
-</section>
-
-<div class="divider-wave" aria-hidden="true"><svg viewBox="0 0 1440 54" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L0,27 Q360,54 720,27 Q1080,0 1440,27 L1440,54 L0,54 Z" fill="#f8f8f6"/></svg></div>
-
-<!-- PROBLEM STATEMENT -->
-<section class="problem-section" aria-label="Signs your gutters need attention">
-  <div class="container-svc">
-    <p class="problem-pullquote">Clogged or damaged gutters redirect thousands of gallons of roof runoff <em>directly against your foundation</em> every Missouri rain season.</p>
-    <div class="bento-grid">
-      <div class="bento-card reveal-up reveal-delay-1"><div class="bento-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s-8-4.5-8-10.8C4 6.1 7.8 2 12 2s8 4.1 8 9.2C20 17.5 12 22 12 22z"/></svg></div><h3>Overflowing during rain</h3><p>If water spills over your gutters during moderate rain, debris has blocked flow. Overflow pools directly against your foundation and basement wall.</p></div>
-      <div class="bento-card reveal-up reveal-delay-2"><div class="bento-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>Sagging or pulling away</h3><p>Gutters that sag or separate from the fascia have either failed hangers or wood rot underneath. The problem accelerates through every freeze-thaw cycle in Warrenton winters.</p></div>
-      <div class="bento-card reveal-up reveal-delay-3"><div class="bento-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><h3>Foundation or basement dampness</h3><p>Moisture staining along your foundation wall or basement floor after rain is a common indicator that roof runoff is not being directed away from the home.</p></div>
-      <div class="bento-card reveal-up reveal-delay-4"><div class="bento-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div><h3>Landscape erosion at drip line</h3><p>Trenches or eroded soil appearing directly below your roofline are caused by water falling freely without gutter collection — common after Warren County hailstorms damage existing gutters.</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider-angle" aria-hidden="true"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 1440,40 1440,0" fill="#ffffff"/></svg></div>
-
-<!-- EXPERT POSITIONING -->
-<section class="expert-section" aria-label="Why A&S for gutters">
-  <div class="container-svc">
-    <div class="expert-grid">
-      <div class="reveal-left">
-        <div><span class="big-stat-num">100%</span><br><span class="big-stat-label">Seamless — custom formed on-site</span></div>
-        <ul class="differentiator-list">
-          <li><div class="diff-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div><span class="diff-text"><strong>Seamless gutters formed to your roofline.</strong> We cut continuous gutter sections on-site — no seams that can fail and leak mid-wall. Aluminum in any standard color to match your trim.</span></li>
-          <li><div class="diff-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div><span class="diff-text"><strong>Proper pitch and downspout placement.</strong> Gutters that pool water are pitched wrong. We calculate correct slope and position downspouts to discharge well away from your foundation.</span></li>
-          <li><div class="diff-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div><span class="diff-text"><strong>Honest repair vs. replace guidance.</strong> Not every gutter needs full replacement. We give you an honest assessment — if a repair solves the problem, that's what we recommend.</span></li>
+  <div class="hero-overlay"></div>
+  <span class="grain" aria-hidden="true"></span>
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true">/</li>
+        <li><a href="/services/">Services</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true">/</li>
+        <li aria-current="page"><?php echo $svcName; ?></li>
+      </ol>
+    </nav>
+    <div class="hero-grid hero-grid--form">
+      <div class="hero-copy">
+        <span class="eyebrow">Gutters &middot; Warrenton &amp; Warren County</span>
+        <h1>Gutters in <span class="text-accent">Warrenton, MO</span> — seamless install, guards &amp; repair</h1>
+        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured Warrenton gutter contractor that forms seamless aluminum gutters on site within 50 miles of Warren County—downspouts routed away from your foundation, guards installed, sagging runs repaired, by one self-performing crew.</p>
+        <div class="hero-actions">
+          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free gutter estimate</a>
+          <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
+        </div>
+        <ul class="hero-chips">
+          <li><?php echo icon('shield-check', 16); ?> Licensed &amp; insured in Missouri</li>
+          <li><?php echo icon('droplets', 16); ?> Seamless, formed on site</li>
+          <li><?php echo icon('users', 16); ?> Self-performed &mdash; no subcontractors</li>
         </ul>
       </div>
-      <div class="expert-image-wrap reveal-right">
-        <img src="<?php echo $bodyPhoto1; ?>" alt="Gutter installation in Warrenton, Missouri by A&S Contracting Services" width="720" height="420" loading="lazy">
-        <div class="expert-image-badge"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Licensed — <span>Warren County, MO</span></div>
-      </div>
+
+      <aside class="hero-form-card" id="hero-form">
+        <h2>Free gutter estimate</h2>
+        <p class="hero-form-tagline">No obligation. Same-day reply.</p>
+        <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
+          <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
+          <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <?php echo p1_attribution_fields('hero'); ?>
+          <input type="hidden" name="consent_version" value="v2.1">
+          <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+          <div class="form-row"><label class="sr-only" for="hero-name">Name</label><input id="hero-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
+          <div class="form-row"><label class="sr-only" for="hero-phone">Phone</label><input id="hero-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>
+          <div class="form-row"><label class="sr-only" for="hero-email">Email</label><input id="hero-email" type="email" name="email" placeholder="Email" autocomplete="email" required></div>
+          <div class="form-row"><label class="sr-only" for="hero-service">Service</label>
+            <select id="hero-service" name="service">
+              <?php foreach ($services as $heroSvc): ?>
+              <option value="<?php echo htmlspecialchars($heroSvc['name']); ?>"<?php echo $heroSvc['slug'] === $serviceSlug ? ' selected' : ''; ?>><?php echo htmlspecialchars($heroSvc['name']); ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          <label class="consent"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/terms/" target="_blank" rel="noopener">Terms</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted. *</span></label>
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
+          <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
+        </form>
+      </aside>
     </div>
   </div>
 </section>
 
-<div class="divider-curve" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 Q720,60 1440,0 L1440,60 L0,60 Z" fill="#f8f8f6"/></svg></div>
-
-<!-- SERVICE BREAKDOWN -->
-<section id="gutter-process" class="breakdown-section" aria-label="Gutter process">
-  <div class="container-svc">
-    <div class="breakdown-grid">
-      <div class="breakdown-image reveal-left">
-        <img src="<?php echo $bodyPhoto2; ?>" alt="Seamless gutter installation on Warren County home" width="640" height="480" loading="lazy">
-        <span class="breakdown-image-tag">Our Work</span>
+<!-- ═══════════════════ PROBLEM STATEMENT ═══════════════════ -->
+<section class="section section--light">
+  <div class="container">
+    <div class="sp-problem">
+      <div class="reveal-left">
+        <span class="eyebrow-label">Know The Signs</span>
+        <h2>How do you know your Warrenton gutters are failing?</h2>
+        <p class="answer-block">If water sheets over the edge during a storm, the gutters sag or pull away from the fascia, or you see puddles and eroded mulch at the base of the house, your gutters are no longer moving water where it belongs. A&amp;S Contracting Services traces the problem back to pitch, hangers, or downspout placement and tells you whether a repair or a full seamless system is the fix.</p>
+        <p class="pull-quote">Gutters have one job—move Missouri rain away from your foundation. When they stop, the basement is next.</p>
       </div>
-      <div class="reveal-right">
-        <span class="eyebrow-label">The Process</span>
-        <h2 class="section-h2">What's included in your gutter project with A&amp;S?</h2>
-        <p class="answer-block">Every gutter project with A&amp;S includes a free on-site inspection of your current system, written quote, seamless gutter forming on-site, hanger installation, downspout placement, and full cleanup. No hidden fees — the estimate covers everything.</p>
-        <div class="process-steps">
-          <div class="process-step"><div class="step-num">1</div><div><p class="step-title">Free Inspection &amp; Measurement</p><p class="step-desc">We assess your current gutters, fascia condition, and roofline. We measure linear footage and identify the right downspout locations to direct water away from your foundation.</p></div></div>
-          <div class="process-step"><div class="step-num">2</div><div><p class="step-title">Written Quote &amp; Material Selection</p><p class="step-desc">You receive a line-itemized quote with material and labor broken out. We discuss aluminum gauge, color options, and whether gutter guards are appropriate for your site.</p></div></div>
-          <div class="process-step"><div class="step-num">3</div><div><p class="step-title">Old Gutter Removal</p><p class="step-desc">Existing gutters and hangers are removed. We inspect the fascia beneath for rot or moisture damage and address any issues before the new system goes up.</p></div></div>
-          <div class="process-step"><div class="step-num">4</div><div><p class="step-title">Seamless Gutter Installation</p><p class="step-desc">Gutters are formed on-site to exact length, pitched correctly, fastened with hidden hangers every 16–24 inches, and connected to downspouts terminating at grade extensions.</p></div></div>
-          <div class="process-step"><div class="step-num">5</div><div><p class="step-title">Cleanup &amp; Flow Test</p><p class="step-desc">We flush the entire system with water, verify proper drainage to all downspouts, remove all debris from the job site, and do a final walkthrough with you before we leave.</p></div></div>
+      <div class="sp-signs reveal-right">
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('umbrella', 22); ?></div>
+          <h3>Overflowing in the rain</h3>
+          <p>Water pouring over the front edge means the trough is clogged, undersized, or pitched wrong.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('waves', 22); ?></div>
+          <h3>Sagging &amp; pulling loose</h3>
+          <p>Gutters drooping away from the fascia have failed hangers and standing water inside.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('droplets', 22); ?></div>
+          <h3>Water at the foundation</h3>
+          <p>Pooling and basement seepage point to downspouts dumping runoff right against the house.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('leaf', 22); ?></div>
+          <h3>Staining &amp; erosion</h3>
+          <p>Streaks on the fascia and washed-out mulch show water is spilling in the wrong places.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROOF -->
-<section style="padding:var(--space-3xl) 0;background:var(--color-bg);" aria-label="Gutter project photos">
-  <div class="container-svc">
-    <div style="text-align:center;margin-bottom:var(--space-2xl);" class="reveal-up">
-      <span class="eyebrow-label">Recent Work</span>
-      <h2 class="section-h2" style="max-width:600px;margin:0 auto var(--space-sm);">What does completed gutter work look like in Warren County?</h2>
-      <p class="answer-block" style="max-width:56ch;margin:0 auto;">A sample of recent gutter installations and repairs by A&amp;S Contracting Services in the Warrenton, MO area.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);" class="reveal-up">
-      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;"><img src="<?php echo $bodyPhoto3; ?>" alt="Completed gutter installation on Warrenton, MO home" width="480" height="360" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;"><img src="<?php echo $bodyPhoto1; ?>" alt="Seamless aluminum gutters on Warren County residential property" width="480" height="360" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;background:rgba(var(--color-accent-rgb),0.08);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-md);padding:var(--space-xl);"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--color-accent);" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><p style="text-align:center;font-size:0.9rem;line-height:1.65;color:var(--color-text);">More project photos — <a href="/contact/" style="color:var(--color-accent);font-weight:600;">ask at estimate time</a>.</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider-wave" aria-hidden="true"><svg viewBox="0 0 1440 54" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,54 Q360,0 720,27 Q1080,54 1440,0 L1440,54 Z" fill="#000000"/></svg></div>
-
-<!-- COMPARISON -->
-<section class="comparison-section" aria-label="A&S vs other gutter installers">
-  <div class="container-svc">
-    <div class="comparison-intro reveal-up">
-      <span class="eyebrow-label" style="color:var(--color-accent);">Why A&amp;S?</span>
-      <h2 class="section-h2-light">How does A&amp;S compare to other <span style="color:var(--color-accent);">gutter companies</span> in Warrenton?</h2>
-      <p style="color:rgba(255,255,255,0.6);max-width:54ch;margin:var(--space-sm) auto 0;font-size:0.95rem;line-height:1.75;">We form gutters on-site, provide written estimates, and give honest repair vs. replace assessments — no high-pressure upsells.</p>
-    </div>
-    <div class="comparison-table reveal-up" role="table">
-      <div class="comp-header" role="columnheader">What we offer</div><div class="comp-header ours" role="columnheader">A&amp;S Contracting</div><div class="comp-header" role="columnheader">Other Gutter Companies</div>
-      <div class="comp-cell feature">Seamless gutters formed on-site</div><div class="comp-cell ours check">✓ Standard</div><div class="comp-cell cross">Not all offer seamless</div>
-      <div class="comp-cell feature">Written estimate before work</div><div class="comp-cell ours check">✓ Always</div><div class="comp-cell cross">Often verbal</div>
-      <div class="comp-cell feature">Honest repair vs. replace advice</div><div class="comp-cell ours check">✓ Every assessment</div><div class="comp-cell cross">Replacement bias common</div>
-      <div class="comp-cell feature">Fascia inspection included</div><div class="comp-cell ours check">✓ Every install</div><div class="comp-cell cross">Often skipped</div>
-      <div class="comp-cell feature">Free on-site estimate</div><div class="comp-cell ours check">✓ No charge</div><div class="comp-cell cross">Some charge fees</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider-angle" aria-hidden="true"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,40 1440,0 1440,40" fill="#ffffff"/></svg></div>
-
-<!-- FAQ -->
-<section class="faq-section" aria-label="Gutter FAQ">
-  <div class="container-svc">
-    <div class="faq-grid">
-      <div class="faq-sidebar reveal-left">
-        <div class="faq-sidebar-img"><img src="<?php echo $heroPhoto; ?>" alt="Gutters on Warren County, Missouri home" width="560" height="260" loading="lazy"></div>
-        <div class="faq-sidebar-note"><strong>Have a specific gutter question?</strong><br>Contact us — we answer all Warrenton-area inquiries within one business day.</div>
+<!-- ═══════════════════ EXPERT POSITIONING ═══════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="sp-position">
+      <div class="reveal-up">
+        <div class="sp-position__stat">0<span>joints down the length of a seamless run—only sealed corners and end caps, formed on site for your Warrenton roofline</span></div>
       </div>
       <div class="reveal-right">
-        <span class="eyebrow-label">Common Questions</span>
-        <h2 class="section-h2">What do Warrenton homeowners ask about gutters?</h2>
-        <p class="answer-block" style="margin:var(--space-sm) 0 var(--space-xl);">These are the most common gutter questions from Warren County homeowners before scheduling an estimate.</p>
-        <div class="faq-list">
-          <?php foreach ($faqs as $faq): ?>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false"><?php echo htmlspecialchars($faq['question']); ?><svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-answer"><p><?php echo htmlspecialchars($faq['answer']); ?></p></div></div>
-          <?php endforeach; ?>
-        </div>
+        <span class="eyebrow-label">Why It Matters</span>
+        <h2>What makes A&amp;S a gutter contractor Warren County homeowners trust?</h2>
+        <p class="answer-block">A&amp;S Contracting Services roll-forms seamless aluminum gutters right at your house from a continuous coil, so each run is cut to the exact length with no mid-span seams to leak. The same crew that measures the roofline sets the pitch, hangs the gutters, and routes the downspouts well away from the foundation.</p>
+        <ul class="sp-evidence">
+          <li><?php echo icon('ruler', 22); ?><span><b>Formed on site.</b> Continuous runs cut to length mean fewer joints and fewer leaks over the years.</span></li>
+          <li><?php echo icon('droplets', 22); ?><span><b>Sized to your roof.</b> We calculate the runoff so 5-inch or 6-inch K-style keeps up in a real Missouri downpour.</span></li>
+          <li><?php echo icon('shield-check', 22); ?><span><b>Foundation-first.</b> Correct pitch and extended downspouts move water away from the house, not into the basement.</span></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final-cta-section" aria-label="Get your free gutter estimate">
-  <div class="container-svc">
-    <div style="max-width:680px;margin:0 auto;" class="reveal-up">
-      <div class="final-cta-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s-8-4.5-8-10.8C4 6.1 7.8 2 12 2s8 4.1 8 9.2C20 17.5 12 22 12 22z"/></svg></div>
-      <span class="eyebrow-label" style="color:var(--color-accent);">Free estimate — no pressure</span>
-      <h2 class="section-h2">Ready to protect your Warrenton home with new gutters?</h2>
-      <p class="answer-block" style="max-width:56ch;margin:var(--space-sm) auto var(--space-xl);">A&amp;S Contracting Services provides free on-site gutter estimates for Warrenton, MO and Warren County. Seamless systems, written quotes, and same-week appointments often available.</p>
-      <div class="cta-btn-group"><a href="/contact/" class="btn-accent-lg">Get My Free Gutter Estimate</a><a href="/services/" class="btn-dark-outline">View All Services</a></div>
+<!-- ═══════════════════ SERVICE BREAKDOWN ═══════════════════ -->
+<section class="section section--light">
+  <div class="container">
+    <span class="eyebrow-label">The Work</span>
+    <h2>What&rsquo;s included in an A&amp;S gutter installation?</h2>
+    <p class="answer-block">A&amp;S Contracting Services delivers a complete drainage system, not just a trough: tear-off of the old gutters, on-site roll-forming of seamless runs, new hidden hangers, correct pitch to the downspouts, sealed corners and end caps, downspouts extended away from the house, optional leaf guards, and a clean job site. Every home on your Warrenton roofline drains the way it should.</p>
+    <div class="sp-included">
+      <div class="reveal-up">
+        <h3>Included in the scope</h3>
+        <ul class="sp-checklist">
+          <li><?php echo icon('check', 20); ?> Tear-off and haul-away of the old gutters</li>
+          <li><?php echo icon('check', 20); ?> On-site roll-forming of seamless 5-inch or 6-inch K-style</li>
+          <li><?php echo icon('check', 20); ?> New hidden hangers set for strength</li>
+          <li><?php echo icon('check', 20); ?> Correct pitch calculated to each downspout</li>
+          <li><?php echo icon('check', 20); ?> Sealed corners, miters, and end caps</li>
+          <li><?php echo icon('check', 20); ?> Downspouts routed and extended away from the foundation</li>
+          <li><?php echo icon('check', 20); ?> Optional leaf guards to cut cleaning and clogs</li>
+          <li><?php echo icon('check', 20); ?> Full cleanup of the work area</li>
+        </ul>
+      </div>
+      <div class="reveal-right">
+        <h3>How the project runs</h3>
+        <ol class="process-steps">
+          <li><b>Free measurement</b><span>We measure the roofline, check drainage, and go over sizing and guard options on site.</span></li>
+          <li><b>Written estimate</b><span>You get an itemized quote—run length, downspouts, guards, timeline, and price.</span></li>
+          <li><b>Form &amp; install</b><span>Our crew rolls the seamless runs on site, sets the pitch, and hangs the system in a day for most homes.</span></li>
+          <li><b>Test &amp; walkthrough</b><span>We confirm the water flows to the downspouts, clean up, and review the finished system with you.</span></li>
+        </ol>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- RELATED SERVICES -->
-<section class="related-section" aria-label="Other services">
-  <div class="container-svc">
-    <div style="text-align:center;margin-bottom:var(--space-2xl);" class="reveal-up"><span class="eyebrow-label">Also Available</span><h2 class="section-h2">Other services you may need from A&amp;S Contracting</h2></div>
-    <div class="related-grid">
-      <?php $ri=0; foreach ($relSlugs as $rslug): $rsvc=null; foreach ($services as $s) { if ($s['slug']===$rslug){$rsvc=$s;break;} } if(!$rsvc)continue; $tints=['card-tint-1','card-tint-2','card-tint-3']; ?>
-      <article class="service-card-with-image <?php echo $tints[$ri%3]; ?> reveal-up reveal-delay-<?php echo $ri+1; ?>">
-        <div class="service-card__image"><img src="<?php echo htmlspecialchars($relPhotos[$rslug]); ?>" alt="<?php echo htmlspecialchars($rsvc['name']); ?> in Warrenton, MO" width="480" height="288" loading="lazy"></div>
-        <div class="service-card__body">
-          <div class="service-card__icon"><i data-lucide="<?php echo $relIcons[$rslug]; ?>"></i></div>
-          <h3><?php echo htmlspecialchars($rsvc['name']); ?></h3>
-          <p class="service-card__desc"><?php $d=$rsvc['description'];$p=strpos($d,'. ');echo htmlspecialchars($p!==false?substr($d,0,$p+1):$d); ?></p>
-          <ul><?php foreach ($relBullets[$rslug] as $b): ?><li><?php echo htmlspecialchars($b); ?></li><?php endforeach; ?></ul>
-          <a href="/services/<?php echo $rslug; ?>/" class="service-card__cta">Learn more</a>
+<!-- ═══════════════════ PROOF / REVIEWS ═══════════════════ -->
+<section class="section reviews-section edge-wave-top" aria-label="Gutter reviews">
+  <span class="grain-layer" aria-hidden="true"></span>
+  <div class="container-wide">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">In Their Words</span>
+      <h2>What do Warrenton homeowners say about our gutters?</h2>
+      <p>Real reviews from A&amp;S Contracting Services gutter and exterior customers across Warren County.</p>
+    </div>
+    <div class="reviews-track">
+      <?php
+      $gutterReviews = array_filter($reviews, function ($r) { return in_array($r['author'], ['Jennifer K.', 'Diane L.', 'Marcus H.']); });
+      foreach ($gutterReviews as $rev):
+        $initial = strtoupper(substr($rev['author'], 0, 1));
+      ?>
+      <article class="review-card">
+        <div class="review-stars" aria-label="<?php echo (int)$rev['rating']; ?> out of 5 stars">
+          <?php for ($s = 0; $s < (int)$rev['rating']; $s++) echo icon('star', 18); ?>
+        </div>
+        <p class="review-text">&ldquo;<?php echo htmlspecialchars($rev['text']); ?>&rdquo;</p>
+        <div class="review-author">
+          <span class="review-avatar" aria-hidden="true"><?php echo $initial; ?></span>
+          <span class="review-name"><?php echo htmlspecialchars($rev['author']); ?></span>
         </div>
       </article>
-      <?php $ri++; endforeach; ?>
+      <?php endforeach; ?>
+    </div>
+    <div class="review-badge-strip">
+      <span class="badge-strip"><?php echo icon('star', 16); ?> 5-Star Google Rated</span>
+      <span class="badge-strip"><?php echo icon('shield-check', 16); ?> Licensed &amp; Insured</span>
+      <span class="badge-strip"><?php echo icon('droplets', 16); ?> Seamless On-Site</span>
     </div>
   </div>
 </section>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
+<!-- ═══════════════════ COMPARISON ═══════════════════ -->
+<section class="section">
+  <div class="container">
+    <span class="eyebrow-label">The Difference</span>
+    <h2>Why choose seamless gutters over sectional store-bought ones?</h2>
+    <p class="answer-block">Sectional gutters from the hardware store snap together in pieces, and a handyman hangs them with joints every few feet—joints that leak once Missouri freeze-thaw works on the seals. A&amp;S Contracting Services forms seamless runs on site and installs them as a sized, pitched system, so water goes to the downspouts instead of down your wall.</p>
+    <div class="sp-compare">
+      <div class="sp-compare__col sp-compare--them">
+        <h3><?php echo icon('x', 20); ?> Sectional / handyman gutters</h3>
+        <ul>
+          <li><?php echo icon('minus', 18); ?> Snap-together joints every few feet</li>
+          <li><?php echo icon('minus', 18); ?> Seams that leak after a few freeze-thaw cycles</li>
+          <li><?php echo icon('minus', 18); ?> One-size stock instead of roof-sized runs</li>
+          <li><?php echo icon('minus', 18); ?> Downspouts often left dumping at the foundation</li>
+        </ul>
+      </div>
+      <div class="sp-compare__col sp-compare--us">
+        <h3><?php echo icon('check-circle', 20); ?> A&amp;S Contracting Services</h3>
+        <ul>
+          <li><?php echo icon('check', 18); ?> Seamless runs formed on site, no mid-span joints</li>
+          <li><?php echo icon('check', 18); ?> Sized to the runoff your roof actually produces</li>
+          <li><?php echo icon('check', 18); ?> Downspouts routed well away from the house</li>
+          <li><?php echo icon('check', 18); ?> Installed and stood behind by one local crew</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FAQ ═══════════════════ -->
+<section class="section section--light" aria-label="Gutter FAQ">
+  <div class="container-narrow">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">Good Questions</span>
+      <h2>What do Warrenton homeowners ask before a gutter project?</h2>
+    </div>
+    <div class="faq-grid">
+      <?php foreach ($faqs as $fi => $faq): ?>
+      <details class="faq"<?php echo $fi < 2 ? ' open' : ''; ?>>
+        <summary><?php echo htmlspecialchars($faq['question']); ?></summary>
+        <p><?php echo htmlspecialchars($faq['answer']); ?></p>
+      </details>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ RECENT WORK ═══════════════════ -->
+<section class="section sp-gallery" aria-label="Recent gutter projects">
+  <div class="container-wide">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">Recent Work</span>
+      <h2>What recent gutter projects has A&amp;S completed near Warrenton?</h2>
+      <p class="answer-block">These are real gutter projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+    </div>
+    <div class="sp-gallery-grid" data-p1-dynamic>
+      <?php foreach ($workPhotos as $wp): ?>
+      <figure class="sp-gallery-item">
+        <?php echo p1_picture($wp[0], $wp[1], ['sizes' => '(max-width: 700px) 100vw, 40vw', 'width' => 640, 'height' => 480, 'decoding' => 'async']); ?>
+        <figcaption><?php echo htmlspecialchars($wp[1]); ?></figcaption>
+      </figure>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ OTHER SERVICES ═══════════════════ -->
+<section class="section">
+  <div class="container-wide">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">What We Do</span>
+      <h2>What else can A&amp;S handle on your home?</h2>
+      <p class="hero-answer">Gutters are one trade under one licensed roof. A&amp;S Contracting Services installs the whole roofline as a system, so the soffit, fascia, and roof that tie into your gutters are handled by the same accountable crew across Warrenton and Warren County.</p>
+    </div>
+    <div class="sp-other">
+      <?php
+      $otherSlugs = ['soffit', 'fascia', 'roofing'];
+      $tintCycle  = [1, 2, 3];
+      $otherIcons = ['soffit' => 'wind', 'fascia' => 'ruler', 'roofing' => 'home'];
+      foreach ($otherSlugs as $oi => $os):
+        $osvc = null; foreach ($services as $s) { if ($s['slug'] === $os) { $osvc = $s; break; } }
+        if (!$osvc) continue;
+      ?>
+      <article class="service-card-with-image card-tint-<?php echo $tintCycle[$oi % 3]; ?> reveal-up reveal-delay-<?php echo ($oi % 3) + 1; ?>">
+        <div class="service-card__body">
+          <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
+          <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
+          <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
+          <a href="/services/<?php echo $os; ?>/" class="service-card__cta">Learn more</a>
+        </div>
+      </article>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FINAL CTA / ESTIMATE ═══════════════════ -->
+<section class="section section--light" id="estimate" aria-label="Request your free gutter estimate">
+  <div class="container">
+    <div class="estimate">
+      <div class="card reveal-up" style="padding: clamp(1.5rem, 4vw, 2.5rem); border:1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface);">
+        <span class="eyebrow-label">Free Estimate</span>
+        <h2>Ready to keep water away from your foundation?</h2>
+        <p class="lead" style="margin-bottom: 1.25rem;">Send the details and A&amp;S Contracting Services will reply the same day to schedule your free on-site gutter measurement.</p>
+
+        <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
+          <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
+          <?php echo p1_attribution_fields('cta-band'); ?>
+          <input type="hidden" name="consent_version" value="v2.1">
+          <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="est-name">Your Name</label>
+              <input id="est-name" type="text" name="name" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <label for="est-phone">Phone</label>
+              <input id="est-phone" type="tel" name="phone" autocomplete="tel" required>
+            </div>
+            <div class="form-field">
+              <label for="est-email">Email</label>
+              <input id="est-email" type="email" name="email" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <label for="est-service">Service Needed</label>
+              <select id="est-service" name="service">
+                <?php foreach ($services as $estSvc): ?>
+                <option value="<?php echo htmlspecialchars($estSvc['name']); ?>"<?php echo $estSvc['slug'] === $serviceSlug ? ' selected' : ''; ?>><?php echo htmlspecialchars($estSvc['name']); ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+            <div class="form-field full">
+              <label for="est-message">Project Details</label>
+              <textarea id="est-message" name="message" rows="4"></textarea>
+            </div>
+          </div>
+
+          <fieldset class="form-consent-fieldset">
+            <legend class="form-consent-legend">Communication Consent</legend>
+            <label class="form-consent-item">
+              <input type="checkbox" name="email_opt_in" value="yes" class="consent-checkbox">
+              <span class="consent-label"><strong>Email updates (optional):</strong> I agree to receive emails from <?php echo htmlspecialchars($siteName); ?> about my inquiry, services, and news. I can unsubscribe anytime or by emailing <?php echo htmlspecialchars($email); ?>. Message frequency varies.</span>
+            </label>
+            <label class="form-consent-item">
+              <input type="checkbox" name="sms_opt_in" value="yes" class="consent-checkbox">
+              <span class="consent-label"><strong>SMS/Text messages (optional):</strong> I agree to receive text messages from <?php echo htmlspecialchars($siteName); ?> at the number I provided (reminders, updates, and offers). Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe, HELP for help. <strong>Consent is not a condition of purchase.</strong></span>
+            </label>
+            <label class="form-consent-item form-consent-required">
+              <input type="checkbox" name="terms_accepted" value="yes" class="consent-checkbox" required>
+              <span class="consent-label">I have read and agree to the <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms of Service</a>. <span class="required-star">*</span></span>
+            </label>
+          </fieldset>
+
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Send my request</button>
+        </form>
+      </div>
+
+      <div class="reveal-right">
+        <span class="eyebrow-label">What Happens Next</span>
+        <h2>What happens after you <span class="text-accent">request your estimate</span>?</h2>
+        <ol class="next-steps">
+          <li><strong>We reach out the same day.</strong> A&amp;S Contracting Services confirms the details and schedules your free on-site gutter measurement.</li>
+          <li><strong>You get a written estimate.</strong> Clear scope—run length, downspouts, guards, timeline, and price.</li>
+          <li><strong>One crew does the work.</strong> The same self-performing team forms, hangs, and tests your seamless gutters.</li>
+        </ol>
+        <div class="nap">
+          <div><?php echo icon('phone', 18); ?> <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a></div>
+          <div><?php echo icon('mail', 18); ?> <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></div>
+          <div><?php echo icon('map-pin', 18); ?> <span><?php echo $addressCity; ?>, <?php echo $addressState; ?> <?php echo $addressZip; ?></span></div>
+          <div><?php echo icon('clock', 18); ?> <span><?php echo htmlspecialchars($businessHours); ?></span></div>
+        </div>
+        <p style="margin-top:1rem; color: var(--color-muted); font-size: .95rem;">Gutters across Warrenton, Wright City, Foristell, Wentzville, Troy, Jonesburg, Washington and everywhere within <?php echo $serviceRadius; ?> miles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
