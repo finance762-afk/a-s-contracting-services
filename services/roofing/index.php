@@ -45,7 +45,7 @@ $faqs = [
     ],
     [
         'question' => 'What roofing materials do you install?',
-        'answer'   => 'A&S Contracting Services installs architectural asphalt shingles for most Warrenton homes, plus impact-resistant shingles and metal roofing where the home or budget calls for it. We match the product to your roof pitch, exposure, and how long you plan to stay in the house.',
+        'answer'   => 'A&S Contracting Services installs architectural asphalt shingles for most Warrenton homes, plus <a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">impact-resistant shingles</a> and metal roofing where the home or budget calls for it. We match the product to your roof pitch, exposure, and how long you plan to stay in the house.',
     ],
     [
         'question' => 'Are you licensed and insured for roofing in Missouri?',
@@ -273,7 +273,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <li><?php echo icon('check', 20); ?> Decking inspection and replacement of rotted or soft sheathing</li>
           <li><?php echo icon('check', 20); ?> Synthetic underlayment and ice-and-water shield at valleys and eaves</li>
           <li><?php echo icon('check', 20); ?> New drip edge, step flashing, and pipe boots</li>
-          <li><?php echo icon('check', 20); ?> Architectural or impact-resistant shingles</li>
+          <li><?php echo icon('check', 20); ?> Architectural or <a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">impact-resistant shingles</a></li>
           <li><?php echo icon('check', 20); ?> Ridge ventilation to protect the attic and shingle warranty</li>
           <li><?php echo icon('check', 20); ?> Full cleanup and magnetic nail sweep of the yard</li>
         </ul>

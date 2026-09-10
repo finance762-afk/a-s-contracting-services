@@ -194,7 +194,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   <li><strong>Valley rebuild:</strong> $600 to $2,000.</li>
   <li><strong>Decking replacement where wood has rotted:</strong> add $75 to $150 per sheet plus the roofing over it.</li>
 </ul>
-<p>Two things move the number more than anything else. A steep or multi-story roof adds staging and time. And a leak that has been ignored for a season often means rotten decking and wet insulation, which turns a $400 boot replacement into a $1,500 job. If you want to compare a repair against a full tear-off, our <a href="/blog/roof-replacement-cost-guide-missouri/">Missouri roof replacement cost guide</a> lays out the per-square numbers.</p>
+<p>Two things move the number more than anything else. A steep or multi-story roof adds staging and time. And a leak that has been ignored for a season often means rotten decking, wet insulation, and <a href="/blog/drywall-water-damage-repair-or-replace-a-missouri-guide/">water-damaged drywall</a>, which turns a $400 boot replacement into a $1,500 job. If you want to compare a repair against a full tear-off, our <a href="/blog/roof-replacement-cost-guide-missouri/">Missouri roof replacement cost guide</a> lays out the per-square numbers.</p>
 
 <h2 id="insurance">Will homeowners insurance pay?</h2>
 <p>It depends on the cause. Standard Missouri policies cover sudden, accidental damage: wind tearing shingles off, hail, a tree limb through the decking. They generally exclude wear and tear, meaning a leak from a 25-year-old pipe boot or deteriorated flashing is on you. Interior damage from a covered event is usually covered as well, subject to your deductible.</p>

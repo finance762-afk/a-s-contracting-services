@@ -160,7 +160,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   </nav>
 
 <h2 id="what-they-do">What soffit and fascia do</h2>
-<p>The <strong>fascia</strong> is the vertical board that runs along the edge of the roof, right behind the gutter. It caps the ends of the rafters, gives the gutter something to hang on, and closes the gap that would otherwise let rain and animals into the attic. The <strong>soffit</strong> is the horizontal underside of the overhang. Its job is ventilation: perforated soffit panels let cool air into the attic, which exits at the ridge. That airflow is what keeps a Missouri attic from cooking shingles in July and building ice dams in January.</p>
+<p>The <strong>fascia</strong> is the vertical board that runs along the edge of the roof, right behind the gutter. It caps the ends of the rafters, gives the gutter something to hang on, and closes the gap that would otherwise let rain and animals into the attic. The <strong>soffit</strong> is the horizontal underside of the overhang. Its job is ventilation: perforated soffit panels let cool air into the attic, which exits at the ridge. That airflow is what keeps a Missouri attic from cooking shingles in July and building ice dams in January (our guide to <a href="/blog/roof-ventilation-in-missouri-ridge-vents-soffit-intake-attic-heat/">roof ventilation in Missouri</a> explains how ridge vents and soffit intake work together).</p>
 <p>Because they sit at the edge where roof, gutter, and wall meet, these two pieces take the first hit from every failure around them: an overflowing gutter, a short drip edge, a roof leak at the eave, or a woodpecker looking for insects in damp wood.</p>
 
 <h2 id="signs">Signs of damage</h2>

@@ -129,7 +129,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <li><strong>Asphalt shingles (3-tab):</strong> $90–$150 per square (materials only). Shortest lifespan (15–20 years),
     minimal wind resistance. Rarely installed on new construction anymore.</li>
     <li><strong>Asphalt shingles (architectural/dimensional):</strong> $120–$250 per square. Most common choice. 25–30 year
-    warranty, Class 4 impact ratings available, wind resistance to 110+ mph.</li>
+    warranty, <a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">Class 4 impact ratings</a> available, wind resistance to 110+ mph.</li>
     <li><strong>Metal roofing (standing seam):</strong> $400–$700 per square. 40–50 year lifespan, excellent wind and hail
     resistance, energy-efficient. Higher upfront cost, lower lifetime cost.</li>
     <li><strong>Flat/low-slope systems (TPO, EPDM, modified bitumen):</strong> $250–$500 per square. Commercial-grade membranes
@@ -208,7 +208,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   </p>
   <p>
     Insurance typically covers "like kind and quality" replacement—if you had architectural shingles, they'll pay for
-    architectural shingles. Upgrades (impact-resistant shingles, metal roofing, additional ventilation) are out-of-pocket
+    architectural shingles. Upgrades (<a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">impact-resistant shingles</a>, metal roofing, additional ventilation) are out-of-pocket
     unless your policy specifically covers them.
   </p>
 
