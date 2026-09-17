@@ -186,6 +186,7 @@ if (!isset($siteName)) {
     <?php echo icon('arrow-up', 20); ?>
   </button>
 
+  <?php include __DIR__ . '/partner-badge.php'; ?>
 </footer>
 
 <!-- Mobile Floating CTA Bar (visible below 768px) -->
