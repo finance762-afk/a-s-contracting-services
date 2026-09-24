@@ -159,7 +159,7 @@ $socialLinks = [
 ];
 
 // ─── Analytics / Verification ──────────────────────────────────────────────
-$googleAnalyticsId = 'G-XXXXXXXXXX';   // placeholder — replace with client's GA4 ID at launch
+$googleAnalyticsId = 'G-EDGSY2CLTL';   // placeholder — replace with client's GA4 ID at launch
 $ga4MeasurementId  = $googleAnalyticsId;
 $gscVerification   = '';               // Google Search Console meta content value
 
