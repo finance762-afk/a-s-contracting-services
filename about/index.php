@@ -7,7 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageType        = 'about';
 $currentPage     = 'about';
 $pageTitle       = 'About Us';
-$pageDescription = 'Learn about A&S Contracting Services, a licensed Missouri general contractor in Warrenton, MO. Self-performed roofing, siding, gutters & remodels across Warren County. Same crew start to finish.';
+$pageDescription = 'A&S Contracting Services is a licensed & insured contractor in Warrenton, MO that self-performs roofing, siding & remodels. Free estimate: (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/about/';
 
 // BreadcrumbList schema

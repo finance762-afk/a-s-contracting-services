@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $currentPage       = 'privacy-policy';
 $pageTitle         = 'Privacy Policy';
-$pageDescription   = 'How A&S Contracting Services collects, uses, and protects your information. Privacy practices for our website and contact forms.';
+$pageDescription   = 'Privacy policy for A&S Contracting Services, a licensed & insured contractor in Warrenton, MO: what we collect, how we use it, your rights. Call (636) 359-7204.';
 $canonicalUrl      = $siteUrl . '/privacy-policy/';
 $lastUpdated       = date('F j, Y');
 

@@ -127,6 +127,20 @@ $services = [
     ],
 ];
 
+// ─── Descriptive internal-link anchors per service (SEO pass 2026-09-24) ─────
+$serviceAnchor = [
+    'roofing'                  => 'Roof repair & replacement in Warrenton',
+    'siding'                   => 'Siding installation & repair in Warrenton',
+    'gutters'                  => 'Seamless gutters in Warrenton',
+    'soffit'                   => 'Soffit repair & replacement in Warrenton',
+    'fascia'                   => 'Fascia board replacement in Warrenton',
+    'windows-doors'            => 'Window & door replacement in Warrenton',
+    'full-scale-interior-work' => 'Interior remodeling in Warrenton',
+    'exterior-work'            => 'Exterior home renovation in Warrenton',
+    'dry-wall'                 => 'Drywall installation & repair in Warrenton',
+    'general-contracting'      => 'General contracting in Warrenton',
+];
+
 // ─── Service Areas ─────────────────────────────────────────────────────────
 $serviceAreas = [
     ['city' => 'Warrenton',   'state' => 'MO', 'zip' => '63383', 'primary' => true],
@@ -209,7 +223,7 @@ $tier = 'premium';   // basic | standard | premium
 
 // ─── CSS Cache-Bust (SINGLE source of truth) ─────────────────────────────────
 // Bump on every framework.css change. Pages must NEVER set their own $cssVersion.
-$cssVersion = '1788905261';
+$cssVersion = '1790000001';
 
 // ─── Lead Attribution (v6.3) — first-touch cookie + p1_attribution_fields() ───
 // Sets the first-party cookie BEFORE any output. Never edit attribution.php.

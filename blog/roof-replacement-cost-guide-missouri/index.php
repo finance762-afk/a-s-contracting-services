@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
 $pageTitle = 'Roof Replacement Cost Guide for Missouri Homeowners';
-$pageDescription = 'What does a new roof cost in Missouri? Licensed contractor breaks down material costs, labor rates, and hidden factors that affect your quote. Compare asphalt shingle, metal, and flat roof pricing.';
+$pageDescription = 'Roof replacement cost in Warrenton, MO and Missouri: materials, labor & hidden factors from a licensed & insured roofer. Free estimate: (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/blog/roof-replacement-cost-guide-missouri/';
 $currentPage = 'blog';
 

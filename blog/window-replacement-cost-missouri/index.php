@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
 $pageTitle = 'Window Replacement Cost in Missouri (Per-Window Guide)';
-$pageDescription = 'Window replacement cost in Missouri from a licensed contractor: per-window prices for vinyl, fiberglass, and wood, insert vs full-frame installation, what raises the quote, energy savings, and when to replace.';
+$pageDescription = 'Window replacement cost per window in Missouri—vinyl, fiberglass & wood—from a licensed & insured Warrenton, MO contractor. Free estimate: (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/blog/window-replacement-cost-missouri/';
 $currentPage = 'blog';
 $ogImage = $siteUrl . '/assets/images/1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie-960.webp';

@@ -4,8 +4,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
-$pageTitle = 'Roof Ventilation in Missouri: Ridge Vents, Soffit Intake & Heat';
-$pageDescription = 'Proper roof ventilation keeps Missouri attics cooler in summer, drier in winter, and extends shingle life. Ridge vents, soffit intake, and balanced airflow explained by licensed contractors.';
+$pageTitle = 'Roof Ventilation in Missouri: Ridge Vents & Soffit Intake';
+$pageDescription = 'Ridge vents, soffit intake and attic heat explained for Warrenton, MO roofs by a licensed & insured Missouri roofer. Free estimate: call (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/blog/roof-ventilation-in-missouri-ridge-vents-soffit-intake-attic-heat/';
 $currentPage = 'blog';
 $ogImage = $siteUrl . '/assets/images/1779984974072-agw64u-4-Aug_06__2025_13-45-27-DRwn-960.webp';

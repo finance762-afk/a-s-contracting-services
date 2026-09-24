@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
 $pageTitle = 'Roof Leak Repair: Finding the Leak, Costs & When to Replace';
-$pageDescription = 'Roof leak repair explained by a licensed Missouri contractor: how to find where water is really getting in, what repairs cost, what insurance covers, and when replacement is the smarter fix.';
+$pageDescription = 'Roof leak repair in Warrenton, MO: finding the leak, typical costs and when to replace, from a licensed & insured roofer. Free estimate: (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/blog/roof-leak-repair-missouri/';
 $currentPage = 'blog';
 $ogImage = $siteUrl . '/assets/images/1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-960.webp';

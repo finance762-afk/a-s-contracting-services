@@ -276,16 +276,16 @@ For projects requiring trades A&S does not self-perform (such as plumbing or ele
 A&S Contracting Services operates within a 50-mile radius of Warrenton, Missouri, covering:
 
 ### Warren County Communities
-- **Warrenton** (primary location, ZIP 63383): County seat, population ~8,400. A&S is based here and serves the town's residential and commercial districts.
-- **Wright City** (ZIP 63390): ~3,500 residents, located along I-70 east of Warrenton. Growing residential area with newer subdivisions.
+- **Warrenton** (primary location, ZIP 63383): County seat, population ~8,400. A&S is based here and serves the town's residential and commercial districts. Page: https://ascontractingservices.com/areas/warrenton/
+- **Wright City** (ZIP 63390): ~3,500 residents, located along I-70 east of Warrenton. Growing residential area with newer subdivisions. Page: https://ascontractingservices.com/areas/wright-city/
 - **Truesdale** (ZIP 63380): Small community west of Warrenton along Highway 47.
 
 ### Adjacent Communities Served
-- **Foristell** (St. Charles County, ZIP 63348): Located southeast of Warrenton off Highway 61. Residential subdivisions and agricultural properties.
-- **Jonesburg** (Montgomery County, ZIP 63351): Small town north of Warrenton along Highway 47. Historic downtown with surrounding rural properties.
-- **Troy** (Lincoln County, ZIP 63379): County seat of Lincoln County, ~12,000 residents. Located northeast of Warrenton along Highway 61.
-- **Washington** (Franklin County, ZIP 63090): ~14,000 residents, located south of Warrenton along Highway 47. Commercial and residential mix along the Missouri River bluffs.
-- **Wentzville** (St. Charles County, ZIP 63385): Rapidly growing city of ~45,000+ residents east of Warrenton. Newer subdivisions, commercial districts, and proximity to St. Louis exurbs.
+- **Foristell** (St. Charles County, ZIP 63348): Located east of Warrenton along I-70. Residential subdivisions and agricultural properties. Page: https://ascontractingservices.com/areas/foristell/
+- **Jonesburg** (Montgomery County, ZIP 63351): Small town west of Warrenton along I-70. Historic downtown with surrounding rural properties. Page: https://ascontractingservices.com/areas/jonesburg/
+- **Troy** (Lincoln County, ZIP 63379): County seat of Lincoln County, ~12,000 residents. Located northeast of Warrenton. Page: https://ascontractingservices.com/areas/troy/
+- **Washington** (Franklin County, ZIP 63090): ~14,000 residents, located south of Warrenton along Highway 47. Commercial and residential mix along the Missouri River bluffs. Page: https://ascontractingservices.com/areas/washington/
+- **Wentzville** (St. Charles County, ZIP 63385): Rapidly growing city of ~45,000+ residents east of Warrenton. Newer subdivisions, commercial districts, and proximity to St. Louis exurbs. Page: https://ascontractingservices.com/areas/wentzville/
 
 ### Regional Coverage
 A&S serves additional communities within the 50-mile radius, including parts of:

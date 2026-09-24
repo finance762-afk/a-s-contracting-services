@@ -112,7 +112,7 @@ function generateFAQSchema($faqs) {
             'name' => $faq['question'],
             'acceptedAnswer' => [
                 '@type' => 'Answer',
-                'text' => $faq['answer']
+                'text' => trim(html_entity_decode(strip_tags($faq['answer']), ENT_QUOTES | ENT_HTML5, 'UTF-8'))
             ]
         ];
     }

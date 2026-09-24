@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $currentPage       = 'terms';
 $pageTitle         = 'Terms of Service';
-$pageDescription   = 'Terms and conditions governing use of the A&S Contracting Services website and engagement of our services.';
+$pageDescription   = 'Website terms of service for A&S Contracting Services, a licensed & insured roofing & general contractor in Warrenton, MO. Questions? Call (636) 359-7204.';
 $canonicalUrl      = $siteUrl . '/terms/';
 $lastUpdated       = date('F j, Y');
 

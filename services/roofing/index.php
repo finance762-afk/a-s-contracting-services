@@ -8,8 +8,8 @@ $serviceSlug     = 'roofing';
 $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Roofing';
-$pageTitle       = 'Roofing in Warrenton, MO';
-$pageDescription = 'Roofing contractor in Warrenton, MO. A&S Contracting Services self-performs roof repair, tear-off, and full replacement across Warren County—storm and hail claims handled. Free written estimates.';
+$pageTitle       = 'Roofing Company in Warrenton, MO | Repair, Replacement & Hail Claims';
+$pageDescription = 'Roofing company in Warrenton, MO for roof repair, replacement & hail damage claims. Licensed & insured, self-performed. Free estimate—call (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/services/roofing/';
 
 // ─── Hero + recent-work photos (image manifest) ─────────────────────────────
@@ -29,27 +29,27 @@ $workPhotos = [
 $faqs = [
     [
         'question' => 'How much does a new roof cost in Warrenton, MO?',
-        'answer'   => 'Roof cost in Warrenton depends on square footage, pitch, material, and the condition of the decking underneath. A&S Contracting Services prices every roof from a free on-site measurement and written estimate, so the number you get is the number you pay—no per-square guessing over the phone and no upsell once the crew arrives.',
+        'answer'   => 'Roof cost in Warrenton depends on square footage, pitch, material, and the condition of the decking underneath. A&amp;S Contracting Services prices every roof from a free on-site measurement and written estimate, so the number you get is the number you pay—no per-square guessing over the phone and no upsell once the crew arrives.',
     ],
     [
         'question' => 'Do you handle hail and storm damage insurance claims?',
-        'answer'   => 'Yes. A&S Contracting Services documents hail bruising, wind-lifted shingles, and creased ridges with photos, meets your adjuster on site, and provides an itemized estimate your insurer can process. Warren County sees real Missouri hail, and clean documentation is what keeps a roof claim moving from inspection to installation.',
+        'answer'   => 'Yes. A&amp;S Contracting Services documents hail bruising, wind-lifted shingles, and creased ridges with photos, meets your adjuster on site, and provides an itemized estimate your insurer can process. Warren County sees real Missouri hail, and clean documentation is what keeps a roof claim moving from inspection to installation. Our <a href="/blog/hail-damage-roof-insurance-claim-missouri/">hail damage insurance claim guide</a> walks through each step.',
     ],
     [
         'question' => 'How long does a roof replacement take?',
-        'answer'   => 'Most single-family roof replacements in the Warrenton area are torn off and re-shingled in one to three days, weather permitting. Because A&S Contracting Services runs its own crew instead of subcontracting, the same people tear off, dry-in, and finish—so the timeline you are quoted is the timeline you get.',
+        'answer'   => 'Most single-family roof replacements in the Warrenton area are torn off and re-shingled in one to three days, weather permitting. Because A&amp;S Contracting Services runs its own crew instead of subcontracting, the same people tear off, dry-in, and finish—so the timeline you are quoted is the timeline you get.',
     ],
     [
         'question' => 'Should I repair or fully replace my roof?',
-        'answer'   => 'A roof under about 12 years old with isolated damage is usually worth repairing; widespread granule loss, multiple leaks, or storm damage across several slopes points to replacement. A&S Contracting Services inspects the whole roof, shows you what it finds, and gives you the honest call instead of defaulting to the bigger job.',
+        'answer'   => 'A roof under about 12 years old with isolated damage is usually worth repairing; widespread granule loss, multiple leaks, or storm damage across several slopes points to replacement. A&amp;S Contracting Services inspects the whole roof, shows you what it finds, and gives you the honest call instead of defaulting to the bigger job.',
     ],
     [
         'question' => 'What roofing materials do you install?',
-        'answer'   => 'A&S Contracting Services installs architectural asphalt shingles for most Warrenton homes, plus <a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">impact-resistant shingles</a> and metal roofing where the home or budget calls for it. We match the product to your roof pitch, exposure, and how long you plan to stay in the house.',
+        'answer'   => 'A&amp;S Contracting Services installs architectural asphalt shingles for most Warrenton homes, plus <a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">impact-resistant shingles</a> and metal roofing where the home or budget calls for it. We match the product to your roof pitch, exposure, and how long you plan to stay in the house.',
     ],
     [
         'question' => 'Are you licensed and insured for roofing in Missouri?',
-        'answer'   => 'Yes. A&S Contracting Services is a licensed Missouri general contractor and carries full insurance on every roofing job. That protects your home during tear-off and means the crew on your roof is covered from the first shingle to the final cleanup and nail sweep.',
+        'answer'   => 'Yes. A&amp;S Contracting Services is a licensed Missouri general contractor and carries full insurance on every roofing job. That protects your home during tear-off and means the crew on your roof is covered from the first shingle to the final cleanup and nail sweep.',
     ],
 ];
 
@@ -155,8 +155,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
         <span class="eyebrow">Roofing &middot; Warrenton &amp; Warren County</span>
-        <h1>Roofing in <span class="text-accent">Warrenton, MO</span> — repair, tear-off &amp; full replacement</h1>
-        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured Warrenton roofing contractor that self-performs roof repair, tear-off, and replacement within 50 miles of Warren County—hail and storm claims documented, one crew from first inspection to final nail sweep.</p>
+        <h1>Roofing company in <span class="text-accent">Warrenton, MO</span> — repair, replacement &amp; hail claims</h1>
+        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured roofing company in Warrenton, MO that repairs and replaces roofs and documents hail damage for insurance claims&mdash;free estimates, one in-house crew.</p>
         <div class="hero-actions">
           <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free roofing estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
@@ -291,6 +291,36 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   </div>
 </section>
 
+<!-- ═══════════════════ HAIL DAMAGE & INSURANCE CLAIMS ═══════════════════ -->
+<section class="section" id="hail-claims" aria-label="Hail damage and insurance claims">
+  <div class="container">
+    <span class="eyebrow-label">Storm Season</span>
+    <h2>Hail damage &amp; insurance claims in Warren County</h2>
+    <p class="answer-block">After a hail storm, A&amp;S Contracting Services inspects your roof for free, photographs every bruised shingle, lifted tab and creased ridge, meets your insurance adjuster on site, and hands your carrier an itemized estimate. Warren County homeowners get one local, licensed and insured roofer from the first inspection through the finished roof.</p>
+    <div class="sp-included">
+      <div class="reveal-up">
+        <h3>How A&amp;S handles a hail claim</h3>
+        <ol class="process-steps">
+          <li><b>Free storm inspection</b><span>We walk every slope and photograph hail bruising, wind-lifted shingles, and damaged flashing and vents.</span></li>
+          <li><b>Damage documentation</b><span>You get a photo-backed damage report to file with your insurance company.</span></li>
+          <li><b>Adjuster meeting</b><span>We meet your adjuster on site so nothing on the roof gets missed.</span></li>
+          <li><b>Itemized estimate &amp; install</b><span>An itemized estimate your insurer can process, then our own crew repairs or replaces the roof.</span></li>
+        </ol>
+      </div>
+      <div class="reveal-right">
+        <h3>Before you call your insurer</h3>
+        <ul class="sp-checklist">
+          <li><?php echo icon('check', 20); ?> Photograph dented gutters, downspouts, and vents from the ground&mdash;don&rsquo;t climb on a damaged roof</li>
+          <li><?php echo icon('check', 20); ?> Note the date of the storm; most policies expect prompt reporting</li>
+          <li><?php echo icon('check', 20); ?> Get an independent roof inspection before the adjuster visits</li>
+          <li><?php echo icon('check', 20); ?> Be wary of out-of-town crews pushing you to sign before the inspection</li>
+        </ul>
+        <p style="margin-top: 1.25rem;">Read our step-by-step guide: <a href="/blog/hail-damage-roof-insurance-claim-missouri/">hail damage roof inspection &amp; insurance claims in Missouri</a>. Weighing an upgrade while insurance pays for the roof? See whether <a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">Class 4 impact-resistant shingles are worth it</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════════ PROOF / REVIEWS ═══════════════════ -->
 <section class="section reviews-section edge-wave-top" aria-label="Roofing reviews">
   <span class="grain-layer" aria-hidden="true"></span>
@@ -366,7 +396,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <?php foreach ($faqs as $fi => $faq): ?>
       <details class="faq"<?php echo $fi < 2 ? ' open' : ''; ?>>
         <summary><?php echo htmlspecialchars($faq['question']); ?></summary>
-        <p><?php echo htmlspecialchars($faq['answer']); ?></p>
+        <p><?php echo $faq['answer']; /* authored HTML (inline links) */ ?></p>
       </details>
       <?php endforeach; ?>
     </div>
@@ -414,7 +444,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
           <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
           <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
-          <a href="/services/<?php echo $os; ?>/" class="service-card__cta">Learn more</a>
+          <a href="/services/<?php echo $os; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$os] ?? $osvc['name']); ?></a>
         </div>
       </article>
       <?php endforeach; ?>
@@ -506,7 +536,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <div><?php echo icon('map-pin', 18); ?> <span><?php echo $addressCity; ?>, <?php echo $addressState; ?> <?php echo $addressZip; ?></span></div>
           <div><?php echo icon('clock', 18); ?> <span><?php echo htmlspecialchars($businessHours); ?></span></div>
         </div>
-        <p style="margin-top:1rem; color: var(--color-muted); font-size: .95rem;">Roofing across Warrenton, Wright City, Foristell, Wentzville, Troy, Jonesburg, Washington and everywhere within <?php echo $serviceRadius; ?> miles.</p>
+        <p style="margin-top:1rem; color: var(--color-muted); font-size: .95rem;">Roofing across <a href="/areas/warrenton/">Warrenton</a>, <a href="/areas/wright-city/">Wright City</a>, <a href="/areas/foristell/">Foristell</a>, <a href="/areas/wentzville/">Wentzville</a>, <a href="/areas/troy/">Troy</a>, <a href="/areas/jonesburg/">Jonesburg</a>, <a href="/areas/washington/">Washington</a> and everywhere within <?php echo $serviceRadius; ?> miles.</p>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
 $pageTitle = 'Soffit & Fascia Repair vs Replacement: Signs and Cost';
-$pageDescription = 'Soffit and fascia repair vs replacement from a licensed Missouri contractor: rot signs, why the roofline fails, aluminum vs vinyl vs wood, typical costs, and how gutters and ventilation fit in.';
+$pageDescription = 'Soffit & fascia repair vs replacement in Warrenton, MO: rot signs, materials and cost from a licensed & insured contractor. Free estimate: (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/blog/soffit-fascia-repair-vs-replacement/';
 $currentPage = 'blog';
 $ogImage = $siteUrl . '/assets/images/1779985210676-rimzkx-29-Dec_24__2025_18-22-23-xd3W-960.webp';

@@ -6,8 +6,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $pageType        = 'home';                       // attribution.php page identity
 $currentPage     = 'home';
-$pageTitle       = 'General Contractor in Warrenton, MO';
-$pageDescription = 'A&S Contracting Services is a licensed, insured general contractor in Warrenton, MO. Self-performed roofing, siding, gutters, drywall & remodels within 50 miles. Free estimates.';
+$pageTitle       = 'A&S Contracting Services | Warrenton, MO Roofer & Contractor';
+$pageDescription = 'Roofing, siding, gutters & remodels in Warrenton, MO by A&S Contracting Services. Licensed & insured, self-performed work. Free estimate—call (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/';
 
 // Allocated hero photo (image manifest — home hero). Only -480/-960 variants exist.
@@ -162,6 +162,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 .roof-list { display: grid; grid-template-columns: 1fr 1fr; gap: .55rem 1.25rem; margin: 0; padding: 0; list-style: none; }
 .roof-list li { display: flex; align-items: center; gap: .6rem; padding: .7rem .9rem; border: 1px solid rgba(255,255,255,.16); border-radius: var(--radius); background: rgba(255,255,255,.05); font-weight: 600; }
 .roof-list li svg { color: var(--color-accent-bright); flex: 0 0 auto; }
+.roof-list li a { text-decoration: none; } .roof-list li a:hover { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 900px) { .roof-band .container { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .roof-list { grid-template-columns: 1fr; } }
 
@@ -197,6 +198,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="hero-actions">
           <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
+          <a class="link-call" href="/services/roofing/"><?php echo icon('home', 18); ?> Roof repair &amp; replacement in Warrenton</a>
         </div>
         <ul class="hero-chips">
           <li><?php echo icon('shield-check', 16); ?> Licensed &amp; insured in Missouri</li>
@@ -288,7 +290,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     </div>
     <ul class="roof-list reveal-right">
       <?php foreach ($services as $svc): ?>
-      <li><?php echo icon('check', 18); ?> <?php echo htmlspecialchars($svc['name']); ?></li>
+      <li><?php echo icon('check', 18); ?> <a href="/services/<?php echo $svc['slug']; ?>/"><?php echo htmlspecialchars($svc['name']); ?></a></li>
       <?php endforeach; ?>
     </ul>
   </div>
@@ -332,7 +334,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
             <li><?php echo htmlspecialchars($bullet); ?></li>
             <?php endforeach; ?>
           </ul>
-          <a href="/services/<?php echo $slug; ?>/" class="service-card__cta">Learn more</a>
+          <a href="/services/<?php echo $slug; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$slug] ?? $svc['name']); ?></a>
         </div>
       </article>
       <?php endforeach; ?>

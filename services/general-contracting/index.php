@@ -8,8 +8,8 @@ $serviceSlug     = 'general-contracting';
 $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'General Contracting';
-$pageTitle       = 'General Contracting in Warrenton, MO';
-$pageDescription = 'General contractor in Warrenton, MO. A&S Contracting Services manages residential and commercial projects end to end across Warren County. Free estimate.';
+$pageTitle       = 'General Contractor Services in Warrenton, MO';
+$pageDescription = 'General contractor in Warrenton, MO for remodels, additions & exterior projects, all self-performed. Licensed & insured. Free estimate: (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/services/general-contracting/';
 
 // ─── Hero + recent-work photos (image manifest) ─────────────────────────────
@@ -414,7 +414,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
           <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
           <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
-          <a href="/services/<?php echo $os; ?>/" class="service-card__cta">Learn more</a>
+          <a href="/services/<?php echo $os; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$os] ?? $osvc['name']); ?></a>
         </div>
       </article>
       <?php endforeach; ?>
@@ -506,7 +506,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <div><?php echo icon('map-pin', 18); ?> <span><?php echo $addressCity; ?>, <?php echo $addressState; ?> <?php echo $addressZip; ?></span></div>
           <div><?php echo icon('clock', 18); ?> <span><?php echo htmlspecialchars($businessHours); ?></span></div>
         </div>
-        <p style="margin-top:1rem; color: var(--color-muted); font-size: .95rem;">General contracting across Warrenton, Wright City, Foristell, Wentzville, Troy, Jonesburg, Washington and everywhere within <?php echo $serviceRadius; ?> miles.</p>
+        <p style="margin-top:1rem; color: var(--color-muted); font-size: .95rem;">General contracting across <a href="/areas/warrenton/">Warrenton</a>, <a href="/areas/wright-city/">Wright City</a>, <a href="/areas/foristell/">Foristell</a>, <a href="/areas/wentzville/">Wentzville</a>, <a href="/areas/troy/">Troy</a>, <a href="/areas/jonesburg/">Jonesburg</a>, <a href="/areas/washington/">Washington</a> and everywhere within <?php echo $serviceRadius; ?> miles.</p>
       </div>
     </div>
   </div>

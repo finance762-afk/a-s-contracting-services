@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
 $pageTitle = 'Drywall Water Damage: Repair or Replace? Missouri Guide';
-$pageDescription = 'Drywall water damage decisions explained by Missouri contractors: when a patch holds, when you cut and replace, how to tell if the source is truly fixed, and what wet drywall costs to repair.';
+$pageDescription = 'Drywall water damage in Warrenton, MO homes: when to patch and when to replace, from a licensed & insured Missouri contractor. Free estimate: (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/blog/drywall-water-damage-repair-or-replace-a-missouri-guide/';
 $currentPage = 'blog';
 $ogImage = $siteUrl . '/assets/images/1779984936314-5pnhuy-43-Aug_06__2025_23-34-36-CJqa-960.webp';

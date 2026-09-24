@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
 $pageTitle = 'Class 4 Impact Resistant Shingles Missouri: Worth It?';
-$pageDescription = 'Class 4 impact-resistant shingles can cut your Missouri homeowners insurance premium 10–35% and survive hail strikes that total a standard roof. Here is how the UL 2218 rating works, what they cost, and when the upfront spend pays off.';
+$pageDescription = 'Are Class 4 impact-resistant shingles worth it in Warrenton, MO? Hail, insurance savings & cost from a licensed & insured roofer. Free estimate: (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/';
 $currentPage = 'blog';
 $ogImage = $siteUrl . '/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.webp';

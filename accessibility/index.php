@@ -5,8 +5,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 <?php
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $currentPage       = 'accessibility';
-$pageTitle         = 'Accessibility Statement';
-$pageDescription   = 'A&S Contracting Services commitment to digital accessibility and WCAG 2.1 Level AA conformance.';
+$pageTitle         = 'Accessibility';
+$pageDescription   = 'Accessibility statement for A&S Contracting Services in Warrenton, MO: our WCAG 2.1 AA commitment and how to report a barrier. Need help? Call (636) 359-7204.';
 $canonicalUrl      = $siteUrl . '/accessibility/';
 $lastUpdated       = date('F j, Y');
 

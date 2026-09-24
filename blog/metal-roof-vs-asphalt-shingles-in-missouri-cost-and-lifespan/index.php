@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
 $pageTitle = 'Metal Roof vs Shingles Missouri: Cost and Lifespan Compared';
-$pageDescription = 'Metal roofing costs more upfront but lasts 40-50 years vs 25-30 for asphalt shingles. Licensed Missouri contractor compares total lifetime cost, durability in Midwest weather, energy savings, and which material fits your budget.';
+$pageDescription = 'Metal roof vs asphalt shingles in Missouri: cost and lifespan compared by a licensed & insured Warrenton, MO roofer. Free estimate: call (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/blog/metal-roof-vs-asphalt-shingles-in-missouri-cost-and-lifespan/';
 $currentPage = 'blog';
 

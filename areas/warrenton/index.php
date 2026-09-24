@@ -25,8 +25,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 
 $pageType = 'city';
 $citySlug = 'warrenton';
-$pageTitle = 'Roofing, Siding & General Contracting in Warrenton, MO';
-$pageDescription = 'A&S Contracting Services is a licensed Missouri general contractor based in Warrenton, serving Warren County homeowners with roofing, siding, gutters, and full-scale renovations. Self-performed work—no subcontractors. Free estimates.';
+$pageTitle = 'Warrenton, MO Roofing, Siding & Remodeling Contractor';
+$pageDescription = 'Roofing, siding & remodeling in Warrenton, MO from a local crew based right here in Warren County. Licensed & insured. Free estimate: call (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/areas/warrenton/';
 $currentPage = 'service-areas';
 
@@ -287,6 +287,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 .hero--area .hero-grid--form { align-items: start; }
 .hero--area .hero-copy .btn-group { margin-bottom: 0; }
 @media (max-width: 900px) { .hero--area .hero-grid--form { grid-template-columns: 1fr; } .hero--area .hero-form-card { display: none; } }
+/* SEO pass 2026-09-24: readable heading on the dark band + in-list service links */
+.section-dark .section-title { color: inherit; }
+.service-item a { color: inherit; text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: 3px; }
+.service-item a:hover { color: var(--color-accent); }
+.prose a { text-decoration: underline; text-underline-offset: 3px; }
 </style>
 
 <!-- Hero Section -->
@@ -371,7 +376,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         </p>
         <p>
           Our estimators provide written line-item quotes after walking your property. If you're filing an insurance
-          claim for storm or hail damage, we document everything with photos, meet the adjuster on-site, and supply
+          claim for <a href="/services/roofing/#hail-claims">storm or hail damage</a>, we document everything with photos, meet the adjuster on-site, and supply
           the itemized estimate your carrier needs to process the claim efficiently.
         </p>
         <p>
@@ -398,7 +403,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="service-item">
         <?php echo icon('check-circle', 24); ?>
         <div>
-          <strong><?php echo htmlspecialchars($svc['name']); ?></strong>
+          <strong><a href="/services/<?php echo $svc['slug']; ?>/"><?php echo htmlspecialchars($svc['name']); ?></a></strong>
         </div>
       </div>
       <?php endforeach; ?>

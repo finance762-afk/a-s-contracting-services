@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
 $pageTitle = 'Seamless Gutters: Cost, Sizing, and Why They Beat Sectional';
-$pageDescription = 'Seamless gutter guide from a licensed Missouri contractor: installed cost per foot, 5-inch vs 6-inch sizing, seamless vs sectional, downspout placement, gutter guards, and how gutters protect fascia and foundation.';
+$pageDescription = 'Seamless gutter cost and 5- vs 6-inch sizing for Warrenton, MO homes, from a licensed & insured Missouri contractor. Free estimate: call (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/blog/seamless-gutters-cost-missouri/';
 $currentPage = 'blog';
 $ogImage = $siteUrl . '/assets/images/1779985126277-1f29tk-36-Mar_19__2026_16-46-08-BKn5-960.webp';

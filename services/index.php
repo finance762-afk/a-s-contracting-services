@@ -6,8 +6,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $pageType        = 'other';
 $currentPage     = 'services';
-$pageTitle       = 'Services in Warrenton, MO';
-$pageDescription = 'A&S Contracting Services self-performs roofing, siding, gutters, soffit, fascia, windows, drywall, and full interior and exterior remodels across Warrenton, MO and Warren County. Free estimates.';
+$pageTitle       = 'Roofing, Siding & Remodeling Services in Warrenton, MO';
+$pageDescription = 'Roofing, siding, gutters, soffit, fascia, windows & drywall in Warrenton, MO. Licensed & insured, one in-house crew. Free estimate—call (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/services/';
 
 // Hero photo (image manifest — services index hero)
@@ -156,7 +156,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <div class="service-card__icon"><?php echo icon($serviceIcons[$slug] ?? 'check-circle', 22); ?></div>
           <h3><?php echo htmlspecialchars($svc['name']); ?></h3>
           <p class="service-card__desc"><?php echo htmlspecialchars($serviceCardDesc[$slug] ?? $svc['description']); ?></p>
-          <a href="/services/<?php echo $slug; ?>/" class="service-card__cta">Learn more</a>
+          <a href="/services/<?php echo $slug; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$slug] ?? $svc['name']); ?></a>
         </div>
       </article>
       <?php endforeach; ?>

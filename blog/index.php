@@ -3,8 +3,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
-$pageTitle = 'Blog';
-$pageDescription = 'Expert advice on roofing, siding, gutters, and home renovations from A&S Contracting Services. Learn about Missouri-specific building challenges, material choices, and maintenance tips from licensed contractors.';
+$pageTitle = 'Roofing & Home Repair Blog';
+$pageDescription = 'Roofing, siding, gutter & remodeling guides for Warrenton, MO and Missouri homeowners from a licensed & insured contractor. Free estimate: (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/blog/';
 $currentPage = 'blog';
 

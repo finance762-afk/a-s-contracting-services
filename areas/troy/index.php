@@ -23,8 +23,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 
 $pageType = 'city';
 $citySlug = 'troy';
-$pageTitle = 'Roofing, Siding & Renovation Services in Troy, MO';
-$pageDescription = 'A&S Contracting Services serves Troy, MO—county seat of Lincoln County. Licensed roofing, siding, gutters, and full-scale renovations. Self-performed work, no subcontractors. Free estimates.';
+$pageTitle = 'Troy, MO Roofing, Siding & Remodeling Contractor';
+$pageDescription = 'Roofing, siding & remodeling in Troy, MO and Lincoln County from A&S Contracting Services of Warrenton. Licensed & insured. Free estimate: call (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/areas/troy/';
 $currentPage = 'service-areas';
 
@@ -285,6 +285,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 .hero--area .hero-grid--form { align-items: start; }
 .hero--area .hero-copy .btn-group { margin-bottom: 0; }
 @media (max-width: 900px) { .hero--area .hero-grid--form { grid-template-columns: 1fr; } .hero--area .hero-form-card { display: none; } }
+/* SEO pass 2026-09-24: readable heading on the dark band + in-list service links */
+.section-dark .section-title { color: inherit; }
+.service-item a { color: inherit; text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: 3px; }
+.service-item a:hover { color: var(--color-accent); }
+.prose a { text-decoration: underline; text-underline-offset: 3px; }
 </style>
 
 <!-- Hero Section -->
@@ -397,35 +402,35 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="services-list">
       <div class="service-item">
         <?php echo icon('home', 24); ?>
-        <span><strong>Roofing:</strong> Shingle, metal, flat—installs, repairs, storm damage</span>
+        <span><strong><a href="/services/roofing/">Roofing</a>:</strong> Shingle, metal, flat—installs, repairs, storm damage</span>
       </div>
       <div class="service-item">
         <?php echo icon('layers', 24); ?>
-        <span><strong>Siding:</strong> Vinyl, fiber cement, wood—full replacement or repair</span>
+        <span><strong><a href="/services/siding/">Siding</a>:</strong> Vinyl, fiber cement, wood—full replacement or repair</span>
       </div>
       <div class="service-item">
-        <?php echo icon('droplet', 24); ?>
-        <span><strong>Gutters:</strong> Seamless aluminum, guards, proper drainage systems</span>
+        <?php echo icon('droplets', 24); ?>
+        <span><strong><a href="/services/gutters/">Gutters</a>:</strong> Seamless aluminum, guards, proper drainage systems</span>
       </div>
       <div class="service-item">
-        <?php echo icon('square', 24); ?>
-        <span><strong>Soffit & Fascia:</strong> Ventilation, rot repair, historical matching</span>
+        <?php echo icon('wind', 24); ?>
+        <span><strong><a href="/services/soffit/">Soffit</a> &amp; <a href="/services/fascia/">Fascia</a>:</strong> Ventilation, rot repair, historical matching</span>
       </div>
       <div class="service-item">
-        <?php echo icon('door-open', 24); ?>
-        <span><strong>Windows & Doors:</strong> Energy-efficient upgrades, trim work</span>
+        <?php echo icon('ruler', 24); ?>
+        <span><strong><a href="/services/windows-doors/">Windows & Doors</a>:</strong> Energy-efficient upgrades, trim work</span>
       </div>
       <div class="service-item">
-        <?php echo icon('paintbrush', 24); ?>
-        <span><strong>Drywall:</strong> Hanging, finishing, repair, texture matching</span>
+        <?php echo icon('paint-bucket', 24); ?>
+        <span><strong><a href="/services/dry-wall/">Drywall</a>:</strong> Hanging, finishing, repair, texture matching</span>
       </div>
       <div class="service-item">
         <?php echo icon('hammer', 24); ?>
-        <span><strong>Interior Renovations:</strong> Room additions, remodels, finish work</span>
+        <span><strong><a href="/services/full-scale-interior-work/">Interior Renovations</a>:</strong> Room additions, remodels, finish work</span>
       </div>
       <div class="service-item">
         <?php echo icon('wrench', 24); ?>
-        <span><strong>Storm Damage:</strong> Insurance documentation, full restoration</span>
+        <span><strong><a href="/services/roofing/#hail-claims">Storm Damage</a>:</strong> Insurance documentation, full restoration</span>
       </div>
     </div>
 

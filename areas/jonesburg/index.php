@@ -22,8 +22,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 
 $pageType = 'city';
 $citySlug = 'jonesburg';
-$pageTitle = 'Roofing, Siding & General Contracting in Jonesburg, MO';
-$pageDescription = 'A&S Contracting Services serves Jonesburg, MO, with licensed roofing, siding, gutters, and full-scale renovations. Self-performed work in Montgomery and Warren counties. Free estimates—no subcontractors.';
+$pageTitle = 'Jonesburg, MO Roofing, Siding & Remodeling Contractor';
+$pageDescription = 'Roofing, siding & remodeling in Jonesburg, MO and Montgomery County from A&S Contracting Services. Licensed & insured. Free estimate: call (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/areas/jonesburg/';
 $currentPage = 'service-areas';
 
@@ -284,6 +284,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 .hero--area .hero-grid--form { align-items: start; }
 .hero--area .hero-copy .btn-group { margin-bottom: 0; }
 @media (max-width: 900px) { .hero--area .hero-grid--form { grid-template-columns: 1fr; } .hero--area .hero-form-card { display: none; } }
+/* SEO pass 2026-09-24: readable heading on the dark band + in-list service links */
+.section-dark .section-title { color: inherit; }
+.service-item a { color: inherit; text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: 3px; }
+.service-item a:hover { color: var(--color-accent); }
+.prose a { text-decoration: underline; text-underline-offset: 3px; }
 </style>
 
 <!-- Hero Section -->
@@ -397,35 +402,35 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="services-list">
       <div class="service-item">
         <?php echo icon('home', 24); ?>
-        <span><strong>Roofing:</strong> Shingle, metal, flat—new installs, tearoffs, repairs</span>
+        <span><strong><a href="/services/roofing/">Roofing</a>:</strong> Shingle, metal, flat—new installs, tearoffs, repairs</span>
       </div>
       <div class="service-item">
         <?php echo icon('layers', 24); ?>
-        <span><strong>Siding:</strong> Vinyl, fiber cement, wood—replacement and repair</span>
+        <span><strong><a href="/services/siding/">Siding</a>:</strong> Vinyl, fiber cement, wood—replacement and repair</span>
       </div>
       <div class="service-item">
-        <?php echo icon('droplet', 24); ?>
-        <span><strong>Gutters:</strong> Seamless systems, guards, proper slope and drainage</span>
+        <?php echo icon('droplets', 24); ?>
+        <span><strong><a href="/services/gutters/">Gutters</a>:</strong> Seamless systems, guards, proper slope and drainage</span>
       </div>
       <div class="service-item">
-        <?php echo icon('square', 24); ?>
-        <span><strong>Soffit & Fascia:</strong> Ventilation upgrades, rot replacement</span>
+        <?php echo icon('wind', 24); ?>
+        <span><strong><a href="/services/soffit/">Soffit</a> &amp; <a href="/services/fascia/">Fascia</a>:</strong> Ventilation upgrades, rot replacement</span>
       </div>
       <div class="service-item">
-        <?php echo icon('door-open', 24); ?>
-        <span><strong>Windows & Doors:</strong> Energy-efficient replacements, trim finishing</span>
+        <?php echo icon('ruler', 24); ?>
+        <span><strong><a href="/services/windows-doors/">Windows & Doors</a>:</strong> Energy-efficient replacements, trim finishing</span>
       </div>
       <div class="service-item">
-        <?php echo icon('paintbrush', 24); ?>
-        <span><strong>Drywall:</strong> Hanging, taping, finishing, texture work</span>
+        <?php echo icon('paint-bucket', 24); ?>
+        <span><strong><a href="/services/dry-wall/">Drywall</a>:</strong> Hanging, taping, finishing, texture work</span>
       </div>
       <div class="service-item">
         <?php echo icon('hammer', 24); ?>
-        <span><strong>Interior Renovations:</strong> Room additions, remodels, finish carpentry</span>
+        <span><strong><a href="/services/full-scale-interior-work/">Interior Renovations</a>:</strong> Room additions, remodels, finish carpentry</span>
       </div>
       <div class="service-item">
         <?php echo icon('wrench', 24); ?>
-        <span><strong>Storm Damage Repair:</strong> Insurance claims, documentation, full restoration</span>
+        <span><strong><a href="/services/roofing/#hail-claims">Storm Damage Repair</a>:</strong> Insurance claims, documentation, full restoration</span>
       </div>
     </div>
 

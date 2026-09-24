@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $currentPage       = 'cookie-policy';
 $pageTitle         = 'Cookie Policy';
-$pageDescription   = 'How A&S Contracting Services uses cookies and tracking technologies on our website.';
+$pageDescription   = 'Cookie policy for A&S Contracting Services, a licensed & insured contractor in Warrenton, MO: the cookies and analytics we use. Questions? Call (636) 359-7204.';
 $canonicalUrl      = $siteUrl . '/cookie-policy/';
 $lastUpdated       = date('F j, Y');
 

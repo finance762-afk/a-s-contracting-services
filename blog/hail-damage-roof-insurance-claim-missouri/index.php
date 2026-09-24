@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
 $pageTitle = 'Hail Damage Roof Inspection & Insurance Claims in Missouri';
-$pageDescription = 'Missouri hail damage guide from a licensed roofing contractor: how to inspect for hail bruising, how the insurance claim process works step by step, what adjusters look for, and how to avoid a denied claim.';
+$pageDescription = 'Hail damage roof inspection & insurance claims in Warrenton, MO and across Missouri, from a licensed & insured roofer. Free estimate: call (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/blog/hail-damage-roof-insurance-claim-missouri/';
 $currentPage = 'blog';
 $ogImage = $siteUrl . '/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.webp';

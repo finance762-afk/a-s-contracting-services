@@ -4,8 +4,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
-$pageTitle = 'When to Replace Your Siding: Warning Signs Missouri Homeowners Miss';
-$pageDescription = 'Cracked siding isn\'t always obvious. Learn early warning signs—warping, moisture intrusion, rising energy bills—and when repair stops being cost-effective. Licensed contractor advice for Missouri homes.';
+$pageTitle = 'When to Replace Siding: Signs Missouri Homeowners Miss';
+$pageDescription = 'When to replace siding in Warrenton, MO: warping, moisture and energy-bill warning signs from a licensed & insured contractor. Free estimate: (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/blog/when-to-replace-siding-missouri/';
 $currentPage = 'blog';
 

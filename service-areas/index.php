@@ -2,8 +2,8 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 
-$pageTitle = 'Service Areas';
-$pageDescription = 'A&S Contracting Services serves Warrenton, MO, and surrounding communities including Foristell, Jonesburg, Troy, Washington, Wentzville, and Wright City. Licensed general contractor providing roofing, siding, gutters, and full-scale renovations within a 50-mile radius.';
+$pageTitle = 'Areas We Serve Near Warrenton, MO';
+$pageDescription = 'Roofing, siding & remodeling within 50 miles of Warrenton, MO—Wright City, Wentzville, Foristell & Troy. Licensed & insured. Free estimate: (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/service-areas/';
 $currentPage = 'service-areas';
 

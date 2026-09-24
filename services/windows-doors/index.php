@@ -8,8 +8,8 @@ $serviceSlug     = 'windows-doors';
 $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Windows & Doors';
-$pageTitle       = 'Windows & Doors in Warrenton, MO';
-$pageDescription = 'Window and door replacement in Warrenton, MO. A&S Contracting Services installs energy-efficient windows and doors—flashed, sealed, and self-performed across Warren County. Free written estimates.';
+$pageTitle       = 'Window & Door Replacement in Warrenton, MO';
+$pageDescription = 'Window & door replacement in Warrenton, MO—energy-efficient units flashed and sealed by our own crew. Licensed & insured. Free estimate: (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/services/windows-doors/';
 
 // ─── Hero + recent-work photos (image manifest) ─────────────────────────────
@@ -414,7 +414,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
           <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
           <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
-          <a href="/services/<?php echo $os; ?>/" class="service-card__cta">Learn more</a>
+          <a href="/services/<?php echo $os; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$os] ?? $osvc['name']); ?></a>
         </div>
       </article>
       <?php endforeach; ?>
@@ -506,7 +506,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <div><?php echo icon('map-pin', 18); ?> <span><?php echo $addressCity; ?>, <?php echo $addressState; ?> <?php echo $addressZip; ?></span></div>
           <div><?php echo icon('clock', 18); ?> <span><?php echo htmlspecialchars($businessHours); ?></span></div>
         </div>
-        <p style="margin-top:1rem; color: var(--color-muted); font-size: .95rem;">Windows and doors across Warrenton, Wright City, Foristell, Wentzville, Troy, Jonesburg, Washington and everywhere within <?php echo $serviceRadius; ?> miles.</p>
+        <p style="margin-top:1rem; color: var(--color-muted); font-size: .95rem;">Windows and doors across <a href="/areas/warrenton/">Warrenton</a>, <a href="/areas/wright-city/">Wright City</a>, <a href="/areas/foristell/">Foristell</a>, <a href="/areas/wentzville/">Wentzville</a>, <a href="/areas/troy/">Troy</a>, <a href="/areas/jonesburg/">Jonesburg</a>, <a href="/areas/washington/">Washington</a> and everywhere within <?php echo $serviceRadius; ?> miles.</p>
       </div>
     </div>
   </div>

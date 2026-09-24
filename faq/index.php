@@ -6,8 +6,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $pageType        = 'faq';
 $currentPage     = 'faq';
-$pageTitle       = 'Frequently Asked Questions';
-$pageDescription = 'Common questions about A&S Contracting Services. Learn about our pricing, process, service area, timelines, and what to expect when you hire us for roofing, siding, or remodeling in Warrenton, MO.';
+$pageTitle       = 'Roofing & Remodeling FAQ';
+$pageDescription = 'Answers on roofing, siding & remodeling costs, timelines and insurance claims in Warrenton, MO. Licensed & insured contractor. Free estimate: (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/faq/';
 
 // FAQ data organized by category

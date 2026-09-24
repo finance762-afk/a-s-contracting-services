@@ -20,8 +20,24 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 
-// Build full page title
-$fullTitle = $pageTitle . ' | ' . $siteName . ' | ' . $addressCity . ', ' . $addressState;
+// Build full page title: "$pageTitle | $siteName | City, ST", skipping the brand
+// when $pageTitle already names it and the city when $pageTitle already carries a
+// location (this city, any ", MO", or "Missouri"). Blog posts never get the city.
+// Over 60 chars, the brand is dropped first, then the city.
+$titleHasBrand = stripos($pageTitle, $siteName) !== false;
+$titleHasCity  = stripos($pageTitle, $addressCity) !== false
+    || preg_match('/,\s*' . preg_quote($addressState, '/') . '\b|\bMissouri\b/i', $pageTitle)
+    || (isset($pageType) && $pageType === 'blog');
+$titleBrand = $titleHasBrand ? '' : ' | ' . $siteName;
+$titleCity  = $titleHasCity  ? '' : ' | ' . $addressCity . ', ' . $addressState;
+$fullTitle  = $pageTitle . $titleBrand . $titleCity;
+if (mb_strlen($fullTitle) > 60 && $titleBrand !== '') {
+    $fullTitle = $pageTitle . $titleCity;
+}
+if (mb_strlen($fullTitle) > 60 && $titleCity !== '') {
+    $fullTitle = $pageTitle;
+}
+$ogTitle = $titleHasBrand ? $pageTitle : $pageTitle . ' | ' . $siteName;
 
 // Default OG image if not set
 if (!isset($ogImage)) {
@@ -49,7 +65,7 @@ echo '<link rel="canonical" href="' . htmlspecialchars($canonicalUrl) . '">' . "
 
 <!-- Open Graph Tags -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="<?php echo htmlspecialchars($pageTitle . ' | ' . $siteName); ?>">
+<meta property="og:title" content="<?php echo htmlspecialchars($ogTitle); ?>">
 <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
 <meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl); ?>">
 <meta property="og:image" content="<?php echo htmlspecialchars($ogImage); ?>">
