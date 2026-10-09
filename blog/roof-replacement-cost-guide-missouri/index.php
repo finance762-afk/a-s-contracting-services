@@ -5,11 +5,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
 $pageTitle = 'Roof Replacement Cost Guide for Missouri Homeowners';
-$pageDescription = 'Roof replacement cost in Warrenton, MO and Missouri: materials, labor & hidden factors from a licensed & insured roofer. Free estimate: (636) 359-7204.';
+$pageDescription = 'What sets the price of a roof replacement in Missouri: material, roof size, tear-off, decking and ventilation, and how to compare estimates fairly.';
 $canonicalUrl = $siteUrl . '/blog/roof-replacement-cost-guide-missouri/';
 $currentPage = 'blog';
+$ogImage = $siteUrl . '/assets/images/1779985121242-4mrmsg-4-Mar_19__2026_12-17-55-ci2v-960.webp';
+$postSlug = 'roof-replacement-cost-guide-missouri';
+$postCategory = 'Roofing';
 
-// Schema: BlogPosting + BreadcrumbList
+// Schema: BlogPosting + BreadcrumbList + FAQPage (FAQ mirrors the visible section below)
 $schema = <<<SCHEMA
 <script type="application/ld+json">
 {
@@ -17,8 +20,9 @@ $schema = <<<SCHEMA
   "@graph": [
     {
       "@type": "BlogPosting",
-      "headline": "{$pageTitle}",
-      "description": "{$pageDescription}",
+      "headline": "Roof Replacement Cost Guide for Missouri Homeowners",
+      "description": "The factors that determine the price of a roof replacement in Missouri, including material, roof size and complexity, tear-off, decking, and ventilation, plus how to compare written contractor estimates and handle insurance.",
+      "image": "{$siteUrl}/assets/images/1779985121242-4mrmsg-4-Mar_19__2026_12-17-55-ci2v-960.webp",
       "author": {
         "@type": "Organization",
         "@id": "{$siteUrl}/#organization"
@@ -28,32 +32,55 @@ $schema = <<<SCHEMA
         "@id": "{$siteUrl}/#organization"
       },
       "datePublished": "2026-09-08",
-      "dateModified": "2026-09-08",
-      "url": "{$canonicalUrl}",
-      "keywords": "roof replacement cost Missouri, roofing costs Warren County, asphalt shingle cost, metal roof cost, contractor estimate"
+      "dateModified": "2026-10-09",
+      "mainEntityOfPage": "{$siteUrl}/blog/roof-replacement-cost-guide-missouri/",
+      "url": "{$siteUrl}/blog/roof-replacement-cost-guide-missouri/",
+      "keywords": "roof replacement cost Missouri, what affects roof replacement price, roofing estimate Warren County, asphalt shingle roof, metal roof, compare roofing estimates"
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "{$siteUrl}/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "{$siteUrl}/blog/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Roof Replacement Cost Guide",
-          "item": "{$canonicalUrl}"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{$siteUrl}/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{$siteUrl}/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Roof Replacement Cost Guide", "item": "{$siteUrl}/blog/roof-replacement-cost-guide-missouri/" }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can a contractor give an accurate roof price over the phone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not reliably. Roof size, shape, pitch, decking condition, and material choice all affect the number, and most of them have to be seen. A written estimate from an on-site visit is the dependable way to price a roof."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a roof replacement take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most single-family roof replacements by A&S Contracting Services take one to three days, weather permitting. Larger or more complex roofs, and weather delays, can take longer, and the start window and timeline are given in writing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I choose the lowest estimate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Compare scope before price. A lower total can mean tear-off, decking repair, flashing, or ventilation is missing or will be billed later. Estimates that list the same items are the only ones you can fairly compare."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does A&S charge for estimates?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The on-site visit and the written estimate are free and carry no obligation, and the estimate is itemized so you can see how the price was built."
+            }
+          }
+        ]
     }
   ]
 }
@@ -64,7 +91,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
-
+<style>
+/* Post comparison table — tokens only */
+.post-table-wrap { overflow-x: auto; margin: 0 0 var(--space-6); }
+.post-table { width: 100%; min-width: 32rem; border-collapse: collapse; font-size: var(--font-size-sm); background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius); }
+.post-table caption { caption-side: top; text-align: left; font-family: var(--font-heading); font-weight: 700; padding: var(--space-3) var(--space-4); color: var(--color-primary); }
+.post-table th, .post-table td { padding: var(--space-3) var(--space-4); text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); line-height: 1.5; }
+.post-table thead th { background: var(--color-card-tint-neutral); font-family: var(--font-accent); text-transform: uppercase; }
+.post-table tbody th { font-weight: 700; color: var(--color-primary); }
+</style>
 <!-- Hero -->
 <section class="blog-post-hero">
   <div class="container">
@@ -75,11 +110,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <span class="breadcrumb-sep">/</span>
       <span>Roof Replacement Cost Guide</span>
     </nav>
-
     <span class="blog-post-category">Roofing</span>
-
-    <h1>Roof Replacement Cost Guide for Missouri Homeowners</h1>
-
+    <h1>Roof Replacement Cost Guide: What Sets the Price in Missouri</h1>
     <div class="blog-post-meta">
       <span class="blog-post-meta__item">
         <?php echo icon('calendar', 16); ?>
@@ -90,149 +122,180 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         8 min read
       </span>
     </div>
-
-    <p class="blog-post-excerpt">
-      What does a new roof actually cost in Missouri? We break down material costs, labor rates, and the hidden
-      factors that affect your final quote—plus what to watch for when comparing contractor estimates.
-    </p>
+    <p class="blog-post-excerpt">What decides the price of a new roof in Missouri? Material, roof size and shape, tear-off, decking, and ventilation, plus how to compare written estimates side by side.</p>
   </div>
 </section>
 
 <!-- Content -->
 <article class="blog-post-content">
+  <figure class="blog-post-figure">
+    <picture>
+      <source type="image/avif" srcset="/assets/images/1779985121242-4mrmsg-4-Mar_19__2026_12-17-55-ci2v-480.avif 480w, /assets/images/1779985121242-4mrmsg-4-Mar_19__2026_12-17-55-ci2v-960.avif 960w" sizes="(max-width: 840px) 100vw, 800px">
+      <source type="image/webp" srcset="/assets/images/1779985121242-4mrmsg-4-Mar_19__2026_12-17-55-ci2v-480.webp 480w, /assets/images/1779985121242-4mrmsg-4-Mar_19__2026_12-17-55-ci2v-960.webp 960w" sizes="(max-width: 840px) 100vw, 800px">
+      <img src="/assets/images/1779985121242-4mrmsg-4-Mar_19__2026_12-17-55-ci2v-960.webp" srcset="/assets/images/1779985121242-4mrmsg-4-Mar_19__2026_12-17-55-ci2v-480.webp 480w, /assets/images/1779985121242-4mrmsg-4-Mar_19__2026_12-17-55-ci2v-960.webp 960w" sizes="(max-width: 840px) 100vw, 800px" alt="Brown asphalt shingle roof with bundles of shingles and roofing tools resting on the slope at sunset" width="960" height="1280" loading="eager" fetchpriority="high" decoding="async">
+    </picture>
+  </figure>
+
   <div class="answer-block">
-    <p>
-      <strong>A full roof replacement in Missouri typically costs $8,000–$25,000 for a 2,000-square-foot home,</strong>
-      depending on material choice, roof complexity, and whether you're tearing off existing layers or building over them.
-      Asphalt shingles (the most common choice) run $350–$550 per square (100 sq ft) installed, metal roofing costs
-      $700–$1,200 per square, and flat or low-slope systems range from $450–$800 per square.
-    </p>
-    <p>
-      Those ranges reflect real quotes from licensed Missouri contractors serving Warren, Lincoln, St. Charles, and Franklin
-      counties. The final number depends on pitch, access, tearoff requirements, ventilation upgrades, and whether your
-      insurer is covering storm damage or you're paying out of pocket for a planned upgrade.
-    </p>
+<p><strong>A roof replacement is priced by five things: the roofing material, the size and complexity of the roof, what has to be torn off, the condition of the decking underneath, and the ventilation and flashing details.</strong> Two quotes for the same house can differ widely because they list different scopes, not because one contractor is guessing.</p>
+<p>A&amp;S Contracting Services is a Missouri general contractor in Warrenton that replaces roofs for homes and commercial buildings in Warren County and within 50 miles. A&amp;S publishes no prices, because every roof is different; this guide explains what shapes the number so you can read any quote, ours included.</p>
   </div>
 
-  <h2>What Drives the Cost of a Roof Replacement?</h2>
-  <p>
-    Roof replacement costs aren't arbitrary—they're built from measurable inputs. Understanding what contractors price
-    lets you compare quotes accurately and spot lowball estimates that skip necessary work.
-  </p>
+  <aside class="post-toc" aria-label="In this article">
+    <strong>In this article</strong>
+    <ol>
+      <li><a href="#what-drives-cost">What drives the cost of a roof replacement?</a></li>
+      <li><a href="#materials">How does the roofing material change the price?</a></li>
+      <li><a href="#size-complexity">How do roof size and shape affect a quote?</a></li>
+      <li><a href="#tear-off">Should the old roof be torn off or covered over?</a></li>
+      <li><a href="#compare-estimates">How do I compare roofing estimates fairly?</a></li>
+      <li><a href="#insurance">Does insurance pay for a roof replacement?</a></li>
+      <li><a href="#repair-or-replace">When is repair a better choice than replacement?</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </aside>
 
-  <h3>Material Choice</h3>
-  <p>
-    <strong><a href="/services/roofing/">Roofing material</a> is the single largest cost driver.</strong> Missouri homeowners
-    choose from:
-  </p>
-  <ul>
-    <li><strong>Asphalt shingles (3-tab):</strong> $90–$150 per square (materials only). Shortest lifespan (15–20 years),
-    minimal wind resistance. Rarely installed on new construction anymore.</li>
-    <li><strong>Asphalt shingles (architectural/dimensional):</strong> $120–$250 per square. Most common choice. 25–30 year
-    warranty, <a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">Class 4 impact ratings</a> available, wind resistance to 110+ mph.</li>
-    <li><strong>Metal roofing (standing seam):</strong> $400–$700 per square. 40–50 year lifespan, excellent wind and hail
-    resistance, energy-efficient. Higher upfront cost, lower lifetime cost.</li>
-    <li><strong>Flat/low-slope systems (TPO, EPDM, modified bitumen):</strong> $250–$500 per square. Commercial-grade membranes
-    for <a href="/services/general-contracting/">low-slope residential applications</a>. Requires professional installation—DIY
-    fails are common.</li>
-  </ul>
-
-  <h3>Roof Size & Complexity</h3>
-  <p>
-    Contractors measure roofs in "squares" (100 square feet). A 2,000-square-foot home typically has 20–24 squares of roof
-    area once you account for pitch and overhangs. Steeper pitch means more material and slower work—a 12/12 pitch roof
-    costs 20–30% more to install than a 4/12 pitch with the same footprint.
-  </p>
-  <p>
-    Complexity adds labor time: every valley, dormer, chimney, and skylight slows production and increases the risk of
-    leaks if flashing isn't detailed correctly. A simple gable roof on a ranch house costs less per square than a multi-hip
-    Victorian with six dormers and two chimneys.
-  </p>
-
-  <h3>Tearoff vs. Overlay</h3>
-  <p>
-    <strong>Tearoff (removing existing shingles) adds $100–$150 per square in labor and disposal costs,</strong> but it's
-    the only way to inspect the deck for rot, ensure proper ventilation, and install a code-compliant underlayment.
-    Most building codes in Missouri allow one layer of shingles over an existing roof, but we don't recommend it—you're
-    covering problems you can't see, shortening the new roof's lifespan, and creating a tearoff nightmare when that layer fails.
-  </p>
-
-  <h3>Ventilation & Underlayment Upgrades</h3>
-  <p>
-    Missouri's humid summers and freeze-thaw winters demand proper attic ventilation (ridge vent + soffit intake) and
-    a quality underlayment. Synthetic underlayment costs $50–$100 more per square than felt paper, but it won't tear during
-    installation, resists UV exposure during construction delays, and provides better secondary water protection.
-  </p>
+<h2 id="what-drives-cost">What drives the cost of a roof replacement?</h2>
+<p>Five things drive roof replacement cost: the material, the roof's size and complexity, tear-off, the condition of the decking, and the ventilation, underlayment, and flashing. Each of these should appear as its own line on a written estimate, so you can compare quotes.</p>
+<ul>
+  <li><strong>Materials selected.</strong> Architectural asphalt shingles, impact-resistant shingles, and metal roofing sit at different price levels.</li>
+  <li><strong>Square footage and shape.</strong> Roofers measure in squares, where one square covers 100 square feet. More valleys, dormers, chimneys, and steep pitch mean more labor per square.</li>
+  <li><strong>Tear-off and disposal.</strong> Removing the old roofing and hauling it away is part of the job.</li>
+  <li><strong>Condition of the existing structure.</strong> Soft or rotted decking has to be repaired before new roofing goes on.</li>
+  <li><strong>Underlayment, flashing, and ventilation.</strong> These details decide how well the new roof sheds water and breathes.</li>
+</ul>
+<p>A&amp;S prices from square footage, materials selected, condition of the existing structure, and scope, which is why no honest figure can be quoted before someone looks at the roof.</p>
 
   <section class="cta-band post-cta" id="estimate">
     <div class="post-cta-grid">
       <div>
-    <h3>Need a Written Roof Estimate?</h3>
-    <p>
-    A&S Contracting Services provides free, no-obligation written estimates for all <a href="/services/roofing/">roofing projects</a>
-    across Warren, St. Charles, Lincoln, and Franklin counties. We'll visit your property, measure the roof, and
-    provide line-item pricing—no surprises.
-    </p>
-        <a href="tel:<?php echo $phoneTel; ?>" class="btn btn-primary">Call <?php echo $phone; ?></a>
+        <h3>Need a written roof estimate?</h3>
+        <p>A&amp;S Contracting Services prices each roof from an on-site visit and gives the estimate in writing, itemized. The visit and the written estimate are free.</p>
+        <a href="tel:<?php echo $phoneTel; ?>" class="btn btn-primary" style="color: var(--color-secondary);">Call <?php echo $phone; ?></a>
       </div>
-      <?php $heroFormTitle = 'Get a free estimate'; $heroFormId = 'post'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
+      <aside class="hero-form-card" aria-label="Request an estimate">
+        <h2>Request a written estimate</h2>
+        <p class="hero-form-tagline">On-site visit and written estimate at no charge. No obligation.</p>
+        <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
+          <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
+          <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <?php echo p1_attribution_fields('cta-band'); ?>
+          <input type="hidden" name="consent_version" value="v2.1">
+          <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+          <div class="form-row"><label class="sr-only" for="cta-band-name">Name</label><input id="cta-band-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
+          <div class="form-row"><label class="sr-only" for="cta-band-phone">Phone</label><input id="cta-band-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>
+          <div class="form-row"><label class="sr-only" for="cta-band-service">Service</label>
+            <select id="cta-band-service" name="service">
+              <option value="">What do you need?</option>
+              <?php foreach ($services as $heroSvc): ?>
+              <option value="<?php echo htmlspecialchars($heroSvc['name']); ?>"><?php echo htmlspecialchars($heroSvc['name']); ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          <label class="consent"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/terms/" target="_blank" rel="noopener">Terms</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted. *</span></label>
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
+        </form>
+      </aside>
     </div>
   </section>
 
-  <h2>How Do I Compare Contractor Estimates?</h2>
-  <p>
-    Not all roof quotes are structured the same way. Some contractors give you a single lump-sum number with no breakdown.
-    Others provide line-item pricing that shows exactly what you're paying for. <strong>A detailed estimate lets you compare
-    apples to apples.</strong>
-  </p>
-  <p>
-    Look for these details in every quote:
-  </p>
-  <ul>
-    <li><strong>Material brand and model:</strong> "architectural shingles" isn't enough. Is it Owens Corning Duration, GAF
-    Timberline HDZ, or a builder-grade shingle with a 20-year warranty? Brand and model determine wind rating, impact
-    resistance, and warranty transferability.</li>
-    <li><strong>Scope of work:</strong> Does the estimate include tearoff, disposal, new underlayment, drip edge, ridge
-    vent, and flashing replacement? Or just "new shingles installed"?</li>
-    <li><strong>Warranty coverage:</strong> Manufacturer's warranty (material defects) is separate from workmanship warranty
-    (installation errors). A 30-year shingle warranty doesn't cover leaks from improper flashing—that's on the contractor.</li>
-    <li><strong>Timeline and payment terms:</strong> How long will the job take? What's the deposit requirement? When is
-    final payment due? Avoid contractors who demand full payment upfront or work on a "pay when we're done, no contract" basis.</li>
-  </ul>
 
-  <h2>What About Insurance Claims?</h2>
-  <p>
-    If your roof suffered hail or wind damage, your homeowner's insurance may cover replacement. <strong>Contractors can't
-    negotiate with your adjuster on your behalf</strong> (that requires a public adjuster license in Missouri), but we can
-    document damage, provide repair estimates, and point out issues the adjuster might miss during their initial inspection.
-  </p>
-  <p>
-    Insurance typically covers "like kind and quality" replacement—if you had architectural shingles, they'll pay for
-    architectural shingles. Upgrades (<a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">impact-resistant shingles</a>, metal roofing, additional ventilation) are out-of-pocket
-    unless your policy specifically covers them.
-  </p>
+<h2 id="materials">How does the roofing material change the price?</h2>
+<p>The roofing material sets the baseline price for the job more than any other single choice. Architectural asphalt shingles are the most common and usually the lowest-priced option, impact-resistant shingles cost more for the added rating, and metal roofing is generally the highest priced and longest-lived.</p>
+<div class="post-table-wrap">
+<table class="post-table">
+  <caption>Common roofing materials for Missouri homes</caption>
+  <thead>
+    <tr><th scope="col">Material</th><th scope="col">What it is</th><th scope="col">Where it fits</th><th scope="col">Price position</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">Architectural asphalt shingles</th><td>Layered fiberglass-and-asphalt shingles, thicker than three-tab</td><td>Most single-family homes</td><td>Generally the lowest of the three</td></tr>
+    <tr><th scope="row">Impact-resistant (Class 4) shingles</th><td>Shingles reinforced to pass the highest UL 2218 impact class</td><td>Hail-conscious owners who plan to stay</td><td>Higher than standard shingles</td></tr>
+    <tr><th scope="row">Metal roofing</th><td>Metal panels with concealed or exposed fasteners</td><td>Long-term owners, steeper or simpler roofs</td><td>Generally the highest of the three</td></tr>
+  </tbody>
+</table>
+</div>
+<p>For a closer look at the top two upgrades, see the <a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">Class 4 shingle guide</a> and the <a href="/blog/metal-roof-vs-asphalt-shingles-in-missouri-cost-and-lifespan/">metal roof versus asphalt shingles comparison</a>.</p>
 
-  <h2>When Is Repair More Cost-Effective Than Replacement?</h2>
-  <p>
-    Not every roof problem requires a full tearoff. <strong>Localized damage—missing shingles, isolated leaks, damaged
-    flashing—can often be repaired</strong> if the rest of the roof is sound and you're not approaching the end of its
-    rated lifespan.
-  </p>
-  <p>
-    A good rule: if repair costs exceed 30% of replacement cost, or if your roof is past 70% of its expected lifespan,
-    replacement is the better long-term investment. Patching a 20-year-old roof with widespread granule loss and curling
-    shingles just delays the inevitable—and you'll pay for both the repair and the replacement within a few years.
-  </p>
+<h2 id="size-complexity">How do roof size and shape affect a quote?</h2>
+<p>Roof size sets how much material the job needs, and roof shape sets how long it takes to install. A simple gable roof is quicker per square than a roof with several valleys, dormers, and chimneys, because every transition needs its own flashing and cutting.</p>
+<p>Pitch and height matter too. Steep slopes and multi-story access need extra staging and safety setup, and those costs show up in the labor line. Walls, skylights, and plumbing vents each add detail work where leaks tend to start.</p>
+<p>The <a href="/blog/roof-leak-repair-missouri/">roof leak repair guide</a> explains why those details matter. A quote that lumps everything into one number makes it hard to see whether they were counted.</p>
+
+<h2 id="tear-off">Should the old roof be torn off or covered over?</h2>
+<p>Tearing off the old roof is generally the better choice because it lets the crew inspect and repair the decking underneath and start from a clean surface. Covering an old layer saves tear-off labor, but it hides problems and may not be permitted, so confirm local requirements before agreeing to it.</p>
+<p>Whether a second layer is allowed depends on the condition of the roof, the shingle manufacturer, and local building rules. Ask your city or county building office what applies at your address.</p>
+<p>With a full tear-off, soft decking is found and fixed before the new roofing goes down. Most single-family roof replacements by A&amp;S take one to three days, weather permitting, and the job site is cleaned daily.</p>
+<p>A tear-off is also the easiest moment to deal with the roof edge, since <a href="/services/gutters/">gutters</a>, <a href="/services/soffit/">soffit</a>, and fascia are all within reach while the crew is already there.</p>
+
+<h2 id="compare-estimates">How do I compare roofing estimates fairly?</h2>
+<p>Compare roofing estimates line by line instead of by total. Check that each quote lists the same material, tear-off, decking allowance, underlayment, flashing, ventilation, and cleanup, and states who does the work. A lower total often means something is left out or priced later.</p>
+<ol>
+  <li><strong>Ask for a written, itemized estimate.</strong> Every item should be a separate line.</li>
+  <li><strong>Check the scope.</strong> Tear-off, decking repair, flashing, and ventilation should be named, not implied.</li>
+  <li><strong>Look at the price terms.</strong> A&amp;S estimates are written so that the quoted price is the final price, with no hidden fees or upselling.</li>
+  <li><strong>Ask about the schedule.</strong> A start window and expected timeline should be in writing.</li>
+  <li><strong>Ask about cleanup and the final walkthrough.</strong> A&amp;S keeps the job site clean daily and ends every project with a walkthrough.</li>
+</ol>
+
+<h2 id="insurance">Does insurance pay for a roof replacement?</h2>
+<p>Insurance may pay for a roof replacement when hail or wind damaged the roof. It generally does not pay to replace a roof that has simply worn out. Your policy and your carrier decide what is covered, so read the policy and ask your insurer.</p>
+<p>For storm and hail damage, A&amp;S Contracting Services documents the roof with photos, provides a detailed itemized estimate, meets the insurance adjuster on site, and helps the homeowner through the claim. The <a href="/blog/hail-damage-roof-insurance-claim-missouri/">hail damage inspection and insurance claim guide</a> walks through the process.</p>
+<p>Upgrades beyond what the claim scope covers, such as a different material or additional ventilation, are a conversation to have with your insurer and your contractor before work starts.</p>
+
+<h2 id="repair-or-replace">When is repair a better choice than replacement?</h2>
+<p>Repair is the better choice when damage is limited to one or two spots and the rest of the roof is sound. If problems are spread across the roof, repairs keep returning, or the decking is soft in several places, replacing the roof is usually the better use of money.</p>
+<p>Ask the contractor to write the repair option and the replacement option on the same estimate so you can compare them. The <a href="/services/roofing/">roofing services page</a> lists installation, repair, tear-off, and full replacement for residential and commercial roofs. If a leak is the reason you are asking, start with the <a href="/blog/roof-leak-repair-missouri/">leak repair guide</a>, and see the <a href="/blog/">blog</a> for related guides.</p>
+
+  <h2 id="faq">Frequently asked questions</h2>
+  <div class="post-faq">
+    <details class="faq">
+      <summary>Can a contractor give an accurate roof price over the phone?</summary>
+      <p>Not reliably. Roof size, shape, pitch, decking condition, and material choice all affect the number, and most of them have to be seen. A written estimate from an on-site visit is the dependable way to price a roof.</p>
+    </details>
+    <details class="faq">
+      <summary>How long does a roof replacement take?</summary>
+      <p>Most single-family roof replacements by A&amp;S Contracting Services take one to three days, weather permitting. Larger or more complex roofs, and weather delays, can take longer, and the start window and timeline are given in writing.</p>
+    </details>
+    <details class="faq">
+      <summary>Should I choose the lowest estimate?</summary>
+      <p>Compare scope before price. A lower total can mean tear-off, decking repair, flashing, or ventilation is missing or will be billed later. Estimates that list the same items are the only ones you can fairly compare.</p>
+    </details>
+    <details class="faq">
+      <summary>Does A&amp;S charge for estimates?</summary>
+      <p>No. The on-site visit and the written estimate are free and carry no obligation, and the estimate is itemized so you can see how the price was built.</p>
+    </details>
+  </div>
+
+  <div class="related-services">
+    <h3>Related services</h3>
+    <ul>
+      <li><a href="/services/roofing/">Roofing repair &amp; replacement</a></li>
+      <li><a href="/services/gutters/">Gutters</a></li>
+      <li><a href="/services/soffit/">Soffit</a></li>
+      <li><a href="/service-areas/">Service areas</a></li>
+      <li><a href="/contact/">Contact A&amp;S Contracting Services</a></li>
+    </ul>
+  </div>
 
   <div class="related-articles">
     <h3>Related Articles</h3>
     <div class="related-grid">
       <?php
-      // Show other blog posts (exclude current)
-      $relatedPosts = array_filter($blogPosts, function($post) {
-        return $post['slug'] !== 'roof-replacement-cost-guide-missouri';
+      // Same-category posts first, then most recent; exclude this post; max 3
+      $others = array_values(array_filter($blogPosts, function($post) use ($postSlug) { return $post['slug'] !== $postSlug; }));
+      usort($others, function($a, $b) use ($postCategory) {
+        $ca = $a['category'] === $postCategory ? 0 : 1; $cb = $b['category'] === $postCategory ? 0 : 1;
+        return $ca === $cb ? strcmp($b['dateISO'], $a['dateISO']) : $ca - $cb;
       });
-      foreach ($relatedPosts as $related):
+      foreach (array_slice($others, 0, 3) as $related):
       ?>
       <div class="related-card">
         <div class="related-card__category"><?php echo htmlspecialchars($related['category']); ?></div>

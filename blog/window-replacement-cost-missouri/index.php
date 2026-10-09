@@ -4,8 +4,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
-$pageTitle = 'Window Replacement Cost in Missouri (Per-Window Guide)';
-$pageDescription = 'Window replacement cost per window in Missouri—vinyl, fiberglass & wood—from a licensed & insured Warrenton, MO contractor. Free estimate: (636) 359-7204.';
+$pageTitle = 'Window Replacement Cost in Missouri: What Sets the Price';
+$pageDescription = 'What drives replacement window prices in Missouri: frame material, glass, style, and insert vs full-frame work. A&S Contracting Services, Warrenton.';
 $canonicalUrl = $siteUrl . '/blog/window-replacement-cost-missouri/';
 $currentPage = 'blog';
 $ogImage = $siteUrl . '/assets/images/1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie-960.webp';
@@ -20,8 +20,8 @@ $schema = <<<SCHEMA
   "@graph": [
     {
       "@type": "BlogPosting",
-      "headline": "Window Replacement Cost in Missouri (Per-Window Guide)",
-      "description": "Window replacement cost in Missouri from a licensed contractor: per-window prices for vinyl, fiberglass, and wood, insert vs full-frame installation, what raises the quote, energy savings, and when to replace.",
+      "headline": "Window Replacement Cost in Missouri: What Sets the Price",
+      "description": "What determines the price of replacement windows for Missouri homes, including frame material, glass package, window style, insert versus full-frame installation, and the condition of the opening, plus when to repair instead.",
       "image": "{$siteUrl}/assets/images/1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie-960.webp",
       "author": {
         "@type": "Organization",
@@ -32,70 +32,55 @@ $schema = <<<SCHEMA
         "@id": "{$siteUrl}/#organization"
       },
       "datePublished": "2026-09-08",
-      "dateModified": "2026-09-08",
+      "dateModified": "2026-10-09",
       "mainEntityOfPage": "{$siteUrl}/blog/window-replacement-cost-missouri/",
       "url": "{$siteUrl}/blog/window-replacement-cost-missouri/",
-      "keywords": "window replacement cost, replacement windows Missouri, cost to replace windows, vinyl window cost installed, full frame window replacement, window replacement Warrenton MO"
+      "keywords": "window replacement cost factors, replacement windows Missouri, vinyl vs fiberglass windows, full frame window replacement, insert window replacement, window replacement Warrenton MO"
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "{$siteUrl}/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "{$siteUrl}/blog/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Window Replacement Cost",
-          "item": "{$siteUrl}/blog/window-replacement-cost-missouri/"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{$siteUrl}/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{$siteUrl}/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Window Replacement Cost", "item": "{$siteUrl}/blog/window-replacement-cost-missouri/" }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How many windows can be replaced in a day?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A crew doing insert replacements typically installs 8 to 12 windows a day on a single-story home. Full-frame replacements with trim work run 4 to 8 per day. Most whole-house projects finish in one to three days."
+          {
+            "@type": "Question",
+            "name": "How many windows can be replaced in a day?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It depends on the style, the size, and whether the replacement is an insert or a full-frame job. A&S Contracting Services gives the start window and expected timeline in writing before work begins."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it cheaper to replace all windows at once?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Often it is more efficient, because setup, travel, and trim work are shared across the project and the new windows match. The estimate lists each window so you can also phase the work if you prefer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best time of year to replace windows in Missouri?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Windows can be replaced year-round, since the work is done one opening at a time. Mild, dry weather is easiest, and you can ask the installer how each opening is protected if the weather turns during the job."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do replacement windows need a permit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Requirements vary by city and county and by the scope of the work. Confirm with your city or county building office before work starts."
+            }
           }
-        },
-        {
-          "@type": "Question",
-          "name": "Is it cheaper to replace all windows at once?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Usually, yes. Setup, staging, and disposal are shared, and manufacturers price better on volume. Splitting the house into two phases is reasonable if budget requires it; do the weather side or the worst windows first."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the best time of year to replace windows in Missouri?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Spring and fall are most comfortable, but windows are replaced year-round. Each opening is exposed for well under an hour, so winter installs are common and sometimes come with better scheduling."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do replacement windows need a permit in Warren County?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Like-for-like insert replacements often do not, but full-frame replacements and any change in opening size or egress requirements may. We confirm the requirement with the local building department before the job starts."
-          }
-        }
-      ]
+        ]
     }
   ]
 }
@@ -106,6 +91,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
+<style>
+/* Post comparison table — tokens only */
+.post-table-wrap { overflow-x: auto; margin: 0 0 var(--space-6); }
+.post-table { width: 100%; min-width: 32rem; border-collapse: collapse; font-size: var(--font-size-sm); background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius); }
+.post-table caption { caption-side: top; text-align: left; font-family: var(--font-heading); font-weight: 700; padding: var(--space-3) var(--space-4); color: var(--color-primary); }
+.post-table th, .post-table td { padding: var(--space-3) var(--space-4); text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); line-height: 1.5; }
+.post-table thead th { background: var(--color-card-tint-neutral); font-family: var(--font-accent); text-transform: uppercase; }
+.post-table tbody th { font-weight: 700; color: var(--color-primary); }
+</style>
 <!-- Hero -->
 <section class="blog-post-hero">
   <div class="container">
@@ -117,7 +111,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <span>Window Replacement Cost</span>
     </nav>
     <span class="blog-post-category">Windows &amp; Doors</span>
-    <h1>Window Replacement Cost in Missouri (Per-Window Guide)</h1>
+    <h1>Window Replacement Cost in Missouri: What Sets the Price Per Window</h1>
     <div class="blog-post-meta">
       <span class="blog-post-meta__item">
         <?php echo icon('calendar', 16); ?>
@@ -128,7 +122,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         9 min read
       </span>
     </div>
-    <p class="blog-post-excerpt">Replacement windows are priced per opening, and the range is wide. See what drives the number in Missouri, what vinyl, fiberglass, and wood actually cost installed, and when replacing beats repairing.</p>
+    <p class="blog-post-excerpt">Replacement windows are priced per opening, and the price moves with frame material, glass, style, and what is behind the old window. See what drives the number in Missouri and when replacing beats repairing.</p>
   </div>
 </section>
 
@@ -138,96 +132,147 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <picture>
       <source type="image/avif" srcset="/assets/images/1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie-480.avif 480w, /assets/images/1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie-960.avif 960w" sizes="(max-width: 840px) 100vw, 800px">
       <source type="image/webp" srcset="/assets/images/1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie-480.webp 480w, /assets/images/1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie-960.webp 960w" sizes="(max-width: 840px) 100vw, 800px">
-      <img src="/assets/images/1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie-960.webp" srcset="/assets/images/1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie-480.webp 480w, /assets/images/1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie-960.webp 960w" sizes="(max-width: 840px) 100vw, 800px" alt="New white-framed replacement windows installed on a Missouri home during renovation" width="960" height="1280" loading="eager" fetchpriority="high" decoding="async">
+      <img src="/assets/images/1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie-960.webp" srcset="/assets/images/1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie-480.webp 480w, /assets/images/1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie-960.webp 960w" sizes="(max-width: 840px) 100vw, 800px" alt="Bay of windows on a home with the siding removed and house wrap exposed during exterior work" width="960" height="1280" loading="eager" fetchpriority="high" decoding="async">
     </picture>
   </figure>
 
   <div class="answer-block">
-<p><strong>In Missouri, a standard-size vinyl replacement window installed typically costs $450 to $1,100 per opening; fiberglass and wood-clad windows run $900 to $2,200 or more.</strong> A whole-house project of 12 to 15 windows usually lands between $7,000 and $20,000, with full-frame installation, custom sizes, and specialty shapes pushing toward the top.</p>
-<p>This guide breaks down what is inside those numbers, the difference between an insert and a full-frame replacement, the upgrades that pay back in our climate, and how to tell when a window needs replacing rather than a repair.</p>
+<p><strong>Replacement windows are priced per opening, and the price is driven by the size and style of the window, the frame material, the glass package, whether it is an insert or a full-frame installation, and what condition the opening is in.</strong> Two windows of the same size can differ a lot in price because of those choices.</p>
+<p>A&amp;S Contracting Services, a Warrenton general contractor, installs energy-efficient replacement windows plus patio doors and entry doors, with weather sealing. A&amp;S publishes no prices, since each house is different, so this guide covers what shapes the price, which choices matter most, and when repair is the better call.</p>
   </div>
 
-  <nav class="post-toc" aria-label="In this article">
+  <aside class="post-toc" aria-label="In this article">
     <strong>In this article</strong>
     <ol>
-      <li><a href="#what-drives">What drives the price per window</a></li>
-      <li><a href="#by-material">Cost by frame material</a></li>
-      <li><a href="#insert-vs-full">Insert vs full-frame replacement</a></li>
-      <li><a href="#by-style">Cost by window style</a></li>
-      <li><a href="#energy">Energy savings in Missouri</a></li>
-      <li><a href="#when-replace">Repair or replace?</a></li>
+      <li><a href="#what-drives">What drives the price per replacement window?</a></li>
+      <li><a href="#by-material">How do vinyl, fiberglass, and wood window frames compare?</a></li>
+      <li><a href="#insert-vs-full">Should I choose insert or full-frame window replacement?</a></li>
+      <li><a href="#by-style">How does window style change the price?</a></li>
+      <li><a href="#energy">Will new windows save energy in Missouri?</a></li>
+      <li><a href="#when-replace">Should I repair or replace my windows?</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
     </ol>
-  </nav>
+  </aside>
 
-<h2 id="what-drives">What drives the price per window</h2>
-<p>Window quotes are built from four inputs: the unit itself, the installation method, access, and finish work.</p>
+<h2 id="what-drives">What drives the price per replacement window?</h2>
+<p>The price per replacement window is driven by size, style, frame material, glass package, installation type, and the condition of the opening. Larger windows and specialty shapes cost more, and so does extra work such as repairing rot or rebuilding trim around the opening.</p>
 <ul>
-  <li><strong>The window.</strong> Frame material, glass package, size, and brand tier. A builder-grade double-hung and a triple-pane fiberglass casement can differ by a factor of four before anyone picks up a tool.</li>
-  <li><strong>Installation method.</strong> An insert (pocket) replacement keeps the existing frame; a full-frame replacement removes it down to the rough opening. Full-frame costs more and fixes more.</li>
-  <li><strong>Access and floor.</strong> Second-story windows, windows over a porch roof, and anything that needs staging cost more in labor.</li>
-  <li><strong>Finish work.</strong> Interior trim, exterior capping with aluminum coil, and any rot repair found once the old unit comes out.</li>
+  <li><strong>Size and number of openings.</strong> Bigger units use more material, and a full-house project is priced as a set.</li>
+  <li><strong>Style.</strong> Double-hung, casement, slider, picture, bay, and specialty shapes each have their own price level.</li>
+  <li><strong>Frame material.</strong> Vinyl, fiberglass, and wood differ in price and upkeep.</li>
+  <li><strong>Glass package.</strong> Double or triple panes, low-e coatings, and gas fills change both performance and price.</li>
+  <li><strong>Installation type.</strong> Insert replacement and full-frame replacement are different scopes.</li>
+  <li><strong>Condition of the opening.</strong> Rot, water damage, or out-of-square framing add repair work.</li>
 </ul>
-<p>The rot line item surprises people. In our area, the bottom of a window opening on the weather side is where water has been sitting for years. If the sill or framing is soft, it has to be rebuilt before the new window goes in. That is not padding; it is the difference between a window that lasts 30 years and one that leaks in five.</p>
-
-<h2 id="by-material">Cost by frame material</h2>
-<ul>
-  <li><strong>Vinyl:</strong> $450 to $1,100 installed. The most common choice, no painting, good insulation. Quality varies a lot between lines; welded corners and reinforced meeting rails matter.</li>
-  <li><strong>Fiberglass:</strong> $900 to $1,800 installed. Stronger and more stable than vinyl in temperature swings, paintable, longer warranties. A good fit for the freeze-thaw cycles here.</li>
-  <li><strong>Wood and clad-wood:</strong> $1,000 to $2,200 or more installed. The look for older and higher-end homes; aluminum or fiberglass cladding on the exterior keeps maintenance down.</li>
-  <li><strong>Aluminum:</strong> $500 to $1,200. Slim frames, but poor insulation without thermal breaks; rarely the right choice for a Missouri house.</li>
-</ul>
-
-<h2 id="insert-vs-full">Insert vs full-frame replacement</h2>
-<p>An <strong>insert replacement</strong> slides a new unit into the existing frame after the sashes are removed. It is faster, cheaper, and keeps the interior and exterior trim. The trade-off is a slightly smaller glass area and a dependence on the old frame being square, dry, and sound.</p>
-<p>A <strong>full-frame replacement</strong> takes the opening back to the studs. You get new flashing, insulation around the frame, a new sill, and the maximum glass size. It is the right call when the old frames are rotten, when you are changing window size or style, or when the house is getting new siding at the same time. If <a href="/blog/when-to-replace-siding-missouri/">siding replacement</a> is on the horizon, coordinating the two saves a second round of exterior trim work.</p>
-<p>Expect full-frame to add $150 to $400 per window over an insert, more if trim has to be rebuilt.</p>
-
-<h2 id="by-style">Cost by window style</h2>
-<ul>
-  <li><strong>Double-hung:</strong> the baseline; most quotes are priced around it.</li>
-  <li><strong>Slider:</strong> similar to double-hung, sometimes slightly less.</li>
-  <li><strong>Casement and awning:</strong> 15 to 30 percent more; better air seal because they crank shut against the frame.</li>
-  <li><strong>Picture (fixed):</strong> less per square foot of glass, but large units cost more to handle.</li>
-  <li><strong>Bay and bow:</strong> $2,500 to $7,000 or more; they are a small construction project with a roof and support.</li>
-  <li><strong>Egress windows for basements:</strong> $2,500 to $6,000 including excavation and well; required for bedrooms under most codes.</li>
-</ul>
-
-<h2 id="energy">Energy savings in Missouri</h2>
-<p>Missouri sits in a mixed climate: real winters and humid, hot summers. Look for a low U-factor (0.30 or under) for winter heat retention and a moderate solar heat gain coefficient for summer. Low-E coatings and argon fill are standard on any window worth buying. Triple-pane adds $100 to $300 per window; it helps most on north-facing rooms and for noise, and less on payback math.</p>
-<p>Be realistic about savings. Replacing single-pane windows with modern double-pane units can cut heating and cooling costs meaningfully. Replacing 15-year-old double-pane windows saves much less, so the case there is comfort, drafts, condensation, and failed seals, not the utility bill. Federal tax credits for qualifying ENERGY STAR windows have been available in recent years; confirm the current rules with your tax preparer before counting on them.</p>
-
-<h2 id="when-replace">Repair or replace?</h2>
-<p>Replace when you see fog between the panes (a failed seal), frames that are soft or warped, sashes that will not stay open, drafts you can feel with the window closed, or single-pane glass. Repair when the problem is a broken balance, a worn weatherstrip, a cracked pane in an otherwise sound unit, or a screen. A contractor who does both, like <a href="/services/windows-doors/">A&S Contracting Services</a>, has no reason to push replacement when a $150 repair solves it.</p>
-<p>One more reason to replace: rot at the sill that has spread into the wall. That job crosses from windows into siding and framing, and it is where a general contractor that self-performs the whole exterior, including <a href="/blog/soffit-fascia-repair-vs-replacement/">soffit and fascia</a> and <a href="/services/siding/">siding</a>, saves you from coordinating three companies.</p>
+<p>A&amp;S prices from the materials selected and the condition of the existing structure, with the scope written out so you can see each item.</p>
 
   <section class="cta-band post-cta" id="estimate">
     <div class="post-cta-grid">
       <div>
         <h3>Pricing new windows?</h3>
-        <p>A&amp;S Contracting Services measures every opening and gives you a written, per-window estimate for vinyl, fiberglass, or wood, insert or full-frame. Free across Warren County and our 50-mile service area.</p>
-        <a href="tel:<?php echo $phoneTel; ?>" class="btn btn-primary">Call <?php echo $phone; ?></a>
+        <p>A&amp;S Contracting Services measures each opening on site and writes the estimate window by window. The on-site visit and written estimate are free.</p>
+        <a href="tel:<?php echo $phoneTel; ?>" class="btn btn-primary" style="color: var(--color-secondary);">Call <?php echo $phone; ?></a>
       </div>
-      <?php $heroFormTitle = 'Get a free estimate'; $heroFormId = 'post'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
+      <aside class="hero-form-card" aria-label="Request an estimate">
+        <h2>Request a written estimate</h2>
+        <p class="hero-form-tagline">On-site visit and written estimate at no charge. No obligation.</p>
+        <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
+          <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
+          <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <?php echo p1_attribution_fields('cta-band'); ?>
+          <input type="hidden" name="consent_version" value="v2.1">
+          <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+          <div class="form-row"><label class="sr-only" for="cta-band-name">Name</label><input id="cta-band-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
+          <div class="form-row"><label class="sr-only" for="cta-band-phone">Phone</label><input id="cta-band-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>
+          <div class="form-row"><label class="sr-only" for="cta-band-service">Service</label>
+            <select id="cta-band-service" name="service">
+              <option value="">What do you need?</option>
+              <?php foreach ($services as $heroSvc): ?>
+              <option value="<?php echo htmlspecialchars($heroSvc['name']); ?>"><?php echo htmlspecialchars($heroSvc['name']); ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          <label class="consent"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/terms/" target="_blank" rel="noopener">Terms</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted. *</span></label>
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
+        </form>
+      </aside>
     </div>
   </section>
+
+
+<h2 id="by-material">How do vinyl, fiberglass, and wood window frames compare?</h2>
+<p>Vinyl, fiberglass, and wood frames trade off price, upkeep, and appearance. Vinyl is usually the lowest priced and needs little upkeep, fiberglass is stronger and holds paint, and wood looks traditional but needs regular maintenance, especially in Missouri's humid summers and freeze-thaw winters.</p>
+<div class="post-table-wrap">
+<table class="post-table">
+  <caption>Common replacement window frame materials</caption>
+  <thead>
+    <tr><th scope="col">Frame material</th><th scope="col">Upkeep</th><th scope="col">Appearance</th><th scope="col">Price position</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">Vinyl</th><td>Low</td><td>Factory colors; limited to the product's range</td><td>Generally the lowest</td></tr>
+    <tr><th scope="row">Fiberglass</th><td>Low; stable with temperature swings</td><td>Paintable, slim frames</td><td>Generally in the middle to higher range</td></tr>
+    <tr><th scope="row">Wood</th><td>High; needs sealing or painting and rot checks</td><td>Traditional, customizable</td><td>Generally the highest</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Pick the frame at the estimate visit, once you have seen the options next to the house and discussed upkeep.</p>
+
+<h2 id="insert-vs-full">Should I choose insert or full-frame window replacement?</h2>
+<p>Choose an insert replacement when the existing frame and trim are sound, and full-frame when the frame is damaged. Full-frame work costs more because it removes the window down to the studs and allows new flashing and insulation.</p>
+<p>An <strong>insert</strong> window fits inside the existing frame and leaves the interior and exterior trim largely in place. It is faster and cleaner, and it keeps most of the original look, but it reduces the glass area slightly and cannot fix a rotted frame.</p>
+<p>A <strong>full-frame</strong> replacement takes the opening back to the studs. It allows new flashing, insulation around the frame, a new sill, and the maximum glass size. It is the right call when the old frames are rotted or the wall around them has water damage.</p>
+<p>When rot has spread into the wall, the job crosses into siding and framing. A general contractor that self-performs the whole exterior, including <a href="/services/siding/">siding</a>, can fix both in one project.</p>
+
+<h2 id="by-style">How does window style change the price?</h2>
+<p>Window style changes the price because each style uses different hardware, glass sizes, and installation methods. Fixed picture windows are generally the simplest, operating windows add hardware, and bays, bows, and specialty shapes add framing and trim work. Ask for each style on its own line so you can see where the money goes.</p>
+<ul>
+  <li><strong>Picture windows.</strong> Fixed glass, no moving parts, and usually the simplest to price.</li>
+  <li><strong>Double-hung and sliding windows.</strong> The most common operating styles in older homes.</li>
+  <li><strong>Casement windows.</strong> Hinged units that seal tightly when closed.</li>
+  <li><strong>Bay and bow windows.</strong> Projecting assemblies with framing, seat boards, and roofing above them.</li>
+  <li><strong>Patio doors and entry doors.</strong> Part of the same weather-sealing conversation, and priced separately.</li>
+</ul>
+<p>Look at the <a href="/services/windows-doors/">windows and doors page</a> for the products A&amp;S works with, and ask for each style on its own line in the written estimate.</p>
+
+<h2 id="energy">Will new windows save energy in Missouri?</h2>
+<p>New windows can reduce drafts and heat transfer, but the savings depend on what you are replacing and how well the openings are sealed. Replacing worn single-pane windows usually makes a bigger difference than replacing newer double-pane units, and sealing gaps around the frames matters as much as the glass.</p>
+<p>Compare windows by the numbers on the NFRC label: the U-factor measures how well the window holds heat in or out, and the solar heat gain coefficient measures how much solar heat comes through. Lower values are better for U-factor, and the right solar heat gain value depends on how much sun the window gets.</p>
+<p>Because savings depend on the home, treat any promise of a specific percentage on energy bills with caution. Ask the installer for the label values of the windows you are comparing, and be wary of claims that cannot be tied to them.</p>
+
+<h2 id="when-replace">Should I repair or replace my windows?</h2>
+<p>Replace windows when you see fog between the panes, soft or warped frames, sashes that will not stay open, or drafts you can feel with the window closed. Repair when the problem is a broken latch, a worn weatherstrip, a single cracked pane, or a sash that only needs adjusting.</p>
+<ul>
+  <li>Fogged glass means the seal between panes has failed, and the glass unit usually needs replacing.</li>
+  <li>Soft or rotted frames and sills mean water has been getting in, and the surrounding wall should be checked; the <a href="/blog/drywall-water-damage-repair-or-replace-a-missouri-guide/">drywall water damage guide</a> covers what to do inside.</li>
+  <li>Windows that are hard to operate, will not lock, or let drafts through can sometimes be repaired, but not when the frame is out of square.</li>
+  <li>Single-pane windows are candidates for replacement if comfort or condensation is a problem.</li>
+</ul>
+<p>Replacement is often a good time to look at the siding around the window too; the <a href="/blog/when-to-replace-siding-missouri/">siding replacement guide</a> explains the signs. For more homeowner guides, see the <a href="/blog/">blog</a>.</p>
 
   <h2 id="faq">Frequently asked questions</h2>
   <div class="post-faq">
     <details class="faq">
       <summary>How many windows can be replaced in a day?</summary>
-      <p>A crew doing insert replacements typically installs 8 to 12 windows a day on a single-story home. Full-frame replacements with trim work run 4 to 8 per day. Most whole-house projects finish in one to three days.</p>
+      <p>It depends on the style, the size, and whether the replacement is an insert or a full-frame job. A&amp;S Contracting Services gives the start window and expected timeline in writing before work begins.</p>
     </details>
     <details class="faq">
       <summary>Is it cheaper to replace all windows at once?</summary>
-      <p>Usually, yes. Setup, staging, and disposal are shared, and manufacturers price better on volume. Splitting the house into two phases is reasonable if budget requires it; do the weather side or the worst windows first.</p>
+      <p>Often it is more efficient, because setup, travel, and trim work are shared across the project and the new windows match. The estimate lists each window so you can also phase the work if you prefer.</p>
     </details>
     <details class="faq">
       <summary>What is the best time of year to replace windows in Missouri?</summary>
-      <p>Spring and fall are most comfortable, but windows are replaced year-round. Each opening is exposed for well under an hour, so winter installs are common and sometimes come with better scheduling.</p>
+      <p>Windows can be replaced year-round, since the work is done one opening at a time. Mild, dry weather is easiest, and you can ask the installer how each opening is protected if the weather turns during the job.</p>
     </details>
     <details class="faq">
-      <summary>Do replacement windows need a permit in Warren County?</summary>
-      <p>Like-for-like insert replacements often do not, but full-frame replacements and any change in opening size or egress requirements may. We confirm the requirement with the local building department before the job starts.</p>
+      <summary>Do replacement windows need a permit?</summary>
+      <p>Requirements vary by city and county and by the scope of the work. Confirm with your city or county building office before work starts.</p>
     </details>
   </div>
 

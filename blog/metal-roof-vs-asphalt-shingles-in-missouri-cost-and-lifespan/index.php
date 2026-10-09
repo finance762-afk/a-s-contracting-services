@@ -4,12 +4,15 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
-$pageTitle = 'Metal Roof vs Shingles Missouri: Cost and Lifespan Compared';
-$pageDescription = 'Metal roof vs asphalt shingles in Missouri: cost and lifespan compared by a licensed & insured Warrenton, MO roofer. Free estimate: call (636) 359-7204.';
+$pageTitle = 'Metal Roof vs Shingles in Missouri: How They Compare';
+$pageDescription = 'Metal roofing vs asphalt shingles in Missouri: what drives the price gap and how each handles hail, wind and freeze-thaw. A&S Contracting Services, Warrenton.';
 $canonicalUrl = $siteUrl . '/blog/metal-roof-vs-asphalt-shingles-in-missouri-cost-and-lifespan/';
 $currentPage = 'blog';
+$ogImage = $siteUrl . '/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.webp';
+$postSlug = 'metal-roof-vs-asphalt-shingles-in-missouri-cost-and-lifespan';
+$postCategory = 'Roofing';
 
-// Schema: BlogPosting + BreadcrumbList + FAQPage
+// Schema: BlogPosting + BreadcrumbList + FAQPage (FAQ mirrors the visible section below)
 $schema = <<<SCHEMA
 <script type="application/ld+json">
 {
@@ -17,8 +20,9 @@ $schema = <<<SCHEMA
   "@graph": [
     {
       "@type": "BlogPosting",
-      "headline": "{$pageTitle}",
-      "description": "{$pageDescription}",
+      "headline": "Metal Roof vs Shingles in Missouri: How They Compare",
+      "description": "A plain-language comparison of metal roofing and asphalt shingles for Missouri homes: what drives the price difference, expected durability, hail and wind performance, energy considerations, and how to choose.",
+      "image": "{$siteUrl}/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.webp",
       "author": {
         "@type": "Organization",
         "@id": "{$siteUrl}/#organization"
@@ -28,77 +32,63 @@ $schema = <<<SCHEMA
         "@id": "{$siteUrl}/#organization"
       },
       "datePublished": "2024-09-10",
-      "dateModified": "2024-09-10",
-      "url": "{$canonicalUrl}",
-      "keywords": "metal roof vs shingles Missouri, metal roofing cost, asphalt shingle lifespan, roof comparison, metal roof lifespan Missouri"
+      "dateModified": "2026-10-09",
+      "mainEntityOfPage": "{$siteUrl}/blog/metal-roof-vs-asphalt-shingles-in-missouri-cost-and-lifespan/",
+      "url": "{$siteUrl}/blog/metal-roof-vs-asphalt-shingles-in-missouri-cost-and-lifespan/",
+      "keywords": "metal roof vs shingles Missouri, metal roofing cost factors, asphalt shingle lifespan, roof material comparison, metal roof Warrenton MO"
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "{$siteUrl}/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "{$siteUrl}/blog/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Metal Roof vs Shingles Missouri",
-          "item": "{$canonicalUrl}"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{$siteUrl}/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{$siteUrl}/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Metal Roof vs Shingles", "item": "{$siteUrl}/blog/metal-roof-vs-asphalt-shingles-in-missouri-cost-and-lifespan/" }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How long does a metal roof last compared to asphalt shingles in Missouri?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Metal roofing lasts 40-50 years in Missouri, while architectural asphalt shingles last 25-30 years. Metal's corrosion-resistant coatings handle Missouri's humidity and freeze-thaw cycles better than shingles, which suffer granule loss and thermal cycling damage."
+          {
+            "@type": "Question",
+            "name": "How long does a metal roof last compared to asphalt shingles in Missouri?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Metal roofing is generally built to last longer than asphalt shingles, but actual service life depends on the product, the installation, ventilation, and storm exposure. Compare the manufacturer documentation for the specific product you are considering."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is a metal roof worth the extra cost in Missouri?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It can be, if you will own the home for a long time and want to avoid another replacement. If you expect to sell soon or have a tight budget, asphalt shingles are often more practical. Putting both on one itemized estimate shows the actual gap for your roof."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do metal roofs lower energy bills in Missouri?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A reflective finish can reduce heat gain in summer, but the savings depend on the finish, your attic insulation and ventilation, and your home. Treat any promised percentage with caution."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I install a metal roof over existing shingles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sometimes, but it depends on the condition of the existing roof, the manufacturer instructions for the metal system, and local requirements. Confirm with your city or county building office and ask your contractor whether a tear-off is the better choice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which roofing material handles Missouri hail better?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Neither is hail-proof. Standard shingles can bruise, impact-resistant Class 4 shingles resist better, and metal panels resist penetration but thinner panels can dent. Ask your insurer how it treats cosmetic damage on each."
+            }
           }
-        },
-        {
-          "@type": "Question",
-          "name": "Is a metal roof worth the extra cost in Missouri?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Metal roofing costs $700-$1,200 per square vs $350-$550 for asphalt shingles, but over 50 years, metal's total lifetime cost is often lower. You avoid one or two re-roofs, gain energy savings from reflective coatings, and benefit from better hail and wind resistance—important in Missouri's storm-prone climate."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do metal roofs lower energy bills in Missouri?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Metal roofs with cool-roof coatings reflect 70% of solar heat, reducing attic temperatures by 10-15°F during Missouri summers. Homeowners report 10-25% lower cooling costs compared to dark asphalt shingles, which absorb heat."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I install a metal roof over existing shingles?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Technically yes—Missouri building codes allow it—but we don't recommend it. Installing over shingles traps moisture, hides deck damage, and voids most metal roof warranties. A tearoff adds $100-$150 per square but ensures proper ventilation and a code-compliant installation."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which roofing material handles Missouri hail better?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Metal roofing handles hail better. Standing seam metal dents but doesn't crack or lose protective layers. Class 4 impact-rated asphalt shingles resist hail damage better than standard shingles, but they still suffer granule loss from repeated impacts. Metal outlasts shingles in hail-prone areas."
-          }
-        }
-      ]
+        ]
     }
   ]
 }
@@ -110,340 +100,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
 <style>
-/* Blog Post Styles */
-.blog-post-hero {
-  background: linear-gradient(135deg, var(--color-primary) 0%, rgba(0,0,0,0.85) 100%);
-  padding: calc(var(--nav-height) + 40px) 0 60px;
-  position: relative;
-  overflow: hidden;
-}
-
-.blog-post-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.4;
-}
-
-.blog-post-hero .container {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-}
-
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.7);
-}
-
-.breadcrumb a {
-  color: var(--color-accent);
-  text-decoration: none;
-}
-
-.breadcrumb-sep {
-  color: rgba(255,255,255,0.4);
-}
-
-.blog-post-meta {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 16px;
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.8);
-}
-
-.blog-post-meta__item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.blog-post-category {
-  background: var(--color-accent);
-  color: var(--color-primary);
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: inline-block;
-  margin-bottom: 16px;
-}
-
-.blog-post-hero h1 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.blog-post-excerpt {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.9);
-}
-
-.blog-post-content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 80px 20px;
-}
-
-.answer-block {
-  background: #f8f9fa;
-  border-left: 4px solid var(--color-accent);
-  padding: 24px;
-  margin-bottom: 40px;
-  border-radius: 0 8px 8px 0;
-}
-
-.answer-block p {
-  margin-bottom: 16px;
-  font-size: 1.0625rem;
-  line-height: 1.7;
-}
-
-.answer-block p:last-child {
-  margin-bottom: 0;
-}
-
-.blog-post-content h2 {
-  font-size: 1.75rem;
-  margin: 48px 0 20px;
-  font-weight: 700;
-  color: var(--color-primary);
-  line-height: 1.3;
-}
-
-.blog-post-content h3 {
-  font-size: 1.375rem;
-  margin: 32px 0 16px;
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-.blog-post-content p {
-  margin-bottom: 20px;
-  line-height: 1.7;
-  font-size: 1.0625rem;
-}
-
-.blog-post-content ul,
-.blog-post-content ol {
-  margin: 20px 0 20px 24px;
-  line-height: 1.7;
-}
-
-.blog-post-content li {
-  margin-bottom: 8px;
-}
-
-.blog-post-content strong {
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-.blog-post-content a {
-  color: var(--color-primary);
-  text-decoration: underline;
-  transition: color 0.2s;
-}
-
-.blog-post-content a:hover {
-  color: var(--color-accent);
-}
-
-.comparison-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 32px 0;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.comparison-table th {
-  background: var(--color-primary);
-  color: #fff;
-  padding: 16px;
-  text-align: left;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.comparison-table td {
-  padding: 16px;
-  border-bottom: 1px solid #e9ecef;
-  font-size: 0.9375rem;
-}
-
-.comparison-table tr:last-child td {
-  border-bottom: none;
-}
-
-.comparison-table tr:nth-child(even) {
-  background: #f8f9fa;
-}
-
-.cta-band {
-  background: linear-gradient(135deg, var(--color-accent) 0%, #a5a7a9 100%);
-  padding: 60px 20px;
-  text-align: center;
-  margin: 60px 0;
-  border-radius: 12px;
-}
-
-.cta-band h3 {
-  font-size: 1.75rem;
-  margin-bottom: 12px;
-  color: var(--color-primary);
-}
-
-.cta-band p {
-  font-size: 1.0625rem;
-  margin-bottom: 24px;
-  color: var(--color-primary);
-  opacity: 0.9;
-}
-
-.faq-section {
-  background: #f8f9fa;
-  padding: 60px 20px;
-  margin-top: 60px;
-  border-radius: 12px;
-}
-
-.faq-section h2 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.faq-item {
-  background: #fff;
-  border-radius: 8px;
-  padding: 24px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-
-.faq-item:last-child {
-  margin-bottom: 0;
-}
-
-.faq-item h3 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  margin: 0 0 12px 0;
-}
-
-.faq-item p {
-  margin: 0;
-  line-height: 1.7;
-  font-size: 1rem;
-}
-
-.related-articles {
-  background: #f8f9fa;
-  padding: 60px 20px;
-  margin-top: 60px;
-  border-radius: 12px;
-}
-
-.related-articles h3 {
-  text-align: center;
-  font-size: 1.75rem;
-  margin-bottom: 32px;
-}
-
-.related-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.related-card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  transition: transform 0.2s;
-}
-
-.related-card:hover {
-  transform: translateY(-2px);
-}
-
-.related-card__category {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 8px;
-}
-
-.related-card__title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.related-card__title a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-.related-card__excerpt {
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  color: var(--color-text);
-  margin-bottom: 16px;
-}
-
-.related-card__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 600;
-  font-size: 0.9375rem;
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-@media (max-width: 768px) {
-  .blog-post-content {
-    padding: 60px 20px;
-  }
-
-  .blog-post-content h2 {
-    font-size: 1.5rem;
-  }
-
-  .related-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .comparison-table {
-    font-size: 0.875rem;
-  }
-
-  .comparison-table th,
-  .comparison-table td {
-    padding: 12px;
-  }
-}
+/* Post comparison table — tokens only */
+.post-table-wrap { overflow-x: auto; margin: 0 0 var(--space-6); }
+.post-table { width: 100%; min-width: 32rem; border-collapse: collapse; font-size: var(--font-size-sm); background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius); }
+.post-table caption { caption-side: top; text-align: left; font-family: var(--font-heading); font-weight: 700; padding: var(--space-3) var(--space-4); color: var(--color-primary); }
+.post-table th, .post-table td { padding: var(--space-3) var(--space-4); text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); line-height: 1.5; }
+.post-table thead th { background: var(--color-card-tint-neutral); font-family: var(--font-accent); text-transform: uppercase; }
+.post-table tbody th { font-weight: 700; color: var(--color-primary); }
 </style>
-
 <!-- Hero -->
 <section class="blog-post-hero">
   <div class="container">
@@ -452,13 +116,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <span class="breadcrumb-sep">/</span>
       <a href="/blog/">Blog</a>
       <span class="breadcrumb-sep">/</span>
-      <span>Metal Roof vs Shingles Missouri</span>
+      <span>Metal Roof vs Shingles</span>
     </nav>
-
     <span class="blog-post-category">Roofing</span>
-
-    <h1>Metal Roof vs Shingles Missouri: Cost and Lifespan Compared</h1>
-
+    <h1>Metal Roof vs Asphalt Shingles in Missouri: Cost Factors and Lifespan Compared</h1>
     <div class="blog-post-meta">
       <span class="blog-post-meta__item">
         <?php echo icon('calendar', 16); ?>
@@ -469,286 +130,182 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         9 min read
       </span>
     </div>
-
-    <p class="blog-post-excerpt">
-      Metal roofing costs 2-3× more upfront but lasts twice as long as asphalt shingles. We compare total lifetime cost,
-      durability in Missouri weather, and which material makes sense for your home and budget.
-    </p>
+    <p class="blog-post-excerpt">Metal roofing generally costs more up front and is built to last longer than asphalt shingles. Here is what drives the price gap, how each material handles Missouri weather, and which one fits your home.</p>
   </div>
 </section>
 
 <!-- Content -->
 <article class="blog-post-content">
+  <figure class="blog-post-figure">
+    <picture>
+      <source type="image/avif" srcset="/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-480.avif 480w, /assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.avif 960w" sizes="(max-width: 840px) 100vw, 800px">
+      <source type="image/webp" srcset="/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-480.webp 480w, /assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.webp 960w" sizes="(max-width: 840px) 100vw, 800px">
+      <img src="/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.webp" srcset="/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-480.webp 480w, /assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.webp 960w" sizes="(max-width: 840px) 100vw, 800px" alt="Asphalt shingle roof slope with a plumbing vent pipe, photographed from above on a wooded lot" width="960" height="1280" loading="eager" fetchpriority="high" decoding="async">
+    </picture>
+  </figure>
+
   <div class="answer-block">
-    <p>
-      <strong>Metal roofing costs $700–$1,200 per square (100 sq ft) installed in Missouri, compared to $350–$550 for architectural asphalt shingles.</strong>
-      That's roughly double the upfront cost. But metal lasts 40–50 years with minimal maintenance, while shingles last 25–30 years and often need repair or replacement sooner in Missouri's storm-prone climate.
-    </p>
-    <p>
-      Over a 50-year ownership period, metal's total lifetime cost is often lower—you avoid one or two complete re-roofs,
-      benefit from energy savings, and gain superior hail and wind resistance. The right choice depends on your budget,
-      how long you plan to own the home, and what weather threats matter most in your area.
-    </p>
+<p><strong>Metal roofing generally costs more up front than asphalt shingles and is built to last longer, so the better choice depends on how long you will own the home and what weather worries you most.</strong> Asphalt shingles win on initial price and familiarity. Metal tends to win on durability and on how long it can go between replacements.</p>
+<p>A&amp;S Contracting Services installs both architectural asphalt shingles and metal roofing, plus impact-resistant shingles, for homes and commercial buildings in Warrenton and the surrounding area. This comparison covers the price drivers, durability, hail and wind performance, energy questions, and what to confirm before you decide.</p>
   </div>
 
-  <h2>Upfront Cost Comparison: Metal vs Asphalt Shingles</h2>
-  <p>
-    <strong>Initial material and labor costs are where asphalt shingles win decisively.</strong> For a typical 2,000-square-foot Missouri home (20–24 squares of roof area), you're looking at:
-  </p>
-  <ul>
-    <li><strong>Asphalt shingles (architectural grade):</strong> $8,000–$13,000 installed. Mid-grade dimensional shingles, 25–30 year warranty, Class 3 or Class 4 impact rating.</li>
-    <li><strong>Metal roofing (standing seam):</strong> $16,000–$28,000 installed. Concealed fasteners, 40–50 year warranty, superior wind and hail resistance, cool-roof coatings standard.</li>
-  </ul>
-  <p>
-    That $8,000–$15,000 upfront gap is real money. If you're financing the roof or paying out of pocket, shingles are
-    easier on the immediate budget. But upfront cost is only one piece of the equation.
-  </p>
+  <aside class="post-toc" aria-label="In this article">
+    <strong>In this article</strong>
+    <ol>
+      <li><a href="#upfront-cost">What drives the price difference between metal roofing and asphalt shingles?</a></li>
+      <li><a href="#lifespan">How long does each roofing material last in Missouri?</a></li>
+      <li><a href="#side-by-side">How do metal roofing and asphalt shingles compare side by side?</a></li>
+      <li><a href="#weather">How do metal roofs and shingles handle Missouri hail, wind, and freeze-thaw?</a></li>
+      <li><a href="#energy">Do metal roofs lower cooling costs?</a></li>
+      <li><a href="#worth-it">Is a metal roof worth the higher price?</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </aside>
 
-  <table class="comparison-table">
-    <thead>
-      <tr>
-        <th>Factor</th>
-        <th>Metal Roofing</th>
-        <th>Asphalt Shingles</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Cost per square (installed)</strong></td>
-        <td>$700–$1,200</td>
-        <td>$350–$550</td>
-      </tr>
-      <tr>
-        <td><strong>Lifespan</strong></td>
-        <td>40–50 years</td>
-        <td>25–30 years</td>
-      </tr>
-      <tr>
-        <td><strong>Warranty (material)</strong></td>
-        <td>30–50 years, often transferable</td>
-        <td>20–30 years, prorated after 10 years</td>
-      </tr>
-      <tr>
-        <td><strong>Hail resistance</strong></td>
-        <td>Dents but doesn't crack; maintains integrity</td>
-        <td>Class 4 impact-rated shingles resist damage but can still lose granules</td>
-      </tr>
-      <tr>
-        <td><strong>Wind resistance</strong></td>
-        <td>120+ mph when properly installed</td>
-        <td>110–130 mph (varies by product)</td>
-      </tr>
-      <tr>
-        <td><strong>Energy efficiency</strong></td>
-        <td>Reflects 70% solar heat; lowers cooling costs 10–25%</td>
-        <td>Absorbs heat; dark colors increase attic temps</td>
-      </tr>
-      <tr>
-        <td><strong>Maintenance</strong></td>
-        <td>Minimal—inspect fasteners and seams every 5 years</td>
-        <td>Periodic inspection; replace cracked/missing shingles</td>
-      </tr>
-    </tbody>
-  </table>
+<h2 id="upfront-cost">What drives the price difference between metal roofing and asphalt shingles?</h2>
+<p>Metal roofing usually costs more than asphalt shingles because the panels cost more and the installation takes more specialized detail work at edges, penetrations, and transitions. How large the gap is depends on the roof, the metal system chosen, and the shingle grade you are comparing it against.</p>
+<ul>
+  <li><strong>Square footage and complexity.</strong> Roof area, pitch, and the number of valleys, dormers, and penetrations affect both materials, and affect metal detailing the most.</li>
+  <li><strong>The specific product.</strong> Shingle grades and metal systems each span a range, so compare like with like.</li>
+  <li><strong>Condition of the existing structure.</strong> Decking repairs and tear-off needs add cost under either material.</li>
+  <li><strong>Accessories and ventilation.</strong> Underlayment, flashing, and ventilation components are part of both jobs.</li>
+</ul>
+<p>A&amp;S Contracting Services prices each roof from a free on-site visit and gives the estimate in writing, itemized, with the quoted price as the final price. Asking for both materials on one estimate is the cleanest way to see the real gap for your home.</p>
 
-  <h2>Lifespan: How Long Each Material Lasts in Missouri</h2>
-  <p>
-    Missouri's climate—humid summers, freeze-thaw winters, severe thunderstorms with hail—tests every roof.
-    <strong>Lifespan projections assume proper installation and maintenance.</strong>
-  </p>
+  <section class="cta-band post-cta" id="estimate">
+    <div class="post-cta-grid">
+      <div>
+        <h3>Not sure which material fits your home?</h3>
+        <p>A&amp;S Contracting Services can price metal roofing and asphalt shingles for the same roof on one written estimate. The on-site visit and the written estimate are free.</p>
+        <a href="tel:<?php echo $phoneTel; ?>" class="btn btn-primary" style="color: var(--color-secondary);">Call <?php echo $phone; ?></a>
+      </div>
+      <aside class="hero-form-card" aria-label="Request an estimate">
+        <h2>Request a written estimate</h2>
+        <p class="hero-form-tagline">On-site visit and written estimate at no charge. No obligation.</p>
+        <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
+          <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
+          <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <?php echo p1_attribution_fields('cta-band'); ?>
+          <input type="hidden" name="consent_version" value="v2.1">
+          <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+          <div class="form-row"><label class="sr-only" for="cta-band-name">Name</label><input id="cta-band-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
+          <div class="form-row"><label class="sr-only" for="cta-band-phone">Phone</label><input id="cta-band-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>
+          <div class="form-row"><label class="sr-only" for="cta-band-service">Service</label>
+            <select id="cta-band-service" name="service">
+              <option value="">What do you need?</option>
+              <?php foreach ($services as $heroSvc): ?>
+              <option value="<?php echo htmlspecialchars($heroSvc['name']); ?>"><?php echo htmlspecialchars($heroSvc['name']); ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          <label class="consent"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/terms/" target="_blank" rel="noopener">Terms</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted. *</span></label>
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
+        </form>
+      </aside>
+    </div>
+  </section>
 
-  <h3>Metal Roofing Lifespan</h3>
-  <p>
-    Standing seam metal roofs with Galvalume or aluminum substrates and factory-applied coatings last 40–50 years
-    in Missouri. The coating protects against UV degradation and corrosion. Fasteners are concealed beneath the seams,
-    so thermal expansion doesn't loosen them over time.
-  </p>
-  <p>
-    <a href="/services/roofing/">Properly installed metal roofs</a> handle freeze-thaw cycles without cracking—metal
-    expands and contracts with temperature changes, but the panel design accommodates movement. The biggest maintenance
-    item is checking sealant around penetrations (chimneys, vents) every 5–10 years.
-  </p>
 
-  <h3>Asphalt Shingle Lifespan</h3>
-  <p>
-    Architectural asphalt shingles are rated for 25–30 years, but actual lifespan in Missouri depends on ventilation,
-    UV exposure, and storm frequency. <strong>Shingles on south-facing slopes degrade faster</strong> due to constant
-    sun exposure—granule loss accelerates, asphalt becomes brittle, and edges curl.
-  </p>
-  <p>
-    Hail storms shorten shingle life even when they don't cause immediate failure. Each impact chips away protective
-    granules, exposing the asphalt mat underneath. Over time, repeated hail exposure leads to leaks and premature failure.
-    In hail-prone areas, Class 4 impact-rated shingles are worth the upgrade—they cost $10–$20 more per square but handle impacts better.
-  </p>
+<h2 id="lifespan">How long does each roofing material last in Missouri?</h2>
+<p>Metal roofing is generally built to outlast asphalt shingles, but no honest figure applies to every roof. Actual service life depends on the product grade, how well it was installed, attic ventilation, exposure to storms, and maintenance, so compare manufacturer documentation for the specific product you are considering.</p>
+<p>Asphalt shingles age through sun exposure, which wears granules away, and through thermal cycling and storm damage. Missouri adds freeze-thaw winters, spring hail and wind, and humid summers, all of which stress a roof.</p>
+<p>Metal panels do not lose granules or curl, which is part of why they last longer. Their weak points are the fasteners, sealants, and flashing, so the quality of installation matters as much as the material.</p>
+<p>Ventilation affects both materials. See the <a href="/blog/roof-ventilation-in-missouri-ridge-vents-soffit-intake-attic-heat/">attic ventilation guide</a> for how intake and exhaust protect a roof from the underside.</p>
 
-  <div class="cta-band">
-    <h3>Not Sure Which Material Fits Your Home?</h3>
-    <p>
-      A&S Contracting Services provides free consultations and written estimates for both metal and asphalt <a href="/services/roofing/" style="color: var(--color-primary); text-decoration: underline;">roofing projects</a>
-      across Warren, St. Charles, Lincoln, and Franklin counties. We'll walk the roof, assess your home's specific needs,
-      and help you weigh upfront cost vs long-term value.
-    </p>
-    <a href="/contact/" class="btn-primary">Schedule Free Consultation</a>
+<h2 id="side-by-side">How do metal roofing and asphalt shingles compare side by side?</h2>
+<p>Metal roofing and asphalt shingles trade off on every factor. Asphalt is lower in price and easy to repair in small sections, while metal is longer-lived, sheds snow quickly, and asks for more careful installation. The table summarizes the differences in general terms, without promising figures that depend on the roof.</p>
+<div class="post-table-wrap">
+<table class="post-table">
+  <caption>Metal roofing compared with architectural asphalt shingles</caption>
+  <thead>
+    <tr><th scope="col">Factor</th><th scope="col">Metal roofing</th><th scope="col">Asphalt shingles</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">Upfront price</th><td>Generally higher</td><td>Generally lower</td></tr>
+    <tr><th scope="row">Expected service life</th><td>Generally longer</td><td>Shorter, and more dependent on sun and storm exposure</td></tr>
+    <tr><th scope="row">Hail</th><td>Resists penetration; thinner panels can show dents</td><td>Can bruise and lose granules; Class 4 versions resist better</td></tr>
+    <tr><th scope="row">Wind</th><td>Held by interlocking panels and concealed or exposed fasteners</td><td>Held by sealed adhesive strips and nails; seals can fail with age</td></tr>
+    <tr><th scope="row">Snow and ice</th><td>Sheds quickly, so plan where it lands</td><td>Holds snow longer</td></tr>
+    <tr><th scope="row">Rain noise</th><td>Can be louder, depending on underlayment and decking</td><td>Quieter</td></tr>
+    <tr><th scope="row">Repairs</th><td>Specialized; damaged panels are replaced as a unit</td><td>Individual shingles can be replaced, though color matching on older roofs varies</td></tr>
+    <tr><th scope="row">Installation detail</th><td>Flashing and trim work needs particular care</td><td>Familiar to most roofers</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="weather">How do metal roofs and shingles handle Missouri hail, wind, and freeze-thaw?</h2>
+<p>Both materials handle Missouri weather when they are installed correctly, but they fail differently. Shingles tend to bruise under hail and lose seal strength in wind with age. Metal tends to shed hail and wind better but can dent, so the right pick depends on which risk worries you more.</p>
+<p><strong>Hail.</strong> Hail bruises shingles, knocks granules loose, and shortens roof life, which is why impact-resistant shingles exist. The <a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">Class 4 shingle guide</a> explains that option. Metal panels resist penetration, though thinner panels can dent from large stones, and some insurers treat cosmetic dents differently from functional damage, so ask your carrier.</p>
+<p><strong>Wind.</strong> Metal panels lock together and are fastened along their length, while shingles rely on sealed adhesive strips that can weaken with age. After a storm, the <a href="/blog/hail-damage-roof-insurance-claim-missouri/">hail damage inspection guide</a> shows how damage is documented.</p>
+<p><strong>Freeze-thaw and ice.</strong> Metal does not crack from temperature swings, and snow slides off it quickly, which is useful for ice but a hazard over walkways and doors. Ask how the <a href="/services/gutters/">gutters</a> and roof edge are detailed for that sliding snow. Either roof can develop ice dams if the attic leaks heat.</p>
+
+<h2 id="energy">Do metal roofs lower cooling costs?</h2>
+<p>Metal roofs can reduce cooling costs when the panels have a reflective finish, because they send more sunlight away from the house than a dark shingle. How much you save depends on the finish, your attic insulation and ventilation, and your home, so treat any promised percentage with caution.</p>
+<p>A reflective roof does not replace good attic ventilation or insulation. Heat that builds in an attic still moves into the living space, and moisture still has to escape in winter. Check the product's published reflectivity data and ask what an installer would do about ventilation at the soffit and ridge.</p>
+<p>Asphalt shingles come in lighter colors that reflect more heat than dark ones, which narrows the gap somewhat for homeowners who care about energy but not about a metal look.</p>
+
+<h2 id="worth-it">Is a metal roof worth the higher price?</h2>
+<p>A metal roof is worth the higher price when you will keep the home a long time and want to avoid another replacement. If you expect to sell soon or are working to a tight budget, asphalt shingles are often the more practical choice, and metal's storm and snow performance matters less.</p>
+<ul>
+  <li><strong>Choose metal</strong> if you will own the home long enough to benefit from fewer replacements, and the roof shape suits metal detailing.</li>
+  <li><strong>Choose architectural asphalt</strong> if the up-front budget matters most, or if you want the simplest path to repairs later.</li>
+  <li><strong>Consider impact-resistant shingles</strong> if hail is the main worry but you want the lower price of shingles.</li>
+</ul>
+<p>Ask any contractor to put the options on one itemized estimate, then compare the total, the product documentation, and the installation plan. See A&amp;S Contracting Services' <a href="/services/roofing/">roofing page</a> for the materials it offers, the <a href="/blog/roof-replacement-cost-guide-missouri/">roof replacement cost guide</a> for the line items on a quote, and the <a href="/blog/">blog</a> for more homeowner guides. Most single-family roof replacements take one to three days, weather permitting.</p>
+
+  <h2 id="faq">Frequently asked questions</h2>
+  <div class="post-faq">
+    <details class="faq">
+      <summary>How long does a metal roof last compared to asphalt shingles in Missouri?</summary>
+      <p>Metal roofing is generally built to last longer than asphalt shingles, but actual service life depends on the product, the installation, ventilation, and storm exposure. Compare the manufacturer documentation for the specific product you are considering.</p>
+    </details>
+    <details class="faq">
+      <summary>Is a metal roof worth the extra cost in Missouri?</summary>
+      <p>It can be, if you will own the home for a long time and want to avoid another replacement. If you expect to sell soon or have a tight budget, asphalt shingles are often more practical. Putting both on one itemized estimate shows the actual gap for your roof.</p>
+    </details>
+    <details class="faq">
+      <summary>Do metal roofs lower energy bills in Missouri?</summary>
+      <p>A reflective finish can reduce heat gain in summer, but the savings depend on the finish, your attic insulation and ventilation, and your home. Treat any promised percentage with caution.</p>
+    </details>
+    <details class="faq">
+      <summary>Can I install a metal roof over existing shingles?</summary>
+      <p>Sometimes, but it depends on the condition of the existing roof, the manufacturer instructions for the metal system, and local requirements. Confirm with your city or county building office and ask your contractor whether a tear-off is the better choice.</p>
+    </details>
+    <details class="faq">
+      <summary>Which roofing material handles Missouri hail better?</summary>
+      <p>Neither is hail-proof. Standard shingles can bruise, impact-resistant Class 4 shingles resist better, and metal panels resist penetration but thinner panels can dent. Ask your insurer how it treats cosmetic damage on each.</p>
+    </details>
   </div>
 
-  <h2>Total Lifetime Cost: The 50-Year View</h2>
-  <p>
-    Comparing only installation cost misses the full picture. <strong>Lifetime cost includes installation, maintenance,
-    repairs, and eventual replacement.</strong>
-  </p>
-  <p>
-    Let's assume a 2,000-square-foot Missouri home with a 20-square roof:
-  </p>
-
-  <h3>Asphalt Shingle Lifetime Cost (50 years)</h3>
-  <ul>
-    <li><strong>Initial installation:</strong> $10,000</li>
-    <li><strong>Replacement at year 28:</strong> $12,000 (adjusted for inflation)</li>
-    <li><strong>Periodic repairs (storm damage, wind blow-offs):</strong> $1,500–$3,000 over 50 years</li>
-    <li><strong>Total 50-year cost:</strong> $23,500–$25,000</li>
-  </ul>
-
-  <h3>Metal Roofing Lifetime Cost (50 years)</h3>
-  <ul>
-    <li><strong>Initial installation:</strong> $22,000</li>
-    <li><strong>Replacement:</strong> $0 (metal outlasts the 50-year window)</li>
-    <li><strong>Maintenance (sealant/fastener checks):</strong> $500–$1,000 over 50 years</li>
-    <li><strong>Energy savings (reduced cooling costs):</strong> -$3,000 to -$5,000 over 50 years</li>
-    <li><strong>Total 50-year cost:</strong> $17,500–$19,000</li>
-  </ul>
-  <p>
-    Over 50 years, <strong>metal saves $4,500–$7,500 despite the higher upfront cost.</strong> The savings come from
-    avoiding one complete re-roof, lower maintenance, and reduced energy bills. If you plan to own the home for decades,
-    metal is the lower total-cost option.
-  </p>
-
-  <h2>Performance in Missouri Weather</h2>
-
-  <h3>Hail Resistance</h3>
-  <p>
-    Missouri averages 3–5 significant hail events per year in Warren, St. Charles, and Franklin counties.
-    <strong>Metal roofing handles hail better than shingles.</strong> It dents but doesn't crack or lose protective
-    layers. The roof remains watertight even after cosmetic denting.
-  </p>
-  <p>
-    Asphalt shingles—even Class 4 impact-rated products—can crack or lose granules from large hail. Once granules are
-    gone, UV exposure accelerates aging. Repeated hail hits shorten lifespan even when individual storms don't cause
-    immediate leaks.
-  </p>
-
-  <h3>Wind Resistance</h3>
-  <p>
-    Both materials handle Missouri's straight-line winds and occasional tornado-force gusts when installed correctly.
-    Metal panels with concealed fasteners are rated to 120+ mph. Architectural shingles with high-wind nailing patterns
-    and starter strips are rated to 110–130 mph.
-  </p>
-  <p>
-    The difference: <strong>wind-damaged shingles need immediate repair to prevent water intrusion.</strong> A blown-off
-    shingle exposes the deck and underlayment. Metal panels rarely detach unless installation was faulty—and if they do,
-    the interlocking seams often keep the roof watertight until repair.
-  </p>
-
-  <h3>Freeze-Thaw and Ice Dams</h3>
-  <p>
-    Missouri winters bring repeated freeze-thaw cycles. Ice dams form when melting snow refreezes at the eave, backing
-    water under shingles. <strong>Metal roofing sheds snow and ice better than shingles</strong> due to its smooth surface
-    and heat-reflective properties. Ice dams rarely form on metal.
-  </p>
-  <p>
-    Shingles are more vulnerable—water backs up under the shingle tabs, soaks the underlayment, and leaks into the attic.
-    Proper attic insulation and ventilation reduce ice dam risk, but metal eliminates the issue.
-  </p>
-
-  <h2>Energy Efficiency and Cooling Costs</h2>
-  <p>
-    <strong>Metal roofing with cool-roof coatings reflects 70% of solar heat,</strong> keeping attic temperatures 10–15°F
-    cooler than asphalt shingles during Missouri summers. Lower attic temps reduce the load on your air conditioner.
-  </p>
-  <p>
-    Homeowners report 10–25% lower cooling costs with metal roofs, especially on homes with cathedral ceilings or bonus
-    rooms above the garage where attic insulation is thin. Dark asphalt shingles absorb heat—surface temps reach 150–170°F
-    on summer afternoons, radiating heat into the attic and living space below.
-  </p>
-  <p>
-    Energy savings won't pay back the upfront premium in 5 years, but over 30–50 years, the cumulative savings are real.
-    If you're already planning to stay in the home long-term, metal's energy efficiency is a bonus, not the primary justification.
-  </p>
-
-  <h2>Resale Value and Buyer Perception</h2>
-  <p>
-    Metal roofing appeals to buyers who value long-term durability and low maintenance. <strong>A recently installed
-    metal roof is a selling point—buyers know they won't replace it for decades.</strong> Appraisers recognize the value,
-    especially in storm-prone areas where roof condition heavily influences insurance premiums.
-  </p>
-  <p>
-    Asphalt shingles are the baseline expectation. A new shingle roof doesn't stand out, but an old or failing roof
-    becomes a negotiation point. Buyers discount offers or demand replacement before closing. If you're planning to sell
-    within 5–10 years, shingles make more sense—you won't recoup the full metal premium at sale.
-  </p>
-
-  <div class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-item">
-      <h3>How long does a metal roof last compared to asphalt shingles in Missouri?</h3>
-      <p>
-        Metal roofing lasts 40–50 years in Missouri, while architectural asphalt shingles last 25–30 years.
-        Metal's corrosion-resistant coatings handle Missouri's humidity and freeze-thaw cycles better than shingles,
-        which suffer granule loss and thermal cycling damage.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Is a metal roof worth the extra cost in Missouri?</h3>
-      <p>
-        Metal roofing costs $700–$1,200 per square vs $350–$550 for asphalt shingles, but over 50 years, metal's
-        total lifetime cost is often lower. You avoid one or two re-roofs, gain energy savings from reflective coatings,
-        and benefit from better hail and wind resistance—important in Missouri's storm-prone climate.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Do metal roofs lower energy bills in Missouri?</h3>
-      <p>
-        Yes. Metal roofs with cool-roof coatings reflect 70% of solar heat, reducing attic temperatures by 10–15°F
-        during Missouri summers. Homeowners report 10–25% lower cooling costs compared to dark asphalt shingles,
-        which absorb heat.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Can I install a metal roof over existing shingles?</h3>
-      <p>
-        Technically yes—Missouri building codes allow it—but we don't recommend it. Installing over shingles traps moisture,
-        hides deck damage, and voids most metal roof warranties. A tearoff adds $100–$150 per square but ensures proper
-        ventilation and a code-compliant installation.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Which roofing material handles Missouri hail better?</h3>
-      <p>
-        Metal roofing handles hail better. Standing seam metal dents but doesn't crack or lose protective layers.
-        Class 4 impact-rated asphalt shingles resist hail damage better than standard shingles, but they still suffer
-        granule loss from repeated impacts. Metal outlasts shingles in hail-prone areas.
-      </p>
-    </div>
+  <div class="related-services">
+    <h3>Related services</h3>
+    <ul>
+      <li><a href="/services/roofing/">Roofing: shingles &amp; metal</a></li>
+      <li><a href="/services/gutters/">Gutters</a></li>
+      <li><a href="/services/soffit/">Soffit</a></li>
+      <li><a href="/service-areas/">Service areas</a></li>
+      <li><a href="/contact/">Contact A&amp;S Contracting Services</a></li>
+    </ul>
   </div>
 
   <div class="related-articles">
     <h3>Related Articles</h3>
     <div class="related-grid">
       <?php
-      // Show related blog posts from same category (Roofing), excluding current post
-      $relatedPosts = array_filter($blogPosts, function($post) {
-        return $post['slug'] !== 'metal-roof-vs-asphalt-shingles-in-missouri-cost-and-lifespan'
-               && $post['category'] === 'Roofing';
+      // Same-category posts first, then most recent; exclude this post; max 3
+      $others = array_values(array_filter($blogPosts, function($post) use ($postSlug) { return $post['slug'] !== $postSlug; }));
+      usort($others, function($a, $b) use ($postCategory) {
+        $ca = $a['category'] === $postCategory ? 0 : 1; $cb = $b['category'] === $postCategory ? 0 : 1;
+        return $ca === $cb ? strcmp($b['dateISO'], $a['dateISO']) : $ca - $cb;
       });
-
-      // Limit to 2 posts
-      $relatedPosts = array_slice($relatedPosts, 0, 2);
-
-      foreach ($relatedPosts as $related):
+      foreach (array_slice($others, 0, 3) as $related):
       ?>
       <div class="related-card">
         <div class="related-card__category"><?php echo htmlspecialchars($related['category']); ?></div>

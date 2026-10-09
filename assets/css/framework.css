@@ -714,3 +714,5 @@ html.js-anim .reveal-d1, html.js-anim .reveal-delay-1 { transition-delay: .08s }
 /* v8 before/after: without JS the two photos sit side by side (component adds .is-js for the slider) */
 .ba-slider:not(.is-js) .ba-panel { position: relative; }
 .ba-slider figcaption { text-wrap: pretty; }
+/* v8 a11y: links inside running text are underlined, not colour-only (Lighthouse link-in-text-block) */
+.consent a, .form-consent-item a, .estimate p a, .answer-block a, .hero-answer a, .lead a { text-decoration: underline; text-underline-offset: 3px; }

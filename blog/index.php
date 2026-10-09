@@ -4,7 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageTitle = 'Roofing & Home Repair Blog';
-$pageDescription = 'Roofing, siding, gutter & remodeling guides for Warrenton, MO and Missouri homeowners from a licensed & insured contractor. Free estimate: (636) 359-7204.';
+$pageDescription = 'Roofing, siding, gutter, window and interior repair guides for Missouri homeowners, written by A&S Contracting Services, a general contractor in Warrenton, MO.';
 $canonicalUrl = $siteUrl . '/blog/';
 $currentPage = 'blog';
 
@@ -246,11 +246,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <span>Blog</span>
     </nav>
 
-    <div class="eyebrow">Expert Advice & Insights</div>
+    <div class="eyebrow">Homeowner Guides</div>
     <h1>Contracting & Home Improvement <span class="text-accent">Blog</span></h1>
     <p class="hero-answer">
-      Practical advice on roofing, siding, gutters, and renovations from licensed Missouri contractors.
-      Learn about material choices, maintenance tips, cost factors, and what to look for when hiring a contractor.
+      Practical guides on roofing, siding, gutters, windows, and interior repairs from A&amp;S Contracting Services in Warrenton, Missouri.
+      Each post explains what to look for, what shapes the cost, and what to ask a contractor before you hire.
     </p>
   </div>
 </section>

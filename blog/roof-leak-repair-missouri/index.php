@@ -4,8 +4,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
-$pageTitle = 'Roof Leak Repair: Finding the Leak, Costs & When to Replace';
-$pageDescription = 'Roof leak repair in Warrenton, MO: finding the leak, typical costs and when to replace, from a licensed & insured roofer. Free estimate: (636) 359-7204.';
+$pageTitle = 'Roof Leak Repair: Finding the Leak and When to Replace';
+$pageDescription = 'How to trace a roof leak to its source, what drives the repair cost, and when to replace instead of patch. A Missouri guide from A&S Contracting Services.';
 $canonicalUrl = $siteUrl . '/blog/roof-leak-repair-missouri/';
 $currentPage = 'blog';
 $ogImage = $siteUrl . '/assets/images/1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-960.webp';
@@ -20,8 +20,8 @@ $schema = <<<SCHEMA
   "@graph": [
     {
       "@type": "BlogPosting",
-      "headline": "Roof Leak Repair: Finding the Leak, Costs & When to Replace",
-      "description": "Roof leak repair explained by a licensed Missouri contractor: how to find where water is really getting in, what repairs cost, what insurance covers, and when replacement is the smarter fix.",
+      "headline": "Roof Leak Repair: Finding the Leak and When to Replace",
+      "description": "How to trace a roof leak to its source, which repair details decide the cost, how insurance treats leaks, and when replacing the roof is the better call, written for Missouri homeowners.",
       "image": "{$siteUrl}/assets/images/1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-960.webp",
       "author": {
         "@type": "Organization",
@@ -32,70 +32,55 @@ $schema = <<<SCHEMA
         "@id": "{$siteUrl}/#organization"
       },
       "datePublished": "2026-09-08",
-      "dateModified": "2026-09-08",
+      "dateModified": "2026-10-09",
       "mainEntityOfPage": "{$siteUrl}/blog/roof-leak-repair-missouri/",
       "url": "{$siteUrl}/blog/roof-leak-repair-missouri/",
-      "keywords": "roof leak repair, roof leak repair cost, find roof leak, leaking roof Missouri, roof repair Warrenton MO, does insurance cover roof leak"
+      "keywords": "roof leak repair, find a roof leak, leaking roof Missouri, roof repair Warrenton MO, does insurance cover a roof leak"
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "{$siteUrl}/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "{$siteUrl}/blog/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Roof Leak Repair",
-          "item": "{$siteUrl}/blog/roof-leak-repair-missouri/"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{$siteUrl}/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{$siteUrl}/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Roof Leak Repair", "item": "{$siteUrl}/blog/roof-leak-repair-missouri/" }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Why does my roof only leak sometimes?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Intermittent leaks usually track wind direction or ice. Wind-driven rain from one side pushes water under flashing or lifted shingles that shed water fine in a straight-down rain. Ice dams only leak during freeze-thaw cycles. Tell your roofer which storms produced the leak; it narrows the search."
+          {
+            "@type": "Question",
+            "name": "Why does my roof only leak sometimes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Intermittent leaks usually track wind direction or ice. Wind-driven rain from one side can push water under flashing or lifted shingles that shed water fine in a straight-down rain, and ice dams only leak during freeze-thaw cycles. Telling your roofer which storms produced the leak narrows the search."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I fix a roof leak myself?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Small jobs such as replacing a pipe boot are within reach for a confident DIYer on a low-pitched roof. Chimney flashing, valleys, and anything on a steep or two-story roof are best left to a contractor: the fall risk is real, and a wrong repair traps water instead of shedding it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long can a roof leak go untreated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not long. Wet decking and insulation keep absorbing water every time it rains, and wet materials can rot and grow mold. A leak caught early is usually a smaller repair than the same leak left through a season."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who handles the drywall and gutter work after the roof is fixed?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The same A&S crew. A&S Contracting Services self-performs roofing, drywall, and gutters with no subcontractors, so the roof, the ceiling below it, and the roof edge are handled by one accountable team."
+            }
           }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I fix a roof leak myself?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Small fixes like replacing a pipe boot are within reach for a confident DIYer on a low-pitched roof. Chimney flashing, valleys, and anything on a steep or two-story roof are best left to a contractor: the fall risk is real and a wrong repair traps water instead of shedding it."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long can a roof leak go untreated?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Not long. Wet decking starts to rot within weeks, and wet insulation loses its R-value and grows mold. A leak caught the first week is a small repair; the same leak after a full season often means new decking, insulation, and drywall."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does A&S repair roofs it did not install?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. We repair asphalt and metal roofs across Warrenton, Wright City, Troy, Wentzville, Washington, and the rest of our 50-mile service area, and every estimate is free and in writing."
-          }
-        }
-      ]
+        ]
     }
   ]
 }
@@ -106,6 +91,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
+<style>
+/* Post comparison table — tokens only */
+.post-table-wrap { overflow-x: auto; margin: 0 0 var(--space-6); }
+.post-table { width: 100%; min-width: 32rem; border-collapse: collapse; font-size: var(--font-size-sm); background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius); }
+.post-table caption { caption-side: top; text-align: left; font-family: var(--font-heading); font-weight: 700; padding: var(--space-3) var(--space-4); color: var(--color-primary); }
+.post-table th, .post-table td { padding: var(--space-3) var(--space-4); text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); line-height: 1.5; }
+.post-table thead th { background: var(--color-card-tint-neutral); font-family: var(--font-accent); text-transform: uppercase; }
+.post-table tbody th { font-weight: 700; color: var(--color-primary); }
+</style>
 <!-- Hero -->
 <section class="blog-post-hero">
   <div class="container">
@@ -117,7 +111,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <span>Roof Leak Repair</span>
     </nav>
     <span class="blog-post-category">Roofing</span>
-    <h1>Roof Leak Repair: Finding the Leak, Costs &amp; When to Replace</h1>
+    <h1>Roof Leak Repair: Finding the Leak, What Drives the Cost &amp; When to Replace</h1>
     <div class="blog-post-meta">
       <span class="blog-post-meta__item">
         <?php echo icon('calendar', 16); ?>
@@ -128,7 +122,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         9 min read
       </span>
     </div>
-    <p class="blog-post-excerpt">A ceiling stain rarely sits under the actual hole. Here is how roofers trace a leak to its source, what a repair typically costs in Missouri, and the point where patching stops making sense.</p>
+    <p class="blog-post-excerpt">A ceiling stain rarely sits under the actual hole. Here is how roofers trace a leak to its source, what decides the cost of the repair, and the point where patching stops making sense.</p>
   </div>
 </section>
 
@@ -138,107 +132,148 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <picture>
       <source type="image/avif" srcset="/assets/images/1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-480.avif 480w, /assets/images/1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-960.avif 960w" sizes="(max-width: 840px) 100vw, 800px">
       <source type="image/webp" srcset="/assets/images/1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-480.webp 480w, /assets/images/1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-960.webp 960w" sizes="(max-width: 840px) 100vw, 800px">
-      <img src="/assets/images/1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-960.webp" srcset="/assets/images/1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-480.webp 480w, /assets/images/1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-960.webp 960w" sizes="(max-width: 840px) 100vw, 800px" alt="Roofer removing old shingles and underlayment to repair a roof leak on a Missouri home" width="960" height="1280" loading="eager" fetchpriority="high" decoding="async">
+      <img src="/assets/images/1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-960.webp" srcset="/assets/images/1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-480.webp 480w, /assets/images/1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-960.webp 960w" sizes="(max-width: 840px) 100vw, 800px" alt="Roofer in a hi-visibility shirt pulling old shingles and underlayment off a section of roof" width="960" height="1280" loading="eager" fetchpriority="high" decoding="async">
     </picture>
   </figure>
 
   <div class="answer-block">
-<p><strong>Most roof leaks come from failed flashing, cracked pipe boots, or lifted shingles, not from the spot where the stain shows up inside.</strong> Water enters high on the roof, runs along the underlayment or rafters, and drips where it finally finds a gap. A typical single-point repair runs a few hundred dollars; widespread leaks on a roof past 20 years usually mean it is time to price a replacement.</p>
-<p>This guide walks through how a roofer actually traces a leak, what you can safely do before help arrives, what repairs cost across Warren County and the surrounding area, and the signs that a patch will only buy you a season.</p>
+<p><strong>Most roof leaks come from flashing, pipe boots, or lifted shingles, not from the spot where the stain shows up inside.</strong> Water enters high on the roof, runs along the underlayment or a rafter, and drips where it finally finds a gap.</p>
+<p>A&amp;S Contracting Services is a licensed, insured Missouri general contractor in Warrenton that repairs and replaces roofs across Warren County. This guide covers how a leak is traced, what you can safely do first, what moves the price of a repair, and the signs that a patch will only buy you a season.</p>
   </div>
 
-  <nav class="post-toc" aria-label="In this article">
+  <aside class="post-toc" aria-label="In this article">
     <strong>In this article</strong>
     <ol>
-      <li><a href="#where-leaks-start">Where roof leaks actually start</a></li>
-      <li><a href="#first-steps">What to do the day you spot a leak</a></li>
-      <li><a href="#how-roofers-find">How roofers find the source</a></li>
-      <li><a href="#repair-cost">What roof leak repair costs</a></li>
-      <li><a href="#insurance">Will homeowners insurance pay?</a></li>
-      <li><a href="#repair-or-replace">Repair or replace?</a></li>
+      <li><a href="#where-leaks-start">Where does a roof leak actually start?</a></li>
+      <li><a href="#first-steps">What should I do the day I spot a leak?</a></li>
+      <li><a href="#how-roofers-find">How do roofers find the source of a leak?</a></li>
+      <li><a href="#repair-cost">What decides how much a roof leak repair costs?</a></li>
+      <li><a href="#insurance">Will homeowners insurance pay for a roof leak?</a></li>
+      <li><a href="#repair-or-replace">Should I repair or replace a leaking roof?</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
     </ol>
-  </nav>
+  </aside>
 
-<h2 id="where-leaks-start">Where roof leaks actually start</h2>
-<p>After enough service calls, the same handful of failure points account for nearly every residential leak:</p>
+<h2 id="where-leaks-start">Where does a roof leak actually start?</h2>
+<p>Most roof leaks start at a penetration or an edge: pipe boots, chimney or wall flashing, valleys, and shingles that wind has lifted. Water enters high on the roof, travels along the underlayment or a rafter, and drips where it finds a gap, so the interior stain is often several feet from the real entry point.</p>
 <ul>
-  <li><strong>Pipe boots.</strong> The rubber collar around plumbing vents dries out and splits after 8 to 12 years of Missouri sun. This is the single most common leak on asphalt roofs, and one of the cheapest to fix.</li>
-  <li><strong>Flashing.</strong> Metal at chimneys, sidewalls, and skylights depends on sealant and correct step-flashing. Sealant fails; flashing that was never woven into the shingles fails faster.</li>
-  <li><strong>Valleys.</strong> Two roof planes meet and concentrate water. Debris, ice, or a shingle cut too short lets water ride under the surface.</li>
-  <li><strong>Wind-lifted or missing shingles.</strong> Straight-line winds that come through Warren and St. Charles counties every spring break the seal strip; the shingle still looks attached but no longer sheds water.</li>
-  <li><strong>Nail pops and exposed fasteners.</strong> A nail that backs out lifts the shingle above it and leaves a hole in the one below.</li>
-  <li><strong>Ice dams.</strong> In a cold snap, snow melts over the warm attic and refreezes at the eave. Water backs up under the shingles. Poor attic ventilation and insulation are the root cause, not the roofing.</li>
+  <li><strong>Pipe boots.</strong> The rubber collar around a plumbing vent dries out and splits in sun and weather. It is the most common leak on an asphalt roof and usually one of the smaller repairs.</li>
+  <li><strong>Flashing.</strong> Metal at chimneys, sidewalls, and skylights depends on sealant and on being woven into the shingles. Sealant fails; flashing that was never woven in fails sooner.</li>
+  <li><strong>Valleys.</strong> Two roof planes meet and concentrate water. Debris, ice, or a shingle cut too short lets water run under the surface.</li>
+  <li><strong>Wind-lifted or missing shingles.</strong> Spring wind can break the seal strip. The shingle still looks attached but no longer sheds water.</li>
+  <li><strong>Exposed or backed-out nails.</strong> A nail that pops lifts the shingle above it and leaves a hole in the one below.</li>
+  <li><strong>Ice dams.</strong> In a cold snap, snow melts over the warm attic and refreezes at the eave, and water backs up under the shingles. The root cause is heat escaping into the attic, which our <a href="/blog/roof-ventilation-in-missouri-ridge-vents-soffit-intake-attic-heat/">attic ventilation guide</a> explains.</li>
 </ul>
-<p>Notice what is not on the list: a shingle roof rarely leaks through the middle of a healthy field of shingles. If water is showing up far from any penetration or edge, suspect a nail pop or hail bruising (see our guide to <a href="/blog/hail-damage-roof-insurance-claim-missouri/">hail damage and insurance claims</a>).</p>
-
-<h2 id="first-steps">What to do the day you spot a leak</h2>
-<p>Water damage compounds by the hour, so the first moves are about containment, not diagnosis.</p>
-<ol>
-  <li><strong>Catch the water.</strong> A bucket under the drip, and a towel or plastic over furniture and flooring.</li>
-  <li><strong>Relieve a bulging ceiling.</strong> If drywall is sagging with trapped water, poke a small hole at the low point with a screwdriver and let it drain into a bucket. A controlled hole beats a collapsed ceiling.</li>
-  <li><strong>Go to the attic with a flashlight.</strong> Look for wet insulation, dark streaks on rafters, or daylight. Follow the water trail uphill; the entry point is usually above and upslope of the drip.</li>
-  <li><strong>Photograph everything.</strong> Stains, wet insulation, the date and weather. If this becomes an insurance claim, the timeline matters.</li>
-  <li><strong>Stay off a wet roof.</strong> A tarp is reasonable if the roof is dry and low-pitched and you are comfortable up there; otherwise wait. Most roofing injuries happen on quick "just a look" trips.</li>
-</ol>
-
-<h2 id="how-roofers-find">How roofers find the source</h2>
-<p>A good leak inspection is methodical. It starts inside the attic, where the entry point is usually visible as a stain or a wet spot on the underside of the decking. From there the roofer walks the roof above that spot and checks every penetration, edge, and transition within about ten feet upslope. On a stubborn leak, a hose test isolates the section: one person runs water on a single area at a time while another watches inside.</p>
-<p>What separates a repair that holds from one that fails by next spring is scope. Sealant smeared over a cracked pipe boot looks fixed for a month. Replacing the boot, re-laying the shingles around it, and checking the neighboring boots is a real repair. That is the difference you should expect to see on a written estimate from any <a href="/services/roofing/">roofing contractor</a>.</p>
-
-<h2 id="repair-cost">What roof leak repair costs</h2>
-<p>Costs vary with access, pitch, and how much roofing has to come up to reach the problem. Typical ranges homeowners in our area see:</p>
-<ul>
-  <li><strong>Pipe boot or single flashing repair:</strong> roughly $200 to $500.</li>
-  <li><strong>Small shingle section (wind damage, a few square feet):</strong> $300 to $900.</li>
-  <li><strong>Chimney re-flashing:</strong> $500 to $1,500 depending on chimney size and whether the counter-flashing is cut into the mortar.</li>
-  <li><strong>Valley rebuild:</strong> $600 to $2,000.</li>
-  <li><strong>Decking replacement where wood has rotted:</strong> add $75 to $150 per sheet plus the roofing over it.</li>
-</ul>
-<p>Two things move the number more than anything else. A steep or multi-story roof adds staging and time. And a leak that has been ignored for a season often means rotten decking, wet insulation, and <a href="/blog/drywall-water-damage-repair-or-replace-a-missouri-guide/">water-damaged drywall</a>, which turns a $400 boot replacement into a $1,500 job. If you want to compare a repair against a full tear-off, our <a href="/blog/roof-replacement-cost-guide-missouri/">Missouri roof replacement cost guide</a> lays out the per-square numbers.</p>
-
-<h2 id="insurance">Will homeowners insurance pay?</h2>
-<p>It depends on the cause. Standard Missouri policies cover sudden, accidental damage: wind tearing shingles off, hail, a tree limb through the decking. They generally exclude wear and tear, meaning a leak from a 25-year-old pipe boot or deteriorated flashing is on you. Interior damage from a covered event is usually covered as well, subject to your deductible.</p>
-<p>Because the line between "storm damage" and "old roof" is where most claim disputes live, documentation is everything. A&S Contracting Services documents storm and hail damage with dated photos and a written scope so your adjuster has a clear record. We cannot negotiate with your insurer on your behalf, but we can make sure nothing on the roof gets missed.</p>
-
-<h2 id="repair-or-replace">Repair or replace?</h2>
-<p>Repair makes sense when the roof is under about 15 years old, the leak has one identifiable cause, and the surrounding shingles are still flexible with good granule coverage. Replacement is usually the better spend when:</p>
-<ul>
-  <li>The roof is past 20 years, or past about 70 percent of its rated life.</li>
-  <li>You are on your second or third repair in a few years, in different places.</li>
-  <li>Shingles are curling, cracking, or shedding granules into the gutters across the whole roof.</li>
-  <li>The decking is soft in more than one area.</li>
-  <li>There is already a second layer of shingles. Missouri codes typically allow one overlay, and there is nowhere left to go.</li>
-</ul>
-<p>A rule of thumb we use: when repair costs pass about 30 percent of a replacement quote, or the roof will need replacement within three years anyway, put the money toward the new roof. You get a warranty, a clean deck inspection, and one accountable crew instead of a string of patches.</p>
+<p>Notice what is missing from the list: the middle of a healthy field of shingles rarely leaks. If water shows up far from any penetration or edge, suspect a nail pop or hail bruising, which the <a href="/blog/hail-damage-roof-insurance-claim-missouri/">hail damage and insurance claim guide</a> covers.</p>
 
   <section class="cta-band post-cta" id="estimate">
     <div class="post-cta-grid">
       <div>
         <h3>Have a leak right now?</h3>
-        <p>Send us the address and a photo of the stain. A&amp;S Contracting Services schedules leak inspections within days across Warren County and central Missouri, and every estimate is free and written.</p>
-        <a href="tel:<?php echo $phoneTel; ?>" class="btn btn-primary">Call <?php echo $phone; ?></a>
+        <p>Send the address and a photo of the stain. A&amp;S Contracting Services schedules estimates within days of first contact, and the on-site visit and written estimate are free.</p>
+        <a href="tel:<?php echo $phoneTel; ?>" class="btn btn-primary" style="color: var(--color-secondary);">Call <?php echo $phone; ?></a>
       </div>
-      <?php $heroFormTitle = 'Get a free estimate'; $heroFormId = 'post'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
+      <aside class="hero-form-card" aria-label="Request an estimate">
+        <h2>Request a written estimate</h2>
+        <p class="hero-form-tagline">On-site visit and written estimate at no charge. No obligation.</p>
+        <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
+          <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
+          <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <?php echo p1_attribution_fields('cta-band'); ?>
+          <input type="hidden" name="consent_version" value="v2.1">
+          <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+          <div class="form-row"><label class="sr-only" for="cta-band-name">Name</label><input id="cta-band-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
+          <div class="form-row"><label class="sr-only" for="cta-band-phone">Phone</label><input id="cta-band-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>
+          <div class="form-row"><label class="sr-only" for="cta-band-service">Service</label>
+            <select id="cta-band-service" name="service">
+              <option value="">What do you need?</option>
+              <?php foreach ($services as $heroSvc): ?>
+              <option value="<?php echo htmlspecialchars($heroSvc['name']); ?>"><?php echo htmlspecialchars($heroSvc['name']); ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          <label class="consent"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/terms/" target="_blank" rel="noopener">Terms</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted. *</span></label>
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
+        </form>
+      </aside>
     </div>
   </section>
+
+
+<h2 id="first-steps">What should I do the day I spot a leak?</h2>
+<p>Contain the water first and diagnose the leak second. Put a bucket under the drip, cover furniture and flooring, photograph the stain with the date visible, and check the attic for wet insulation. Stay off a wet roof. Damage compounds every time it rains, and the photos matter if the cause is storm damage.</p>
+<ol>
+  <li><strong>Catch the water.</strong> A bucket under the drip and plastic or towels over anything that can stain.</li>
+  <li><strong>Relieve a bulging ceiling.</strong> If drywall is sagging with trapped water, a small hole at the low point lets it drain into a bucket. A controlled hole is better than a collapsed ceiling.</li>
+  <li><strong>Look in the attic with a flashlight.</strong> Check for wet insulation, dark streaks on rafters, or daylight. Follow the water trail uphill; the entry point is usually above and upslope of the drip.</li>
+  <li><strong>Photograph everything.</strong> Stains, wet insulation, the date, and the weather that preceded it.</li>
+  <li><strong>Leave the roof alone.</strong> Wet shingles are slick, and a quick look is how most roofing falls happen.</li>
+</ol>
+
+<h2 id="how-roofers-find">How do roofers find the source of a leak?</h2>
+<p>Roofers trace a leak from the inside out. They start in the attic, where the entry point often shows as a stain or wet spot on the underside of the decking, then inspect every penetration, edge, and transition upslope of that spot. A hose test isolates a stubborn leak one small area at a time.</p>
+<p>What separates a repair that holds from one that fails by next spring is scope. Sealant smeared over a cracked pipe boot looks fixed for a month. Replacing the boot, re-laying the shingles around it, and checking the neighboring boots is a real repair. That difference should be visible on the written estimate from any <a href="/services/roofing/">roofing contractor</a>.</p>
+<p>At an A&amp;S estimate visit, the leak area is inspected on site and the scope is written down item by item, so the repair you are quoted is the repair that gets done. The quoted price is the final price.</p>
+
+<h2 id="repair-cost">What decides how much a roof leak repair costs?</h2>
+<p>A roof leak repair is priced by access, pitch, and how much roofing has to come up to reach the problem. A small fix at one pipe boot is a different job from a rebuilt valley or rotted decking. A&amp;S Contracting Services prices each repair from an on-site visit and a written, itemized estimate.</p>
+<ul>
+  <li><strong>The type of repair.</strong> A boot or single flashing replacement, a patch of shingles, a chimney re-flash, and a valley rebuild each carry different labor and materials.</li>
+  <li><strong>Roof pitch and height.</strong> A steep or multi-story roof adds staging and time.</li>
+  <li><strong>The condition under the shingles.</strong> If the decking is soft, it has to be cut out and replaced before new roofing goes back on.</li>
+  <li><strong>How long water has been getting in.</strong> A leak ignored for a season often means wet insulation and <a href="/blog/drywall-water-damage-repair-or-replace-a-missouri-guide/">water-damaged drywall</a> as well as roofing.</li>
+  <li><strong>Matching existing shingles.</strong> An older roof may not offer a perfect color match, which affects how a patch is handled.</li>
+</ul>
+<p>If you are weighing a repair against a tear-off, the <a href="/blog/roof-replacement-cost-guide-missouri/">roof replacement cost guide</a> explains what goes into a full replacement price.</p>
+
+<h2 id="insurance">Will homeowners insurance pay for a roof leak?</h2>
+<p>It depends on the cause of the leak and on your policy. Policies generally cover sudden damage such as wind, hail, or a fallen limb, and generally exclude wear and tear. Interior damage that follows a covered event may be covered too. Read your policy or ask your agent before you assume either way.</p>
+<p>The line between storm damage and an aging roof is where most claim disputes begin, so documentation matters. For storm and hail damage, A&amp;S Contracting Services documents the roof with photos, writes a detailed itemized estimate, meets the insurance adjuster on site, and helps the homeowner through the claim.</p>
+
+<h2 id="repair-or-replace">Should I repair or replace a leaking roof?</h2>
+<p>Repair makes sense when the leak has one identifiable cause and the surrounding shingles are still flexible and well covered with granules. Replacement makes sense when leaks keep returning in different places, the shingles are failing across the roof, or the decking is soft in more than one spot.</p>
+<div class="post-table-wrap">
+<table class="post-table">
+  <caption>Repair or replace: what each situation usually points to</caption>
+  <thead>
+    <tr><th scope="col">What you find</th><th scope="col">Repair usually fits when</th><th scope="col">Replacement usually fits when</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">Cause of the leak</th><td>One clear source, such as a boot or a flashing joint</td><td>Several sources, or no single cause</td></tr>
+    <tr><th scope="row">Shingle condition</th><td>Flexible, with good granule coverage</td><td>Curling, cracking, or shedding granules into the gutters</td></tr>
+    <tr><th scope="row">Decking</th><td>Firm everywhere except the repair area</td><td>Soft or stained in more than one area</td></tr>
+    <tr><th scope="row">Repair history</th><td>First leak, or a repair that has held</td><td>A second or third repair in different places</td></tr>
+    <tr><th scope="row">Layers</th><td>A single layer of shingles</td><td>A second layer already on the roof</td></tr>
+  </tbody>
+</table>
+</div>
+<p>When repair bills start to approach a share of what a new roof would cost, or the roof is near the end of its service life anyway, putting that money toward replacement often makes more sense. Most single-family roof replacements by A&amp;S take one to three days, weather permitting, and each one ends with a final walkthrough.</p>
+<p>Whether the roof is repaired or replaced, a leak that has reached the ceiling leaves interior work behind. A&amp;S also does <a href="/services/dry-wall/">drywall repair</a> and, at the roof edge, <a href="/services/gutters/">gutter work</a>, so the leak is fixed once. For more homeowner guides, see the <a href="/blog/">A&amp;S blog</a>.</p>
 
   <h2 id="faq">Frequently asked questions</h2>
   <div class="post-faq">
     <details class="faq">
       <summary>Why does my roof only leak sometimes?</summary>
-      <p>Intermittent leaks usually track wind direction or ice. Wind-driven rain from one side pushes water under flashing or lifted shingles that shed water fine in a straight-down rain. Ice dams only leak during freeze-thaw cycles. Tell your roofer which storms produced the leak; it narrows the search.</p>
+      <p>Intermittent leaks usually track wind direction or ice. Wind-driven rain from one side can push water under flashing or lifted shingles that shed water fine in a straight-down rain, and ice dams only leak during freeze-thaw cycles. Telling your roofer which storms produced the leak narrows the search.</p>
     </details>
     <details class="faq">
       <summary>Can I fix a roof leak myself?</summary>
-      <p>Small fixes like replacing a pipe boot are within reach for a confident DIYer on a low-pitched roof. Chimney flashing, valleys, and anything on a steep or two-story roof are best left to a contractor: the fall risk is real and a wrong repair traps water instead of shedding it.</p>
+      <p>Small jobs such as replacing a pipe boot are within reach for a confident DIYer on a low-pitched roof. Chimney flashing, valleys, and anything on a steep or two-story roof are best left to a contractor: the fall risk is real, and a wrong repair traps water instead of shedding it.</p>
     </details>
     <details class="faq">
       <summary>How long can a roof leak go untreated?</summary>
-      <p>Not long. Wet decking starts to rot within weeks, and wet insulation loses its R-value and grows mold. A leak caught the first week is a small repair; the same leak after a full season often means new decking, insulation, and drywall.</p>
+      <p>Not long. Wet decking and insulation keep absorbing water every time it rains, and wet materials can rot and grow mold. A leak caught early is usually a smaller repair than the same leak left through a season.</p>
     </details>
     <details class="faq">
-      <summary>Does A&amp;S repair roofs it did not install?</summary>
-      <p>Yes. We repair asphalt and metal roofs across Warrenton, Wright City, Troy, Wentzville, Washington, and the rest of our 50-mile service area, and every estimate is free and in writing.</p>
+      <summary>Who handles the drywall and gutter work after the roof is fixed?</summary>
+      <p>The same A&amp;S crew. A&amp;S Contracting Services self-performs roofing, drywall, and gutters with no subcontractors, so the roof, the ceiling below it, and the roof edge are handled by one accountable team.</p>
     </details>
   </div>
 

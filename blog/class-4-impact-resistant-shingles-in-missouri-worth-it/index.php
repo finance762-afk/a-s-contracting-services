@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
 $pageTitle = 'Class 4 Impact Resistant Shingles Missouri: Worth It?';
-$pageDescription = 'Are Class 4 impact-resistant shingles worth it in Warrenton, MO? Hail, insurance savings & cost from a licensed & insured roofer. Free estimate: (636) 359-7204.';
+$pageDescription = 'Are Class 4 impact-resistant shingles worth it in Missouri? How the UL 2218 rating works, how they differ from standard shingles, and what to ask your insurer.';
 $canonicalUrl = $siteUrl . '/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/';
 $currentPage = 'blog';
 $ogImage = $siteUrl . '/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.webp';
@@ -21,7 +21,7 @@ $schema = <<<SCHEMA
     {
       "@type": "BlogPosting",
       "headline": "Class 4 Impact Resistant Shingles Missouri: Worth It?",
-      "description": "Class 4 impact-resistant shingles can cut your Missouri homeowners insurance premium 10–35% and survive hail strikes that total a standard roof. Here is how the UL 2218 rating works, what they cost, and when the upfront spend pays off.",
+      "description": "How the UL 2218 impact rating works, how Class 4 impact-resistant shingles differ from standard architectural shingles, what shapes the price, and what to ask your insurer about discounts before replacing a roof in Missouri.",
       "image": "{$siteUrl}/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.webp",
       "author": {
         "@type": "Organization",
@@ -32,78 +32,55 @@ $schema = <<<SCHEMA
         "@id": "{$siteUrl}/#organization"
       },
       "datePublished": "2026-09-10",
-      "dateModified": "2026-09-10",
+      "dateModified": "2026-10-09",
       "mainEntityOfPage": "{$siteUrl}/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/",
       "url": "{$siteUrl}/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/",
-      "keywords": "impact resistant shingles Missouri, Class 4 shingles, hail resistant roofing, impact rated shingles Missouri, Class 4 roofing Missouri, impact resistant roof insurance discount"
+      "keywords": "impact resistant shingles Missouri, Class 4 shingles, hail resistant roofing, UL 2218 Class 4, Class 4 roofing Missouri, impact resistant roof insurance discount"
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "{$siteUrl}/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "{$siteUrl}/blog/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Class 4 Impact Resistant Shingles",
-          "item": "{$siteUrl}/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{$siteUrl}/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{$siteUrl}/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Class 4 Impact Resistant Shingles", "item": "{$siteUrl}/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/" }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How much do impact-resistant shingles add to a roof replacement?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Class 4 shingles typically add 10–20% to the material portion of a roof replacement compared to standard architectural shingles. Because labor is the larger share of a tear-off and re-roof, the total installed cost increase is usually closer to 8–15% on a typical Warren County home. The insurance discount often recovers the premium within 5 to 10 years."
+          {
+            "@type": "Question",
+            "name": "Do Class 4 shingles look different from regular shingles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Generally no. Impact-resistant shingles are offered in profiles and colors that resemble standard architectural shingles. The impact rating comes from the construction under the granules, not from a different look at the curb."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are Class 4 shingles hail-proof?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. They are hail-resistant. A Class 4 shingle passes a laboratory test in which a two-inch steel ball is dropped from 20 feet, but very large hail can still damage any roof."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to tell my insurance company before installing impact-resistant shingles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ask your agent first. Some carriers want notice before installation and paperwork afterward, such as the spec sheet or an invoice naming the product, while others handle it differently. Get the requirements in writing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does A&S install impact-resistant shingles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Impact-resistant shingles are among the roofing options A&S Contracting Services offers, alongside architectural asphalt shingles and metal roofing. Ask for them to be priced on the same written estimate as standard shingles."
+            }
           }
-        },
-        {
-          "@type": "Question",
-          "name": "Will my insurance company really give me a discount?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Most Missouri insurers offer a discount for Class 4 roofing, but the amount varies by carrier. Discounts range from about 10% to 35% off the dwelling or total premium. The discount is not automatic—call your agent before the roof goes on, confirm the percentage, and send a copy of the shingle spec sheet or invoice showing UL 2218 Class 4 certification once the job is complete."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do Class 4 shingles look different from regular shingles?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Class 4 impact-resistant shingles are available in the same color palettes and profiles as standard architectural shingles. The impact rating comes from a reinforced mat or polymer-modified asphalt underneath the surface granules, not a different look from the curb."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are Class 4 shingles hail-proof?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Not hail-proof, but hail-resistant. A Class 4 shingle survives repeated two-inch steel ball strikes without cracking or tearing in the UL 2218 test. That translates to surviving most Missouri hail storms with minimal or no damage. Baseball-sized hail or larger can still cause failure, but the threshold is far higher than a standard Class 3 shingle."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does A&S install Class 4 impact-resistant shingles?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. A&S Contracting Services installs Class 4 shingles across Warren County and surrounding areas whenever a homeowner wants the insurance discount, plans to stay in the house long-term, or lives in a neighborhood that sees frequent hail. We provide the manufacturer spec sheet and UL 2218 certification with every installation so your insurer can process the discount."
-          }
-        }
-      ]
+        ]
     }
   ]
 }
@@ -114,6 +91,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
+<style>
+/* Post comparison table — tokens only */
+.post-table-wrap { overflow-x: auto; margin: 0 0 var(--space-6); }
+.post-table { width: 100%; min-width: 32rem; border-collapse: collapse; font-size: var(--font-size-sm); background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius); }
+.post-table caption { caption-side: top; text-align: left; font-family: var(--font-heading); font-weight: 700; padding: var(--space-3) var(--space-4); color: var(--color-primary); }
+.post-table th, .post-table td { padding: var(--space-3) var(--space-4); text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); line-height: 1.5; }
+.post-table thead th { background: var(--color-card-tint-neutral); font-family: var(--font-accent); text-transform: uppercase; }
+.post-table tbody th { font-weight: 700; color: var(--color-primary); }
+</style>
 <!-- Hero -->
 <section class="blog-post-hero">
   <div class="container">
@@ -125,7 +111,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <span>Class 4 Impact Resistant Shingles</span>
     </nav>
     <span class="blog-post-category">Roofing</span>
-    <h1>Class 4 Impact Resistant Shingles Missouri: Worth It?</h1>
+    <h1>Class 4 Impact Resistant Shingles in Missouri: Are They Worth It?</h1>
     <div class="blog-post-meta">
       <span class="blog-post-meta__item">
         <?php echo icon('calendar', 16); ?>
@@ -136,7 +122,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         8 min read
       </span>
     </div>
-    <p class="blog-post-excerpt">Class 4 impact-resistant shingles can cut your Missouri homeowners insurance premium 10–35% and survive hail strikes that total a standard roof. Here is how the UL 2218 rating works, what they cost, and when the upfront spend pays off.</p>
+    <p class="blog-post-excerpt">Class 4 is the highest impact rating under UL 2218. Here is how the rating is tested, how these shingles differ from standard ones, what shapes the price, and what to ask your insurer before you decide.</p>
   </div>
 </section>
 
@@ -146,103 +132,141 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <picture>
       <source type="image/avif" srcset="/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-480.avif 480w, /assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.avif 960w" sizes="(max-width: 840px) 100vw, 800px">
       <source type="image/webp" srcset="/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-480.webp 480w, /assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.webp 960w" sizes="(max-width: 840px) 100vw, 800px">
-      <img src="/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.webp" srcset="/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-480.webp 480w, /assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.webp 960w" sizes="(max-width: 840px) 100vw, 800px" alt="Newly installed asphalt shingle roof on a Missouri home after hail damage replacement" width="960" height="1280" loading="eager" fetchpriority="high" decoding="async">
+      <img src="/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.webp" srcset="/assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-480.webp 480w, /assets/images/1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB-960.webp 960w" sizes="(max-width: 840px) 100vw, 800px" alt="Asphalt shingle roof slope with a plumbing vent pipe, photographed from above on a wooded lot" width="960" height="1280" loading="eager" fetchpriority="high" decoding="async">
     </picture>
   </figure>
 
   <div class="answer-block">
-<p><strong>Class 4 impact-resistant shingles are worth the upfront premium in Missouri if you plan to stay in your home at least 5 to 10 years and your insurer offers a meaningful discount.</strong> Warren County and much of central Missouri sit in a hail belt that produces damaging storms most years. A Class 4 roof can survive repeated two-inch hail strikes that would total a standard roof, and the insurance discount—typically 10 to 35 percent off your annual premium—often recovers the material upgrade cost within a decade.</p>
-<p>This guide explains how the UL 2218 impact rating system works, what separates Class 4 from standard shingles, how to qualify for the insurance discount, and the situations where the investment makes the most sense.</p>
+<p><strong>Class 4 impact-resistant shingles are worth pricing whenever you are replacing a roof in Missouri, and they pay off most if you plan to stay put and your insurer rewards the rating.</strong> Spring hail is a regular part of Missouri weather, and the Class 4 rating is the highest a shingle can earn on the UL 2218 impact test.</p>
+<p>This guide explains how that rating works, what separates these shingles from standard architectural shingles, what moves the price, and the questions to settle with your insurance agent before the old roof comes off. A&amp;S Contracting Services lists impact-resistant shingles among its roofing options in Warrenton and the surrounding Warren County area.</p>
   </div>
 
-  <nav class="post-toc" aria-label="In this article">
+  <aside class="post-toc" aria-label="In this article">
     <strong>In this article</strong>
     <ol>
-      <li><a href="#what-is-class-4">What Class 4 actually means</a></li>
-      <li><a href="#how-tested">How impact resistance is tested</a></li>
-      <li><a href="#class-4-vs-standard">Class 4 vs standard shingles</a></li>
-      <li><a href="#cost-premium">What the upgrade costs</a></li>
-      <li><a href="#insurance-discount">The insurance discount</a></li>
-      <li><a href="#when-worth-it">When Class 4 shingles pay off</a></li>
+      <li><a href="#what-is-class-4">What does Class 4 impact resistance actually mean?</a></li>
+      <li><a href="#how-tested">How is impact resistance tested?</a></li>
+      <li><a href="#class-4-vs-standard">How do Class 4 shingles differ from standard shingles?</a></li>
+      <li><a href="#cost-premium">What decides the cost of Class 4 shingles?</a></li>
+      <li><a href="#insurance-discount">Will my insurance company give a discount for Class 4 shingles?</a></li>
+      <li><a href="#when-worth-it">When do Class 4 shingles make sense?</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
     </ol>
-  </nav>
+  </aside>
 
-<h2 id="what-is-class-4">What Class 4 actually means</h2>
-<p>Class 4 is the highest rating in the UL 2218 impact resistance test, a standard published by Underwriters Laboratories that measures how well roofing materials withstand simulated hail strikes. Shingles, metal panels, tile, and other products can earn a UL 2218 rating; asphalt shingles are the most common application.</p>
-<p>The classification runs from Class 1 (lowest) to Class 4 (highest). Most standard three-tab and architectural asphalt shingles fall into Class 3. A Class 4 shingle is engineered with a reinforced mat or polymer-modified asphalt that absorbs impact energy without cracking or tearing.</p>
-<p>The rating is based on lab performance, not a warranty against hail damage. A Class 4 roof can still sustain damage from extreme hail events—golf-ball or baseball-sized stones—but the threshold where failure occurs is substantially higher than a standard roof.</p>
-
-<h2 id="how-tested">How impact resistance is tested</h2>
-<p>The UL 2218 test drops a two-inch steel ball from increasing heights onto sample shingles mounted on a deck. Each class corresponds to a drop height that the shingle must survive without cracking on the top surface or tearing on the underside:</p>
-<ul>
-  <li><strong>Class 1:</strong> 12 feet (approximately nickel-sized hail)</li>
-  <li><strong>Class 2:</strong> 15 feet (approximately quarter-sized hail)</li>
-  <li><strong>Class 3:</strong> 17 feet (approximately walnut-sized hail)</li>
-  <li><strong>Class 4:</strong> 20 feet (approximately two-inch or golf-ball-sized hail)</li>
-</ul>
-<p>The shingle is struck twice in the same spot. If the surface does not crack and the mat does not tear, it passes. A Class 4 shingle passes the 20-foot drop test. Warren County regularly sees severe storms with hail in the one- to two-inch range, the threshold where standard shingles start to fail and Class 4 products hold up.</p>
-
-<h2 id="class-4-vs-standard">Class 4 vs standard shingles</h2>
-<p>Standard architectural shingles rely on a fiberglass mat saturated with asphalt and covered with ceramic granules. A Class 4 shingle uses one or more of the following enhancements:</p>
-<ul>
-  <li><strong>Polymer-modified asphalt (SBS or similar):</strong> A rubber-like modifier that gives the mat flexibility and impact absorption. The shingle bends slightly on impact instead of cracking.</li>
-  <li><strong>Reinforced mat:</strong> A thicker or woven fiberglass core that resists tearing under point loads.</li>
-  <li><strong>Impact-resistant backing layer:</strong> Some products add a rubberized layer underneath the shingle to cushion the deck.</li>
-</ul>
-<p>From the curb, a Class 4 shingle looks identical to a standard architectural shingle. The difference is invisible from the ground and only apparent in lab testing or after a hail event. Major manufacturers—CertainTeed, GAF, Owens Corning, and others—all offer UL 2218 Class 4 lines that match their standard shingle profiles and color palettes.</p>
-
-<h2 id="cost-premium">What the upgrade costs</h2>
-<p>Class 4 shingles typically add 10 to 20 percent to the material cost compared to standard architectural shingles of similar style and warranty length. Because material is only part of the total installed price—tear-off, decking repair, underlayment, flashing, labor, and disposal make up the rest—the total installed cost increase on a typical Warren County roof replacement is usually closer to 8 to 15 percent.</p>
-<p>The actual number depends on roof size, pitch, and whether you are overlaying or tearing off. A roofer quoting from a free on-site measurement will price the standard and Class 4 options side by side so you can weigh the premium against the projected insurance savings. Our <a href="/blog/roof-replacement-cost-guide-missouri/">Missouri roof replacement cost guide</a> breaks down the per-square drivers across material tiers.</p>
-
-<h2 id="insurance-discount">The insurance discount</h2>
-<p>Most Missouri homeowners insurers offer a discount for Class 4 roofing. The discount amount varies by carrier and sometimes by county, but typical ranges run from about 10 percent to 35 percent off the dwelling coverage or total premium. A few insurers in high-hail areas will not write new policies on homes with standard roofs at all—they require Class 4 for binding coverage.</p>
-<p>The discount is not automatic. You need to notify your agent or underwriter <em>before</em> the roof is installed, confirm the discount percentage in writing, and submit proof of the Class 4 rating after installation. Proof typically means a copy of the shingle manufacturer's spec sheet showing UL 2218 Class 4 certification, or an invoice line item calling out the product by name.</p>
-<p>Because the discount compounds every year you own the home, even a modest percentage can recover the material premium within five to ten years. If you stay in the house past that break-even point, the discount is pure savings. And because a Class 4 roof reduces the likelihood of a hail claim, some insurers are more willing to renew policies or offer better rates on homes with impact-resistant roofing.</p>
-
-<h2 id="when-worth-it">When Class 4 shingles pay off</h2>
-<p>Class 4 impact-resistant shingles make the most financial sense when several factors align:</p>
-<ul>
-  <li><strong>You plan to stay in the home at least 5 to 10 years.</strong> The payback period depends on the insurance discount and the cost premium; if you sell before the discount recovers the upgrade, the next owner gets the benefit.</li>
-  <li><strong>Your insurer offers a meaningful discount.</strong> A 5 percent discount on a low-premium policy takes decades to pay off; a 25 percent discount on a policy that already runs high recovers the cost quickly. Ask your agent for the exact percentage before committing.</li>
-  <li><strong>Your area sees frequent hail.</strong> Warren County, St. Charles County, and much of central Missouri see damaging hail storms most years. If your roof has already been replaced once from hail, the odds of a second event within the next 15 to 20 years are high enough that the impact rating becomes real protection, not just a discount.</li>
-  <li><strong>You want to avoid another hail claim.</strong> Filing a second or third hail claim can lead to non-renewal or steep rate increases. A Class 4 roof reduces the chance that a future storm produces enough damage to justify a claim, which keeps your claims history cleaner.</li>
-  <li><strong>You are replacing the roof anyway.</strong> The cost difference is smallest during a planned tear-off and replacement, when you are already paying for labor, decking inspection, and disposal. Retrofitting an existing roof just for the impact rating rarely pencils out.</li>
-</ul>
-<p>If your roof is nearing the end of its life and you live in a hail-prone area, the upgrade is worth pricing. A&S Contracting Services includes both standard and Class 4 options on every <a href="/services/roofing/">roofing estimate</a> so you can see the real numbers and decide based on your timeline and insurer's discount.</p>
+<h2 id="what-is-class-4">What does Class 4 impact resistance actually mean?</h2>
+<p>Class 4 is the highest rating in the UL 2218 impact resistance test, a standard from Underwriters Laboratories that measures how roofing materials withstand simulated hail. The classes run from Class 1 to Class 4, and a Class 4 product shows no cracking in the test at the most severe level.</p>
+<p>Shingles, metal panels, tile, and other products can earn a UL 2218 rating. The rating comes from laboratory testing, so it is not a promise that a roof will survive every storm. Very large hail can still damage a Class 4 roof; the rating means the roof tolerates considerably harder strikes than an unrated or lower-rated one. It also covers only the roof: hail that strikes a house can dent <a href="/services/gutters/">gutters</a> and mark <a href="/services/siding/">siding</a>, which are repaired separately.</p>
 
   <section class="cta-band post-cta" id="estimate">
     <div class="post-cta-grid">
       <div>
-        <h3>Pricing a new roof with Class 4 shingles?</h3>
-        <p>A&amp;S Contracting Services quotes standard and impact-resistant shingle options side by side on every roof replacement in Warren County and surrounding areas. Every estimate is free, written, and includes the manufacturer spec sheet you need for your insurer.</p>
-        <a href="tel:<?php echo $phoneTel; ?>" class="btn btn-primary">Call <?php echo $phone; ?></a>
+        <h3>Pricing a new roof with impact-resistant shingles?</h3>
+        <p>Ask A&amp;S Contracting Services to price standard and impact-resistant shingles on the same written estimate. The on-site visit and the estimate are free.</p>
+        <a href="tel:<?php echo $phoneTel; ?>" class="btn btn-primary" style="color: var(--color-secondary);">Call <?php echo $phone; ?></a>
       </div>
-      <?php $heroFormTitle = 'Get a free estimate'; $heroFormId = 'post'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
+      <aside class="hero-form-card" aria-label="Request an estimate">
+        <h2>Request a written estimate</h2>
+        <p class="hero-form-tagline">On-site visit and written estimate at no charge. No obligation.</p>
+        <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
+          <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
+          <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <?php echo p1_attribution_fields('cta-band'); ?>
+          <input type="hidden" name="consent_version" value="v2.1">
+          <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+          <div class="form-row"><label class="sr-only" for="cta-band-name">Name</label><input id="cta-band-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
+          <div class="form-row"><label class="sr-only" for="cta-band-phone">Phone</label><input id="cta-band-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>
+          <div class="form-row"><label class="sr-only" for="cta-band-service">Service</label>
+            <select id="cta-band-service" name="service">
+              <option value="">What do you need?</option>
+              <?php foreach ($services as $heroSvc): ?>
+              <option value="<?php echo htmlspecialchars($heroSvc['name']); ?>"><?php echo htmlspecialchars($heroSvc['name']); ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          <label class="consent"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/terms/" target="_blank" rel="noopener">Terms</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted. *</span></label>
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
+        </form>
+      </aside>
     </div>
   </section>
+
+
+<h2 id="how-tested">How is impact resistance tested?</h2>
+<p>The UL 2218 impact test drops a steel ball onto sample roofing mounted on a deck. For Class 4, the ball is two inches across and falls from 20 feet. The sample is struck twice in the same spot, then checked for cracks on the surface and tears in the backing.</p>
+<p>A product passes only if the surface does not crack and the mat does not tear. Lower classes use smaller balls and shorter drops, so each step up the scale represents a harder test. A lab test cannot reproduce every hailstorm, which is why insurers and manufacturers describe the rating as hail resistance, not hail proofing.</p>
+<p>Ask for the product's spec sheet when you compare options. It states the rating, and it is the document an insurer will usually want to see.</p>
+
+<h2 id="class-4-vs-standard">How do Class 4 shingles differ from standard shingles?</h2>
+<p>Class 4 shingles differ from standard architectural shingles in what lies under the granules. A reinforced mat, a modified asphalt, or an added backing layer lets the shingle absorb impact without cracking, while the visible surface looks like an ordinary shingle from the street.</p>
+<div class="post-table-wrap">
+<table class="post-table">
+  <caption>Standard architectural shingles compared with Class 4 impact-resistant shingles</caption>
+  <thead>
+    <tr><th scope="col">Feature</th><th scope="col">Standard architectural shingle</th><th scope="col">Class 4 impact-resistant shingle</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">Construction</th><td>Fiberglass mat saturated with asphalt, topped with granules</td><td>Reinforced mat, modified asphalt, or an added backing layer under the granules</td></tr>
+    <tr><th scope="row">UL 2218 rating</th><td>Unrated or a lower class</td><td>Class 4, the highest class</td></tr>
+    <tr><th scope="row">Look from the street</th><td>Standard profiles and colors</td><td>Offered in profiles and colors that look like standard shingles</td></tr>
+    <tr><th scope="row">Price</th><td>Lower material price</td><td>Higher material price, set on the written estimate</td></tr>
+    <tr><th scope="row">Insurance treatment</th><td>No rating-based discount</td><td>May qualify for a discount, depending on the carrier</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Architectural shingles are thicker than older three-tab shingles, and impact-resistant versions build on that. The difference is mostly invisible from the ground and shows up after a hail event.</p>
+
+<h2 id="cost-premium">What decides the cost of Class 4 shingles?</h2>
+<p>Class 4 shingle cost has two parts: the higher material price, and the rest of the roof replacement, which does not change with the shingle. Roof size, pitch, tear-off, decking repair, underlayment, flashing, and disposal all price the job whichever shingle you choose.</p>
+<p>That is why the upgrade is easiest to evaluate on a single written estimate that lists both options. A&amp;S Contracting Services prices each job from a free on-site visit, using the square footage, the materials selected, the condition of the existing structure, and the scope. The quoted price is the final price, with no hidden fees or upselling.</p>
+<p>The <a href="/blog/roof-replacement-cost-guide-missouri/">roof replacement cost guide</a> walks through the other line items on a roofing quote, so you can see where the shingle choice fits in the total.</p>
+
+<h2 id="insurance-discount">Will my insurance company give a discount for Class 4 shingles?</h2>
+<p>Some insurers discount premiums for impact-resistant roofs, and others do not, so the only reliable answer comes from your own carrier. Ask your agent before the old roof comes off, because discount rules, required paperwork, and timing differ from one company and policy to the next.</p>
+<ul>
+  <li>Whether your policy offers any discount for Class 4 roofing, and how it is calculated.</li>
+  <li>Whether you must notify the company before installation or only afterward.</li>
+  <li>What proof is required, such as the manufacturer's spec sheet or an invoice naming the product.</li>
+  <li>Whether the discount applies to the whole premium or only to part of it, such as the wind and hail portion.</li>
+  <li>How a future hail claim on an impact-resistant roof would be handled.</li>
+</ul>
+<p>Get the answers in writing. If a discount applies, it compounds in your favor each year you keep the policy, which is part of what you are weighing against the higher material price.</p>
+
+<h2 id="when-worth-it">When do Class 4 shingles make sense?</h2>
+<p>Class 4 shingles make the most sense when you are replacing the roof anyway, expect to stay, and your insurer rewards the rating. The case is weaker when only one or two of those apply, and then the decision mostly rests on your budget and how much hail worries you.</p>
+<ul>
+  <li><strong>You are replacing the roof anyway.</strong> The upgrade costs least during a planned tear-off, when labor, decking inspection, and disposal are already in the job. Retrofitting an existing roof just for the rating rarely makes sense.</li>
+  <li><strong>You plan to stay.</strong> Insurance savings and fewer storm repairs accrue over time, so they favor owners who keep the house.</li>
+  <li><strong>Your insurer offers a meaningful discount.</strong> Compare the quoted discount with the price difference on the estimate.</li>
+  <li><strong>Hail is a concern where you live.</strong> Missouri sees hail and strong wind in spring, and a roof that has already been replaced once for storm damage is a reasonable candidate for the upgrade.</li>
+  <li><strong>You want fewer claims on your record.</strong> A tougher roof can reduce the chance that a storm produces claim-level damage.</li>
+</ul>
+<p>If a storm has already damaged your roof, the <a href="/blog/hail-damage-roof-insurance-claim-missouri/">hail damage inspection and insurance claim guide</a> explains the process. For material alternatives, the <a href="/blog/metal-roof-vs-asphalt-shingles-in-missouri-cost-and-lifespan/">metal roof versus asphalt shingles comparison</a> covers the other common upgrade. A&amp;S includes <a href="/services/roofing/">roof replacement and impact-resistant shingle options</a> in its roofing work, and the <a href="/blog/">blog</a> has more homeowner guides.</p>
 
   <h2 id="faq">Frequently asked questions</h2>
   <div class="post-faq">
     <details class="faq">
-      <summary>How much do impact-resistant shingles add to a roof replacement?</summary>
-      <p>Class 4 shingles typically add 10–20% to the material portion of a roof replacement compared to standard architectural shingles. Because labor is the larger share of a tear-off and re-roof, the total installed cost increase is usually closer to 8–15% on a typical Warren County home. The insurance discount often recovers the premium within 5 to 10 years.</p>
-    </details>
-    <details class="faq">
-      <summary>Will my insurance company really give me a discount?</summary>
-      <p>Most Missouri insurers offer a discount for Class 4 roofing, but the amount varies by carrier. Discounts range from about 10% to 35% off the dwelling or total premium. The discount is not automatic—call your agent before the roof goes on, confirm the percentage, and send a copy of the shingle spec sheet or invoice showing UL 2218 Class 4 certification once the job is complete.</p>
-    </details>
-    <details class="faq">
       <summary>Do Class 4 shingles look different from regular shingles?</summary>
-      <p>No. Class 4 impact-resistant shingles are available in the same color palettes and profiles as standard architectural shingles. The impact rating comes from a reinforced mat or polymer-modified asphalt underneath the surface granules, not a different look from the curb.</p>
+      <p>Generally no. Impact-resistant shingles are offered in profiles and colors that resemble standard architectural shingles. The impact rating comes from the construction under the granules, not from a different look at the curb.</p>
     </details>
     <details class="faq">
       <summary>Are Class 4 shingles hail-proof?</summary>
-      <p>Not hail-proof, but hail-resistant. A Class 4 shingle survives repeated two-inch steel ball strikes without cracking or tearing in the UL 2218 test. That translates to surviving most Missouri hail storms with minimal or no damage. Baseball-sized hail or larger can still cause failure, but the threshold is far higher than a standard Class 3 shingle.</p>
+      <p>No. They are hail-resistant. A Class 4 shingle passes a laboratory test in which a two-inch steel ball is dropped from 20 feet, but very large hail can still damage any roof.</p>
     </details>
     <details class="faq">
-      <summary>Does A&amp;S install Class 4 impact-resistant shingles?</summary>
-      <p>Yes. A&amp;S Contracting Services installs Class 4 shingles across Warren County and surrounding areas whenever a homeowner wants the insurance discount, plans to stay in the house long-term, or lives in a neighborhood that sees frequent hail. We provide the manufacturer spec sheet and UL 2218 certification with every installation so your insurer can process the discount.</p>
+      <summary>Do I need to tell my insurance company before installing impact-resistant shingles?</summary>
+      <p>Ask your agent first. Some carriers want notice before installation and paperwork afterward, such as the spec sheet or an invoice naming the product, while others handle it differently. Get the requirements in writing.</p>
+    </details>
+    <details class="faq">
+      <summary>Does A&amp;S install impact-resistant shingles?</summary>
+      <p>Yes. Impact-resistant shingles are among the roofing options A&amp;S Contracting Services offers, alongside architectural asphalt shingles and metal roofing. Ask for them to be priced on the same written estimate as standard shingles.</p>
     </details>
   </div>
 
@@ -251,6 +275,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <ul>
       <li><a href="/services/roofing/">Roofing repair &amp; replacement</a></li>
       <li><a href="/services/gutters/">Gutters</a></li>
+      <li><a href="/services/soffit/">Soffit</a></li>
       <li><a href="/service-areas/">Service areas</a></li>
       <li><a href="/contact/">Contact A&amp;S Contracting Services</a></li>
     </ul>
