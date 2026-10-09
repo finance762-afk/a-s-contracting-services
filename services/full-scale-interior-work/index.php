@@ -9,47 +9,47 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Full Scale Interior Work';
 $pageTitle       = 'Interior Remodeling Contractor in Warrenton, MO';
-$pageDescription = 'Interior remodeling in Warrenton, MO: drywall, trim, paint, flooring & additions by one in-house crew. Licensed & insured. Free estimate: (636) 359-7204.';
+$pageDescription = 'Interior remodeling in Warrenton, MO: drywall, flooring, painting, trim, room additions and full remodels by one crew. Licensed & insured. (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/services/full-scale-interior-work/';
 
 // ─── Hero + recent-work photos (image manifest) ─────────────────────────────
 $heroImage    = '1779985458116-w0hrmz-55-Oct_14__2024_15-18-30-xZXr';
-$heroImageAlt = 'Residential framing and structural work by A&S Contracting Services during a Warren County renovation';
+$heroImageAlt = 'Bare roof decking with chalk lines during a tear-off on a rural property';
 $heroPreload  = [
     'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
     'sizes'  => '100vw',
 ];
 $workPhotos = [
-    ['1779985125335-8uyfgw-27-Mar_19__2026_16-26-33-BBWG', 'Roof sheathing and stacked materials during a full renovation near Warrenton'],
-    ['1779985139581-wvg3mc-4-Jan_16__2025_20-17-47-EJSE', 'Home with new siding and a completed carport addition in Warren County'],
-    ['1779985486320-tdgb3u-82-Dec_05__2024_18-26-12-Ea5d', 'Completed metal building addition with a white roof in rural Missouri'],
+    ['1779985125335-8uyfgw-27-Mar_19__2026_16-26-33-BBWG', 'Roof decking with shingle bundles staged at the ridge'],
+    ['1779985139581-wvg3mc-4-Jan_16__2025_20-17-47-EJSE', 'Small tan-sided house with a covered entry porch'],
+    ['1779985486320-tdgb3u-82-Dec_05__2024_18-26-12-Ea5d', 'Red metal building with a white roof in a rural setting'],
 ];
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
-        'question' => 'What counts as full-scale interior work?',
-        'answer'   => 'Full-scale interior work means A&S Contracting Services handles every stage inside the home instead of one trade: demolition, framing changes, drywall, trim and finish carpentry, interior doors, flooring, and paint. From a single room refresh to a whole-house renovation or a finished basement, one crew carries the project from bare studs to the final walkthrough.',
+        'question' => 'How much does an interior remodel cost in Warrenton?',
+        'answer'   => 'A&S Contracting Services prices interior remodels from an on-site visit, because cost depends on square footage, the materials selected, the condition of the existing structure and scope. The written estimate is itemized and free. It carries no hidden fees or upselling, and the quoted price is the final price.',
     ],
     [
-        'question' => 'Can you add a room or finish my basement?',
-        'answer'   => 'Yes. A&S Contracting Services builds room additions and finishes basements, framing the new space, running drywall, adding trim and doors, and laying flooring so raw concrete or unused square footage becomes real living space. Because the same crew does every stage, the addition ties into your existing Warrenton home cleanly instead of looking bolted on.',
+        'question' => 'How long does an interior remodel take?',
+        'answer'   => 'A&S Contracting Services does not quote a standard duration for interior work, because the timeline depends on scope. A paint-and-trim job and a room addition are different projects. The start window and the timeline are written into the estimate before any work begins.',
     ],
     [
-        'question' => 'Do you repair storm or water damage inside the house?',
-        'answer'   => 'Yes. A&S Contracting Services handles post-storm interior repairs—wet drywall, warped flooring, damaged ceilings, and the finish work to put a room back together after a Missouri storm or a leak. We can rebuild the interior as part of the same project that addresses the roof or exterior that let the water in.',
+        'question' => 'Does a room addition include the roof and siding?',
+        'answer'   => 'Yes. A&S Contracting Services was founded in 2023 with a focus on roofing and exterior work, and still does both. On a room addition the roofing, siding and gutters over the new space are done by A&S along with the drywall, flooring, paint and trim inside it.',
     ],
     [
-        'question' => 'Will my house be livable during the remodel?',
-        'answer'   => 'In most cases, yes. A&S Contracting Services protects floors and adjacent rooms, controls dust, and cleans the job site every day, so the rest of your Warrenton home stays usable while we work. For larger renovations we sequence the work room by room and walk you through what to expect before demo starts.',
+        'question' => 'What does "the quoted price is the final price" mean?',
+        'answer'   => 'A&S Contracting Services means that the figure on the written estimate is what is billed for the scope the estimate describes. Estimates are itemized, and A&S does not add hidden fees or upsell during the job.',
     ],
     [
-        'question' => 'How long does a full interior renovation take?',
-        'answer'   => 'Timelines depend on scope—a single room runs days, while a whole-house or addition can run several weeks. A&S Contracting Services gives you a realistic schedule in the written estimate and keeps it because one in-house crew runs every stage; there is no waiting on separate subs to line up their calendars.',
+        'question' => 'Will the house be kept clean during the remodel?',
+        'answer'   => 'A&S Contracting Services cleans the job site every working day. Interior work takes place in rooms that are lived in, so daily cleanup is part of every project, and the remodel ends with a final walkthrough of the finished rooms.',
     ],
     [
-        'question' => 'Do you handle everything, or do I need to hire other trades?',
-        'answer'   => 'A&S Contracting Services handles it all with one accountable crew—demo, framing, drywall, trim, doors, flooring, and paint—so you are not managing a lineup of subcontractors. You have one contractor, one schedule, and one point of contact from the first walkthrough to the final punch list.',
+        'question' => 'Does A&S remodel commercial interiors?',
+        'answer'   => 'Yes. A&S Contracting Services takes residential and commercial clients within 50 miles of Warrenton, including Wright City, Foristell, Wentzville, Troy, Jonesburg and Washington. Commercial interior work is estimated the same way: on site, in writing and itemized.',
     ],
 ];
 
@@ -60,7 +60,7 @@ $serviceSchema = [
     '@id'         => $canonicalUrl . '#service-' . $serviceSlug,
     'name'        => 'Full Scale Interior Work',
     'serviceType' => 'Interior remodeling',
-    'description' => 'Complete interior renovation in Warrenton, MO and Warren County—drywall, trim and finish carpentry, paint, flooring, room additions, basement finishing, and post-storm interior repair, self-performed by one crew.',
+    'description' => 'Interior renovation covering drywall, flooring, painting, trim, custom finishes, room additions and full interior remodels within 50 miles of Warrenton, MO.',
     'provider'    => ['@id' => $siteUrl . '/#organization'],
     'areaServed'  => [
         '@type' => 'GeoCircle',
@@ -113,16 +113,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 .sp-checklist li svg { color: var(--color-primary); margin-top: 3px; }
 @media (max-width: 800px) { .sp-included { grid-template-columns: 1fr; } }
 
-/* Comparison */
-.sp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
-.sp-compare__col { border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--color-surface); }
-.sp-compare__col--us { border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-line)); box-shadow: var(--shadow); background: color-mix(in srgb, var(--color-accent) 8%, white); }
-.sp-compare h3 { font-size: 1.1rem; margin-bottom: .9rem; display: flex; align-items: center; gap: .5rem; }
-.sp-compare ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
-.sp-compare li { display: grid; grid-template-columns: 22px 1fr; gap: .55rem; font-size: .93rem; color: var(--color-ink-2); }
-.sp-compare--them li svg { color: var(--color-danger); margin-top: 2px; }
-.sp-compare--us li svg { color: var(--color-success); margin-top: 2px; }
-@media (max-width: 700px) { .sp-compare { grid-template-columns: 1fr; } }
+/* Comparison table */
+.sp-table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.sp-table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: .93rem; }
+.sp-table caption { caption-side: top; text-align: left; padding: 1rem 1.25rem; font-family: var(--font-heading); font-weight: 700; color: var(--color-ink); }
+.sp-table th, .sp-table td { padding: .8rem 1.25rem; text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); color: var(--color-ink-2); }
+.sp-table thead th { background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface)); color: var(--color-ink); font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; }
+.sp-table tbody th { color: var(--color-ink); font-weight: 700; }
+.sp-after { margin-top: 1.25rem; max-width: 65ch; color: var(--color-ink-2); }
 
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
@@ -156,21 +154,21 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="hero-copy">
         <span class="eyebrow">Interior Remodeling &middot; Warrenton &amp; Warren County</span>
         <h1>Full Scale Interior Work in <span class="text-accent">Warrenton, MO</span> — one crew, every stage</h1>
-        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured Warrenton contractor that runs full interior renovations with one self-performing crew—drywall, trim, paint, flooring, additions, and basement finishing across Warren County. The same team handles demo through final coat, with a clean job site every day.</p>
+        <p class="hero-answer">A&amp;S Contracting Services, a licensed and fully insured Missouri general contractor, remodels interiors within 50 miles of Warrenton: drywall, flooring, painting, trim, custom finishes, room additions and full remodels.</p>
         <div class="hero-actions">
-          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free remodel estimate</a>
+          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written remodel estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
         </div>
         <ul class="hero-chips">
-          <li><?php echo icon('shield-check', 16); ?> Licensed &amp; insured in Missouri</li>
-          <li><?php echo icon('users', 16); ?> One in-house crew, every stage</li>
-          <li><?php echo icon('paint-bucket', 16); ?> Drywall to finish carpentry</li>
+          <li><?php echo icon('building', 16); ?> Residential &amp; commercial</li>
+          <li><?php echo icon('calendar-check', 16); ?> Start window given in writing</li>
+          <li><?php echo icon('check-circle', 16); ?> Final walkthrough on every project</li>
         </ul>
       </div>
 
       <aside class="hero-form-card" id="hero-form">
-        <h2>Want a free remodel estimate?</h2>
-        <p class="hero-form-tagline">No obligation. Same-day reply.</p>
+        <h2>Request an interior remodel estimate</h2>
+        <p class="hero-form-tagline">The on-site visit and the written estimate are free. No obligation.</p>
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -195,12 +193,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
           <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
           <?php } ?>
-          <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
         </form>
       </aside>
     </div>
   </div>
 </section>
+
+<article>
 
 <!-- ═══════════════════ PROBLEM STATEMENT ═══════════════════ -->
 <section class="section section--light">
@@ -208,30 +208,30 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="sp-problem">
       <div class="reveal-left">
         <span class="eyebrow-label">Know The Signs</span>
-        <h2>When is it time for a full interior renovation?</h2>
-        <p class="answer-block">A&amp;S Contracting Services hears the same reasons from Warrenton homeowners: a dated, worn interior that no longer fits the family, a need for more space through a room addition, an unfinished basement sitting empty, or storm and water damage that has to be rebuilt inside. Any of those is the moment to bring in one crew for the whole job.</p>
-        <p class="pull-quote">The hardest part of a remodel is not the work—it is keeping one team accountable from demo to the final coat.</p>
+        <h2>When does a room need a full interior renovation instead of one repair?</h2>
+        <p class="answer-block">A room needs a full interior renovation when more than one finish has to change at once. New flooring disturbs the trim, moved walls mean new drywall, and fresh drywall needs paint, so the trades depend on each other. A&amp;S Contracting Services scopes those rooms as one project with one schedule, not as separate visits.</p>
+        <p class="pull-quote">Flooring, trim, drywall and paint all meet at the same corner of the room.</p>
       </div>
       <div class="sp-signs reveal-right">
         <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('paint-bucket', 22); ?></div>
-          <h3>Dated, worn interior</h3>
-          <p>Old finishes, tired paint, and rooms that no longer fit how you live.</p>
-        </div>
-        <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('building', 22); ?></div>
-          <h3>Need more space</h3>
-          <p>A room addition or bonus room to grow into instead of moving.</p>
-        </div>
-        <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('layers', 22); ?></div>
-          <h3>Unfinished basement</h3>
-          <p>Bare concrete and framing waiting to become real living space.</p>
+          <h3>Several finishes at once</h3>
+          <p>Floors, walls and trim are all due, and doing one would mean redoing the next.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('ruler', 22); ?></div>
+          <h3>The layout has to change</h3>
+          <p>A wall is moving or a room is being divided, which means new board and new trim.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('house', 22); ?></div>
+          <h3>The house needs more space</h3>
+          <p>A room addition ties a new roof, siding and interior into the existing building.</p>
         </div>
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('droplets', 22); ?></div>
-          <h3>Water or storm damage</h3>
-          <p>Wet drywall, warped floors, and ceilings that need rebuilding inside.</p>
+          <h3>Damage crossed trades</h3>
+          <p>A leak reached the ceiling, the wall and the floor, so the repair is no longer a single trade.</p>
         </div>
       </div>
     </div>
@@ -243,16 +243,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="sp-position">
       <div class="reveal-up">
-        <div class="sp-position__stat">1<span>in-house crew handling demo, drywall, trim, paint, and floors—no separate subs to juggle</span></div>
+        <div class="sp-position__stat">0<span>subcontractors on an A&amp;S interior remodel, from the first sheet of board to the last piece of trim</span></div>
       </div>
       <div class="reveal-right">
-        <span class="eyebrow-label">Why It Matters</span>
-        <h2>What makes A&amp;S the crew to run your whole remodel?</h2>
-        <p class="answer-block">A&amp;S Contracting Services runs your entire interior project with one self-performing crew instead of a lineup of subcontractors you have to chase. The same team that demos the space hangs the drywall, sets the trim, lays the floor, and paints—so there are no gaps between trades and one number to call from start to final walkthrough.</p>
+        <span class="eyebrow-label">How It Is Run</span>
+        <h2>Why does one crew matter on an interior remodel?</h2>
+        <p class="answer-block">One crew matters on an interior remodel because every trade leaves the surface the next one starts from. A&amp;S Contracting Services self-performs the drywall, paint, trim and flooring, so the order of work is set by one schedule. A room addition also needs a roof and siding, which the company began with in 2023.</p>
         <ul class="sp-evidence">
-          <li><?php echo icon('users', 22); ?><span><b>One in-house crew.</b> Every stage is handled by the same people, so quality and cleanup stay consistent room to room.</span></li>
-          <li><?php echo icon('clipboard-list', 22); ?><span><b>One schedule, one contact.</b> No lining up separate trades—there is a single timeline and a single point of accountability.</span></li>
-          <li><?php echo icon('shield-check', 22); ?><span><b>Licensed &amp; fully insured.</b> Demo and construction happen inside your home, and our coverage protects it throughout.</span></li>
+          <li><?php echo icon('calendar-check', 22); ?><span><b>One written schedule.</b> The start window and timeline cover the whole interior scope, so no trade waits on another company's calendar.</span></li>
+          <li><?php echo icon('house', 22); ?><span><b>Additions closed in by the same company.</b> A&amp;S was founded on roofing and exterior work, so the shell of a new room and its interior finish sit in one estimate.</span></li>
+          <li><?php echo icon('check-circle', 22); ?><span><b>Cleaned daily, walked at the end.</b> The site is cleaned every working day and the project closes with a final walkthrough of each room.</span></li>
         </ul>
       </div>
     </div>
@@ -263,65 +263,31 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="section section--light">
   <div class="container">
     <span class="eyebrow-label">The Work</span>
-    <h2>What&rsquo;s included in a full-scale interior renovation?</h2>
-    <p class="answer-block">A&amp;S Contracting Services covers every stage of the interior: demolition and protection, framing changes, drywall hang and finish, interior doors, trim and finish carpentry, flooring, and paint—with daily cleanup and dust control the whole way through. One crew carries your Warrenton project from bare studs to the final walkthrough.</p>
+    <h2>What does full scale interior work from A&amp;S include?</h2>
+    <p class="answer-block">Full scale interior work from A&amp;S Contracting Services includes drywall, flooring, painting, trim, custom finishes, room additions and full interior remodels. It is the broadest of the <a href="/services/">ten services A&amp;S runs out of Warrenton</a>, and it is quoted as one itemized estimate, so each interior trade appears on its own line.</p>
     <div class="sp-included">
       <div class="reveal-up">
         <h3>Included in the scope</h3>
         <ul class="sp-checklist">
-          <li><?php echo icon('check', 20); ?> Demo and protection of floors, furniture, and adjacent rooms</li>
-          <li><?php echo icon('check', 20); ?> Framing changes to open up or reconfigure the layout</li>
-          <li><?php echo icon('check', 20); ?> Drywall hang, tape, and smooth finish</li>
-          <li><?php echo icon('check', 20); ?> Interior doors, trim, and finish carpentry</li>
-          <li><?php echo icon('check', 20); ?> Flooring—laminate, luxury vinyl, tile, or hardwood</li>
-          <li><?php echo icon('check', 20); ?> Interior paint, ceilings to baseboards</li>
-          <li><?php echo icon('check', 20); ?> Daily cleanup, dust control, and a final walkthrough</li>
+          <li><?php echo icon('check', 20); ?> Drywall hung, finished and repaired</li>
+          <li><?php echo icon('check', 20); ?> Flooring</li>
+          <li><?php echo icon('check', 20); ?> Interior painting</li>
+          <li><?php echo icon('check', 20); ?> Trim and custom finishes</li>
+          <li><?php echo icon('check', 20); ?> Room additions</li>
+          <li><?php echo icon('check', 20); ?> Full interior remodels</li>
+          <li><?php echo icon('check', 20); ?> Daily cleanup and a final walkthrough</li>
         </ul>
       </div>
       <div class="reveal-right">
         <h3>How the project runs</h3>
         <ol class="process-steps">
-          <li><b>Walkthrough &amp; plan</b><span>We walk the space with you, talk through the layout, and scope every stage of the work.</span></li>
-          <li><b>Written estimate</b><span>You get an itemized quote—scope, materials, timeline, and price, all in writing.</span></li>
-          <li><b>Build &amp; finish</b><span>Our crew demos, frames, hangs drywall, and moves through trim, flooring, and paint.</span></li>
-          <li><b>Clean &amp; final walkthrough</b><span>The site is cleaned, and we review every finished room with you before we leave.</span></li>
+          <li><b>Walk the rooms</b><span>A&amp;S visits the property and looks at every room in the scope.</span></li>
+          <li><b>Itemized estimate</b><span>Each trade is listed separately in writing. The quoted price is the final price.</span></li>
+          <li><b>Written start window</b><span>The timeline depends on scope, so it is set out in writing before work begins.</span></li>
+          <li><b>Build in sequence</b><span>Rough work first and finishes last, with the site cleaned each day.</span></li>
+          <li><b>Final walkthrough</b><span>You go through each finished room with the crew.</span></li>
         </ol>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ PROOF / REVIEWS ═══════════════════ -->
-<section class="section reviews-section edge-wave-top" aria-label="Interior remodeling reviews">
-  <span class="grain-layer" aria-hidden="true"></span>
-  <div class="container-wide">
-    <div class="section-title reveal-up">
-      <span class="eyebrow-label">In Their Words</span>
-      <h2>What do Warren County homeowners say about our interior work?</h2>
-      <p>Real reviews from A&amp;S Contracting Services renovation and interior customers across Warren County.</p>
-    </div>
-    <div class="reviews-track">
-      <?php
-      $interiorReviews = array_filter($reviews, function ($r) { return in_array($r['author'], ['Robert T.', 'Jennifer K.', 'Diane L.']); });
-      foreach ($interiorReviews as $rev):
-        $initial = strtoupper(substr($rev['author'], 0, 1));
-      ?>
-      <article class="review-card">
-        <div class="review-stars" aria-label="<?php echo (int)$rev['rating']; ?> out of 5 stars">
-          <?php for ($s = 0; $s < (int)$rev['rating']; $s++) echo icon('star', 18); ?>
-        </div>
-        <p class="review-text">&ldquo;<?php echo htmlspecialchars($rev['text']); ?>&rdquo;</p>
-        <div class="review-author">
-          <span class="review-avatar" aria-hidden="true"><?php echo $initial; ?></span>
-          <span class="review-name"><?php echo htmlspecialchars($rev['author']); ?></span>
-        </div>
-      </article>
-      <?php endforeach; ?>
-    </div>
-    <div class="review-badge-strip">
-      <span class="badge-strip"><?php echo icon('star', 16); ?> 5-Star Google Rated</span>
-      <span class="badge-strip"><?php echo icon('shield-check', 16); ?> Licensed &amp; Insured</span>
-      <span class="badge-strip"><?php echo icon('users', 16); ?> Self-Performed, No Subs</span>
     </div>
   </div>
 </section>
@@ -329,38 +295,52 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <!-- ═══════════════════ COMPARISON ═══════════════════ -->
 <section class="section">
   <div class="container">
-    <span class="eyebrow-label">The Difference</span>
-    <h2>Why hire one crew instead of juggling subs yourself?</h2>
-    <p class="answer-block">A&amp;S Contracting Services becomes the single point of accountability for your whole remodel. When you hire trades separately, a slip by the drywaller pushes the painter, and everyone blames someone else. Because our own crew does demo through paint on one schedule, the timeline holds and there is one contractor answering for the finished room.</p>
-    <div class="sp-compare">
-      <div class="sp-compare__col sp-compare--them">
-        <h3><?php echo icon('x', 20); ?> Juggling separate trades</h3>
-        <ul>
-          <li><?php echo icon('minus', 18); ?> A different sub for demo, drywall, trim, and paint</li>
-          <li><?php echo icon('minus', 18); ?> Schedules that slip when one trade runs late</li>
-          <li><?php echo icon('minus', 18); ?> Finger-pointing when something does not line up</li>
-          <li><?php echo icon('minus', 18); ?> You end up managing the whole job yourself</li>
-        </ul>
-      </div>
-      <div class="sp-compare__col sp-compare--us">
-        <h3><?php echo icon('check-circle', 20); ?> A&amp;S Contracting Services</h3>
-        <ul>
-          <li><?php echo icon('check', 18); ?> One in-house crew from demo to final coat</li>
-          <li><?php echo icon('check', 18); ?> A single schedule that actually holds together</li>
-          <li><?php echo icon('check', 18); ?> One contractor accountable for the finished space</li>
-          <li><?php echo icon('check', 18); ?> Daily cleanup and dust control in your home</li>
-        </ul>
-      </div>
+    <span class="eyebrow-label">Project Sizes</span>
+    <h2>How do a room refresh, a full remodel and a room addition differ?</h2>
+    <p class="answer-block">A room refresh, a full remodel and a room addition differ in how many trades they involve and whether the outside of the house is opened. A&amp;S Contracting Services prices all three from an on-site written estimate; the table sets out what each one covers and what decides how long it takes.</p>
+    <div class="sp-table-wrap reveal-up">
+      <table class="sp-table">
+        <caption>Three sizes of interior project A&amp;S Contracting Services takes on</caption>
+        <thead>
+          <tr>
+            <th scope="col">Project</th>
+            <th scope="col">Interior trades involved</th>
+            <th scope="col">Exterior work involved</th>
+            <th scope="col">What sets the timeline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Room refresh</th>
+            <td>Paint, trim, flooring, drywall repair</td>
+            <td>None</td>
+            <td>Number of rooms and the finishes chosen</td>
+          </tr>
+          <tr>
+            <th scope="row">Full interior remodel</th>
+            <td>Drywall, flooring, painting, trim, custom finishes</td>
+            <td>Only where windows or doors change</td>
+            <td>Scope, and how much of the existing structure is kept</td>
+          </tr>
+          <tr>
+            <th scope="row">Room addition</th>
+            <td>All of the above in the new space</td>
+            <td>Roofing, siding and gutters tied into the house</td>
+            <td>Size of the addition, and weather while the shell is open</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <p class="sp-after">Jobs that are board and nothing else are scoped on the <a href="/services/dry-wall/">drywall installation and repair page</a>. Projects that mix interior and exterior work, or that involve a commercial space, are run as <a href="/services/general-contracting/">general contracting under a single contract</a>.</p>
   </div>
 </section>
 
 <!-- ═══════════════════ FAQ ═══════════════════ -->
-<section class="section section--light" aria-label="Interior remodeling FAQ">
+<section class="section section--light" aria-label="Interior remodel questions, answered from the estimate">
   <div class="container-narrow">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">Good Questions</span>
-      <h2>Still have questions about your remodel?</h2>
+      <h2>Interior remodel questions, answered from the estimate</h2>
     </div>
     <div class="faq-grid">
       <?php foreach ($faqs as $fi => $faq): ?>
@@ -374,12 +354,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 </section>
 
 <!-- ═══════════════════ RECENT WORK ═══════════════════ -->
-<section class="section sp-gallery" aria-label="Recent renovation projects">
+<section class="section sp-gallery" aria-label="Photos from A&amp;S job sites">
   <div class="container-wide">
     <div class="section-title reveal-up">
-      <span class="eyebrow-label">Recent Work</span>
-      <h2>What recent renovation projects has A&amp;S completed near Warrenton?</h2>
-      <p class="answer-block">These are real interior and structural renovation projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+      <span class="eyebrow-label">From The Job Site</span>
+      <h2>What do A&amp;S addition and renovation sites look like?</h2>
+      <p class="answer-block">These photos are from A&amp;S Contracting Services renovation and addition sites, and they show the exterior half of the job: sheathing, siding and finished additions. Interior finishes go in once that shell is weathertight, and having one company responsible for both halves keeps an addition on a single written schedule.</p>
     </div>
     <div class="sp-gallery-grid" data-p1-dynamic>
       <?php foreach ($workPhotos as $wp): ?>
@@ -397,12 +377,18 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container-wide">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">What We Do</span>
-      <h2>What else can A&amp;S handle inside your home?</h2>
-      <p class="hero-answer">A full remodel touches more than one trade. A&amp;S Contracting Services also self-performs the drywall, window and door work, and exterior projects that round out a renovation across Warrenton and Warren County—all under one licensed crew.</p>
+      <h2>Which A&amp;S services overlap with interior work?</h2>
+      <p class="hero-answer">Interior work overlaps with three other A&amp;S Contracting Services trades. Drywall is available on its own when that is all a room needs, new windows and doors change the trim and wall around every opening, and exterior work covers the outside of an addition.</p>
+      <p class="sp-after">If a leak started the project, read A&amp;S's guide to <a href="/blog/drywall-water-damage-repair-or-replace-a-missouri-guide/">deciding between drywall repair and replacement after water damage</a> before the visit.</p>
     </div>
     <div class="sp-other">
       <?php
       $otherSlugs = ['dry-wall', 'windows-doors', 'exterior-work'];
+      $otherDesc  = [
+          'dry-wall' => 'Drywall installation, finishing and repair for homes and commercial spaces.',
+          'windows-doors' => 'Energy-efficient replacement windows, patio doors and entry doors, weather-sealed.',
+          'exterior-work' => 'Roofing, siding and gutters integrated into one exterior renovation.',
+      ];
       $tintCycle  = [1, 2, 3];
       $otherIcons = ['dry-wall' => 'pencil-ruler', 'windows-doors' => 'building', 'exterior-work' => 'home'];
       foreach ($otherSlugs as $oi => $os):
@@ -413,7 +399,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="service-card__body">
           <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
           <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
-          <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
+          <p class="service-card__desc"><?php echo htmlspecialchars($otherDesc[$os] ?? $osvc['name']); ?></p>
           <a href="/services/<?php echo $os; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$os] ?? $osvc['name']); ?></a>
         </div>
       </article>
@@ -422,14 +408,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   </div>
 </section>
 
+</article>
+
 <!-- ═══════════════════ FINAL CTA / ESTIMATE ═══════════════════ -->
-<section class="section section--light" id="estimate" aria-label="Request your free interior remodel estimate">
+<section class="section section--light" id="estimate" aria-label="Request an interior remodel estimate">
   <div class="container">
     <div class="estimate">
       <div class="card reveal-up" style="padding: clamp(1.5rem, 4vw, 2.5rem); border:1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface);">
-        <span class="eyebrow-label">Free Estimate</span>
+        <span class="eyebrow-label">Written Estimate</span>
         <h2>Ready to reimagine the inside of your home?</h2>
-        <p class="lead" style="margin-bottom: 1.25rem;">Send the details and A&amp;S Contracting Services will reply the same day to schedule your free on-site remodel walkthrough.</p>
+        <p class="lead" style="margin-bottom: 1.25rem;">Describe the rooms and what has to change. A&amp;S Contracting Services schedules an on-site visit within days of first contact and follows it with a written estimate.</p>
 
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -494,11 +482,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
       <div class="reveal-right">
         <span class="eyebrow-label">What Happens Next</span>
-        <h2>What happens after you send your <span class="text-accent">project details</span>?</h2>
+        <h2>What happens after you send your <span class="text-accent">remodel details</span>?</h2>
+        <p class="answer-block">After you send your remodel details, A&amp;S Contracting Services arranges a time to walk the rooms with you. That visit is scheduled within days of first contact and costs nothing. The estimate that follows is written and itemized by trade, and you are under no obligation to go ahead.</p>
         <ol class="next-steps">
-          <li><strong>We reach out the same day.</strong> A&amp;S Contracting Services confirms the details and schedules your free on-site remodel walkthrough.</li>
-          <li><strong>You get a written estimate.</strong> Clear scope, materials, timeline, and price for every stage—all in writing.</li>
-          <li><strong>One crew does the work.</strong> The same self-performing team runs demo through the final coat, cleaning up every day.</li>
+          <li><strong>Walk the rooms together.</strong> A&amp;S sees the space in person and notes every finish that is changing.</li>
+          <li><strong>Read the estimate.</strong> Each trade is itemized in writing, alongside the start window and timeline.</li>
+          <li><strong>Decide in your own time.</strong> There is no obligation; if you proceed, the price quoted is the price charged.</li>
         </ol>
         <div class="nap">
           <div><?php echo icon('phone', 18); ?> <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a></div>

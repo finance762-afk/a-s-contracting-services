@@ -9,47 +9,47 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Exterior Work';
 $pageTitle       = 'Exterior Home Renovation in Warrenton, MO';
-$pageDescription = 'Exterior home renovation in Warrenton, MO—siding, roofing, gutters, soffit & fascia by one crew. Licensed & insured. Free estimate: call (636) 359-7204.';
+$pageDescription = 'Exterior renovation in Warrenton, MO: roofing, siding and gutters planned as one project by one crew. Licensed & insured. Call A&S at (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/services/exterior-work/';
 
 // ─── Hero + recent-work photos (image manifest) ─────────────────────────────
-$heroImage    = '1779985052217-p5psyo-62-Apr_25__2025_19-50-40-dTeE';
-$heroImageAlt = 'Completed two-story exterior renovation with siding, windows, and a patio by A&S Contracting Services near Warrenton';
+$heroImage    = '1779985052217-p5psyo-62-Apr_25__2025_19-50-40-dTeE-c1';
+$heroImageAlt = 'Rear of a two-story home with tan siding, a bay window and patio doors';
 $heroPreload  = [
     'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
     'sizes'  => '100vw',
 ];
 $workPhotos = [
-    ['1779985210285-ttua89-27-Dec_24__2025_18-22-19-ZYKB', 'A&S crew working the eaves and roof during an exterior project in Warren County'],
-    ['1779985451171-aalfod-54-Oct_14__2024_15-18-28-f4YZ', 'Roofing and exterior work over a rural Warrenton property with a red barn'],
-    ['1779985051813-6hdkvp-61-Apr_25__2025_19-50-31-B2oU', 'Completed exterior with tan vinyl siding and white-trimmed windows near Warrenton'],
+    ['1779985210285-ttua89-27-Dec_24__2025_18-22-19-ZYKB', 'Crew member on a ladder at the roof edge of a tan wood-sided house'],
+    ['1779985451171-aalfod-54-Oct_14__2024_15-18-28-f4YZ', 'Roof deck being re-sheathed with shingle bundles staged, on a rural property with a red barn'],
+    ['1779985051813-6hdkvp-61-Apr_25__2025_19-50-31-B2oU-c1', 'Bay window wall with new tan siding and white trim'],
 ];
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
-        'question' => 'How much does a full exterior renovation cost in Warrenton?',
-        'answer'   => 'A&S Contracting Services prices every exterior package from the specific trades your home needs—roofing, siding, gutters, soffit, and fascia—measured on site. Because one crew does all of it, you get a single written estimate instead of three, and bundling the work usually costs less than hiring each trade separately across Warren County.',
+        'question' => 'Does A&S help with insurance claims for storm damage?',
+        'answer'   => 'Yes. A&S Contracting Services documents storm and hail damage with photos, writes a detailed itemized estimate, and meets the insurance adjuster on site. On an exterior claim that estimate can cover roofing, siding and gutters together, and A&S helps the homeowner through the claim.',
     ],
     [
-        'question' => 'Can you handle roofing, siding, and gutters at the same time?',
-        'answer'   => 'Yes. A&S Contracting Services self-performs all of them, which is the whole point of an exterior package. One crew sequences the roof and flashing first, then siding and house wrap, then gutters—so each trade is installed in the right order and the transitions between them actually seal.',
+        'question' => 'How long does an exterior renovation take?',
+        'answer'   => 'A&S Contracting Services finishes most single-family roof replacements in 1 to 3 days, weather permitting. Siding time varies by square footage and home size, so a combined exterior project gets its own timeline. The start window and timeline are given in writing.',
     ],
     [
-        'question' => 'Will insurance cover storm damage to my home\'s exterior?',
-        'answer'   => 'Often, yes. A&S Contracting Services documents hail and wind damage across the roof, siding, and gutters with photos and an itemized estimate your adjuster can process. When one Missouri storm hits several parts of the envelope, having one contractor document all of it keeps the claim consistent and moving.',
+        'question' => 'What roofing and siding materials does A&S offer?',
+        'answer'   => 'A&S Contracting Services installs architectural asphalt shingles, impact-resistant shingles and metal roofing, and vinyl, fiber cement and wood siding. Gutters are seamless aluminum. The materials selected are one of the main factors in the price, so they are itemized on the estimate.',
     ],
     [
-        'question' => 'Do I need to move out during exterior work?',
-        'answer'   => 'No. A&S Contracting Services works from the outside, so you stay in your home throughout. Our crew keeps the site organized, secures the envelope at the end of each day so weather cannot get in, and cleans up debris and nails before leaving your Warrenton property.',
+        'question' => 'Can I have only part of the exterior done?',
+        'answer'   => 'Yes. A&S Contracting Services offers roofing, siding, gutters, soffit and fascia as individual services as well as a combined exterior renovation. The on-site estimate covers whatever the property needs, and there is no upselling.',
     ],
     [
-        'question' => 'How long does a whole-home exterior project take?',
-        'answer'   => 'Most exterior packages on a single-family Warren County home run about one to two weeks, depending on how many trades are involved and the weather. Because A&S Contracting Services runs one crew across every trade, the work stays continuous instead of stalling while you wait on separate contractors to show up.',
+        'question' => 'How is exterior work priced?',
+        'answer'   => 'A&S Contracting Services publishes no price list for exterior work. Cost depends on square footage, the materials selected, the condition of the existing structure and scope. Estimates are free, written and made on site, and the quoted price is the final price.',
     ],
     [
-        'question' => 'Are you licensed and insured for exterior work in Missouri?',
-        'answer'   => 'Yes. A&S Contracting Services is a licensed Missouri general contractor and carries full insurance on every exterior job. That protects your home during the exposed stages—open roof deck, stripped walls—and means the crew working around your house is covered from the first tear-off to the final cleanup.',
+        'question' => 'Does A&S do exterior work on commercial buildings?',
+        'answer'   => 'Yes. A&S Contracting Services does residential and commercial roofing and takes commercial clients for exterior work across Warren County and the surrounding area, including Wright City, Foristell, Wentzville, Troy, Jonesburg and Washington.',
     ],
 ];
 
@@ -60,7 +60,7 @@ $serviceSchema = [
     '@id'         => $canonicalUrl . '#service-' . $serviceSlug,
     'name'        => 'Exterior Work',
     'serviceType' => 'Exterior renovation',
-    'description' => 'Coordinated whole-home exterior renovation in Warrenton, MO and Warren County—siding, roofing, gutters, soffit, fascia, and exterior trim run by one self-performing crew.',
+    'description' => 'Full exterior renovation integrating roofing, siding and gutters for properties within 50 miles of Warrenton, MO.',
     'provider'    => ['@id' => $siteUrl . '/#organization'],
     'areaServed'  => [
         '@type' => 'GeoCircle',
@@ -113,16 +113,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 .sp-checklist li svg { color: var(--color-primary); margin-top: 3px; }
 @media (max-width: 800px) { .sp-included { grid-template-columns: 1fr; } }
 
-/* Comparison */
-.sp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
-.sp-compare__col { border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--color-surface); }
-.sp-compare__col--us { border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-line)); box-shadow: var(--shadow); background: color-mix(in srgb, var(--color-accent) 8%, white); }
-.sp-compare h3 { font-size: 1.1rem; margin-bottom: .9rem; display: flex; align-items: center; gap: .5rem; }
-.sp-compare ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
-.sp-compare li { display: grid; grid-template-columns: 22px 1fr; gap: .55rem; font-size: .93rem; color: var(--color-ink-2); }
-.sp-compare--them li svg { color: var(--color-danger); margin-top: 2px; }
-.sp-compare--us li svg { color: var(--color-success); margin-top: 2px; }
-@media (max-width: 700px) { .sp-compare { grid-template-columns: 1fr; } }
+/* Comparison table */
+.sp-table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.sp-table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: .93rem; }
+.sp-table caption { caption-side: top; text-align: left; padding: 1rem 1.25rem; font-family: var(--font-heading); font-weight: 700; color: var(--color-ink); }
+.sp-table th, .sp-table td { padding: .8rem 1.25rem; text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); color: var(--color-ink-2); }
+.sp-table thead th { background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface)); color: var(--color-ink); font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; }
+.sp-table tbody th { color: var(--color-ink); font-weight: 700; }
+.sp-after { margin-top: 1.25rem; max-width: 65ch; color: var(--color-ink-2); }
 
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
@@ -156,21 +154,21 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="hero-copy">
         <span class="eyebrow">Exterior Work &middot; Warrenton &amp; Warren County</span>
         <h1>Exterior Work in <span class="text-accent">Warrenton, MO</span> — siding, roofing &amp; gutters, one crew</h1>
-        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured Warrenton contractor that handles your whole home exterior—siding, roofing, gutters, soffit, fascia, and trim—under one crew and one schedule, so the trades line up, the envelope seals tight, and you never chase three separate contractors across Warren County.</p>
+        <p class="hero-answer">A&amp;S Contracting Services, a licensed and fully insured Missouri general contractor, renovates whole exteriors, integrating roofing, siding and gutters into one project for properties within 50 miles of Warrenton.</p>
         <div class="hero-actions">
-          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free exterior estimate</a>
+          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written exterior estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
         </div>
         <ul class="hero-chips">
-          <li><?php echo icon('shield-check', 16); ?> Licensed &amp; insured in Missouri</li>
-          <li><?php echo icon('layers', 16); ?> Siding, roof &amp; gutters &mdash; one crew</li>
-          <li><?php echo icon('users', 16); ?> Self-performed &mdash; no subcontractors</li>
+          <li><?php echo icon('search', 16); ?> Storm damage documented with photos</li>
+          <li><?php echo icon('handshake', 16); ?> Insurance adjuster met on site</li>
+          <li><?php echo icon('landmark', 16); ?> Founded on roofing &amp; exterior work</li>
         </ul>
       </div>
 
       <aside class="hero-form-card" id="hero-form">
-        <h2>Want your free exterior estimate?</h2>
-        <p class="hero-form-tagline">No obligation. Same-day reply.</p>
+        <h2>Request an exterior estimate</h2>
+        <p class="hero-form-tagline">The on-site visit and the written estimate are free. No obligation.</p>
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -195,12 +193,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
           <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
           <?php } ?>
-          <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
         </form>
       </aside>
     </div>
   </div>
 </section>
+
+<article>
 
 <!-- ═══════════════════ PROBLEM STATEMENT ═══════════════════ -->
 <section class="section section--light">
@@ -209,29 +209,29 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="reveal-left">
         <span class="eyebrow-label">Know The Signs</span>
         <h2>When does a Warrenton home need more than one exterior trade?</h2>
-        <p class="answer-block">A&amp;S Contracting Services sees it after most Missouri storms: hail dents the gutters, wind tears shingles, and driven rain works behind tired siding all at once. When damage or age hits several parts of the envelope together, patching one trade at a time leaves gaps—the whole exterior needs to move as one project.</p>
-        <p class="pull-quote">Water finds the seam between two contractors faster than it finds the seam in a wall.</p>
+        <p class="answer-block">A home needs more than one exterior trade when damage or age crosses the line between roof, wall and drainage. Hail and wind hit shingles, siding and gutters in the same storm, and a rotted fascia board fails the gutter hung on it. A&amp;S Contracting Services assesses those parts together on one visit.</p>
+        <p class="pull-quote">Water leaves a house in order: roof, gutter, downspout, ground. A gap anywhere sends it into the wall.</p>
       </div>
       <div class="sp-signs reveal-right">
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('cloud-snow', 22); ?></div>
-          <h3>Storm hit several sides</h3>
-          <p>Hail on the gutters, wind on the roof, and water behind the siding rarely arrive alone.</p>
-        </div>
-        <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('layers', 22); ?></div>
-          <h3>Dated, mismatched exterior</h3>
-          <p>Faded siding under a new roof&mdash;or the reverse&mdash;leaves the house looking half-finished.</p>
+          <h3>One storm, several surfaces</h3>
+          <p>Spring hail and wind rarely stop at the shingles; siding and gutters take the same hits.</p>
         </div>
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('droplets', 22); ?></div>
-          <h3>Water getting behind</h3>
-          <p>Failed flashing, siding, and gutters together let moisture reach the sheathing.</p>
+          <h3>Water behind the gutter</h3>
+          <p>Staining on fascia or siding below the roof edge means runoff is missing the gutter.</p>
         </div>
         <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('wind', 22); ?></div>
-          <h3>Loose trim &amp; fascia</h3>
-          <p>Peeling trim and sagging fascia signal the roofline edge is starting to let go.</p>
+          <div class="sp-sign__icon"><?php echo icon('snowflake', 22); ?></div>
+          <h3>Freeze-thaw wear</h3>
+          <p>Missouri winters work water into small gaps in siding and trim and widen them.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('layers', 22); ?></div>
+          <h3>Mismatched repairs</h3>
+          <p>Separate patches over time leave roof, trim and siding at different ages and colors.</p>
         </div>
       </div>
     </div>
@@ -243,16 +243,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="sp-position">
       <div class="reveal-up">
-        <div class="sp-position__stat">1<span>crew and one schedule for your entire exterior—no juggling three contractors who point fingers</span></div>
+        <div class="sp-position__stat">50<span>miles: the radius around Warrenton in which A&amp;S takes exterior projects</span></div>
       </div>
       <div class="reveal-right">
-        <span class="eyebrow-label">Why It Matters</span>
-        <h2>Why let A&amp;S run the whole exterior instead of three contractors?</h2>
-        <p class="answer-block">A&amp;S Contracting Services self-performs siding, roofing, gutters, soffit, and fascia, so one crew sequences the work the right way—roof and flashing before gutters, house wrap before siding. Nothing waits on a subcontractor&rsquo;s calendar, and one company owns the finished envelope from ridge to foundation.</p>
+        <span class="eyebrow-label">One System</span>
+        <h2>Why treat the roof, siding and gutters as one exterior project?</h2>
+        <p class="answer-block">Roof, siding and gutters work as one system for moving water off a building, so the joints between them matter as much as the materials. A&amp;S Contracting Services began in 2023 as a roofing and exterior company. Its crew does every one of those trades, which removes the handoffs between separate companies.</p>
         <ul class="sp-evidence">
-          <li><?php echo icon('users', 22); ?><span><b>One accountable crew.</b> The same team handles every trade, so the flashing, siding, and gutters actually integrate instead of clashing at the seams.</span></li>
-          <li><?php echo icon('clipboard-list', 22); ?><span><b>One coordinated schedule.</b> Work is sequenced in the right order and finished in fewer trips, not stretched across three contractors&rsquo; calendars.</span></li>
-          <li><?php echo icon('shield-check', 22); ?><span><b>Licensed &amp; fully insured.</b> Your home is covered through every stage of an exterior tear-off and rebuild, roof edge to grade.</span></li>
+          <li><?php echo icon('home', 22); ?><span><b>Roofing.</b> Architectural asphalt shingles, impact-resistant shingles and metal roofing, installed, repaired or torn off and replaced. Details are on the <a href="/services/roofing/">roof repair and replacement page</a>.</span></li>
+          <li><?php echo icon('layers', 22); ?><span><b>Siding.</b> Vinyl, fiber cement and wood, installed or repaired. See <a href="/services/siding/">siding materials and repair</a>.</span></li>
+          <li><?php echo icon('droplets', 22); ?><span><b>Roofline and drainage.</b> Seamless aluminum gutters, plus soffit and fascia matched to the roofline.</span></li>
         </ul>
       </div>
     </div>
@@ -263,65 +263,31 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="section section--light">
   <div class="container">
     <span class="eyebrow-label">The Work</span>
-    <h2>What&rsquo;s included in an A&amp;S full exterior package?</h2>
-    <p class="answer-block">A&amp;S Contracting Services delivers the complete exterior envelope: a full assessment, then coordinated roofing, siding, gutters, soffit, fascia, and exterior trim with proper flashing and sealing throughout. One crew, one schedule, and one cleanup close out the job—so every Warrenton home leaves weather-tight from the roofline down to the foundation.</p>
+    <h2>What does a full exterior renovation by A&amp;S include?</h2>
+    <p class="answer-block">A full exterior renovation by A&amp;S Contracting Services includes roofing, siding and gutters, planned as one sequence with soffit and fascia where they are needed. Each is also listed separately among <a href="/services/">all A&amp;S services</a>, so the estimate can cover the whole exterior or only the parts that have failed.</p>
     <div class="sp-included">
       <div class="reveal-up">
         <h3>Included in the scope</h3>
         <ul class="sp-checklist">
-          <li><?php echo icon('check', 20); ?> Full exterior assessment of roof, walls, and roofline</li>
-          <li><?php echo icon('check', 20); ?> Roofing tear-off, repair, or replacement as needed</li>
-          <li><?php echo icon('check', 20); ?> Siding removal and new siding over house wrap</li>
-          <li><?php echo icon('check', 20); ?> Seamless gutters and downspouts sized to the roof</li>
-          <li><?php echo icon('check', 20); ?> Soffit and fascia to finish and vent the roofline</li>
-          <li><?php echo icon('check', 20); ?> Exterior trim, flashing, and weatherproof sealing</li>
-          <li><?php echo icon('check', 20); ?> One schedule, one point of contact, full cleanup</li>
+          <li><?php echo icon('check', 20); ?> Roof installation, repair, tear-off and replacement</li>
+          <li><?php echo icon('check', 20); ?> Storm and hail damage repair</li>
+          <li><?php echo icon('check', 20); ?> Siding installation and repair</li>
+          <li><?php echo icon('check', 20); ?> Seamless aluminum gutter systems</li>
+          <li><?php echo icon('check', 20); ?> Soffit and fascia repair or replacement</li>
+          <li><?php echo icon('check', 20); ?> Insurance claim documentation with photos</li>
+          <li><?php echo icon('check', 20); ?> Daily cleanup and a final walkthrough</li>
         </ul>
       </div>
       <div class="reveal-right">
         <h3>How the project runs</h3>
         <ol class="process-steps">
-          <li><b>Whole-exterior walkthrough</b><span>We assess every side of the home and note which trades the envelope actually needs.</span></li>
-          <li><b>One written estimate</b><span>You get a single itemized scope covering all the exterior work—no separate quotes to reconcile.</span></li>
-          <li><b>Sequenced install</b><span>Our crew runs the trades in the right order so flashing, siding, and gutters integrate correctly.</span></li>
-          <li><b>Final seal &amp; cleanup</b><span>We check every seam, sweep the site, and walk the finished exterior with you.</span></li>
+          <li><b>Assess the whole exterior</b><span>Roof, walls, roofline and gutters are checked on one visit and photographed where there is damage.</span></li>
+          <li><b>One itemized estimate</b><span>Each trade is listed with its own scope. If an insurance claim is involved, A&amp;S meets the adjuster on site.</span></li>
+          <li><b>Written schedule</b><span>Most single-family roof replacements take 1–3 days, weather permitting; siding time varies with square footage.</span></li>
+          <li><b>Work in sequence</b><span>The crew moves from one part of the exterior to the next and cleans the site daily.</span></li>
+          <li><b>Final walkthrough</b><span>You walk the finished exterior with the crew.</span></li>
         </ol>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ PROOF / REVIEWS ═══════════════════ -->
-<section class="section reviews-section edge-wave-top" aria-label="Exterior work reviews">
-  <span class="grain-layer" aria-hidden="true"></span>
-  <div class="container-wide">
-    <div class="section-title reveal-up">
-      <span class="eyebrow-label">In Their Words</span>
-      <h2>What do Warren County homeowners say about our exterior work?</h2>
-      <p>Real reviews from A&amp;S Contracting Services siding, roofing, gutter, and exterior customers across Warren County.</p>
-    </div>
-    <div class="reviews-track">
-      <?php
-      $exReviews = array_filter($reviews, function ($r) { return in_array($r['author'], ['Jennifer K.', 'Marcus H.', 'Diane L.']); });
-      foreach ($exReviews as $rev):
-        $initial = strtoupper(substr($rev['author'], 0, 1));
-      ?>
-      <article class="review-card">
-        <div class="review-stars" aria-label="<?php echo (int)$rev['rating']; ?> out of 5 stars">
-          <?php for ($s = 0; $s < (int)$rev['rating']; $s++) echo icon('star', 18); ?>
-        </div>
-        <p class="review-text">&ldquo;<?php echo htmlspecialchars($rev['text']); ?>&rdquo;</p>
-        <div class="review-author">
-          <span class="review-avatar" aria-hidden="true"><?php echo $initial; ?></span>
-          <span class="review-name"><?php echo htmlspecialchars($rev['author']); ?></span>
-        </div>
-      </article>
-      <?php endforeach; ?>
-    </div>
-    <div class="review-badge-strip">
-      <span class="badge-strip"><?php echo icon('star', 16); ?> 5-Star Google Rated</span>
-      <span class="badge-strip"><?php echo icon('shield-check', 16); ?> Licensed &amp; Insured</span>
-      <span class="badge-strip"><?php echo icon('layers', 16); ?> One Exterior Crew</span>
     </div>
   </div>
 </section>
@@ -329,38 +295,58 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <!-- ═══════════════════ COMPARISON ═══════════════════ -->
 <section class="section">
   <div class="container">
-    <span class="eyebrow-label">The Difference</span>
-    <h2>Why does one exterior crew beat hiring three separate contractors?</h2>
-    <p class="answer-block">A&amp;S Contracting Services is one licensed contractor accountable for the entire exterior. Hire a separate roofer, siding installer, and gutter company and each one blames the others when a leak shows up at a seam. With A&amp;S, one crew owns every transition—and one number to call if anything ever needs a look.</p>
-    <div class="sp-compare">
-      <div class="sp-compare__col sp-compare--them">
-        <h3><?php echo icon('x', 20); ?> Three separate contractors</h3>
-        <ul>
-          <li><?php echo icon('minus', 18); ?> Roofer, siding, and gutter crews on different schedules</li>
-          <li><?php echo icon('minus', 18); ?> Each blames the other when a seam leaks</li>
-          <li><?php echo icon('minus', 18); ?> Flashing and transitions fall between the trades</li>
-          <li><?php echo icon('minus', 18); ?> Three quotes, three invoices, three warranties</li>
-        </ul>
-      </div>
-      <div class="sp-compare__col sp-compare--us">
-        <h3><?php echo icon('check-circle', 20); ?> A&amp;S Contracting Services</h3>
-        <ul>
-          <li><?php echo icon('check', 18); ?> One licensed crew for the whole exterior</li>
-          <li><?php echo icon('check', 18); ?> Trades sequenced so the seams integrate</li>
-          <li><?php echo icon('check', 18); ?> One accountable point of contact</li>
-          <li><?php echo icon('check', 18); ?> One schedule, one estimate, one warranty</li>
-        </ul>
-      </div>
+    <span class="eyebrow-label">Component By Component</span>
+    <h2>How do the parts of an exterior renovation compare?</h2>
+    <p class="answer-block">The parts of an exterior renovation compare on material choice, on what A&amp;S Contracting Services inspects, and on how long each takes. The table covers the four that are most often combined. Only roofing has a typical duration; for the rest, the timeline is set in the written estimate.</p>
+    <div class="sp-table-wrap reveal-up">
+      <table class="sp-table">
+        <caption>Exterior components A&amp;S Contracting Services installs and repairs</caption>
+        <thead>
+          <tr>
+            <th scope="col">Component</th>
+            <th scope="col">Options offered</th>
+            <th scope="col">What is inspected</th>
+            <th scope="col">Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Roofing</th>
+            <td>Architectural asphalt shingles, impact-resistant shingles, metal</td>
+            <td>Roof surface, storm and hail damage</td>
+            <td>1–3 days for most single-family replacements, weather permitting</td>
+          </tr>
+          <tr>
+            <th scope="row">Siding</th>
+            <td>Vinyl, fiber cement, wood</td>
+            <td>Cracked, loose or damaged boards and panels</td>
+            <td>Varies by square footage and home size</td>
+          </tr>
+          <tr>
+            <th scope="row">Gutters</th>
+            <td>Seamless aluminum</td>
+            <td>Each run, its attachment to the fascia, and where the water leaves</td>
+            <td>Set in the written estimate</td>
+          </tr>
+          <tr>
+            <th scope="row">Soffit and fascia</th>
+            <td>Finish matched to the roofline</td>
+            <td>Rotted boards, attic ventilation, gaps open to pests and moisture</td>
+            <td>Set in the written estimate</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <p class="sp-after">Storm claims often involve more than one of these, and A&amp;S explains the process in its post on <a href="/blog/hail-damage-roof-insurance-claim-missouri/">hail damage inspections and insurance claims in Missouri</a>. Work that also reaches indoors is handled as <a href="/services/general-contracting/">general contracting for residential and commercial projects</a>.</p>
   </div>
 </section>
 
 <!-- ═══════════════════ FAQ ═══════════════════ -->
-<section class="section section--light" aria-label="Exterior work FAQ">
+<section class="section section--light" aria-label="Exterior renovation questions, answered">
   <div class="container-narrow">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">Good Questions</span>
-      <h2>What do Warrenton homeowners ask about exterior work?</h2>
+      <h2>Exterior renovation questions, answered</h2>
     </div>
     <div class="faq-grid">
       <?php foreach ($faqs as $fi => $faq): ?>
@@ -374,12 +360,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 </section>
 
 <!-- ═══════════════════ RECENT WORK ═══════════════════ -->
-<section class="section sp-gallery" aria-label="Recent exterior projects">
+<section class="section sp-gallery" aria-label="Photos from A&amp;S job sites">
   <div class="container-wide">
     <div class="section-title reveal-up">
-      <span class="eyebrow-label">Recent Work</span>
-      <h2>What recent exterior projects has A&amp;S completed near Warrenton?</h2>
-      <p class="answer-block">These are real exterior projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+      <span class="eyebrow-label">From The Job Site</span>
+      <h2>What do A&amp;S exterior job sites look like?</h2>
+      <p class="answer-block">These photos are from A&amp;S Contracting Services exterior job sites. They show the roofline being worked from the eaves, a roof in progress on a rural property, and a finished wall with siding and trimmed windows, which together cover the three surfaces an exterior renovation ties into one.</p>
     </div>
     <div class="sp-gallery-grid" data-p1-dynamic>
       <?php foreach ($workPhotos as $wp): ?>
@@ -397,12 +383,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container-wide">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">What We Do</span>
-      <h2>What exterior trades can A&amp;S handle on your home?</h2>
-      <p class="hero-answer">Exterior work bundles several trades under one licensed crew. A&amp;S Contracting Services also books these individually when your Warrenton home needs just one part of the envelope repaired or replaced.</p>
+      <h2>Which exterior trades does A&amp;S also offer on their own?</h2>
+      <p class="hero-answer">Each exterior trade is available on its own when the rest of the building is sound. A&amp;S Contracting Services offers siding, roofing and gutters as separate services with their own pages, and the on-site visit can be widened to the whole exterior whenever you ask for it.</p>
     </div>
     <div class="sp-other">
       <?php
       $otherSlugs = ['siding', 'roofing', 'gutters'];
+      $otherDesc  = [
+          'siding' => 'Vinyl, fiber cement and wood siding, installed and repaired.',
+          'roofing' => 'Roof installation, repair, tear-off and replacement, plus storm and hail damage repair.',
+          'gutters' => 'Seamless aluminum gutters installed, repaired, replaced, cleaned and maintained.',
+      ];
       $tintCycle  = [1, 2, 3];
       $otherIcons = ['siding' => 'layers', 'roofing' => 'home', 'gutters' => 'droplets'];
       foreach ($otherSlugs as $oi => $os):
@@ -413,7 +404,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="service-card__body">
           <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
           <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
-          <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
+          <p class="service-card__desc"><?php echo htmlspecialchars($otherDesc[$os] ?? $osvc['name']); ?></p>
           <a href="/services/<?php echo $os; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$os] ?? $osvc['name']); ?></a>
         </div>
       </article>
@@ -422,14 +413,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   </div>
 </section>
 
+</article>
+
 <!-- ═══════════════════ FINAL CTA / ESTIMATE ═══════════════════ -->
-<section class="section section--light" id="estimate" aria-label="Request your free exterior estimate">
+<section class="section section--light" id="estimate" aria-label="Request an exterior estimate">
   <div class="container">
     <div class="estimate">
       <div class="card reveal-up" style="padding: clamp(1.5rem, 4vw, 2.5rem); border:1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface);">
-        <span class="eyebrow-label">Free Estimate</span>
+        <span class="eyebrow-label">Written Estimate</span>
         <h2>Ready for one estimate on your whole exterior?</h2>
-        <p class="lead" style="margin-bottom: 1.25rem;">Send the details and A&amp;S Contracting Services will reply the same day to schedule your free on-site exterior assessment.</p>
+        <p class="lead" style="margin-bottom: 1.25rem;">List what you have noticed on the roof, walls or gutters. A&amp;S Contracting Services schedules an on-site exterior assessment within days of first contact.</p>
 
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -495,10 +488,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="reveal-right">
         <span class="eyebrow-label">What Happens Next</span>
         <h2>What happens after you send your <span class="text-accent">exterior details</span>?</h2>
+        <p class="answer-block">After you send your exterior details, A&amp;S Contracting Services books a visit to look at the roof, siding and gutters together. Visits are scheduled within days of first contact and are free. Damage is photographed, and the written estimate separates each trade so it can be read by you or by an insurer.</p>
         <ol class="next-steps">
-          <li><strong>We reach out the same day.</strong> A&amp;S Contracting Services confirms the details and schedules your free on-site exterior assessment.</li>
-          <li><strong>You get one written estimate.</strong> A single itemized scope covering every exterior trade—insurance-ready if you have storm damage.</li>
-          <li><strong>One crew does the work.</strong> The same self-performing team runs each trade in order and walks the finished exterior with you.</li>
+          <li><strong>The exterior is assessed.</strong> One visit covers roof, walls, roofline and drainage.</li>
+          <li><strong>The estimate is itemized.</strong> Written, with no obligation; the quoted price is the final price.</li>
+          <li><strong>The schedule is put in writing.</strong> You get a start window and timeline, and a final walkthrough when the work is done.</li>
         </ol>
         <div class="nap">
           <div><?php echo icon('phone', 18); ?> <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a></div>

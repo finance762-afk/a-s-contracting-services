@@ -9,48 +9,55 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Soffit';
 $pageTitle       = 'Soffit Repair & Replacement in Warrenton, MO';
-$pageDescription = 'Soffit repair & replacement in Warrenton, MO—vented soffit that restores attic airflow and seals out pests. Licensed & insured. Free estimate: (636) 359-7204.';
+$pageDescription = 'Soffit installation and repair in Warrenton, MO for attic ventilation and to block pests and moisture. Licensed & insured. Written estimate: (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/services/soffit/';
 
 // ─── Hero + recent-work photos (image manifest) ─────────────────────────────
 $heroImage    = '1779985210676-rimzkx-29-Dec_24__2025_18-22-23-xd3W';
-$heroImageAlt = 'Worker installing soffit trim on a two-story Warrenton home by A&S Contracting Services';
+$heroImageAlt = 'Crew member working at the porch roofline of a tan wood-sided house';
 $heroPreload  = [
     'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
     'sizes'  => '100vw',
 ];
 $workPhotos = [
-    ['1779984974072-agw64u-4-Aug_06__2025_13-45-27-DRwn', 'Single-story home with tan siding and finished soffit and eaves near Warrenton'],
-    ['1779985049352-yx87w1-20-Mar_12__2025_18-21-31-DDFM', 'Home addition with new dark siding and dormers mid-construction in Warren County'],
-    ['1779985485739-cy4u83-81-Dec_05__2024_18-25-35-1ywp', 'Completed metal barn with a white metal roof and finished trim in rural Missouri'],
+    ['1779984974072-agw64u-4-Aug_06__2025_13-45-27-DRwn', 'Single-story home with light siding and a tall evergreen at the corner'],
+    ['1779985049352-yx87w1-20-Mar_12__2025_18-21-31-DDFM', 'Front of a home with dark siding, a dormer and house wrap on one wall during exterior work'],
+    ['1779985485739-cy4u83-81-Dec_05__2024_18-25-35-1ywp', 'Red metal-sided barn with a white metal roof'],
 ];
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
-        'question' => 'How much does soffit installation cost in Warrenton, MO?',
-        'answer'   => 'Soffit cost in Warrenton depends on the linear footage of eave, the material, and how much of the rafter tail or fascia behind it needs repair. A&S Contracting Services measures the roofline and gives a free written estimate, so vented aluminum or vinyl soffit comes with a clear number that accounts for any hidden wood rot before the work starts.',
+        'question' => 'How much does soffit repair cost in Warrenton, MO?',
+        'answer'   => 'Soffit repair cost depends on the length of eave involved, the material selected, the condition of the framing above the panels and the scope. A&S Contracting Services has no published prices; it looks at the eaves on site and gives a written, itemized estimate, and the quoted price is the final price.',
     ],
     [
-        'question' => 'What does soffit actually do for my house?',
-        'answer'   => 'A&S Contracting Services installs soffit as the vented underside of your roof overhang, and it does two jobs at once. It pulls fresh air into the attic to balance the ventilation that protects your roof and lowers cooling costs, and it seals the eaves so birds, wasps, and squirrels cannot nest in the roof structure of your Warrenton home.',
+        'question' => 'Does soffit affect attic ventilation?',
+        'answer'   => 'Yes. Vented soffit is where outside air enters the attic, and that air leaves through vents higher on the roof. A&S Contracting Services includes attic ventilation in its soffit work and checks the intake at the eaves during the visit.',
     ],
     [
-        'question' => 'Why do I need vented soffit for attic airflow?',
-        'answer'   => 'A&S Contracting Services installs vented soffit because an attic needs air coming in at the eaves and out at the ridge to stay dry and cool. Without that intake, Missouri summer heat bakes the attic and winter moisture condenses on the decking, shortening the life of the roof above. Solid or clogged soffit chokes that airflow and traps the problem inside.',
+        'question' => 'Can soffit keep birds and insects out?',
+        'answer'   => 'Intact soffit closes the underside of the roof overhang, which blocks pests and moisture from reaching the eave framing and the attic. A&S Contracting Services repairs or replaces the open, loose or damaged sections that animals use as entry points.',
     ],
     [
-        'question' => 'Can you keep birds and wasps out of my eaves?',
-        'answer'   => 'Yes. Sealing pests out of the eaves is one of the most common reasons A&S Contracting Services gets called for soffit work. We remove the failed or gapped panels, close the openings birds and wasps use to get behind the roofline, and install tight, vented soffit that lets air through while keeping nesters out of the overhang.',
+        'question' => 'Will new soffit match my house?',
+        'answer'   => 'A&S Contracting Services matches soffit to the roofline. When only part of the eave is repaired, the estimate notes how closely the new panels will match the existing ones.',
     ],
     [
-        'question' => 'Should soffit, fascia, and gutters be done together?',
-        'answer'   => 'Usually, yes. A&S Contracting Services treats the soffit, fascia, and gutters as one roofline system because they meet at the same edge of the roof. When the fascia is rotted or the gutters have to come down anyway, doing the soffit at the same time means one crew, one setup, and a finished eave that matches instead of a patchwork of repairs.',
+        'question' => 'Do soffit and fascia get replaced together?',
+        'answer'   => 'Not always. Soffit and fascia meet at the roof edge and can be damaged by the same leak, but each can be repaired separately. A&S Contracting Services does both, checks both during the visit and itemizes them separately in the estimate.',
     ],
     [
-        'question' => 'Are you licensed and insured for soffit work in Missouri?',
-        'answer'   => 'Yes. A&S Contracting Services is a licensed Missouri general contractor and carries full insurance on every soffit job. Because working the eaves means ladders and roof-edge access, that coverage protects your home while the same crew that handles your roof, gutters, and fascia restores the overhang.',
+        'question' => 'How do I get a soffit estimate?',
+        'answer'   => 'Call (636) 359-7204 or send the form on this page. A&S Contracting Services schedules an on-site visit within days of first contact, then sends a written estimate with a start window. The visit and the estimate cost nothing and carry no obligation.',
     ],
+];
+
+// ─── Other-services cards (page-local copy) ─────────────────────────────────
+$otherCards = [
+    'fascia' => ['icon' => 'ruler', 'desc' => 'Fascia installation and replacement, including rotted boards at the roof edge.'],
+    'gutters' => ['icon' => 'droplets', 'desc' => 'Seamless aluminum gutter systems: installation, repair, replacement and cleaning.'],
+    'roofing' => ['icon' => 'home', 'desc' => 'Roof installation, repair, tear-off and full replacement, plus storm and hail damage repair.'],
 ];
 
 // ─── Schema (Service + FAQPage + BreadcrumbList) ─────────────────────────────
@@ -59,8 +66,8 @@ $serviceSchema = [
     '@type'       => 'Service',
     '@id'         => $canonicalUrl . '#service-' . $serviceSlug,
     'name'        => 'Soffit',
-    'serviceType' => 'Soffit installation',
-    'description' => 'Vented aluminum and vinyl soffit installation and repair in Warrenton, MO and Warren County—restoring attic ventilation, sealing eaves against pests, and matching the existing roofline.',
+    'serviceType' => 'Soffit contractor',
+    'description' => 'Soffit installation and repair in Warrenton, MO and Warren County: attic ventilation at the eaves, pest and moisture protection, and soffit matched to the roofline.',
     'provider'    => ['@id' => $siteUrl . '/#organization'],
     'areaServed'  => [
         '@type' => 'GeoCircle',
@@ -113,16 +120,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 .sp-checklist li svg { color: var(--color-primary); margin-top: 3px; }
 @media (max-width: 800px) { .sp-included { grid-template-columns: 1fr; } }
 
-/* Comparison */
-.sp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
-.sp-compare__col { border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--color-surface); }
-.sp-compare__col--us { border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-line)); box-shadow: var(--shadow); background: color-mix(in srgb, var(--color-accent) 8%, white); }
-.sp-compare h3 { font-size: 1.1rem; margin-bottom: .9rem; display: flex; align-items: center; gap: .5rem; }
-.sp-compare ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
-.sp-compare li { display: grid; grid-template-columns: 22px 1fr; gap: .55rem; font-size: .93rem; color: var(--color-ink-2); }
-.sp-compare--them li svg { color: var(--color-danger); margin-top: 2px; }
-.sp-compare--us li svg { color: var(--color-success); margin-top: 2px; }
-@media (max-width: 700px) { .sp-compare { grid-template-columns: 1fr; } }
+/* Comparison table */
+.sp-table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.sp-table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: .94rem; }
+.sp-table caption { caption-side: top; text-align: left; padding: 1rem 1.25rem .75rem; font-family: var(--font-heading); font-weight: 700; color: var(--color-ink); }
+.sp-table th, .sp-table td { padding: .85rem 1.25rem; text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); color: var(--color-ink-2); }
+.sp-table thead th { font-family: var(--font-heading); color: var(--color-ink); background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface)); }
+.sp-table tbody th { color: var(--color-ink); font-weight: 700; width: 22%; }
+.sp-table td a, .sp-checklist a, .sp-evidence a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.sp-table-note { margin-top: 1rem; }
+.sp-position__stat--word { font-size: clamp(2.6rem, 7vw, 4.2rem); }
 
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
@@ -155,22 +162,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
         <span class="eyebrow">Soffit &middot; Warrenton &amp; Warren County</span>
-        <h1>Soffit in <span class="text-accent">Warrenton, MO</span> — vented install, repair &amp; pest sealing</h1>
-        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured Warrenton contractor that installs and repairs vented soffit within 50 miles of Warren County—restoring attic airflow, sealing birds and wasps out of the eaves, and matching your existing roofline with one self-performing crew.</p>
+        <h1>Soffit in <span class="text-accent">Warrenton, MO</span> — installation, repair &amp; attic ventilation</h1>
+        <p class="hero-answer">A&amp;S Contracting Services installs and repairs soffit in Warrenton, MO to ventilate the attic and keep pests and moisture out of the eaves. A&amp;S is licensed and fully insured; the written estimate is free.</p>
         <div class="hero-actions">
-          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free soffit estimate</a>
+          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written soffit estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
         </div>
         <ul class="hero-chips">
-          <li><?php echo icon('shield-check', 16); ?> Licensed &amp; insured in Missouri</li>
-          <li><?php echo icon('wind', 16); ?> Vented for attic airflow</li>
-          <li><?php echo icon('users', 16); ?> Self-performed &mdash; no subcontractors</li>
+          <li><?php echo icon('clipboard-list', 16); ?> Written, itemized estimate</li>
+          <li><?php echo icon('home', 16); ?> Warrenton-based, 50-mile radius</li>
+          <li><?php echo icon('ruler', 16); ?> Matched to the roofline</li>
         </ul>
       </div>
 
       <aside class="hero-form-card" id="hero-form">
-        <h2>Free soffit estimate</h2>
-        <p class="hero-form-tagline">No obligation. Same-day reply.</p>
+        <h2>Request a soffit estimate</h2>
+        <p class="hero-form-tagline">Eaves inspected in person. No obligation.</p>
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -195,43 +202,44 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
           <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
           <?php } ?>
-          <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
         </form>
       </aside>
     </div>
   </div>
 </section>
 
+<article>
 <!-- ═══════════════════ PROBLEM STATEMENT ═══════════════════ -->
 <section class="section section--light">
   <div class="container">
     <div class="sp-problem">
       <div class="reveal-left">
         <span class="eyebrow-label">Know The Signs</span>
-        <h2>How do you know your Warrenton soffit needs work?</h2>
-        <p class="answer-block">If soffit panels are peeling or sagging, birds and wasps are nesting in the eaves, or the attic runs hot and shows mildew, the underside of your roof overhang has stopped doing its job. A&amp;S Contracting Services inspects the eaves and rafter tails, finds where air and pests are getting through, and tells you whether a repair or full soffit replacement is the right move.</p>
-        <p class="pull-quote">The soffit is the intake vent for your whole attic—block it, and the roof above starts to cook.</p>
+        <h2>How do you spot soffit damage from the ground?</h2>
+        <p class="answer-block">Soffit damage shows from the ground as sagging or missing panels, peeling paint, dark stains under the eave, or birds and wasps going in and out of a gap. Missouri’s humid summers make attic airflow matter, and the soffit is where that air enters. A&amp;S Contracting Services inspects the eaves on site before quoting any repair.</p>
+        <p class="pull-quote">The soffit is the underside of the roof overhang, and it is the intake side of attic ventilation.</p>
       </div>
       <div class="sp-signs reveal-right">
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('layers', 22); ?></div>
-          <h3>Peeling or sagging panels</h3>
-          <p>Drooping, blistered soffit means water has gotten in and the overhang is coming apart.</p>
-        </div>
-        <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('leaf', 22); ?></div>
-          <h3>Pests in the eaves</h3>
-          <p>Birds, wasps, and squirrels nesting overhead have found a gap in the roofline to exploit.</p>
-        </div>
-        <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('flame', 22); ?></div>
-          <h3>Hot, stuffy attic</h3>
-          <p>Blocked intake vents choke airflow, so summer heat builds up and drives cooling bills higher.</p>
+          <h3>Sagging or missing panels</h3>
+          <p>A panel that has dropped leaves the rafter tails and the attic open to weather.</p>
         </div>
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('droplets', 22); ?></div>
-          <h3>Attic moisture &amp; rot</h3>
-          <p>Mildew on the decking and soft rafter tails point to trapped humidity from poor ventilation.</p>
+          <h3>Stains under the eave</h3>
+          <p>Dark streaks point to water coming from the roof edge or a gutter above.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('home', 22); ?></div>
+          <h3>Nests in the overhang</h3>
+          <p>Birds, squirrels and wasps use any opening in the eave as a way in.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('wind', 22); ?></div>
+          <h3>Blocked or painted-over vents</h3>
+          <p>Vents that cannot pass air leave the attic without intake.</p>
         </div>
       </div>
     </div>
@@ -243,16 +251,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="sp-position">
       <div class="reveal-up">
-        <div class="sp-position__stat">2<span>jobs done at once—soffit that keeps the attic breathing and seals pests out of your Warrenton eaves</span></div>
+        <div class="sp-position__stat sp-position__stat--word">Intake<span>is the soffit’s part in attic ventilation: outside air enters at the eave</span></div>
       </div>
       <div class="reveal-right">
-        <span class="eyebrow-label">Why It Matters</span>
-        <h2>What makes A&amp;S a soffit contractor Warren County homeowners trust?</h2>
-        <p class="answer-block">A&amp;S Contracting Services treats soffit as part of the whole roofline instead of a cosmetic panel. The same crew that inspects your rafter tails installs vented soffit for proper attic airflow, seals the gaps pests use, and matches the finish—so ventilation and pest control are fixed together, not patched over.</p>
+        <span class="eyebrow-label">Part Of The Roof</span>
+        <h2>How does soffit connect to the rest of the roof?</h2>
+        <p class="answer-block">Soffit connects to the rest of the roof as the intake for attic ventilation: air enters through vented panels at the eave and leaves near the ridge. A&amp;S Contracting Services is a roofing and exterior contractor, so its crew, with no subcontractors involved, treats soffit, <a href="/services/roofing/">roof repair and replacement</a> and the fascia board as one assembly.</p>
         <ul class="sp-evidence">
-          <li><?php echo icon('wind', 22); ?><span><b>Ventilation restored.</b> Vented soffit feeds fresh air to the attic, protecting the roof deck and lowering cooling costs.</span></li>
-          <li><?php echo icon('shield-check', 22); ?><span><b>Sealed against pests.</b> We close the openings birds, wasps, and squirrels use to nest in the eaves.</span></li>
-          <li><?php echo icon('home', 22); ?><span><b>One roofline system.</b> Soffit, fascia, gutters, and roof handled by the same crew for a finished, matching eave.</span></li>
+          <li><?php echo icon('wind', 22); ?><span><b>Ventilation checked, not assumed.</b> The visit looks at whether the eave vents can pass air, a subject the A&amp;S post on <a href="/blog/roof-ventilation-in-missouri-ridge-vents-soffit-intake-attic-heat/">ridge vents and soffit intake in Missouri</a> explains.</span></li>
+          <li><?php echo icon('ruler', 22); ?><span><b>Matched to the roofline.</b> New soffit is chosen to match the existing eave so a repaired section does not stand out.</span></li>
+          <li><?php echo icon('check-circle', 22); ?><span><b>Fascia handled alongside.</b> If the <a href="/services/fascia/">fascia board at the roof edge</a> is rotted where the soffit meets it, one estimate covers both.</span></li>
         </ul>
       </div>
     </div>
@@ -263,65 +271,30 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="section section--light">
   <div class="container">
     <span class="eyebrow-label">The Work</span>
-    <h2>What&rsquo;s included in an A&amp;S soffit installation?</h2>
-    <p class="answer-block">A&amp;S Contracting Services delivers a full eave restoration, not just a cover-up: removal of the old soffit, inspection of the rafter tails and lookouts, repair of any hidden rot, vented soffit installed for proper airflow, gaps sealed against pests, a color-matched finish, and a clean job site. Every eave on your Warrenton home breathes and keeps nesters out.</p>
+    <h2>What does A&amp;S do on a soffit job?</h2>
+    <p class="answer-block">On a soffit job, A&amp;S installs soffit or repairs damaged sections, checks attic ventilation at the eave, and closes the gaps that let pests and moisture in. A&amp;S Contracting Services prices the work from an on-site look; the written figure depends on the length of eave, the material, the state of the framing and the scope.</p>
     <div class="sp-included">
       <div class="reveal-up">
-        <h3>Included in the scope</h3>
+        <h3>Soffit work on the list</h3>
         <ul class="sp-checklist">
-          <li><?php echo icon('check', 20); ?> Removal of the old or failing soffit panels</li>
-          <li><?php echo icon('check', 20); ?> Inspection of rafter tails and lookouts</li>
-          <li><?php echo icon('check', 20); ?> Repair of hidden wood rot at the eaves</li>
-          <li><?php echo icon('check', 20); ?> Vented aluminum or vinyl soffit for proper attic airflow</li>
-          <li><?php echo icon('check', 20); ?> Gaps sealed against birds, wasps, and squirrels</li>
-          <li><?php echo icon('check', 20); ?> Color-matched finish to blend with the existing roofline</li>
-          <li><?php echo icon('check', 20); ?> Full cleanup and haul-away of the old material</li>
+          <li><?php echo icon('check', 20); ?> <span>New soffit installation</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Repair of loose, sagging or damaged soffit</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Attic ventilation at the eaves</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Openings closed against birds, insects and rodents</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Moisture kept out from under the overhang</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Soffit matched to the existing roofline</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Fascia or gutter work added to the estimate when needed</span></li>
         </ul>
       </div>
       <div class="reveal-right">
-        <h3>How the project runs</h3>
+        <h3>Steps from visit to walkthrough</h3>
         <ol class="process-steps">
-          <li><b>Free inspection</b><span>We check the eaves, rafter tails, and attic ventilation, and go over options on site.</span></li>
-          <li><b>Written estimate</b><span>You get an itemized quote—material, timeline, and price, with any rot repair spelled out.</span></li>
-          <li><b>Remove &amp; repair</b><span>Our crew pulls the old soffit, fixes the wood underneath, and seals the openings pests use.</span></li>
-          <li><b>Install &amp; walkthrough</b><span>Vented soffit goes up, the site is cleaned, and we review the finished eaves with you.</span></li>
+          <li><b>Eave inspection</b><span>A&amp;S examines the overhangs around the whole house, not only the visible damage.</span></li>
+          <li><b>Estimate on paper</b><span>An itemized price for the lengths to be repaired or replaced; the number quoted is the number charged.</span></li>
+          <li><b>Dates confirmed</b><span>A start window and a timeline are written down before materials are ordered.</span></li>
+          <li><b>Work and walkthrough</b><span>The crew completes the soffit, removes debris each day and shows you the finished eaves.</span></li>
         </ol>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ PROOF / REVIEWS ═══════════════════ -->
-<section class="section reviews-section edge-wave-top" aria-label="Soffit reviews">
-  <span class="grain-layer" aria-hidden="true"></span>
-  <div class="container-wide">
-    <div class="section-title reveal-up">
-      <span class="eyebrow-label">In Their Words</span>
-      <h2>What do Warrenton homeowners say about our soffit work?</h2>
-      <p>Real reviews from A&amp;S Contracting Services soffit, fascia, and roofline customers across Warren County.</p>
-    </div>
-    <div class="reviews-track">
-      <?php
-      $soffitReviews = array_filter($reviews, function ($r) { return in_array($r['author'], ['Diane L.', 'Marcus H.', 'Jennifer K.']); });
-      foreach ($soffitReviews as $rev):
-        $initial = strtoupper(substr($rev['author'], 0, 1));
-      ?>
-      <article class="review-card">
-        <div class="review-stars" aria-label="<?php echo (int)$rev['rating']; ?> out of 5 stars">
-          <?php for ($s = 0; $s < (int)$rev['rating']; $s++) echo icon('star', 18); ?>
-        </div>
-        <p class="review-text">&ldquo;<?php echo htmlspecialchars($rev['text']); ?>&rdquo;</p>
-        <div class="review-author">
-          <span class="review-avatar" aria-hidden="true"><?php echo $initial; ?></span>
-          <span class="review-name"><?php echo htmlspecialchars($rev['author']); ?></span>
-        </div>
-      </article>
-      <?php endforeach; ?>
-    </div>
-    <div class="review-badge-strip">
-      <span class="badge-strip"><?php echo icon('star', 16); ?> 5-Star Google Rated</span>
-      <span class="badge-strip"><?php echo icon('shield-check', 16); ?> Licensed &amp; Insured</span>
-      <span class="badge-strip"><?php echo icon('wind', 16); ?> Attic Ventilation</span>
     </div>
   </div>
 </section>
@@ -329,29 +302,44 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <!-- ═══════════════════ COMPARISON ═══════════════════ -->
 <section class="section">
   <div class="container">
-    <span class="eyebrow-label">The Difference</span>
-    <h2>Why replace failing soffit instead of painting over it?</h2>
-    <p class="answer-block">Painting a sagging, pest-chewed soffit hides the problem for a season while the rot and blocked ventilation keep working behind the panel. A&amp;S Contracting Services removes the failed soffit, fixes the wood, and installs vented panels that actually restore airflow and seal the eaves—so the fix lasts instead of peeling off the next humid Missouri summer.</p>
-    <div class="sp-compare">
-      <div class="sp-compare__col sp-compare--them">
-        <h3><?php echo icon('x', 20); ?> Paint-over &amp; patchwork</h3>
-        <ul>
-          <li><?php echo icon('minus', 18); ?> Rot and moisture hidden under fresh paint</li>
-          <li><?php echo icon('minus', 18); ?> Blocked ventilation left choking the attic</li>
-          <li><?php echo icon('minus', 18); ?> Pest openings never actually sealed</li>
-          <li><?php echo icon('minus', 18); ?> Mismatched patches instead of a finished eave</li>
-        </ul>
-      </div>
-      <div class="sp-compare__col sp-compare--us">
-        <h3><?php echo icon('check-circle', 20); ?> A&amp;S Contracting Services</h3>
-        <ul>
-          <li><?php echo icon('check', 18); ?> Rot repaired before anything goes back up</li>
-          <li><?php echo icon('check', 18); ?> Vented soffit that restores real attic airflow</li>
-          <li><?php echo icon('check', 18); ?> Eaves sealed tight against birds and wasps</li>
-          <li><?php echo icon('check', 18); ?> Color-matched, finished by one local crew</li>
-        </ul>
-      </div>
+    <span class="eyebrow-label">Vented Or Solid</span>
+    <h2>What is the difference between vented and solid soffit?</h2>
+    <p class="answer-block">The difference between vented and solid soffit is airflow: vented panels are perforated so outside air can enter the attic, and solid panels are closed. A&amp;S Contracting Services decides which goes where during the on-site visit, based on how the attic above each section is ventilated. The table lays out the general distinction.</p>
+    <div class="sp-table-wrap reveal-up">
+      <table class="sp-table">
+        <caption>Vented and solid soffit panels compared</caption>
+        <thead>
+          <tr>
+            <th scope="col">Attribute</th>
+            <th scope="col">Vented soffit</th>
+            <th scope="col">Solid soffit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Airflow</th>
+            <td>Perforated to let outside air into the attic</td>
+            <td>Closed; passes no air</td>
+          </tr>
+          <tr>
+            <th scope="row">Where it is used</th>
+            <td>Eaves that supply intake air to an attic</td>
+            <td>Overhangs and porch ceilings with no attic space to ventilate</td>
+          </tr>
+          <tr>
+            <th scope="row">Pests</th>
+            <td>Openings too small for birds and rodents</td>
+            <td>A continuous closed surface</td>
+          </tr>
+          <tr>
+            <th scope="row">How A&amp;S specifies it</th>
+            <td>Where the attic needs intake</td>
+            <td>Where no intake is needed, matched to the vented panels</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <p class="sp-table-note">Unsure whether to patch the eave or redo it? See the A&amp;S guide to <a href="/blog/soffit-fascia-repair-vs-replacement/">soffit and fascia repair versus replacement</a>.</p>
   </div>
 </section>
 
@@ -360,7 +348,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container-narrow">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">Good Questions</span>
-      <h2>What do Warrenton homeowners ask before a soffit project?</h2>
+      <h2>What do people ask about soffit repair?</h2>
+      <p>People ask about soffit repair cost, ventilation, pests, matching and whether the fascia has to come off too. A&amp;S Contracting Services gives the general answers below. For a particular house in Warrenton, Foristell or Wentzville, the answer comes from looking at the eaves and writing it into an estimate.</p>
     </div>
     <div class="faq-grid">
       <?php foreach ($faqs as $fi => $faq): ?>
@@ -374,12 +363,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 </section>
 
 <!-- ═══════════════════ RECENT WORK ═══════════════════ -->
-<section class="section sp-gallery" aria-label="Recent soffit projects">
+<section class="section sp-gallery" aria-label="Soffit job-site photos">
   <div class="container-wide">
     <div class="section-title reveal-up">
-      <span class="eyebrow-label">Recent Work</span>
-      <h2>What recent soffit projects has A&amp;S completed near Warrenton?</h2>
-      <p class="answer-block">These are real soffit projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+      <span class="eyebrow-label">Job-Site Photos</span>
+      <h2>What do A&amp;S eave and trim projects look like?</h2>
+      <p class="answer-block">A&amp;S eave and trim projects look like the three below: a single-story house with finished soffit, an addition with dormers under construction, and a metal barn with completed trim. A&amp;S Contracting Services shot these photos on its own job sites; the captions describe the buildings and do not name locations.</p>
     </div>
     <div class="sp-gallery-grid" data-p1-dynamic>
       <?php foreach ($workPhotos as $wp): ?>
@@ -397,39 +386,39 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container-wide">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">What We Do</span>
-      <h2>What else can A&amp;S handle on your home?</h2>
-      <p class="hero-answer">Soffit is one trade under one licensed roof. A&amp;S Contracting Services installs the full roofline as a system, so the fascia, gutters, and roof that meet your soffit at the eave are handled by the same accountable crew across Warrenton and Warren County.</p>
+      <h2>What work sits next to soffit on an estimate?</h2>
+      <p class="hero-answer">Fascia, gutters and roofing sit next to soffit on an estimate because all four meet at the roof overhang. A&amp;S Contracting Services, based in the Warren County seat of Warrenton, carries each of them on its <a href="/services/">list of contracting services</a>, and can price them as separate line items in one document.</p>
     </div>
     <div class="sp-other">
       <?php
-      $otherSlugs = ['fascia', 'gutters', 'roofing'];
-      $tintCycle  = [1, 2, 3];
-      $otherIcons = ['fascia' => 'ruler', 'gutters' => 'droplets', 'roofing' => 'home'];
-      foreach ($otherSlugs as $oi => $os):
+      $tintCycle = [1, 2, 3];
+      $oi = 0;
+      foreach ($otherCards as $os => $oc):
         $osvc = null; foreach ($services as $s) { if ($s['slug'] === $os) { $osvc = $s; break; } }
         if (!$osvc) continue;
       ?>
       <article class="service-card-with-image card-tint-<?php echo $tintCycle[$oi % 3]; ?> reveal-up reveal-delay-<?php echo ($oi % 3) + 1; ?>">
         <div class="service-card__body">
-          <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
+          <div class="service-card__icon"><?php echo icon($oc['icon'], 22); ?></div>
           <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
-          <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
+          <p class="service-card__desc"><?php echo htmlspecialchars($oc['desc']); ?></p>
           <a href="/services/<?php echo $os; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$os] ?? $osvc['name']); ?></a>
         </div>
       </article>
-      <?php endforeach; ?>
+      <?php $oi++; endforeach; ?>
     </div>
   </div>
 </section>
+</article>
 
 <!-- ═══════════════════ FINAL CTA / ESTIMATE ═══════════════════ -->
-<section class="section section--light" id="estimate" aria-label="Request your free soffit estimate">
+<section class="section section--light" id="estimate" aria-label="Request a soffit estimate">
   <div class="container">
     <div class="estimate">
       <div class="card reveal-up" style="padding: clamp(1.5rem, 4vw, 2.5rem); border:1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface);">
-        <span class="eyebrow-label">Free Estimate</span>
-        <h2>Ready to get your eaves breathing again?</h2>
-        <p class="lead" style="margin-bottom: 1.25rem;">Send the details and A&amp;S Contracting Services will reply the same day to schedule your free on-site soffit inspection.</p>
+        <span class="eyebrow-label">Written Estimate</span>
+        <h2>Ready to have the eaves checked?</h2>
+        <p class="lead" style="margin-bottom: 1.25rem;">Describe what you are seeing under the roofline and A&amp;S Contracting Services will set up an on-site visit within days of first contact.</p>
 
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -495,10 +484,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="reveal-right">
         <span class="eyebrow-label">What Happens Next</span>
         <h2>What happens after you <span class="text-accent">request your estimate</span>?</h2>
+        <p>After an estimate request, A&amp;S Contracting Services replies to arrange an on-site look at the eaves, scheduled within days of first contact. The written estimate comes next, itemizing the soffit lengths to be repaired or replaced and stating a start window. There is no obligation to go ahead once you have it.</p>
         <ol class="next-steps">
-          <li><strong>We reach out the same day.</strong> A&amp;S Contracting Services confirms the details and schedules your free on-site soffit inspection.</li>
-          <li><strong>You get a written estimate.</strong> Clear scope, material, timeline, and price—with any rot repair spelled out up front.</li>
-          <li><strong>One crew does the work.</strong> The same self-performing team removes, repairs, and installs your vented soffit.</li>
+          <li><strong>A&amp;S inspects the overhangs.</strong> All sides of the house, during business hours Monday through Saturday.</li>
+          <li><strong>The estimate is itemized.</strong> Soffit, plus fascia or gutter work if needed, each on its own line.</li>
+          <li><strong>The eaves are finished.</strong> Installation, daily cleanup and a walkthrough with you at the end.</li>
         </ol>
         <div class="nap">
           <div><?php echo icon('phone', 18); ?> <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a></div>

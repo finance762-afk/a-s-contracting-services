@@ -9,47 +9,47 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Dry Wall';
 $pageTitle       = 'Drywall Installation & Repair in Warrenton, MO';
-$pageDescription = 'Drywall installation & repair in Warrenton, MO—hang, tape, texture and water-damage patches, paint-ready. Licensed & insured. Free estimate: (636) 359-7204.';
+$pageDescription = 'Drywall installation, finishing and repair in Warrenton, MO by A&S Contracting Services. Licensed & insured. Free on-site written estimate: (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/services/dry-wall/';
 
 // ─── Hero + recent-work photos (image manifest) ─────────────────────────────
 $heroImage    = '1779984936314-5pnhuy-43-Aug_06__2025_23-34-36-CJqa';
-$heroImageAlt = 'Home renovation in progress with new siding and interior build-out by A&S Contracting Services near Warrenton';
+$heroImageAlt = 'Blue-sided house with house wrap and a new deck frame during an exterior renovation';
 $heroPreload  = [
     'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
     'sizes'  => '100vw',
 ];
 $workPhotos = [
-    ['1779985083901-6czd8y-29-Feb_09__2026_17-31-13-2hYG', 'Interior and roof build-out in progress with new decking and framing in Warren County'],
-    ['1779985357413-bd2qlx-35-Aug_06__2025_18-05-09-sh7A', 'Active job site with house wrap and exposed subflooring during a Warrenton renovation'],
-    ['1779985124323-t7sz4h-25-Mar_19__2026_16-22-48-7m7y', 'Exposed framing and sheathing during an interior renovation near Warrenton'],
+    ['1779985083901-6czd8y-29-Feb_09__2026_17-31-13-2hYG', 'Bare roof decking and underlayment during a tear-off on a wooded lot'],
+    ['1779985357413-bd2qlx-35-Aug_06__2025_18-05-09-sh7A', 'House wrap, a ladder and deck boards at a wall being rebuilt'],
+    ['1779985124323-t7sz4h-25-Mar_19__2026_16-22-48-7m7y', 'Roof decking stripped back to the rafters along an eave'],
 ];
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
         'question' => 'How much does drywall installation or repair cost in Warrenton?',
-        'answer'   => 'A&S Contracting Services prices drywall by the size of the job, the finish level, and the texture to match, measured on site. A single patch is a small line item; a full addition is priced by the board and finish. Either way you get a written estimate up front, not a number invented over the phone.',
+        'answer'   => 'A&S Contracting Services does not publish drywall prices, because cost depends on square footage, the condition of the existing wall or framing, materials and scope. A&S measures the job on site and gives a written, itemized estimate at no charge. The quoted price is the final price, with no hidden fees or upselling.',
     ],
     [
-        'question' => 'Can you match my existing wall texture?',
-        'answer'   => 'Yes. A&S Contracting Services matches knockdown, orange peel, and smooth-wall finishes so a repair blends into the room. Texture matching is the step most patches skip, and it is the reason a bad fix stands out—we get the spray and knockdown right before priming so the wall reads as one continuous surface.',
+        'question' => 'Should water-damaged drywall be repaired or replaced?',
+        'answer'   => 'A&S Contracting Services replaces drywall that has gone soft, sagged or crumbled, and repairs board that is stained but still firm once it is dry. Either way the source of the water is dealt with first. Because A&S also does roofing, a leak from above and the ceiling below it can be handled by one company.',
     ],
     [
-        'question' => 'How long does drywall need to dry before painting?',
-        'answer'   => 'A&S Contracting Services builds drywall mud in coats, and each coat needs to dry before the next—usually about a day apart depending on humidity. Missouri\'s damp stretches slow it down. We sand the final coat flat and leave the wall prime-ready, so your painter can prime and paint once the mud is fully cured.',
+        'question' => 'How long does a drywall job take?',
+        'answer'   => 'A&S Contracting Services sets the drywall timeline by scope, so a single patch and a full addition are scheduled very differently. Joint compound has to dry between coats, and humid Missouri summers slow that down. The start window and timeline are given in writing with the estimate.',
     ],
     [
-        'question' => 'Do you repair water-damaged or sagging drywall?',
-        'answer'   => 'Yes. A&S Contracting Services cuts out water-stained, soft, or sagging panels, confirms the source of the moisture is resolved, and replaces the board with a taped, textured finish. Painting over water-damaged drywall only hides it until it fails again, so we replace what the water reached rather than coat over it.',
+        'question' => 'Does A&S Contracting Services do commercial drywall?',
+        'answer'   => 'Yes. A&S Contracting Services installs, finishes and repairs drywall for commercial clients as well as homeowners, anywhere within 50 miles of Warrenton. That covers Warren County and nearby towns including Wright City, Wentzville, Troy and Washington.',
     ],
     [
-        'question' => 'Will you clean up the drywall dust?',
-        'answer'   => 'Yes. A&S Contracting Services controls dust during sanding and hauls away scrap board and debris before leaving. Drywall dust is fine enough to travel through a whole house, so we contain the work area, clean the space, and leave your Warrenton home ready for paint—not a mess for you to deal with.',
+        'question' => 'Can A&S paint and trim the room after the drywall is finished?',
+        'answer'   => 'Yes. Painting, trim and flooring are part of the full scale interior work A&S Contracting Services offers, so a room can be boarded, finished, painted and trimmed under one estimate. Ask for both on the same visit and the estimate will itemize them separately.',
     ],
     [
-        'question' => 'Do you finish drywall for additions and new construction?',
-        'answer'   => 'Yes. A&S Contracting Services hangs and finishes drywall for new construction, room additions, and remodels, tying the new board into existing walls and ceilings. Because we also self-perform framing and interior trades, the drywall arrives on schedule with the rest of the project instead of waiting on an outside crew.',
+        'question' => 'What happens on a drywall estimate visit?',
+        'answer'   => 'A&S Contracting Services schedules drywall estimate visits within days of first contact. The visit covers the walls, ceilings or framing in person, and the written estimate that follows itemizes the work. Both the visit and the estimate are free and carry no obligation.',
     ],
 ];
 
@@ -60,7 +60,7 @@ $serviceSchema = [
     '@id'         => $canonicalUrl . '#service-' . $serviceSlug,
     'name'        => 'Dry Wall',
     'serviceType' => 'Drywall contractor',
-    'description' => 'Drywall hang, tape, three-coat finish, texture matching, and repair for new construction, additions, and remodels in Warrenton, MO and Warren County.',
+    'description' => 'Drywall installation, finishing and repair for residential and commercial clients within 50 miles of Warrenton, MO.',
     'provider'    => ['@id' => $siteUrl . '/#organization'],
     'areaServed'  => [
         '@type' => 'GeoCircle',
@@ -113,16 +113,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 .sp-checklist li svg { color: var(--color-primary); margin-top: 3px; }
 @media (max-width: 800px) { .sp-included { grid-template-columns: 1fr; } }
 
-/* Comparison */
-.sp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
-.sp-compare__col { border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--color-surface); }
-.sp-compare__col--us { border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-line)); box-shadow: var(--shadow); background: color-mix(in srgb, var(--color-accent) 8%, white); }
-.sp-compare h3 { font-size: 1.1rem; margin-bottom: .9rem; display: flex; align-items: center; gap: .5rem; }
-.sp-compare ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
-.sp-compare li { display: grid; grid-template-columns: 22px 1fr; gap: .55rem; font-size: .93rem; color: var(--color-ink-2); }
-.sp-compare--them li svg { color: var(--color-danger); margin-top: 2px; }
-.sp-compare--us li svg { color: var(--color-success); margin-top: 2px; }
-@media (max-width: 700px) { .sp-compare { grid-template-columns: 1fr; } }
+/* Comparison table */
+.sp-table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.sp-table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: .93rem; }
+.sp-table caption { caption-side: top; text-align: left; padding: 1rem 1.25rem; font-family: var(--font-heading); font-weight: 700; color: var(--color-ink); }
+.sp-table th, .sp-table td { padding: .8rem 1.25rem; text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); color: var(--color-ink-2); }
+.sp-table thead th { background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface)); color: var(--color-ink); font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; }
+.sp-table tbody th { color: var(--color-ink); font-weight: 700; }
+.sp-after { margin-top: 1.25rem; max-width: 65ch; color: var(--color-ink-2); }
 
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
@@ -155,22 +153,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
         <span class="eyebrow">Drywall &middot; Warrenton &amp; Warren County</span>
-        <h1>Drywall in <span class="text-accent">Warrenton, MO</span> — hang, tape, texture &amp; repair</h1>
-        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured Warrenton contractor that hangs, tapes, and finishes drywall to a smooth, paint-ready surface—new construction, additions, remodels, and repairs—matching your existing texture and controlling the dust so the wall looks like it was always there across Warren County.</p>
+        <h1>Drywall in <span class="text-accent">Warrenton, MO</span> — installation, finishing &amp; repair</h1>
+        <p class="hero-answer">A&amp;S Contracting Services, a licensed Missouri general contractor that is fully insured, installs, finishes and repairs drywall for homes and commercial spaces within 50 miles of Warrenton.</p>
         <div class="hero-actions">
-          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free drywall estimate</a>
+          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written drywall estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
         </div>
         <ul class="hero-chips">
-          <li><?php echo icon('shield-check', 16); ?> Licensed &amp; insured in Missouri</li>
-          <li><?php echo icon('pencil-ruler', 16); ?> Taped, floated &amp; texture-matched</li>
-          <li><?php echo icon('users', 16); ?> Self-performed &mdash; no subcontractors</li>
+          <li><?php echo icon('landmark', 16); ?> Founded in Warrenton in 2023</li>
+          <li><?php echo icon('clipboard-list', 16); ?> Written, itemized estimate</li>
+          <li><?php echo icon('check-circle', 16); ?> Job site cleaned daily</li>
         </ul>
       </div>
 
       <aside class="hero-form-card" id="hero-form">
-        <h2>Want your free drywall estimate?</h2>
-        <p class="hero-form-tagline">No obligation. Same-day reply.</p>
+        <h2>Request a drywall estimate</h2>
+        <p class="hero-form-tagline">The on-site visit and the written estimate are free. No obligation.</p>
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -195,12 +193,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
           <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
           <?php } ?>
-          <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
         </form>
       </aside>
     </div>
   </div>
 </section>
+
+<article>
 
 <!-- ═══════════════════ PROBLEM STATEMENT ═══════════════════ -->
 <section class="section section--light">
@@ -208,30 +208,30 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="sp-problem">
       <div class="reveal-left">
         <span class="eyebrow-label">Know The Signs</span>
-        <h2>How do you know your drywall needs repair or finishing?</h2>
-        <p class="answer-block">A&amp;S Contracting Services looks for cracks running along seams, nail and screw heads popping through the paint, water-stained or sagging panels, and holes from moving or accidents. Any of these means the board or its finish has failed—and a proper taped, floated repair, not a smear of spackle, is what makes it disappear under paint.</p>
-        <p class="pull-quote">A bad patch never really hides—it telegraphs through the paint the first time the light hits it.</p>
+        <h2>How do you know your drywall needs repair or replacement?</h2>
+        <p class="answer-block">Drywall needs repair when the surface has failed but the board is still sound, and replacement when the board itself has gone soft. Cracks along a seam, fastener heads showing through paint and small holes are surface repairs. Brown water rings, sagging ceilings and crumbling edges mean the panel comes out and the leak gets traced first.</p>
+        <p class="pull-quote">A stain on the ceiling is a roof or plumbing question before it is a drywall one.</p>
       </div>
       <div class="sp-signs reveal-right">
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('droplets', 22); ?></div>
-          <h3>Water-stained panels</h3>
-          <p>Brown rings or soft, sagging drywall mean a past leak soaked the board and it needs replacing.</p>
+          <h3>Water rings</h3>
+          <p>A brown ring marks where water sat on the board. The stain is the symptom; the estimate visit looks for where the water came in.</p>
         </div>
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('waves', 22); ?></div>
-          <h3>Cracked seams</h3>
-          <p>Cracks tracking along a joint show the tape and mud have failed and need re-taping.</p>
+          <h3>Cracks along seams</h3>
+          <p>A straight crack that follows a joint means the tape or compound over it has let go.</p>
         </div>
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('hammer', 22); ?></div>
-          <h3>Holes &amp; damage</h3>
-          <p>Doorknob dents, moving scrapes, and holes leave the wall open and uneven.</p>
+          <h3>Holes and dents</h3>
+          <p>Doorknob strikes and moving-day gouges break the paper face and leave the wall open.</p>
         </div>
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('layers', 22); ?></div>
-          <h3>Popped fasteners</h3>
-          <p>Nail and screw heads pushing through the paint break the smooth surface.</p>
+          <h3>Fasteners showing</h3>
+          <p>Screw or nail heads that push through the paint leave bumps that show in angled light.</p>
         </div>
       </div>
     </div>
@@ -243,16 +243,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="sp-position">
       <div class="reveal-up">
-        <div class="sp-position__stat">3<span>coats of mud, taped and sanded flat, so seams vanish under paint instead of shadowing through</span></div>
+        <div class="sp-position__stat">1<span>price: the figure on the written drywall estimate is the final price</span></div>
       </div>
       <div class="reveal-right">
-        <span class="eyebrow-label">Why It Matters</span>
-        <h2>What makes an A&amp;S drywall finish worth the extra step?</h2>
-        <p class="answer-block">A&amp;S Contracting Services finishes drywall the full way—tape, then a three-coat mud build, sanded flat, with the texture matched to the surrounding wall. A quick patch skips those steps, so it flashes and shadows once the wall is coated. Doing it right is the difference between a repair you see and one you never find again.</p>
+        <span class="eyebrow-label">Why A&amp;S</span>
+        <h2>What makes A&amp;S different from a drywall-only crew?</h2>
+        <p class="answer-block">A&amp;S Contracting Services is a general contractor, so its drywall crew also handles the trades on either side of the board. When a ceiling stain traces back to the roof, the company's <a href="/services/roofing/">roof repair and replacement crew</a> deals with the leak before the panel is replaced, and paint, trim and flooring can follow under the same estimate.</p>
         <ul class="sp-evidence">
-          <li><?php echo icon('pencil-ruler', 22); ?><span><b>Taped and three-coat floated.</b> We embed tape, then build and feather the mud so the joint sits dead flat—not a lump you feel in raking light.</span></li>
-          <li><?php echo icon('layers', 22); ?><span><b>Texture matched.</b> Knockdown, orange peel, or smooth—we match the existing wall so a patch blends into the room instead of announcing itself.</span></li>
-          <li><?php echo icon('shield-check', 22); ?><span><b>Licensed &amp; fully insured.</b> Whether it is one wall or a whole addition, the crew in your home is licensed, insured, and cleans up its own dust.</span></li>
+          <li><?php echo icon('clipboard-list', 22); ?><span><b>Scope in writing.</b> The estimate lists which walls and ceilings are covered, whether each is new board, a refinish or a patch, and what it costs.</span></li>
+          <li><?php echo icon('users', 22); ?><span><b>Self-performed.</b> A&amp;S uses no subcontractors: the board is hung, finished and cleaned up by the company's own people.</span></li>
+          <li><?php echo icon('building', 22); ?><span><b>Homes and commercial spaces.</b> Drywall installation, finishing and repair are offered to residential and commercial clients alike.</span></li>
         </ul>
       </div>
     </div>
@@ -263,65 +263,31 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="section section--light">
   <div class="container">
     <span class="eyebrow-label">The Work</span>
-    <h2>What&rsquo;s included in an A&amp;S drywall job?</h2>
-    <p class="answer-block">A&amp;S Contracting Services handles the full drywall sequence: hanging board, taping and a three-coat mud finish, sanding, texture matching, and a prime-ready wall—plus dust control and haul-away. Whether it is a single water-damaged panel or a whole Warrenton addition, the wall leaves smooth, matched to the room, and ready for your painter.</p>
+    <h2>What does an A&amp;S drywall job include?</h2>
+    <p class="answer-block">An A&amp;S drywall job includes hanging the board, finishing the joints, and repairing or replacing damaged panels, with the site cleaned at the end of each day. Drywall is one of ten <a href="/services/">services A&amp;S Contracting Services offers from Warrenton</a>, which is why a wall can go from bare framing to painted without changing companies.</p>
     <div class="sp-included">
       <div class="reveal-up">
         <h3>Included in the scope</h3>
         <ul class="sp-checklist">
-          <li><?php echo icon('check', 20); ?> Hang drywall on walls and ceilings, cut around openings</li>
-          <li><?php echo icon('check', 20); ?> Embed tape and apply a three-coat mud finish</li>
-          <li><?php echo icon('check', 20); ?> Sand seams and fasteners flat and smooth</li>
-          <li><?php echo icon('check', 20); ?> Match existing texture—knockdown, orange peel, or smooth</li>
-          <li><?php echo icon('check', 20); ?> Patch and replace water-damaged or cracked panels</li>
-          <li><?php echo icon('check', 20); ?> Dust control during sanding to protect the room</li>
-          <li><?php echo icon('check', 20); ?> Prime-ready finish, plus debris haul-away and cleanup</li>
+          <li><?php echo icon('check', 20); ?> New board hung on walls and ceilings</li>
+          <li><?php echo icon('check', 20); ?> Joints taped and finished with joint compound</li>
+          <li><?php echo icon('check', 20); ?> Finished surfaces sanded ready for primer</li>
+          <li><?php echo icon('check', 20); ?> Damaged or water-stained panels cut out and replaced</li>
+          <li><?php echo icon('check', 20); ?> Patches for holes, cracks and popped fasteners</li>
+          <li><?php echo icon('check', 20); ?> Work area cleaned at the end of each day</li>
+          <li><?php echo icon('check', 20); ?> Final walkthrough of every wall and ceiling in the scope</li>
         </ul>
       </div>
       <div class="reveal-right">
         <h3>How the project runs</h3>
         <ol class="process-steps">
-          <li><b>On-site look</b><span>We check the walls or framing, confirm the texture to match, and go over the scope.</span></li>
-          <li><b>Written estimate</b><span>You get an itemized quote—board, finish level, texture, and price, no guessing.</span></li>
-          <li><b>Hang, tape &amp; float</b><span>We hang the board and build the mud in coats, sanding each one flat.</span></li>
-          <li><b>Texture &amp; cleanup</b><span>We match the surrounding texture, leave the wall prime-ready, and haul the dust and scrap away.</span></li>
+          <li><b>On-site visit</b><span>A&amp;S looks at the framing or the damaged wall in person and asks what comes next: paint, tile or trim.</span></li>
+          <li><b>Written estimate</b><span>Itemized by area and by task, with a start window and timeline in writing.</span></li>
+          <li><b>Hang and finish</b><span>Board goes up, joints are taped, and compound is built up and sanded. Compound dries between coats, so drying time is part of the timeline.</span></li>
+          <li><b>Daily cleanup</b><span>Dust and offcuts are cleared at the end of each working day.</span></li>
+          <li><b>Final walkthrough</b><span>You and the crew check every surface in the scope before the job is closed.</span></li>
         </ol>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ PROOF / REVIEWS ═══════════════════ -->
-<section class="section reviews-section edge-wave-top" aria-label="Drywall reviews">
-  <span class="grain-layer" aria-hidden="true"></span>
-  <div class="container-wide">
-    <div class="section-title reveal-up">
-      <span class="eyebrow-label">In Their Words</span>
-      <h2>What do Warren County homeowners say about our drywall?</h2>
-      <p>Real reviews from A&amp;S Contracting Services drywall, interior, and finish customers across Warren County.</p>
-    </div>
-    <div class="reviews-track">
-      <?php
-      $dwReviews = array_filter($reviews, function ($r) { return in_array($r['author'], ['Robert T.', 'Diane L.', 'Jennifer K.']); });
-      foreach ($dwReviews as $rev):
-        $initial = strtoupper(substr($rev['author'], 0, 1));
-      ?>
-      <article class="review-card">
-        <div class="review-stars" aria-label="<?php echo (int)$rev['rating']; ?> out of 5 stars">
-          <?php for ($s = 0; $s < (int)$rev['rating']; $s++) echo icon('star', 18); ?>
-        </div>
-        <p class="review-text">&ldquo;<?php echo htmlspecialchars($rev['text']); ?>&rdquo;</p>
-        <div class="review-author">
-          <span class="review-avatar" aria-hidden="true"><?php echo $initial; ?></span>
-          <span class="review-name"><?php echo htmlspecialchars($rev['author']); ?></span>
-        </div>
-      </article>
-      <?php endforeach; ?>
-    </div>
-    <div class="review-badge-strip">
-      <span class="badge-strip"><?php echo icon('star', 16); ?> 5-Star Google Rated</span>
-      <span class="badge-strip"><?php echo icon('shield-check', 16); ?> Licensed &amp; Insured</span>
-      <span class="badge-strip"><?php echo icon('pencil-ruler', 16); ?> Texture Matched</span>
     </div>
   </div>
 </section>
@@ -329,38 +295,52 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <!-- ═══════════════════ COMPARISON ═══════════════════ -->
 <section class="section">
   <div class="container">
-    <span class="eyebrow-label">The Difference</span>
-    <h2>Why hire a drywall finisher instead of patching it yourself?</h2>
-    <p class="answer-block">A&amp;S Contracting Services tapes, floats, and texture-matches drywall so the repair disappears. A quick handyman or DIY patch skips the tape and the mud build, so the seam cracks again and the fix shows through every coat of paint. Done properly the first time, you stop seeing the wall and start seeing the room.</p>
-    <div class="sp-compare">
-      <div class="sp-compare__col sp-compare--them">
-        <h3><?php echo icon('x', 20); ?> A quick patch job</h3>
-        <ul>
-          <li><?php echo icon('minus', 18); ?> Spackle over the crack with no tape</li>
-          <li><?php echo icon('minus', 18); ?> One thin coat that shrinks and cracks again</li>
-          <li><?php echo icon('minus', 18); ?> Texture that never matches the wall</li>
-          <li><?php echo icon('minus', 18); ?> Fine dust left through the whole house</li>
-        </ul>
-      </div>
-      <div class="sp-compare__col sp-compare--us">
-        <h3><?php echo icon('check-circle', 20); ?> A&amp;S Contracting Services</h3>
-        <ul>
-          <li><?php echo icon('check', 18); ?> Tape embedded so the seam stays flat</li>
-          <li><?php echo icon('check', 18); ?> Three-coat mud, sanded dead level</li>
-          <li><?php echo icon('check', 18); ?> Texture matched to the surrounding wall</li>
-          <li><?php echo icon('check', 18); ?> Dust controlled and hauled away</li>
-        </ul>
-      </div>
+    <span class="eyebrow-label">Three Services</span>
+    <h2>Which drywall service fits your project: installation, finishing or repair?</h2>
+    <p class="answer-block">The right drywall service depends on whether there is sound board on the wall already. Installation covers bare framing in additions, remodels and commercial build-outs; finishing covers board that is hung but not yet taped; repair covers damage to an otherwise good wall. The table shows how A&amp;S Contracting Services scopes each one.</p>
+    <div class="sp-table-wrap reveal-up">
+      <table class="sp-table">
+        <caption>How A&amp;S Contracting Services scopes the three drywall services</caption>
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Starting point</th>
+            <th scope="col">What the written estimate records</th>
+            <th scope="col">What follows</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Installation</th>
+            <td>Open framing in a new room, addition or commercial space</td>
+            <td>Wall and ceiling area, board to be hung, finish required</td>
+            <td>Finishing, then paint and trim</td>
+          </tr>
+          <tr>
+            <th scope="row">Finishing</th>
+            <td>Board is hung and the joints are still open</td>
+            <td>Area to be taped and finished, and the surface the wall will receive</td>
+            <td>Primer and paint</td>
+          </tr>
+          <tr>
+            <th scope="row">Repair</th>
+            <td>Cracks, holes, popped fasteners or water damage in an existing wall</td>
+            <td>Panels to patch or replace, and the cause of any water staining</td>
+            <td>Paint to blend the repaired area</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <p class="sp-after">Not sure which side of the line a stained ceiling falls on? A&amp;S covers that decision in its guide to <a href="/blog/drywall-water-damage-repair-or-replace-a-missouri-guide/">repairing or replacing water-damaged drywall in Missouri</a>.</p>
   </div>
 </section>
 
 <!-- ═══════════════════ FAQ ═══════════════════ -->
-<section class="section section--light" aria-label="Drywall FAQ">
+<section class="section section--light" aria-label="Drywall questions to settle before the estimate">
   <div class="container-narrow">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">Good Questions</span>
-      <h2>What do Warrenton homeowners ask about drywall?</h2>
+      <h2>Drywall questions to settle before the estimate</h2>
     </div>
     <div class="faq-grid">
       <?php foreach ($faqs as $fi => $faq): ?>
@@ -374,12 +354,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 </section>
 
 <!-- ═══════════════════ RECENT WORK ═══════════════════ -->
-<section class="section sp-gallery" aria-label="Recent drywall projects">
+<section class="section sp-gallery" aria-label="Photos from A&amp;S job sites">
   <div class="container-wide">
     <div class="section-title reveal-up">
-      <span class="eyebrow-label">Recent Work</span>
-      <h2>What recent drywall projects has A&amp;S completed near Warrenton?</h2>
-      <p class="answer-block">These are real drywall and interior build-out projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+      <span class="eyebrow-label">From The Job Site</span>
+      <h2>What do A&amp;S job sites look like before the drywall goes up?</h2>
+      <p class="answer-block">These photos come from A&amp;S Contracting Services job sites and show the stage before drywall: open framing, sheathing and subfloor. Board is hung only after that structure is closed in and dry, which is easier to schedule when one contractor is responsible for the exterior shell and the interior walls.</p>
     </div>
     <div class="sp-gallery-grid" data-p1-dynamic>
       <?php foreach ($workPhotos as $wp): ?>
@@ -397,12 +377,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container-wide">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">What We Do</span>
-      <h2>What else can A&amp;S finish inside your home?</h2>
-      <p class="hero-answer">Drywall is one interior trade under one licensed crew. A&amp;S Contracting Services also handles the finish work and full projects that often follow new board across Warrenton and Warren County.</p>
+      <h2>Which other A&amp;S services connect to drywall?</h2>
+      <p class="hero-answer">Drywall usually sits in the middle of a larger job, and A&amp;S Contracting Services offers the services on both sides of it. <a href="/services/full-scale-interior-work/">Full interior remodels and room additions</a> include the paint, trim and flooring that follow new board, and <a href="/services/windows-doors/">window and door replacement</a> often means patching the wall around the new opening.</p>
     </div>
     <div class="sp-other">
       <?php
       $otherSlugs = ['full-scale-interior-work', 'general-contracting', 'windows-doors'];
+      $otherDesc  = [
+          'full-scale-interior-work' => 'Drywall, flooring, painting, trim, custom finishes, room additions and full remodels.',
+          'general-contracting' => 'Residential and commercial projects managed from planning to completion.',
+          'windows-doors' => 'Energy-efficient replacement windows, patio doors and entry doors, weather-sealed.',
+      ];
       $tintCycle  = [1, 2, 3];
       $otherIcons = ['full-scale-interior-work' => 'paint-bucket', 'general-contracting' => 'hard-hat', 'windows-doors' => 'home'];
       foreach ($otherSlugs as $oi => $os):
@@ -413,7 +398,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="service-card__body">
           <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
           <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
-          <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
+          <p class="service-card__desc"><?php echo htmlspecialchars($otherDesc[$os] ?? $osvc['name']); ?></p>
           <a href="/services/<?php echo $os; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$os] ?? $osvc['name']); ?></a>
         </div>
       </article>
@@ -422,14 +407,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   </div>
 </section>
 
+</article>
+
 <!-- ═══════════════════ FINAL CTA / ESTIMATE ═══════════════════ -->
-<section class="section section--light" id="estimate" aria-label="Request your free drywall estimate">
+<section class="section section--light" id="estimate" aria-label="Request a drywall estimate">
   <div class="container">
     <div class="estimate">
       <div class="card reveal-up" style="padding: clamp(1.5rem, 4vw, 2.5rem); border:1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface);">
-        <span class="eyebrow-label">Free Estimate</span>
+        <span class="eyebrow-label">Written Estimate</span>
         <h2>Ready for a smooth, paint-ready wall?</h2>
-        <p class="lead" style="margin-bottom: 1.25rem;">Send the details and A&amp;S Contracting Services will reply the same day to schedule your free on-site drywall estimate.</p>
+        <p class="lead" style="margin-bottom: 1.25rem;">Send the room, the damage or the plans. A&amp;S Contracting Services schedules on-site drywall estimates within days of first contact.</p>
 
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -495,10 +482,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="reveal-right">
         <span class="eyebrow-label">What Happens Next</span>
         <h2>What happens after you send your <span class="text-accent">drywall details</span>?</h2>
+        <p class="answer-block">After you send your drywall details, A&amp;S Contracting Services contacts you to set a time to see the walls in person. Estimates are scheduled within days of first contact, during business hours Monday through Saturday. The estimate is written after that visit, because drywall cost depends on area, condition and scope.</p>
         <ol class="next-steps">
-          <li><strong>We reach out the same day.</strong> A&amp;S Contracting Services confirms the details and schedules your free on-site drywall estimate.</li>
-          <li><strong>You get a written estimate.</strong> Clear scope, finish level, texture match, and price—no surprises once the crew arrives.</li>
-          <li><strong>One crew does the work.</strong> The same self-performing team hangs, tapes, textures, and cleans up—then walks the finished wall with you.</li>
+          <li><strong>A visit is scheduled.</strong> A&amp;S sets a time to look at the walls, ceilings or framing.</li>
+          <li><strong>You get an itemized estimate.</strong> It is written, free and without obligation, and the quoted price is the final price.</li>
+          <li><strong>The work is scheduled in writing.</strong> You receive a start window and timeline; the job ends with a final walkthrough.</li>
         </ol>
         <div class="nap">
           <div><?php echo icon('phone', 18); ?> <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a></div>

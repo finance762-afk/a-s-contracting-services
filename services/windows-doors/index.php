@@ -9,47 +9,47 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Windows & Doors';
 $pageTitle       = 'Window & Door Replacement in Warrenton, MO';
-$pageDescription = 'Window & door replacement in Warrenton, MO—energy-efficient units flashed and sealed by our own crew. Licensed & insured. Free estimate: (636) 359-7204.';
+$pageDescription = 'Window and door replacement in Warrenton, MO: energy-efficient windows, patio and entry doors, weather sealing. Licensed & insured. Call (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/services/windows-doors/';
 
 // ─── Hero + recent-work photos (image manifest) ─────────────────────────────
-$heroImage    = '1779985247084-5a8nou-2-Aug_26__2025_18-27-26-neFH';
-$heroImageAlt = 'Home with white fiber-cement siding and large casement windows finished by A&S Contracting Services near Warrenton';
+$heroImage    = '1779984949713-arsxr0-25-Aug_06__2025_14-36-12-a7GW';
+$heroImageAlt = 'A-frame house with weathered shingles and a gray-sided dormer before roof work';
 $heroPreload  = [
     'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
     'sizes'  => '100vw',
 ];
 $workPhotos = [
-    ['1779984869042-6cwzvd-59-Aug_09__2025_12-39-54-JQC9', 'Two-story home wrapped for renovation with scaffolding during a Warren County window project'],
-    ['1779984864659-a47kou-52-Aug_08__2025_00-31-27-YHMr', 'A&S crew installing windows on a blue-sided home mid-renovation near Warrenton'],
-    ['1779985123343-qeqtag-24-Mar_19__2026_16-22-42-uQvT', 'Framed wall openings ready for new windows during a Warren County build'],
+    ['1779984869042-6cwzvd-59-Aug_09__2025_12-39-54-JQC9', 'Two-story wall with house wrap and partial blue siding, with ladders set up'],
+    ['1779984864659-a47kou-52-Aug_08__2025_00-31-27-YHMr', 'Crew working on a deck beside a blue-sided house with house wrap'],
+    ['1779985123343-qeqtag-24-Mar_19__2026_16-22-42-uQvT', 'Roof decking with boards removed to expose the rafters'],
 ];
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
-        'question' => 'Are replacement windows really worth the cost?',
-        'answer'   => 'For most Warrenton homes with drafty or fogged windows, yes. A&S Contracting Services installs Low-E double-pane units that cut the drafts driving your heating and cooling bills up through Missouri winters and summers. Beyond the energy savings, sealed windows that open and lock easily add real comfort and resale value—and a proper install is what makes those savings actually show up.',
+        'question' => 'How much do replacement windows cost in Warrenton?',
+        'answer'   => 'A&S Contracting Services does not publish window prices. Cost depends on how many openings are involved, the units selected, the condition of the existing frames and the scope of any siding or trim repair. A&S measures on site and provides a free written, itemized estimate; the quoted price is the final price.',
     ],
     [
-        'question' => 'What does it cost to replace windows in Warrenton?',
-        'answer'   => 'Window cost depends on the number of openings, the style and glass package, and whether any rotted framing or sills need repair. A&S Contracting Services measures every opening on site and gives you a written, itemized estimate, so you know the count and the price before any old window comes out—no round-number phone quotes.',
+        'question' => 'Does A&S replace doors as well as windows?',
+        'answer'   => 'Yes. A&S Contracting Services replaces patio doors and entry doors along with windows, and weather-seals each one. Doors and windows can be combined on one written estimate.',
     ],
     [
-        'question' => 'Can you replace an entry or patio door too?',
-        'answer'   => 'Yes. A&S Contracting Services installs exterior entry doors, sliding and patio doors, and storm doors along with windows. Doors take the same care as a window—square framing, proper flashing, shimming, and a weather-tight seal—so they swing true, latch cleanly, and keep drafts and rain out of your Warren County home.',
+        'question' => 'Who repairs the siding and trim around a new window?',
+        'answer'   => 'A&S Contracting Services does. The company installs and repairs vinyl, fiber cement and wood siding and also does interior drywall, trim and painting, so the wall around a new window or door is finished by A&S on both faces. It does not use subcontractors.',
     ],
     [
-        'question' => 'What kind of glass do you install?',
-        'answer'   => 'A&S Contracting Services installs energy-efficient Low-E double-pane glass on most window replacements, in double-hung, casement, slider, and picture styles. The Low-E coating reflects heat back where you want it—out in summer, in during winter—which is exactly what a Missouri climate with hot Julys and cold Januarys demands.',
+        'question' => 'How long does window replacement take?',
+        'answer'   => 'A&S Contracting Services gives the timeline for a window or door project in writing with the estimate, along with a start window. Duration depends on the number of openings and on whether frames, siding or trim need repair once the old units are out.',
     ],
     [
-        'question' => 'How long does a window replacement take?',
-        'answer'   => 'Most whole-house window replacements around Warrenton take one to two days once the units arrive, depending on the number of openings and any framing repairs. A&S Contracting Services runs its own crew, so the same installers pull the old windows, prep the openings, and finish the trim—your home is not left open to the weather overnight.',
+        'question' => 'What makes a replacement window energy efficient?',
+        'answer'   => 'A&S Contracting Services installs energy-efficient replacement windows, and two things decide how a window performs: the glass unit itself and how well the frame is sealed to the wall. The estimate covers the choice of unit; weather sealing at the opening is part of every installation.',
     ],
     [
-        'question' => 'Do you handle the trim and cleanup after install?',
-        'answer'   => 'Yes. A&S Contracting Services finishes the interior and exterior trim, seals and caulks every opening, hauls away the old windows and doors, and cleans up the work area before leaving. A window job is not done when the glass is in—it is done when the opening is trimmed, sealed, and the site is left clean.',
+        'question' => 'Does A&S install windows and doors in commercial buildings?',
+        'answer'   => 'Yes. A&S Contracting Services works for residential and commercial clients within 50 miles of Warrenton, including Jonesburg, Wright City, Foristell, Wentzville, Troy and Washington.',
     ],
 ];
 
@@ -60,7 +60,7 @@ $serviceSchema = [
     '@id'         => $canonicalUrl . '#service-' . $serviceSlug,
     'name'        => 'Windows & Doors',
     'serviceType' => 'Window installation',
-    'description' => 'Energy-efficient replacement window and exterior door installation in Warrenton, MO and Warren County, including precise measurement, flashing, insulating, sealing, and interior and exterior trim.',
+    'description' => 'Energy-efficient replacement windows, patio doors, entry doors and weather sealing for residential and commercial clients within 50 miles of Warrenton, MO.',
     'provider'    => ['@id' => $siteUrl . '/#organization'],
     'areaServed'  => [
         '@type' => 'GeoCircle',
@@ -113,16 +113,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 .sp-checklist li svg { color: var(--color-primary); margin-top: 3px; }
 @media (max-width: 800px) { .sp-included { grid-template-columns: 1fr; } }
 
-/* Comparison */
-.sp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
-.sp-compare__col { border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--color-surface); }
-.sp-compare__col--us { border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-line)); box-shadow: var(--shadow); background: color-mix(in srgb, var(--color-accent) 8%, white); }
-.sp-compare h3 { font-size: 1.1rem; margin-bottom: .9rem; display: flex; align-items: center; gap: .5rem; }
-.sp-compare ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
-.sp-compare li { display: grid; grid-template-columns: 22px 1fr; gap: .55rem; font-size: .93rem; color: var(--color-ink-2); }
-.sp-compare--them li svg { color: var(--color-danger); margin-top: 2px; }
-.sp-compare--us li svg { color: var(--color-success); margin-top: 2px; }
-@media (max-width: 700px) { .sp-compare { grid-template-columns: 1fr; } }
+/* Comparison table */
+.sp-table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.sp-table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: .93rem; }
+.sp-table caption { caption-side: top; text-align: left; padding: 1rem 1.25rem; font-family: var(--font-heading); font-weight: 700; color: var(--color-ink); }
+.sp-table th, .sp-table td { padding: .8rem 1.25rem; text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); color: var(--color-ink-2); }
+.sp-table thead th { background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface)); color: var(--color-ink); font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; }
+.sp-table tbody th { color: var(--color-ink); font-weight: 700; }
+.sp-after { margin-top: 1.25rem; max-width: 65ch; color: var(--color-ink-2); }
 
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
@@ -156,21 +154,21 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="hero-copy">
         <span class="eyebrow">Windows &amp; Doors &middot; Warrenton &amp; Warren County</span>
         <h1>Windows &amp; Doors in <span class="text-accent">Warrenton, MO</span> — energy-efficient replacements</h1>
-        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured Warrenton contractor that replaces drafty windows and worn doors with energy-efficient Low-E units—measured, flashed, foamed, and sealed weather-tight by our own crew across Warren County. Every opening is done right, not just dropped in.</p>
+        <p class="hero-answer">A&amp;S Contracting Services, a licensed and fully insured Missouri general contractor, replaces windows, patio doors and entry doors and weather-seals the openings for homes and businesses within 50 miles of Warrenton.</p>
         <div class="hero-actions">
-          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free windows &amp; doors estimate</a>
+          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written window &amp; door estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
         </div>
         <ul class="hero-chips">
-          <li><?php echo icon('shield-check', 16); ?> Licensed &amp; insured in Missouri</li>
-          <li><?php echo icon('sun', 16); ?> Low-E double-pane efficiency</li>
-          <li><?php echo icon('users', 16); ?> Self-performed &mdash; no subcontractors</li>
+          <li><?php echo icon('sun', 16); ?> Energy-efficient replacement windows</li>
+          <li><?php echo icon('clipboard-list', 16); ?> Itemized written estimate</li>
+          <li><?php echo icon('clock', 16); ?> Mon–Fri 7am–6pm · Sat 8am–3pm</li>
         </ul>
       </div>
 
       <aside class="hero-form-card" id="hero-form">
-        <h2>Want a free windows &amp; doors estimate?</h2>
-        <p class="hero-form-tagline">No obligation. Same-day reply.</p>
+        <h2>Request a window and door estimate</h2>
+        <p class="hero-form-tagline">The on-site visit and the written estimate are free. No obligation.</p>
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -195,12 +193,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
           <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
           <?php } ?>
-          <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
         </form>
       </aside>
     </div>
   </div>
 </section>
+
+<article>
 
 <!-- ═══════════════════ PROBLEM STATEMENT ═══════════════════ -->
 <section class="section section--light">
@@ -208,30 +208,30 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="sp-problem">
       <div class="reveal-left">
         <span class="eyebrow-label">Know The Signs</span>
-        <h2>How do you know it&rsquo;s time to replace your windows?</h2>
-        <p class="answer-block">A&amp;S Contracting Services watches for drafts and cold spots near the glass, fog trapped between the panes, windows painted or swelled shut, and heating and cooling bills that keep climbing. Rot around the frames and sills or rattling in the wind are the final tells that a window has lost its seal and its grip on the opening.</p>
-        <p class="pull-quote">A window that fogs from the inside is not dirty—its sealed glass unit has already failed.</p>
+        <h2>How do you know it&rsquo;s time to replace your windows or doors?</h2>
+        <p class="answer-block">It is time to replace a window or door when it no longer seals, opens properly or keeps water out. Drafts around the frame, fogging between panes, soft wood at the sill and a door that sticks or shows daylight at the edges are the signs A&amp;S Contracting Services checks on an estimate visit.</p>
+        <p class="pull-quote">Warrenton averages 41.47 inches of precipitation a year. Every opening in a wall has to shed its share.</p>
       </div>
       <div class="sp-signs reveal-right">
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('wind', 22); ?></div>
-          <h3>Drafts &amp; cold spots</h3>
-          <p>Air leaking around the sash means the seal and weatherstripping are worn out.</p>
+          <h3>Drafts at the frame</h3>
+          <p>Moving air around a closed window or door means the seal between the unit and the wall has failed.</p>
         </div>
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('droplets', 22); ?></div>
-          <h3>Fog between the panes</h3>
-          <p>Moisture trapped between the glass means the insulated seal has failed.</p>
+          <h3>Fog between panes</h3>
+          <p>Moisture trapped inside double-pane glass shows the seal of the glass unit has broken.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('layers', 22); ?></div>
+          <h3>Soft or stained sills</h3>
+          <p>Rot or staining below an opening points to water getting past the frame.</p>
         </div>
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('wrench', 22); ?></div>
-          <h3>Painted or swelled shut</h3>
-          <p>Windows that will not open have swelled, warped, or been painted into the frame.</p>
-        </div>
-        <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('flame', 22); ?></div>
-          <h3>Climbing energy bills</h3>
-          <p>Single-pane and leaky windows push your furnace and AC to run overtime.</p>
+          <h3>Sticking or dragging</h3>
+          <p>A sash that will not stay up or a door that rubs its frame no longer closes tight.</p>
         </div>
       </div>
     </div>
@@ -243,16 +243,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="sp-position">
       <div class="reveal-up">
-        <div class="sp-position__stat">100%<span>of the rough opening flashed, insulated, and sealed—no gaps left for drafts or water</span></div>
+        <div class="sp-position__stat">1<span>crew sets the unit, seals the opening and finishes the siding and interior trim around it</span></div>
       </div>
       <div class="reveal-right">
-        <span class="eyebrow-label">Why It Matters</span>
-        <h2>What makes A&amp;S window installs actually last?</h2>
-        <p class="answer-block">A&amp;S Contracting Services measures each opening, removes the old unit, and inspects the rough frame before a new window ever goes in. We shim it dead level, flash it, foam the gaps, and seal it inside and out. A window is only as good as its install—and we self-perform every one instead of subcontracting it out.</p>
+        <span class="eyebrow-label">Both Sides Of The Wall</span>
+        <h2>Why have a general contractor replace your windows and doors?</h2>
+        <p class="answer-block">A general contractor can replace a window or door and also repair what surrounds it. Every opening passes through siding outside and drywall and trim inside. A&amp;S Contracting Services does all three trades with its own crew, so rot found behind an old frame is dealt with in the same job.</p>
         <ul class="sp-evidence">
-          <li><?php echo icon('pencil-ruler', 22); ?><span><b>Measured to the opening.</b> Every window and door is sized to its actual frame, so it sets square and operates smoothly.</span></li>
-          <li><?php echo icon('users', 22); ?><span><b>One crew, no subs.</b> The same installers pull the old units and finish the new ones, so nothing gets lost in a handoff.</span></li>
-          <li><?php echo icon('shield-check', 22); ?><span><b>Licensed &amp; fully insured.</b> Your home is open to the weather during install—our coverage protects it the whole way.</span></li>
+          <li><?php echo icon('umbrella', 22); ?><span><b>Sealed against weather.</b> Each new window and door is weather-sealed where it meets the wall, through Missouri freeze-thaw winters and humid summers.</span></li>
+          <li><?php echo icon('layers', 22); ?><span><b>Cladding finished around the opening.</b> A&amp;S handles <a href="/services/siding/">vinyl, fiber cement and wood siding repair</a>, so the wall around a new unit is closed up by the installer.</span></li>
+          <li><?php echo icon('pencil-ruler', 22); ?><span><b>Interior made good.</b> Patches, casing and paint around the opening can be added to the same estimate as <a href="/services/full-scale-interior-work/">interior drywall, trim and painting</a>.</span></li>
         </ul>
       </div>
     </div>
@@ -263,65 +263,31 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="section section--light">
   <div class="container">
     <span class="eyebrow-label">The Work</span>
-    <h2>What&rsquo;s included in an A&amp;S window &amp; door installation?</h2>
-    <p class="answer-block">A&amp;S Contracting Services handles the full replacement: precise measurement, removal of the old units, inspection and repair of the rough opening, level setting and shimming, flashing, foam insulation of the gaps, interior and exterior trim, and haul-away. Your new windows and doors go in weather-tight and finished across your Warrenton home, not just dropped in the hole.</p>
+    <h2>What is included in an A&amp;S window and door replacement?</h2>
+    <p class="answer-block">An A&amp;S window and door replacement includes the on-site measure, removal of the old unit, installation of the new one and weather sealing. It is one of the <a href="/services/">exterior and interior services A&amp;S Contracting Services offers</a> around Warren County, and the written estimate is itemized so the window and door work can be read line by line.</p>
     <div class="sp-included">
       <div class="reveal-up">
         <h3>Included in the scope</h3>
         <ul class="sp-checklist">
-          <li><?php echo icon('check', 20); ?> Precise measure of every window and door opening</li>
-          <li><?php echo icon('check', 20); ?> Remove old units and haul them away</li>
-          <li><?php echo icon('check', 20); ?> Inspect and repair the rough opening and sill</li>
-          <li><?php echo icon('check', 20); ?> Set level and shim for smooth, square operation</li>
-          <li><?php echo icon('check', 20); ?> Flash and seal against wind-driven Missouri rain</li>
-          <li><?php echo icon('check', 20); ?> Foam-insulate the gaps around the frame</li>
-          <li><?php echo icon('check', 20); ?> Interior and exterior trim to finish the opening</li>
+          <li><?php echo icon('check', 20); ?> Energy-efficient replacement windows</li>
+          <li><?php echo icon('check', 20); ?> Patio doors</li>
+          <li><?php echo icon('check', 20); ?> Entry doors</li>
+          <li><?php echo icon('check', 20); ?> Weather sealing at every opening</li>
+          <li><?php echo icon('check', 20); ?> Siding and trim repair around the frame, on the same estimate</li>
+          <li><?php echo icon('check', 20); ?> Site cleaned daily</li>
+          <li><?php echo icon('check', 20); ?> Final walkthrough of every opening</li>
         </ul>
       </div>
       <div class="reveal-right">
         <h3>How the project runs</h3>
         <ol class="process-steps">
-          <li><b>Measure &amp; quote</b><span>We measure every opening on site and review styles, glass, and door options with you.</span></li>
-          <li><b>Written estimate</b><span>You get an itemized quote—units, count, timeline, and price, in writing.</span></li>
-          <li><b>Remove &amp; prep</b><span>Old windows and doors come out and the rough openings are checked and repaired.</span></li>
-          <li><b>Set, seal &amp; trim</b><span>New units are shimmed level, flashed, foamed, trimmed, and the site is cleaned.</span></li>
+          <li><b>Measure on site</b><span>A&amp;S measures each opening and looks at the sill, the frame and the siding around it.</span></li>
+          <li><b>Written estimate</b><span>Itemized, with no hidden fees. The quoted price is the final price.</span></li>
+          <li><b>Dates in writing</b><span>The start window and timeline are confirmed before the crew arrives.</span></li>
+          <li><b>Replace and seal</b><span>Old units come out, new ones are set and weather-sealed, and the site is cleaned each day.</span></li>
+          <li><b>Final walkthrough</b><span>You go round every new window and door with the crew.</span></li>
         </ol>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ PROOF / REVIEWS ═══════════════════ -->
-<section class="section reviews-section edge-wave-top" aria-label="Windows and doors reviews">
-  <span class="grain-layer" aria-hidden="true"></span>
-  <div class="container-wide">
-    <div class="section-title reveal-up">
-      <span class="eyebrow-label">In Their Words</span>
-      <h2>What do Warrenton homeowners say about working with A&amp;S?</h2>
-      <p>Real reviews from A&amp;S Contracting Services customers across Warrenton and Warren County.</p>
-    </div>
-    <div class="reviews-track">
-      <?php
-      $windowReviews = array_filter($reviews, function ($r) { return in_array($r['author'], ['Jennifer K.', 'Robert T.', 'Diane L.']); });
-      foreach ($windowReviews as $rev):
-        $initial = strtoupper(substr($rev['author'], 0, 1));
-      ?>
-      <article class="review-card">
-        <div class="review-stars" aria-label="<?php echo (int)$rev['rating']; ?> out of 5 stars">
-          <?php for ($s = 0; $s < (int)$rev['rating']; $s++) echo icon('star', 18); ?>
-        </div>
-        <p class="review-text">&ldquo;<?php echo htmlspecialchars($rev['text']); ?>&rdquo;</p>
-        <div class="review-author">
-          <span class="review-avatar" aria-hidden="true"><?php echo $initial; ?></span>
-          <span class="review-name"><?php echo htmlspecialchars($rev['author']); ?></span>
-        </div>
-      </article>
-      <?php endforeach; ?>
-    </div>
-    <div class="review-badge-strip">
-      <span class="badge-strip"><?php echo icon('star', 16); ?> 5-Star Google Rated</span>
-      <span class="badge-strip"><?php echo icon('shield-check', 16); ?> Licensed &amp; Insured</span>
-      <span class="badge-strip"><?php echo icon('sun', 16); ?> Energy-Efficient Glass</span>
     </div>
   </div>
 </section>
@@ -329,38 +295,52 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <!-- ═══════════════════ COMPARISON ═══════════════════ -->
 <section class="section">
   <div class="container">
-    <span class="eyebrow-label">The Difference</span>
-    <h2>Why not just buy windows from a big-box store?</h2>
-    <p class="answer-block">A&amp;S Contracting Services often gets called to fix big-box window jobs where the install was farmed out to a rotating subcontractor. The glass may be fine; the leak comes from an opening that was never flashed or sealed right. We measure, install, and seal every unit ourselves, so the warranty and the weather-seal both hold up.</p>
-    <div class="sp-compare">
-      <div class="sp-compare__col sp-compare--them">
-        <h3><?php echo icon('x', 20); ?> Big-box subcontracted installs</h3>
-        <ul>
-          <li><?php echo icon('minus', 18); ?> Builder-grade units and a rotating install crew</li>
-          <li><?php echo icon('minus', 18); ?> Install subcontracted to the lowest bidder</li>
-          <li><?php echo icon('minus', 18); ?> Gaps foamed over without proper flashing</li>
-          <li><?php echo icon('minus', 18); ?> No one accountable when a draft or leak shows up</li>
-        </ul>
-      </div>
-      <div class="sp-compare__col sp-compare--us">
-        <h3><?php echo icon('check-circle', 20); ?> A&amp;S Contracting Services</h3>
-        <ul>
-          <li><?php echo icon('check', 18); ?> Quality units matched to your home and budget</li>
-          <li><?php echo icon('check', 18); ?> Measured and installed by our own crew</li>
-          <li><?php echo icon('check', 18); ?> Flashed, foamed, and sealed weather-tight</li>
-          <li><?php echo icon('check', 18); ?> One local contractor standing behind the work</li>
-        </ul>
-      </div>
+    <span class="eyebrow-label">Opening By Opening</span>
+    <h2>How do window, patio door and entry door replacements compare?</h2>
+    <p class="answer-block">Window, patio door and entry door replacements compare differently on what has to be checked before a price is given. A&amp;S Contracting Services looks at each opening in person, because cost depends on the materials selected, the condition of the existing structure and scope. The table lists what the estimate visit covers for each.</p>
+    <div class="sp-table-wrap reveal-up">
+      <table class="sp-table">
+        <caption>What A&amp;S Contracting Services checks for each type of opening</caption>
+        <thead>
+          <tr>
+            <th scope="col">Opening</th>
+            <th scope="col">Checked on site</th>
+            <th scope="col">What drives the cost</th>
+            <th scope="col">Related work A&amp;S can add</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Replacement windows</th>
+            <td>Opening size, sill and frame condition, signs of water</td>
+            <td>Number of windows and the units selected</td>
+            <td>Siding and interior trim repair</td>
+          </tr>
+          <tr>
+            <th scope="row">Patio doors</th>
+            <td>Opening width, threshold and the floor it meets</td>
+            <td>Door selected and the condition of the surrounding structure</td>
+            <td>Flooring and drywall at the threshold</td>
+          </tr>
+          <tr>
+            <th scope="row">Entry doors</th>
+            <td>Frame, threshold and weather seal</td>
+            <td>Door selected and any frame repair</td>
+            <td>Interior trim and painting</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <p class="sp-after">For the factors behind window pricing in this state, see the A&amp;S <a href="/blog/window-replacement-cost-missouri/">guide to window replacement cost in Missouri</a>.</p>
   </div>
 </section>
 
 <!-- ═══════════════════ FAQ ═══════════════════ -->
-<section class="section section--light" aria-label="Windows and doors FAQ">
+<section class="section section--light" aria-label="Window and door questions before you book a measure">
   <div class="container-narrow">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">Good Questions</span>
-      <h2>Still have questions about windows &amp; doors?</h2>
+      <h2>Window and door questions before you book a measure</h2>
     </div>
     <div class="faq-grid">
       <?php foreach ($faqs as $fi => $faq): ?>
@@ -374,12 +354,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 </section>
 
 <!-- ═══════════════════ RECENT WORK ═══════════════════ -->
-<section class="section sp-gallery" aria-label="Recent window and door projects">
+<section class="section sp-gallery" aria-label="Photos from A&amp;S job sites">
   <div class="container-wide">
     <div class="section-title reveal-up">
-      <span class="eyebrow-label">Recent Work</span>
-      <h2>What recent window and door projects has A&amp;S completed near Warrenton?</h2>
-      <p class="answer-block">These are real window and door projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+      <span class="eyebrow-label">From The Job Site</span>
+      <h2>What do A&amp;S window and door job sites look like?</h2>
+      <p class="answer-block">These photos are from A&amp;S Contracting Services job sites where windows and doors were part of the work. They show openings at three stages: framed and empty, wrapped ahead of installation, and with the crew setting units. Captions describe what is visible and nothing more.</p>
     </div>
     <div class="sp-gallery-grid" data-p1-dynamic>
       <?php foreach ($workPhotos as $wp): ?>
@@ -397,12 +377,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container-wide">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">What We Do</span>
-      <h2>What else can A&amp;S handle on your home?</h2>
-      <p class="hero-answer">New windows and doors often go in alongside other exterior upgrades. A&amp;S Contracting Services also self-performs the siding, exterior work, and roofing that finish the look and seal of your Warrenton home under one licensed roof.</p>
+      <h2>Which A&amp;S services go with new windows and doors?</h2>
+      <p class="hero-answer">New windows and doors are often replaced alongside the cladding and roofline around them. A&amp;S Contracting Services offers siding, full exterior renovation and roofing as separate services, and all of them can be looked at on the same visit and listed on one itemized estimate.</p>
     </div>
     <div class="sp-other">
       <?php
       $otherSlugs = ['siding', 'exterior-work', 'roofing'];
+      $otherDesc  = [
+          'siding' => 'Vinyl, fiber cement and wood siding, installed and repaired.',
+          'exterior-work' => 'Roofing, siding and gutters integrated into one exterior renovation.',
+          'roofing' => 'Roof installation, repair, tear-off and replacement, plus storm and hail damage repair.',
+      ];
       $tintCycle  = [1, 2, 3];
       $otherIcons = ['siding' => 'layers', 'exterior-work' => 'hammer', 'roofing' => 'home'];
       foreach ($otherSlugs as $oi => $os):
@@ -413,7 +398,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="service-card__body">
           <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
           <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
-          <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
+          <p class="service-card__desc"><?php echo htmlspecialchars($otherDesc[$os] ?? $osvc['name']); ?></p>
           <a href="/services/<?php echo $os; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$os] ?? $osvc['name']); ?></a>
         </div>
       </article>
@@ -422,14 +407,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   </div>
 </section>
 
+</article>
+
 <!-- ═══════════════════ FINAL CTA / ESTIMATE ═══════════════════ -->
-<section class="section section--light" id="estimate" aria-label="Request your free windows and doors estimate">
+<section class="section section--light" id="estimate" aria-label="Request a window and door estimate">
   <div class="container">
     <div class="estimate">
       <div class="card reveal-up" style="padding: clamp(1.5rem, 4vw, 2.5rem); border:1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface);">
-        <span class="eyebrow-label">Free Estimate</span>
+        <span class="eyebrow-label">Written Estimate</span>
         <h2>Ready to close the drafts for good?</h2>
-        <p class="lead" style="margin-bottom: 1.25rem;">Send the details and A&amp;S Contracting Services will reply the same day to schedule your free on-site window and door measure.</p>
+        <p class="lead" style="margin-bottom: 1.25rem;">Tell A&amp;S Contracting Services how many openings you have and what is wrong with them. On-site measures are scheduled within days of first contact.</p>
 
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -495,10 +482,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="reveal-right">
         <span class="eyebrow-label">What Happens Next</span>
         <h2>What happens after you <span class="text-accent">request an estimate</span>?</h2>
+        <p class="answer-block">After you request an estimate, A&amp;S Contracting Services contacts you to book an on-site measure of the windows and doors involved. Visits are scheduled within days of first contact. The estimate is then written up and itemized at no charge, and you decide whether to go ahead.</p>
         <ol class="next-steps">
-          <li><strong>We reach out the same day.</strong> A&amp;S Contracting Services confirms the details and schedules your free on-site window and door measure.</li>
-          <li><strong>You get a written estimate.</strong> Clear unit list, glass and door options, timeline, and price—all in writing.</li>
-          <li><strong>One crew does the work.</strong> The same self-performing team removes the old units, sets the new ones, and seals every opening.</li>
+          <li><strong>The openings are measured.</strong> A&amp;S checks each window and door in person, including frames and sills.</li>
+          <li><strong>The estimate arrives in writing.</strong> It is itemized, and the quoted price is the final price.</li>
+          <li><strong>Dates are set.</strong> A start window and timeline are confirmed in writing before the crew arrives.</li>
         </ol>
         <div class="nap">
           <div><?php echo icon('phone', 18); ?> <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a></div>

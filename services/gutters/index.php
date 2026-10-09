@@ -9,48 +9,55 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Gutters';
 $pageTitle       = 'Seamless Gutter Installation in Warrenton, MO';
-$pageDescription = 'Seamless gutter installation & repair in Warrenton, MO, formed on site with downspouts and guards. Licensed & insured. Free estimate: call (636) 359-7204.';
+$pageDescription = 'Seamless aluminum gutters in Warrenton, MO: installation, repair, replacement and cleaning by A&S Contracting Services. Licensed & insured. (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/services/gutters/';
 
 // ─── Hero + recent-work photos (image manifest) ─────────────────────────────
 $heroImage    = '1779985084434-7wvwuf-46-Feb_10__2026_22-02-29-uWM1';
-$heroImageAlt = 'Roof and gutter work in progress on a wooded Warren County property by A&S Contracting Services';
+$heroImageAlt = 'New dark shingle roof with the crew working below on a wooded property';
 $heroPreload  = [
     'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
     'sizes'  => '100vw',
 ];
 $workPhotos = [
-    ['1779985356802-y1uuhd-29-Aug_06__2025_14-39-50-VPdz', 'A&S worker on a ladder finishing exterior trim and gutter line on a gray-sided Warrenton home'],
-    ['1779985460368-i1nur1-60-Oct_14__2024_23-05-06-h2RS', 'Completed home with white siding, a charcoal roof, and new gutters near Warren County'],
-    ['1779985468766-asxmqk-65-Oct_14__2024_23-06-52-nSsb', 'Home with white siding, a covered porch, and clean gutter lines in central Missouri'],
+    ['1779985356802-y1uuhd-29-Aug_06__2025_14-39-50-VPdz', 'Crew member on a ladder beside new windows on a green-sided house'],
+    ['1779985460368-i1nur1-60-Oct_14__2024_23-05-06-h2RS', 'White-sided ranch home with a dark hip roof at dusk'],
+    ['1779985468766-asxmqk-65-Oct_14__2024_23-06-52-nSsb', 'Front gable and entry of a white-sided home with a dark shingle roof'],
 ];
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
         'question' => 'How much do seamless gutters cost in Warrenton, MO?',
-        'answer'   => 'Gutter cost in Warrenton depends on the linear footage around your roofline, whether you choose 5-inch or 6-inch K-style, the number of downspouts, and whether you add leaf guards. A&S Contracting Services measures your home and gives a free written estimate, so the run length and price are settled before we roll a single seamless section on site.',
+        'answer'   => 'Seamless gutter cost depends on the total length of gutter, the number of downspouts, the condition of the fascia behind the old system and the scope of the job. A&S Contracting Services publishes no per-foot price. Each house is measured on site and priced in a written, itemized estimate, and the quoted price is the final price.',
     ],
     [
-        'question' => 'Why are seamless gutters better than sectional ones?',
-        'answer'   => 'A&S Contracting Services forms seamless gutters on site from a continuous coil, so a run has no joints along its length—only sealed corners and end caps. Sectional store-bought gutters snap together every few feet, and those seams are exactly where leaks start after a few Missouri freeze-thaw cycles. Fewer joints means fewer failure points over your foundation.',
+        'question' => 'What size gutters does my house need?',
+        'answer'   => 'Gutter size is set by the roof area that drains to each run and by how steep that roof is. A&S Contracting Services works this out during the on-site visit and lists the size and the downspout locations in the estimate.',
     ],
     [
-        'question' => 'What size gutters do I need for a Warren County home?',
-        'answer'   => 'A&S Contracting Services sizes gutters to your roof, not a one-size default. Steep or large roofs that shed heavy runoff during Missouri downpours often need 6-inch K-style with oversized downspouts, while a smaller ranch does fine with 5-inch. We calculate the drainage the roof produces so the system keeps up in a real storm instead of overflowing.',
+        'question' => 'Do you repair gutters or only replace them?',
+        'answer'   => 'Both. A&S Contracting Services repairs existing gutter systems, replaces them in full and installs new seamless aluminum gutters. The estimate states which approach is recommended for your house and why.',
     ],
     [
-        'question' => 'Do gutter guards actually keep leaves out?',
-        'answer'   => 'Good ones do. A&S Contracting Services installs quality gutter guards that keep leaves, seed pods, and debris from the maples and oaks common around Warren County out of the trough while letting water through. Guards cut down on cleaning and clogs, though no guard is fully maintenance-free—we tell you honestly what they will and will not do for your home.',
+        'question' => 'Do you clean gutters?',
+        'answer'   => 'Yes. Gutter cleaning and maintenance are listed A&S services. A cleaning visit is arranged like any other job: contact A&S, and a time is set during business hours, Monday through Saturday.',
     ],
     [
-        'question' => 'Can bad gutters really cause foundation problems?',
-        'answer'   => 'Yes, and it is one of the most common issues A&S Contracting Services sees. When gutters overflow or downspouts dump water at the base of the house, that water pools against the foundation, saturates the soil, and finds its way into the basement. Correct pitch and downspouts extended well away from the house are what keep runoff from undermining your foundation.',
+        'question' => 'Can gutters be replaced at the same time as the roof?',
+        'answer'   => 'Yes. A&S Contracting Services does roofing, fascia, soffit and gutters with its own employees, so gutter replacement can be written into the same estimate as a roof replacement and scheduled around it.',
     ],
     [
-        'question' => 'Are you licensed and insured for gutter work in Missouri?',
-        'answer'   => 'Yes. A&S Contracting Services is a licensed Missouri general contractor and carries full insurance on every gutter job. Because the same crew that handles your roof, soffit, and fascia also installs your gutters, the whole roofline goes on as one coordinated system—covered start to finish.',
+        'question' => 'Is hail damage to gutters part of an insurance claim?',
+        'answer'   => 'Dents in gutters and downspouts are part of what gets photographed after a hail storm. A&S Contracting Services documents the damage with photos, provides a detailed itemized estimate, meets the insurance adjuster on site and helps the homeowner through the claim.',
     ],
+];
+
+// ─── Other-services cards (page-local copy) ─────────────────────────────────
+$otherCards = [
+    'soffit' => ['icon' => 'wind', 'desc' => 'Soffit installation and repair, including attic ventilation at the eaves.'],
+    'fascia' => ['icon' => 'ruler', 'desc' => 'Fascia installation and replacement, including rotted boards at the roof edge.'],
+    'roofing' => ['icon' => 'home', 'desc' => 'Roof installation, repair, tear-off and full replacement, plus storm and hail damage repair.'],
 ];
 
 // ─── Schema (Service + FAQPage + BreadcrumbList) ─────────────────────────────
@@ -59,8 +66,8 @@ $serviceSchema = [
     '@type'       => 'Service',
     '@id'         => $canonicalUrl . '#service-' . $serviceSlug,
     'name'        => 'Gutters',
-    'serviceType' => 'Gutter installation',
-    'description' => 'Seamless aluminum K-style gutter installation, downspouts, gutter guards, and repair in Warrenton, MO and Warren County—formed on site to protect the foundation and landscaping from Missouri runoff.',
+    'serviceType' => 'Gutter contractor',
+    'description' => 'Seamless aluminum gutter installation, repair, full replacement, cleaning and maintenance in Warrenton, MO and Warren County.',
     'provider'    => ['@id' => $siteUrl . '/#organization'],
     'areaServed'  => [
         '@type' => 'GeoCircle',
@@ -113,16 +120,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 .sp-checklist li svg { color: var(--color-primary); margin-top: 3px; }
 @media (max-width: 800px) { .sp-included { grid-template-columns: 1fr; } }
 
-/* Comparison */
-.sp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
-.sp-compare__col { border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--color-surface); }
-.sp-compare__col--us { border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-line)); box-shadow: var(--shadow); background: color-mix(in srgb, var(--color-accent) 8%, white); }
-.sp-compare h3 { font-size: 1.1rem; margin-bottom: .9rem; display: flex; align-items: center; gap: .5rem; }
-.sp-compare ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
-.sp-compare li { display: grid; grid-template-columns: 22px 1fr; gap: .55rem; font-size: .93rem; color: var(--color-ink-2); }
-.sp-compare--them li svg { color: var(--color-danger); margin-top: 2px; }
-.sp-compare--us li svg { color: var(--color-success); margin-top: 2px; }
-@media (max-width: 700px) { .sp-compare { grid-template-columns: 1fr; } }
+/* Comparison table */
+.sp-table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.sp-table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: .94rem; }
+.sp-table caption { caption-side: top; text-align: left; padding: 1rem 1.25rem .75rem; font-family: var(--font-heading); font-weight: 700; color: var(--color-ink); }
+.sp-table th, .sp-table td { padding: .85rem 1.25rem; text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); color: var(--color-ink-2); }
+.sp-table thead th { font-family: var(--font-heading); color: var(--color-ink); background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface)); }
+.sp-table tbody th { color: var(--color-ink); font-weight: 700; width: 22%; }
+.sp-table td a, .sp-checklist a, .sp-evidence a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.sp-table-note { margin-top: 1rem; }
+.sp-position__stat--word { font-size: clamp(2.6rem, 7vw, 4.2rem); }
 
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
@@ -155,22 +162,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
         <span class="eyebrow">Gutters &middot; Warrenton &amp; Warren County</span>
-        <h1>Gutters in <span class="text-accent">Warrenton, MO</span> — seamless install, guards &amp; repair</h1>
-        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured Warrenton gutter contractor that forms seamless aluminum gutters on site within 50 miles of Warren County—downspouts routed away from your foundation, guards installed, sagging runs repaired, by one self-performing crew.</p>
+        <h1>Seamless gutters in <span class="text-accent">Warrenton, MO</span> — installation, repair &amp; cleaning</h1>
+        <p class="hero-answer">A&amp;S Contracting Services installs, repairs, replaces and cleans seamless aluminum gutters in Warrenton, MO. A&amp;S is licensed and fully insured, and gives a free written estimate after an on-site visit.</p>
         <div class="hero-actions">
-          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free gutter estimate</a>
+          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written gutter estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
         </div>
         <ul class="hero-chips">
-          <li><?php echo icon('shield-check', 16); ?> Licensed &amp; insured in Missouri</li>
-          <li><?php echo icon('droplets', 16); ?> Seamless, formed on site</li>
-          <li><?php echo icon('users', 16); ?> Self-performed &mdash; no subcontractors</li>
+          <li><?php echo icon('clipboard-list', 16); ?> Written, itemized estimate</li>
+          <li><?php echo icon('home', 16); ?> Warrenton-based, 50-mile radius</li>
+          <li><?php echo icon('droplets', 16); ?> Cleaning &amp; maintenance too</li>
         </ul>
       </div>
 
       <aside class="hero-form-card" id="hero-form">
-        <h2>Free gutter estimate</h2>
-        <p class="hero-form-tagline">No obligation. Same-day reply.</p>
+        <h2>Request a gutter estimate</h2>
+        <p class="hero-form-tagline">Every run checked on site. No obligation.</p>
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -195,43 +202,44 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
           <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
           <?php } ?>
-          <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
         </form>
       </aside>
     </div>
   </div>
 </section>
 
+<article>
 <!-- ═══════════════════ PROBLEM STATEMENT ═══════════════════ -->
 <section class="section section--light">
   <div class="container">
     <div class="sp-problem">
       <div class="reveal-left">
         <span class="eyebrow-label">Know The Signs</span>
-        <h2>How do you know your Warrenton gutters are failing?</h2>
-        <p class="answer-block">If water sheets over the edge during a storm, the gutters sag or pull away from the fascia, or you see puddles and eroded mulch at the base of the house, your gutters are no longer moving water where it belongs. A&amp;S Contracting Services traces the problem back to pitch, hangers, or downspout placement and tells you whether a repair or a full seamless system is the fix.</p>
-        <p class="pull-quote">Gutters have one job—move Missouri rain away from your foundation. When they stop, the basement is next.</p>
+        <h2>What are the signs a gutter system is failing?</h2>
+        <p class="answer-block">A gutter system is failing when water spills over the front edge, runs behind the trough, drips at a joint or pools beside the foundation. Warrenton averages 41.47 inches of precipitation a year, and whatever lands on the roof has to leave through the gutters. A&amp;S Contracting Services checks each run and downspout in person.</p>
+        <p class="pull-quote">A gutter has one job: carry roof water to a downspout and away from the house.</p>
       </div>
       <div class="sp-signs reveal-right">
         <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('umbrella', 22); ?></div>
-          <h3>Overflowing in the rain</h3>
-          <p>Water pouring over the front edge means the trough is clogged, undersized, or pitched wrong.</p>
-        </div>
-        <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('waves', 22); ?></div>
-          <h3>Sagging &amp; pulling loose</h3>
-          <p>Gutters drooping away from the fascia have failed hangers and standing water inside.</p>
-        </div>
-        <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('droplets', 22); ?></div>
-          <h3>Water at the foundation</h3>
-          <p>Pooling and basement seepage point to downspouts dumping runoff right against the house.</p>
+          <h3>Overflow in steady rain</h3>
+          <p>Water sheeting over the lip means the trough is blocked, too small or pitched the wrong way.</p>
         </div>
         <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('leaf', 22); ?></div>
-          <h3>Staining &amp; erosion</h3>
-          <p>Streaks on the fascia and washed-out mulch show water is spilling in the wrong places.</p>
+          <div class="sp-sign__icon"><?php echo icon('layers', 22); ?></div>
+          <h3>Sagging runs</h3>
+          <p>A run that bows holds standing water and pulls on the board it hangs from.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('home', 22); ?></div>
+          <h3>Stains on fascia or siding</h3>
+          <p>Streaks below the gutter show water escaping behind it or through a joint.</p>
+        </div>
+        <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('cloud-snow', 22); ?></div>
+          <h3>Washed-out soil</h3>
+          <p>A trench or splash line under the eave shows water is missing the downspouts.</p>
         </div>
       </div>
     </div>
@@ -243,16 +251,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="sp-position">
       <div class="reveal-up">
-        <div class="sp-position__stat">0<span>joints down the length of a seamless run—only sealed corners and end caps, formed on site for your Warrenton roofline</span></div>
+        <div class="sp-position__stat">41.47<span>inches of precipitation in an average Warrenton year (1991–2020 normals)</span></div>
       </div>
       <div class="reveal-right">
-        <span class="eyebrow-label">Why It Matters</span>
-        <h2>What makes A&amp;S a gutter contractor Warren County homeowners trust?</h2>
-        <p class="answer-block">A&amp;S Contracting Services roll-forms seamless aluminum gutters right at your house from a continuous coil, so each run is cut to the exact length with no mid-span seams to leak. The same crew that measures the roofline sets the pitch, hangs the gutters, and routes the downspouts well away from the foundation.</p>
+        <span class="eyebrow-label">Roof Water</span>
+        <h2>Why have a roofing crew install the gutters?</h2>
+        <p class="answer-block">A roofing crew installing the gutters means the people hanging the trough understand the roof edge it drains. A&amp;S Contracting Services began in 2023 as a roofing and exterior company, and its crew, not a subcontractor, also replaces the <a href="/services/fascia/">fascia boards that gutters fasten to</a> when those boards turn out to be rotted.</p>
         <ul class="sp-evidence">
-          <li><?php echo icon('ruler', 22); ?><span><b>Formed on site.</b> Continuous runs cut to length mean fewer joints and fewer leaks over the years.</span></li>
-          <li><?php echo icon('droplets', 22); ?><span><b>Sized to your roof.</b> We calculate the runoff so 5-inch or 6-inch K-style keeps up in a real Missouri downpour.</span></li>
-          <li><?php echo icon('shield-check', 22); ?><span><b>Foundation-first.</b> Correct pitch and extended downspouts move water away from the house, not into the basement.</span></li>
+          <li><?php echo icon('ruler', 22); ?><span><b>Sized at the house.</b> Gutter size and downspout count are set by the roof area that drains to each run, measured during the visit.</span></li>
+          <li><?php echo icon('clipboard-list', 22); ?><span><b>One estimate for the eave.</b> Gutter, fascia and <a href="/services/soffit/">soffit repair under the overhang</a> can be itemized together instead of quoted by three companies.</span></li>
+          <li><?php echo icon('check-circle', 22); ?><span><b>Upkeep after installation.</b> Gutter cleaning and maintenance are on the A&amp;S service list, so the installer can also be the one who keeps the system clear.</span></li>
         </ul>
       </div>
     </div>
@@ -263,66 +271,30 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="section section--light">
   <div class="container">
     <span class="eyebrow-label">The Work</span>
-    <h2>What&rsquo;s included in an A&amp;S gutter installation?</h2>
-    <p class="answer-block">A&amp;S Contracting Services delivers a complete drainage system, not just a trough: tear-off of the old gutters, on-site roll-forming of seamless runs, new hidden hangers, correct pitch to the downspouts, sealed corners and end caps, downspouts extended away from the house, optional leaf guards, and a clean job site. Every home on your Warrenton roofline drains the way it should.</p>
+    <h2>What gutter work does A&amp;S take on?</h2>
+    <p class="answer-block">A&amp;S takes on four kinds of gutter work: new seamless aluminum installation, repair of an existing system, full replacement, and cleaning and maintenance. A&amp;S Contracting Services looks at the gutters on site first, then writes an itemized estimate; the price follows the length of gutter, the condition of the boards behind it and the scope chosen.</p>
     <div class="sp-included">
       <div class="reveal-up">
-        <h3>Included in the scope</h3>
+        <h3>Gutter services on the list</h3>
         <ul class="sp-checklist">
-          <li><?php echo icon('check', 20); ?> Tear-off and haul-away of the old gutters</li>
-          <li><?php echo icon('check', 20); ?> On-site roll-forming of seamless 5-inch or 6-inch K-style</li>
-          <li><?php echo icon('check', 20); ?> New hidden hangers set for strength</li>
-          <li><?php echo icon('check', 20); ?> Correct pitch calculated to each downspout</li>
-          <li><?php echo icon('check', 20); ?> Sealed corners, miters, and end caps</li>
-          <li><?php echo icon('check', 20); ?> Downspouts routed and extended away from the foundation</li>
-          <li><?php echo icon('check', 20); ?> Optional leaf guards to cut cleaning and clogs</li>
-          <li><?php echo icon('check', 20); ?> Full cleanup of the work area</li>
+          <li><?php echo icon('check', 20); ?> <span>Seamless aluminum gutter systems</span></li>
+          <li><?php echo icon('check', 20); ?> <span>New installation on homes and commercial buildings</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Repair of leaking, loose or sagging sections</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Full replacement of a worn-out system</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Cleaning and maintenance</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Fascia replacement where the mounting board has rotted</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Debris cleared from the yard each day</span></li>
         </ul>
       </div>
       <div class="reveal-right">
-        <h3>How the project runs</h3>
+        <h3>How a gutter job runs</h3>
         <ol class="process-steps">
-          <li><b>Free measurement</b><span>We measure the roofline, check drainage, and go over sizing and guard options on site.</span></li>
-          <li><b>Written estimate</b><span>You get an itemized quote—run length, downspouts, guards, timeline, and price.</span></li>
-          <li><b>Form &amp; install</b><span>Our crew rolls the seamless runs on site, sets the pitch, and hangs the system in a day for most homes.</span></li>
-          <li><b>Test &amp; walkthrough</b><span>We confirm the water flows to the downspouts, clean up, and review the finished system with you.</span></li>
+          <li><b>Site visit</b><span>A&amp;S looks at every run, corner and downspout, and at the fascia behind them.</span></li>
+          <li><b>Written price</b><span>Each item is listed separately. No hidden fees, and no upselling at the door.</span></li>
+          <li><b>Scheduled start</b><span>The start window goes in writing along with the expected length of the job.</span></li>
+          <li><b>Install and check</b><span>The crew hangs the system, clears the site and walks the finished gutters with you.</span></li>
         </ol>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ PROOF / REVIEWS ═══════════════════ -->
-<section class="section reviews-section edge-wave-top" aria-label="Gutter reviews">
-  <span class="grain-layer" aria-hidden="true"></span>
-  <div class="container-wide">
-    <div class="section-title reveal-up">
-      <span class="eyebrow-label">In Their Words</span>
-      <h2>What do Warrenton homeowners say about our gutters?</h2>
-      <p>Real reviews from A&amp;S Contracting Services gutter and exterior customers across Warren County.</p>
-    </div>
-    <div class="reviews-track">
-      <?php
-      $gutterReviews = array_filter($reviews, function ($r) { return in_array($r['author'], ['Jennifer K.', 'Diane L.', 'Marcus H.']); });
-      foreach ($gutterReviews as $rev):
-        $initial = strtoupper(substr($rev['author'], 0, 1));
-      ?>
-      <article class="review-card">
-        <div class="review-stars" aria-label="<?php echo (int)$rev['rating']; ?> out of 5 stars">
-          <?php for ($s = 0; $s < (int)$rev['rating']; $s++) echo icon('star', 18); ?>
-        </div>
-        <p class="review-text">&ldquo;<?php echo htmlspecialchars($rev['text']); ?>&rdquo;</p>
-        <div class="review-author">
-          <span class="review-avatar" aria-hidden="true"><?php echo $initial; ?></span>
-          <span class="review-name"><?php echo htmlspecialchars($rev['author']); ?></span>
-        </div>
-      </article>
-      <?php endforeach; ?>
-    </div>
-    <div class="review-badge-strip">
-      <span class="badge-strip"><?php echo icon('star', 16); ?> 5-Star Google Rated</span>
-      <span class="badge-strip"><?php echo icon('shield-check', 16); ?> Licensed &amp; Insured</span>
-      <span class="badge-strip"><?php echo icon('droplets', 16); ?> Seamless On-Site</span>
     </div>
   </div>
 </section>
@@ -330,38 +302,53 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <!-- ═══════════════════ COMPARISON ═══════════════════ -->
 <section class="section">
   <div class="container">
-    <span class="eyebrow-label">The Difference</span>
-    <h2>Why choose seamless gutters over sectional store-bought ones?</h2>
-    <p class="answer-block">Sectional gutters from the hardware store snap together in pieces, and a handyman hangs them with joints every few feet—joints that leak once Missouri freeze-thaw works on the seals. A&amp;S Contracting Services forms seamless runs on site and installs them as a sized, pitched system, so water goes to the downspouts instead of down your wall.</p>
-    <div class="sp-compare">
-      <div class="sp-compare__col sp-compare--them">
-        <h3><?php echo icon('x', 20); ?> Sectional / handyman gutters</h3>
-        <ul>
-          <li><?php echo icon('minus', 18); ?> Snap-together joints every few feet</li>
-          <li><?php echo icon('minus', 18); ?> Seams that leak after a few freeze-thaw cycles</li>
-          <li><?php echo icon('minus', 18); ?> One-size stock instead of roof-sized runs</li>
-          <li><?php echo icon('minus', 18); ?> Downspouts often left dumping at the foundation</li>
-        </ul>
-      </div>
-      <div class="sp-compare__col sp-compare--us">
-        <h3><?php echo icon('check-circle', 20); ?> A&amp;S Contracting Services</h3>
-        <ul>
-          <li><?php echo icon('check', 18); ?> Seamless runs formed on site, no mid-span joints</li>
-          <li><?php echo icon('check', 18); ?> Sized to the runoff your roof actually produces</li>
-          <li><?php echo icon('check', 18); ?> Downspouts routed well away from the house</li>
-          <li><?php echo icon('check', 18); ?> Installed and stood behind by one local crew</li>
-        </ul>
-      </div>
+    <span class="eyebrow-label">Seamless Or Sectional</span>
+    <h2>How do seamless gutters differ from sectional gutters?</h2>
+    <p class="answer-block">Seamless gutters differ from sectional gutters in the number of joints: a seamless run is one continuous piece, while a sectional run is assembled from shorter lengths. A&amp;S Contracting Services installs seamless aluminum systems. The table compares the two types, and the A&amp;S guide to <a href="/blog/seamless-gutters-cost-missouri/">seamless gutter cost and sizing in Missouri</a> goes further.</p>
+    <div class="sp-table-wrap reveal-up">
+      <table class="sp-table">
+        <caption>Sectional gutters compared with seamless aluminum gutters from A&amp;S</caption>
+        <thead>
+          <tr>
+            <th scope="col">Attribute</th>
+            <th scope="col">Sectional gutters</th>
+            <th scope="col">Seamless gutters from A&amp;S</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">How a run is made</th>
+            <td>Stock lengths joined end to end</td>
+            <td>One continuous piece per run, cut to the measured length</td>
+          </tr>
+          <tr>
+            <th scope="row">Where joints fall</th>
+            <td>At every connection along the run, plus corners and end caps</td>
+            <td>At corners, end caps and downspout outlets only</td>
+          </tr>
+          <tr>
+            <th scope="row">Material</th>
+            <td>Varies by product</td>
+            <td>Aluminum</td>
+          </tr>
+          <tr>
+            <th scope="row">How it is specified</th>
+            <td>Bought by the length</td>
+            <td>Measured at the house during an on-site visit and itemized in writing</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════ FAQ ═══════════════════ -->
-<section class="section section--light" aria-label="Gutter FAQ">
+<section class="section section--light" aria-label="Gutters FAQ">
   <div class="container-narrow">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">Good Questions</span>
-      <h2>What do Warrenton homeowners ask before a gutter project?</h2>
+      <h2>What should you know before replacing gutters?</h2>
+      <p>Before replacing gutters, know that the price, the size and the number of downspouts are all set by the house, not by a catalog. A&amp;S Contracting Services answers the common questions here in general terms and gives the house-specific answers after an on-site look, in a written estimate with no obligation attached.</p>
     </div>
     <div class="faq-grid">
       <?php foreach ($faqs as $fi => $faq): ?>
@@ -375,12 +362,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 </section>
 
 <!-- ═══════════════════ RECENT WORK ═══════════════════ -->
-<section class="section sp-gallery" aria-label="Recent gutter projects">
+<section class="section sp-gallery" aria-label="Gutters job-site photos">
   <div class="container-wide">
     <div class="section-title reveal-up">
-      <span class="eyebrow-label">Recent Work</span>
-      <h2>What recent gutter projects has A&amp;S completed near Warrenton?</h2>
-      <p class="answer-block">These are real gutter projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+      <span class="eyebrow-label">Job-Site Photos</span>
+      <h2>What do A&amp;S gutter and eave jobs look like?</h2>
+      <p class="answer-block">A&amp;S gutter and eave jobs look like the three photos below. One shows a crew member on a ladder at the eave of a gray-sided house; two show completed homes with gutters running along the roofline. A&amp;S Contracting Services took the pictures on its own job sites, and each caption is limited to what the camera recorded.</p>
     </div>
     <div class="sp-gallery-grid" data-p1-dynamic>
       <?php foreach ($workPhotos as $wp): ?>
@@ -398,39 +385,39 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container-wide">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">What We Do</span>
-      <h2>What else can A&amp;S handle on your home?</h2>
-      <p class="hero-answer">Gutters are one trade under one licensed roof. A&amp;S Contracting Services installs the whole roofline as a system, so the soffit, fascia, and roof that tie into your gutters are handled by the same accountable crew across Warrenton and Warren County.</p>
+      <h2>Which trades meet the gutters at the eave?</h2>
+      <p class="hero-answer">Three trades meet the gutters at the eave: soffit beneath, fascia behind and roofing above. A&amp;S Contracting Services performs all three, which is why a gutter estimate can grow to include a rotted board or a damaged roof edge without a second contractor. Every trade A&amp;S offers appears on the <a href="/services/">services page for Warrenton and Warren County</a>.</p>
     </div>
     <div class="sp-other">
       <?php
-      $otherSlugs = ['soffit', 'fascia', 'roofing'];
-      $tintCycle  = [1, 2, 3];
-      $otherIcons = ['soffit' => 'wind', 'fascia' => 'ruler', 'roofing' => 'home'];
-      foreach ($otherSlugs as $oi => $os):
+      $tintCycle = [1, 2, 3];
+      $oi = 0;
+      foreach ($otherCards as $os => $oc):
         $osvc = null; foreach ($services as $s) { if ($s['slug'] === $os) { $osvc = $s; break; } }
         if (!$osvc) continue;
       ?>
       <article class="service-card-with-image card-tint-<?php echo $tintCycle[$oi % 3]; ?> reveal-up reveal-delay-<?php echo ($oi % 3) + 1; ?>">
         <div class="service-card__body">
-          <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
+          <div class="service-card__icon"><?php echo icon($oc['icon'], 22); ?></div>
           <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
-          <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
+          <p class="service-card__desc"><?php echo htmlspecialchars($oc['desc']); ?></p>
           <a href="/services/<?php echo $os; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$os] ?? $osvc['name']); ?></a>
         </div>
       </article>
-      <?php endforeach; ?>
+      <?php $oi++; endforeach; ?>
     </div>
   </div>
 </section>
+</article>
 
 <!-- ═══════════════════ FINAL CTA / ESTIMATE ═══════════════════ -->
-<section class="section section--light" id="estimate" aria-label="Request your free gutter estimate">
+<section class="section section--light" id="estimate" aria-label="Request a gutters estimate">
   <div class="container">
     <div class="estimate">
       <div class="card reveal-up" style="padding: clamp(1.5rem, 4vw, 2.5rem); border:1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface);">
-        <span class="eyebrow-label">Free Estimate</span>
-        <h2>Ready to keep water away from your foundation?</h2>
-        <p class="lead" style="margin-bottom: 1.25rem;">Send the details and A&amp;S Contracting Services will reply the same day to schedule your free on-site gutter measurement.</p>
+        <span class="eyebrow-label">Written Estimate</span>
+        <h2>Ready to get your gutters looked at?</h2>
+        <p class="lead" style="margin-bottom: 1.25rem;">Tell A&amp;S Contracting Services what the gutters are doing, and an on-site visit will be scheduled within days of first contact.</p>
 
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -496,10 +483,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="reveal-right">
         <span class="eyebrow-label">What Happens Next</span>
         <h2>What happens after you <span class="text-accent">request your estimate</span>?</h2>
+        <p>When you request an estimate, A&amp;S Contracting Services gets in touch to pick a time to see the gutters in person, usually a matter of days after first contact. You then receive an itemized estimate in writing, including the start window, and decide from there. Neither the visit nor the estimate commits you to anything.</p>
         <ol class="next-steps">
-          <li><strong>We reach out the same day.</strong> A&amp;S Contracting Services confirms the details and schedules your free on-site gutter measurement.</li>
-          <li><strong>You get a written estimate.</strong> Clear scope—run length, downspouts, guards, timeline, and price.</li>
-          <li><strong>One crew does the work.</strong> The same self-performing team forms, hangs, and tests your seamless gutters.</li>
+          <li><strong>A&amp;S comes to the house.</strong> Every run and downspout is checked.</li>
+          <li><strong>You receive an itemized price.</strong> Installation, repair, replacement or cleaning, each listed separately.</li>
+          <li><strong>The gutters go up.</strong> A&amp;S employees do the installation, clear the yard and finish with a walkthrough.</li>
         </ol>
         <div class="nap">
           <div><?php echo icon('phone', 18); ?> <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a></div>

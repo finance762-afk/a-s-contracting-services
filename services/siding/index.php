@@ -9,48 +9,55 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Siding';
 $pageTitle       = 'Siding Installation & Repair in Warrenton, MO';
-$pageDescription = 'Siding installation & repair in Warrenton, MO—vinyl, insulated and storm-damaged panel replacement. Licensed & insured. Free estimate: call (636) 359-7204.';
+$pageDescription = 'Vinyl, fiber cement and wood siding installed and repaired in Warrenton, MO by the A&S crew. Licensed & insured. Written on-site estimate: (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/services/siding/';
 
 // ─── Hero + recent-work photos (image manifest) ─────────────────────────────
 $heroImage    = '1779985053030-6d3zxh-65-Jun_03__2025_18-42-52-Tdqj';
-$heroImageAlt = 'Home with tan metal siding, brick accents, and a covered entry porch finished by A&S Contracting Services in Warrenton, MO';
+$heroImageAlt = 'Front entry of a home with tan board siding, brick and red shutters';
 $heroPreload  = [
     'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
     'sizes'  => '100vw',
 ];
 $workPhotos = [
-    ['1779985140268-74twlt-8-Jan_17__2025_14-47-01-2JGp', 'One-story home with new gray vinyl siding and white-trimmed windows near Warrenton'],
-    ['1779985248491-zmav4f-10-Nov_19__2025_22-17-16-onqb', 'Modern home with warm wood siding, black-framed windows, and a deck in Warren County'],
-    ['1779985247593-qd60zw-4-Aug_26__2025_18-27-56-YucD', 'Freshly installed white fiber-cement siding with black metal trim on a Missouri home'],
+    ['1779985140268-74twlt-8-Jan_17__2025_14-47-01-2JGp', 'One-story home with gray lap siding and a white door, with snow on the ground'],
+    ['1779985138888-d41ths-3-Nov_20__2024_22-50-31-ZRts', 'Gray-sided house with house wrap around the porch end during siding work'],
+    ['1779985138123-1k3z1f-1-Nov_20__2024_22-51-03-koQG', 'Gable end with new gray lap siding, with trim offcuts and a ladder on the lawn'],
 ];
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
         'question' => 'How much does new siding cost in Warrenton, MO?',
-        'answer'   => 'Siding cost in Warrenton depends on the square footage of wall, the material you choose, and whether sheathing under the old siding needs repair. A&S Contracting Services prices every job from a free on-site measurement and a written estimate, so vinyl, insulated vinyl, fiber-cement, or engineered wood each come with a clear number before any work begins.',
+        'answer'   => 'Siding cost depends on the square footage of wall, the material selected, the condition of the structure under the old siding and the scope. A&S Contracting Services publishes no price list. Each job is priced from an on-site measurement and a written, itemized estimate, and the quoted price is the final price.',
     ],
     [
-        'question' => 'What siding material holds up best to Missouri weather?',
-        'answer'   => 'A&S Contracting Services installs insulated vinyl and fiber-cement most often around Warren County because both shrug off the freeze-thaw swings, summer humidity, and wind-driven rain that punish central Missouri homes. We match the material to your budget and how long you plan to stay, then explain the trade-offs in plain terms instead of pushing the priciest option.',
+        'question' => 'Which siding materials does A&S install?',
+        'answer'   => 'A&S Contracting Services installs and repairs vinyl, fiber cement and wood siding. Vinyl needs washing but no paint, fiber cement carries a painted finish, and wood needs its paint or stain kept up. The estimate can price more than one material for the same house.',
     ],
     [
-        'question' => 'Can you match the siding on my existing house?',
-        'answer'   => 'Yes. A&S Contracting Services regularly patches storm-damaged panels and matches profile, color, and texture to blend a repair into the existing wall. When an exact match is discontinued, we tell you honestly and lay out options—replacing one full elevation or the whole house—so the finished exterior looks intentional, not patched.',
+        'question' => 'Can you repair one section instead of re-siding the house?',
+        'answer'   => 'Yes. Siding repair is a listed A&S service alongside full installation. Whether a repair will blend in depends on whether a matching profile and color can still be sourced, which A&S checks before quoting. If no match exists, the estimate says so and prices the alternatives.',
     ],
     [
-        'question' => 'Do you replace hail and storm-damaged siding through insurance?',
-        'answer'   => 'A&S Contracting Services documents cracked, punctured, and wind-torn siding with photos, meets your adjuster on site, and provides an itemized estimate your insurer can process. Warren County hail cracks vinyl and dents metal panels, and clean documentation is what keeps a siding claim moving from inspection to installation.',
+        'question' => 'Do you handle storm and hail damage claims on siding?',
+        'answer'   => 'A&S Contracting Services photographs storm and hail damage, provides a detailed itemized estimate, meets the insurance adjuster on site and helps the homeowner through the claim. When the roof and gutters were hit in the same storm, one estimate can cover all three.',
     ],
     [
-        'question' => 'Will new siding lower my energy bills?',
-        'answer'   => 'It can. A&S Contracting Services installs a fresh house wrap and can add rigid insulation board behind insulated vinyl or fiber-cement, cutting the drafts that drive up heating and cooling costs in older Warrenton homes. Sealing penetrations and replacing failed panels stops the air leaks that a coat of paint never fixes.',
+        'question' => 'How long does a siding job take?',
+        'answer'   => 'Siding timelines vary by square footage and home size, so A&S Contracting Services does not quote a standard number of days. The start window and the expected duration for your house are given in writing with the estimate.',
     ],
     [
-        'question' => 'Are you licensed and insured for siding work in Missouri?',
-        'answer'   => 'Yes. A&S Contracting Services is a licensed Missouri general contractor and carries full insurance on every siding job. That protects your home while the old panels come off and the sheathing is exposed, and it means the crew wrapping your house is covered from tear-off to final cleanup.',
+        'question' => 'What does the siding estimate visit involve?',
+        'answer'   => 'A&S visits the property, measures the walls, looks at the condition of the existing siding and talks through material. Visits are scheduled within days of first contact and cost nothing. The written estimate that follows carries no obligation, no hidden fees and no upselling.',
     ],
+];
+
+// ─── Other-services cards (page-local copy) ─────────────────────────────────
+$otherCards = [
+    'gutters' => ['icon' => 'droplets', 'desc' => 'Seamless aluminum gutter systems: installation, repair, replacement and cleaning.'],
+    'soffit' => ['icon' => 'wind', 'desc' => 'Soffit installation and repair, including attic ventilation at the eaves.'],
+    'exterior-work' => ['icon' => 'home', 'desc' => 'Siding, roofing and gutter work combined into one exterior renovation.'],
 ];
 
 // ─── Schema (Service + FAQPage + BreadcrumbList) ─────────────────────────────
@@ -60,7 +67,7 @@ $serviceSchema = [
     '@id'         => $canonicalUrl . '#service-' . $serviceSlug,
     'name'        => 'Siding',
     'serviceType' => 'Siding contractor',
-    'description' => 'Vinyl, insulated vinyl, fiber-cement, and engineered-wood siding installation and repair in Warrenton, MO and Warren County, including house wrap, trim, and storm-damaged panel replacement.',
+    'description' => 'Vinyl, fiber cement and wood siding installation and repair for homes and commercial buildings in Warrenton, MO and within 50 miles of Warren County.',
     'provider'    => ['@id' => $siteUrl . '/#organization'],
     'areaServed'  => [
         '@type' => 'GeoCircle',
@@ -113,16 +120,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 .sp-checklist li svg { color: var(--color-primary); margin-top: 3px; }
 @media (max-width: 800px) { .sp-included { grid-template-columns: 1fr; } }
 
-/* Comparison */
-.sp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
-.sp-compare__col { border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--color-surface); }
-.sp-compare__col--us { border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-line)); box-shadow: var(--shadow); background: color-mix(in srgb, var(--color-accent) 8%, white); }
-.sp-compare h3 { font-size: 1.1rem; margin-bottom: .9rem; display: flex; align-items: center; gap: .5rem; }
-.sp-compare ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
-.sp-compare li { display: grid; grid-template-columns: 22px 1fr; gap: .55rem; font-size: .93rem; color: var(--color-ink-2); }
-.sp-compare--them li svg { color: var(--color-danger); margin-top: 2px; }
-.sp-compare--us li svg { color: var(--color-success); margin-top: 2px; }
-@media (max-width: 700px) { .sp-compare { grid-template-columns: 1fr; } }
+/* Comparison table */
+.sp-table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.sp-table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: .94rem; }
+.sp-table caption { caption-side: top; text-align: left; padding: 1rem 1.25rem .75rem; font-family: var(--font-heading); font-weight: 700; color: var(--color-ink); }
+.sp-table th, .sp-table td { padding: .85rem 1.25rem; text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); color: var(--color-ink-2); }
+.sp-table thead th { font-family: var(--font-heading); color: var(--color-ink); background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface)); }
+.sp-table tbody th { color: var(--color-ink); font-weight: 700; width: 22%; }
+.sp-table td a, .sp-checklist a, .sp-evidence a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.sp-table-note { margin-top: 1rem; }
+.sp-position__stat--word { font-size: clamp(2.6rem, 7vw, 4.2rem); }
 
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
@@ -155,22 +162,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
         <span class="eyebrow">Siding &middot; Warrenton &amp; Warren County</span>
-        <h1>Siding in <span class="text-accent">Warrenton, MO</span> — install, repair &amp; storm replacement</h1>
-        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured Warrenton siding contractor that installs and repairs vinyl, insulated vinyl, and fiber-cement siding within 50 miles of Warren County—house wrap, trim, and hail-cracked panels handled by one self-performing crew.</p>
+        <h1>Siding in <span class="text-accent">Warrenton, MO</span> — installation &amp; repair in vinyl, fiber cement and wood</h1>
+        <p class="hero-answer">A&amp;S Contracting Services installs and repairs vinyl, fiber cement and wood siding on homes and businesses around Warrenton, MO. The company is licensed and fully insured, and its written on-site estimate is free.</p>
         <div class="hero-actions">
-          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free siding estimate</a>
+          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written siding estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
         </div>
         <ul class="hero-chips">
-          <li><?php echo icon('shield-check', 16); ?> Licensed &amp; insured in Missouri</li>
-          <li><?php echo icon('layers', 16); ?> Vinyl, insulated &amp; fiber-cement</li>
-          <li><?php echo icon('users', 16); ?> Self-performed &mdash; no subcontractors</li>
+          <li><?php echo icon('clipboard-list', 16); ?> Written, itemized estimate</li>
+          <li><?php echo icon('home', 16); ?> Warrenton-based, 50-mile radius</li>
+          <li><?php echo icon('check-circle', 16); ?> Daily cleanup, final walkthrough</li>
         </ul>
       </div>
 
       <aside class="hero-form-card" id="hero-form">
-        <h2>Free siding estimate</h2>
-        <p class="hero-form-tagline">No obligation. Same-day reply.</p>
+        <h2>Request a siding estimate</h2>
+        <p class="hero-form-tagline">Measured at the house. No obligation.</p>
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -195,43 +202,44 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
           <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
           <?php } ?>
-          <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
         </form>
       </aside>
     </div>
   </div>
 </section>
 
+<article>
 <!-- ═══════════════════ PROBLEM STATEMENT ═══════════════════ -->
 <section class="section section--light">
   <div class="container">
     <div class="sp-problem">
       <div class="reveal-left">
         <span class="eyebrow-label">Know The Signs</span>
-        <h2>How do you know your Warrenton siding is failing?</h2>
-        <p class="answer-block">If panels are cracked, warped, or buckling, the paint on wood siding is peeling, or you feel drafts and see energy bills climbing, the exterior skin of your home is losing the battle with Missouri weather. A&amp;S Contracting Services checks for these signs, probes the sheathing behind the panels, and tells you plainly whether a repair or a full re-side is the right call.</p>
-        <p class="pull-quote">Siding hides the sheathing that keeps water out of your walls—when it goes, the damage moves inward.</p>
+        <h2>How can you tell siding on a Warren County house is failing?</h2>
+        <p class="answer-block">Siding is failing when panels crack, warp or pull loose, when paint on wood boards peels down to bare grain, or when a wall feels soft behind the cladding. Warren County gets freeze-thaw winters and humid summers, and both open up joints over time. A&amp;S Contracting Services inspects each wall in person before recommending repair or replacement.</p>
+        <p class="pull-quote">Siding is the first layer between the weather and the wall framing, so a gap in it is worth closing early.</p>
       </div>
       <div class="sp-signs reveal-right">
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('layers', 22); ?></div>
-          <h3>Cracked or buckled panels</h3>
-          <p>Warped and split siding after freeze-thaw and hail lets wind-driven rain slip behind the wall.</p>
+          <h3>Cracked or warped panels</h3>
+          <p>Splits and buckles give wind-driven rain a path behind the wall surface.</p>
         </div>
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('sun', 22); ?></div>
-          <h3>Chalking &amp; heavy fading</h3>
-          <p>A powdery film and blotchy color mean the surface has broken down and no longer sheds water well.</p>
+          <h3>Peeling paint on wood</h3>
+          <p>Bare wood takes on water each time it rains and dries unevenly.</p>
         </div>
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('droplets', 22); ?></div>
-          <h3>Soft, rotten spots</h3>
-          <p>Spongy areas behind the panels signal moisture has reached the sheathing underneath.</p>
+          <h3>Soft spots</h3>
+          <p>A wall that gives under hand pressure usually has moisture behind the cladding.</p>
         </div>
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('wind', 22); ?></div>
-          <h3>Drafts &amp; loose panels</h3>
-          <p>Rising heating bills and panels that rattle after a storm point to a failed weather barrier.</p>
+          <h3>Loose or rattling pieces</h3>
+          <p>Panels that move in wind have lost their fastening and can come off in the next storm.</p>
         </div>
       </div>
     </div>
@@ -243,16 +251,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="sp-position">
       <div class="reveal-up">
-        <div class="sp-position__stat">1<span>local crew that removes the old siding, repairs the sheathing, and wraps your Warrenton home start to finish</span></div>
+        <div class="sp-position__stat">3<span>siding materials on the A&amp;S list: vinyl, fiber cement and wood</span></div>
       </div>
       <div class="reveal-right">
-        <span class="eyebrow-label">Why It Matters</span>
-        <h2>What makes A&amp;S a siding contractor Warren County homeowners trust?</h2>
-        <p class="answer-block">A&amp;S Contracting Services self-performs every re-side it quotes instead of subbing the labor to a big-box installer&rsquo;s rotating crews. The same people who measure your walls and write the estimate strip the old panels, fix the wood underneath, and hang the new siding—so nothing gets covered up and hidden.</p>
+        <span class="eyebrow-label">Behind The Panels</span>
+        <h2>Why does it matter who installs the siding?</h2>
+        <p class="answer-block">Who installs the siding matters because the wall behind it is only visible once the old cladding is off. A&amp;S Contracting Services uses its own employees, never subcontractors, so the installer who uncovers a damaged section is also the person who agrees the fix with the homeowner before new siding covers the spot.</p>
         <ul class="sp-evidence">
-          <li><?php echo icon('users', 22); ?><span><b>One accountable crew.</b> The same team is on your walls each day, so cut lines, caulking, and cleanup stay consistent.</span></li>
-          <li><?php echo icon('shield-check', 22); ?><span><b>House wrap done right.</b> We inspect and replace bad sheathing and install a fresh weather barrier before a single panel goes up.</span></li>
-          <li><?php echo icon('clipboard-list', 22); ?><span><b>Documented for insurance.</b> Photo-backed reports and itemized estimates give your adjuster what a hail or wind claim needs.</span></li>
+          <li><?php echo icon('home', 22); ?><span><b>Siding tied to the trades around it.</b> A&amp;S also handles <a href="/services/windows-doors/">replacement windows, patio doors and entry doors</a> and installs gutters, so the trim lines at each opening are set by one company.</span></li>
+          <li><?php echo icon('clipboard-list', 22); ?><span><b>Scope on paper.</b> The estimate names the material, the walls included and the start window before a panel is ordered.</span></li>
+          <li><?php echo icon('check-circle', 22); ?><span><b>A site you can live next to.</b> Old material is cleared daily, and the job closes with a walkthrough of every wall.</span></li>
         </ul>
       </div>
     </div>
@@ -263,66 +271,30 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="section section--light">
   <div class="container">
     <span class="eyebrow-label">The Work</span>
-    <h2>What&rsquo;s included in an A&amp;S siding replacement?</h2>
-    <p class="answer-block">A&amp;S Contracting Services delivers a full wall system, not just panels: complete tear-off of old siding, inspection and repair of the sheathing, a new weather-resistive house wrap, optional insulation board, new siding with matching trim, corner posts, and J-channel, sealed penetrations, and a clean job site. Every step is documented so you know exactly what went on your Warrenton home.</p>
+    <h2>What is included in an A&amp;S siding project?</h2>
+    <p class="answer-block">An A&amp;S siding project includes the installation or repair itself, the material you select, daily site cleanup and a final walkthrough. A&amp;S Contracting Services measures the house on site, and the written price reflects wall square footage, the material, the condition of the structure underneath and whether the job is one wall or the whole exterior.</p>
     <div class="sp-included">
       <div class="reveal-up">
-        <h3>Included in the scope</h3>
+        <h3>What can be written into the scope</h3>
         <ul class="sp-checklist">
-          <li><?php echo icon('check', 20); ?> Full tear-off of the existing siding</li>
-          <li><?php echo icon('check', 20); ?> Inspection and replacement of damaged or rotted sheathing</li>
-          <li><?php echo icon('check', 20); ?> New house wrap / weather-resistive barrier</li>
-          <li><?php echo icon('check', 20); ?> Optional rigid insulation board for added efficiency</li>
-          <li><?php echo icon('check', 20); ?> Vinyl, insulated vinyl, fiber-cement, or engineered-wood panels</li>
-          <li><?php echo icon('check', 20); ?> Matching trim, corner posts, and J-channel</li>
-          <li><?php echo icon('check', 20); ?> Caulk and seal at windows, doors, and penetrations</li>
-          <li><?php echo icon('check', 20); ?> Full cleanup and haul-away of the old material</li>
+          <li><?php echo icon('check', 20); ?> <span>New siding installation on houses and commercial buildings</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Repair of damaged sections on an existing wall</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Vinyl siding</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Fiber cement siding</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Wood siding</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Storm and hail damage photographed for an insurer</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Siding combined with roofing and gutters as a <a href="/services/exterior-work/">full exterior renovation</a></span></li>
         </ul>
       </div>
       <div class="reveal-right">
-        <h3>How the project runs</h3>
+        <h3>From measurement to walkthrough</h3>
         <ol class="process-steps">
-          <li><b>Free measurement</b><span>We measure the walls, check the sheathing, and go over material options on site.</span></li>
-          <li><b>Written estimate</b><span>You get an itemized quote—material, timeline, and price, insurance-ready if needed.</span></li>
-          <li><b>Tear-off &amp; wrap</b><span>Our crew strips the old siding, repairs the wood, and installs a fresh weather barrier.</span></li>
-          <li><b>Install &amp; walkthrough</b><span>New panels and trim go on, the site is cleaned, and we review the finished exterior with you.</span></li>
+          <li><b>Wall measurement</b><span>A&amp;S measures the exterior at the house; no price is given from a phone description.</span></li>
+          <li><b>Itemized estimate</b><span>Material and labor are listed line by line, and the figure quoted is the figure billed.</span></li>
+          <li><b>Start window</b><span>A written start window comes with the estimate. Siding timelines vary by square footage and home size.</span></li>
+          <li><b>Installation and walkthrough</b><span>A&amp;S employees hang the siding, clear debris daily and walk the finished walls with you.</span></li>
         </ol>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ PROOF / REVIEWS ═══════════════════ -->
-<section class="section reviews-section edge-wave-top" aria-label="Siding reviews">
-  <span class="grain-layer" aria-hidden="true"></span>
-  <div class="container-wide">
-    <div class="section-title reveal-up">
-      <span class="eyebrow-label">In Their Words</span>
-      <h2>What do Warrenton homeowners say about our siding?</h2>
-      <p>Real reviews from A&amp;S Contracting Services siding and exterior customers across Warren County.</p>
-    </div>
-    <div class="reviews-track">
-      <?php
-      $sidingReviews = array_filter($reviews, function ($r) { return in_array($r['author'], ['Jennifer K.', 'Marcus H.', 'Diane L.']); });
-      foreach ($sidingReviews as $rev):
-        $initial = strtoupper(substr($rev['author'], 0, 1));
-      ?>
-      <article class="review-card">
-        <div class="review-stars" aria-label="<?php echo (int)$rev['rating']; ?> out of 5 stars">
-          <?php for ($s = 0; $s < (int)$rev['rating']; $s++) echo icon('star', 18); ?>
-        </div>
-        <p class="review-text">&ldquo;<?php echo htmlspecialchars($rev['text']); ?>&rdquo;</p>
-        <div class="review-author">
-          <span class="review-avatar" aria-hidden="true"><?php echo $initial; ?></span>
-          <span class="review-name"><?php echo htmlspecialchars($rev['author']); ?></span>
-        </div>
-      </article>
-      <?php endforeach; ?>
-    </div>
-    <div class="review-badge-strip">
-      <span class="badge-strip"><?php echo icon('star', 16); ?> 5-Star Google Rated</span>
-      <span class="badge-strip"><?php echo icon('shield-check', 16); ?> Licensed &amp; Insured</span>
-      <span class="badge-strip"><?php echo icon('layers', 16); ?> Vinyl &amp; Fiber-Cement</span>
     </div>
   </div>
 </section>
@@ -330,29 +302,70 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <!-- ═══════════════════ COMPARISON ═══════════════════ -->
 <section class="section">
   <div class="container">
-    <span class="eyebrow-label">The Difference</span>
-    <h2>Why choose A&amp;S over a big-box siding installer?</h2>
-    <p class="answer-block">Big-box home stores sell the siding and then sub the labor out to whichever crew is available that week, with no one accountable when a panel fails. A&amp;S Contracting Services is a local, licensed contractor that measures, tears off, and installs with its own crew—so you deal with the same people who did the work if you ever need them again.</p>
-    <div class="sp-compare">
-      <div class="sp-compare__col sp-compare--them">
-        <h3><?php echo icon('x', 20); ?> Measure-and-sub-out installers</h3>
-        <ul>
-          <li><?php echo icon('minus', 18); ?> Labor handed to a rotating third-party crew</li>
-          <li><?php echo icon('minus', 18); ?> Bad sheathing covered up instead of repaired</li>
-          <li><?php echo icon('minus', 18); ?> A call center, not the people on your walls</li>
-          <li><?php echo icon('minus', 18); ?> Little accountability once the panels are up</li>
-        </ul>
-      </div>
-      <div class="sp-compare__col sp-compare--us">
-        <h3><?php echo icon('check-circle', 20); ?> A&amp;S Contracting Services</h3>
-        <ul>
-          <li><?php echo icon('check', 18); ?> Warrenton-based and here year after year</li>
-          <li><?php echo icon('check', 18); ?> Self-performed by one accountable crew</li>
-          <li><?php echo icon('check', 18); ?> Sheathing inspected and repaired, not hidden</li>
-          <li><?php echo icon('check', 18); ?> A local number that actually answers</li>
-        </ul>
-      </div>
+    <span class="eyebrow-label">Materials</span>
+    <h2>How do vinyl, fiber cement and wood siding compare?</h2>
+    <p class="answer-block">Vinyl, fiber cement and wood siding compare mainly on upkeep and on how each one is repaired. A&amp;S Contracting Services installs and repairs all three, and can price the options side by side in one written estimate when a homeowner is undecided. The table below sets out the general differences between the materials.</p>
+    <div class="sp-table-wrap reveal-up">
+      <table class="sp-table">
+        <caption>Siding materials installed and repaired by A&amp;S Contracting Services</caption>
+        <thead>
+          <tr>
+            <th scope="col">Attribute</th>
+            <th scope="col">Vinyl</th>
+            <th scope="col">Fiber cement</th>
+            <th scope="col">Wood</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">What it is</th>
+            <td>Formed PVC panels</td>
+            <td>Boards made from cement, sand and cellulose fiber</td>
+            <td>Sawn boards, shingles or panels</td>
+          </tr>
+          <tr>
+            <th scope="row">Upkeep</th>
+            <td>Washing; no painting</td>
+            <td>A painted finish that is repainted over time</td>
+            <td>Paint or stain that has to be kept up</td>
+          </tr>
+          <tr>
+            <th scope="row">How damage is repaired</th>
+            <td>Damaged panels are unlocked and replaced</td>
+            <td>Damaged boards are cut out and replaced</td>
+            <td>Rotted or split boards are replaced and refinished</td>
+          </tr>
+          <tr>
+            <th scope="row">A&amp;S services</th>
+            <td>Installation and repair</td>
+            <td>Installation and repair</td>
+            <td>Installation and repair</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <p class="sp-table-note">Not sure the wall needs replacing at all? The A&amp;S post on <a href="/blog/when-to-replace-siding-missouri/">warning signs that siding is due for replacement</a> lists what to check first.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ BEFORE / AFTER (real pair from A&S job photos) ═══════════════════ -->
+<section class="section section--light" aria-label="Siding before and after">
+  <div class="container-narrow">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">Before &amp; After</span>
+      <h2>What does a wall look like before and after A&amp;S re-sides it?</h2>
+      <p class="answer-block">A wall re-sided by A&amp;S Contracting Services is stripped to the house wrap, checked, then closed in with new siding and trim. The pair below shows one bay window wall on an A&amp;S job: open to the wrap in March 2025 and finished in tan lap siding with white trim that April.</p>
+    </div>
+    <?php
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/before-after.php';
+    echo p1_before_after(
+        '1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie',
+        '1779985051813-6hdkvp-61-Apr_25__2025_19-50-31-B2oU-c1',
+        'Bay window wall stripped to house wrap before new siding',
+        'The same bay window wall with new tan siding and white trim',
+        ['caption' => 'Bay window wall re-sided. Before: March 11, 2025. After: April 25, 2025.', 'id' => 'ba-siding-1']
+    );
+    ?>
   </div>
 </section>
 
@@ -361,7 +374,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container-narrow">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">Good Questions</span>
-      <h2>What do Warrenton homeowners ask before a siding project?</h2>
+      <h2>Which siding questions does A&amp;S hear most?</h2>
+      <p>The siding questions A&amp;S hears most are about cost, material choice, repairing one section, storm claims and scheduling. A&amp;S Contracting Services answers them below in general terms; the specific answer for a given Warrenton, Wright City or Troy house comes from measuring it and writing the estimate.</p>
     </div>
     <div class="faq-grid">
       <?php foreach ($faqs as $fi => $faq): ?>
@@ -375,12 +389,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 </section>
 
 <!-- ═══════════════════ RECENT WORK ═══════════════════ -->
-<section class="section sp-gallery" aria-label="Recent siding projects">
+<section class="section sp-gallery" aria-label="Siding job-site photos">
   <div class="container-wide">
     <div class="section-title reveal-up">
-      <span class="eyebrow-label">Recent Work</span>
-      <h2>What recent siding projects has A&amp;S completed near Warrenton?</h2>
-      <p class="answer-block">These are real siding projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+      <span class="eyebrow-label">Job-Site Photos</span>
+      <h2>What do A&amp;S siding jobs look like on site?</h2>
+      <p class="answer-block">A&amp;S siding jobs look like the three photos below: a finished one-story house in gray lap siding, a gray house with house wrap still showing at the porch end, and a gable end just closed in with new lap siding. A&amp;S Contracting Services took each picture on its own job sites, and the captions say only what is visible.</p>
     </div>
     <div class="sp-gallery-grid" data-p1-dynamic>
       <?php foreach ($workPhotos as $wp): ?>
@@ -398,39 +412,39 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container-wide">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">What We Do</span>
-      <h2>What else can A&amp;S handle on your home?</h2>
-      <p class="hero-answer">Siding is one trade under one licensed roof. A&amp;S Contracting Services also self-performs the rest of the exterior envelope that keeps water off your Warrenton home—so the whole outside of the house is handled by one accountable crew.</p>
+      <h2>Which other exterior trades can go on the same siding estimate?</h2>
+      <p class="hero-answer">Gutters, soffit and wider exterior work can go on the same siding estimate, because A&amp;S Contracting Services is a general contractor and not a siding-only installer. All ten trades are set out on the <a href="/services/">A&amp;S services overview</a>; the three below each share an edge with the siding on a house.</p>
     </div>
     <div class="sp-other">
       <?php
-      $otherSlugs = ['gutters', 'soffit', 'exterior-work'];
-      $tintCycle  = [1, 2, 3];
-      $otherIcons = ['gutters' => 'droplets', 'soffit' => 'wind', 'exterior-work' => 'home'];
-      foreach ($otherSlugs as $oi => $os):
+      $tintCycle = [1, 2, 3];
+      $oi = 0;
+      foreach ($otherCards as $os => $oc):
         $osvc = null; foreach ($services as $s) { if ($s['slug'] === $os) { $osvc = $s; break; } }
         if (!$osvc) continue;
       ?>
       <article class="service-card-with-image card-tint-<?php echo $tintCycle[$oi % 3]; ?> reveal-up reveal-delay-<?php echo ($oi % 3) + 1; ?>">
         <div class="service-card__body">
-          <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
+          <div class="service-card__icon"><?php echo icon($oc['icon'], 22); ?></div>
           <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
-          <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
+          <p class="service-card__desc"><?php echo htmlspecialchars($oc['desc']); ?></p>
           <a href="/services/<?php echo $os; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$os] ?? $osvc['name']); ?></a>
         </div>
       </article>
-      <?php endforeach; ?>
+      <?php $oi++; endforeach; ?>
     </div>
   </div>
 </section>
+</article>
 
 <!-- ═══════════════════ FINAL CTA / ESTIMATE ═══════════════════ -->
-<section class="section section--light" id="estimate" aria-label="Request your free siding estimate">
+<section class="section section--light" id="estimate" aria-label="Request a siding estimate">
   <div class="container">
     <div class="estimate">
       <div class="card reveal-up" style="padding: clamp(1.5rem, 4vw, 2.5rem); border:1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface);">
-        <span class="eyebrow-label">Free Estimate</span>
-        <h2>Ready for a straight answer on your siding?</h2>
-        <p class="lead" style="margin-bottom: 1.25rem;">Send the details and A&amp;S Contracting Services will reply the same day to schedule your free on-site siding inspection.</p>
+        <span class="eyebrow-label">Written Estimate</span>
+        <h2>Ready to have your siding measured?</h2>
+        <p class="lead" style="margin-bottom: 1.25rem;">Send a few details and A&amp;S Contracting Services will arrange an on-site measurement; visits are scheduled within days of first contact.</p>
 
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -496,10 +510,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="reveal-right">
         <span class="eyebrow-label">What Happens Next</span>
         <h2>What happens after you <span class="text-accent">request your estimate</span>?</h2>
+        <p>Once you request an estimate, A&amp;S Contracting Services calls or emails to arrange a time to measure the house. Visits are booked within days of first contact, and the estimate arrives in writing with material, price and a start window listed, so there is nothing to agree to until you have read it.</p>
         <ol class="next-steps">
-          <li><strong>We reach out the same day.</strong> A&amp;S Contracting Services confirms the details and schedules your free on-site siding inspection.</li>
-          <li><strong>You get a written estimate.</strong> Clear scope, material, timeline, and price—insurance-ready if you have storm damage.</li>
-          <li><strong>One crew does the work.</strong> The same self-performing team tears off, wraps, and installs your new siding.</li>
+          <li><strong>A&amp;S measures the walls.</strong> A visit to the property, Monday through Saturday.</li>
+          <li><strong>The estimate arrives in writing.</strong> Itemized by material and labor, with no hidden fees.</li>
+          <li><strong>Installation, cleanup, walkthrough.</strong> A&amp;S employees install the siding, tidy the site daily and go over the result with you.</li>
         </ol>
         <div class="nap">
           <div><?php echo icon('phone', 18); ?> <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a></div>

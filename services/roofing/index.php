@@ -8,49 +8,56 @@ $serviceSlug     = 'roofing';
 $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Roofing';
-$pageTitle       = 'Roofing Company in Warrenton, MO | Repair, Replacement & Hail Claims';
-$pageDescription = 'Roofing company in Warrenton, MO for roof repair, replacement & hail damage claims. Licensed & insured, self-performed. Free estimate—call (636) 359-7204.';
+$pageTitle       = 'Roofing Company in Warrenton, MO | Repair & Hail Claims';
+$pageDescription = 'Roof repair, tear-off and replacement in Warrenton, MO, with hail claim photos and adjuster meetings. Licensed & insured. Written estimate: (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/services/roofing/';
 
 // ─── Hero + recent-work photos (image manifest) ─────────────────────────────
 $heroImage    = '1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB';
-$heroImageAlt = 'Completed asphalt shingle roof with vent pipes on a Warrenton, MO home by A&S Contracting Services';
+$heroImageAlt = 'Finished asphalt shingle roof with a vent pipe on a wooded lot';
 $heroPreload  = [
     'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
     'sizes'  => '100vw',
 ];
 $workPhotos = [
-    ['1779985083337-zk34j0-26-Feb_09__2026_17-30-49-9vp8', 'Worker installing a chimney on new roofing underlayment during a Warren County roof build'],
-    ['1779985081293-864e8m-2-Feb_09__2026_13-42-04-ptJL', 'Overhead view of asphalt shingles going on over a wooded residential lot near Warrenton'],
-    ['1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4', 'A&S crew tearing off old shingles and underlayment on a Warren County roofing project'],
+    ['1779985083337-zk34j0-26-Feb_09__2026_17-30-49-9vp8', 'Crew member at a chimney on bare roof decking during a tear-off'],
+    ['1779985212271-1prbgz-42-Dec_24__2025_22-37-49-p62h', 'New architectural shingles meeting at a roof valley'],
+    ['1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4', 'Crew member in a hi-visibility shirt tearing off old shingles at a roof edge'],
 ];
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
         'question' => 'How much does a new roof cost in Warrenton, MO?',
-        'answer'   => 'Roof cost in Warrenton depends on square footage, pitch, material, and the condition of the decking underneath. A&amp;S Contracting Services prices every roof from a free on-site measurement and written estimate, so the number you get is the number you pay—no per-square guessing over the phone and no upsell once the crew arrives.',
+        'answer'   => 'Roof cost in Warrenton depends on square footage, the material selected, the condition of the existing structure and the scope of the job. A&amp;S Contracting Services publishes no price list; every roof is priced from an on-site visit and a written, itemized estimate, and the quoted price is the final price. The <a href="/blog/roof-replacement-cost-guide-missouri/">roof replacement cost guide</a> explains each cost driver.',
     ],
     [
         'question' => 'Do you handle hail and storm damage insurance claims?',
-        'answer'   => 'Yes. A&amp;S Contracting Services documents hail bruising, wind-lifted shingles, and creased ridges with photos, meets your adjuster on site, and provides an itemized estimate your insurer can process. Warren County sees real Missouri hail, and clean documentation is what keeps a roof claim moving from inspection to installation. Our <a href="/blog/hail-damage-roof-insurance-claim-missouri/">hail damage insurance claim guide</a> walks through each step.',
+        'answer'   => 'Yes. A&amp;S Contracting Services photographs storm and hail damage, writes a detailed itemized estimate, meets your insurance adjuster on site and helps you through the claim. The <a href="/blog/hail-damage-roof-insurance-claim-missouri/">hail damage insurance claim guide</a> walks through each step.',
     ],
     [
         'question' => 'How long does a roof replacement take?',
-        'answer'   => 'Most single-family roof replacements in the Warrenton area are torn off and re-shingled in one to three days, weather permitting. Because A&amp;S Contracting Services runs its own crew instead of subcontracting, the same people tear off, dry-in, and finish—so the timeline you are quoted is the timeline you get.',
+        'answer'   => 'Most single-family roof replacements take one to three days, weather permitting. A&amp;S Contracting Services gives the start window and the timeline in writing with the estimate, and the A&amp;S crew does both the tear-off and the installation.',
     ],
     [
         'question' => 'Should I repair or fully replace my roof?',
-        'answer'   => 'A roof under about 12 years old with isolated damage is usually worth repairing; widespread granule loss, multiple leaks, or storm damage across several slopes points to replacement. A&amp;S Contracting Services inspects the whole roof, shows you what it finds, and gives you the honest call instead of defaulting to the bigger job.',
+        'answer'   => 'It depends on how much of the roof is damaged. Isolated damage on an otherwise sound roof is usually a repair; damage or leaks across several slopes point toward replacement. A&amp;S Contracting Services does both, looks at the whole roof during the on-site visit and puts its recommendation in the written estimate. The <a href="/blog/roof-leak-repair-missouri/">roof leak repair guide</a> covers how a leak is traced.',
     ],
     [
         'question' => 'What roofing materials do you install?',
-        'answer'   => 'A&amp;S Contracting Services installs architectural asphalt shingles for most Warrenton homes, plus <a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">impact-resistant shingles</a> and metal roofing where the home or budget calls for it. We match the product to your roof pitch, exposure, and how long you plan to stay in the house.',
+        'answer'   => 'A&amp;S Contracting Services installs architectural asphalt shingles, impact-resistant shingles and metal roofing on residential and commercial buildings. The written estimate can price more than one material so you can compare them.',
     ],
     [
-        'question' => 'Are you licensed and insured for roofing in Missouri?',
-        'answer'   => 'Yes. A&amp;S Contracting Services is a licensed Missouri general contractor and carries full insurance on every roofing job. That protects your home during tear-off and means the crew on your roof is covered from the first shingle to the final cleanup and nail sweep.',
+        'question' => 'How does the written roofing estimate work?',
+        'answer'   => 'A&amp;S Contracting Services schedules an on-site visit within days of first contact, at no charge and with no obligation. You then receive a detailed, itemized estimate with the start window and the timeline in writing. There are no hidden fees and no upselling.',
     ],
+];
+
+// ─── Other-services cards (page-local copy) ─────────────────────────────────
+$otherCards = [
+    'siding' => ['icon' => 'layers', 'desc' => 'Siding installation and repair in vinyl, fiber cement and wood.'],
+    'gutters' => ['icon' => 'droplets', 'desc' => 'Seamless aluminum gutter systems: installation, repair, replacement and cleaning.'],
+    'general-contracting' => ['icon' => 'hard-hat', 'desc' => 'Residential and commercial projects managed from planning to completion.'],
 ];
 
 // ─── Schema (Service + FAQPage + BreadcrumbList) ─────────────────────────────
@@ -60,7 +67,7 @@ $serviceSchema = [
     '@id'         => $canonicalUrl . '#service-' . $serviceSlug,
     'name'        => 'Roofing',
     'serviceType' => 'Roofing contractor',
-    'description' => 'Residential and commercial roof repair, tear-off, and full replacement in Warrenton, MO and Warren County, including storm and hail insurance claim documentation.',
+    'description' => 'Residential and commercial roof installation, repair, tear-off and full replacement in Warrenton, MO and Warren County, including storm and hail damage repair and insurance claim documentation.',
     'provider'    => ['@id' => $siteUrl . '/#organization'],
     'areaServed'  => [
         '@type' => 'GeoCircle',
@@ -113,16 +120,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 .sp-checklist li svg { color: var(--color-primary); margin-top: 3px; }
 @media (max-width: 800px) { .sp-included { grid-template-columns: 1fr; } }
 
-/* Comparison */
-.sp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
-.sp-compare__col { border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--color-surface); }
-.sp-compare__col--us { border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-line)); box-shadow: var(--shadow); background: color-mix(in srgb, var(--color-accent) 8%, white); }
-.sp-compare h3 { font-size: 1.1rem; margin-bottom: .9rem; display: flex; align-items: center; gap: .5rem; }
-.sp-compare ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
-.sp-compare li { display: grid; grid-template-columns: 22px 1fr; gap: .55rem; font-size: .93rem; color: var(--color-ink-2); }
-.sp-compare--them li svg { color: var(--color-danger); margin-top: 2px; }
-.sp-compare--us li svg { color: var(--color-success); margin-top: 2px; }
-@media (max-width: 700px) { .sp-compare { grid-template-columns: 1fr; } }
+/* Comparison table */
+.sp-table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.sp-table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: .94rem; }
+.sp-table caption { caption-side: top; text-align: left; padding: 1rem 1.25rem .75rem; font-family: var(--font-heading); font-weight: 700; color: var(--color-ink); }
+.sp-table th, .sp-table td { padding: .85rem 1.25rem; text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); color: var(--color-ink-2); }
+.sp-table thead th { font-family: var(--font-heading); color: var(--color-ink); background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface)); }
+.sp-table tbody th { color: var(--color-ink); font-weight: 700; width: 22%; }
+.sp-table td a, .sp-checklist a, .sp-evidence a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.sp-table-note { margin-top: 1rem; }
+.sp-position__stat--word { font-size: clamp(2.6rem, 7vw, 4.2rem); }
 
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
@@ -131,6 +138,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 .hero--photo .hero-bg picture { display: block; width: 100%; height: 100%; }
 .hero--photo .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
 .hero--photo .breadcrumb, .hero--photo .breadcrumb a { color: rgba(255,255,255,.82); }
+/* v8 before/after pairs */
+.sp-ba-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); margin-top: var(--space-6); }
+@media (max-width: 800px) { .sp-ba-grid { grid-template-columns: 1fr; } }
 </style>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
@@ -156,21 +166,21 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="hero-copy">
         <span class="eyebrow">Roofing &middot; Warrenton &amp; Warren County</span>
         <h1>Roofing company in <span class="text-accent">Warrenton, MO</span> — repair, replacement &amp; hail claims</h1>
-        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured roofing company in Warrenton, MO that repairs and replaces roofs and documents hail damage for insurance claims&mdash;free estimates, one in-house crew.</p>
+        <p class="hero-answer">A&amp;S Contracting Services is a licensed, fully insured Warrenton general contractor that repairs and replaces roofs with its own crew. The on-site visit and the written estimate are free.</p>
         <div class="hero-actions">
-          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free roofing estimate</a>
+          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written roofing estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
         </div>
         <ul class="hero-chips">
-          <li><?php echo icon('shield-check', 16); ?> Licensed &amp; insured in Missouri</li>
+          <li><?php echo icon('clipboard-list', 16); ?> Written, itemized estimate</li>
           <li><?php echo icon('cloud-snow', 16); ?> Hail &amp; storm claim documentation</li>
-          <li><?php echo icon('users', 16); ?> Self-performed &mdash; no subcontractors</li>
+          <li><?php echo icon('home', 16); ?> Warrenton-based, 50-mile radius</li>
         </ul>
       </div>
 
       <aside class="hero-form-card" id="hero-form">
-        <h2>Free roofing estimate</h2>
-        <p class="hero-form-tagline">No obligation. Same-day reply.</p>
+        <h2>Request a roofing estimate</h2>
+        <p class="hero-form-tagline">On-site visit, itemized in writing. No obligation.</p>
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -195,43 +205,44 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
           <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
           <?php } ?>
-          <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
         </form>
       </aside>
     </div>
   </div>
 </section>
 
+<article>
 <!-- ═══════════════════ PROBLEM STATEMENT ═══════════════════ -->
 <section class="section section--light">
   <div class="container">
     <div class="sp-problem">
       <div class="reveal-left">
         <span class="eyebrow-label">Know The Signs</span>
-        <h2>How do you know your Warrenton roof needs attention?</h2>
-        <p class="answer-block">If you see granules collecting in the gutters, daylight in the attic, water stains on a ceiling, or shingles curling and lifting after a Missouri storm, your roof is telling you it is near the end. A&amp;S Contracting Services inspects for these signs and tells you plainly whether a repair or a replacement is the right call.</p>
-        <p class="pull-quote">A roof rarely fails all at once—it warns you first, if someone climbs up to look.</p>
+        <h2>How do you know a Warrenton roof needs repair?</h2>
+        <p class="answer-block">A roof needs repair when shingle granules collect in the gutters, tabs lift or go missing after wind, or a brown stain appears on a ceiling. Warrenton sits at 827 feet on the Interstate 70 corridor, where spring hail and winter freeze-thaw both work on shingles. A&amp;S Contracting Services checks each slope and reports its findings in writing.</p>
+        <p class="pull-quote">Dented gutters and downspouts after a hail storm are a reason to have the shingles above them looked at.</p>
       </div>
       <div class="sp-signs reveal-right">
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('droplets', 22); ?></div>
-          <h3>Ceiling &amp; attic stains</h3>
-          <p>Brown rings or damp decking mean water is already getting past the shingles.</p>
+          <h3>Ceiling or attic stains</h3>
+          <p>A brown ring on drywall means water has already passed the shingles and the layer beneath them.</p>
         </div>
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('cloud-snow', 22); ?></div>
           <h3>Hail bruising</h3>
-          <p>Soft, dark spots where hail knocked granules loose shorten a roof&rsquo;s life fast.</p>
+          <p>Dark, soft spots where hail knocked granules loose leave the asphalt open to sun and rain.</p>
         </div>
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('wind', 22); ?></div>
-          <h3>Lifted or missing shingles</h3>
-          <p>Wind-creased and torn shingles break the water seal along the whole slope.</p>
+          <h3>Lifted or missing tabs</h3>
+          <p>Shingles creased or torn by wind stop shedding water onto the course below.</p>
         </div>
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('layers', 22); ?></div>
-          <h3>Bare, worn granules</h3>
-          <p>Gritty gutters and shiny asphalt show the roof surface is wearing through.</p>
+          <h3>Granules in the gutters</h3>
+          <p>Grit washing into the downspouts shows the shingle surface is wearing away.</p>
         </div>
       </div>
     </div>
@@ -243,16 +254,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="sp-position">
       <div class="reveal-up">
-        <div class="sp-position__stat">1&ndash;3<span>days to tear off and re-roof most Warrenton homes—handled start to finish by our own crew</span></div>
+        <div class="sp-position__stat">1–3<span>days for most single-family roof replacements, weather permitting</span></div>
       </div>
       <div class="reveal-right">
-        <span class="eyebrow-label">Why It Matters</span>
-        <h2>What makes A&amp;S a roofer Warren County homeowners trust?</h2>
-        <p class="answer-block">A&amp;S Contracting Services self-performs every roof it quotes—no roving subcontractor crews, no handoffs. The people who inspect your roof and write the estimate are the same people who tear it off, dry it in, and sweep the yard for nails at the end.</p>
+        <span class="eyebrow-label">Who Is On The Roof</span>
+        <h2>Who does the work on an A&amp;S roof?</h2>
+        <p class="answer-block">The work on every A&amp;S roof is done by the A&amp;S Contracting Services crew, with no subcontractors. Blake Alger founded the company in Warrenton in 2023 around roofing and exterior work, so the people who tear off the old shingles are the people who install the new ones and walk the finished roof with the owner.</p>
         <ul class="sp-evidence">
-          <li><?php echo icon('users', 22); ?><span><b>One accountable crew.</b> The same team is on your roof each day, so quality and cleanup stay consistent from tear-off to finish.</span></li>
-          <li><?php echo icon('clipboard-list', 22); ?><span><b>Documented for insurance.</b> Photo-backed damage reports and itemized estimates give your adjuster exactly what a hail or wind claim needs.</span></li>
-          <li><?php echo icon('shield-check', 22); ?><span><b>Licensed &amp; fully insured.</b> Your home is protected during the most exposed stage of the job—the tear-off.</span></li>
+          <li><?php echo icon('users', 22); ?><span><b>One team, ridge to gutter line.</b> The roofing crew also installs <a href="/services/gutters/">seamless aluminum gutter systems</a>, soffit and fascia, so the roof edge is not split between companies.</span></li>
+          <li><?php echo icon('clipboard-list', 22); ?><span><b>Dates on paper.</b> The start window and the timeline are written into the estimate before a shingle comes off.</span></li>
+          <li><?php echo icon('check-circle', 22); ?><span><b>Cleaned up every day.</b> The site is cleaned daily, and each project ends with a walkthrough of the finished roof.</span></li>
         </ul>
       </div>
     </div>
@@ -263,28 +274,28 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="section section--light">
   <div class="container">
     <span class="eyebrow-label">The Work</span>
-    <h2>What&rsquo;s included in an A&amp;S roof replacement?</h2>
-    <p class="answer-block">A&amp;S Contracting Services delivers a full roof system, not just shingles: complete tear-off, deck inspection and repair, new underlayment and ice-and-water shield, drip edge, flashing, ridge ventilation, architectural shingles, and a full magnetic nail sweep before we leave. Every step is documented so you know exactly what went on your Warrenton home.</p>
+    <h2>What does an A&amp;S roof replacement include?</h2>
+    <p class="answer-block">An A&amp;S roof replacement includes tearing off the old roofing, installing the new roof in the material chosen, daily cleanup and a final walkthrough. A&amp;S Contracting Services prices it from an on-site visit, and the written figure depends on four things: square footage, the material selected, the condition of the existing structure and the scope.</p>
     <div class="sp-included">
       <div class="reveal-up">
-        <h3>Included in the scope</h3>
+        <h3>What the written scope can cover</h3>
         <ul class="sp-checklist">
-          <li><?php echo icon('check', 20); ?> Full tear-off of existing roofing down to the deck</li>
-          <li><?php echo icon('check', 20); ?> Decking inspection and replacement of rotted or soft sheathing</li>
-          <li><?php echo icon('check', 20); ?> Synthetic underlayment and ice-and-water shield at valleys and eaves</li>
-          <li><?php echo icon('check', 20); ?> New drip edge, step flashing, and pipe boots</li>
-          <li><?php echo icon('check', 20); ?> Architectural or <a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">impact-resistant shingles</a></li>
-          <li><?php echo icon('check', 20); ?> Ridge ventilation to protect the attic and shingle warranty</li>
-          <li><?php echo icon('check', 20); ?> Full cleanup and magnetic nail sweep of the yard</li>
+          <li><?php echo icon('check', 20); ?> <span>Tear-off of the existing roofing and full replacement</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Roof repair where a full replacement is not needed</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Storm and hail damage repair</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Architectural asphalt shingles, <a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">Class 4 impact-resistant shingles</a> or metal roofing</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Photo documentation for an insurance claim</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Residential and commercial roofs</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Job site cleaned at the end of each day</span></li>
         </ul>
       </div>
       <div class="reveal-right">
-        <h3>How the project runs</h3>
+        <h3>How a roof project runs</h3>
         <ol class="process-steps">
-          <li><b>Free inspection</b><span>We walk the roof, photograph the damage, and go over options on site.</span></li>
-          <li><b>Written estimate</b><span>You get an itemized quote—materials, timeline, and price, insurance-ready if needed.</span></li>
-          <li><b>Tear-off &amp; dry-in</b><span>Our crew strips the old roof, repairs decking, and seals the home the same day.</span></li>
-          <li><b>Install &amp; walkthrough</b><span>New system goes on, the yard is swept clean, and we review the finished roof with you.</span></li>
+          <li><b>On-site visit</b><span>A&amp;S looks at the roof in person. Visits are scheduled within days of first contact.</span></li>
+          <li><b>Written estimate</b><span>An itemized price with no hidden fees. The quoted price is the final price.</span></li>
+          <li><b>Start window in writing</b><span>You get the start window and the timeline on paper before work is booked.</span></li>
+          <li><b>Tear-off, install, walkthrough</b><span>The A&amp;S crew removes the old roof, installs the new one and walks it with you.</span></li>
         </ol>
       </div>
     </div>
@@ -295,102 +306,117 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="section" id="hail-claims" aria-label="Hail damage and insurance claims">
   <div class="container">
     <span class="eyebrow-label">Storm Season</span>
-    <h2>Hail damage &amp; insurance claims in Warren County</h2>
-    <p class="answer-block">After a hail storm, A&amp;S Contracting Services inspects your roof for free, photographs every bruised shingle, lifted tab and creased ridge, meets your insurance adjuster on site, and hands your carrier an itemized estimate. Warren County homeowners get one local, licensed and insured roofer from the first inspection through the finished roof.</p>
+    <h2>How does A&amp;S handle a hail damage insurance claim?</h2>
+    <p class="answer-block">A&amp;S Contracting Services handles a hail damage claim in four steps, from photographs of the damage to the adjuster meeting. It documents the roof with photos, writes a detailed itemized estimate, meets the insurance adjuster on site and helps the homeowner through the claim. The Warrenton crew then repairs or replaces the roof.</p>
     <div class="sp-included">
       <div class="reveal-up">
-        <h3>How A&amp;S handles a hail claim</h3>
+        <h3>The claim, step by step</h3>
         <ol class="process-steps">
-          <li><b>Free storm inspection</b><span>We walk every slope and photograph hail bruising, wind-lifted shingles, and damaged flashing and vents.</span></li>
-          <li><b>Damage documentation</b><span>You get a photo-backed damage report to file with your insurance company.</span></li>
-          <li><b>Adjuster meeting</b><span>We meet your adjuster on site so nothing on the roof gets missed.</span></li>
-          <li><b>Itemized estimate &amp; install</b><span>An itemized estimate your insurer can process, then our own crew repairs or replaces the roof.</span></li>
+          <li><b>Roof inspection</b><span>A&amp;S examines the roof and the metal around it for storm and hail damage.</span></li>
+          <li><b>Photo documentation</b><span>The damage is photographed so the claim file shows what was found.</span></li>
+          <li><b>Itemized estimate</b><span>You receive a detailed, itemized estimate to hand to your insurer.</span></li>
+          <li><b>Adjuster meeting</b><span>A&amp;S meets the insurance adjuster at the house, then schedules the repair or replacement.</span></li>
         </ol>
       </div>
       <div class="reveal-right">
         <h3>Before you call your insurer</h3>
         <ul class="sp-checklist">
-          <li><?php echo icon('check', 20); ?> Photograph dented gutters, downspouts, and vents from the ground&mdash;don&rsquo;t climb on a damaged roof</li>
-          <li><?php echo icon('check', 20); ?> Note the date of the storm; most policies expect prompt reporting</li>
-          <li><?php echo icon('check', 20); ?> Get an independent roof inspection before the adjuster visits</li>
-          <li><?php echo icon('check', 20); ?> Be wary of out-of-town crews pushing you to sign before the inspection</li>
+          <li><?php echo icon('check', 20); ?> <span>Photograph dented gutters, downspouts and vents from the ground, and stay off a damaged roof</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Write down the date of the storm</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Keep your policy number and the adjuster’s contact details in one place</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Ask A&amp;S for the photo set and the itemized estimate before the adjuster’s visit</span></li>
         </ul>
-        <p style="margin-top: 1.25rem;">Read our step-by-step guide: <a href="/blog/hail-damage-roof-insurance-claim-missouri/">hail damage roof inspection &amp; insurance claims in Missouri</a>. Weighing an upgrade while insurance pays for the roof? See whether <a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">Class 4 impact-resistant shingles are worth it</a>.</p>
+        <p class="sp-table-note">The full sequence is in the A&amp;S guide to <a href="/blog/hail-damage-roof-insurance-claim-missouri/">hail damage roof inspections and insurance claims in Missouri</a>.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ PROOF / REVIEWS ═══════════════════ -->
-<section class="section reviews-section edge-wave-top" aria-label="Roofing reviews">
-  <span class="grain-layer" aria-hidden="true"></span>
-  <div class="container-wide">
-    <div class="section-title reveal-up">
-      <span class="eyebrow-label">In Their Words</span>
-      <h2>What do Warrenton homeowners say about our roofing?</h2>
-      <p>Real reviews from A&amp;S Contracting Services roofing and storm-repair customers across Warren County.</p>
-    </div>
-    <div class="reviews-track">
-      <?php
-      $roofReviews = array_filter($reviews, function ($r) { return in_array($r['author'], ['Marcus H.', 'Jennifer K.', 'Diane L.']); });
-      foreach ($roofReviews as $rev):
-        $initial = strtoupper(substr($rev['author'], 0, 1));
-      ?>
-      <article class="review-card">
-        <div class="review-stars" aria-label="<?php echo (int)$rev['rating']; ?> out of 5 stars">
-          <?php for ($s = 0; $s < (int)$rev['rating']; $s++) echo icon('star', 18); ?>
-        </div>
-        <p class="review-text">&ldquo;<?php echo htmlspecialchars($rev['text']); ?>&rdquo;</p>
-        <div class="review-author">
-          <span class="review-avatar" aria-hidden="true"><?php echo $initial; ?></span>
-          <span class="review-name"><?php echo htmlspecialchars($rev['author']); ?></span>
-        </div>
-      </article>
-      <?php endforeach; ?>
-    </div>
-    <div class="review-badge-strip">
-      <span class="badge-strip"><?php echo icon('star', 16); ?> 5-Star Google Rated</span>
-      <span class="badge-strip"><?php echo icon('shield-check', 16); ?> Licensed &amp; Insured</span>
-      <span class="badge-strip"><?php echo icon('cloud-snow', 16); ?> Storm Claims Handled</span>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════ COMPARISON ═══════════════════ -->
-<section class="section">
+<section class="section section--light">
   <div class="container">
-    <span class="eyebrow-label">The Difference</span>
-    <h2>Why hire A&amp;S instead of a storm-chasing roofer?</h2>
-    <p class="answer-block">After a Missouri hail storm, out-of-town crews flood Warren County, install fast, and disappear before problems surface. A&amp;S Contracting Services is a local, licensed contractor that self-performs the work and stands behind it—so you have someone accountable long after the trucks leave.</p>
-    <div class="sp-compare">
-      <div class="sp-compare__col sp-compare--them">
-        <h3><?php echo icon('x', 20); ?> Storm-chasing crews</h3>
-        <ul>
-          <li><?php echo icon('minus', 18); ?> Out-of-state teams here for one storm season</li>
-          <li><?php echo icon('minus', 18); ?> Work subcontracted to whoever is available</li>
-          <li><?php echo icon('minus', 18); ?> Hard to reach once the check clears</li>
-          <li><?php echo icon('minus', 18); ?> Pressure to sign before the adjuster arrives</li>
-        </ul>
-      </div>
-      <div class="sp-compare__col sp-compare--us">
-        <h3><?php echo icon('check-circle', 20); ?> A&amp;S Contracting Services</h3>
-        <ul>
-          <li><?php echo icon('check', 18); ?> Warrenton-based and here year after year</li>
-          <li><?php echo icon('check', 18); ?> Self-performed by one accountable crew</li>
-          <li><?php echo icon('check', 18); ?> A local number that actually answers</li>
-          <li><?php echo icon('check', 18); ?> Honest inspection before any paperwork</li>
-        </ul>
-      </div>
+    <span class="eyebrow-label">Materials</span>
+    <h2>Which roofing material fits a Warren County home?</h2>
+    <p class="answer-block">The roofing material that fits most Warren County homes is an architectural asphalt shingle, with impact-resistant shingles and metal as the two alternatives A&amp;S installs. A&amp;S Contracting Services can price each option in one written estimate so the difference shows line by line. The table gives the general distinction between the three.</p>
+    <div class="sp-table-wrap reveal-up">
+      <table class="sp-table">
+        <caption>Roofing materials installed by A&amp;S Contracting Services</caption>
+        <thead>
+          <tr>
+            <th scope="col">Attribute</th>
+            <th scope="col">Architectural asphalt shingles</th>
+            <th scope="col">Impact-resistant shingles</th>
+            <th scope="col">Metal roofing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">What it is</th>
+            <td>A laminated asphalt shingle, thicker than a 3-tab shingle</td>
+            <td>An asphalt shingle tested for impact under UL 2218; Class 4 is the highest rating</td>
+            <td>Metal panels in place of shingles</td>
+          </tr>
+          <tr>
+            <th scope="row">Why owners choose it</th>
+            <td>A familiar look for a single-family re-roof</td>
+            <td>Added resistance to spring hail</td>
+            <td>A metal roof on a house, shop or commercial building</td>
+          </tr>
+          <tr>
+            <th scope="row">Buildings</th>
+            <td>Residential and commercial</td>
+            <td>Residential and commercial</td>
+            <td>Residential and commercial</td>
+          </tr>
+          <tr>
+            <th scope="row">Read more</th>
+            <td><a href="/blog/roof-replacement-cost-guide-missouri/">What drives roof replacement cost in Missouri</a></td>
+            <td><a href="/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/">Whether Class 4 shingles are worth it</a></td>
+            <td><a href="/blog/metal-roof-vs-asphalt-shingles-in-missouri-cost-and-lifespan/">Metal roofing compared with asphalt shingles</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ BEFORE / AFTER (real pairs from A&S job photos) ═══════════════════ -->
+<section class="section" aria-label="Roof replacement before and after">
+  <div class="container">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">Before &amp; After</span>
+      <h2>What does a roof look like before and after A&amp;S replaces it?</h2>
+      <p class="answer-block">A roof replaced by A&amp;S Contracting Services goes from worn, stained shingles to a clean deck and then to new shingles and ridge caps. The two pairs below are A&amp;S jobs: a wooded-lot house photographed one day apart in February 2026, and an A-frame photographed in August and November 2025.</p>
+    </div>
+    <div class="sp-ba-grid">
+      <?php
+      require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/before-after.php';
+      echo p1_before_after(
+          '1779985081293-864e8m-2-Feb_09__2026_13-42-04-ptJL',
+          '1779985084434-7wvwuf-46-Feb_10__2026_22-02-29-uWM1',
+          'Weathered shingle roof with a tear-off fork on it before replacement',
+          'The same property the next day with new dark architectural shingles and ridge caps',
+          ['caption' => 'Wooded-lot roof replacement. Before: February 9, 2026. After: February 10, 2026.', 'id' => 'ba-roof-1']
+      );
+      echo p1_before_after(
+          '1779985247084-5a8nou-2-Aug_26__2025_18-27-26-neFH',
+          '1779985248885-m9g42k-12-Nov_19__2025_22-17-31-YgPM',
+          'A-frame house with weathered, curling shingles on its steep roof before replacement',
+          'The same A-frame with new shingles and scalloped trim along the roof edge',
+          ['caption' => 'A-frame roof replacement. Before: August 26, 2025. After: November 19, 2025.', 'id' => 'ba-roof-2']
+      );
+      ?>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════ FAQ ═══════════════════ -->
-<section class="section section--light" aria-label="Roofing FAQ">
+<section class="section" aria-label="Roofing FAQ">
   <div class="container-narrow">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">Good Questions</span>
-      <h2>What do Warrenton homeowners ask before a roofing project?</h2>
+      <h2>What do homeowners ask A&amp;S before a roofing project?</h2>
+      <p>Homeowners ask A&amp;S about roofing cost, hail claims, timing, repair versus replacement, materials and how the estimate works. The six answers below describe how A&amp;S Contracting Services runs roofing jobs out of Warrenton; anything not covered here is answered during the on-site visit, before a written price is given.</p>
     </div>
     <div class="faq-grid">
       <?php foreach ($faqs as $fi => $faq): ?>
@@ -404,12 +430,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 </section>
 
 <!-- ═══════════════════ RECENT WORK ═══════════════════ -->
-<section class="section sp-gallery" aria-label="Recent roofing projects">
+<section class="section section--light sp-gallery" aria-label="Roofing job-site photos">
   <div class="container-wide">
     <div class="section-title reveal-up">
-      <span class="eyebrow-label">Recent Work</span>
-      <h2>What recent roofing projects has A&amp;S completed near Warrenton?</h2>
-      <p class="answer-block">These are real roofing projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, from tear-off and dry-in to the final nail sweep, never a subcontractor.</p>
+      <span class="eyebrow-label">Job-Site Photos</span>
+      <h2>What does A&amp;S roofing work look like on site?</h2>
+      <p class="answer-block">A&amp;S roofing work on site looks like the three photos below: bare decking around a chimney during a tear-off, new shingles meeting at a valley, and old shingles coming off at the roof edge. A&amp;S Contracting Services took these pictures on its own job sites, and the captions describe only what each one shows, without naming a street or a town.</p>
     </div>
     <div class="sp-gallery-grid" data-p1-dynamic>
       <?php foreach ($workPhotos as $wp): ?>
@@ -427,39 +453,39 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container-wide">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">What We Do</span>
-      <h2>What else can A&amp;S handle on your home?</h2>
-      <p class="hero-answer">Roofing is one trade under one licensed roof. A&amp;S Contracting Services also self-performs the exterior and interior work that often goes hand in hand with a new roof across Warrenton and Warren County.</p>
+      <h2>What else does A&amp;S handle at the roof edge?</h2>
+      <p class="hero-answer">At the roof edge, A&amp;S Contracting Services also handles gutters, <a href="/services/soffit/">soffit and attic intake ventilation</a>, fascia and siding, the parts a new roof ties into. Roofing is one of ten trades on the <a href="/services/">full list of A&amp;S services</a>, so a re-roof and the exterior work around it can be written into one estimate.</p>
     </div>
     <div class="sp-other">
       <?php
-      $otherSlugs = ['siding', 'gutters', 'general-contracting'];
-      $tintCycle  = [1, 2, 3];
-      $otherIcons = ['siding' => 'layers', 'gutters' => 'droplets', 'general-contracting' => 'hard-hat'];
-      foreach ($otherSlugs as $oi => $os):
+      $tintCycle = [1, 2, 3];
+      $oi = 0;
+      foreach ($otherCards as $os => $oc):
         $osvc = null; foreach ($services as $s) { if ($s['slug'] === $os) { $osvc = $s; break; } }
         if (!$osvc) continue;
       ?>
       <article class="service-card-with-image card-tint-<?php echo $tintCycle[$oi % 3]; ?> reveal-up reveal-delay-<?php echo ($oi % 3) + 1; ?>">
         <div class="service-card__body">
-          <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
+          <div class="service-card__icon"><?php echo icon($oc['icon'], 22); ?></div>
           <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
-          <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
+          <p class="service-card__desc"><?php echo htmlspecialchars($oc['desc']); ?></p>
           <a href="/services/<?php echo $os; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$os] ?? $osvc['name']); ?></a>
         </div>
       </article>
-      <?php endforeach; ?>
+      <?php $oi++; endforeach; ?>
     </div>
   </div>
 </section>
+</article>
 
 <!-- ═══════════════════ FINAL CTA / ESTIMATE ═══════════════════ -->
-<section class="section section--light" id="estimate" aria-label="Request your free roofing estimate">
+<section class="section section--light" id="estimate" aria-label="Request a roofing estimate">
   <div class="container">
     <div class="estimate">
       <div class="card reveal-up" style="padding: clamp(1.5rem, 4vw, 2.5rem); border:1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface);">
-        <span class="eyebrow-label">Free Estimate</span>
-        <h2>Ready for a straight answer on your roof?</h2>
-        <p class="lead" style="margin-bottom: 1.25rem;">Send the details and A&amp;S Contracting Services will reply the same day to schedule your free on-site roof inspection.</p>
+        <span class="eyebrow-label">Written Estimate</span>
+        <h2>Ready for a written price on your roof?</h2>
+        <p class="lead" style="margin-bottom: 1.25rem;">Send the details and A&amp;S Contracting Services will schedule an on-site roof visit, within days of first contact.</p>
 
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -525,10 +551,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="reveal-right">
         <span class="eyebrow-label">What Happens Next</span>
         <h2>What happens after you <span class="text-accent">request your estimate</span>?</h2>
+        <p>After you request an estimate, A&amp;S Contracting Services contacts you to set an on-site roof visit, which is scheduled within days of first contact. The estimate that follows is written and itemized, and it carries the start window and the timeline, so you know the dates and the price before agreeing to anything.</p>
         <ol class="next-steps">
-          <li><strong>We reach out the same day.</strong> A&amp;S Contracting Services confirms the details and schedules your free on-site roof inspection.</li>
-          <li><strong>You get a written estimate.</strong> Clear scope, materials, timeline, and price—insurance-ready if you have storm damage.</li>
-          <li><strong>One crew does the work.</strong> The same self-performing team tears off, installs, and walks the finished roof with you.</li>
+          <li><strong>A&amp;S sets the visit.</strong> The roof is looked at in person during business hours, Monday through Saturday.</li>
+          <li><strong>You get the estimate in writing.</strong> Scope, material, timeline and price, with photos attached when storm damage is part of the job.</li>
+          <li><strong>The roof is built and walked.</strong> Tear-off, installation and daily cleanup, then a final walkthrough with you.</li>
         </ol>
         <div class="nap">
           <div><?php echo icon('phone', 18); ?> <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a></div>

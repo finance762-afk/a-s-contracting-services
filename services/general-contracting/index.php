@@ -9,47 +9,47 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'General Contracting';
 $pageTitle       = 'General Contractor Services in Warrenton, MO';
-$pageDescription = 'General contractor in Warrenton, MO for remodels, additions & exterior projects, all self-performed. Licensed & insured. Free estimate: (636) 359-7204.';
+$pageDescription = 'General contractor in Warrenton, MO for residential and commercial projects, managed from planning to completion. Licensed & insured. (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/services/general-contracting/';
 
 // ─── Hero + recent-work photos (image manifest) ─────────────────────────────
 $heroImage    = '1779985082241-xuoxbh-11-Feb_09__2026_15-26-29-L2wD';
-$heroImageAlt = 'A&S Contracting Services crew installing a new roof on a residential project near Warrenton, MO';
+$heroImageAlt = 'A&S crew laying underlayment along a roof ridge on a wooded lot';
 $heroPreload  = [
     'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
     'sizes'  => '100vw',
 ];
 $workPhotos = [
-    ['1779985138888-d41ths-3-Nov_20__2024_22-50-31-ZRts', 'Gray-sided home with a covered porch and protective wrap during a Warren County build'],
-    ['1779985209297-ld8mti-1-Dec_23__2025_13-34-30-gKpa', 'Elevated home with metal siding under construction in a wooded Warren County lot'],
-    ['1779985127211-6wrwx6-41-Mar_19__2026_17-08-38-89QF', 'A&S worker on a ladder finishing a wooden overhang on a Warrenton home'],
+    ['1779985138888-d41ths-3-Nov_20__2024_22-50-31-ZRts', 'Gray-sided house with house wrap around the porch end during siding work'],
+    ['1779985209297-ld8mti-1-Dec_23__2025_13-34-30-gKpa', 'Tan wood-sided house on a wooded lot with shingle bundles delivered'],
+    ['1779985127211-6wrwx6-41-Mar_19__2026_17-08-38-89QF', 'Crew member on a ladder working at the eave above a brick entry'],
 ];
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
-        'question' => 'How much does a general contracting project cost in Warrenton?',
-        'answer'   => 'A&S Contracting Services prices each project from its actual scope—the trades involved, materials, permits, and timeline—laid out in a written, itemized estimate. A room addition, a whole renovation, and a commercial build-out are very different numbers, so we scope the work on site rather than quote a general contractor by the square foot over the phone.',
+        'question' => 'What kinds of projects does A&S take on as general contractor?',
+        'answer'   => 'A&S Contracting Services manages residential and commercial projects from planning to completion. A project can combine any of its trades: roofing, siding, gutters, soffit, fascia, windows and doors, drywall and full interior work including room additions.',
     ],
     [
-        'question' => 'Do you handle permits and inspections?',
-        'answer'   => 'Yes. A&S Contracting Services pulls the required permits and coordinates inspections through each phase of the project. Warren County and its municipalities each have their own requirements, and part of hiring a general contractor is not having to learn them—we keep the project moving from permit to final sign-off so nothing stalls on paperwork.',
+        'question' => 'How does the written estimate work?',
+        'answer'   => 'A&S Contracting Services visits the property first; estimate visits are scheduled within days of first contact. A detailed estimate itemized by trade follows. The visit and the estimate are free and carry no obligation, and the start window and timeline are put in writing as well.',
     ],
     [
-        'question' => 'Do you take on both residential and commercial projects?',
-        'answer'   => 'Yes. A&S Contracting Services manages residential renovations and additions as well as commercial build-outs across Warren County. The core skill is the same: sequencing trades, holding the schedule, and staying accountable for the budget—whether it is a family\'s addition or a storefront that has to open on a set date.',
+        'question' => 'What does it mean that the quoted price is the final price?',
+        'answer'   => 'A&S Contracting Services bills the figure on its written estimate for the scope that estimate describes. The estimate is itemized so each part of the project can be checked, and A&S adds no hidden fees and does not upsell once work is under way.',
     ],
     [
-        'question' => 'Do you self-perform the work or subcontract it?',
-        'answer'   => 'A&S Contracting Services self-performs the core trades—roofing, siding, drywall, and interior work—which is the whole point of hiring us. When a specialty trade like electrical or plumbing is required, we bring in licensed partners and manage them, so you still have one company accountable for the schedule and the finished result.',
+        'question' => 'Who does the work on a project A&S manages?',
+        'answer'   => 'A&S Contracting Services does the work itself. The crew that starts a project stays on it to the final walkthrough, and the company is answerable for every trade in the contract.',
     ],
     [
-        'question' => 'How do you keep a project on schedule?',
-        'answer'   => 'A&S Contracting Services builds one schedule and sequences the trades so each phase is ready for the next. Because we self-perform most of the work, we are not waiting on a subcontractor\'s separate calendar. You get a single point of contact who tracks the timeline and tells you where the project stands instead of guessing.',
+        'question' => 'How far from Warrenton does A&S work?',
+        'answer'   => 'A&S Contracting Services takes projects within 50 miles of Warrenton, the Warren County seat on Interstate 70. That includes Jonesburg, Wright City, Foristell and Wentzville along the interstate, plus Troy in Lincoln County and Washington in Franklin County.',
     ],
     [
-        'question' => 'Are you a licensed general contractor in Missouri?',
-        'answer'   => 'Yes. A&S Contracting Services is a licensed Missouri general contractor and carries full insurance on every project. That licensing and coverage protect you on larger jobs where multiple trades, permits, and inspections are in play, and it means the company managing your Warren County project is accountable for it in writing.',
+        'question' => 'When can a project start?',
+        'answer'   => 'A&S Contracting Services gives every project a start window in writing as part of the estimate, and exterior phases are scheduled weather permitting. Business hours are Monday to Friday 7am to 6pm and Saturday 8am to 3pm.',
     ],
 ];
 
@@ -60,7 +60,7 @@ $serviceSchema = [
     '@id'         => $canonicalUrl . '#service-' . $serviceSlug,
     'name'        => 'General Contracting',
     'serviceType' => 'General contractor',
-    'description' => 'Full-service general contracting for residential and commercial projects in Warrenton, MO and Warren County—planning, permits, scheduling, and self-performed trades under one accountable team.',
+    'description' => 'General contracting for residential and commercial projects, managed from planning to completion, within 50 miles of Warrenton, MO.',
     'provider'    => ['@id' => $siteUrl . '/#organization'],
     'areaServed'  => [
         '@type' => 'GeoCircle',
@@ -113,16 +113,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 .sp-checklist li svg { color: var(--color-primary); margin-top: 3px; }
 @media (max-width: 800px) { .sp-included { grid-template-columns: 1fr; } }
 
-/* Comparison */
-.sp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
-.sp-compare__col { border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--color-surface); }
-.sp-compare__col--us { border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-line)); box-shadow: var(--shadow); background: color-mix(in srgb, var(--color-accent) 8%, white); }
-.sp-compare h3 { font-size: 1.1rem; margin-bottom: .9rem; display: flex; align-items: center; gap: .5rem; }
-.sp-compare ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
-.sp-compare li { display: grid; grid-template-columns: 22px 1fr; gap: .55rem; font-size: .93rem; color: var(--color-ink-2); }
-.sp-compare--them li svg { color: var(--color-danger); margin-top: 2px; }
-.sp-compare--us li svg { color: var(--color-success); margin-top: 2px; }
-@media (max-width: 700px) { .sp-compare { grid-template-columns: 1fr; } }
+/* Comparison table */
+.sp-table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.sp-table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: .93rem; }
+.sp-table caption { caption-side: top; text-align: left; padding: 1rem 1.25rem; font-family: var(--font-heading); font-weight: 700; color: var(--color-ink); }
+.sp-table th, .sp-table td { padding: .8rem 1.25rem; text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); color: var(--color-ink-2); }
+.sp-table thead th { background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface)); color: var(--color-ink); font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; }
+.sp-table tbody th { color: var(--color-ink); font-weight: 700; }
+.sp-after { margin-top: 1.25rem; max-width: 65ch; color: var(--color-ink-2); }
 
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
@@ -156,21 +154,21 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="hero-copy">
         <span class="eyebrow">General Contracting &middot; Warrenton &amp; Warren County</span>
         <h1>General Contracting in <span class="text-accent">Warrenton, MO</span> — one team, planning to punch list</h1>
-        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured Warrenton general contractor that manages residential and commercial projects from planning through final walkthrough—permits, scheduling, and self-performed roofing, siding, drywall, and interior trades under one accountable roof, so you have a single point of contact instead of a stack of subcontractors to chase across Warren County.</p>
+        <p class="hero-answer">A&amp;S Contracting Services is a licensed Missouri general contractor, fully insured and based in Warrenton, that manages residential and commercial projects from planning to completion within 50 miles.</p>
         <div class="hero-actions">
-          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free project estimate</a>
+          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written project estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
         </div>
         <ul class="hero-chips">
-          <li><?php echo icon('shield-check', 16); ?> Licensed &amp; insured in Missouri</li>
-          <li><?php echo icon('clipboard-list', 16); ?> Permits &amp; scheduling handled</li>
-          <li><?php echo icon('users', 16); ?> Self-performed trades &mdash; one team</li>
+          <li><?php echo icon('users', 16); ?> Owner: Blake Alger</li>
+          <li><?php echo icon('calendar-check', 16); ?> Start window &amp; timeline in writing</li>
+          <li><?php echo icon('badge-check', 16); ?> Quoted price is the final price</li>
         </ul>
       </div>
 
       <aside class="hero-form-card" id="hero-form">
-        <h2>Want a free project estimate?</h2>
-        <p class="hero-form-tagline">No obligation. Same-day reply.</p>
+        <h2>Request a project estimate</h2>
+        <p class="hero-form-tagline">The on-site visit and the written estimate are free. No obligation.</p>
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -195,12 +193,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
           <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
           <?php } ?>
-          <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
         </form>
       </aside>
     </div>
   </div>
 </section>
+
+<article>
 
 <!-- ═══════════════════ PROBLEM STATEMENT ═══════════════════ -->
 <section class="section section--light">
@@ -209,29 +209,29 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="reveal-left">
         <span class="eyebrow-label">Know The Signs</span>
         <h2>When does your Warren County project need a general contractor?</h2>
-        <p class="answer-block">A&amp;S Contracting Services steps in when a project touches more than one trade—an addition, a whole renovation, a storm rebuild, or a commercial build-out. The moment framing, roofing, drywall, and finishes all have to be scheduled, permitted, and inspected in the right order, you need one manager accountable for the budget and the timeline, not a homeowner playing dispatcher.</p>
-        <p class="pull-quote">The hardest part of a big project isn&rsquo;t any one trade—it&rsquo;s getting all of them to line up in the right order.</p>
+        <p class="answer-block">A project needs a general contractor when it involves several trades, a commercial property, or work that has to happen in a fixed order. An addition, a storm repair that reaches indoors, and a build-out for a business all fit. A&amp;S Contracting Services takes those projects across Warren County under one contract.</p>
+        <p class="pull-quote">One contract, one schedule, one company answerable for the result.</p>
       </div>
       <div class="sp-signs reveal-right">
         <div class="sp-sign">
+          <div class="sp-sign__icon"><?php echo icon('waypoints', 22); ?></div>
+          <h3>Several trades</h3>
+          <p>The job crosses roofing, siding, drywall or finishes, and someone has to set the order of work.</p>
+        </div>
+        <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('building-2', 22); ?></div>
-          <h3>Multi-trade project</h3>
-          <p>An addition or renovation that needs framing, roofing, drywall, and finishes all coordinated.</p>
+          <h3>Commercial property</h3>
+          <p>A shop, office or other commercial building needs construction or repair.</p>
         </div>
         <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('clipboard-list', 22); ?></div>
-          <h3>Permits &amp; inspections</h3>
-          <p>Work that requires pulled permits and passed inspections you would rather not manage.</p>
+          <div class="sp-sign__icon"><?php echo icon('house', 22); ?></div>
+          <h3>New space</h3>
+          <p>An addition needs a roof, siding and a finished interior that all meet the existing building.</p>
         </div>
         <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('calendar-check', 22); ?></div>
-          <h3>Nobody owns the schedule</h3>
-          <p>Subcontractors on their own calendars leave the timeline with no one in charge.</p>
-        </div>
-        <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('hard-hat', 22); ?></div>
-          <h3>Commercial build-out</h3>
-          <p>A storefront or office fit-out that has to open on a firm date.</p>
+          <div class="sp-sign__icon"><?php echo icon('cloud-snow', 22); ?></div>
+          <h3>Storm damage inside and out</h3>
+          <p>Hail or wind opened the roof and water reached the ceilings and walls below.</p>
         </div>
       </div>
     </div>
@@ -243,16 +243,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="sp-position">
       <div class="reveal-up">
-        <div class="sp-position__stat">1<span>accountable team managing your whole project—planning, permits, trades, and walkthrough</span></div>
+        <div class="sp-position__stat">10<span>trades A&amp;S self-performs, from roofing to interior finish, under one contract</span></div>
       </div>
       <div class="reveal-right">
-        <span class="eyebrow-label">Why It Matters</span>
+        <span class="eyebrow-label">Accountability</span>
         <h2>What makes A&amp;S accountable from start to finish?</h2>
-        <p class="answer-block">A&amp;S Contracting Services self-performs most of the trades it manages—roofing, siding, drywall, and interior work—so the general contractor and the crew are the same company. There is no subcontractor to blame for a missed day. One team plans the job, pulls the permits, runs the schedule, and answers for the result at the final walkthrough.</p>
+        <p class="answer-block">A&amp;S Contracting Services is accountable from start to finish because it does the work it manages. The company that writes the estimate also does the roofing, siding, drywall and finishes, so there is no subcontractor to point to. Blake Alger founded A&amp;S in Warrenton in 2023 on roofing and exterior work and has added the interior trades since.</p>
         <ul class="sp-evidence">
-          <li><?php echo icon('users', 22); ?><span><b>One in-house team.</b> Because we self-perform the core trades, scheduling and quality stay under one roof instead of scattered across subs.</span></li>
-          <li><?php echo icon('clipboard-list', 22); ?><span><b>Permits and inspections handled.</b> We pull the permits, coordinate inspections, and keep the project moving through each sign-off.</span></li>
-          <li><?php echo icon('shield-check', 22); ?><span><b>Licensed &amp; fully insured.</b> You work with a licensed Missouri general contractor carrying full insurance on every project, residential or commercial.</span></li>
+          <li><?php echo icon('clipboard-list', 22); ?><span><b>Planning.</b> Scope, start window and timeline are written down before any work begins.</span></li>
+          <li><?php echo icon('hard-hat', 22); ?><span><b>Building.</b> The A&amp;S crew carries the project through each trade in turn and cleans the site daily.</span></li>
+          <li><?php echo icon('check-circle', 22); ?><span><b>Completion.</b> Every project closes with a final walkthrough, whatever its size.</span></li>
         </ul>
       </div>
     </div>
@@ -264,64 +264,30 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <span class="eyebrow-label">The Work</span>
     <h2>What&rsquo;s included when A&amp;S manages your project?</h2>
-    <p class="answer-block">A&amp;S Contracting Services runs the whole job: consultation and planning, a written scope and itemized estimate, permits and inspection coordination, scheduling, self-performed roofing, siding, drywall, and interior trades, ongoing communication, and a final walkthrough. From the first meeting to the punch list, one Warrenton company owns the budget, the timeline, and the result.</p>
+    <p class="answer-block">When A&amp;S manages your project, the price includes planning, the construction itself and closeout, all by one company. Managed work can draw on any of the <a href="/services/">ten trades listed on the A&amp;S services page</a>, from tear-off roofing to interior trim, and the written estimate itemizes each one so the whole project is visible before it starts.</p>
     <div class="sp-included">
       <div class="reveal-up">
         <h3>Included in the scope</h3>
         <ul class="sp-checklist">
-          <li><?php echo icon('check', 20); ?> Consultation and project planning</li>
-          <li><?php echo icon('check', 20); ?> Written scope and itemized estimate</li>
-          <li><?php echo icon('check', 20); ?> Permit applications and inspection coordination</li>
-          <li><?php echo icon('check', 20); ?> Full schedule with trades sequenced in order</li>
-          <li><?php echo icon('check', 20); ?> Self-performed roofing, siding, drywall, and interior work</li>
-          <li><?php echo icon('check', 20); ?> Ongoing project management and communication</li>
-          <li><?php echo icon('check', 20); ?> Final walkthrough and punch-list completion</li>
+          <li><?php echo icon('check', 20); ?> On-site visit and a written, itemized estimate</li>
+          <li><?php echo icon('check', 20); ?> Start window and timeline in writing</li>
+          <li><?php echo icon('check', 20); ?> Roofing, siding, gutters, soffit and fascia</li>
+          <li><?php echo icon('check', 20); ?> Windows, doors and weather sealing</li>
+          <li><?php echo icon('check', 20); ?> Drywall, flooring, painting, trim and custom finishes</li>
+          <li><?php echo icon('check', 20); ?> Residential and commercial projects</li>
+          <li><?php echo icon('check', 20); ?> Daily cleanup and a final walkthrough</li>
         </ul>
       </div>
       <div class="reveal-right">
         <h3>How the project runs</h3>
         <ol class="process-steps">
-          <li><b>Consultation &amp; plan</b><span>We meet on site, learn the goal, and map the scope, budget, and rough timeline.</span></li>
-          <li><b>Written scope &amp; estimate</b><span>You get an itemized proposal covering every phase—no vague allowances or hidden trades.</span></li>
-          <li><b>Permits &amp; scheduling</b><span>We pull the permits and sequence the trades so each phase is ready for the next.</span></li>
-          <li><b>Build &amp; walkthrough</b><span>Our team performs the work, coordinates inspections, and walks the finished project with you.</span></li>
+          <li><b>Planning visit</b><span>A&amp;S sees the property and goes through what the project has to achieve.</span></li>
+          <li><b>Estimate</b><span>Written and itemized by trade. No hidden fees; the quoted price is the final price.</span></li>
+          <li><b>Schedule</b><span>A start window and timeline are issued in writing.</span></li>
+          <li><b>Construction</b><span>One crew works through the trades in order, cleaning the site each day.</span></li>
+          <li><b>Completion</b><span>A final walkthrough closes the project.</span></li>
         </ol>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ PROOF / REVIEWS ═══════════════════ -->
-<section class="section reviews-section edge-wave-top" aria-label="General contracting reviews">
-  <span class="grain-layer" aria-hidden="true"></span>
-  <div class="container-wide">
-    <div class="section-title reveal-up">
-      <span class="eyebrow-label">In Their Words</span>
-      <h2>What do Warren County clients say about A&amp;S on bigger projects?</h2>
-      <p>Real reviews from A&amp;S Contracting Services renovation, addition, and full-project customers across Warren County.</p>
-    </div>
-    <div class="reviews-track">
-      <?php
-      $gcReviews = array_filter($reviews, function ($r) { return in_array($r['author'], ['Marcus H.', 'Robert T.', 'Jennifer K.']); });
-      foreach ($gcReviews as $rev):
-        $initial = strtoupper(substr($rev['author'], 0, 1));
-      ?>
-      <article class="review-card">
-        <div class="review-stars" aria-label="<?php echo (int)$rev['rating']; ?> out of 5 stars">
-          <?php for ($s = 0; $s < (int)$rev['rating']; $s++) echo icon('star', 18); ?>
-        </div>
-        <p class="review-text">&ldquo;<?php echo htmlspecialchars($rev['text']); ?>&rdquo;</p>
-        <div class="review-author">
-          <span class="review-avatar" aria-hidden="true"><?php echo $initial; ?></span>
-          <span class="review-name"><?php echo htmlspecialchars($rev['author']); ?></span>
-        </div>
-      </article>
-      <?php endforeach; ?>
-    </div>
-    <div class="review-badge-strip">
-      <span class="badge-strip"><?php echo icon('star', 16); ?> 5-Star Google Rated</span>
-      <span class="badge-strip"><?php echo icon('shield-check', 16); ?> Licensed &amp; Insured</span>
-      <span class="badge-strip"><?php echo icon('users', 16); ?> Self-Performed Trades</span>
     </div>
   </div>
 </section>
@@ -329,38 +295,58 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <!-- ═══════════════════ COMPARISON ═══════════════════ -->
 <section class="section">
   <div class="container">
-    <span class="eyebrow-label">The Difference</span>
-    <h2>Why hire A&amp;S instead of managing subcontractors yourself?</h2>
-    <p class="answer-block">A&amp;S Contracting Services is one licensed general contractor accountable for the whole project. Acting as your own GC means chasing separate subcontractors, reconciling their schedules, and eating the delay when one no-shows. With A&amp;S self-performing the core trades, the schedule stays under one roof and one company answers for the finished result.</p>
-    <div class="sp-compare">
-      <div class="sp-compare__col sp-compare--them">
-        <h3><?php echo icon('x', 20); ?> Being your own GC</h3>
-        <ul>
-          <li><?php echo icon('minus', 18); ?> Coordinating separate subs on clashing schedules</li>
-          <li><?php echo icon('minus', 18); ?> Chasing quotes, invoices, and change orders yourself</li>
-          <li><?php echo icon('minus', 18); ?> One no-show stalls the whole project</li>
-          <li><?php echo icon('minus', 18); ?> No single party accountable for the result</li>
-        </ul>
-      </div>
-      <div class="sp-compare__col sp-compare--us">
-        <h3><?php echo icon('check-circle', 20); ?> A&amp;S Contracting Services</h3>
-        <ul>
-          <li><?php echo icon('check', 18); ?> One licensed contractor over the whole job</li>
-          <li><?php echo icon('check', 18); ?> Core trades self-performed in-house</li>
-          <li><?php echo icon('check', 18); ?> Permits, schedule, and inspections handled</li>
-          <li><?php echo icon('check', 18); ?> One team accountable at the final walkthrough</li>
-        </ul>
-      </div>
+    <span class="eyebrow-label">Two Arrangements</span>
+    <h2>How does hiring A&amp;S compare with managing separate trades yourself?</h2>
+    <p class="answer-block">Hiring A&amp;S Contracting Services as general contractor replaces several trade agreements with one. Managing separate trades yourself means comparing bids, ordering the work and settling where one trade ends and the next begins. The table sets the two arrangements side by side using only what A&amp;S commits to in writing.</p>
+    <div class="sp-table-wrap reveal-up">
+      <table class="sp-table">
+        <caption>A&amp;S Contracting Services as general contractor compared with hiring each trade separately</caption>
+        <thead>
+          <tr>
+            <th scope="col">Attribute</th>
+            <th scope="col">A&amp;S as general contractor</th>
+            <th scope="col">Hiring each trade yourself</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Contracts</th>
+            <td>One</td>
+            <td>One per trade</td>
+          </tr>
+          <tr>
+            <th scope="row">Who does the work</th>
+            <td>The A&amp;S crew</td>
+            <td>A different company for each trade</td>
+          </tr>
+          <tr>
+            <th scope="row">Price</th>
+            <td>One itemized estimate; the quoted price is the final price</td>
+            <td>A separate quote from each company</td>
+          </tr>
+          <tr>
+            <th scope="row">Schedule</th>
+            <td>One written start window and timeline</td>
+            <td>You coordinate the order and the dates</td>
+          </tr>
+          <tr>
+            <th scope="row">Cleanup and closeout</th>
+            <td>Site cleaned daily; one final walkthrough</td>
+            <td>Arranged with each company</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <p class="sp-after">Projects that stay outdoors are scoped as <a href="/services/exterior-work/">full exterior renovations</a>, and those that stay indoors as <a href="/services/full-scale-interior-work/">interior remodels and room additions</a>. General contracting is for work that crosses both, and for commercial clients in any of the <a href="/service-areas/">towns A&amp;S serves around Warrenton</a>.</p>
   </div>
 </section>
 
 <!-- ═══════════════════ FAQ ═══════════════════ -->
-<section class="section section--light" aria-label="General contracting FAQ">
+<section class="section section--light" aria-label="General contracting questions, answered">
   <div class="container-narrow">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">Good Questions</span>
-      <h2>What do Warren County clients ask about general contracting?</h2>
+      <h2>General contracting questions, answered</h2>
     </div>
     <div class="faq-grid">
       <?php foreach ($faqs as $fi => $faq): ?>
@@ -374,12 +360,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 </section>
 
 <!-- ═══════════════════ RECENT WORK ═══════════════════ -->
-<section class="section sp-gallery" aria-label="Recent general contracting projects">
+<section class="section sp-gallery" aria-label="Photos from A&amp;S job sites">
   <div class="container-wide">
     <div class="section-title reveal-up">
-      <span class="eyebrow-label">Recent Work</span>
-      <h2>What recent projects has A&amp;S completed as a Warrenton general contractor?</h2>
-      <p class="answer-block">These are real projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+      <span class="eyebrow-label">From The Job Site</span>
+      <h2>What do A&amp;S general contracting job sites look like?</h2>
+      <p class="answer-block">These photos are from A&amp;S Contracting Services job sites on larger builds. They show a house partly wrapped ahead of siding, an elevated home under construction on a wooded lot, and a crew member finishing a roof overhang from a ladder. Each caption states only what its frame shows.</p>
     </div>
     <div class="sp-gallery-grid" data-p1-dynamic>
       <?php foreach ($workPhotos as $wp): ?>
@@ -397,12 +383,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container-wide">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">What We Do</span>
-      <h2>What can A&amp;S self-perform on your project?</h2>
-      <p class="hero-answer">As your general contractor, A&amp;S Contracting Services performs most trades in-house. These are the core services our own crews bring to your Warrenton or Warren County project.</p>
+      <h2>Which trades can A&amp;S self-perform on your project?</h2>
+      <p class="hero-answer">A&amp;S Contracting Services can self-perform every trade on its services list, and three of them carry most of the load on a managed project. Interior work covers finishes and additions, exterior work covers the shell of the building, and roofing is the trade the company was founded on in 2023.</p>
     </div>
     <div class="sp-other">
       <?php
       $otherSlugs = ['full-scale-interior-work', 'exterior-work', 'roofing'];
+      $otherDesc  = [
+          'full-scale-interior-work' => 'Drywall, flooring, painting, trim, custom finishes, room additions and full remodels.',
+          'exterior-work' => 'Roofing, siding and gutters integrated into one exterior renovation.',
+          'roofing' => 'Roof installation, repair, tear-off and replacement, plus storm and hail damage repair.',
+      ];
       $tintCycle  = [1, 2, 3];
       $otherIcons = ['full-scale-interior-work' => 'paint-bucket', 'exterior-work' => 'hammer', 'roofing' => 'home'];
       foreach ($otherSlugs as $oi => $os):
@@ -413,7 +404,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="service-card__body">
           <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
           <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
-          <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
+          <p class="service-card__desc"><?php echo htmlspecialchars($otherDesc[$os] ?? $osvc['name']); ?></p>
           <a href="/services/<?php echo $os; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$os] ?? $osvc['name']); ?></a>
         </div>
       </article>
@@ -422,14 +413,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   </div>
 </section>
 
+</article>
+
 <!-- ═══════════════════ FINAL CTA / ESTIMATE ═══════════════════ -->
-<section class="section section--light" id="estimate" aria-label="Request your free project estimate">
+<section class="section section--light" id="estimate" aria-label="Request a project estimate">
   <div class="container">
     <div class="estimate">
       <div class="card reveal-up" style="padding: clamp(1.5rem, 4vw, 2.5rem); border:1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface);">
-        <span class="eyebrow-label">Free Estimate</span>
+        <span class="eyebrow-label">Written Estimate</span>
         <h2>Ready to hand your project to one team?</h2>
-        <p class="lead" style="margin-bottom: 1.25rem;">Send the details and A&amp;S Contracting Services will reply the same day to schedule your free on-site consultation.</p>
+        <p class="lead" style="margin-bottom: 1.25rem;">Outline the project and where it is. A&amp;S Contracting Services schedules an on-site planning visit within days of first contact.</p>
 
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -495,10 +488,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="reveal-right">
         <span class="eyebrow-label">What Happens Next</span>
         <h2>What happens after you send your <span class="text-accent">project details</span>?</h2>
+        <p class="answer-block">After you send your project details, A&amp;S Contracting Services arranges to see the property, since a project is estimated on site and not from a form. Visits are scheduled within days of first contact. A written estimate follows, covering every trade involved, and it costs nothing and commits you to nothing.</p>
         <ol class="next-steps">
-          <li><strong>We reach out the same day.</strong> A&amp;S Contracting Services confirms the details and schedules your free on-site consultation.</li>
-          <li><strong>You get a written scope.</strong> An itemized estimate covering every phase—trades, permits, timeline, and price.</li>
-          <li><strong>One team runs the job.</strong> The same self-performing crew builds, coordinates inspections, and walks the finished project with you.</li>
+          <li><strong>The site is visited.</strong> A&amp;S looks at the property and the full extent of the project.</li>
+          <li><strong>The plan is priced.</strong> One itemized estimate covers all trades; the quoted price is the final price.</li>
+          <li><strong>Dates are committed.</strong> Start window and timeline are written down, and the project ends with a walkthrough.</li>
         </ol>
         <div class="nap">
           <div><?php echo icon('phone', 18); ?> <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a></div>

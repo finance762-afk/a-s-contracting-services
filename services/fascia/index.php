@@ -9,48 +9,55 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Fascia';
 $pageTitle       = 'Fascia Board Repair & Replacement in Warrenton, MO';
-$pageDescription = 'Fascia board repair & replacement in Warrenton, MO—rotted rooflines rebuilt, aluminum wrap, gutters re-hung. Licensed & insured. Free estimate: (636) 359-7204.';
+$pageDescription = 'Fascia installation and rotted fascia board replacement in Warrenton, MO, with a matched finish at the roof edge. Licensed & insured. Call (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/services/fascia/';
 
 // ─── Hero + recent-work photos (image manifest) ─────────────────────────────
 $heroImage    = '1779985248885-m9g42k-12-Nov_19__2025_22-17-31-YgPM';
-$heroImageAlt = 'Modern home with an angled metal roofline and white fascia trim by A&S Contracting Services near Warrenton';
+$heroImageAlt = 'A-frame house with new shingles and scalloped trim along the roof edge';
 $heroPreload  = [
     'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
     'sizes'  => '100vw',
 ];
 $workPhotos = [
-    ['1779985494227-6oaw4y-83-Dec_05__2024_18-24-59-UUGS', 'Newly built home with white siding, a dark shingle roof, and clean fascia lines near Warrenton'],
-    ['1779985188297-sg808o-38-Jul_17__2024_23-21-26-ioE1', 'A&S worker on a roof edge overlooking a rural Warren County property'],
-    ['1779985246560-93e73b-1-Aug_26__2025_18-27-18-V6oZ', 'Home with two-tone siding and matched trim along the roofline in central Missouri'],
+    ['1779985494227-6oaw4y-83-Dec_05__2024_18-24-59-UUGS', 'Cream-sided home with a dark shingle roof and straight roof-edge lines'],
+    ['1779985188297-sg808o-38-Jul_17__2024_23-21-26-ioE1-c1', 'Roof edge and gutter seen from the shingles, above a rural yard'],
+    ['1779985246560-93e73b-1-Aug_26__2025_18-27-18-V6oZ', 'A-frame house with weathered shingles and gray panel siding before roof work'],
 ];
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
-        'question' => 'What exactly is fascia and why does it matter?',
-        'answer'   => 'Fascia is the long board that runs along the roof edge, capping the ends of the rafter tails and carrying your gutters. A&S Contracting Services replaces it because when fascia rots, the gutters have nothing solid to hang on and water works its way back toward the roof deck and soffit. A straight, sound fascia is what keeps the whole roof edge sealed.',
+        'question' => 'How much does fascia replacement cost in Warrenton, MO?',
+        'answer'   => 'Fascia replacement cost depends on the length of board being replaced, the material selected, the condition of the rafter ends behind it and the scope. A&S Contracting Services publishes no prices. The roof edge is examined on site and priced in a written, itemized estimate, and the quoted price is the final price.',
     ],
     [
-        'question' => 'How much does fascia replacement cost in Warrenton?',
-        'answer'   => 'Fascia cost depends on how many linear feet need replacing, how much sub-fascia lumber has rotted, and whether the gutters come down and go back up. A&S Contracting Services prices every fascia job from an on-site measurement and gives you a written estimate, so you are paying for the footage you actually have—not a phone guess.',
+        'question' => 'What causes fascia boards to rot?',
+        'answer'   => 'Fascia rots when water reaches the wood repeatedly, for example from a gutter that overflows or leaks behind itself, or from paint that has failed. Replacing the board without fixing the water source leaves the new board exposed to the same problem, so A&S Contracting Services checks the gutter and the roof edge at the same visit.',
     ],
     [
-        'question' => 'Do I need to replace my soffit and gutters at the same time?',
-        'answer'   => 'Often, yes. A&S Contracting Services treats fascia, soffit, and gutters as one roof-edge system, because water that rots the fascia usually reaches the soffit too, and the gutters have to come off either way. Doing them together means one straight, sealed edge instead of new board bolted to failing trim.',
+        'question' => 'Do the gutters have to come down to replace fascia?',
+        'answer'   => 'Where a gutter is fastened to a board being replaced, yes. A&S Contracting Services also installs and repairs gutters, so the same employees remove the gutter, replace the board and hang the gutter again.',
     ],
     [
-        'question' => 'Can you just wrap the fascia in aluminum without replacing the board?',
-        'answer'   => 'Only if the wood underneath is still sound. A&S Contracting Services will not cap over rotted board—wrapping trapped, soft wood in aluminum just hides the decay while it spreads. When the lumber is solid, aluminum capping gives you a clean, color-matched, no-paint finish that holds up to Missouri weather for years.',
+        'question' => 'Will the new fascia match the rest of my trim?',
+        'answer'   => 'A&S Contracting Services matches the finish of new fascia to the house. When only some boards are replaced, the estimate says how the new sections will be finished to blend with the old.',
     ],
     [
-        'question' => 'How long does a fascia and gutter job take?',
-        'answer'   => 'Most single-family fascia and gutter jobs around Warrenton take one to two days, depending on the amount of rotted lumber found once the old board comes off. A&S Contracting Services runs its own crew, so the same people remove the old fascia, rebuild it, wrap it, and re-hang your gutters without waiting on a subcontractor.',
+        'question' => 'How long does fascia replacement take?',
+        'answer'   => 'It depends on how many boards are involved and what is found behind them. A&S Contracting Services gives a start window and a timeline in writing with the estimate rather than quoting a standard duration.',
     ],
     [
-        'question' => 'Are you licensed and insured for fascia work in Missouri?',
-        'answer'   => 'Yes. A&S Contracting Services is a licensed Missouri general contractor and carries full insurance on every job, including work along the roof edge. That matters on fascia, where the crew is up on ladders and the roofline is open—your home and your property stay protected from the first board to the final cleanup.',
+        'question' => 'Can fascia be replaced during a roof replacement?',
+        'answer'   => 'Yes. A&S Contracting Services does roofing, fascia, soffit and gutters, so rotted fascia found during a roof project can be priced and replaced as part of that project.',
     ],
+];
+
+// ─── Other-services cards (page-local copy) ─────────────────────────────────
+$otherCards = [
+    'soffit' => ['icon' => 'wind', 'desc' => 'Soffit installation and repair, including attic ventilation at the eaves.'],
+    'gutters' => ['icon' => 'droplets', 'desc' => 'Seamless aluminum gutter systems: installation, repair, replacement and cleaning.'],
+    'roofing' => ['icon' => 'home', 'desc' => 'Roof installation, repair, tear-off and full replacement, plus storm and hail damage repair.'],
 ];
 
 // ─── Schema (Service + FAQPage + BreadcrumbList) ─────────────────────────────
@@ -59,8 +66,8 @@ $serviceSchema = [
     '@type'       => 'Service',
     '@id'         => $canonicalUrl . '#service-' . $serviceSlug,
     'name'        => 'Fascia',
-    'serviceType' => 'Fascia installation',
-    'description' => 'Fascia board replacement, rotted sub-fascia repair, and color-matched aluminum wrap in Warrenton, MO and Warren County, including gutter removal and re-hanging as part of the roof-edge system.',
+    'serviceType' => 'Fascia contractor',
+    'description' => 'Fascia installation and replacement in Warrenton, MO and Warren County, including rotted board replacement, roof edge protection and a finish matched to the house.',
     'provider'    => ['@id' => $siteUrl . '/#organization'],
     'areaServed'  => [
         '@type' => 'GeoCircle',
@@ -113,16 +120,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 .sp-checklist li svg { color: var(--color-primary); margin-top: 3px; }
 @media (max-width: 800px) { .sp-included { grid-template-columns: 1fr; } }
 
-/* Comparison */
-.sp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
-.sp-compare__col { border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--color-surface); }
-.sp-compare__col--us { border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-line)); box-shadow: var(--shadow); background: color-mix(in srgb, var(--color-accent) 8%, white); }
-.sp-compare h3 { font-size: 1.1rem; margin-bottom: .9rem; display: flex; align-items: center; gap: .5rem; }
-.sp-compare ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
-.sp-compare li { display: grid; grid-template-columns: 22px 1fr; gap: .55rem; font-size: .93rem; color: var(--color-ink-2); }
-.sp-compare--them li svg { color: var(--color-danger); margin-top: 2px; }
-.sp-compare--us li svg { color: var(--color-success); margin-top: 2px; }
-@media (max-width: 700px) { .sp-compare { grid-template-columns: 1fr; } }
+/* Comparison table */
+.sp-table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.sp-table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: .94rem; }
+.sp-table caption { caption-side: top; text-align: left; padding: 1rem 1.25rem .75rem; font-family: var(--font-heading); font-weight: 700; color: var(--color-ink); }
+.sp-table th, .sp-table td { padding: .85rem 1.25rem; text-align: left; vertical-align: top; border-top: 1px solid var(--color-line); color: var(--color-ink-2); }
+.sp-table thead th { font-family: var(--font-heading); color: var(--color-ink); background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface)); }
+.sp-table tbody th { color: var(--color-ink); font-weight: 700; width: 22%; }
+.sp-table td a, .sp-checklist a, .sp-evidence a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.sp-table-note { margin-top: 1rem; }
+.sp-position__stat--word { font-size: clamp(2.6rem, 7vw, 4.2rem); }
 
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
@@ -155,22 +162,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
         <span class="eyebrow">Fascia &middot; Warrenton &amp; Warren County</span>
-        <h1>Fascia in <span class="text-accent">Warrenton, MO</span> — board replacement &amp; aluminum wrap</h1>
-        <p class="hero-answer">A&amp;S Contracting Services is a licensed, insured Warrenton contractor that replaces rotted fascia board, wraps it in maintenance-free aluminum, and re-hangs your gutters level—restoring the straight roofline that caps every rafter tail across Warren County. One crew handles the whole roof edge, start to finish.</p>
+        <h1>Fascia in <span class="text-accent">Warrenton, MO</span> — rotted board replacement &amp; new installation</h1>
+        <p class="hero-answer">A&amp;S Contracting Services replaces rotted fascia boards and installs new fascia in Warrenton, MO to protect the roof edge. A&amp;S is a licensed, fully insured general contractor, and its on-site written estimate is free.</p>
         <div class="hero-actions">
-          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free fascia estimate</a>
+          <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written fascia estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
         </div>
         <ul class="hero-chips">
-          <li><?php echo icon('shield-check', 16); ?> Licensed &amp; insured in Missouri</li>
-          <li><?php echo icon('ruler', 16); ?> Color-matched aluminum capping</li>
-          <li><?php echo icon('layers', 16); ?> Fascia, soffit &amp; gutters as one system</li>
+          <li><?php echo icon('clipboard-list', 16); ?> Written, itemized estimate</li>
+          <li><?php echo icon('home', 16); ?> Warrenton-based, 50-mile radius</li>
+          <li><?php echo icon('ruler', 16); ?> Finish matched to the house</li>
         </ul>
       </div>
 
       <aside class="hero-form-card" id="hero-form">
-        <h2>Want a free fascia estimate?</h2>
-        <p class="hero-form-tagline">No obligation. Same-day reply.</p>
+        <h2>Request a fascia estimate</h2>
+        <p class="hero-form-tagline">Boards tested on site. No obligation.</p>
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -195,43 +202,44 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
           <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
           <?php } ?>
-          <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
+          <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
         </form>
       </aside>
     </div>
   </div>
 </section>
 
+<article>
 <!-- ═══════════════════ PROBLEM STATEMENT ═══════════════════ -->
 <section class="section section--light">
   <div class="container">
     <div class="sp-problem">
       <div class="reveal-left">
         <span class="eyebrow-label">Know The Signs</span>
-        <h2>How do you know your Warrenton fascia is failing?</h2>
-        <p class="answer-block">A&amp;S Contracting Services looks for soft or rotted fascia boards, paint peeling off the trim behind your gutters, gutters sagging or pulling away from the house, dark water stains running down the fascia, and woodpecker or pest holes. Any one of these means water is getting behind the board and rotting the wood that holds your gutters.</p>
-        <p class="pull-quote">By the time paint peels, the board behind it is usually already gone—the finish fails last, not first.</p>
+        <h2>When does a fascia board need replacing?</h2>
+        <p class="answer-block">A fascia board needs replacing when the wood is soft or crumbling, the paint has peeled to bare timber, or the gutter fastened to it is pulling away. Rain and freeze-thaw cycles in Warren County work on any exposed board end. A&amp;S Contracting Services probes the boards during an on-site visit and lists the affected lengths.</p>
+        <p class="pull-quote">Fascia is the board along the roof edge: the gutter hangs from it and the soffit meets it.</p>
       </div>
       <div class="sp-signs reveal-right">
         <div class="sp-sign">
           <div class="sp-sign__icon"><?php echo icon('droplets', 22); ?></div>
-          <h3>Soft, rotted board</h3>
-          <p>Spongy fascia behind the gutters means water has soaked into the wood.</p>
+          <h3>Soft or crumbling wood</h3>
+          <p>A board that dents under a screwdriver has taken on water and lost its strength.</p>
         </div>
         <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('paint-bucket', 22); ?></div>
-          <h3>Peeling, blistered paint</h3>
-          <p>Paint that will not hold is the first sign the board underneath is going.</p>
+          <div class="sp-sign__icon"><?php echo icon('sun', 22); ?></div>
+          <h3>Peeling paint</h3>
+          <p>Bare patches leave the wood open to the next rain.</p>
         </div>
         <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('waves', 22); ?></div>
-          <h3>Sagging gutters</h3>
-          <p>Gutters pulling loose or drooping have nothing solid left to fasten to.</p>
+          <div class="sp-sign__icon"><?php echo icon('ruler', 22); ?></div>
+          <h3>Gutter pulling away</h3>
+          <p>Fasteners lose their grip when the board behind them rots.</p>
         </div>
         <div class="sp-sign">
-          <div class="sp-sign__icon"><?php echo icon('leaf', 22); ?></div>
-          <h3>Pest &amp; woodpecker holes</h3>
-          <p>Holes and gnaw marks let insects and water straight into the rafter tails.</p>
+          <div class="sp-sign__icon"><?php echo icon('layers', 22); ?></div>
+          <h3>Staining below the roof edge</h3>
+          <p>Dark marks suggest water is running behind the gutter onto the board.</p>
         </div>
       </div>
     </div>
@@ -243,16 +251,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="sp-position">
       <div class="reveal-up">
-        <div class="sp-position__stat">0<span>repaints—aluminum-wrapped fascia never needs scraping or painting again</span></div>
+        <div class="sp-position__stat sp-position__stat--word">Roof edge<span>is what fascia protects: the rafter ends, the soffit below and the gutter mounted on it</span></div>
       </div>
       <div class="reveal-right">
-        <span class="eyebrow-label">Why It Matters</span>
-        <h2>What makes A&amp;S the right crew for your roofline?</h2>
-        <p class="answer-block">A&amp;S Contracting Services treats the fascia, soffit, and gutters as one roof-edge system instead of three separate patch jobs. Because the same crew removes the failing gutters, replaces the rotted lumber, and caps it in color-matched aluminum, the finished edge stays straight, sealed, and watertight—no open seams left for the next contractor to blame.</p>
+        <span class="eyebrow-label">Under The Shingles</span>
+        <h2>Why is fascia a job for a roofing contractor?</h2>
+        <p class="answer-block">Fascia is a job for a roofing contractor because the board sits directly under the edge of the shingles and carries the gutter. A&amp;S Contracting Services, founded in Warrenton in 2023 around roofing and exterior work, does fascia with its own crew and no subcontractors, and takes down and re-hangs the <a href="/services/gutters/">gutter system on that board</a> itself.</p>
         <ul class="sp-evidence">
-          <li><?php echo icon('users', 22); ?><span><b>One accountable crew.</b> The same team pulls the gutters, rebuilds the board, and re-hangs everything—so the roofline lines up when the job is done.</span></li>
-          <li><?php echo icon('ruler', 22); ?><span><b>Color-matched capping.</b> Aluminum wrap is cut and bent to your board and matched to the trim, giving a clean, maintenance-free finish.</span></li>
-          <li><?php echo icon('shield-check', 22); ?><span><b>Licensed &amp; fully insured.</b> Ladder work along an open roof edge is covered, so your home and property stay protected.</span></li>
+          <li><?php echo icon('home', 22); ?><span><b>The roof edge seen as a whole.</b> Fascia, soffit, gutter and the first course of roofing are inspected together, because a failure in one tends to show in the next.</span></li>
+          <li><?php echo icon('ruler', 22); ?><span><b>Matched finish.</b> Replacement boards are finished to match the trim already on the house.</span></li>
+          <li><?php echo icon('clipboard-list', 22); ?><span><b>Only the rotted lengths, if that is enough.</b> The estimate separates boards that must be replaced from boards that are sound.</span></li>
         </ul>
       </div>
     </div>
@@ -263,65 +271,30 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="section section--light">
   <div class="container">
     <span class="eyebrow-label">The Work</span>
-    <h2>What&rsquo;s included in an A&amp;S fascia replacement?</h2>
-    <p class="answer-block">A&amp;S Contracting Services delivers a complete roof-edge rebuild: we take down the failing gutters, tear off the rotted fascia and any soft sub-fascia lumber, install fresh board, wrap it in color-matched aluminum capping, re-hang the gutters dead level, and seal every seam. You end up with a clean, straight, maintenance-free edge across your Warrenton home.</p>
+    <h2>What is covered in A&amp;S fascia replacement?</h2>
+    <p class="answer-block">A&amp;S fascia replacement covers removing the rotted boards, installing new fascia, matching the finish to the house and leaving the site clean. A&amp;S Contracting Services writes the estimate after seeing the roof edge in person, and the price turns on the length of board, the material, what the framing behind it looks like and the scope.</p>
     <div class="sp-included">
       <div class="reveal-up">
-        <h3>Included in the scope</h3>
+        <h3>Fascia work on the list</h3>
         <ul class="sp-checklist">
-          <li><?php echo icon('check', 20); ?> Remove damaged fascia and failing gutters as needed</li>
-          <li><?php echo icon('check', 20); ?> Replace rotted sub-fascia and rafter-tail lumber</li>
-          <li><?php echo icon('check', 20); ?> Install new fascia board, straight and true</li>
-          <li><?php echo icon('check', 20); ?> Color-matched aluminum wrap for a no-paint finish</li>
-          <li><?php echo icon('check', 20); ?> Re-hang gutters level with proper slope to the downspouts</li>
-          <li><?php echo icon('check', 20); ?> Seal every seam and joint against water intrusion</li>
-          <li><?php echo icon('check', 20); ?> Full cleanup and haul-away of old material</li>
+          <li><?php echo icon('check', 20); ?> <span>New fascia installation</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Replacement of existing fascia</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Rotted board replacement</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Protection of the roof edge</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Finish matched to existing trim</span></li>
+          <li><?php echo icon('check', 20); ?> <span><a href="/services/soffit/">Soffit installation and repair</a> where the soffit meets a replaced board</span></li>
+          <li><?php echo icon('check', 20); ?> <span>Final walkthrough of every replaced length</span></li>
         </ul>
       </div>
       <div class="reveal-right">
-        <h3>How the project runs</h3>
+        <h3>How the fascia job is run</h3>
         <ol class="process-steps">
-          <li><b>Free inspection</b><span>We check the fascia, soffit, and gutter line and show you where the rot is on site.</span></li>
-          <li><b>Written estimate</b><span>You get an itemized quote by the linear foot—materials, timeline, and price, no surprises.</span></li>
-          <li><b>Remove &amp; rebuild</b><span>Old gutters and rotted board come off; we replace any soft sub-fascia lumber.</span></li>
-          <li><b>Wrap &amp; re-hang</b><span>Fresh board is capped in aluminum, gutters go back up level, and the site is cleaned.</span></li>
+          <li><b>Roof-edge check</b><span>A&amp;S walks the perimeter and tests the boards, including behind the gutters where it can.</span></li>
+          <li><b>Itemized quote</b><span>Board lengths, material and labor in writing, with no fees added later.</span></li>
+          <li><b>Written schedule</b><span>You are given a start window and an expected duration before the job is booked.</span></li>
+          <li><b>Replace and walk</b><span>The crew swaps the boards, cleans up at the end of each day and goes over the result with you.</span></li>
         </ol>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ PROOF / REVIEWS ═══════════════════ -->
-<section class="section reviews-section edge-wave-top" aria-label="Fascia reviews">
-  <span class="grain-layer" aria-hidden="true"></span>
-  <div class="container-wide">
-    <div class="section-title reveal-up">
-      <span class="eyebrow-label">In Their Words</span>
-      <h2>What do Warren County homeowners say about our roofline work?</h2>
-      <p>Real reviews from A&amp;S Contracting Services fascia, soffit, and gutter customers across Warren County.</p>
-    </div>
-    <div class="reviews-track">
-      <?php
-      $fasciaReviews = array_filter($reviews, function ($r) { return in_array($r['author'], ['Diane L.', 'Marcus H.', 'Jennifer K.']); });
-      foreach ($fasciaReviews as $rev):
-        $initial = strtoupper(substr($rev['author'], 0, 1));
-      ?>
-      <article class="review-card">
-        <div class="review-stars" aria-label="<?php echo (int)$rev['rating']; ?> out of 5 stars">
-          <?php for ($s = 0; $s < (int)$rev['rating']; $s++) echo icon('star', 18); ?>
-        </div>
-        <p class="review-text">&ldquo;<?php echo htmlspecialchars($rev['text']); ?>&rdquo;</p>
-        <div class="review-author">
-          <span class="review-avatar" aria-hidden="true"><?php echo $initial; ?></span>
-          <span class="review-name"><?php echo htmlspecialchars($rev['author']); ?></span>
-        </div>
-      </article>
-      <?php endforeach; ?>
-    </div>
-    <div class="review-badge-strip">
-      <span class="badge-strip"><?php echo icon('star', 16); ?> 5-Star Google Rated</span>
-      <span class="badge-strip"><?php echo icon('shield-check', 16); ?> Licensed &amp; Insured</span>
-      <span class="badge-strip"><?php echo icon('ruler', 16); ?> Color-Matched Capping</span>
     </div>
   </div>
 </section>
@@ -329,28 +302,42 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <!-- ═══════════════════ COMPARISON ═══════════════════ -->
 <section class="section">
   <div class="container">
-    <span class="eyebrow-label">The Difference</span>
-    <h2>Why replace the fascia instead of painting over it?</h2>
-    <p class="answer-block">A&amp;S Contracting Services sees it every year: fresh paint slapped over a board that crumbles again within a season. Painting or spot-patching hides the rot; it does not stop it. Replacing the board and wrapping it in aluminum fixes the cause, so your gutters finally have something solid to hang on for good.</p>
-    <div class="sp-compare">
-      <div class="sp-compare__col sp-compare--them">
-        <h3><?php echo icon('x', 20); ?> Paint-and-patch shortcuts</h3>
-        <ul>
-          <li><?php echo icon('minus', 18); ?> Fresh paint brushed over soft, rotted wood</li>
-          <li><?php echo icon('minus', 18); ?> Spot-patched boards that rot again next season</li>
-          <li><?php echo icon('minus', 18); ?> Gutters re-hung on failing lumber</li>
-          <li><?php echo icon('minus', 18); ?> Seams left open for water to creep back in</li>
-        </ul>
-      </div>
-      <div class="sp-compare__col sp-compare--us">
-        <h3><?php echo icon('check-circle', 20); ?> A&amp;S Contracting Services</h3>
-        <ul>
-          <li><?php echo icon('check', 18); ?> Rotted lumber removed, not painted over</li>
-          <li><?php echo icon('check', 18); ?> Solid new board wrapped in maintenance-free aluminum</li>
-          <li><?php echo icon('check', 18); ?> Gutters re-hung level on sound wood</li>
-          <li><?php echo icon('check', 18); ?> Every seam sealed against Missouri weather</li>
-        </ul>
-      </div>
+    <span class="eyebrow-label">Sections Or Full Run</span>
+    <h2>Should fascia be replaced in sections or along the whole run?</h2>
+    <p class="answer-block">Fascia can be replaced in sections when rot is confined to a few boards, and along the whole run when damage is widespread or the finish cannot be matched. A&amp;S Contracting Services makes that call on site and prices it in writing. The table compares the two approaches; the <a href="/blog/soffit-fascia-repair-vs-replacement/">soffit and fascia repair-versus-replacement guide</a> adds detail.</p>
+    <div class="sp-table-wrap reveal-up">
+      <table class="sp-table">
+        <caption>Sectional fascia replacement compared with a full run</caption>
+        <thead>
+          <tr>
+            <th scope="col">Attribute</th>
+            <th scope="col">Replace the rotted sections</th>
+            <th scope="col">Replace the full run</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">When it fits</th>
+            <td>Rot limited to a few boards</td>
+            <td>Damage along most of an eave, or one new finish wanted throughout</td>
+          </tr>
+          <tr>
+            <th scope="row">Gutter</th>
+            <td>Taken down only where a board is replaced</td>
+            <td>Taken down along the whole eave and re-hung</td>
+          </tr>
+          <tr>
+            <th scope="row">Finish</th>
+            <td>New boards finished to match the existing trim</td>
+            <td>One consistent finish on every board</td>
+          </tr>
+          <tr>
+            <th scope="row">What sets the price</th>
+            <td>Length of board replaced and the condition of the framing behind it</td>
+            <td>Total eave length, the material selected and the scope</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -360,7 +347,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container-narrow">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">Good Questions</span>
-      <h2>Still have questions about your fascia?</h2>
+      <h2>What are the common questions about fascia boards?</h2>
+      <p>The common questions about fascia boards concern cost, rot, gutters, finish and timing. A&amp;S Contracting Services answers them here in general terms. Fascia on a house in Warrenton, Jonesburg or Washington is quoted only after the boards have been seen in person and the affected lengths written into an estimate.</p>
     </div>
     <div class="faq-grid">
       <?php foreach ($faqs as $fi => $faq): ?>
@@ -374,12 +362,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 </section>
 
 <!-- ═══════════════════ RECENT WORK ═══════════════════ -->
-<section class="section sp-gallery" aria-label="Recent fascia projects">
+<section class="section sp-gallery" aria-label="Fascia job-site photos">
   <div class="container-wide">
     <div class="section-title reveal-up">
-      <span class="eyebrow-label">Recent Work</span>
-      <h2>What recent fascia projects has A&amp;S completed near Warrenton?</h2>
-      <p class="answer-block">These are real fascia projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+      <span class="eyebrow-label">Job-Site Photos</span>
+      <h2>What do roof edges on A&amp;S projects look like?</h2>
+      <p class="answer-block">Roof edges on A&amp;S projects look like the three photos below. They show a newly built house with straight fascia lines under a dark shingle roof, a crew member working at a roof edge, and a home with trim matched along the roofline. A&amp;S Contracting Services took all three on its own job sites.</p>
     </div>
     <div class="sp-gallery-grid" data-p1-dynamic>
       <?php foreach ($workPhotos as $wp): ?>
@@ -397,39 +385,39 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container-wide">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">What We Do</span>
-      <h2>What else can A&amp;S handle along your roofline?</h2>
-      <p class="hero-answer">Fascia is one piece of the roof edge. A&amp;S Contracting Services also self-performs the soffit, gutters, and roofing that finish and protect the top of your Warrenton home—one licensed crew for the whole edge.</p>
+      <h2>What else gets repaired when fascia is replaced?</h2>
+      <p class="hero-answer">Soffit, gutters and roofing are the neighbors of a fascia board, and water that rots a board has passed at least one of them first. A&amp;S Contracting Services repairs each one, and its <a href="/services/">complete list of services in the Warrenton area</a> shows the rest of what can go on one estimate.</p>
     </div>
     <div class="sp-other">
       <?php
-      $otherSlugs = ['soffit', 'gutters', 'roofing'];
-      $tintCycle  = [1, 2, 3];
-      $otherIcons = ['soffit' => 'layers', 'gutters' => 'droplets', 'roofing' => 'home'];
-      foreach ($otherSlugs as $oi => $os):
+      $tintCycle = [1, 2, 3];
+      $oi = 0;
+      foreach ($otherCards as $os => $oc):
         $osvc = null; foreach ($services as $s) { if ($s['slug'] === $os) { $osvc = $s; break; } }
         if (!$osvc) continue;
       ?>
       <article class="service-card-with-image card-tint-<?php echo $tintCycle[$oi % 3]; ?> reveal-up reveal-delay-<?php echo ($oi % 3) + 1; ?>">
         <div class="service-card__body">
-          <div class="service-card__icon"><?php echo icon($otherIcons[$os] ?? 'check-circle', 22); ?></div>
+          <div class="service-card__icon"><?php echo icon($oc['icon'], 22); ?></div>
           <h3><?php echo htmlspecialchars($osvc['name']); ?></h3>
-          <p class="service-card__desc"><?php echo htmlspecialchars($osvc['description']); ?></p>
+          <p class="service-card__desc"><?php echo htmlspecialchars($oc['desc']); ?></p>
           <a href="/services/<?php echo $os; ?>/" class="service-card__cta"><?php echo htmlspecialchars($serviceAnchor[$os] ?? $osvc['name']); ?></a>
         </div>
       </article>
-      <?php endforeach; ?>
+      <?php $oi++; endforeach; ?>
     </div>
   </div>
 </section>
+</article>
 
 <!-- ═══════════════════ FINAL CTA / ESTIMATE ═══════════════════ -->
-<section class="section section--light" id="estimate" aria-label="Request your free fascia estimate">
+<section class="section section--light" id="estimate" aria-label="Request a fascia estimate">
   <div class="container">
     <div class="estimate">
       <div class="card reveal-up" style="padding: clamp(1.5rem, 4vw, 2.5rem); border:1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface);">
-        <span class="eyebrow-label">Free Estimate</span>
-        <h2>Ready to fix a sagging, rotted roofline?</h2>
-        <p class="lead" style="margin-bottom: 1.25rem;">Send the details and A&amp;S Contracting Services will reply the same day to schedule your free on-site fascia inspection.</p>
+        <span class="eyebrow-label">Written Estimate</span>
+        <h2>Ready to find out how far the rot goes?</h2>
+        <p class="lead" style="margin-bottom: 1.25rem;">Send a note about the roof edge and A&amp;S Contracting Services will schedule a visit to look at the boards, within days of first contact.</p>
 
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -494,11 +482,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
       <div class="reveal-right">
         <span class="eyebrow-label">What Happens Next</span>
-        <h2>What happens after you send the <span class="text-accent">details</span>?</h2>
+        <h2>What happens after you <span class="text-accent">request your estimate</span>?</h2>
+        <p>After you request an estimate, A&amp;S Contracting Services contacts you to schedule a look at the roof edge, and that visit happens within days of first contact. What follows is a written estimate listing the board lengths to be replaced, the finish, the price and a start window, with no obligation to proceed.</p>
         <ol class="next-steps">
-          <li><strong>We reach out the same day.</strong> A&amp;S Contracting Services confirms the details and schedules your free on-site fascia inspection.</li>
-          <li><strong>You get a written estimate.</strong> Clear scope, materials, timeline, and price—by the linear foot, with no surprises.</li>
-          <li><strong>One crew does the work.</strong> The same self-performing team removes the old board, rebuilds it, and re-hangs your gutters level.</li>
+          <li><strong>A&amp;S checks the boards.</strong> The full roof edge is tested, not just the visible damage.</li>
+          <li><strong>You read the estimate.</strong> Lengths, material, finish and price in writing.</li>
+          <li><strong>Boards are replaced.</strong> A&amp;S employees do the work, clean up daily and close with a walkthrough.</li>
         </ol>
         <div class="nap">
           <div><?php echo icon('phone', 18); ?> <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a></div>
@@ -506,7 +495,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <div><?php echo icon('map-pin', 18); ?> <span><?php echo $addressCity; ?>, <?php echo $addressState; ?> <?php echo $addressZip; ?></span></div>
           <div><?php echo icon('clock', 18); ?> <span><?php echo htmlspecialchars($businessHours); ?></span></div>
         </div>
-        <p style="margin-top:1rem; color: var(--color-muted); font-size: .95rem;">Fascia and roofline work across <a href="/areas/warrenton/">Warrenton</a>, <a href="/areas/wright-city/">Wright City</a>, <a href="/areas/foristell/">Foristell</a>, <a href="/areas/wentzville/">Wentzville</a>, <a href="/areas/troy/">Troy</a>, <a href="/areas/jonesburg/">Jonesburg</a>, <a href="/areas/washington/">Washington</a> and everywhere within <?php echo $serviceRadius; ?> miles.</p>
+        <p style="margin-top:1rem; color: var(--color-muted); font-size: .95rem;">Fascia across <a href="/areas/warrenton/">Warrenton</a>, <a href="/areas/wright-city/">Wright City</a>, <a href="/areas/foristell/">Foristell</a>, <a href="/areas/wentzville/">Wentzville</a>, <a href="/areas/troy/">Troy</a>, <a href="/areas/jonesburg/">Jonesburg</a>, <a href="/areas/washington/">Washington</a> and everywhere within <?php echo $serviceRadius; ?> miles.</p>
       </div>
     </div>
   </div>
