@@ -1,21 +1,9 @@
 <?php
 /**
- * Washington, MO Service Area Page
+ * Washington, MO service area page (v8 rewrite, 2026-10-09)
  *
- * Research sources:
- * - https://en.wikipedia.org/wiki/Washington,_Missouri
- * - https://en.wikipedia.org/wiki/National_Register_of_Historic_Places_listings_in_Franklin_County,_Missouri
- * - https://www.plantmaps.com/hardiness-zones-for-franklin-county-missouri
- *
- * Verified local details:
- * - Elevation: 558 ft (170 m) per Wikipedia
- * - Franklin County seat
- * - On Missouri River, 50 miles west of St. Louis
- * - Known as "corncob pipe capital of the world" (Missouri Meerschaum Company on riverfront)
- * - Historic landmarks: Mark O'Hara House, Frank Mense House (National Register)
- * - Neighborhoods: Stafford-Olive Historic District, Aholt Subdivision
- * - Population: 14,500 (2020 census)
- * - USDA Zone: 6b-7a (regional data, Franklin County)
+ * Local facts source: https://en.wikipedia.org/wiki/Washington,_Missouri (fetched 2026-10-09; census figures as cited there).
+ * Company facts: includes/config.php and llms.txt only. No drive times, review counts or past-job claims.
  */
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
@@ -23,12 +11,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 
 $pageType = 'city';
 $citySlug = 'washington';
-$pageTitle = 'Washington, MO Roofing, Siding & Remodeling Contractor';
-$pageDescription = 'Roofing, siding & remodeling in Washington, MO and Franklin County from A&S Contracting Services. Licensed & insured. Free estimate: call (636) 359-7204.';
+$pageTitle = 'Washington, MO Exterior & Remodeling Contractor';
+$pageDescription = 'Siding, windows, roofing and interior remodeling in Washington, MO 63090 from A&S Contracting Services of Warrenton, across the Missouri River. (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/areas/washington/';
 $currentPage = 'service-areas';
 
-// Schema: BreadcrumbList + LocalBusiness with areaServed
+// Schema: BreadcrumbList + organization reference with areaServed
 $schema = <<<SCHEMA
 <script type="application/ld+json">
 {
@@ -37,24 +25,9 @@ $schema = <<<SCHEMA
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "{$siteUrl}/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Service Areas",
-          "item": "{$siteUrl}/service-areas/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Washington, MO",
-          "item": "{$canonicalUrl}"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{$siteUrl}/" },
+        { "@type": "ListItem", "position": 2, "name": "Service Areas", "item": "{$siteUrl}/service-areas/" },
+        { "@type": "ListItem", "position": 3, "name": "Washington, MO", "item": "{$canonicalUrl}" }
       ]
     },
     {
@@ -64,10 +37,7 @@ $schema = <<<SCHEMA
       "areaServed": {
         "@type": "City",
         "name": "Washington",
-        "containedIn": {
-          "@type": "State",
-          "name": "Missouri"
-        }
+        "containedInPlace": { "@type": "State", "name": "Missouri" }
       }
     }
   ]
@@ -80,7 +50,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
 <style>
-/* Area page styles */
+/* Area Page Styles */
 .hero--area {
   background: linear-gradient(135deg, var(--color-primary) 0%, rgba(0,0,0,0.85) 100%);
   padding: calc(var(--nav-height) + 60px) 0 80px;
@@ -290,174 +260,165 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 .service-item a { color: inherit; text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: 3px; }
 .service-item a:hover { color: var(--color-accent); }
 .prose a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* v8 2026-10-09: at-a-glance table, process list, lead-service list (token-only) */
+.area-article h2 { text-wrap: balance; }
+.area-glance { width: 100%; border-collapse: collapse; margin-top: var(--space-4); font-size: var(--fs-small); background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius); overflow: hidden; }
+.area-glance caption { text-align: left; font-family: var(--font-heading); font-weight: 700; padding-bottom: var(--space-2); color: var(--color-primary); }
+.area-glance th, .area-glance td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-line); vertical-align: top; }
+.area-glance th { width: 42%; font-weight: 600; color: var(--color-muted); }
+.area-glance tr:last-child th, .area-glance tr:last-child td { border-bottom: 0; }
+.area-source { margin-top: var(--space-2); font-size: var(--fs-small); color: var(--color-muted); }
+.area-leads { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-6); padding: 0; }
+.area-leads li { padding: var(--space-5); border: 1px solid rgba(var(--color-secondary-rgb), .14); border-radius: var(--radius); background: rgba(var(--color-secondary-rgb), .05); }
+.area-answer { max-width: 760px; font-size: var(--fs-lead); line-height: 1.65; color: rgba(var(--color-secondary-rgb), .88); }
+.area-leads h3 { font-size: var(--fs-h3); margin-bottom: var(--space-2); color: var(--color-white); }
+.area-leads h3 a { color: inherit; text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: 3px; }
+.area-leads p { line-height: 1.6; }
+.area-leads p a { color: var(--color-accent); text-decoration: underline; }
+.area-more { margin-top: var(--space-6); }
+.area-more a { color: var(--color-accent); text-decoration: underline; }
+.area-steps { margin: var(--space-5) 0 0; padding-left: 1.25em; display: grid; gap: var(--space-3); line-height: 1.65; }
+.area-steps li::marker { font-weight: 700; color: var(--color-primary); }
+.section-alt { background: var(--color-bg-alt); padding: 80px 0; }
+.area-narrow { max-width: 820px; }
+.cta-band .area-near { margin-top: var(--space-5); font-size: var(--fs-small); }
+.cta-band .area-near a { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 900px) { .area-leads { grid-template-columns: 1fr; } .section-alt { padding: 60px 0; } }
 </style>
 
-<!-- Hero Section -->
+<article class="area-article">
+
+<!-- Hero -->
 <section class="hero--area">
   <div class="container">
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a>
-      <span class="breadcrumb-sep" aria-hidden="true">/</span>
-      <a href="/service-areas/">Service Areas</a>
-      <span class="breadcrumb-sep" aria-hidden="true">/</span>
-      <span>Washington</span>
-    </nav>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <a href="/service-areas/">Service Areas</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span>Washington</span>
+        </nav>
 
-    <div class="eyebrow">Missouri River Communities</div>
-    <h1>Roofing & Siding in <span class="text-accent">Washington, Missouri</span></h1>
-    <p class="hero-answer">
-      A&S Contracting Services serves Washington—Franklin County's riverfront seat and corncob pipe capital—with
-      licensed roofing, siding, gutters, and full-scale renovations. Every project is self-performed by our own
-      crews with no subcontractors, delivering consistent quality from estimate through final inspection.
-    </p>
+        <div class="eyebrow">Franklin County &middot; South bank of the Missouri</div>
+        <h1>Exterior &amp; Remodeling Contractor in <span class="text-accent">Washington, MO</span></h1>
+        <p class="hero-answer">A&amp;S Contracting Services is a licensed and insured general contractor from Warrenton that serves Washington, the Franklin County river town south of the Missouri. The A&amp;S crew does siding, windows, roofing and interior remodeling on Washington homes and commercial buildings.</p>
 
-    <div class="hero-chips">
-      <div class="hero-chip">
-        <?php echo icon('map-pin', 16); ?>
-        35 Min from Warrenton
-      </div>
-      <div class="hero-chip">
-        <?php echo icon('award', 16); ?>
-        5-Star Rated
-      </div>
-      <div class="hero-chip">
-        <?php echo icon('calendar-check', 16); ?>
-        Free Written Estimates
-      </div>
-    </div>
+        <ul class="hero-chips">
+          <li class="hero-chip"><?php echo icon('map-pin', 16); ?> Washington, 63090</li>
+          <li class="hero-chip"><?php echo icon('route', 16); ?> Route 47 river bridge</li>
+          <li class="hero-chip"><?php echo icon('home', 16); ?> Old and new housing</li>
+        </ul>
 
-    <div class="btn-group">
-      <a href="/contact/" class="btn-primary">Get Free Estimate</a>
-      <a href="tel:<?php echo $phoneTel; ?>" class="btn-secondary">
-        <?php echo icon('phone', 20); ?>
-        <?php echo $phone; ?>
-      </a>
-    </div>
-  
+        <div class="btn-group">
+          <a href="/contact/" class="btn-primary" data-open-estimate>Request an estimate</a>
+          <a href="tel:<?php echo $phoneTel; ?>" class="btn-secondary">
+            <?php echo icon('phone', 20); ?>
+            <?php echo $phone; ?>
+          </a>
+        </div>
       </div>
-      <?php $heroFormTitle = 'Free estimate in Washington'; $heroFormId = 'hero'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
+      <?php $heroFormTitle = 'Estimate for a Washington address'; $heroFormId = 'hero'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
     </div>
   </div>
 </section>
 
-<!-- Why Washington Homeowners Choose Us -->
+<!-- The place -->
 <section class="section-light">
   <div class="container">
     <div class="split-grid">
       <div class="prose">
-        <h2 class="section-title">Serving Historic Washington & Franklin County</h2>
-        <p>
-          <strong>A&S Contracting Services is a licensed and insured Missouri general contractor based in Warrenton,</strong>
-          serving Washington and Franklin County homeowners with professional roofing, siding, gutters, drywall, windows,
-          and full-scale renovations—every trade self-performed by A&S crews, no subcontractors involved.
-        </p>
-        <p>
-          Washington sits at <strong>558 feet elevation</strong> along the Missouri River, 50 miles west of St. Louis,
-          in <strong>USDA Zone 6b-7a</strong> with winter lows between -5°F and 5°F. The riverfront location brings
-          higher humidity year-round, particularly in the river valley neighborhoods and the historic <strong>Stafford-Olive
-          Historic District</strong>, which stresses attic ventilation during humid summers and accelerates mold growth
-          on north-facing roof sections with poor airflow.
-        </p>
-        <p>
-          Spring flooding from Missouri River overflow affects drainage patterns across lower-elevation properties near
-          the waterfront—properties in <strong>Aholt Subdivision</strong> and areas near the <strong>Missouri Meerschaum
-          factory</strong> (the riverfront facility that made Washington famous as the "corncob pipe capital of the world")
-          require properly sized gutters and graded drainage to prevent foundation saturation during seasonal high water.
-        </p>
+        <h2 class="section-title">Does A&amp;S Contracting Services cross the river to Washington?</h2>
+        <p>A&amp;S Contracting Services crosses the Missouri River to work in Washington. State Route 47 runs south from Warrenton to the Washington bridge, which was replaced with a wider span in December 2018, and Washington lies inside the 50-mile radius A&amp;S serves.</p>
+          <p>Washington is the largest city in Franklin County, with 14,500 residents and 6,600 housing units at the 2020 census. It is also one of the most historic: the town was laid out in 1827, German families began settling here in 1833, and 445 of its buildings are on the National Register of Historic Places, including the Tibbe Historic District.</p>
+          <p>That makes Washington the place in the A&amp;S service area where matching matters most. Wood siding, original trim profiles and old window openings do not take a standard replacement part. A&amp;S installs wood and fiber cement siding as well as vinyl, and its soffit and fascia work is matched to the existing roofline, which is the right starting point for a house that has to keep looking like itself.</p>
       </div>
-      <div class="prose">
-        <h3>Historic Character on the Missouri River</h3>
-        <p>
-          As the county seat of Franklin County with a population of 14,500 (2020 census), Washington features a mix of
-          historic riverfront architecture and modern residential development. Properties here range from century-old homes
-          in the <strong>Stafford-Olive Historic District</strong>—where structures like the <strong>Mark O'Hara House</strong>
-          and <strong>Frank Mense House</strong> (both on the National Register of Historic Places) require period-appropriate
-          materials—to newer construction in growing subdivisions west of the historic downtown core.
-        </p>
-        <p>
-          Our crews work across that range. We've matched original lap siding profiles on Victorian-era riverfront homes,
-          replaced hail-damaged roofs on mid-century ranches, and executed full exterior renovations on properties throughout
-          Washington's established neighborhoods—always accounting for the river-adjacent climate conditions and the
-          municipality's historical preservation standards where applicable.
-        </p>
-        <p>
-          Call <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a> or
-          <a href="/contact/">request a free estimate online</a>—we'll visit your Washington property within 48 hours.
-        </p>
-      </div>
+      <aside aria-label="Washington at a glance">
+        <table class="area-glance">
+          <caption>Washington, Missouri at a glance</caption>
+          <tbody>
+            <tr><th scope="row">County</th><td>Franklin County</td></tr>
+            <tr><th scope="row">ZIP code</th><td>63090</td></tr>
+            <tr><th scope="row">Main roads</th><td>State Route 47 (Missouri River bridge)</td></tr>
+            <tr><th scope="row">Elevation</th><td>about 558 ft</td></tr>
+            <tr><th scope="row">Population (2020)</th><td>14,500</td></tr>
+            <tr><th scope="row">Housing units</th><td>6,600 (2020 census)</td></tr>
+          </tbody>
+        </table>
+        <p class="area-source">Figures: U.S. Census Bureau and USGS data as published in the Washington entry on Wikipedia.</p>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- Services in Washington -->
+<!-- The work -->
 <section class="section-dark">
   <div class="container">
-    <h2 class="section-title">Complete General Contracting in Washington</h2>
-    <p class="section-subtitle">
-      Roofing, siding, gutters, windows, drywall, and full renovations—all performed by licensed A&S crews, never subcontracted.
-    </p>
+    <h2 class="section-title">What does A&amp;S do for Washington homes?</h2>
+    <p class="area-answer">A&amp;S Contracting Services sides, roofs, re-windows and remodels Washington homes, and takes commercial projects too. With 445 National Register buildings in town, the three services below are the ones that matter most on an older house.</p>
+    <ul class="area-leads">
+        <li>
+          <h3><a href="/services/siding/">Wood, fiber cement and vinyl siding</a></h3>
+          <p>Repairs to existing wood siding or full replacement in the material that suits the house. The estimate spells out what is being matched and what is being changed.</p>
+        </li>
+        <li>
+          <h3><a href="/services/windows-doors/">Windows, patio doors and entry doors</a></h3>
+          <p>Energy-efficient replacements set into the existing openings and weather sealed, with the surrounding trim finished by the same crew.</p>
+        </li>
+        <li>
+          <h3><a href="/services/full-scale-interior-work/">Interior remodels</a></h3>
+          <p>Drywall, flooring, trim, painting and custom finishes for kitchens, baths, additions and whole floors.</p>
+        </li>
+    </ul>
+    <p class="area-more">The full list, from soffit to drywall, is on the <a href="/services/">A&amp;S services page</a>.</p>
+  </div>
+</section>
 
-    <div class="services-list">
-      <div class="service-item">
-        <?php echo icon('home', 24); ?>
-        <span><strong><a href="/services/roofing/">Roofing</a>:</strong> Shingle, metal, flat—installs, repairs, storm damage</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('layers', 24); ?>
-        <span><strong><a href="/services/siding/">Siding</a>:</strong> Vinyl, fiber cement, wood—full replacement or repair</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('droplets', 24); ?>
-        <span><strong><a href="/services/gutters/">Gutters</a>:</strong> Seamless aluminum, guards, proper drainage systems</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('wind', 24); ?>
-        <span><strong><a href="/services/soffit/">Soffit</a> &amp; <a href="/services/fascia/">Fascia</a>:</strong> Ventilation, rot repair, historical matching</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('ruler', 24); ?>
-        <span><strong><a href="/services/windows-doors/">Windows & Doors</a>:</strong> Energy-efficient upgrades, trim work</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('paint-bucket', 24); ?>
-        <span><strong><a href="/services/dry-wall/">Drywall</a>:</strong> Hanging, finishing, repair, texture matching</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('hammer', 24); ?>
-        <span><strong><a href="/services/full-scale-interior-work/">Interior Renovations</a>:</strong> Room additions, remodels, finish work</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('wrench', 24); ?>
-        <span><strong><a href="/services/roofing/#hail-claims">Storm Damage</a>:</strong> Insurance documentation, full restoration</span>
-      </div>
-    </div>
-
-    <div style="margin-top: 48px; text-align: center;">
-      <p style="font-size: 1.125rem; margin-bottom: 24px;">
-        <a href="/services/" style="color: var(--color-accent); text-decoration: underline;">See all services</a>
-        or call <a href="tel:<?php echo $phoneTel; ?>" style="color: var(--color-accent); text-decoration: underline;"><?php echo $phone; ?></a>
-        to discuss your project.
-      </p>
+<!-- Local question -->
+<section class="section-light">
+  <div class="container area-narrow">
+    <div class="prose">
+      <h2 class="section-title">Can A&amp;S work on a historic Washington house?</h2>
+      <p>A&amp;S Contracting Services can work on a historic Washington house, starting with a visit to see what is original and what condition it is in. The written estimate then separates repair from replacement, so you know which historic material stays on the building.</p>
+      <p>A listing on the National Register does not by itself decide what an owner may change, but the city can have its own review for exterior work in a historic district. Confirm that with the City of Washington before you order materials. Washington sits at about 558 feet on the south bank of the river, and river-valley humidity is hard on paint and bare wood, so sealing cut ends and joints is part of the job, not a finish detail.</p>
     </div>
   </div>
 </section>
+
+<!-- Estimate process -->
+<section class="section-alt">
+  <div class="container area-narrow">
+    <div class="prose">
+      <h2 class="section-title">How does an A&amp;S estimate work at a Washington address?</h2>
+      <p>An A&amp;S estimate at a Washington address is an on-site visit followed by a written, itemized price, and both are free with no obligation. For a Washington address, send photos of the house front with your request if you can; it helps A&amp;S bring the right material samples to the visit. The price depends on square footage, the materials you choose, the condition of what is there now and the scope.</p>
+      <ol class="area-steps">
+        <li><strong>Call or send the form.</strong> Reach Blake Alger at <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a> or use the <a href="/contact/">estimate request form</a>. Visits are scheduled within days of first contact.</li>
+        <li><strong>On-site visit.</strong> A&amp;S measures, looks at the existing structure and talks through materials with you at the property.</li>
+        <li><strong>Written estimate.</strong> You receive an itemized scope and price. The quoted price is the final price, with the start window and timeline in writing.</li>
+        <li><strong>The work.</strong> The A&amp;S crew does the job itself, start to finish, and cleans the site every day.</li>
+        <li><strong>Final walkthrough.</strong> You walk the finished work with A&amp;S before the job is closed.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+</article>
 
 <!-- Final CTA -->
 <section class="cta-band">
   <div class="container">
-    <h2>Ready to Start Your Washington Project?</h2>
-    <p>
-      Free site visit and written estimate for all roofing, siding, and renovation work—no obligation, transparent pricing.
-    </p>
+    <h2>Ready for a written estimate in Washington?</h2>
+    <p>Tell A&amp;S Contracting Services what the building needs and where it is. Hours are <?php echo htmlspecialchars($businessHours); ?>.</p>
     <div class="btn-group">
-      <a href="/contact/" class="btn-primary">Request Free Estimate</a>
+      <a href="/contact/" class="btn-primary">Request an estimate</a>
       <a href="tel:<?php echo $phoneTel; ?>" class="btn-secondary">
         <?php echo icon('phone', 20); ?>
-        <?php echo $phone; ?>
+        Call <?php echo $phone; ?>
       </a>
     </div>
+    <p class="area-near">Nearby: <a href="/areas/warrenton/">Warrenton</a>, <a href="/areas/wright-city/">Wright City</a>, <a href="/areas/troy/">Troy</a>. See <a href="/service-areas/">every town A&amp;S serves</a>.</p>
   </div>
 </section>
 

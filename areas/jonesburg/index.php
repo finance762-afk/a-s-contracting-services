@@ -1,20 +1,9 @@
 <?php
 /**
- * Jonesburg, MO Service Area Page
+ * Jonesburg, MO service area page (v8 rewrite, 2026-10-09)
  *
- * Research sources:
- * - https://en.wikipedia.org/wiki/Jonesburg,_Missouri
- * - https://missouri.hometownlocator.com/mo/montgomery/jonesburg.cfm
- * - https://www.plantmaps.com/hardiness-zones-for-st-charles-county-missouri
- *
- * Verified local details:
- * - Elevation: 889 ft (271 m) per Wikipedia and HometownLocator
- * - Location: Montgomery County (southern border touches Warren County)
- * - Named after James Jones, pioneer citizen (platted 1858)
- * - I-70 Exit 183 (North 1st Street)
- * - Population: 726 (2020 census)
- * - 66 miles east to St. Louis, 58 miles west to Columbia via I-70
- * - Estimated USDA Zone: 6b-7a (regional data, Montgomery County)
+ * Local facts source: https://en.wikipedia.org/wiki/Jonesburg,_Missouri (fetched 2026-10-09; census figures as cited there).
+ * Company facts: includes/config.php and llms.txt only. No drive times, review counts or past-job claims.
  */
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
@@ -22,12 +11,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 
 $pageType = 'city';
 $citySlug = 'jonesburg';
-$pageTitle = 'Jonesburg, MO Roofing, Siding & Remodeling Contractor';
-$pageDescription = 'Roofing, siding & remodeling in Jonesburg, MO and Montgomery County from A&S Contracting Services. Licensed & insured. Free estimate: call (636) 359-7204.';
+$pageTitle = 'Jonesburg, MO Roofing & Metal Roof Contractor';
+$pageDescription = 'Shingle and metal roofing, gutters and repairs in Jonesburg, MO 63351 from A&S Contracting Services, a general contractor based in Warrenton. (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/areas/jonesburg/';
 $currentPage = 'service-areas';
 
-// Schema: BreadcrumbList + LocalBusiness with areaServed
+// Schema: BreadcrumbList + organization reference with areaServed
 $schema = <<<SCHEMA
 <script type="application/ld+json">
 {
@@ -36,24 +25,9 @@ $schema = <<<SCHEMA
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "{$siteUrl}/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Service Areas",
-          "item": "{$siteUrl}/service-areas/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Jonesburg, MO",
-          "item": "{$canonicalUrl}"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{$siteUrl}/" },
+        { "@type": "ListItem", "position": 2, "name": "Service Areas", "item": "{$siteUrl}/service-areas/" },
+        { "@type": "ListItem", "position": 3, "name": "Jonesburg, MO", "item": "{$canonicalUrl}" }
       ]
     },
     {
@@ -63,10 +37,7 @@ $schema = <<<SCHEMA
       "areaServed": {
         "@type": "City",
         "name": "Jonesburg",
-        "containedIn": {
-          "@type": "State",
-          "name": "Missouri"
-        }
+        "containedInPlace": { "@type": "State", "name": "Missouri" }
       }
     }
   ]
@@ -79,7 +50,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
 <style>
-/* Reuse area page styles from Foristell */
+/* Area Page Styles */
 .hero--area {
   background: linear-gradient(135deg, var(--color-primary) 0%, rgba(0,0,0,0.85) 100%);
   padding: calc(var(--nav-height) + 60px) 0 80px;
@@ -261,7 +232,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 .btn-group {
   display: flex;
   gap: 16px;
-  justify-center: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -289,176 +260,165 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 .service-item a { color: inherit; text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: 3px; }
 .service-item a:hover { color: var(--color-accent); }
 .prose a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* v8 2026-10-09: at-a-glance table, process list, lead-service list (token-only) */
+.area-article h2 { text-wrap: balance; }
+.area-glance { width: 100%; border-collapse: collapse; margin-top: var(--space-4); font-size: var(--fs-small); background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius); overflow: hidden; }
+.area-glance caption { text-align: left; font-family: var(--font-heading); font-weight: 700; padding-bottom: var(--space-2); color: var(--color-primary); }
+.area-glance th, .area-glance td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-line); vertical-align: top; }
+.area-glance th { width: 42%; font-weight: 600; color: var(--color-muted); }
+.area-glance tr:last-child th, .area-glance tr:last-child td { border-bottom: 0; }
+.area-source { margin-top: var(--space-2); font-size: var(--fs-small); color: var(--color-muted); }
+.area-leads { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-6); padding: 0; }
+.area-leads li { padding: var(--space-5); border: 1px solid rgba(var(--color-secondary-rgb), .14); border-radius: var(--radius); background: rgba(var(--color-secondary-rgb), .05); }
+.area-answer { max-width: 760px; font-size: var(--fs-lead); line-height: 1.65; color: rgba(var(--color-secondary-rgb), .88); }
+.area-leads h3 { font-size: var(--fs-h3); margin-bottom: var(--space-2); color: var(--color-white); }
+.area-leads h3 a { color: inherit; text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: 3px; }
+.area-leads p { line-height: 1.6; }
+.area-leads p a { color: var(--color-accent); text-decoration: underline; }
+.area-more { margin-top: var(--space-6); }
+.area-more a { color: var(--color-accent); text-decoration: underline; }
+.area-steps { margin: var(--space-5) 0 0; padding-left: 1.25em; display: grid; gap: var(--space-3); line-height: 1.65; }
+.area-steps li::marker { font-weight: 700; color: var(--color-primary); }
+.section-alt { background: var(--color-bg-alt); padding: 80px 0; }
+.area-narrow { max-width: 820px; }
+.cta-band .area-near { margin-top: var(--space-5); font-size: var(--fs-small); }
+.cta-band .area-near a { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 900px) { .area-leads { grid-template-columns: 1fr; } .section-alt { padding: 60px 0; } }
 </style>
 
-<!-- Hero Section -->
+<article class="area-article">
+
+<!-- Hero -->
 <section class="hero--area">
   <div class="container">
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a>
-      <span class="breadcrumb-sep" aria-hidden="true">/</span>
-      <a href="/service-areas/">Service Areas</a>
-      <span class="breadcrumb-sep" aria-hidden="true">/</span>
-      <span>Jonesburg</span>
-    </nav>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <a href="/service-areas/">Service Areas</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span>Jonesburg</span>
+        </nav>
 
-    <div class="eyebrow">Montgomery County Communities</div>
-    <h1>Roofing & Siding in <span class="text-accent">Jonesburg, Missouri</span></h1>
-    <p class="hero-answer">
-      A&S Contracting Services is a licensed Missouri general contractor serving Jonesburg homeowners with
-      professional roofing, siding, gutters, and renovation work—all self-performed by our own crews.
-      Located 25 minutes east in Warrenton, we serve Montgomery and Warren County properties with consistent
-      quality and transparent pricing.
-    </p>
+        <div class="eyebrow">Montgomery County &middot; I-70 Exit 183</div>
+        <h1>Roofing &amp; Exterior Contractor in <span class="text-accent">Jonesburg, MO</span></h1>
+        <p class="hero-answer">A&amp;S Contracting Services is a licensed and insured general contractor from Warrenton that serves Jonesburg in eastern Montgomery County. The A&amp;S crew installs shingle and metal roofs, gutters and siding on Jonesburg houses, shops and outbuildings.</p>
 
-    <div class="hero-chips">
-      <div class="hero-chip">
-        <?php echo icon('map-pin', 16); ?>
-        25 Min from Warrenton
-      </div>
-      <div class="hero-chip">
-        <?php echo icon('shield-check', 16); ?>
-        Licensed MO Contractor
-      </div>
-      <div class="hero-chip">
-        <?php echo icon('users', 16); ?>
-        No Subcontractors
-      </div>
-    </div>
+        <ul class="hero-chips">
+          <li class="hero-chip"><?php echo icon('map-pin', 16); ?> Jonesburg, 63351</li>
+          <li class="hero-chip"><?php echo icon('route', 16); ?> I-70 Exit 183</li>
+          <li class="hero-chip"><?php echo icon('wind', 16); ?> 889 ft ridge-top site</li>
+        </ul>
 
-    <div class="btn-group">
-      <a href="/contact/" class="btn-primary">Get Free Estimate</a>
-      <a href="tel:<?php echo $phoneTel; ?>" class="btn-secondary">
-        <?php echo icon('phone', 20); ?>
-        <?php echo $phone; ?>
-      </a>
-    </div>
-  
+        <div class="btn-group">
+          <a href="/contact/" class="btn-primary" data-open-estimate>Request an estimate</a>
+          <a href="tel:<?php echo $phoneTel; ?>" class="btn-secondary">
+            <?php echo icon('phone', 20); ?>
+            <?php echo $phone; ?>
+          </a>
+        </div>
       </div>
-      <?php $heroFormTitle = 'Free estimate in Jonesburg'; $heroFormId = 'hero'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
+      <?php $heroFormTitle = 'Estimate for a Jonesburg address'; $heroFormId = 'hero'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
     </div>
   </div>
 </section>
 
-<!-- Why Jonesburg Homeowners Choose Us -->
+<!-- The place -->
 <section class="section-light">
   <div class="container">
     <div class="split-grid">
       <div class="prose">
-        <h2 class="section-title">Serving Jonesburg Since 2023</h2>
-        <p>
-          <strong>A&S Contracting Services is a licensed and insured general contractor based in Warrenton, Missouri,</strong>
-          providing Jonesburg and eastern Montgomery County with self-performed roofing, siding, gutters, drywall,
-          windows, and full-scale renovations—no subcontractors, one accountable crew from start to finish.
-        </p>
-        <p>
-          Jonesburg sits at <strong>889 feet elevation</strong>—the highest point among the communities we serve—in
-          <strong>USDA Zone 6b-7a</strong> with winter lows between -5°F and 5°F. That elevation brings slightly cooler
-          nighttime temperatures and more frequent freeze-thaw cycles during Missouri's unpredictable spring and fall
-          shoulder seasons, which stress roofing materials, crack siding joints, and overwhelm undersized gutters during
-          ice-melt runoff.
-        </p>
-        <p>
-          We account for those conditions in every estimate. Roof underlayment choices, attic ventilation specs, and
-          gutter sizing aren't one-size-fits-all—we adjust recommendations based on your property's exposure, pitch,
-          and the local climate patterns we see across Warren and Montgomery counties.
-        </p>
+        <h2 class="section-title">Does A&amp;S Contracting Services come out to Jonesburg?</h2>
+        <p>A&amp;S Contracting Services comes out to Jonesburg, which is west of Warrenton on Interstate 70 at Exit 183. Jonesburg is the western edge of the towns A&amp;S names in its service area and is in Montgomery County, the county next to Warren.</p>
+          <p>Jonesburg was platted in 1858 and named for James Jones, an early resident; the post office opened as &ldquo;Jonesburgh&rdquo; in 1868. The 2020 census counted 726 people. It is a small town with farm and acreage properties around it, so a job here is as likely to include a machine shed or a shop as a house.</p>
+          <p>The setting is unusual for this part of Missouri. Jonesburg lies on a wide ridge at about 889 feet, the highest of the towns A&amp;S serves and some 60 feet above Warrenton. Water on the north side drains to Little Bear Creek and the Cuivre River; on the south side it drains to Bear Creek and the Loutre River. A building on a ridge has less shelter from wind than one in a valley, and that shapes how a roof should be fastened and edged.</p>
       </div>
-      <div class="prose">
-        <h3>Jonesburg's Historic Character & Modern Needs</h3>
-        <p>
-          Founded in 1858 and named after pioneer citizen <strong>James Jones</strong>, Jonesburg retains a small-town
-          character (population 726 as of 2020) with a mix of historic homes and modern construction. Properties here
-          range from century-old farmhouses requiring careful historical matching to newer builds needing energy-efficient
-          upgrades and storm-damage repairs.
-        </p>
-        <p>
-          Our crews have worked on both. We've replaced missing shingles on 1920s homes without tearing off serviceable
-          layers, matched original lap siding profiles on Victorian-era exteriors, and executed full roof-to-foundation
-          renovations on ranch-style properties near I-70 Exit 183.
-        </p>
-        <p>
-          Every project starts with a site visit and written estimate—line-item pricing, material specs, realistic
-          timelines. No pressure, no upselling. If insurance is involved, we document everything your adjuster needs.
-          Call <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a> or
-          <a href="/contact/">request a free estimate online</a>.
-        </p>
-      </div>
+      <aside aria-label="Jonesburg at a glance">
+        <table class="area-glance">
+          <caption>Jonesburg, Missouri at a glance</caption>
+          <tbody>
+            <tr><th scope="row">County</th><td>Montgomery County</td></tr>
+            <tr><th scope="row">ZIP code</th><td>63351</td></tr>
+            <tr><th scope="row">Main roads</th><td>Interstate 70 / U.S. 40 (Exit 183)</td></tr>
+            <tr><th scope="row">Elevation</th><td>about 889 ft</td></tr>
+            <tr><th scope="row">Population (2020)</th><td>726</td></tr>
+            <tr><th scope="row">Housing units</th><td>325 (2010 census)</td></tr>
+          </tbody>
+        </table>
+        <p class="area-source">Figures: U.S. Census Bureau and USGS data as published in the Jonesburg entry on Wikipedia.</p>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- Services in Jonesburg -->
+<!-- The work -->
 <section class="section-dark">
   <div class="container">
-    <h2 class="section-title">Complete Contracting Services in Jonesburg</h2>
-    <p class="section-subtitle">
-      Roofing, siding, gutters, drywall, windows, and full-scale renovations—every trade performed by licensed
-      A&S crews, never subcontracted.
-    </p>
+    <h2 class="section-title">What does A&amp;S install and repair around Jonesburg?</h2>
+    <p class="area-answer">A&amp;S Contracting Services installs and repairs roofs, gutters, siding, soffit and fascia around Jonesburg, and takes on general contracting for larger projects. Metal roofing is on the list alongside shingles, which suits a property with both a house and working buildings.</p>
+    <ul class="area-leads">
+        <li>
+          <h3><a href="/services/roofing/">Metal and shingle roofing</a></h3>
+          <p>Metal roofing for houses, shops and outbuildings, and architectural or impact-resistant asphalt shingles for homes. Storm damage is photographed and itemized for your insurer.</p>
+        </li>
+        <li>
+          <h3><a href="/services/gutters/">Gutter systems</a></h3>
+          <p>Seamless aluminum gutters installed, repaired and cleaned, with downspouts placed to suit which way the lot drains off the ridge.</p>
+        </li>
+        <li>
+          <h3><a href="/services/general-contracting/">General contracting</a></h3>
+          <p>Residential and commercial projects managed from planning to completion, with A&amp;S doing the work itself.</p>
+        </li>
+    </ul>
+    <p class="area-more">The full list, from soffit to drywall, is on the <a href="/services/">A&amp;S services page</a>.</p>
+  </div>
+</section>
 
-    <div class="services-list">
-      <div class="service-item">
-        <?php echo icon('home', 24); ?>
-        <span><strong><a href="/services/roofing/">Roofing</a>:</strong> Shingle, metal, flat—new installs, tearoffs, repairs</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('layers', 24); ?>
-        <span><strong><a href="/services/siding/">Siding</a>:</strong> Vinyl, fiber cement, wood—replacement and repair</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('droplets', 24); ?>
-        <span><strong><a href="/services/gutters/">Gutters</a>:</strong> Seamless systems, guards, proper slope and drainage</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('wind', 24); ?>
-        <span><strong><a href="/services/soffit/">Soffit</a> &amp; <a href="/services/fascia/">Fascia</a>:</strong> Ventilation upgrades, rot replacement</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('ruler', 24); ?>
-        <span><strong><a href="/services/windows-doors/">Windows & Doors</a>:</strong> Energy-efficient replacements, trim finishing</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('paint-bucket', 24); ?>
-        <span><strong><a href="/services/dry-wall/">Drywall</a>:</strong> Hanging, taping, finishing, texture work</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('hammer', 24); ?>
-        <span><strong><a href="/services/full-scale-interior-work/">Interior Renovations</a>:</strong> Room additions, remodels, finish carpentry</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('wrench', 24); ?>
-        <span><strong><a href="/services/roofing/#hail-claims">Storm Damage Repair</a>:</strong> Insurance claims, documentation, full restoration</span>
-      </div>
-    </div>
-
-    <div style="margin-top: 48px; text-align: center;">
-      <p style="font-size: 1.125rem; margin-bottom: 24px;">
-        <a href="/services/" style="color: var(--color-accent); text-decoration: underline;">View all services</a>
-        or call <a href="tel:<?php echo $phoneTel; ?>" style="color: var(--color-accent); text-decoration: underline;"><?php echo $phone; ?></a>
-        to discuss your project.
-      </p>
+<!-- Local question -->
+<section class="section-light">
+  <div class="container area-narrow">
+    <div class="prose">
+      <h2 class="section-title">Does a ridge-top house in Jonesburg need a different roof?</h2>
+      <p>A ridge-top house in Jonesburg does not need a different kind of roof, but it does need one installed with wind in mind. A&amp;S Contracting Services offers impact-resistant shingles and metal roofing, and the estimate visit looks closely at the edges and ridges where wind gets under a roof first.</p>
+      <p>Exposure is the thing to describe when you call. A house with open fields to the west takes weather differently from one behind a tree line, and the same goes for a shed roof with open sides. A&amp;S writes the material, the scope and the start window into the estimate, so you can compare a shingle price and a metal price for the same building side by side.</p>
     </div>
   </div>
 </section>
+
+<!-- Estimate process -->
+<section class="section-alt">
+  <div class="container area-narrow">
+    <div class="prose">
+      <h2 class="section-title">How does an A&amp;S estimate work at a Jonesburg address?</h2>
+      <p>An A&amp;S estimate at a Jonesburg address is an on-site visit followed by a written, itemized price, and both are free with no obligation. For a Jonesburg address, list every building you want looked at so one visit covers the whole property. The price depends on square footage, the materials you choose, the condition of what is there now and the scope.</p>
+      <ol class="area-steps">
+        <li><strong>Call or send the form.</strong> Reach Blake Alger at <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a> or use the <a href="/contact/">estimate request form</a>. Visits are scheduled within days of first contact.</li>
+        <li><strong>On-site visit.</strong> A&amp;S measures, looks at the existing structure and talks through materials with you at the property.</li>
+        <li><strong>Written estimate.</strong> You receive an itemized scope and price. The quoted price is the final price, with the start window and timeline in writing.</li>
+        <li><strong>The work.</strong> The A&amp;S crew does the job itself, start to finish, and cleans the site every day.</li>
+        <li><strong>Final walkthrough.</strong> You walk the finished work with A&amp;S before the job is closed.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+</article>
 
 <!-- Final CTA -->
 <section class="cta-band">
   <div class="container">
-    <h2>Get a Free Estimate in Jonesburg</h2>
-    <p>
-      No-obligation site visit and written quote for all roofing, siding, and renovation projects.
-      We'll assess the work, explain your options, and provide transparent pricing.
-    </p>
+    <h2>Ready for a written estimate in Jonesburg?</h2>
+    <p>Tell A&amp;S Contracting Services what the building needs and where it is. Hours are <?php echo htmlspecialchars($businessHours); ?>.</p>
     <div class="btn-group">
-      <a href="/contact/" class="btn-primary">Request Estimate</a>
+      <a href="/contact/" class="btn-primary">Request an estimate</a>
       <a href="tel:<?php echo $phoneTel; ?>" class="btn-secondary">
         <?php echo icon('phone', 20); ?>
-        <?php echo $phone; ?>
+        Call <?php echo $phone; ?>
       </a>
     </div>
+    <p class="area-near">Nearby: <a href="/areas/warrenton/">Warrenton</a>, <a href="/areas/wright-city/">Wright City</a>, <a href="/areas/troy/">Troy</a>. See <a href="/service-areas/">every town A&amp;S serves</a>.</p>
   </div>
 </section>
 

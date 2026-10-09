@@ -3,7 +3,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 
 $pageTitle = 'Areas We Serve Near Warrenton, MO';
-$pageDescription = 'Roofing, siding & remodeling within 50 miles of Warrenton, MO—Wright City, Wentzville, Foristell & Troy. Licensed & insured. Free estimate: (636) 359-7204.';
+$pageType = 'other';
+$pageDescription = 'A&S Contracting Services works within 50 miles of Warrenton, MO: Wright City, Foristell, Wentzville, Troy, Jonesburg and Washington. Check your ZIP code here.';
 $canonicalUrl = $siteUrl . '/service-areas/';
 $currentPage = 'service-areas';
 
@@ -30,6 +31,17 @@ $schema = <<<SCHEMA
 }
 </script>
 SCHEMA;
+
+// One true, different line per town (facts: Wikipedia city articles, fetched 2026-10-09; see each area page header).
+$areaBlurbs = [
+    'warrenton'   => 'The Warren County seat and the A&S base, on Interstate 70 at State Route 47. The crew starts its day here, and owner Blake Alger takes estimate calls at the Warrenton number.',
+    'wright-city' => 'The next Warren County town east of Warrenton, at Interstate 70 mile marker 200. A&S takes houses and commercial buildings here, including roofing, siding and drywall.',
+    'foristell'   => 'A city of 550 on the St. Charles and Warren county line, with Peruque Creek on its south side. A&S works on both sides of the county line.',
+    'wentzville'  => 'The largest community A&S serves: 44,372 residents in western St. Charles County. Its population grew 52.6 percent from 2010 to 2020, so much of its housing is of a similar age.',
+    'troy'        => 'The Lincoln County seat, north of Warrenton on State Route 47. A town platted in 1819, with a National Register downtown district alongside much newer housing.',
+    'washington'  => 'A Franklin County river town south of the Missouri, reached over the Route 47 bridge. With 445 buildings on the National Register, matching siding and trim matters here.',
+    'jonesburg'   => 'A ridge-top town in eastern Montgomery County at Interstate 70 Exit 183, about 889 feet up. Metal and impact-resistant shingle roofing fit its exposed sites.',
+];
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
@@ -327,6 +339,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     gap: 16px;
   }
 }
+
+.areas-intro { max-width: 820px; margin: var(--space-3xl) auto var(--space-xl); text-align: center; }
+.areas-intro h2 { text-wrap: balance; margin-bottom: var(--space-md); }
+.areas-intro p { line-height: 1.7; color: var(--color-text-light); }
 </style>
 
 <!-- Hero Section -->
@@ -339,13 +355,23 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     </nav>
 
     <div class="eyebrow">Where We Work</div>
-    <h1>General Contracting Services in <span class="text-accent">Warrenton &amp; Surrounding Communities</span></h1>
+    <h1>Service Areas: <span class="text-accent">Warrenton, MO</span> and 50 Miles Around It</h1>
     <p class="hero-answer">
-      A&S Contracting Services brings licensed, self-performed roofing, siding, gutters, and full-scale renovations
-      to homeowners across Warren County and central Missouri — no subcontractors, no trade gaps, one accountable
-      team from start to finish.
+      A&amp;S Contracting Services is a licensed and insured general contractor based in Warrenton, Missouri. The A&amp;S crew
+      travels up to 50 miles for roofing, siding, gutters, windows and remodeling, and the seven towns below each have their own page.
     </p>
   </div>
+</section>
+
+<?php
+// v8: "Do you serve my address?" checker, matched against $serviceAreas / $serviceZips from config.php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/zip-check.php';
+echo p1_zip_check(['heading' => 'Does A&S serve my address?']);
+?>
+
+<section class="container areas-intro">
+  <h2>Which towns does A&amp;S Contracting Services serve?</h2>
+  <p>A&amp;S Contracting Services serves Warrenton, Wright City, Foristell, Wentzville, Troy, Washington and Jonesburg, plus rural addresses between them. Those seven towns sit in five counties (Warren, St. Charles, Lincoln, Franklin and Montgomery), linked to Warrenton by Interstate 70 and State Route 47.</p>
 </section>
 
 <!-- Service Areas Grid -->
@@ -370,12 +396,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="area-card__state">Our Home Base · <?php echo $primaryArea['state']; ?></div>
     </div>
     <div class="area-card__body">
-      <p class="area-card__desc">
-        Based right here in Warrenton, A&S Contracting Services is your local licensed general contractor.
-        We self-perform roofing, siding, gutters, drywall, windows, and full-scale renovations across Warren
-        County — no subcontractors, same crew start to finish. As Warrenton residents ourselves, we understand
-        Missouri weather conditions, local building requirements, and the standards homeowners expect.
-      </p>
+      <p class="area-card__desc"><?php echo htmlspecialchars($areaBlurbs['warrenton']); ?></p>
       <?php
       $warrentonSlug = getAreaSlug($primaryArea['city']);
       $warrentonPath = '/areas/' . $warrentonSlug . '/';
@@ -383,7 +404,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       ?>
       <?php if ($warrentonExists): ?>
       <a href="<?php echo $warrentonPath; ?>" class="area-card__cta">
-        Learn More <?php echo icon('arrow-right', 18); ?>
+        General contractor in Warrenton <?php echo icon('arrow-right', 18); ?>
       </a>
       <?php endif; ?>
     </div>
@@ -401,13 +422,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="area-card__state"><?php echo $area['state']; ?></div>
     </div>
     <div class="area-card__body">
-      <p class="area-card__desc">
-        Professional roofing, siding, gutters, and full-scale renovations serving <?php echo htmlspecialchars($area['city']); ?>
-        homeowners. Licensed Missouri general contractor with self-performed work — no subcontractors.
-      </p>
+      <p class="area-card__desc"><?php echo htmlspecialchars($areaBlurbs[$areaSlug] ?? ''); ?></p>
       <?php if ($areaExists): ?>
       <a href="<?php echo $areaPath; ?>" class="area-card__cta">
-        Learn More <?php echo icon('arrow-right', 18); ?>
+        A&amp;S in <?php echo htmlspecialchars($area['city']); ?>, <?php echo $area['state']; ?> <?php echo icon('arrow-right', 18); ?>
       </a>
       <?php endif; ?>
     </div>
@@ -421,11 +439,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   <div class="container">
     <div class="text-center">
       <div class="eyebrow">Coverage Area</div>
-      <h2>50-Mile Service Radius from Warrenton</h2>
+      <h2>How far from Warrenton will A&amp;S travel?</h2>
       <p class="hero-answer" style="max-width: 700px; margin: 16px auto 0;">
-        A&S Contracting Services serves residential and commercial clients within a 50-mile radius of Warrenton, MO.
-        We're close enough to respond quickly, large enough to handle projects of any size, and small enough to
-        deliver personal attention to every job.
+        A&amp;S Contracting Services travels up to 50 miles from Warrenton, MO for residential and commercial work. If your address is not in one of the seven towns listed, call
+        <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a> and ask; the same <a href="/services/">list of roofing, exterior and interior services</a> applies across the whole radius.
       </p>
     </div>
 
@@ -435,12 +452,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <div class="coverage-stat__label">Mile Service Radius</div>
       </div>
       <div class="coverage-stat">
-        <div class="coverage-stat__number">7+</div>
-        <div class="coverage-stat__label">Communities Served</div>
+        <div class="coverage-stat__number">7</div>
+        <div class="coverage-stat__label">Towns With Their Own Page</div>
       </div>
       <div class="coverage-stat">
-        <div class="coverage-stat__number">100%</div>
-        <div class="coverage-stat__label">Self-Performed Work</div>
+        <div class="coverage-stat__number">5</div>
+        <div class="coverage-stat__label">Counties Reached</div>
       </div>
     </div>
   </div>
@@ -449,10 +466,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <!-- CTA Section -->
 <section class="cta-band">
   <div class="container">
-    <h2>Ready to Get Started?</h2>
-    <p>Get a free estimate on your roofing, siding, or renovation project — no obligation, no pressure.</p>
+    <h2>Ready for a written estimate?</h2>
+    <p>The on-site visit and the written, itemized estimate are free, with no obligation. Visits are scheduled within days of first contact.</p>
     <div class="btn-group">
-      <a href="/contact/" class="btn-primary">Get Free Estimate</a>
+      <a href="/contact/" class="btn-primary">Request an estimate</a>
       <a href="tel:<?php echo $phoneTel; ?>" class="btn-secondary">
         <?php echo icon('phone', 20); ?>
         <?php echo $phone; ?>

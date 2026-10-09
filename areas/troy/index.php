@@ -1,21 +1,9 @@
 <?php
 /**
- * Troy, MO Service Area Page
+ * Troy, MO service area page (v8 rewrite, 2026-10-09)
  *
- * Research sources:
- * - https://en.wikipedia.org/wiki/Troy,_Missouri
- * - https://en.wikipedia.org/wiki/National_Register_of_Historic_Places_listings_in_Lincoln_County,_Missouri
- * - https://cityoftroymissouri.com/
- *
- * Verified local details:
- * - Elevation: 515 ft (157 m) per Wikipedia (South Troy: 623 ft shows range exists)
- * - County seat of Lincoln County
- * - Cuivre River State Park 3 miles northeast
- * - Fort Cap au Gris (War of 1812 fortification, built 1814)
- * - Downtown Troy Historic District (Annie Ave, 2nd, Marble & Court Sts)
- * - Historic Main Street district
- * - Population and area not specified in search results
- * - USDA Zone: 6b-7a (regional estimate, eastern Missouri)
+ * Local facts source: https://en.wikipedia.org/wiki/Troy,_Missouri (fetched 2026-10-09; census figures as cited there).
+ * Company facts: includes/config.php and llms.txt only. No drive times, review counts or past-job claims.
  */
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
@@ -24,11 +12,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageType = 'city';
 $citySlug = 'troy';
 $pageTitle = 'Troy, MO Roofing, Siding & Remodeling Contractor';
-$pageDescription = 'Roofing, siding & remodeling in Troy, MO and Lincoln County from A&S Contracting Services of Warrenton. Licensed & insured. Free estimate: call (636) 359-7204.';
+$pageDescription = 'Roofing, soffit, fascia, siding and remodeling in Troy, MO 63379 from A&S Contracting Services, up Route 47 from Warrenton. Written estimate: (636) 359-7204.';
 $canonicalUrl = $siteUrl . '/areas/troy/';
 $currentPage = 'service-areas';
 
-// Schema: BreadcrumbList + LocalBusiness with areaServed
+// Schema: BreadcrumbList + organization reference with areaServed
 $schema = <<<SCHEMA
 <script type="application/ld+json">
 {
@@ -37,24 +25,9 @@ $schema = <<<SCHEMA
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "{$siteUrl}/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Service Areas",
-          "item": "{$siteUrl}/service-areas/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Troy, MO",
-          "item": "{$canonicalUrl}"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{$siteUrl}/" },
+        { "@type": "ListItem", "position": 2, "name": "Service Areas", "item": "{$siteUrl}/service-areas/" },
+        { "@type": "ListItem", "position": 3, "name": "Troy, MO", "item": "{$canonicalUrl}" }
       ]
     },
     {
@@ -64,10 +37,7 @@ $schema = <<<SCHEMA
       "areaServed": {
         "@type": "City",
         "name": "Troy",
-        "containedIn": {
-          "@type": "State",
-          "name": "Missouri"
-        }
+        "containedInPlace": { "@type": "State", "name": "Missouri" }
       }
     }
   ]
@@ -80,7 +50,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
 <style>
-/* Area page styles */
+/* Area Page Styles */
 .hero--area {
   background: linear-gradient(135deg, var(--color-primary) 0%, rgba(0,0,0,0.85) 100%);
   padding: calc(var(--nav-height) + 60px) 0 80px;
@@ -290,174 +260,165 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 .service-item a { color: inherit; text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: 3px; }
 .service-item a:hover { color: var(--color-accent); }
 .prose a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* v8 2026-10-09: at-a-glance table, process list, lead-service list (token-only) */
+.area-article h2 { text-wrap: balance; }
+.area-glance { width: 100%; border-collapse: collapse; margin-top: var(--space-4); font-size: var(--fs-small); background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius); overflow: hidden; }
+.area-glance caption { text-align: left; font-family: var(--font-heading); font-weight: 700; padding-bottom: var(--space-2); color: var(--color-primary); }
+.area-glance th, .area-glance td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-line); vertical-align: top; }
+.area-glance th { width: 42%; font-weight: 600; color: var(--color-muted); }
+.area-glance tr:last-child th, .area-glance tr:last-child td { border-bottom: 0; }
+.area-source { margin-top: var(--space-2); font-size: var(--fs-small); color: var(--color-muted); }
+.area-leads { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-6); padding: 0; }
+.area-leads li { padding: var(--space-5); border: 1px solid rgba(var(--color-secondary-rgb), .14); border-radius: var(--radius); background: rgba(var(--color-secondary-rgb), .05); }
+.area-answer { max-width: 760px; font-size: var(--fs-lead); line-height: 1.65; color: rgba(var(--color-secondary-rgb), .88); }
+.area-leads h3 { font-size: var(--fs-h3); margin-bottom: var(--space-2); color: var(--color-white); }
+.area-leads h3 a { color: inherit; text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: 3px; }
+.area-leads p { line-height: 1.6; }
+.area-leads p a { color: var(--color-accent); text-decoration: underline; }
+.area-more { margin-top: var(--space-6); }
+.area-more a { color: var(--color-accent); text-decoration: underline; }
+.area-steps { margin: var(--space-5) 0 0; padding-left: 1.25em; display: grid; gap: var(--space-3); line-height: 1.65; }
+.area-steps li::marker { font-weight: 700; color: var(--color-primary); }
+.section-alt { background: var(--color-bg-alt); padding: 80px 0; }
+.area-narrow { max-width: 820px; }
+.cta-band .area-near { margin-top: var(--space-5); font-size: var(--fs-small); }
+.cta-band .area-near a { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 900px) { .area-leads { grid-template-columns: 1fr; } .section-alt { padding: 60px 0; } }
 </style>
 
-<!-- Hero Section -->
+<article class="area-article">
+
+<!-- Hero -->
 <section class="hero--area">
   <div class="container">
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a>
-      <span class="breadcrumb-sep" aria-hidden="true">/</span>
-      <a href="/service-areas/">Service Areas</a>
-      <span class="breadcrumb-sep" aria-hidden="true">/</span>
-      <span>Troy</span>
-    </nav>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <a href="/service-areas/">Service Areas</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span>Troy</span>
+        </nav>
 
-    <div class="eyebrow">Lincoln County Seat</div>
-    <h1>General Contractor Services in <span class="text-accent">Troy, Missouri</span></h1>
-    <p class="hero-answer">
-      A&S Contracting Services serves Troy—the county seat of Lincoln County—with licensed roofing, siding,
-      gutters, and full-scale renovations. Every project is self-performed by our own crews with no subcontractors,
-      delivering consistent quality from estimate through final inspection.
-    </p>
+        <div class="eyebrow">Lincoln County seat &middot; Route 47</div>
+        <h1>Roofing, Siding &amp; Remodeling Contractor in <span class="text-accent">Troy, MO</span></h1>
+        <p class="hero-answer">A&amp;S Contracting Services is a licensed and insured general contractor from Warrenton that serves Troy, the Lincoln County seat. State Route 47 links the two towns, and the A&amp;S crew brings roofing, siding, roofline carpentry and interior remodeling up it.</p>
 
-    <div class="hero-chips">
-      <div class="hero-chip">
-        <?php echo icon('map-pin', 16); ?>
-        30 Min from Warrenton
-      </div>
-      <div class="hero-chip">
-        <?php echo icon('award', 16); ?>
-        5-Star Rated
-      </div>
-      <div class="hero-chip">
-        <?php echo icon('calendar-check', 16); ?>
-        Free Written Estimates
-      </div>
-    </div>
+        <ul class="hero-chips">
+          <li class="hero-chip"><?php echo icon('map-pin', 16); ?> Troy, 63379</li>
+          <li class="hero-chip"><?php echo icon('route', 16); ?> Route 47 from Warrenton</li>
+          <li class="hero-chip"><?php echo icon('hammer', 16); ?> Roofline and remodel work</li>
+        </ul>
 
-    <div class="btn-group">
-      <a href="/contact/" class="btn-primary">Get Free Estimate</a>
-      <a href="tel:<?php echo $phoneTel; ?>" class="btn-secondary">
-        <?php echo icon('phone', 20); ?>
-        <?php echo $phone; ?>
-      </a>
-    </div>
-  
+        <div class="btn-group">
+          <a href="/contact/" class="btn-primary" data-open-estimate>Request an estimate</a>
+          <a href="tel:<?php echo $phoneTel; ?>" class="btn-secondary">
+            <?php echo icon('phone', 20); ?>
+            <?php echo $phone; ?>
+          </a>
+        </div>
       </div>
-      <?php $heroFormTitle = 'Free estimate in Troy'; $heroFormId = 'hero'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
+      <?php $heroFormTitle = 'Estimate for a Troy address'; $heroFormId = 'hero'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
     </div>
   </div>
 </section>
 
-<!-- Why Troy Homeowners Choose Us -->
+<!-- The place -->
 <section class="section-light">
   <div class="container">
     <div class="split-grid">
       <div class="prose">
-        <h2 class="section-title">Serving Historic Troy & Lincoln County</h2>
-        <p>
-          <strong>A&S Contracting Services is a licensed and insured Missouri general contractor based in Warrenton,</strong>
-          serving Troy and Lincoln County homeowners with professional roofing, siding, gutters, drywall, windows, and
-          full-scale renovations—every trade self-performed by A&S crews, no subcontractors involved.
-        </p>
-        <p>
-          Troy sits at approximately <strong>515–620 feet elevation</strong> (the range reflects variations across the city
-          and surrounding unincorporated areas) in <strong>USDA Zone 6b-7a</strong> with winter lows between -5°F and 5°F.
-          Properties here experience Missouri's full seasonal swing—humid summers stress attic ventilation, ice dams form on
-          north-facing rooflines during winter thaws, and spring storms test gutter capacity and siding seals.
-        </p>
-        <p>
-          We account for those conditions in every estimate. Roof pitch, exposure, and underlayment specs aren't arbitrary—they're
-          matched to your property's orientation and the local climate patterns we see across Lincoln, Warren, and St. Charles counties.
-        </p>
+        <h2 class="section-title">Does A&amp;S Contracting Services travel to Troy?</h2>
+        <p>A&amp;S Contracting Services travels to Troy on State Route 47, which runs from Warrenton to the north side of Troy. Troy is the seat of Lincoln County, one county north of the A&amp;S base, and sits inside the 50-mile radius the company serves.</p>
+          <p>Troy is one of the oldest towns in the service area. It was platted in 1819, its Lincoln County Courthouse dates from 1869&ndash;70, and the Downtown Troy Historic District, listed on the National Register in 2013, takes in 39 contributing buildings. Around that core is a much newer town: 12,686 residents and 4,821 housing units at the 2020 census, with less than four percent of those units vacant.</p>
+          <p>So a Troy job can mean two very different buildings. On an older house the roofline deserves the first look, because wood fascia and soffit have had the longest exposure. On a newer one the question is more likely a roof, a run of siding or an interior remodel. A&amp;S does both kinds of work with one crew.</p>
       </div>
-      <div class="prose">
-        <h3>Historic Character Meets Modern Standards</h3>
-        <p>
-          As the county seat of Lincoln County, Troy features a <strong>historic Main Street district</strong> and the
-          <strong>Downtown Troy Historic District</strong> (bounded by Annie Avenue, 2nd, Marble, and Court Streets), with
-          properties ranging from Victorian-era homes requiring period-appropriate materials to modern subdivisions needing
-          energy-efficient upgrades.
-        </p>
-        <p>
-          Nearby <strong>Cuivre River State Park</strong>—one of Missouri's largest state parks, located three miles northeast
-          across the Cuivre River valley—brings outdoor recreation close to home, but also means properties in that corridor
-          face windborne debris during storms and higher humidity from the river valley.
-        </p>
-        <p>
-          Our crews work across that range. We've matched slate and wood shingle profiles on historic homes, replaced hail-damaged
-          roofs on ranch properties, and executed full exterior renovations on properties near <strong>Fort Cap au Gris</strong>
-          (the War of 1812 fortification built in 1814).
-        </p>
-        <p>
-          Call <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a> or
-          <a href="/contact/">request a free estimate online</a>—we'll visit your property within 48 hours.
-        </p>
-      </div>
+      <aside aria-label="Troy at a glance">
+        <table class="area-glance">
+          <caption>Troy, Missouri at a glance</caption>
+          <tbody>
+            <tr><th scope="row">County</th><td>Lincoln County (county seat)</td></tr>
+            <tr><th scope="row">ZIP code</th><td>63379</td></tr>
+            <tr><th scope="row">Main roads</th><td>U.S. Route 61, State Route 47</td></tr>
+            <tr><th scope="row">Elevation</th><td>about 515 ft</td></tr>
+            <tr><th scope="row">Population (2020)</th><td>12,686</td></tr>
+            <tr><th scope="row">Housing units</th><td>4,821 (2020 census)</td></tr>
+          </tbody>
+        </table>
+        <p class="area-source">Figures: U.S. Census Bureau and USGS data as published in the Troy entry on Wikipedia.</p>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- Services in Troy -->
+<!-- The work -->
 <section class="section-dark">
   <div class="container">
-    <h2 class="section-title">Complete General Contracting in Troy</h2>
-    <p class="section-subtitle">
-      Roofing, siding, gutters, windows, drywall, and full renovations—all performed by licensed A&S crews, never subcontracted.
-    </p>
+    <h2 class="section-title">What kinds of projects does A&amp;S take in Troy?</h2>
+    <p class="area-answer">A&amp;S Contracting Services takes roofing, soffit and fascia, siding, gutter, window, drywall and remodeling projects in Troy. The three below are the ones that fit the town&rsquo;s mix of century-old buildings near the courthouse and recent houses toward U.S. 61.</p>
+    <ul class="area-leads">
+        <li>
+          <h3><a href="/services/fascia/">Fascia board replacement</a></h3>
+          <p>Rotted or split boards along the roof edge cut out and replaced with a matched finish, so the gutters have something sound to hang from.</p>
+        </li>
+        <li>
+          <h3><a href="/services/soffit/">Soffit repair and replacement</a></h3>
+          <p>Soffit under the eaves repaired or replaced to keep air moving into the attic and keep pests and moisture out, matched to the existing roofline.</p>
+        </li>
+        <li>
+          <h3><a href="/services/full-scale-interior-work/">Interior remodeling</a></h3>
+          <p>Remodels and room additions carried through drywall, flooring, trim and paint under one contract.</p>
+        </li>
+    </ul>
+    <p class="area-more">The full list, from soffit to drywall, is on the <a href="/services/">A&amp;S services page</a>.</p>
+  </div>
+</section>
 
-    <div class="services-list">
-      <div class="service-item">
-        <?php echo icon('home', 24); ?>
-        <span><strong><a href="/services/roofing/">Roofing</a>:</strong> Shingle, metal, flat—installs, repairs, storm damage</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('layers', 24); ?>
-        <span><strong><a href="/services/siding/">Siding</a>:</strong> Vinyl, fiber cement, wood—full replacement or repair</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('droplets', 24); ?>
-        <span><strong><a href="/services/gutters/">Gutters</a>:</strong> Seamless aluminum, guards, proper drainage systems</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('wind', 24); ?>
-        <span><strong><a href="/services/soffit/">Soffit</a> &amp; <a href="/services/fascia/">Fascia</a>:</strong> Ventilation, rot repair, historical matching</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('ruler', 24); ?>
-        <span><strong><a href="/services/windows-doors/">Windows & Doors</a>:</strong> Energy-efficient upgrades, trim work</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('paint-bucket', 24); ?>
-        <span><strong><a href="/services/dry-wall/">Drywall</a>:</strong> Hanging, finishing, repair, texture matching</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('hammer', 24); ?>
-        <span><strong><a href="/services/full-scale-interior-work/">Interior Renovations</a>:</strong> Room additions, remodels, finish work</span>
-      </div>
-      <div class="service-item">
-        <?php echo icon('wrench', 24); ?>
-        <span><strong><a href="/services/roofing/#hail-claims">Storm Damage</a>:</strong> Insurance documentation, full restoration</span>
-      </div>
-    </div>
-
-    <div style="margin-top: 48px; text-align: center;">
-      <p style="font-size: 1.125rem; margin-bottom: 24px;">
-        <a href="/services/" style="color: var(--color-accent); text-decoration: underline;">See all services</a>
-        or call <a href="tel:<?php echo $phoneTel; ?>" style="color: var(--color-accent); text-decoration: underline;"><?php echo $phone; ?></a>
-        to discuss your project.
-      </p>
+<!-- Local question -->
+<section class="section-light">
+  <div class="container area-narrow">
+    <div class="prose">
+      <h2 class="section-title">Is an older Troy house handled differently from a newer one?</h2>
+      <p>An older Troy house is handled differently because the estimate has to find out what is under the surface. A&amp;S Contracting Services prices from the condition of the existing structure, so on an old roofline the visit checks the boards and framing, not only the visible finish.</p>
+      <p>Troy is also the lowest town A&amp;S serves, at about 515 feet against Warrenton&rsquo;s 827, with the Cuivre River two miles to the east and Whitcomb Branch and other creeks running through town. Low ground near water stays damp longer, and damp is what rots a fascia board from the back. If your property is in the historic district, check with the City of Troy on any exterior review before materials are ordered.</p>
     </div>
   </div>
 </section>
+
+<!-- Estimate process -->
+<section class="section-alt">
+  <div class="container area-narrow">
+    <div class="prose">
+      <h2 class="section-title">How does an A&amp;S estimate work at a Troy address?</h2>
+      <p>An A&amp;S estimate at a Troy address is an on-site visit followed by a written, itemized price, and both are free with no obligation. For a Troy address, mention the age of the house when you call; it tells A&amp;S how much time to allow for looking behind the trim. The price depends on square footage, the materials you choose, the condition of what is there now and the scope.</p>
+      <ol class="area-steps">
+        <li><strong>Call or send the form.</strong> Reach Blake Alger at <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a> or use the <a href="/contact/">estimate request form</a>. Visits are scheduled within days of first contact.</li>
+        <li><strong>On-site visit.</strong> A&amp;S measures, looks at the existing structure and talks through materials with you at the property.</li>
+        <li><strong>Written estimate.</strong> You receive an itemized scope and price. The quoted price is the final price, with the start window and timeline in writing.</li>
+        <li><strong>The work.</strong> The A&amp;S crew does the job itself, start to finish, and cleans the site every day.</li>
+        <li><strong>Final walkthrough.</strong> You walk the finished work with A&amp;S before the job is closed.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+</article>
 
 <!-- Final CTA -->
 <section class="cta-band">
   <div class="container">
-    <h2>Ready to Start Your Troy Project?</h2>
-    <p>
-      Free site visit and written estimate for all roofing, siding, and renovation work—no obligation, transparent pricing.
-    </p>
+    <h2>Ready for a written estimate in Troy?</h2>
+    <p>Tell A&amp;S Contracting Services what the building needs and where it is. Hours are <?php echo htmlspecialchars($businessHours); ?>.</p>
     <div class="btn-group">
-      <a href="/contact/" class="btn-primary">Request Free Estimate</a>
+      <a href="/contact/" class="btn-primary">Request an estimate</a>
       <a href="tel:<?php echo $phoneTel; ?>" class="btn-secondary">
         <?php echo icon('phone', 20); ?>
-        <?php echo $phone; ?>
+        Call <?php echo $phone; ?>
       </a>
     </div>
+    <p class="area-near">Nearby: <a href="/areas/warrenton/">Warrenton</a>, <a href="/areas/wentzville/">Wentzville</a>, <a href="/areas/wright-city/">Wright City</a>. See <a href="/service-areas/">every town A&amp;S serves</a>.</p>
   </div>
 </section>
 
