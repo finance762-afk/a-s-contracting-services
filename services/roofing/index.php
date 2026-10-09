@@ -165,7 +165,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
         <span class="eyebrow">Roofing &middot; Warrenton &amp; Warren County</span>
-        <h1>Roofing company in <span class="text-accent">Warrenton, MO</span> — repair, replacement &amp; hail claims</h1>
+        <h1>Roofing company in <span class="text-accent">Warrenton, MO</span>: repair, replacement &amp; hail claims</h1>
         <p class="hero-answer">A&amp;S Contracting Services is a licensed, fully insured Warrenton general contractor that repairs and replaces roofs with its own crew. The on-site visit and the written estimate are free.</p>
         <div class="hero-actions">
           <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written roofing estimate</a>

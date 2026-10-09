@@ -162,7 +162,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
         <span class="eyebrow">Gutters &middot; Warrenton &amp; Warren County</span>
-        <h1>Seamless gutters in <span class="text-accent">Warrenton, MO</span> — installation, repair &amp; cleaning</h1>
+        <h1>Seamless gutters in <span class="text-accent">Warrenton, MO</span>: installation, repair &amp; cleaning</h1>
         <p class="hero-answer">A&amp;S Contracting Services installs, repairs, replaces and cleans seamless aluminum gutters in Warrenton, MO. A&amp;S is licensed and fully insured, and gives a free written estimate after an on-site visit.</p>
         <div class="hero-actions">
           <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written gutter estimate</a>

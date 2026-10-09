@@ -153,7 +153,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
         <span class="eyebrow">Windows &amp; Doors &middot; Warrenton &amp; Warren County</span>
-        <h1>Windows &amp; Doors in <span class="text-accent">Warrenton, MO</span> — energy-efficient replacements</h1>
+        <h1>Windows &amp; Doors in <span class="text-accent">Warrenton, MO</span>: energy-efficient replacements</h1>
         <p class="hero-answer">A&amp;S Contracting Services, a licensed and fully insured Missouri general contractor, replaces windows, patio doors and entry doors and weather-seals the openings for homes and businesses within 50 miles of Warrenton.</p>
         <div class="hero-actions">
           <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written window &amp; door estimate</a>

@@ -173,9 +173,9 @@ $ownerName        = 'Blake Alger';
 
 $usps = [
     'Licensed & insured in Missouri',
-    'Free estimates — no obligation',
+    'Free estimates, no obligation',
     '50-mile service radius from Warrenton',
-    'Self-performed work — no subcontractors',
+    'Self-performed work, no subcontractors',
     'Same crew start to finish',
 ];
 

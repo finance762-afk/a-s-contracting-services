@@ -162,7 +162,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
         <span class="eyebrow">Soffit &middot; Warrenton &amp; Warren County</span>
-        <h1>Soffit in <span class="text-accent">Warrenton, MO</span> — installation, repair &amp; attic ventilation</h1>
+        <h1>Soffit in <span class="text-accent">Warrenton, MO</span>: installation, repair &amp; attic ventilation</h1>
         <p class="hero-answer">A&amp;S Contracting Services installs and repairs soffit in Warrenton, MO to ventilate the attic and keep pests and moisture out of the eaves. A&amp;S is licensed and fully insured; the written estimate is free.</p>
         <div class="hero-actions">
           <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written soffit estimate</a>

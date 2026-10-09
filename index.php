@@ -247,7 +247,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <p>Recent A&amp;S job sites look like the photos below: roof tear-offs and new shingles, siding going on over house wrap, and finished exteriors. Every picture was taken by the crew on an A&amp;S Contracting Services project; none of them are stock images. Scroll sideways to see more.</p>
     </div>
 
-    <div class="gallery-track" data-p1-dynamic tabindex="0" aria-label="Project photos — scroll horizontally">
+    <div class="gallery-track" data-p1-dynamic tabindex="0" aria-label="Project photos, scroll horizontally">
       <?php foreach ($galleryItems as $g):
         [$gBase, $gTag, $gCap, $gWide] = $g;
       ?>

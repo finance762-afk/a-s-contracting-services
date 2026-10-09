@@ -153,7 +153,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
         <span class="eyebrow">Interior Remodeling &middot; Warrenton &amp; Warren County</span>
-        <h1>Full Scale Interior Work in <span class="text-accent">Warrenton, MO</span> — one crew, every stage</h1>
+        <h1>Full Scale Interior Work in <span class="text-accent">Warrenton, MO</span>: one crew, every stage</h1>
         <p class="hero-answer">A&amp;S Contracting Services, a licensed and fully insured Missouri general contractor, remodels interiors within 50 miles of Warrenton: drywall, flooring, painting, trim, custom finishes, room additions and full remodels.</p>
         <div class="hero-actions">
           <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written remodel estimate</a>

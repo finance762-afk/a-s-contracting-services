@@ -162,7 +162,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
         <span class="eyebrow">Fascia &middot; Warrenton &amp; Warren County</span>
-        <h1>Fascia in <span class="text-accent">Warrenton, MO</span> — rotted board replacement &amp; new installation</h1>
+        <h1>Fascia in <span class="text-accent">Warrenton, MO</span>: rotted board replacement &amp; new installation</h1>
         <p class="hero-answer">A&amp;S Contracting Services replaces rotted fascia boards and installs new fascia in Warrenton, MO to protect the roof edge. A&amp;S is a licensed, fully insured general contractor, and its on-site written estimate is free.</p>
         <div class="hero-actions">
           <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written fascia estimate</a>

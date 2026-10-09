@@ -162,7 +162,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero-grid hero-grid--form">
       <div class="hero-copy">
         <span class="eyebrow">Siding &middot; Warrenton &amp; Warren County</span>
-        <h1>Siding in <span class="text-accent">Warrenton, MO</span> — installation &amp; repair in vinyl, fiber cement and wood</h1>
+        <h1>Siding in <span class="text-accent">Warrenton, MO</span>: installation &amp; repair in vinyl, fiber cement and wood</h1>
         <p class="hero-answer">A&amp;S Contracting Services installs and repairs vinyl, fiber cement and wood siding on homes and businesses around Warrenton, MO. The company is licensed and fully insured, and its written on-site estimate is free.</p>
         <div class="hero-actions">
           <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a written siding estimate</a>
