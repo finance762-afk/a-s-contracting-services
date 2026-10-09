@@ -284,6 +284,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 .area-narrow { max-width: 820px; }
 .cta-band .area-near { margin-top: var(--space-5); font-size: var(--fs-small); }
 .cta-band .area-near a { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 768px) { .hero--area { padding-top: calc(var(--nav-height) + var(--space-6)); } .hero--area .hero-copy { display: flex; flex-direction: column; } .hero--area .hero-answer { margin-bottom: var(--space-4); font-size: var(--fs-body); } .hero--area .hero-copy .btn-group { order: 3; justify-content: flex-start; margin-bottom: var(--space-4); } .hero--area .hero-chips { order: 4; margin-bottom: 0; } }
 @media (max-width: 900px) { .area-leads { grid-template-columns: 1fr; } .section-alt { padding: 60px 0; } }
 </style>
 

@@ -53,6 +53,15 @@ Named towns: Warrenton, Wright City, Foristell, Wentzville, Troy, Jonesburg, and
 - Washington: https://ascontractingservices.com/areas/washington/
 - All service areas: https://ascontractingservices.com/service-areas/
 
+## Pages
+- Home: https://ascontractingservices.com/
+- Services: https://ascontractingservices.com/services/
+- Service areas: https://ascontractingservices.com/service-areas/
+- About: https://ascontractingservices.com/about/
+- FAQ: https://ascontractingservices.com/faq/
+- Blog: https://ascontractingservices.com/blog/
+- Contact: https://ascontractingservices.com/contact/
+
 ## Guides
 - Drywall water damage, repair or replace: https://ascontractingservices.com/blog/drywall-water-damage-repair-or-replace-a-missouri-guide/
 - Roof ventilation in Missouri: https://ascontractingservices.com/blog/roof-ventilation-in-missouri-ridge-vents-soffit-intake-attic-heat/
