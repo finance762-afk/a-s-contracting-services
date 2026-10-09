@@ -184,7 +184,12 @@ function p1_picture($base, $alt, $opts = []) {
 
     $out = '<picture>';
     if ($aviset) $out .= '<source type="image/avif" srcset="' . implode(', ', $aviset) . '" sizes="' . htmlspecialchars($sizes) . '">';
-    $out .= '<img src="/assets/images/' . htmlspecialchars($base) . '.jpg"';
+    // v8: the fallback src must be a file that exists (crawlers read src, not srcset); the pipeline keeps no .jpg.
+    $fallback = '/assets/images/' . $base . '.jpg';
+    foreach ([960, 480, 1600] as $w) {
+        if (file_exists($dir . $base . '-' . $w . '.webp')) { $fallback = "/assets/images/{$base}-{$w}.webp"; break; }
+    }
+    $out .= '<img src="' . htmlspecialchars($fallback) . '"';
     if ($webset) $out .= ' srcset="' . implode(', ', $webset) . '" sizes="' . htmlspecialchars($sizes) . '"';
     $out .= $attrs . '></picture>';
 

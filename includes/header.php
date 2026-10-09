@@ -98,7 +98,7 @@ if (!isset($siteName)) {
           <?php echo icon('phone', 18); ?>
           <span><?php echo $phone; ?></span>
         </a>
-        <a href="/contact/" class="btn-primary">Free Estimate</a>
+        <a href="/contact/" class="btn-primary">Get an Estimate</a>
       </div>
 
       <!-- Mobile Hamburger -->
@@ -161,7 +161,7 @@ if (!isset($siteName)) {
         <?php echo icon('phone', 20); ?>
         Call Now
       </a>
-      <a href="/contact/" class="btn-primary">Free Estimate</a>
+      <a href="/contact/" class="btn-primary">Get an Estimate</a>
     </div>
   </div>
 </div>

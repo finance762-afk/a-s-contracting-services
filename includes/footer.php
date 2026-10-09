@@ -31,20 +31,16 @@ if (!isset($siteName)) {
             </a>
           </div>
           <p class="footer-tagline"><?php echo htmlspecialchars($tagline); ?></p>
-          <p class="footer-description"><?php echo htmlspecialchars(substr($aboutDescription, 0, 180)); ?>…</p>
+          
 
           <div class="footer-trust-badges">
             <div class="trust-badge">
-              <?php echo icon('badge-check', 20); ?>
-              <span>Licensed & Insured</span>
-            </div>
-            <div class="trust-badge">
               <?php echo icon('calendar-check', 20); ?>
-              <span><?php echo $yearsInBusiness; ?> Years in Business</span>
+              <span>Founded <?php echo $yearEstablished; ?></span>
             </div>
             <div class="trust-badge">
-              <?php echo icon('award', 20); ?>
-              <span>Free Estimates</span>
+              <?php echo icon('map-pin', 20); ?>
+              <span><?php echo $serviceRadius; ?>-mile service radius</span>
             </div>
           </div>
         </div>
@@ -68,7 +64,7 @@ if (!isset($siteName)) {
           <h3 class="footer-heading">Service Areas</h3>
           <ul class="footer-links">
             <?php
-            $footAreas = array_slice($serviceAreas, 0, 5);
+            $footAreas = $serviceAreas;
             foreach ($footAreas as $footArea):
               $areaSlug = getAreaSlug($footArea['city']);
               $areaExists = is_dir($_SERVER['DOCUMENT_ROOT'] . '/areas/' . $areaSlug);
@@ -81,8 +77,8 @@ if (!isset($siteName)) {
               <?php endif; ?>
             </li>
             <?php endforeach; ?>
-            <?php if (count($serviceAreas) > 5): ?>
-            <li><a href="/service-areas/" class="view-all">View All Areas</a></li>
+            <?php if (count($serviceAreas) > 0): ?>
+            <li><a href="/service-areas/" class="view-all">All Service Areas</a></li>
             <?php endif; ?>
           </ul>
           <?php else: ?>
@@ -125,7 +121,7 @@ if (!isset($siteName)) {
             </li>
           </ul>
 
-          <a href="/contact/" class="btn-primary footer-cta-btn">Get Free Estimate</a>
+          <a href="/contact/" class="btn-primary footer-cta-btn">Request an Estimate</a>
         </div>
 
       </div>
@@ -143,8 +139,8 @@ if (!isset($siteName)) {
         <?php echo $addressCity; ?>, <?php echo $addressState; ?>, serving residential and commercial clients
         within a <?php echo $serviceRadius; ?>-mile radius. Founded in <?php echo $yearEstablished; ?>,
         we self-perform roofing, siding, gutters, drywall, windows, and full-scale renovations across
-        Warren County and central Missouri—no subcontractors, no surprises.
-        Call <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a> for a free estimate.
+        Warren County and central Missouri with its own crew, not subcontractors.
+        Call <a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a> for a free on-site written estimate.
       </p>
     </div>
   </div>
@@ -160,6 +156,7 @@ if (!isset($siteName)) {
         <a href="/cookie-policy/">Cookie Policy</a>
         <span class="footer-legal-divider">|</span>
         <a href="/faq/">FAQ</a>
+        <span class="footer-legal-divider">|</span>
         <a href="/accessibility/">Accessibility</a>
         <span class="footer-legal-divider">|</span>
         <a href="/privacy-policy/#ccpa-rights">Do Not Sell or Share My Personal Information</a>

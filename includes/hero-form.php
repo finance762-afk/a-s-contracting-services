@@ -3,12 +3,12 @@
  * includes/hero-form.php — hero estimate card shared by the service-area pages.
  * Set $heroFormTitle / $heroFormId before including; posts to $formAction (Page One leads endpoint).
  */
-$heroFormTitle = isset($heroFormTitle) ? $heroFormTitle : 'Get a free estimate';
+$heroFormTitle = isset($heroFormTitle) ? $heroFormTitle : 'Request an estimate';
 $heroFormId    = isset($heroFormId) ? $heroFormId : 'hero';
 ?>
 <aside class="hero-form-card" id="hero-form">
   <h2><?php echo htmlspecialchars($heroFormTitle); ?></h2>
-  <p class="hero-form-tagline">No obligation. Same-day reply.</p>
+  <p class="hero-form-tagline">On-site visit and written quote, no obligation.</p>
   <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
     <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
     <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -33,6 +33,6 @@ $heroFormId    = isset($heroFormId) ? $heroFormId : 'hero';
     <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
     <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
     <?php } ?>
-    <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
+    <button type="submit" class="btn btn-primary btn-block">Request my estimate</button>
   </form>
 </aside>

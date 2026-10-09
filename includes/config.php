@@ -19,6 +19,7 @@ $industry        = 'general contractor';
 // ─── Contact ───────────────────────────────────────────────────────────────
 $phone           = '(636) 359-7204';        // display format
 $phoneTel        = '+16363597204';           // tel: / sms: href format
+$phoneRaw        = $phoneTel;               // v8 components (zip-check.php)
 $phoneSecondary  = '';
 $email           = 'blake@ascontractingservices.com';
 $contactPhone    = $phone;   // alias used by legal-compliance templates
@@ -68,61 +69,61 @@ $services = [
     [
         'name'        => 'Roofing',
         'slug'        => 'roofing',
-        'description' => 'Professional roofing installation, repair, and replacement services for residential and commercial properties. Our experienced team ensures quality craftsmanship and long-lasting protection for your home.',
+        'description' => "Roof repair, tear-off and full replacement in architectural asphalt shingles, impact-resistant shingles or metal, including storm and hail damage with photo documentation for the insurance claim.",
         'keywords'    => ['roofing contractor warrenton mo', 'roof repair warrenton', 'residential roofing services', 'roof installation', 'roofing company missouri'],
     ],
     [
         'name'        => 'Siding',
         'slug'        => 'siding',
-        'description' => "High-quality siding installation and repair to enhance your home's curb appeal and weather protection. We offer a variety of materials and styles to match your home's aesthetic.",
+        'description' => "Vinyl, fiber cement and wood siding installed or repaired by the A&S crew, flashed and sealed at every window, door and corner so the wall behind stays dry.",
         'keywords'    => ['siding contractor warrenton mo', 'siding installation', 'vinyl siding warrenton', 'exterior siding repair', 'home siding contractor missouri'],
     ],
     [
         'name'        => 'Gutters',
         'slug'        => 'gutters',
-        'description' => 'Expert gutter installation, cleaning, and maintenance to protect your home from water damage. Our durable gutter systems keep your foundation and landscaping safe.',
+        'description' => "Seamless aluminum gutter systems installed, repaired or fully replaced, plus cleaning and maintenance, so roof runoff leaves the house instead of soaking the foundation.",
         'keywords'    => ['gutter installation warrenton mo', 'gutter repair warrenton', 'gutter cleaning services', 'seamless gutters missouri', 'residential gutters'],
     ],
     [
         'name'        => 'Soffit',
         'slug'        => 'soffit',
-        'description' => "Professional soffit installation and repair to improve ventilation and protect your home's undercarriage. Quality soffit work enhances both functionality and appearance.",
+        'description' => "Soffit installed or repaired under the eaves to feed air into the attic and keep pests and moisture out, matched to the existing roofline.",
         'keywords'    => ['soffit installation warrenton mo', 'soffit repair', 'soffit contractor', 'fascia and soffit warrenton', 'home soffit services missouri'],
     ],
     [
         'name'        => 'Fascia',
         'slug'        => 'fascia',
-        'description' => "Durable fascia installation and replacement to protect your roof edges and improve your home's exterior appearance. We use premium materials for long-term performance.",
+        'description' => "Rotted or damaged fascia boards replaced along the roof edge with a matched finish, giving the gutters a sound board to hang from.",
         'keywords'    => ['fascia installation warrenton mo', 'fascia repair', 'fascia replacement', 'soffit and fascia contractor', 'roofline repair missouri'],
     ],
     [
         'name'        => 'Windows & Doors',
         'slug'        => 'windows-doors',
-        'description' => 'Custom window and door installation services that enhance energy efficiency and curb appeal. We offer quality products with professional installation for your home.',
+        'description' => "Energy-efficient replacement windows, patio doors and entry doors set, flashed and weather sealed by the same crew that does the siding around them.",
         'keywords'    => ['window installation warrenton mo', 'door installation warrenton', 'replacement windows missouri', 'patio doors contractor', 'home windows and doors'],
     ],
     [
         'name'        => 'Full Scale Interior Work',
         'slug'        => 'full-scale-interior-work',
-        'description' => "Comprehensive interior renovation and construction services including drywall, flooring, painting, and custom finishes. Transform your home's interior with our expert craftsmanship.",
+        'description' => "Interior remodels and room additions carried through drywall, flooring, trim, painting and custom finishes under one contract.",
         'keywords'    => ['interior remodel warrenton mo', 'home renovation warrenton', 'interior construction services', 'remodeling contractor missouri', 'full interior renovation'],
     ],
     [
         'name'        => 'Exterior Work',
         'slug'        => 'exterior-work',
-        'description' => "Complete exterior construction and renovation services including siding, roofing, and landscaping integration. Protect and enhance your home's outdoor appearance.",
+        'description' => "Full exterior renovations where the roof, siding and gutters are planned and installed together by a single accountable crew.",
         'keywords'    => ['exterior work warrenton mo', 'exterior contractor', 'home exterior renovation', 'exterior construction missouri', 'property exterior services'],
     ],
     [
         'name'        => 'Dry Wall',
         'slug'        => 'dry-wall',
-        'description' => 'Professional drywall installation, finishing, and repair for smooth, flawless interior walls. Our skilled team ensures quality results for residential and commercial projects.',
+        'description' => "Drywall hung, finished and repaired for residential and commercial interiors, ready for paint.",
         'keywords'    => ['drywall contractor warrenton mo', 'drywall installation', 'drywall repair warrenton', 'drywall finishing services', 'interior drywall missouri'],
     ],
     [
         'name'        => 'General Contracting',
         'slug'        => 'general-contracting',
-        'description' => 'Full-service general contracting for residential and commercial projects of any size. From planning to completion, we manage every aspect of your construction project.',
+        'description' => "Residential and commercial projects managed from planning to completion, with A&S performing the trades itself instead of handing them to subcontractors.",
         'keywords'    => ['general contractor warrenton mo', 'general contracting services', 'construction contractor missouri', 'residential construction warrenton', 'home builder services'],
     ],
 ];
@@ -143,14 +144,16 @@ $serviceAnchor = [
 
 // ─── Service Areas ─────────────────────────────────────────────────────────
 $serviceAreas = [
-    ['city' => 'Warrenton',   'state' => 'MO', 'zip' => '63383', 'primary' => true],
-    ['city' => 'Foristell',   'state' => 'MO', 'zip' => '',      'primary' => false],
-    ['city' => 'Jonesburg',   'state' => 'MO', 'zip' => '',      'primary' => false],
-    ['city' => 'Troy',        'state' => 'MO', 'zip' => '',      'primary' => false],
-    ['city' => 'Washington',  'state' => 'MO', 'zip' => '',      'primary' => false],
-    ['city' => 'Wentzville',  'state' => 'MO', 'zip' => '',      'primary' => false],
-    ['city' => 'Wright City', 'state' => 'MO', 'zip' => '',      'primary' => false],
+    // 'name' mirrors 'city' for the v8 components (zip-check.php reads 'name'). ZIPs: USPS city ZIPs, v8 2026-10-09.
+    ['city' => 'Warrenton',   'name' => 'Warrenton',   'state' => 'MO', 'zip' => '63383', 'primary' => true],
+    ['city' => 'Foristell',   'name' => 'Foristell',   'state' => 'MO', 'zip' => '63348', 'primary' => false],
+    ['city' => 'Jonesburg',   'name' => 'Jonesburg',   'state' => 'MO', 'zip' => '63351', 'primary' => false],
+    ['city' => 'Troy',        'name' => 'Troy',        'state' => 'MO', 'zip' => '63379', 'primary' => false],
+    ['city' => 'Washington',  'name' => 'Washington',  'state' => 'MO', 'zip' => '63090', 'primary' => false],
+    ['city' => 'Wentzville',  'name' => 'Wentzville',  'state' => 'MO', 'zip' => '63385', 'primary' => false],
+    ['city' => 'Wright City', 'name' => 'Wright City', 'state' => 'MO', 'zip' => '63390', 'primary' => false],
 ];
+$serviceZips = array_values(array_filter(array_column($serviceAreas, 'zip')));   // zip-check.php
 $serviceRadius = 50;   // miles from Warrenton
 
 // ─── Social Links ──────────────────────────────────────────────────────────
@@ -173,11 +176,10 @@ $usps = [
     'Free estimates — no obligation',
     '50-mile service radius from Warrenton',
     'Self-performed work — no subcontractors',
-    '5-star Google rated',
     'Same crew start to finish',
 ];
 
-$aboutDescription = 'A&S Contracting Services is a licensed and insured general contractor serving residential and commercial clients within 50 miles of Warrenton, MO. The company self-performs roofing, siding, gutters, drywall, windows, and full-scale renovations — no trade gaps, no subcontracted surprises. Founded with a focus on roofing and exterior work, A&S expanded to offer a full range of residential construction services under one licensed roof, providing consistent quality from a single accountable team across Warren County and central Missouri.';
+$aboutDescription = 'A&S Contracting Services is a licensed and insured general contractor in Warrenton, MO, founded in 2023 by Blake Alger. The company serves residential and commercial clients within 50 miles of Warrenton and performs roofing, siding, gutters, soffit, fascia, windows and doors, drywall and interior remodeling with its own crew.';
 
 $certifications = [
     'Licensed Missouri general contractor',
@@ -196,7 +198,9 @@ $designArchetype = 'bold-industrial';   // Phase 2, 2026-09-08
 $entityType       = '';    // [VERIFY] entity type not provided in intake (LLC / Sole Prop / Corp)
 $stateOfFormation = 'MO';  // Terms governing law
 
-// ─── Reviews (real GBP reviews from intake) ──────────────────────────────────
+// ─── Reviews — NOT RENDERED (v8, 2026-10-09) ─────────────────────────────────
+// No Google Business Profile is linked and the Page One reviews feed returns 0 reviews, so these
+// cannot be verified. No page may print them or any star rating until the feed returns them.
 $reviews = [
     ['author' => 'Marcus H.',   'rating' => 5, 'text' => 'Had A&S replace the entire roof on our home after hail damage last spring. They came out fast, gave us a fair written quote, and the crew was professional from start to finish. Roof looks incredible and our insurance claim went smoothly with their documentation.'],
     ['author' => 'Jennifer K.', 'rating' => 5, 'text' => 'We needed new siding and gutters on our place outside Warrenton. A&S was the most professional of the three contractors we got quotes from — they showed up when they said they would, communicated clearly, and finished ahead of schedule. Very happy we went with them.'],
