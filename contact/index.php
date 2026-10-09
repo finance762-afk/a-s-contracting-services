@@ -6,8 +6,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $pageType        = 'contact';
 $currentPage     = 'contact';
-$pageTitle       = 'Contact Us';
-$pageDescription = 'Contact A&S Contracting Services in Warrenton, MO for a free roofing, siding or remodeling estimate. Licensed & insured. Call (636) 359-7204 or send the form.';
+$pageTitle       = 'Contact A&S Contracting Services';
+$pageDescription = 'Contact A&S Contracting Services in Warrenton, MO to set up an on-site visit and written estimate for roofing, siding, or remodeling. Call (636) 359-7204.';
 $canonicalUrl    = $siteUrl . '/contact/';
 
 // BreadcrumbList schema
@@ -99,8 +99,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <h1>Get in Touch</h1>
     <p>
-      Ready to start your project? Fill out the form below or call us directly. We respond to all inquiries
-      within one business day.
+      Call or send the form to set up an on-site visit. A&amp;S Contracting Services schedules estimates within
+      days of first contact.
     </p>
   </div>
 </section>
@@ -132,7 +132,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <h3>Phone</h3>
           <p><a href="tel:<?php echo $phoneTel; ?>"><?php echo $phone; ?></a></p>
           <p style="font-size: 0.9rem; color: var(--color-text-light); margin-top: 4px;">
-            Call for immediate assistance or to schedule an estimate.
+            Call to schedule an on-site estimate or to ask about a project.
           </p>
         </div>
       </div>
@@ -145,7 +145,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <h3>Email</h3>
           <p><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
           <p style="font-size: 0.9rem; color: var(--color-text-light); margin-top: 4px;">
-            Email us with project details or questions.
+            Email project details or questions.
           </p>
         </div>
       </div>
@@ -155,7 +155,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <?php echo icon('map-pin', 24); ?>
         </div>
         <div class="contact-method-content">
-          <h3>Service Area</h3>
+          <h3>Location</h3>
           <p>
             <?php echo $addressCity; ?>, <?php echo $addressState; ?> <?php echo $addressZip; ?>
           </p>
@@ -170,16 +170,24 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <h3>Business Hours</h3>
       <p style="margin: 0; line-height: 1.7;"><?php echo htmlspecialchars($businessHours); ?></p>
       <p style="font-size: 0.9rem; color: var(--color-text-light); margin-top: var(--space-sm);">
-        We respond to messages within one business day. For emergencies, call us directly.
+        Outside these hours, send the form or an email and A&amp;S Contracting Services will follow up.
+      </p>
+    </div>
+
+    <div class="hours-block">
+      <h3>What the estimate includes</h3>
+      <p style="margin: 0; line-height: 1.7;">
+        An on-site visit and a written, itemized estimate for the work. Both are free and carry no obligation,
+        and the start window and timeline are put in writing.
       </p>
     </div>
   </div>
 
   <!-- Contact Form -->
   <div class="contact-form">
-    <h2>Request a Free Estimate</h2>
+    <h2>Request an Estimate</h2>
     <p class="contact-form-intro">
-      Tell us about your project. We'll get back to you within one business day with next steps or a quote.
+      Tell us about your project and A&amp;S Contracting Services will contact you to schedule the on-site visit.
     </p>
 
     <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST">

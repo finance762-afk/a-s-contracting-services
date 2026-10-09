@@ -1,183 +1,75 @@
 # A&S Contracting Services
 
-## Business Identity
+> A&S Contracting Services is a general contractor in Warrenton, Missouri, founded in 2023 by Blake Alger. It self-performs roofing, siding, gutters, soffit, fascia, windows and doors, interior and exterior work, drywall, and general contracting for residential and commercial clients within 50 miles of Warrenton.
+
+## Business Information
 - Company: A&S Contracting Services
-- Type: Licensed General Contractor
-- Location: Warrenton, Missouri 63383
-- Service Radius: 50 miles from Warrenton
+- Type: General contractor
+- Location: Warrenton, Missouri 63383 (Warren County); no street address published
+- Service radius: 50 miles from Warrenton
 - Founded: 2023
 - Owner: Blake Alger
-- License Status: Licensed Missouri general contractor, fully insured
+- Credentials: Licensed Missouri general contractor, fully insured (no license number is published)
 - Phone: (636) 359-7204
 - Email: blake@ascontractingservices.com
 - Website: https://ascontractingservices.com
-- Hours: Monday–Friday 7am–6pm, Saturday 8am–3pm
+- Hours: Monday-Friday 7am-6pm, Saturday 8am-3pm
 
-## What Makes A&S Contracting Services Different
-- Self-performed work — no subcontractors on any job
-- Same crew from start to finish on every project
-- Licensed Missouri general contractor with full insurance coverage
-- Serves residential and commercial clients within 50 miles of Warrenton
-- No trade gaps — handles roofing, siding, gutters, drywall, windows, and full renovations in-house
-- Free written estimates with no obligation
-- 5-star Google rated
-- Storm and hail insurance claim documentation and support
+## About
+Blake Alger founded A&S Contracting Services in 2023 with a focus on roofing and exterior work, and the company expanded to the full list of services below. A&S performs its own work with no subcontractors, and the same crew stays on a project from start to finish. Every project closes with a final walkthrough, and the job site is kept clean daily.
 
-## Services Offered
+## Services
+- Roofing: installation, repair, tear-off and full replacement; storm and hail damage repair; insurance claim documentation; architectural asphalt shingles, impact-resistant shingles, and metal roofing. Residential and commercial. https://ascontractingservices.com/services/roofing/
+- Siding: installation and repair in vinyl, fiber cement, and wood. https://ascontractingservices.com/services/siding/
+- Gutters: seamless aluminum gutter systems; installation, repair, full replacement, cleaning, and maintenance. https://ascontractingservices.com/services/gutters/
+- Soffit: installation and repair; attic ventilation; blocks pests and moisture; matched to the roofline. https://ascontractingservices.com/services/soffit/
+- Fascia: installation and replacement; rotted board replacement; protects roof edges; matched finish. https://ascontractingservices.com/services/fascia/
+- Windows & Doors: energy-efficient replacement windows, patio doors, entry doors, and weather sealing. https://ascontractingservices.com/services/windows-doors/
+- Full Scale Interior Work: drywall, flooring, painting, trim, custom finishes, room additions, and full interior remodels. https://ascontractingservices.com/services/full-scale-interior-work/
+- Exterior Work: siding, roofing, and gutter integration; full exterior renovations. https://ascontractingservices.com/services/exterior-work/
+- Dry Wall: installation, finishing, and repair for residential and commercial projects. https://ascontractingservices.com/services/dry-wall/
+- General Contracting: residential and commercial projects managed from planning to completion. https://ascontractingservices.com/services/general-contracting/
+- All services: https://ascontractingservices.com/services/
 
-### Roofing
-Professional roofing installation, repair, and replacement for residential and commercial properties. Services include:
-- Roof tear-off and full replacement
-- Storm and hail damage repair
-- Insurance claim documentation
-- Architectural asphalt shingles
-- Impact-resistant shingles
-- Metal roofing installation
+## Estimates and Pricing
+A&S publishes no prices. Each project is priced from an on-site visit and a written, itemized estimate. The visit and the estimate are free and carry no obligation. Cost depends on square footage, the materials selected, the condition of the existing structure, and the scope of work. A&S states there are no hidden fees or upselling and that the quoted price is the final price. Estimates are scheduled within days of first contact, and start windows and timelines are given in writing.
 
-### Siding
-High-quality siding installation and repair services:
-- Vinyl siding installation
-- Fiber cement siding
-- Wood siding
-- Weather-tight installation
-- Curb appeal enhancement
-
-### Gutters
-Expert gutter installation, cleaning, and maintenance:
-- Seamless aluminum gutter systems
-- Foundation protection
-- Gutter repair and full replacement
-- Professional installation
-
-### Soffit
-Professional soffit installation and repair:
-- Improved attic ventilation
-- Pest and moisture blocking
-- Matched to roofline specifications
-
-### Fascia
-Durable fascia installation and replacement:
-- Roof edge protection
-- Rotted board replacement
-- Clean, matched finish
-
-### Windows & Doors
-Custom window and door installation:
-- Energy-efficient replacement windows
-- Patio doors and entry doors
-- Professional weather sealing
-
-### Full Scale Interior Work
-Comprehensive interior renovation services:
-- Drywall installation, finishing, and repair
-- Trim and painting
-- Room additions
-- Full interior remodels
-- Clean job site maintenance daily
-
-### Exterior Work
-Complete exterior construction and renovation:
-- Siding, roofing, and gutter integration
-- Full exterior renovations
-- Single accountable crew
-
-### Drywall
-Professional drywall services:
-- Drywall installation
-- Finishing and repair
-- Smooth, flawless interior walls
-
-### General Contracting
-Full-service general contracting:
-- Residential construction projects
-- Commercial construction projects
-- Project management from planning to completion
-
-## Service Pages
-- Roofing (repair, replacement & hail claims) — https://ascontractingservices.com/services/roofing/
-- Siding — https://ascontractingservices.com/services/siding/
-- Gutters — https://ascontractingservices.com/services/gutters/
-- Soffit — https://ascontractingservices.com/services/soffit/
-- Fascia — https://ascontractingservices.com/services/fascia/
-- Windows & Doors — https://ascontractingservices.com/services/windows-doors/
-- Full Scale Interior Work — https://ascontractingservices.com/services/full-scale-interior-work/
-- Exterior Work — https://ascontractingservices.com/services/exterior-work/
-- Drywall — https://ascontractingservices.com/services/dry-wall/
-- General Contracting — https://ascontractingservices.com/services/general-contracting/
-- All services — https://ascontractingservices.com/services/
-- All service areas — https://ascontractingservices.com/service-areas/
-
-## Service Areas
-A&S Contracting Services serves Warrenton, MO and surrounding communities within a 50-mile radius, including:
-- Warrenton, MO (primary location) — https://ascontractingservices.com/areas/warrenton/
-- Wright City, MO — https://ascontractingservices.com/areas/wright-city/
-- Foristell, MO — https://ascontractingservices.com/areas/foristell/
-- Wentzville, MO — https://ascontractingservices.com/areas/wentzville/
-- Troy, MO — https://ascontractingservices.com/areas/troy/
-- Jonesburg, MO — https://ascontractingservices.com/areas/jonesburg/
-- Washington, MO — https://ascontractingservices.com/areas/washington/
-- Warren County, Missouri
-- Central Missouri region
-
-## Project Pricing & Estimates
-Every project is priced from a free on-site estimate. Cost depends on:
-- Square footage
-- Materials selected
-- Condition of existing structure
-- Scope of work
-
-A&S Contracting Services provides detailed written estimates with no hidden fees or upselling. The quoted price is the final price.
-
-Free estimates are scheduled within days of initial contact. Clear start windows are provided in writing.
+## Timeframes
+- Most single-family roof replacements: 1-3 days, weather permitting
+- Siding: varies by square footage and home size
+- Interior work: depends on scope
 
 ## Insurance Claims
-A&S Contracting Services handles storm and hail damage insurance claims:
-- Documents all storm and hail damage with photos
-- Provides detailed itemized estimates
-- Meets with insurance adjusters on-site
-- Helps homeowners navigate the claims process
-- Ensures smooth progression from inspection to installation
+For storm and hail damage, A&S documents the damage with photos, provides a detailed itemized estimate, meets the insurance adjuster on site, and helps the homeowner through the claim.
 
-## Typical Project Timelines
-- Most single-family roof replacements: 1-3 days (weather permitting)
-- Siding projects: varies by square footage and home size
-- Interior renovations: depends on scope of work
-- All timelines provided in writing during estimate phase
+## Service Areas
+Named towns: Warrenton, Wright City, Foristell, Wentzville, Troy, Jonesburg, and Washington, plus Warren County and central Missouri.
+- Warrenton: https://ascontractingservices.com/areas/warrenton/
+- Wright City: https://ascontractingservices.com/areas/wright-city/
+- Foristell: https://ascontractingservices.com/areas/foristell/
+- Wentzville: https://ascontractingservices.com/areas/wentzville/
+- Troy: https://ascontractingservices.com/areas/troy/
+- Jonesburg: https://ascontractingservices.com/areas/jonesburg/
+- Washington: https://ascontractingservices.com/areas/washington/
+- All service areas: https://ascontractingservices.com/service-areas/
 
-The same crew handles every stage of the project, ensuring predictable timelines from first day to final walkthrough.
+## Guides
+- Drywall water damage, repair or replace: https://ascontractingservices.com/blog/drywall-water-damage-repair-or-replace-a-missouri-guide/
+- Roof ventilation in Missouri: https://ascontractingservices.com/blog/roof-ventilation-in-missouri-ridge-vents-soffit-intake-attic-heat/
+- Class 4 impact-resistant shingles in Missouri: https://ascontractingservices.com/blog/class-4-impact-resistant-shingles-in-missouri-worth-it/
+- Metal roof vs asphalt shingles in Missouri: https://ascontractingservices.com/blog/metal-roof-vs-asphalt-shingles-in-missouri-cost-and-lifespan/
+- Roof leak repair: https://ascontractingservices.com/blog/roof-leak-repair-missouri/
+- Hail damage roof inspection and insurance claims: https://ascontractingservices.com/blog/hail-damage-roof-insurance-claim-missouri/
+- Soffit and fascia, repair vs replacement: https://ascontractingservices.com/blog/soffit-fascia-repair-vs-replacement/
+- Window replacement cost: https://ascontractingservices.com/blog/window-replacement-cost-missouri/
+- Seamless gutters: https://ascontractingservices.com/blog/seamless-gutters-cost-missouri/
+- Roof replacement cost: https://ascontractingservices.com/blog/roof-replacement-cost-guide-missouri/
+- When to replace siding: https://ascontractingservices.com/blog/when-to-replace-siding-missouri/
+- Blog index: https://ascontractingservices.com/blog/
 
-## Quality & Accountability
-- Licensed Missouri general contractor
-- Fully insured for all projects
-- Same crew performs all work (no subcontractors)
-- One accountable team stands behind every job
-- Clean job site maintained daily
-- Final walkthrough on every project
-- Professional documentation and communication throughout
-
-## Contact Information
-For free estimates or project inquiries:
+## Contact
 - Phone: (636) 359-7204
 - Email: blake@ascontractingservices.com
-- Visit: https://ascontractingservices.com/contact/
-- Schedule: Estimates typically scheduled within days of contact
-
-Business Hours:
-- Monday through Friday: 7:00 AM to 6:00 PM
-- Saturday: 8:00 AM to 3:00 PM
-
-## Blog & Guides
-Answer-first homeowner guides written from field experience in Warren County and central Missouri:
-- Roof Leak Repair: Finding the Leak, Costs & When to Replace — https://ascontractingservices.com/blog/roof-leak-repair-missouri/
-- Hail Damage Roof Inspection & Insurance Claims in Missouri — https://ascontractingservices.com/blog/hail-damage-roof-insurance-claim-missouri/
-- Soffit & Fascia Repair vs Replacement: Signs and Cost — https://ascontractingservices.com/blog/soffit-fascia-repair-vs-replacement/
-- Window Replacement Cost in Missouri (Per-Window Guide) — https://ascontractingservices.com/blog/window-replacement-cost-missouri/
-- Seamless Gutters: Cost, Sizing, and Why They Beat Sectional — https://ascontractingservices.com/blog/seamless-gutters-cost-missouri/
-- Roof Replacement Cost Guide for Missouri Homeowners — https://ascontractingservices.com/blog/roof-replacement-cost-guide-missouri/
-- When to Replace Siding: Signs Missouri Homeowners Miss — https://ascontractingservices.com/blog/when-to-replace-siding-missouri/
-- Blog index — https://ascontractingservices.com/blog/
-
-## Service Philosophy
-A&S Contracting Services was founded with a focus on roofing and exterior work and has expanded to offer a full range of residential construction services under one licensed roof. The company self-performs every trade—roofing, siding, gutters, drywall, windows, and interior work—eliminating the trade gaps and subcontracted surprises common in the construction industry.
-
-Every project is handled by the same accountable team from the initial estimate through final walkthrough, providing consistent quality across Warren County and central Missouri.
+- Contact page: https://ascontractingservices.com/contact/
+- About: https://ascontractingservices.com/about/
+- FAQ: https://ascontractingservices.com/faq/

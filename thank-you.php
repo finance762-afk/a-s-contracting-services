@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $currentPage     = 'thank-you';
 $pageTitle       = 'Thank You';
-$pageDescription = 'Thank you for contacting A&S Contracting Services. We will respond to your inquiry within one business day.';
+$pageDescription = 'Thank you for contacting A&S Contracting Services. The team will be in touch to schedule your on-site estimate. Call (636) 359-7204 with any questions.';
 $canonicalUrl    = $siteUrl . '/thank-you/';
 $noindex         = true;  // Don't index thank-you pages
 
@@ -40,22 +40,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     </div>
     <h1>Thank You!</h1>
     <p>
-      We received your message and will get back to you within one business day. We're looking forward to
-      discussing your project.
+      We received your message. A&amp;S Contracting Services will be in touch to schedule your on-site estimate.
     </p>
 
     <div class="next-steps">
       <h2>What Happens Next?</h2>
       <ul>
-        <li>We'll review your project details and reach out within 1 business day.</li>
-        <li>If you requested an estimate, we'll schedule a free on-site visit at a time that works for you.</li>
-        <li>You'll receive a detailed written quote with no pressure to move forward.</li>
-        <li>If you approve the quote, we'll schedule your project start date.</li>
+        <li>We look over your project details and contact you to schedule the on-site visit.</li>
+        <li>After the visit, you receive a detailed, itemized written estimate with no obligation.</li>
+        <li>If you approve the estimate, the start window is put in writing.</li>
       </ul>
     </div>
 
     <p style="color: rgba(255,255,255,0.9); margin-bottom: var(--space-lg);">
-      Need to reach us immediately? Give us a call:
+      Questions in the meantime? Call <?php echo $phone; ?> or use the button below.
     </p>
 
     <div class="cta-buttons">
